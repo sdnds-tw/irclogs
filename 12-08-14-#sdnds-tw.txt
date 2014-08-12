@@ -1,0 +1,44 @@
+<JalenLin>: 以後每天的log http://sdnds.tw/irclogs/
+<sdnsd-tw_Bot>: ==> Index of /irclogs
+<chiehwen_>: Cool
+<John_M5>: 感謝
+<JalenLin>: 之後有機會在看看過多久後壓縮起來
+<darkgerm>: 搭配 newsyslog 就不用手分檔+壓縮了
+<chiehwen_>: 壓起來丟到 GitHub 上麵
+<chiehwen_>: 不是，說錯
+<chiehwen_>: 是不用壓
+<chiehwen_>: 直接丟到 GitHub 上頭
+<pichuang>: gist?
+<JalenLin>: 直接開個repo?
+<chiehwen_>: 建一個 project 直接 commit 應該比較快～～
+<pichuang>: Organizations 直接開下去好了xd
+<chiehwen_>: pichuang~~快去開～～
+<chiehwen_>: ＸＤ
+<John_M5>: Organizations  +1 XD
+<John_M5>: 開下去就差LOGO了
+<chiehwen_>: 有人會設計嗎？
+<chiehwen_>: 我不會 XD.........
+<pichuang>: logo有沒有推薦的元素
+<pichuang>: 我有人可以幫忙
+<Davy_CC_>: 我可以幫忙設計網站 OxO/
+<JalenLin>: GJ
+<pichuang>: 我開好了 https://github.com/sdnds-tw
+<sdnsd-tw_Bot>: ==> sdnds-tw · GitHub
+<chiehwen_>: nice~~
+<pichuang>: JalenLin: 我需要你的 github 帳號
+<JalenLin>: JalenLin
+<JalenLin>: 舊式這個阿
+<chiehwen_>: 可以先放正妹的大頭照當 logo ( 誤～～～～～
+<pichuang>: JalenLin: send
+<John_M5>: @pichuang IRC log 連結可以放上google group嗎 感謝 http://sdnds.tw/irclogs/
+<sdnsd-tw_Bot>: ==> Index of /irclogs
+<pichuang>: John_M5: 等 JalenLin 處理好我在放
+<JalenLin>: 其實可以放了阿
+<JalenLin>: 我研究看看每天push到git
+<chiehwen_>: 對了！那這個社群有打算要 create 什麼專案的計劃嗎？
+<pichuang>: 我放了
+<chiehwen_>: 或者要 join 哪個專案這樣～～
+<pichuang>: chiehwen_: 這個目前沒有計劃 等實體參與討論的時候自然會找到方向的xd
+<pichuang>: 現在我們如果隨便定一個方向 大家如果都不認同也不好玩
+<chiehwen_>: 我實體不會到說....Q_____Q
+<pichuang>: chiehwen_: T_T 沒關係 我們可以線上繼續抬槓
