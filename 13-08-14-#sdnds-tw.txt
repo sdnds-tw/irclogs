@@ -1,0 +1,104 @@
+<chiehwen_>: 我是先丟問題出大家可以想想 XD
+<pichuang>: John_M5: 我加好了xd
+<chiehwen_>: 畢竟是『開發者』社群
+<chiehwen_>: 我自己是認為，或多或少可以弄些專案這樣
+<Zespre>: 感覺丟在 groups 上會比較多人看到 XD
+<John_M5>: Good
+<pichuang>: chiehwen_: 有道理 這個可以討論看看有沒有什麼好玩的能做
+<John_M5>: 是說應用程式上的開發嗎
+<pichuang>: John_M5: 不一定
+<pichuang>: 像 hwchiu 就是幫忙 FLoodlight 1.3 改進
+<chiehwen_>: cool
+<pichuang>: 有些人可能對於appication比較有興趣就會去找類似的東西來研究
+<pichuang>: 像我對switch就比較有興趣就會想要在switch多琢磨點
+<hwchiu>: 那還不快點來陪我看ovs 2.1.2的source code
+<pichuang>: 我們也是在尋求夥伴一起往sdn世界邁進
+<chiehwen_>: 邁向偉大的航道這樣 :D
+<John_M5>: 說到這個,各位有參加SDN比賽嗎
+<pichuang>: hwchiu: xd 我先把新生訓練搞定 我在一個禮拜就搞定他們了
+<hwchiu>: 工作去了，比賽無緣 #SDN比賽
+<hwchiu>: pichuang: XD
+<chiehwen_>: SDN 是比賽什麼？？
+<John_M5>: 應用程式競賽啊 他的範圍定的超廣
+<John_M5>: http://www.sdncontest.com/
+<sdnsd-tw_Bot>: ==> 2014通訊大賽-sdn創新應用競賽2010通訊大賽太陽能播種子母車 沙漠變綠洲
+<chiehwen_>: 所以我才好奇 @@~~
+<John_M5>: 我也好奇有沒有人參加
+<pichuang>: 我在想其他主辦單位也不知道這可以做什麼 想看看有沒有學校能忽然冒出個什麼東西來 XD
+<chiehwen_>: 這讓我想起 https://www.facebook.com/ben.jai/posts/10151555253274113
+<sdnsd-tw_Bot>: ==> Ben Jai - 有某單位想要辦一個 SDN 競賽, 問我有沒有空當評審. 我告訴他們辦這種比賽會變成一個大笑話,... | Facebook
+<chiehwen_>: XD
+<pichuang>: 但是冒出來的東西 不一定是產業會想用
+<John_M5>: 看過那則+1
+<John_M5>: 原本想參加 看到那則Facebook之後就突然覺得應該是為了辦比賽而辦的比賽..
+<hwchiu>: 那篇喔XDD
+<hwchiu>: 政府某單位 我忘記名稱了
+<pichuang>: 感覺我該去追蹤一下了xd
+<hwchiu>: 應該是要做SDN APP的應用
+<John_M5>: 對啊 全台灣就只有這個SDN比賽
+<John_M5>: 你用SDN比賽去google就能同時找到比賽網頁跟那篇facebook
+<hwchiu>: 恩恩
+<chiehwen_>: 從 10 年開始講 cloud, big data 到現在 iot, 其實現在可以來講 SDN 了這樣喲！咪啾.....XD
+<JalenLin>: bot離線一下，加上時間log
+00:16 +0800 <JalenLin>: finish....
+00:16 +0800 <John_M5>: ipv6講幾年了
+00:16 +0800 <John_M5>: XD
+00:17 +0800 <chiehwen_>: 在我還是小屁孩的時候，就已經聽過 IPv6 這詞了！XDD
+00:18 +0800 <chiehwen_>: 現在變成大屁孩了，IPv6 還沒普及
+00:20 +0800 <pichuang>: xd ipv4 再戰 n 年
+03:01 +0800 <kigipaul>: ¤¤¤å´ú¸Õ
+03:04 +0800 <Davy_CC_>: kigipaul: UTF-8 here, thx
+03:08 +0800 <JalenLin>: Davy_CC_: he is trying XD...
+08:49 +0800 <Davy_CC_>: JalenLin: lol 只是提醒一下
+08:50 +0800 <pichuang>: ACTION morning 
+08:54 +0800 <Davy_CC_>: hi hi
+08:55 +0800 <tutul>: 安
+10:17 +0800 <hwchiu_znc>: 早安
+14:25 +0800 <John_M5>: IRC log 瀏覽器上編碼要改為utf8才不會亂碼, 但是每次看都要改有沒有方法可以一勞永逸？
+14:26 +0800 <John_M5>: on FireFox
+15:01 +0800 <hwchiu>: JalenLin:
+16:24 +0800 <JalenLin>: John_M5: 這有點麻煩XD...好像沒有好的解法，不然從GITHUB看XD....有在測試每日push irc log
+16:25 +0800 <JalenLin>: https://github.com/sdnds-tw/irclogs
+16:25 +0800 <sdnsd-tw_Bot>: ==> sdnds-tw/irclogs · GitHub
+16:26 +0800 <John_M5>: 好的感謝
+16:28 +0800 <hwchiu>: 話說，我覺得用irssi上IRC有點不太親民XD，滿多人不太使用irc的，有人有什麼想法嗎
+16:29 +0800 <hwchiu>: 在不考慮自行架設機器的前提下， 一般的irc web會有關掉就離線的問題
+16:29 +0800 <hwchiu>: irc cloud沒$$的話，定期會踢掉你
+16:30 +0800 <hwchiu>: 自行架設znc搭配其他的irc web client似乎可以，只是我看web admin for znc那邊沒有辦法讓使用者自行註冊帳號
+16:31 +0800 <hwchiu>: 總之我覺得要在親民一些，至少我身邊就有不少人不習慣用irssi來看IRC，對於web版倒是可以接受
+16:33 +0800 <JalenLin>: hwchiu: 這跟BBS一樣啊....該不會第一個專案是開來改ZNC !?..
+16:33 +0800 <John_M5>: 可以用Web版
+16:33 +0800 <hwchiu>: JalenLin: XD 想想辦法
+16:34 +0800 <hwchiu>: Web版比較麻煩的就是對話不會維持，一旦關掉瀏覽器就gg，除非你用類似irc cloud那種
+16:37 +0800 <John_M5>: 如果用Mac 可以用Colloquy
+16:37 +0800 <John_M5>: 不一定要用Irssi
+16:38 +0800 <John_M5>: adium好像也可以上IRC
+16:38 +0800 <JalenLin>: 其實方法很多，但是一般人難以克服離線就沒前面對話
+16:39 +0800 <hwchiu>: 恩恩
+16:39 +0800 <John_M5>: 這樣子啊 IRC cloud做的很好
+16:39 +0800 <John_M5>: 我今天有用 他會存在網站上的賬戶裡
+16:39 +0800 <hwchiu>: 但是他的缺點就是
+16:39 +0800 <JalenLin>: 不過免費板會踢人的樣子
+16:39 +0800 <hwchiu>: 定期會踢人
+16:40 +0800 <hwchiu>: 我之前有買，每個月一百五左右吧XD
+16:43 +0800 <John_M5>: 明白了
+16:47 +0800 <hwchiu>: 只能先用一般的web client來撐了嗎XD 或是一些桌面版的IM
+17:58 +0800 <hwchiu>: hipchat?
+17:58 +0800 <pichuang>: irc 有點不親民T_T
+18:46 +0800 <pichuang>: http://blog.xdite.net/posts/2013/04/02/move-to-hipchat
+18:46 +0800 <sdnsd-tw_Bot>: ==> 把公司 Log 搬到 Hipchat... « Blog.XDite.net
+18:47 +0800 <pichuang>: 剛剛有在討論到是不是要換一套對使用者友善一點的平台 畢竟irc真的太少人會用的 門檻有點高xd
+18:48 +0800 <pichuang>: 我是有找到一個非常友善的環境 保證會用
+18:48 +0800 <pichuang>: http://board.ek21.com/
+18:48 +0800 <pichuang>: xd
+18:48 +0800 <sdnsd-tw_Bot>: ==> 尋夢園留言板 - 首頁
+18:48 +0800 <hwchiu>: .....
+19:02 +0800 <John_M5>: @pichuang 會不會因為太容易使用反而讓一堆伸手牌的人充斥在上面？
+19:03 +0800 <John_M5>: 就我在SDNAP的QQ上面的經驗，有些學生是直接在上面要source code ORZ
+19:20 +0800 <S3p_lin_>: 有一點入門門檻, 可以檔掉很多小白
+19:21 +0800 <John_M5>: 倒是可以考慮先開一個Facebook社群
+19:21 +0800 <John_M5>: 這樣就夠親民了
+19:28 +0800 <Davy_CC_>: 用 Web client 接 ZNC 啊
+19:28 +0800 <Davy_CC_>: HipChat 超級難用 -.-
+22:41 +0800 <JalenLin>: 頭ICQ.... XD
+22:41 +0800 <JalenLin>: 回頭ICQ.... XD
