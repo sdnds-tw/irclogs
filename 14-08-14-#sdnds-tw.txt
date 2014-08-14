@@ -1,0 +1,441 @@
+00:26 +0800 <JalenLin>: hwchiu: 太強了 m(_ _)m https://groups.google.com/a/openflowhub.org/forum/#!topic/floodlight-dev/vJH6bJaPZfI
+00:26 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/JeP5o  ==> Google Groups
+00:48 +0800 <adaam>: irccloud你一直在線上就不會踢，就是要開一個瀏覽器開著，就可以到處登入xd
+10:06 +0800 <pichuang>: 有了 hwchiu 的contribution
+10:06 +0800 <pichuang>: Floodlight 越來越強啦 XD
+10:07 +0800 <pichuang>: 有些計劃在評估要換到 Floodlight 1.3 了
+10:08 +0800 <pichuang>: 謝謝 hwchiu 無私奉獻
+10:10 +0800 <pichuang>: 有人如果對 Floodlight Project 有興趣 可以找 hwchiu 問問如何幫忙開發xd
+10:10 +0800 <pichuang>: 他快要去報效國家了
+10:27 +0800 <hwchiu>: 要剃光頭了 我的頭髮QQ
+11:14 +0800 <hwchiu>: adaam: XD 先用irccloud撐者好了
+11:24 +0800 <hwchiu>: pichuang: beta release的時候，正是丟patch最好的時間阿XD
+11:24 +0800 <ken>: hello everyone
+11:25 +0800 <hwchiu>: 哈囉
+11:26 +0800 <pichuang>: 大家好
+11:27 +0800 <pichuang>: irccolud 拯救 sdnds-tw
+11:28 +0800 <pichuang>: topic 上面有一些link 可以自行點選翻閱一下資料
+11:28 +0800 <hwchiu>: 我把我之前開個一些資料也丟進sdnds-tw.hackpad裡面喔
+11:34 +0800 <hwchiu>: 我把之前看OVS 2.1.2 source code的一些資料放進來了
+11:44 +0800 <PoWen>: ?
+11:45 +0800 <PoWen>: any one see me here?
+11:46 +0800 <ken_ho>: Yes
+11:46 +0800 <hwchiu>: 你好:)
+11:47 +0800 <PoWen>: 嗨
+11:47 +0800 <PoWen>: 你好
+11:47 +0800 <PoWen>: finally
+11:48 +0800 <pichuang>: hi
+11:49 +0800 <pichuang>: topic 上面有一些link 可以自行點選翻閱一下資料
+11:49 +0800 <hwchiu>: 先去學校XD， pichuang 你在hackpad上看得到我新增的嗎?
+11:49 +0800 <hwchiu>: 另外有辦法把SDN的LINK 弄成制頂嗎
+11:50 +0800 <pichuang>: hwchiu: 我有看到
+11:50 +0800 <pichuang>: hwchiu: 哪個sdn link要置頂
+11:50 +0800 <hwchiu>: SDNDS-TW 資訊收集地
+11:51 +0800 <hwchiu>: 有辦法嗎
+11:51 +0800 <pichuang>: i try it
+11:52 +0800 <hwchiu>: ok thx
+11:53 +0800 <pichuang>: 好像不行
+11:53 +0800 <pichuang>: xd
+11:53 +0800 <hwchiu>: 我弄好了
+11:53 +0800 <hwchiu>: 右下方可以點= =
+11:54 +0800 <pichuang>: = = 他的按鍵都小小的超難找
+11:56 +0800 <PoWen>: topics?
+11:57 +0800 <pichuang>: 最上面有一些連結 可以點進去看一下
+11:57 +0800 <PoWen>: 喔
+11:57 +0800 <PoWen>: 瞭解
+13:28 +0800 <hwchiu>: pichuang: 你在至頂一次看看
+14:38 +0800 <hwchiu>: 嗨
+14:38 +0800 <Happyholic1203>: @whois Happyholic1203
+14:38 +0800 <Happyholic1203>: hi~
+14:39 +0800 <hwchiu>: topic有一些資訊可以看，歡迎幫忙補充
+14:40 +0800 <Happyholic1203>: 嗯嗯XD 第一次用IRC 還在熟悉
+14:40 +0800 <Happyholic1203>: 你是板主嗎
+14:40 +0800 <hwchiu>: 算幫忙的人
+14:40 +0800 <hwchiu>: pichuang: 這才是大大
+14:41 +0800 <Happyholic1203>: 了解XD
+14:41 +0800 <Happyholic1203>: 那名字前面有個@是什麼意思呀
+14:41 +0800 <hwchiu>: operator
+14:41 +0800 <hwchiu>: 就是可以給頻道弄一些管理這樣
+14:41 +0800 <Happyholic1203>: 歐歐
+14:41 +0800 <Happyholic1203>: got it =)
+14:42 +0800 <Happyholic1203>: 那怎麼看topic資訊呀
+14:42 +0800 <hwchiu>: :) 你是大學生?
+14:42 +0800 <Happyholic1203>: 碩二
+14:42 +0800 <hwchiu>: 你是用什麼client ?
+14:42 +0800 <Happyholic1203>: irssi
+14:42 +0800 <hwchiu>: irssi 嗎?
+14:42 +0800 <hwchiu>: 那最上面應該有
+14:42 +0800 <hwchiu>:  台灣SDN開發者社群 http://group.sdnds.tw | SDNDS-TW Meetup #1 http://goo.gl/Ix90zQ | Hackpad https://sdnds-tw.hackpad.com/
+14:42 +0800 <sdnsd-tw_Bot>: ==> Google Groups
+14:42 +0800 <Happyholic1203>: 歐歐!!
+14:42 +0800 <Happyholic1203>: 眼睛真大哈哈哈
+14:43 +0800 <Happyholic1203>: 這社群成立多久了呀
+14:43 +0800 <Happyholic1203>: 有meetup!!
+14:43 +0800 <hwchiu>: 三天吧XD
+14:43 +0800 <hwchiu>: 對阿，下禮拜六第一次
+14:43 +0800 <Happyholic1203>: 歐歐XDD
+14:43 +0800 <Happyholic1203>: wowwww
+14:43 +0800 <Happyholic1203>: cool
+14:43 +0800 <Happyholic1203>: 那你是學生嗎
+14:43 +0800 <hwchiu>: 算哦
+14:43 +0800 <Happyholic1203>: 還是在工作囉
+14:43 +0800 <hwchiu>: 這邊大部分都是學生(碩/大學)
+14:43 +0800 <Happyholic1203>: 研究生？
+14:43 +0800 <hwchiu>: 恩恩
+14:44 +0800 <hwchiu>: 剛畢業而已
+14:44 +0800 <Happyholic1203>: 嗯嗯~~
+14:44 +0800 <Happyholic1203>: 研究所玩sdn的嗎
+14:44 +0800 <hwchiu>: 是阿，
+14:44 +0800 <hwchiu>: 碩二開始接觸的
+14:44 +0800 <hwchiu>: 目前只有一年左右的經驗
+14:45 +0800 <Happyholic1203>: 嗯嗯 我也差不多XD
+14:45 +0800 <Happyholic1203>: 做什麼研究呢
+14:45 +0800 <hwchiu>: OVS的設計以及controoler的一些使用
+14:46 +0800 <Happyholic1203>: 哦 做比較底層囉
+14:46 +0800 <hwchiu>: 算是，我老闆比較喜歡底層系統
+14:46 +0800 <hwchiu>: 上層的應用他比較沒興趣
+14:46 +0800 <Happyholic1203>: 哦？ 有公司在做SDN？？
+14:46 +0800 <Happyholic1203>: 在哪裡高就呀~~
+14:46 +0800 <hwchiu>: 哦哦，我指導教授
+14:46 +0800 <hwchiu>: 這樣講XDD
+14:47 +0800 <Happyholic1203>: 歐歐XDDDD
+14:47 +0800 <hwchiu>: 我習慣叫他老闆
+14:47 +0800 <Happyholic1203>: 哈哈
+14:47 +0800 <Happyholic1203>: 是啦 我也習慣這樣講
+14:47 +0800 <Happyholic1203>: 只是想說你剛畢業
+14:47 +0800 <hwchiu>: 問一下，你哪邊看到這個資訊的呢?
+14:47 +0800 <Happyholic1203>: 可能工作了XD
+14:47 +0800 <hwchiu>: XD
+14:47 +0800 <Happyholic1203>: 朋友介紹的~~
+14:47 +0800 <hwchiu>: wow
+14:47 +0800 <Happyholic1203>: 我之前的同事
+14:47 +0800 <PoWen>: good
+14:47 +0800 <hwchiu>: 實驗室也都走SDN方向嗎
+14:47 +0800 <Happyholic1203>: 我們一起做SDN的project
+14:47 +0800 <Happyholic1203>: 我們實驗室就一個博班學長和我在做
+14:48 +0800 <PoWen>: 怎樣的SDN Project？
+14:48 +0800 <Happyholic1203>: 不過我們lab都做網路相關的
+14:48 +0800 <PoWen>: 哇，這樣應該很累
+14:48 +0800 <PoWen>: 請問貴實驗室是？
+14:48 +0800 <Happyholic1203>: PoWen...
+14:48 +0800 <PoWen>: Hi
+14:48 +0800 <PoWen>: 你好
+14:48 +0800 <Happyholic1203>: 嗨~
+14:48 +0800 <Happyholic1203>: 你跟我實驗室的學長同名耶
+14:48 +0800 <Happyholic1203>: 你該不會就是學長吧= =+
+14:49 +0800 <hwchiu>: XD不會吧
+14:49 +0800 <Happyholic1203>: 哈哈 是學長嗎是學長嗎XD
+14:50 +0800 <Happyholic1203>: I'm Henry!!
+14:50 +0800 <PoWen>: 不太可能啦
+14:50 +0800 <PoWen>: 我是蔡博文耶, 33歲了
+14:50 +0800 <PoWen>: XD
+14:50 +0800 <PoWen>: 應該只是恰巧
+14:50 +0800 <hwchiu>: XD 真剛好
+14:51 +0800 <PoWen>: 嘿呀~
+14:51 +0800 <Happyholic1203>: 哦哦哦
+14:51 +0800 <Happyholic1203>: 太巧了哈哈
+14:51 +0800 <PoWen>: 貴實驗室是？
+14:51 +0800 <Happyholic1203>: 我朋友John說他之前才認識你
+14:51 +0800 <PoWen>: 噢是
+14:51 +0800 <PoWen>: 對
+14:51 +0800 <Happyholic1203>: 台大的DCNS lab
+14:51 +0800 <John_irssi>: Hi
+14:51 +0800 <PoWen>: 啊 那我知道了
+14:51 +0800 <PoWen>: John有提過你
+14:51 +0800 <PoWen>: Hi John
+14:51 +0800 <John_irssi>: 我之前提的不是他噢XD
+14:52 +0800 <PoWen>: 啊？
+14:52 +0800 <PoWen>: 又另一個 XD
+14:52 +0800 <hwchiu>: 認親大會嗎
+14:52 +0800 <PoWen>: haha
+14:52 +0800 <PoWen>: cool 很多參與的人 nice
+14:52 +0800 <Happyholic1203>: 哈哈哈
+14:52 +0800 <John_irssi>: 還有另外一位 不過這位也是我優秀的舊同事
+14:52 +0800 <hwchiu>: 感謝各位幫忙宣傳XD
+14:52 +0800 <hwchiu>: 一起努力
+14:53 +0800 <PoWen>: yes, 一起努力
+14:53 +0800 <Happyholic1203>: yeah!
+14:53 +0800 <hwchiu>: Happyholic1203: 你們是做哪方面? 安全?
+14:53 +0800 <hwchiu>: routing?
+14:55 +0800 <Happyholic1203>: 我們是做比較應用
+14:55 +0800 <Happyholic1203>: 最近在開發一個管理SDN的網管介面
+14:55 +0800 <hwchiu>: wow
+14:56 +0800 <Happyholic1203>: 還有virtual gateway
+14:56 +0800 <hwchiu>: 網管介面的話，只好推薦這個讓你們看看 #https://github.com/dlinknctu/OmniUI
+14:56 +0800 <sdnsd-tw_Bot>: ==> dlinknctu/OmniUI · GitHub
+14:56 +0800 <Happyholic1203>: cool!!
+14:57 +0800 <John_irssi>: @henry 他那個OmniUI 做的超好可以看Demo的影片
+14:57 +0800 <Happyholic1203>: watching
+14:59 +0800 <John_irssi>: 聽說那個SDN的產學大聯盟通過了
+15:00 +0800 <hwchiu>: 什麼意思
+15:01 +0800 <John_irssi>: 那個國科會計劃
+15:01 +0800 <Happyholic1203>: 歐歐 你說辦SDN創新應用大賽的那個產學大聯盟嗎
+15:01 +0800 <Happyholic1203>: 有資策會 中華電信之類的
+15:01 +0800 <Happyholic1203>: 是那個嗎
+15:02 +0800 <PoWen>: hmm
+15:02 +0800 <John_irssi>: 不是比賽, 是清交合作的提的那個計劃
+15:02 +0800 <hwchiu>: 這倒是不清楚，我只知道的確有個很可怕的大聯盟
+15:03 +0800 <Happyholic1203>: 聯盟是由工研院、中華電信、資策會成立的
+15:03 +0800 <Happyholic1203>: John: 那個計劃是做什麼的？
+15:03 +0800 <PoWen>: 可怕的大聯盟
+15:03 +0800 <PoWen>: XD
+15:03 +0800 <John_irssi>: 是一個產學合作的計劃呀
+15:04 +0800 <John_irssi>: @Henry 你說的那個是另外一個聯盟XD
+15:04 +0800 <hwchiu>: 另外那個是SDN策略聯盟吧?
+15:05 +0800 <John_irssi>: 恩啊 之前聽說, 每X個月開一次會議
+15:05 +0800 <Happyholic1203>: 嗯嗯 我知道有一個是聯盟 一個是計劃
+15:05 +0800 <John_irssi>: 還是ao3
+15:05 +0800 <Happyholic1203>: 不知道計畫的目標是？
+15:05 +0800 <John_irssi>: 還是每X禮拜忘記了..
+15:06 +0800 <John_irssi>: 很多老師合作一起提個SDN的計劃
+15:06 +0800 <John_irssi>: 每個老師有自己要做的題目子項
+15:06 +0800 <Happyholic1203>: 哦哦
+15:06 +0800 <Happyholic1203>: 申請經費多少呀
+15:06 +0800 <Happyholic1203>: 感覺金額不低XD
+15:06 +0800 <John_irssi>: 這不清楚XD聽說不低啊
+15:07 +0800 <Happyholic1203>: 這聽起來感覺就破億XD
+15:08 +0800 <hwchiu>: 前瞻技術產學合作計畫(產學大聯盟) 這種名稱嗎
+15:08 +0800 <John_irssi>: 應該是
+15:08 +0800 <hwchiu>: 哦哦，這應該有一段時間了吧?
+15:08 +0800 <John_irssi>: 你目前也是研究生嗎？
+15:08 +0800 <John_irssi>: 到現在, 有一段時間了
+15:09 +0800 <hwchiu>: 該畢業了
+15:09 +0800 <hwchiu>: 碩二剛結束
+15:10 +0800 <John_irssi>: 哦哦 明白了
+15:11 +0800 <John_irssi>: 對了, 之前提到要換討論區的問題
+15:11 +0800 <John_irssi>: 是不是在維持IRC之下, 用個Facebook社群會比較好一些？
+15:12 +0800 <hwchiu>: 這我倒是沒意見
+15:12 +0800 <hwchiu>: 經驗不足XD
+15:14 +0800 <hwchiu>: 目前可能還缺乏一些吸引力?
+15:14 +0800 <hwchiu>: 需要一些新手文件，類似SDNAP那邊那樣?
+15:14 +0800 <John_irssi>: 你是說什麼樣的吸引力
+15:14 +0800 <John_irssi>: 對 基礎教學
+15:14 +0800 <John_irssi>: 或是spec導讀之類XD
+15:14 +0800 <hwchiu>: 恩恩
+15:15 +0800 <John_irssi>: 我們可以來做這些內容可以放上sdnds.tw
+15:15 +0800 <John_irssi>: 可以參考sdnap 或是 sdnhub
+15:15 +0800 <hwchiu>: 恩恩
+15:17 +0800 <PoWen>: 換討論區？
+15:17 +0800 <PoWen>: 噢
+15:17 +0800 <John_irssi>: 恩, 之前有人提出IRC不太親民
+15:18 +0800 <John_irssi>: 還有log的問題
+15:18 +0800 <PoWen>: IRC我也第一次用
+15:18 +0800 <PoWen>: log ? oh right.
+15:19 +0800 <John_irssi>: irc登出後就沒有歷史資訊 （不過這部分已經有熱心的大大 做了irc log機器人把log放在網路上了）
+15:22 +0800 <hwchiu>: 下禮拜六應該滿多東西可以討論的XD
+15:22 +0800 <John_irssi>: 對啊!稍微記錄一下
+15:22 +0800 <hwchiu>: hackpad開一個來記錄? 還是?
+15:23 +0800 <John_irssi>: 好啊
+15:23 +0800 <John_irssi>: 我開
+15:24 +0800 <hwchiu>: 恩恩
+15:41 +0800 <ws23>: 這邊真是各種大大好可怕……真心有種是否走錯地方的感覺嗚嗚……
+15:42 +0800 <hwchiu>: 你怎會有這種大大的錯覺Q_Q
+15:42 +0800 <ws23>: 因為自己真的什麼都不太會啊（掩面
+15:43 +0800 <hwchiu>: 我也只會一個而已(哭
+15:43 +0800 <ws23>: 而且其實我也不太算是開發，畢竟是大學部專題碰SDN……所以目的偏向應用……但是連用都還不會用（遠望
+15:44 +0800 <hwchiu>: XD 所以現在還在繼續做專題?
+15:44 +0800 <ws23>: 我升大三（聳肩
+15:45 +0800 <hwchiu>: 我..算了 有點老
+15:45 +0800 <Davy_CC_>: 我才是走錯地方吧XDDDDD
+15:45 +0800 <hwchiu>: XD
+15:45 +0800 <ws23>: 所以其實算是剛開始，我大概是寒假開始碰吧……只是因為因為連同網路概論都還不是很熟悉，所以二年級都在跌跌撞撞，邊唸網概邊唸paper邊跟必修課奮鬥Orz
+15:46 +0800 <hwchiu>: 好辛苦
+15:46 +0800 <ws23>: 是Davy欸！
+15:46 +0800 <Davy_CC_>: ws23: 所以你就乖乖留下來吧哈
+15:46 +0800 <Davy_CC_>: 我是倒茶小妹（喂
+15:47 +0800 <ws23>: 所以看到小飛機po meetup訊息想說，有機會接觸在碰這領域的大大們好像也不錯……然後這兩天看irc根本就各種茫然哈哈……
+15:47 +0800 <hwchiu>: 那只好趕緊生一個基礎教學文了XD
+15:48 +0800 <ws23>: （掩面
+15:49 +0800 <PoWen>: 邱渣你哪叫老阿
+15:50 +0800 <hwchiu>: XD
+15:50 +0800 <hwchiu>: 好吧 一點點
+15:50 +0800 <PoWen>: 都是熱血有為年輕人啦
+15:50 +0800 <PoWen>: good
+15:50 +0800 <PoWen>: 應用方面喔
+15:50 +0800 <PoWen>: 我也在學，但到時可以分享一下
+15:50 +0800 <PoWen>: John做了一些很有意思的應用
+15:50 +0800 <PoWen>: 我都想買下來了
+15:50 +0800 <PoWen>: XD
+15:50 +0800 <ws23>: 其實我對於要作什麼還蠻茫然的（遠望
+15:50 +0800 <PoWen>: 茫然最好阿！
+15:51 +0800 <PoWen>: 這樣摸索才有樂趣！
+15:51 +0800 <PoWen>: XD
+15:51 +0800 <ws23>: xD 也是啦xD
+15:52 +0800 <hwchiu>: :) 應用很好玩吧XD
+15:52 +0800 <ws23>: 我指導老師現在要我study的東西就是SDN 跟 SIP(VoIP) …… 所以應該是要應用在那類的東西吧（聳肩
+15:53 +0800 <ws23>: 不過目前這樣亂摸索起來，還是覺得SDN這邊的東西比較有趣比較想認真摸索xDDDDDDD
+15:53 +0800 <hwchiu>: 恩恩
+15:54 +0800 <hwchiu>: 找到興趣最好XD
+15:54 +0800 <ws23>: 有興趣才有動力xDDDD
+16:01 +0800 <PoWen>: SDN + SIP
+16:01 +0800 <PoWen>: 這麼酷
+16:02 +0800 <ws23>: 都還正在分別study而已，我也還沒想法是要怎麼結合xD
+16:58 +0800 <Shanyu>: quit
+17:20 +0800 <pichuang>: 哇= = 我才一個不見上下午就這麼多log
+17:24 +0800 <pichuang>: 剛剛去運動的時候 我在想我們的 google group 要怎麼運作
+17:24 +0800 <JalenLin>: 小弟路過XD.... log有了  CMS和論壇之後視情況會架設 (情況是我要畢業ＸＤＤＤ）
+17:24 +0800 <pichuang>: 我在想是不是我拋出個大主題讓大家交流一下 也讓沒有用irc的人也有參與的機會
+17:25 +0800 <hwchiu>: 恩恩，如何把妹(誤
+17:25 +0800 <pichuang>: maillist相對於irc也比較正式 對於後進者也有思路脈絡可以參考
+17:25 +0800 <pichuang>: 我超想要講 sdg 的
+17:25 +0800 <pichuang>: XDDDD
+17:25 +0800 <pichuang>: 如何十秒內認識sdn
+17:26 +0800 <hwchiu>: SDG..
+17:27 +0800 <pichuang>: hwchiu: 你覺得sdn跟sdg差在哪裡
+17:28 +0800 <hwchiu>: 你的SDG應該是軟體定義妹子
+17:30 +0800 <hwchiu>: btw，我也覺得這樣不錯 ，有個起頭#pichuang> 我在想是不是我拋出個大主題讓大家交流一下 也讓沒有用irc的人也有參與的機會
+17:30 +0800 <JalenLin>: hwchiu: 你可以開始徵求 floodlight 1.4的開發夥伴
+17:32 +0800 <hwchiu>: JalenLin: XD 那應該要先往loxigen發展，往那邊擴充
+17:41 +0800 <pichuang>: loxigen
+17:42 +0800 <pichuang>: 為啥要先往那邊發展?
+17:44 +0800 <hwchiu_znc>: protocol 擴充
+17:52 +0800 <pichuang>: 是自定義擴充
+17:52 +0800 <pichuang>: 嗎?
+18:12 +0800 <hwchiu>: pichuang: FL的oprnflow protocol的解析是透過 loxigen
+18:12 +0800 <hwchiu>: 故升級loxigen使得其支援1.4一切就好了XD
+18:45 +0800 <John_mobile>: loxigen 他可以產生OF protocol Lib？
+18:54 +0800 <hwchiu>: 是
+18:54 +0800 <hwchiu>: for c,python,java
+18:55 +0800 <hwchiu>: LoxiGen is a tool that generates OpenFlow protocol libraries for a number of languages. #https://github.com/floodlight/loxigen
+18:55 +0800 <sdnsd-tw_Bot>: ==> floodlight/loxigen · GitHub
+18:56 +0800 <John_mobile>:   有趣的東西 是因為這個東西的誕生FL 才加速的嗎？
+18:57 +0800 <hwchiu>: 應該說 這東西出來滿久的了，BigSwitch的商業化版一直都用這個
+18:57 +0800 <hwchiu>: 公司的方針之前應該是沒有考慮要推1.3
+18:58 +0800 <hwchiu>: 強者我學長之前在美國有與BigSwitch的人聊過，它們之前的方式是商業版為主
+18:58 +0800 <hwchiu>: 大概才今年二三月
+18:58 +0800 <hwchiu>: 後來不知道為什麼決定把這個拿出來 弄進opensource版的FL，讓FL往前推到1.3
+18:59 +0800 <hwchiu>: 這個決定大概四月就有了吧，那時候就有在徵實習說暑假要弄
+18:59 +0800 <John_mobile>: 原來也有自己的商業版， 開源沒做是不賺錢吧！
+19:01 +0800 <hwchiu>: 恩阿，公司還是要活得
+20:04 +0800 <pichuang>: shanyu: 領導好
+20:04 +0800 <pichuang>: shanyu: sdn領導好
+20:11 +0800 <hwchiu>: XD
+20:21 +0800 <hwchiu>: 嗨
+20:22 +0800 <Guest68358>: 嗨
+20:22 +0800 <Guest68358>: 好方便
+20:22 +0800 <Guest68358>: 這是即時討論版？
+20:23 +0800 <hwchiu>: 差不多
+20:23 +0800 <hwchiu>: 你可以看一下網頁，應該有地方可以改暱稱
+20:24 +0800 <jamesLiao>: 好了
+20:24 +0800 <jamesLiao>: 感謝
+20:25 +0800 <hwchiu>: 恩恩
+20:25 +0800 <jamesLiao>: 我在架sdn環境
+20:25 +0800 <jamesLiao>: 然後大部分都架好
+20:26 +0800 <jamesLiao>: 只差連線的問題
+20:26 +0800 <jamesLiao>: 一台OVS
+20:26 +0800 <jamesLiao>: 兩台PC
+20:26 +0800 <jamesLiao>:  一台controller
+20:26 +0800 <jamesLiao>: controllerg我是用另一台電腦
+20:27 +0800 <hwchiu>: 恩恩，這樣是有四台電腦吧?
+20:27 +0800 <jamesLiao>: 對
+20:27 +0800 <hwchiu>: 兩台當host，OVS跟controoler各一
+20:27 +0800 <jamesLiao>: 沒錯
+20:27 +0800 <hwchiu>: 那你OVS那台有幾張網卡，總共多少個port?
+20:28 +0800 <jamesLiao>: 我加兩張進去
+20:28 +0800 <jamesLiao>: 2個port
+20:29 +0800 <hwchiu>: 那你如何利用這兩個port來與三台PC相連(hosts & controlelr)?
+20:29 +0800 <jamesLiao>: ！
+20:29 +0800 <jamesLiao>: OVS4上有一個對外的連controller
+20:30 +0800 <hwchiu>: OVS4上��� XD 再打一次好了
+20:30 +0800 <jamesLiao>: ok
+20:30 +0800 <jamesLiao>: 我用主機裝ovs
+20:30 +0800 <jamesLiao>: 3個port
+20:30 +0800 <hwchiu>: 哦哦，瞭
+20:31 +0800 <jamesLiao>:  一個是原本主機板上的那張網卡
+20:31 +0800 <hwchiu>: 這樣就分別接上三台了 瞭解
+20:31 +0800 <jamesLiao>: 我自己再加兩張網卡
+20:31 +0800 <hwchiu>: 恩恩
+20:31 +0800 <jamesLiao>: 我需要設定br0的ip嗎？
+20:31 +0800 <hwchiu>: 所以你透過 ovs-vsctl來看的話，應該是會看到兩個port(給HOST用的)吧?
+20:31 +0800 <jamesLiao>: 沒錯
+20:31 +0800 <hwchiu>: 應該不用
+20:32 +0800 <hwchiu>: 你有辦法先確認 controoler跟switch有連線成功嗎
+20:32 +0800 <jamesLiao>: 有
+20:32 +0800 <jamesLiao>: 我前幾天設好
+20:32 +0800 <jamesLiao>: ovs-vsctl show顯示is true
+20:32 +0800 <hwchiu>: 恩恩，我可能晚點才能回你XD 我要先去跑步
+20:33 +0800 <jamesLiao>: 沒關係
+20:33 +0800 <hwchiu>: pichuang:
+20:33 +0800 <hwchiu>: 他如果在可以問他，他很愛OVS
+20:33 +0800 <hwchiu>: 先跑去，掰
+20:33 +0800 <jamesLiao>: ok
+20:33 +0800 <jamesLiao>:  掰
+21:10 +0800 <pichuang>: jamesLiao: hi
+21:11 +0800 <pichuang>: 你說你還要加網卡是針對ovs嗎
+21:11 +0800 <pichuang>: 加進去的話 你只要做add-port的動作就好了
+21:11 +0800 <pichuang>: ip你應該是設定再你的br0上面
+21:12 +0800 <jamesLiao>: 那我br0的ip是用我那個對外的ip?
+21:13 +0800 <jamesLiao>: 還是要自己設一個？
+21:14 +0800 <pichuang>: 能連到外面網路的ip都可以
+21:14 +0800 <jamesLiao>: 那會不會我controller那一個連線
+21:15 +0800 <jamesLiao>: 因為我已經用對外ip連controller了
+21:15 +0800 <pichuang>: 你有設定任何private ip嗎
+21:15 +0800 <jamesLiao>: 沒有
+21:15 +0800 <pichuang>: 全部都是public ip?
+21:15 +0800 <jamesLiao>: 我自己有一個192.168.1的網段
+21:16 +0800 <pichuang>: 你能print ifconfig 跟route -n 嗎
+21:16 +0800 <jamesLiao>: 可以
+21:16 +0800 <pichuang>: 還有 controller ip是設定什麼
+21:18 +0800 <jamesLiao>: 我發現print ifconfigg不行
+21:18 +0800 <jamesLiao>: Warning: unknown mime-type
+21:19 +0800 <pichuang>: 哦哦 請輸入 "ifconfig"
+21:19 +0800 <pichuang>: 這樣就好了
+21:19 +0800 <jamesLiao>: 哈哈
+21:19 +0800 <pichuang>: 應該會有一堆 interface 的資訊
+21:19 +0800 <jamesLiao>: 我還以為是 print ifconfig
+21:20 +0800 <jamesLiao>: 4誤解你的意思
+21:20 +0800 <jamesLiao>: 拍謝
+21:20 +0800 <jamesLiao>: ifconfig之後呢
+21:21 +0800 <jamesLiao>: 上面有我三個port
+21:21 +0800 <jamesLiao>: 還有一個br0
+21:22 +0800 <pichuang>: http://pastebin.com/
+21:22 +0800 <sdnsd-tw_Bot>: ==> Pastebin.com - #1 paste tool since 2002!
+21:23 +0800 <pichuang>: 把輸出的結果貼上去 然後把link給我
+21:24 +0800 <jamesLiao>: ok
+21:30 +0800 <jamesLiao>: 在貼一次
+21:30 +0800 <jamesLiao>: 拍謝
+21:30 +0800 <jamesLiao>: 好了
+21:31 +0800 <jamesLiao>: 上面有我三張網卡
+21:31 +0800 <jamesLiao>: 還有一個br0
+21:34 +0800 <pichuang>: 恩恩
+21:37 +0800 <pichuang>: jamesLiao: hi 我需要你的link
+21:38 +0800 <pichuang>: 不然我看不到 你應該把設定擋貼上去之後會得到一個link
+21:38 +0800 <pichuang>: 我需要那個link來看你的環境是怎樣的
+21:52 +0800 <jamesLiao>: 剛剛沒有傳出去?
+21:52 +0800 <pichuang>: 沒有
+21:52 +0800 <jamesLiao>: 不好意思 因為我還有事
+21:52 +0800 <pichuang>: 沒關係
+21:52 +0800 <jamesLiao>: 所以先離開lab了
+21:53 +0800 <jamesLiao>: 我明天再傳給你
+21:53 +0800 <jamesLiao>: 不好意思
+21:53 +0800 <jamesLiao>: 謝謝
+21:53 +0800 <pichuang>: 不會
+21:53 +0800 <pichuang>: xd
+21:53 +0800 <hwchiu>: XD 你們實驗室也都在弄SDN?
+21:53 +0800 <jamesLiao>: 對啊
+21:53 +0800 <jamesLiao>: 老師就說架個環境
+21:54 +0800 <jamesLiao>: 好像要利用他跟hadoop結合
+21:54 +0800 <hwchiu>: 哦哦
+21:55 +0800 <hwchiu>: 好像也滿多人想弄這個的
+21:55 +0800 <pichuang>: 有點猛 可以請問是哪個學校嗎?
+21:55 +0800 <jamesLiao>: 哈哈
+21:55 +0800 <jamesLiao>: 你們都是清交等級
+21:56 +0800 <jamesLiao>: 小弟我只是個小小淡江
+21:56 +0800 <jamesLiao>: 能有你們幫我真的超感謝的
+21:56 +0800 <jamesLiao>: XDDD
+21:56 +0800 <hwchiu>: 能的話，也請你幫忙推廣一下XD
+21:57 +0800 <pichuang>: 不不 千萬別這麼說 我們也只是剛研究沒多久的
+21:57 +0800 <jamesLiao>: 沒問題
+21:57 +0800 <hwchiu>: 這邊大家都平等式，學校只是浮雲罷了XD
+21:57 +0800 <pichuang>: 想一起找台灣的同好研究討論xd
+21:57 +0800 <pichuang>: 哪間學校哪間公司不是很重要
+21:57 +0800 <jamesLiao>: 因為我知道我們其他的實驗事也有再做利用SDN結合IOT
+21:57 +0800 <hwchiu>: 恩恩
+21:58 +0800 <pichuang>: 歡迎他們加入
+21:58 +0800 <jamesLiao>: 我會跟他們輸的
+21:58 +0800 <jamesLiao>: 說
+21:58 +0800 <jamesLiao>: 那我先忙了
+21:58 +0800 <hwchiu>: 恩恩 感謝拉:)
+21:58 +0800 <jamesLiao>: 明天再po那個訊息給你
+21:58 +0800 <jamesLiao>: 謝啦
+21:58 +0800 <jamesLiao>: 掰
