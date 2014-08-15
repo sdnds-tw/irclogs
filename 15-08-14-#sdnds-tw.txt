@@ -1,0 +1,753 @@
+08:21 +0800 <pichuang>: openvswtich 昨天出 2.3.0 http://openvswitch.org/download/
+08:21 +0800 <sdnsd-tw_Bot>: ==> Download | Open vSwitch
+08:22 +0800 <pichuang>: hwchiu: 你可以改看2.3.0了xd
+08:22 +0800 <pichuang>: http://openvswitch.org/pipermail/discuss/2014-August/014781.html
+08:22 +0800 <sdnsd-tw_Bot>: ==>  [ovs-discuss] Open vSwitch 2.3.0, 2.1.3, and 2.0.2 Available
+   
+08:24 +0800 <pichuang>: 然後2.3是新的LTS版本 有支援 megaflows 及 multithreading
+09:22 +0800 <Aliceequeen>: Test
+09:32 +0800 <ken_ho>: Hi
+09:33 +0800 <pichuang>: morning
+09:33 +0800 <ken_ho>: Good morning
+09:36 +0800 <pichuang>: 現在在寫 ovs 2.3.0 相關的blog 晚點丟上來給大家看看
+09:43 +0800 <pichuang>: http://roan.logdown.com/posts/220671-compile-openvswitch-v230-on-ubutnu-14041-lts
+09:43 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/n9kOg  ==> 編譯 OpenvSwitch v2.3.0 on Ubutnu 14.04.1 LTS « roan's Blog
+09:50 +0800 <jamesLiao>: 感謝提供這個資訊！
+09:58 +0800 <hwchiu_znc>: 預設開啟 OpenvSwitch 1.1 1.2 1.3
+09:58 +0800 <hwchiu_znc>: 你想說openflow嗎
+10:00 +0800 <jamesLiao>: 我想請問一下
+10:01 +0800 <jamesLiao>: 有沒有方法可以把raspberry pi裝openvswitch呢？
+10:01 +0800 <pichuang>: hwchiu: xddddd 我演小了 謝啦
+10:02 +0800 <pichuang>: jamesLiao: 應該可以 但是你網路孔只有一個 不w94夠你想要做什麼實驗
+10:02 +0800 <pichuang>: 不太夠
+10:02 +0800 <jamesLiao>: 了解
+10:03 +0800 <jamesLiao>: 因為有另一個老師要作無線的
+10:03 +0800 <pichuang>: 倒是有人想要把controller丟在 pi上
+10:04 +0800 <jamesLiao>: ap是不是也可以裝OVS?
+10:04 +0800 <pichuang>: yes
+10:05 +0800 <jamesLiao>: OK
+10:08 +0800 <jamesLiao>: 有推薦的ap嗎
+10:08 +0800 <pichuang>: 能刷openwrt的基本上都可以
+10:10 +0800 <jamesLiao>: 了解
+10:20 +0800 <hwchiu>: pichuang: 立馬改2.3 XD，話說昨天看討論串，目前OVS好像還是沒有meter的實作
+10:20 +0800 <hwchiu>: jamesLiao: 還是妳們想要嘗試netfpga XD
+10:29 +0800 <pichuang>: 話說 ovs直接跳兩個版本號有點猛= =
+10:29 +0800 <pichuang>: 而且還有一件事情 他是說預設 1.1 1.2 1.3
+10:30 +0800 <pichuang>: 打算要放棄 1.0 了嗎
+10:32 +0800 <jamesLiao>: netfpga板子會很貴？
+10:34 +0800 <pichuang>: 不知道椰 沒買過xd
+10:35 +0800 <jamesLiao>: 哈哈 老師都說經費有限經費有線
+10:36 +0800 <hwchiu>: 幾萬一塊
+10:36 +0800 <hwchiu>: 我忘了"幾萬"
+10:36 +0800 <hwchiu>: pichuang: 阿災
+10:53 +0800 <jamesLiao>: pichuang  請問昨天那個貼訊息的那個要怎麼用？
+10:55 +0800 <hwchiu>: 貼上去後，按下submit
+10:55 +0800 <hwchiu>: 之後會產生一個新的網頁，把網頁的網址丟過來即可
+10:59 +0800 <jamesLiao>: http://pastebin.com/7JxdAiEP
+10:59 +0800 <sdnsd-tw_Bot>: ==> br0       Link encap:Ethernet  HWaddr 00:07:e9:17:09:53              inet6 addr: - Pastebin.com
+11:00 +0800 <jamesLiao>: 上面是網卡那些的資訊
+11:00 +0800 <jamesLiao>: 下面是ovs vsctl show的訊息
+11:25 +0800 <pichuang>: 建議把ip換到 br0去
+11:30 +0800 <jamesLiao>: 這樣controller會不會連不到？
+11:30 +0800 <pichuang>: 不會
+11:30 +0800 <pichuang>: 是可以連到的
+11:31 +0800 <pichuang>: http://roan.logdown.com/posts/177333-openvswitch-lab-1
+11:31 +0800 <sdnsd-tw_Bot>: ==> OpenvSwitch Lab 1$ OpenvSwitch Setup « roan's Blog
+11:31 +0800 <pichuang>: 參考一下
+11:32 +0800 <jamesLiao>: ok 我試試看
+11:57 +0800 <hwchiu>: god
+11:58 +0800 <PoWen>: god what?
+11:59 +0800 <hwchiu>: 小飛機教學時間
+12:00 +0800 <PoWen>: XD
+12:00 +0800 <PoWen>: nice for information exchange
+12:01 +0800 <PoWen>: 右邊的名單好長阿 XD
+12:02 +0800 <hwchiu>: 恩阿，這樣熱鬧
+12:07 +0800 <pichuang>: 剛剛把ovs2.3 on openwrt弄起來了正常運行中
+12:11 +0800 <hwchiu>: 恩恩
+12:11 +0800 <hwchiu>: 還在想當初為什麼megaflow 後來才初
+12:11 +0800 <hwchiu>: 一開始確沒有
+12:26 +0800 <PoWen>: megaflow?
+12:26 +0800 <PoWen>: elephantflow?
+12:28 +0800 <hwchiu>: no
+12:29 +0800 <hwchiu>: megaflow，在kernel space中的wirldcard flow
+12:32 +0800 <John_mobile>: https://i.imgur.com/uVJgc22.jpg
+12:33 +0800 <John_mobile>: 之前說的支援lagopus的機器
+12:36 +0800 <PoWen>: 果然是Riava的
+12:37 +0800 <PoWen>: 感謝資訊分享
+12:38 +0800 <PoWen>: http://www.riava.net/product.php#anker02
+12:38 +0800 <sdnsd-tw_Bot>: ==> Riava Inc.
+12:38 +0800 <PoWen>: Riava官網上找不到這台RS670
+12:38 +0800 <PoWen>: 怪怪
+12:46 +0800 <John_mobile>:  恩 估計是因為 lagopus目前還在alpha版本拿出來賣太多問題
+12:57 +0800 <PoWen>: lagopus 跟 Open vSwitch一樣都是 software switch
+12:57 +0800 <John_aduim>: 是
+13:02 +0800 <PoWen>: Open vSwitch好像沒有支援什麼硬體加速
+13:03 +0800 <PoWen>: 不知道 Broadcom 的 OF-DPA 算嗎？
+13:08 +0800 <hwchiu>: http://2.bp.blogspot.com/-x3AT2SFz9IU/U6fTft4jyXI/AAAAAAAACZU/M4hBt8nRSW0/s1600/OF-DPA.png
+13:08 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/6ZYzN  ==> http://2.bp.blogspot.com/-x3AT2SFz9IU/U6fTft4jyXI/AAAAAAAACZU/M4hBt8nRSW0/s1600/OF-DPA.png
+13:08 +0800 <hwchiu>: 這樣看起來好像不太有關
+13:10 +0800 <hwchiu>: pichuang: OVS中的group type，有人丟patch讓他會依照L2&L3&L4來選擇了，而非原本的L2 dest mac而已
+13:10 +0800 <PoWen>: in OVS 2.3 ?
+13:11 +0800 <hwchiu>: 恩恩，不過還沒給官方收起來
+13:11 +0800 <hwchiu>: 其他contriubtor的想法而已
+13:16 +0800 <PoWen>: 瞭解
+13:16 +0800 <PoWen>: 欸
+13:16 +0800 <PoWen>: 請教個問題
+13:17 +0800 <PoWen>: ㄟ
+13:17 +0800 <PoWen>: 我也不知道怎麼問 XD
+13:17 +0800 <hwchiu>: XD
+13:33 +0800 <PoWen>: 因為我想知道 MPLS table size
+13:33 +0800 <PoWen>: 怎麼換算
+13:52 +0800 <PoWen>: 這個等我想清楚一點好了
+13:52 +0800 <PoWen>: OF Spec我也沒讀很熟
+13:52 +0800 <PoWen>: 可能得先看一看
+14:01 +0800 <hwchiu>: 哦哦，你指得是? 有點不是很懂問題XD MPLS那邊我沒有非常熟
+14:04 +0800 <hwchiu>: [Opendaylight-announce] First European SDN Hackathon on Sept 15-16, 2014
+14:06 +0800 <hwchiu>: SDN Hub 發起的XD
+14:36 +0800 <PoWen>: cool
+14:36 +0800 <PoWen>: Hackthon
+14:36 +0800 <PoWen>: 怎麼樣
+14:36 +0800 <pichuang>: http://roan.logdown.com/posts/208499-openvswitch-lab-5-porting-openvswitch-to-openwrt
+14:36 +0800 <PoWen>: 啥時我們也來辦一個
+14:36 +0800 <PoWen>: XD
+14:36 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/BurOB  ==> OpenvSwitch Lab 5$ Porting OpenvSwitch to OpenWrt « roan's Blog
+14:36 +0800 <pichuang>: 我剛剛把openwrt 搞定了
+14:36 +0800 <pichuang>: 也都可以正常work
+14:37 +0800 <John_aduim>: GJ
+14:37 +0800 <PoWen>: 哇賽
+14:37 +0800 <hwchiu>: pichuang: <(_ _)>
+14:37 +0800 <PoWen>: 真快
+14:37 +0800 <pichuang>: 換個版本號 無縫接軌
+14:37 +0800 <hwchiu>: 我還在寫patch
+14:37 +0800 <PoWen>: 一下就把OVS 2.3上openwrt
+14:37 +0800 <John_aduim>: 你的Openwrt是哪個版本
+14:37 +0800 <pichuang>: openwrt 也換 版本耗了
+14:37 +0800 <pichuang>: trunk
+14:37 +0800 <pichuang>: 以前是 BB
+14:37 +0800 <pichuang>: 現在是 cc
+14:38 +0800 <pichuang>: CHAOS CALMER
+14:38 +0800 <John_aduim>: 恩
+14:38 +0800 <pichuang>: openwrt前陣子也發出 branch 14.09
+14:38 +0800 <John_aduim>: 你有做這方面的嘗試 讓WiFi也可以使用OVS嗎
+14:38 +0800 <pichuang>: y
+14:38 +0800 <pichuang>: 可以
+14:38 +0800 <hwchiu>: 我記得他做過了吧XD?
+14:38 +0800 <John_aduim>: 我沒仔細看XD
+14:39 +0800 <pichuang>: 把它當一個port看就好了
+14:39 +0800 <John_aduim>: 有相關的文件嗎?
+14:39 +0800 <pichuang>: 跟一般openvswitch無異
+14:39 +0800 <John_aduim>: 應該是要改network config
+14:39 +0800 <pichuang>: 設定的文件我還沒有寫
+14:39 +0800 <pichuang>: 我只有寫安裝的
+14:39 +0800 <pichuang>: 我這幾天幫學長處理實驗環境寫一下好了
+14:39 +0800 <John_aduim>: 你都在哪一檯router裝
+14:40 +0800 <pichuang>: d連結牌
+14:40 +0800 <John_aduim>: OK
+14:40 +0800 <John_aduim>: 想看一下你的wifi config
+14:40 +0800 <John_aduim>: 之前我改過還是不太行
+14:41 +0800 <pichuang>: 但實際上只要有openwrt就可以了
+14:41 +0800 <pichuang>: ok阿
+14:41 +0800 <John_aduim>: 有個問題他的wifi 可以無限制的add port?
+14:41 +0800 <pichuang>: https://gist.github.com/pichuang/9876454
+14:41 +0800 <sdnsd-tw_Bot>: ==> OpenWrt /etc/config/network
+14:41 +0800 <John_aduim>: 因為實體的他是有port 的孔 那無線的話怎麼算這個孔
+14:41 +0800 <pichuang>: 無限期時也算是一個interface
+14:41 +0800 <pichuang>: 他算是一個孔
+14:42 +0800 <pichuang>: 一個天線一根
+14:42 +0800 <John_aduim>: 所以無限total 只有一個嗎？
+14:42 +0800 <John_aduim>: *無線
+14:42 +0800 <pichuang>: ovs 是認定 udev 產生出來的interface
+14:42 +0800 <PoWen>: 一個天線算一個 port ?
+14:42 +0800 <hwchiu>: 看多少根天線囉
+14:42 +0800 <PoWen>: oh
+14:43 +0800 <PoWen>: udev 產生的 interface, ok.
+14:43 +0800 <PoWen>: 那 3x3 MIMO, 六根天線，算六個 port ?
+14:43 +0800 <PoWen>: XD
+14:43 +0800 <John_aduim>: 看天線數量的啊
+14:43 +0800 <pichuang>: hmmm 應該不算 我這講法應該是錯的
+14:43 +0800 <PoWen>: 我好像問蠢問題.
+14:43 +0800 <pichuang>: 就是算udev產生出來的
+14:43 +0800 <PoWen>: oh
+14:44 +0800 <pichuang>: udev應該是透過mac做辨識 不同mac認定不同的interface
+14:44 +0800 <pichuang>: 然後幫他們取名為各式各樣的名字
+14:44 +0800 <John_aduim>: 恩 了解了
+14:44 +0800 <pichuang>: 譬如eth0 eth1 wlan0 waln1 ...etc
+14:44 +0800 <pichuang>: 像這類的
+14:44 +0800 <John_aduim>: 反正還是有mac
+14:44 +0800 <pichuang>: ovs就可以控制
+14:44 +0800 <John_aduim>: D連結牌 哪個型號??
+14:44 +0800 <pichuang>: 835
+14:45 +0800 <pichuang>: openwrt profile 有支援
+14:45 +0800 <pichuang>: a1板
+14:45 +0800 <pichuang>: 如果有人有興趣要弄這個的
+14:45 +0800 <pichuang>: 要注意一下有沒有支援刷機
+14:46 +0800 <John_aduim>: 恩 你是說支援Openwrt的吧
+14:46 +0800 <John_aduim>: 我之前都玩tplink 1043nd
+14:46 +0800 <pichuang>: 恩
+14:46 +0800 <pichuang>: xd
+14:48 +0800 <pichuang>: 這是最早openflow 官方宣布支援的硬體
+14:48 +0800 <pichuang>: http://archive.openflow.org/wk/index.php/Pantou_:_OpenFlow_1.0_for_OpenWRT
+14:48 +0800 <sdnsd-tw_Bot>: ==> Pantou : OpenFlow 1.0 for OpenWRT - OpenFlow Wiki
+14:48 +0800 <pichuang>: 就是 John_aduim 貼在hackpad上的專案
+14:48 +0800 <pichuang>: Pantou
+14:48 +0800 <pichuang>: 所以tplink這闆聽說賣得很好= =
+14:48 +0800 <John_aduim>: Pantou應該不是我貼的
+14:48 +0800 <pichuang>: 後續才發現有d牌可以用
+14:49 +0800 <John_aduim>: Pantou很舊了...
+14:49 +0800 <pichuang>: 對阿
+14:49 +0800 <pichuang>: 很舊了
+14:49 +0800 <pichuang>: 但還是有人在用xd
+14:49 +0800 <pichuang>: 非常神奇
+14:49 +0800 <John_aduim>: 大陸SDNAP那邊就是在做你這些事情 賣的路由器超貴的啊
+14:49 +0800 <pichuang>: 對阿
+14:49 +0800 <John_aduim>: 他的掏寶..
+14:49 +0800 <pichuang>: 我有看到
+14:49 +0800 <John_aduim>: 一檯賣三千多吧＝＝
+14:49 +0800 <pichuang>: xd
+14:50 +0800 <pichuang>: 我到時候把安裝文件寫出來
+14:50 +0800 <pichuang>: 他們應該就會想來打我了xd
+14:50 +0800 <John_aduim>: 恩啊 支持你寫
+14:50 +0800 <pichuang>: 他們跟我做的事情一模一樣
+14:50 +0800 <pichuang>: 只是我沒有白牌硬體
+14:51 +0800 <John_aduim>: 恩啊
+14:52 +0800 <pichuang>: 但沒關係 取之opensource所得就是要回饋給opensource
+14:52 +0800 <hwchiu>: 恩阿XD
+14:52 +0800 <pichuang>: 所以我會很願意把這些東西開放給大家用
+14:52 +0800 <pichuang>: 期望有人在wifi這塊有些神奇的進展
+14:52 +0800 <hwchiu>: 妹子嗎
+14:53 +0800 <hwchiu>: wifi阿XD 有LAB願意走這塊嗎
+14:53 +0800 <PoWen>: 白牌硬體
+14:53 +0800 <PoWen>: 想要怎樣的硬體？
+14:53 +0800 <PoWen>: 我可以提供
+14:53 +0800 <PoWen>: XD
+14:53 +0800 <John_aduim>: me too 之前看到g0v有人提學運的時候用sdn wifi去做
+14:53 +0800 <PoWen>: 我一堆 Atheros 的硬體
+14:54 +0800 <PoWen>: XD
+14:54 +0800 <PoWen>: 好主意喔！
+14:54 +0800 <pichuang>: 應該八九不離時要用 atheros
+14:54 +0800 <pichuang>: xd
+14:54 +0800 <PoWen>: SDN Wi-Fi, for 大規模抗爭
+14:54 +0800 <pichuang>: sdn wifi
+14:54 +0800 <PoWen>: good topic !
+14:54 +0800 <PoWen>: 那個很紅的 Firechat
+14:54 +0800 <pichuang>: 就是要想辦法implment SDN wifi controller 了xd
+14:54 +0800 <hwchiu>: 但是沒有應用的話XD 跟一般沒兩樣吧
+14:54 +0800 <PoWen>: 能用 SDN Wi-Fi 搞嗎
+14:54 +0800 <pichuang>: PoWen: 有點難
+14:55 +0800 <PoWen>: hmm
+14:55 +0800 <pichuang>: 技術上應該是不同層級的
+14:55 +0800 <PoWen>: 難的事情才有做的價值 XD
+14:55 +0800 <PoWen>: hmm
+14:55 +0800 <PoWen>: 瞭解
+14:55 +0800 <hwchiu>: 純內網聊天吧?
+14:55 +0800 <John_aduim>: 恩啊
+14:55 +0800 <PoWen>: SDN Wi Fi controller
+14:55 +0800 <PoWen>: hmm
+14:55 +0800 <John_aduim>: firechat是藍牙
+14:55 +0800 <PoWen>: 有道理
+14:55 +0800 <PoWen>: SDN Wi-Fi 應該沒辦法用 add hoc
+14:56 +0800 <pichuang>: 恩恩 sdn 有s/c的概念
+14:56 +0800 <pichuang>: firechat是p2p
+14:56 +0800 <PoWen>: yes
+14:56 +0800 <pichuang>: sdn沒有那個controller 就掛了 所以應該是不一樣的issue
+14:57 +0800 <PoWen>: crazy idea 立馬夭折
+14:57 +0800 <PoWen>: XD
+14:57 +0800 <pichuang>: xd 沒關係 下一個會更好
+14:57 +0800 <pichuang>: 我沒事洗澡還是游泳都會想一下wifi可以做什麼
+14:58 +0800 <hwchiu>: 狂人
+14:58 +0800 <PoWen>: good point !
+14:58 +0800 <PoWen>: 邱先生你也是狂人喔
+14:58 +0800 <hwchiu>: 在小飛機面前，只是個魯蛇
+14:58 +0800 <pichuang>: hwchiu: 牛人
+14:59 +0800 <John_aduim>: wifi 我有想過一個
+15:00 +0800 <John_aduim>: 就是在兩個wifi之間 當轉換ssid的時候 能不能做到無縫的交握
+15:00 +0800 <John_aduim>: 如果用 sdn或許可以做到
+15:01 +0800 <hwchiu>: 這個議題應該不少人做了
+15:01 +0800 <John_aduim>: 恩
+15:02 +0800 <hwchiu>: http://link.springer.com/article/10.1007%2Fs40534-013-0007-x
+15:02 +0800 <sdnsd-tw_Bot>: ==> A software-defined networking approach for handover management with real-time video in WLANs - Springer
+15:03 +0800 <pichuang>: 轉換ssid 有很多很麻煩的地方
+15:03 +0800 <pichuang>: channel 不一樣 會斷線
+15:03 +0800 <pichuang>: ssid 不一樣要重新 auth
+15:03 +0800 <pichuang>: 這兩個都會導致斷線= =
+15:04 +0800 <PoWen>: hmm
+15:04 +0800 <PoWen>: 很快的重新連線？
+15:04 +0800 <PoWen>: XD
+15:04 +0800 <pichuang>: 我是有在想 如果我透過 sdn 可以控整個ap
+15:04 +0800 <pichuang>: 是不是可以省掉很多事情
+15:05 +0800 <hwchiu>: 斷線前先把第二條連線給建立好?
+15:05 +0800 <pichuang>: hwchiu: 有點難 你很難要求client端去找第二條連線
+15:05 +0800 <PoWen>: 那這樣要對每個user的移動，是real timing的aware? 所以Controller要對整個topology含end user session很清楚？
+15:06 +0800 <pichuang>: 已建立好的狀況下 要去連第二條 可能要改client
+15:06 +0800 <PoWen>: 裝個APP強迫控制client與AP之間的行為 XD
+15:06 +0800 <PoWen>: 可是這樣就無法 zero client了
+15:07 +0800 <pichuang>: zero client ?
+15:07 +0800 <pichuang>: 這是一定要的 #Controller要對整個topology含end user session很清楚
+15:08 +0800 <pichuang>: 現在的wireless controller solution
+15:08 +0800 <pichuang>: 就很符合sdn的精神
+15:08 +0800 <pichuang>: thin client
+15:11 +0800 <hwchiu>: 這要做的話，你如果要用Openflow的話，勢必要動到AP那邊去改，把user的資訊透過vecdor的訊息傳上來
+15:13 +0800 <pichuang>: 對改ap是必要的
+15:13 +0800 <pichuang>: 但要怎麼改才比較漂亮就是可以想的部分
+15:13 +0800 <pichuang>: ONF並沒有定義關於 RF 的部分
+15:14 +0800 <hwchiu>: 換個南向API好了XD
+15:15 +0800 <pichuang>: 如果要控制到rf部分
+15:15 +0800 <pichuang>: 勢必一定要自己搞一套rf for openflow 的規格出來
+15:18 +0800 <hwchiu>: 你先讓自己更牛，去訂出一套標準，然夠讓影響力擴大，就如同openflow一樣
+15:20 +0800 <pichuang>: xd 好 我要先成為如同 hwchiu 一般的牛人
+15:21 +0800 <hwchiu>: = ="
+15:23 +0800 <Shiny>: hello
+15:24 +0800 <pichuang>: Shiny: hello
+15:25 +0800 <John_aduim>: HI
+15:25 +0800 <hwchiu>: Hi
+15:25 +0800 <John_aduim>: 這是我朋友！
+15:26 +0800 <hwchiu>: 你好!非常歡迎
+15:26 +0800 <John_aduim>: 他也對wifi openflow switch 十分感興趣
+15:26 +0800 <pichuang>: xd
+15:26 +0800 <pichuang>: 歡迎討論
+15:26 +0800 <pichuang>: 我未來碩論應該是會想辦法做這塊
+15:27 +0800 <pichuang>: 但是還要先跟老闆討論一下 我怕他不同意T_T
+15:27 +0800 <John_aduim>: Shiny 可以看一下 pichuang 的文章
+15:27 +0800 <Shiny>: 我碩論雖然還沒定 不過有可能會做WIFI相關的
+15:27 +0800 <John_aduim>: 他也有logdown
+15:27 +0800 <pichuang>: Shiny: 太好了xd
+15:28 +0800 <John_aduim>: github上也有 目前最新的2.3的OVS移植他已經完成
+15:28 +0800 <pichuang>: 改個版本號而已xd 還有修了一下init restart的順序
+15:29 +0800 <Shiny>: 這邊果然一堆交大的朋友XDDD
+15:29 +0800 <John_aduim>: Shiny 不介意的話, 可以到google group做一下自介 XD
+15:29 +0800 <pichuang>: xd 這邊不分學校的
+15:29 +0800 <pichuang>: 不管哪所都可以
+15:30 +0800 <pichuang>: 哪家廠商也不分的
+15:30 +0800 <Shiny>: 當然ＸＤ
+15:30 +0800 <pichuang>: 只要是對整體sdn產業有幫助都好
+15:30 +0800 <John_aduim>: 哦哦 因為shiny是大學是交大的這邊不知道有沒有認識的？
+15:30 +0800 <JalenLin>: 對阿，像是 pichuang 就是D-Link代表
+15:30 +0800 <pichuang>: ...
+15:30 +0800 <John_aduim>: XD
+15:30 +0800 <hwchiu>: 名子是?
+15:31 +0800 <pichuang>: 交大應該沒人不知道 hwchiu
+15:31 +0800 <pichuang>: 我去了
+15:31 +0800 <pichuang>: 糸錯
+15:31 +0800 <hwchiu>: pichuang: = =
+15:31 +0800 <John_aduim>: XD
+15:31 +0800 <pichuang>: 密錯
+15:31 +0800 <Shiny>: 哈哈
+15:32 +0800 <Shiny>: 我大學是交大的 所以剛剛才這麼說
+15:32 +0800 <hwchiu>: 恩恩
+15:32 +0800 <hwchiu>: 98級?
+15:33 +0800 <John_aduim>: 他現在碩一耶, 大我一屆
+15:34 +0800 <John_aduim>: *升碩二
+15:34 +0800 <JalenLin>: 別擔心 hwchiu 要升博一
+15:35 +0800 <hwchiu>: 那就是99級囉
+15:35 +0800 <hwchiu>: JalenLin: 你要一起嗎
+15:35 +0800 <JalenLin>: hwchiu: 我只求能碩畢就好
+15:36 +0800 <hwchiu>: XD
+15:37 +0800 <PoWen>: XD
+15:37 +0800 <pichuang>: 研究生禮貌運動
+15:37 +0800 <hwchiu>: pichuang: 啥時後簽博
+15:37 +0800 <JalenLin>: pichuang: Hi, D-Link代表
+15:37 +0800 <PoWen>: Hi D-Link代表
+15:38 +0800 <pichuang>: ...
+15:38 +0800 <pichuang>: 尬的
+15:38 +0800 <JalenLin>: #http://pichuang.dlink.nctu.edu.tw
+15:38 +0800 <sdnsd-tw_Bot>: ==> Night9
+15:38 +0800 <pichuang>: 我不是dlink代表= =
+15:38 +0800 <pichuang>: = = = = = =
+15:38 +0800 <Shiny>: 102級噢ＸＤ
+15:38 +0800 <hwchiu>: 算法不同XD
+15:39 +0800 <hwchiu>: cs98吧
+15:40 +0800 <John_aduim>: 這邊有人是用ryu的controller a87
+15:40 +0800 <John_aduim>: 嗎
+15:40 +0800 <John_aduim>: 知道有FL的朋友 ODL感覺還很少人用？
+15:43 +0800 <pichuang>: odl...
+15:43 +0800 <pichuang>: tutul:
+15:43 +0800 <pichuang>: http://tutul.logdown.com/
+15:43 +0800 <sdnsd-tw_Bot>: ==> tutul's knowledge
+15:43 +0800 <pichuang>: 這位最近有在看
+15:43 +0800 <pichuang>: xd
+15:43 +0800 <John_aduim>: soga
+15:43 +0800 <hwchiu>: trema呢XD
+15:43 +0800 <John_aduim>: ruby的嗎
+15:44 +0800 <hwchiu>: 先出門看牙醫 掰
+15:44 +0800 <John_aduim>: 掰囉
+15:44 +0800 <hwchiu>: 其實還是寫C
+15:44 +0800 <hwchiu>: tacchen: 這個也是ODL
+15:44 +0800 <pichuang>: trema 可以請教 rascov_ 學長 他有做不少 contribution
+15:44 +0800 <hwchiu>: 根本god
+15:45 +0800 <John_aduim>: 好的
+15:55 +0800 <PoWen>: trema
+15:55 +0800 <PoWen>: trema是日本那個嗎？
+16:00 +0800 <tutul>: pichuang: ?!??!?
+16:03 +0800 <pichuang>: tutul: 大大有人想問問odl的問題~
+16:33 +0800 <tutul>: pichuang: e8
+16:33 +0800 <tutul>: 嘎.....是可以啦 但是我弱弱 不確定能不能解
+16:49 +0800 <hwchiu>: PoWen: 恩恩
+17:21 +0800 <pichuang>: 我覺得我應該要選個題目發到google group
+17:23 +0800 <hwchiu>: 恩恩
+17:24 +0800 <pichuang>: "各位對於SDN這個名詞的看法是如何?"
+17:24 +0800 <pichuang>: 會不會太八股啊xd
+17:24 +0800 <hwchiu>: XD
+17:33 +0800 <John_mobile>: 之前不是有人問SDG lol
+17:37 +0800 <JalenLin>: SDG....那只有 pichuang 這種變態會思考的東西
+17:54 +0800 <pichuang>: 我太難過了 剛剛跟學弟推廣sdn
+17:55 +0800 <pichuang>: 我拿sdg講 結果他們通通沒玩過養成遊戲
+17:55 +0800 <hwchiu>: 你玩過幾款養成遊戲XD
+17:56 +0800 <pichuang>: hmmm
+17:56 +0800 <pichuang>: 1
+17:59 +0800 <hwchiu>: XD
+18:01 +0800 <pichuang>: 怪獸對打機之類的
+18:01 +0800 <pichuang>: 用軟體餵食食物或清大便
+18:02 +0800 <pichuang>: 長成自己想要的
+18:04 +0800 <hwchiu>: 我以為你想說的是妹子養成遊戲
+18:04 +0800 <hwchiu>: 美少女夢工廠嗎
+18:07 +0800 <pichuang>: 當然 不是 囉
+18:09 +0800 <hwchiu>: 懷疑
+18:21 +0800 <JalenLin>: 頻道又歪了
+18:21 +0800 <JalenLin>: 這頻道又歪了
+18:33 +0800 <ws23>: 乍看我想說我是否看錯頻道了xDDD
+18:35 +0800 <hwchiu>: 意外
+18:41 +0800 <PoWen>: 有人知道 Open Network Linux 嗎
+18:42 +0800 <hwchiu>: 知道
+18:43 +0800 <hwchiu>: 與bare metal switch一起協作的吧?
+18:43 +0800 <Davy_CC_>: SDG
+18:43 +0800 <hwchiu>: 我記得上次看，關於forwarding方面的SDK好像都還沒有
+18:43 +0800 <PoWen>: yes
+18:44 +0800 <hwchiu>: 印象沒錯的話，智邦有出bare metal switch
+18:44 +0800 <PoWen>: yes
+18:44 +0800 <hwchiu>: http://opennetlinux.org/hcl
+18:44 +0800 <sdnsd-tw_Bot>: ==> Open Network Linux
+18:44 +0800 <PoWen>: I know
+18:45 +0800 <hwchiu>: 恩恩
+18:45 +0800 <PoWen>: 我就是在智邦咩 >_<
+18:45 +0800 <hwchiu>: 對阿XD
+18:45 +0800 <hwchiu>: 這是還在發展中? ONL
+19:33 +0800 <hwchiu>: John_mobile: 有考慮用學校的工作站掛者嗎? 不然看你上上下下好辛苦
+19:34 +0800 <John_mobile>: 我掛的是mobile
+19:34 +0800 <John_mobile>: irccloud
+19:35 +0800 <John_mobile>: 現在有七天免費，未來再看看要不要付費了
+19:36 +0800 <John_mobile>: 學校還不知道哪台能用來掛…
+19:38 +0800 <John_mobile>: 電腦沒關機，所以我只要掀開筆電就會上線 btw剛剛斷斷續續是在高鐵上
+19:39 +0800 <hwchiu>: 系上應該有工作站?
+19:39 +0800 <hwchiu>: 恩恩 辛苦了
+19:41 +0800 <PoWen>: 我也是free tiral耶
+19:41 +0800 <PoWen>: 過了之後就得付費？
+19:47 +0800 <hwchiu>: 應該不用吧XD? 我記得就只是沒開者網頁會把你踢掉而已
+19:54 +0800 <PoWen>: 噢
+19:54 +0800 <PoWen>: ONL, 會取代Fedora, Debian嗎？
+20:08 +0800 <John_mobile>: 應該不會吧 我剛看了他的簡述 他應該是專為sw所做的OS吧？跟general os不太一樣
+20:15 +0800 <John_mobile>: hwchui: 把IRCcloud開著網頁就不會被踢掉嗎？這樣比開 screen 掛irssi還好用啊ＸＤ
+20:15 +0800 <John_mobile>: 簡單找檯電腦開著網頁就好
+20:26 +0800 <Davy_CC_>: John_mobile: 沒錯
+20:30 +0800 <ken_ho>: 被 踢掉後是要重新加入頻導?
+20:30 +0800 <ken_ho>: 被 踢掉後是要重新加入頻道?
+20:33 +0800 <JalenLin>: 被踢掉要重新加入對阿
+20:33 +0800 <JalenLin>: 中間的對話只能看log了
+20:41 +0800 <PoWen>: I see
+20:41 +0800 <PoWen>: 我是一直掛著
+20:44 +0800 <Davy_CC_>: 我掛社團工作站XD
+20:47 +0800 <ken_ho>: So sad
+21:46 +0800 <hwchiu>: 跟外國人合作好無縫喔ＸＤ 我白天寫，寫到晚上丟ＰＲ，剛好他起床繼續，等他弄完就換我起床繼續
+21:47 +0800 <PoWen>: 24 小時接力馬拉松
+21:47 +0800 <John_aduim>: XD
+21:47 +0800 <John_aduim>: 可以發PR 超好..
+21:47 +0800 <John_aduim>: ryu不能發PR
+21:48 +0800 <John_aduim>: 只能寫 mail list 跟他說要加patch 然後他們在review code
+21:49 +0800 <hwchiu>: QQ 是哦
+21:52 +0800 <hwchiu>: 有問過他們為什麼要這樣嗎？
+21:52 +0800 <hwchiu>: 丟ＰＲ還是可以review code啊
+21:56 +0800 <John_aduim>: 這個問題之前有人提過  我貼給你看
+21:58 +0800 <John_aduim>: https://gist.github.com/John-Lin/1a63c06d6f6b1ae7b379
+21:58 +0800 <sdnsd-tw_Bot>: ==> gist:1a63c06d6f6b1ae7b379
+21:59 +0800 <hwchiu>: ok
+21:59 +0800 <hwchiu>: 透過email可以讓有訂閱的人都知道，透過PR會變成其他人要自己主動去看才知道
+22:03 +0800 <John_aduim>: 恩
+22:03 +0800 <John_aduim>: 可是我覺得有訂閱的人不一定看啊XD
+22:07 +0800 <hwchiu>: ＸＤ
+22:28 +0800 <PoWen>: 對
+22:28 +0800 <PoWen>: 有訂閱的不一定看
+22:28 +0800 <PoWen>: XD
+22:29 +0800 <PoWen>: 我的gmail塞滿一堆OCP的
+22:29 +0800 <PoWen>: 來不及看...
+22:33 +0800 <PoWen>: 請教一個問題
+22:33 +0800 <PoWen>: 我如果申請GitHub帳號，單純瀏覽，沒關係吧？
+22:33 +0800 <PoWen>: 還是一定要有contribution...
+22:35 +0800 <John_mobile>: 你可以辦一個github帳號 瀏覽別人的code不一定需要帳號
+22:35 +0800 <John_mobile>: 你發PR也要對方同意才可以merge
+22:35 +0800 <John_mobile>: 所以不會影響別人的
+22:36 +0800 <PoWen>: ok
+22:36 +0800 <PoWen>: thanks
+22:49 +0800 <PoWen>: 主要是想follow一些人
+22:49 +0800 <PoWen>: XD
+22:56 +0800 <pichuang>: 最近系計中再進行一些工作
+22:56 +0800 <pichuang>: 我也是用github做code控管的
+22:57 +0800 <pichuang>: 如果開發的很密集的話
+22:57 +0800 <PoWen>: 這可以做 version control ?
+22:57 +0800 <pichuang>: network graph 就會長得很像蚯蚓
+22:57 +0800 <pichuang>: https://github.com/pichuang/pcroom/network
+22:57 +0800 <sdnsd-tw_Bot>: ==> Network Graph · pichuang/pcroom · GitHub
+22:57 +0800 <pichuang>: yes
+22:57 +0800 <PoWen>: XD
+22:57 +0800 <pichuang>: git 本身就是一套 vcs
+22:58 +0800 <PoWen>: 欸小飛機
+22:58 +0800 <PoWen>: SDNDS-TW 資訊收集地
+22:58 +0800 <PoWen>: 有些link掛了
+22:58 +0800 <pichuang>: 恩恩
+22:58 +0800 <pichuang>: 我看看
+22:59 +0800 <PoWen>: https://lagopus-taiwan-20140805.pdf/
+22:59 +0800 <PoWen>: Lagopus intro 這個連結似乎失效
+22:59 +0800 <pichuang>: 哦哦 這個可能忘記貼前面的url
+22:59 +0800 <PoWen>: http://xorplus.sourceforge.net/
+22:59 +0800 <PoWen>: 這好像也不行了...
+22:59 +0800 <sdnsd-tw_Bot>: ==> 
+                        SourceForge.net: Pica8 Xorplus - Project Web Hosting - Open Source Software
+                
+23:00 +0800 <pichuang>: 這我看的到耶
+23:00 +0800 <PoWen>: 咦
+23:00 +0800 <PoWen>: 噢又可以了
+23:01 +0800 <John_mobile>: Lagopus intro 是我的dropbox空間
+23:01 +0800 <John_mobile>: 不知道有沒有人推薦可以長期放文件的地方
+23:02 +0800 <pichuang>: 放文件喔...大概只有dropbox或者是google drive了
+23:04 +0800 <PoWen>: 小飛機你的Github圖示也太猛了....
+23:05 +0800 <pichuang>: 圖示?
+23:05 +0800 <pichuang>: xd
+23:05 +0800 <pichuang>: 還好啦
+23:05 +0800 <pichuang>: 那個算是很正常的
+23:05 +0800 <pichuang>: 還有更好笑的
+23:06 +0800 <pichuang>: 如果用google圖片 打"ovs-vsctl"
+23:06 +0800 <pichuang>: 會發現一張很神奇的照片
+23:09 +0800 <hwchiu>: ttps://s3.amazonaws.com/logdown-production/system/blog/5842/og_image/575084_3950315127003_131616731_n.jpg
+23:09 +0800 <hwchiu>: https://s3.amazonaws.com/logdown-production/system/blog/5842/og_image/575084_3950315127003_131616731_n.jpg
+23:09 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/dx8ez  ==> https://s3.amazonaws.com/logdown-production/system/blog/5842/og_image/575084_3950315127003_131616731_n.jpg
+23:10 +0800 <Zespre>: XD
+23:10 +0800 <pichuang>: xd
+23:11 +0800 <hwchiu>: 有種不舒服的感覺
+23:16 +0800 <PoWen>: ...
+23:16 +0800 <PoWen>: 犀利哥
+23:16 +0800 <John_aduim>: 這邊有人做snort網路安全相關的研究嗎?
+23:17 +0800 <pichuang>: shanyu:
+23:17 +0800 <Zespre>: shhu:
+23:17 +0800 <John_aduim>: 這麼多XD
+23:17 +0800 <pichuang>: Zespre: 是領導要做的吧@@
+23:17 +0800 <John_aduim>: 跟SDN嗎？
+23:17 +0800 <pichuang>: 還是我搞錯了
+23:17 +0800 <pichuang>: 對阿
+23:18 +0800 <Zespre>: 打 sh 按 tab 就送出了...
+23:18 +0800 <John_aduim>: 也是用FL啊？
+23:18 +0800 <pichuang>: 應該是要做ids
+23:18 +0800 <pichuang>: y
+23:19 +0800 <John_aduim>: snort就是一種ids
+23:19 +0800 <pichuang>: 恩恩
+23:19 +0800 <pichuang>: hwchiu: FL現在有支援SSL TUNNEL嗎
+23:20 +0800 <pichuang>: Controller plane
+23:20 +0800 <hwchiu>: 1.0 : no
+23:20 +0800 <hwchiu>: 1.3: don't know
+23:20 +0800 <pichuang>: oh~
+23:20 +0800 <pichuang>: 那我應該要來把這東西弄上去
+23:20 +0800 <John_aduim>: 你們做測試也是用TCP連嗎
+23:20 +0800 <John_aduim>: controller
+23:20 +0800 <pichuang>: hwchiu: 找個時間教一下開發流程好否T_T
+23:20 +0800 <pichuang>: John_aduim: yes
+23:21 +0800 <John_aduim>: good
+23:21 +0800 <John_aduim>: 我也想聽XD
+23:21 +0800 <pichuang>: tcp:x.x.x.x:6633 這樣
+23:22 +0800 <John_aduim>: sdn hub有個all in one 的dev VM大家可以參考看看
+23:22 +0800 <John_aduim>: http://sdnhub.org/tutorials/sdn-tutorial-vm/
+23:22 +0800 <sdnsd-tw_Bot>: ==> All-in-one SDN App Development Starter VM | SDN Hub
+23:23 +0800 <pichuang>: 感覺有點像教學用的
+23:23 +0800 <pichuang>: 但應該還不錯
+23:24 +0800 <hwchiu>: SSL的話，我改天問問FL那邊的人
+23:24 +0800 <hwchiu>: 看要不要升級1.3後順便加上去
+23:24 +0800 <John_aduim>: 我手邊沒SW都拿dev VM做測試
+23:24 +0800 <pichuang>: ssl這東西很重要阿~~~
+23:25 +0800 <shhu>: John_aduim: 我最近有開始在看sonrt……
+23:25 +0800 <pichuang>: John_aduim: hwchiu 都用mininet
+23:25 +0800 <John_aduim>: XD
+23:25 +0800 <hwchiu>: pichuang: 我lab還有十台i7呢ＸＤ
+23:25 +0800 <shhu>: 不過還沒看很深~~
+23:25 +0800 <John_aduim>: shhu: 要做的是controller整合嗎
+23:26 +0800 <shhu>: John_aduim: 對啊，有在這樣想~
+23:26 +0800 <John_aduim>: pichuang: 我也是用mininet 做測試
+23:26 +0800 <John_aduim>: shhu: 我現在想寫snort 跟ryu 的整合
+23:26 +0800 <shhu>: 不過現在只是剛開始玩sonrt而已
+23:26 +0800 <shhu>: wow~
+23:26 +0800 <John_aduim>: 目前暫時寫好, 沒有機器沒辦法測試...
+23:27 +0800 <hwchiu>: PoWen: 你可以幫我看看BigSwitch那邊的軟體有提供SSL嗎？
+23:27 +0800 <shhu>: 上星期光是裝snort就被雷了很久
+23:27 +0800 <John_aduim>: 你裝source code嗎
+23:27 +0800 <shhu>: John_aduim: 你打算測什麼？
+23:27 +0800 <pichuang>: 如果已經有ssl的話我就不用弄了 我就去找其他家研究一下
+23:27 +0800 <shhu>: John_aduim: 後來是……
+23:28 +0800 <PoWen>: 好我看一下 BSN有沒有SSL
+23:28 +0800 <John_aduim>: 我打算先改ryu的source code讓他們整合
+23:28 +0800 <PoWen>: Pica8說他有
+23:28 +0800 <shhu>: John_aduim: binary install太雷了
+23:28 +0800 <John_aduim>: 也就是snort發alert controller會知道
+23:28 +0800 <John_aduim>: 然後就可以下流表 block host
+23:29 +0800 <hwchiu>: PoWen: Thanks
+23:29 +0800 <shhu>: John_aduim: 但snort是放在哪個位置~
+23:29 +0800 <John_aduim>: 跟controller同一檯機器
+23:29 +0800 <pichuang>: PoWen: pica8? controller部份有支援?
+23:29 +0800 <pichuang>: 她們不適用ryu嗎
+23:30 +0800 <shhu>: John_aduim: ！那所有的流量都要上到controller了耶！
+23:30 +0800 <pichuang>: ryu官方說有支援 但是我實際上連不上
+23:30 +0800 <John_aduim>: 不會上到controller
+23:30 +0800 <John_aduim>: 是所有封包都會mirror 一份給snort
+23:31 +0800 <John_aduim>: snort 發alert透過unix socket 去通知ryu
+23:31 +0800 <John_aduim>: 機器需要兩張網卡
+23:31 +0800 <hwchiu>: 如果是主動通知controller的話，用restapi是否也可以？
+23:31 +0800 <hwchiu>: 不一定要弄到unix socket來接
+23:31 +0800 <John_aduim>: 你說的是snort 通知controller嗎
+23:32 +0800 <hwchiu>: 恩
+23:32 +0800 <hwchiu>: 透過restapi發alert
+23:32 +0800 <John_aduim>: snort 有restapi嗎
+23:32 +0800 <John_aduim>: 這我不太了解
+23:32 +0800 <hwchiu>: 我也不了解ＸＤ
+23:32 +0800 <John_aduim>: 就我目前知道的訊息應該是沒有吧
+23:32 +0800 <John_aduim>: 不然就輕鬆多了XD
+23:34 +0800 <hwchiu>: 嗯嗯
+23:34 +0800 <John_aduim>: 我學長以前做FL是從snort 那適用socket 接 另外一檯controller
+23:34 +0800 <John_aduim>: 原本它是分兩檯中間socket來接
+23:34 +0800 <pichuang>: 你的sw用ovs嗎?
+23:34 +0800 <John_aduim>:  恩
+23:34 +0800 <pichuang>: 如果是ovs可以開netflow來用
+23:35 +0800 <John_aduim>: 我倒是沒用過netflow 他是怎麼個用途
+23:35 +0800 <pichuang>: http://roan.logdown.com/posts/194638-openvswitch-lab-3-netflow-and-sflow
+23:35 +0800 <sdnsd-tw_Bot>: ==> OpenvSwitch Lab 3$ NetFlow & sFlow « roan's Blog
+23:35 +0800 <pichuang>: 統計流量的好東西 cisco 原生支援
+23:36 +0800 <John_aduim>: 這是統計留用的用途？
+23:36 +0800 <pichuang>: 恩恩
+23:36 +0800 <pichuang>: http://www.netadmin.com.tw/article_content.aspx?sn=1111030003
+23:36 +0800 <sdnsd-tw_Bot>: ==> 抓出誰在惡搞網路  用Netflow流量分析工具監控IP異常活動 - 技術專欄 - 網管人NetAdmin
+23:36 +0800 <John_aduim>: 好奇問一下你們在FL上要怎麼拿到流量統計的資料
+23:36 +0800 <pichuang>: netflow跟 sdn完全無關係
+23:37 +0800 <John_aduim>: cook
+23:37 +0800 <John_aduim>: cool
+23:37 +0800 <pichuang>: 單純只是某些switch有支援這功能
+23:37 +0800 <pichuang>: fl ui上面就有流量統計了
+23:37 +0800 <hwchiu>: 如果只是單純的byte count | packet count, 透過openflow message就可以抓了
+23:37 +0800 <John_aduim>: 恩
+23:37 +0800 <pichuang>: 如果有興趣想看的話 可以參考一下 omniui的做法
+23:38 +0800 <pichuang>: https://github.com/dlinknctu/OmniUI
+23:38 +0800 <sdnsd-tw_Bot>: ==> dlinknctu/OmniUI · GitHub
+23:38 +0800 <John_aduim>: 那也是一樣的發request SW就會回你
+23:38 +0800 <hwchiu>: 恩
+23:38 +0800 <John_aduim>: omniui 前端怎麼做啊 我不太了解前端的東西
+23:38 +0800 <John_aduim>: JS嗎
+23:39 +0800 <pichuang>: 前端... Zespre <--
+23:39 +0800 <hwchiu>: Zespre:
+23:39 +0800 <hwchiu>: pichuang: 另外一位呢
+23:39 +0800 <hwchiu>: 怎沒進來
+23:39 +0800 <pichuang>: clcho
+23:39 +0800 <pichuang>: ...
+23:39 +0800 <pichuang>: 對耶
+23:39 +0800 <John_aduim>: omniui 是哪位大大的作品啊XD
+23:39 +0800 <pichuang>: Zespre: hwchiu rascov_
+23:39 +0800 <PoWen>: wow
+23:39 +0800 <shhu>: 其實領導也熟XDDDD shanyu
+23:40 +0800 <pichuang>: 還有幾位沒進 channel 的同學
+23:40 +0800 <pichuang>: shhu: 領導有什麼不熟的
+23:40 +0800 <John_aduim>: omniui 不知道能不能介接ryu
+23:40 +0800 <John_aduim>:  XD
+23:40 +0800 <hwchiu>: ryu那邊有提供restapi且格式一樣的話就可以
+23:42 +0800 <John_aduim>: oh i see
+23:43 +0800 <hwchiu>: pichuang: 1.3的格式，讓restapi的格式變得好麻煩＝＝
+23:43 +0800 <shhu>: hwchiu: 應該也要寫個ryu adapter吧
+23:44 +0800 <hwchiu>: shhu: 這麼自願，就不阻止你了
+23:44 +0800 <pichuang>: PoWen: 我們口中常說的領導 就是上次有跟您見過面的女生 XD
+23:44 +0800 <hwchiu>: 我現在時間不太多ＸＤ 只能專注於丟FL 1.3的ＰＲ， 剛剛才被merge一個了
+23:44 +0800 <pichuang>: <(_ _)> 腳軟軟
+23:45 +0800 <PoWen>: 邱渣果然牛
+23:45 +0800 <PoWen>: 領導 XD
+23:45 +0800 <PoWen>: ok
+23:45 +0800 <PoWen>: SSL那個，過一陣子我update
+23:45 +0800 <shhu>: hwchiu: 其實有在想這類的事XDD我覺得我會用得到omniui
+23:46 +0800 <hwchiu>: shhu: good
+23:46 +0800 <hwchiu>: John_aduim: http://pastebin.com/hBUSNmbu
+23:46 +0800 <sdnsd-tw_Bot>: ==> [Perl] The link between Snort & Floodlight - Pastebin.com
+23:46 +0800 <hwchiu>: 無聊查到了，看起來是一直掃snort的log，然後透過restapi丟到floodlight去處理
+23:46 +0800 <pichuang>: PoWen: 如果 FL 有要用SSL的話就太好了 這樣就不用擔心上線controle message 被 sniffer 的問題了
+23:47 +0800 <hwchiu>: pichuang: 擔心的是付費版有做，免費版要有人contribute XD
+23:47 +0800 <PoWen>: XD
+23:47 +0800 <pichuang>: xd
+23:47 +0800 <pichuang>: 好 我想辦法弄
+23:47 +0800 <pichuang>: 不然這沒ssl很不安全
+23:47 +0800 <hwchiu>: 意思就是
+23:47 +0800 <John_aduim>: 恩啊 掃log這個我想過
+23:47 +0800 <hwchiu>: 你拿ＦＬ來練習，來研究
+23:47 +0800 <hwchiu>: 想要上線的話，花錢來買BSN
+23:47 +0800 <pichuang>: 大家都想要搞security 結果tunnel本身居然啥保護都沒有
+23:47 +0800 <pichuang>: bsn?
+23:47 +0800 <John_aduim>: 可是他不是及時的, 也就是在snort發現的當下就要叫controller動作了
+23:48 +0800 <hwchiu>: bigswitch network, floodlight的付費版
+23:48 +0800 <hwchiu>: John_aduim: 嗯嗯
+23:48 +0800 <John_aduim>: 大家在意的都是DP上的security XD
+23:48 +0800 <pichuang>: hwchiu: 這個要問老闆願不願意花
+23:48 +0800 <John_aduim>: 殊不知 controller被打掉 整個網路就毀了
+23:48 +0800 <hwchiu>: PoWen: 價錢如何ＸＤ？
+23:48 +0800 <pichuang>: John_aduim: 我比較care CP 上的 SECURITY
+23:49 +0800 <pichuang>: 如果為了那個controller 克製化整個os
+23:49 +0800 <pichuang>: 我都覺得不會很過分
+23:49 +0800 <PoWen>: BigSwitch, 價錢很貴
+23:49 +0800 <PoWen>: 貴到我都不想推他...
+23:49 +0800 <PoWen>: 舉例一下好了
+23:49 +0800 <hwchiu>: ＸＤＤ
+23:50 +0800 <PoWen>: BigTap, 4pcs of SwitchLight, 4pcs of BigTap, Controller in HA.
+23:50 +0800 <PoWen>: 幾多錢？
+23:50 +0800 <PoWen>: 有人要猜一下嗎
+23:50 +0800 <pichuang>: 有ha哦
+23:50 +0800 <John_aduim>: 我先亂猜一下 25萬
+23:51 +0800 <PoWen>: 25萬是台幣對吧？
+23:51 +0800 <pichuang>: 單猜controller 10萬鎂
+23:51 +0800 <PoWen>: 哇，小飛機你真好
+23:51 +0800 <John_aduim>: 對啊
+23:51 +0800 <PoWen>: 好啦，四萬美金, EC special price.
+23:51 +0800 <Zespre>: John_aduim: omniui 前端就只是藉由 ajax 跟後面的 core 拿資料做一些視覺呈現 XD
+23:51 +0800 <John_aduim>: ..
+23:51 +0800 <hwchiu>: ＯＫ拉ＸＤ
+23:51 +0800 <pichuang>: xd
+23:51 +0800 <pichuang>: 我應該去當sales的
+23:52 +0800 <hwchiu>: 模擬器也差不多3萬美吧
+23:52 +0800 <PoWen>: 模擬器？
+23:52 +0800 <pichuang>: 去虎爛客戶
+23:52 +0800 <PoWen>: EstiNet模擬器嗎？ XD
+23:52 +0800 <John_aduim>: Zespre:  了解
+23:52 +0800 <hwchiu>: 恩
+23:52 +0800 <PoWen>: hmm.
+23:53 +0800 <pichuang>: 貴松松
+23:53 +0800 <John_aduim>: Zespre: 目前只做FL版本嗎XD
+23:53 +0800 <PoWen>: 是啊
+23:53 +0800 <PoWen>: 不好推
+23:53 +0800 <hwchiu>: 原來SwitchLight基於ONL耶
+23:53 +0800 <PoWen>: 不過聽說IBM Controller更貴
+23:53 +0800 <PoWen>: yes, SwitchLight是基於 ONL
+23:53 +0800 <John_aduim>: NEC的也不便宜
+23:53 +0800 <hwchiu>: John_aduim: 按照adapter那邊，目前還有NOX跟trema
+23:54 +0800 <Zespre>: John_aduim: 目前功能支援最完整的是 FL 沒錯，其他還有 pox & trema-edge
+23:54 +0800 <hwchiu>: 講錯了ＸＤ POX
+23:54 +0800 <PoWen>: NEC的Programmable Flow, 號稱地上最強，不知真假
+23:54 +0800 <John_aduim>: Zespre: 期待ryu :)
+23:54 +0800 <PoWen>: FL 支援度最好哦？
+23:54 +0800 <pichuang>: PoWen: For omniui
+23:54 +0800 <hwchiu>: PoWen: 這麼強喔ＸＤ
+23:54 +0800 <pichuang>: PoWen: 大家都嘛說自己家的很強
+23:55 +0800 <pichuang>: CISCO自己也有搞一套
+23:55 +0800 <hwchiu>: 也有人喜歡透過網頁搜尋結果說自己超強一樣XD
+23:55 +0800 <Zespre>: PoWen: 應該這麼講，FL 的 adapter 我們寫比較多 XD
+23:55 +0800 <PoWen>: XD
+23:55 +0800 <Zespre>: 像 trema-edge 的 topology 就還沒有寫 XD
+23:55 +0800 <PoWen>: I see
+23:55 +0800 <PoWen>: 這類資訊還是你們比較清楚 XD
+23:56 +0800 <PoWen>: 我得趕快惡補
+23:56 +0800 <Zespre>: 我也要趕緊惡補 QQ
+23:56 +0800 <pichuang>: 但cisco做的sdn 不是用 openflow protocol
+23:56 +0800 <hwchiu>: opflex？
+23:56 +0800 <pichuang>: 她們要自己搞自己一套solution
+23:56 +0800 <pichuang>: 這我沒詳細看
+23:56 +0800 <hwchiu>: 我印象他們有推opflex
+23:56 +0800 <hwchiu>: 自己的南向自己搞
+23:56 +0800 <pichuang>: http://www.cisco.com/c/en/us/solutions/collateral/data-center-virtualization/application-centric-infrastructure/white-paper-c11-731302.html
+23:57 +0800 <pichuang>: ?
+23:56 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/QLAjC  ==> http://www.cisco.com/c/en/us/solutions/collateral/data-center-virtualization/application-centric-infrastructure/white-paper-c11-731302.html
+23:57 +0800 <John_aduim>: Zespre: ryu有進你們的Roadmap嗎XD
+23:57 +0800 <hwchiu>: rascov_:
+23:58 +0800 <Zespre>: John_aduim: 之前有列入 survey 清單，但忘記為啥後來擱置了 XD
