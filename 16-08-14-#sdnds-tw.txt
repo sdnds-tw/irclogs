@@ -1,0 +1,201 @@
+00:01 +0800 <John_aduim>: QQ
+00:02 +0800 <Shanyu>: shhu 別亂CUE 我只是拿omniUI加了一點東西XDDD
+00:02 +0800 <PoWen>: 各位先來去睡
+00:02 +0800 <hwchiu>: 想做就做吧ＸＤ
+00:02 +0800 <PoWen>: 晚安
+00:02 +0800 <PoWen>: XD
+00:02 +0800 <hwchiu>: 晚安
+00:02 +0800 <hwchiu>: shanyu: 都加了，就多加一點吧！
+00:03 +0800 <pichuang>: shanyu: 是領導
+00:03 +0800 <John_aduim>: goodnight
+00:03 +0800 <pichuang>: PoWen: good night
+00:03 +0800 <Zespre>: shanyu aka 領導
+00:03 +0800 <pichuang>: Zespre: 記得把毛毛也拉近好
+00:04 +0800 <Shanyu>: 我是不是該改掉nickname XDDD
+00:04 +0800 <Zespre>: John_aduim: 歡迎加入寫寫 ryu adapter XD
+00:04 +0800 <John_aduim>: sdnds 網站是用什麼做的啊
+00:04 +0800 <Zespre>: shanyu: leaderYu
+00:04 +0800 <John_aduim>: Zespre:我會去看你們的專案 再看看有沒有機會加入XD
+00:04 +0800 <Zespre>: pichuang: 我去拉 XD
+00:05 +0800 <Zespre>: John_aduim: OK 的！
+00:05 +0800 <pichuang>: shanyu: /nick leader
+00:05 +0800 <pichuang>: xd
+00:05 +0800 <John_aduim>: sdnds.tw 網站是用什麼做的啊?
+00:05 +0800 <pichuang>: John_aduim: 只是單純套了一些js和一個index.html
+00:05 +0800 <pichuang>: 對吧 JalenLin
+00:06 +0800 <John_aduim>: host在哪
+00:06 +0800 <hwchiu>: JalenLin: 蟑螂出來
+00:06 +0800 <pichuang>: xddddddddd
+00:06 +0800 <John_aduim>: 我記得之前有人要幫忙寫網站啊XD
+00:06 +0800 <Zespre>: JalenLin 的主機吧？
+00:06 +0800 <pichuang>: 她八成再睡覺
+00:06 +0800 <John_aduim>: 我忘記ID了
+00:07 +0800 <pichuang>: John_aduim: 哦哦你是說 Davy_CC_
+00:07 +0800 <John_aduim>: yes
+00:08 +0800 <John_aduim>: github上可以host呀
+00:08 +0800 <John_aduim>: github page
+00:08 +0800 <pichuang>: xd 如果有確定要用什麼形式再來請他幫忙
+00:08 +0800 <Davy_CC_>: 我怎麼了？
+00:08 +0800 <pichuang>: Davy_CC_ ruby神
+00:08 +0800 <Davy_CC_>: pichuang: 別亂套稱號啊XDDDDDDDD
+00:08 +0800 <John_aduim>: ROR上啊
+00:08 +0800 <John_aduim>: XD
+00:09 +0800 <freetsubasa>: Davy_CC_: RoR 神m(_ _)m
+00:09 +0800 <Davy_CC_>: freetsubasa: ...
+00:09 +0800 <pichuang>: John_aduim: https://www.facebook.com/SitconTW/posts/454871734611611
+00:09 +0800 <sdnsd-tw_Bot>: ==> SITCON 學生計算機年會 - [每日議程] 土炮正夯！網路上的 PHP Framework... | Facebook
+00:09 +0800 <Davy_CC_>: 你們要做什麼要 RoR ...
+00:09 +0800 <pichuang>: sitcon 2013 2014 speaker
+00:09 +0800 <John_aduim>: 可以先有個雛形我們在討論怎麼加content
+00:09 +0800 <Davy_CC_>: 可以啊
+00:10 +0800 <pichuang>: 我們需要等網站SA起床 XD
+00:10 +0800 <pichuang>: 他睡覺時間非常詭異
+00:10 +0800 <hwchiu>: 蟑螂啊
+00:10 +0800 <John_aduim>: 你認識https://www.facebook.com/RenRenChiang?fref=ufi啊
+00:10 +0800 <pichuang>: 蟑螂有再睡覺的嗎
+00:10 +0800 <Davy_CC_>: John_aduim: 任任?
+00:10 +0800 <John_aduim>: 姜柏任
+00:11 +0800 <Zespre>: 你不會看到蟑螂睡覺 XD
+00:11 +0800 <John_aduim>: 我在Pycon認識他的
+00:11 +0800 <Davy_CC_>: John_aduim: 認識啊，我在他家睡一晚就認識了（誤
+00:11 +0800 <pichuang>: 所以蟑螂會睡覺嗎 從我們正常人看 JalenLin 的角度看來?
+00:11 +0800 <John_aduim>: XD 臺大法律的吧？我應該沒認錯人
+00:11 +0800 <Davy_CC_>: John_aduim: 對啊是他(ry
+00:12 +0800 <John_aduim>: 所以網站要用RoR做嗎XD
+00:12 +0800 <John_aduim>: 已期待
+00:13 +0800 <Davy_CC_>: 看要做什麼啦XDDDDDDDDDDDDDDD
+00:13 +0800 <pichuang>: 我想一下 這邊有... JalenLin  Davy_CC_  freetsubasa 三個 RUBY愛好者
+00:13 +0800 <pichuang>: 本人自認前端0分
+00:13 +0800 <Davy_CC_>: 如果只是 blog 就不用 RoR 啊XD
+00:13 +0800 <pichuang>: 也是
+00:13 +0800 <pichuang>: 這可能要討論一下
+00:13 +0800 <Davy_CC_>: pichuang: 可是你是共同點耶……
+00:13 +0800 <John_aduim>: 我其實也不太懂網站 可是如果做部落格形式有點太可惜
+00:14 +0800 <pichuang>: ._.?
+00:14 +0800 <Davy_CC_>: 當然還有其他方案可以選啊，所以要做什麼比較重要
+00:14 +0800 <John_aduim>: 因為我們這有好多部落格啊XD
+00:14 +0800 <Davy_CC_>: XDDDDDDDDDDDDDDDDD
+00:14 +0800 <pichuang>: Davy_CC_: y
+00:14 +0800 <pichuang>: John_aduim: 好像也是
+00:14 +0800 <pichuang>: 一人一個
+00:14 +0800 <pichuang>: xd
+00:14 +0800 <pichuang>: 這樣不如開個sdnds-tw.logdown.com
+00:14 +0800 <John_aduim>: XD
+00:14 +0800 <pichuang>: 感覺好像沒啥意義
+00:15 +0800 <pichuang>: xd
+00:15 +0800 <Davy_CC_>: 倒是可以做個聯播……
+00:15 +0800 <Davy_CC_>: 抓抓大家的 blog 來（？
+00:15 +0800 <hwchiu>: http://ir.lib.ncu.edu.tw:88/thesis/download.asp?datetime=2013-7-30&filename=100423052.pdf
+00:15 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/OFTEN  ==> http://ir.lib.ncu.edu.tw:88/thesis/download.asp?datetime=2013-7-30&filename=100423052.pdf
+00:15 +0800 <pichuang>: 這樣不太好 感覺很像是老鼠會
+00:15 +0800 <Davy_CC_>: wwwwwwwwwww
+00:15 +0800 <hwchiu>: 這篇的做法是 snort直接寫入iptables
+00:15 +0800 <hwchiu>: 雖然掛在openflow的論文下，但是其實沒啥互動
+00:15 +0800 <pichuang>: 為啥是iptabels
+00:15 +0800 <pichuang>: ...
+00:16 +0800 <pichuang>: 這是不是寫歪了
+00:16 +0800 <hwchiu>: 問他囉ＸＤ
+00:16 +0800 <pichuang>: 有好端端的 flow action可以用
+00:16 +0800 <pichuang>: whyyyy iptables
+00:16 +0800 <John_aduim>: xd
+00:16 +0800 <John_aduim>: 寫歪
+00:16 +0800 <hwchiu>: 看這個好了
+00:16 +0800 <hwchiu>: http://tcrc.tanet.edu.tw/TANET2013/paper/M35-902-2.pdf
+00:16 +0800 <hwchiu>: 整理版
+00:16 +0800 <hwchiu>: 剛剛那個太多話
+00:16 +0800 <John_aduim>: http://www.sdnap.com/ 的形勢不錯啊
+00:16 +0800 <sdnsd-tw_Bot>: ==> SDN联合播报 | 中国软件定义网络网 | SDN/Openflow社区 | SDNAP
+00:17 +0800 <John_aduim>: 還可以做個贊助商的專區
+00:17 +0800 <hwchiu>: http://140.133.4.61/IJSE/DATA/file/2014_6-92.pdf
+00:17 +0800 <hwchiu>: 這篇感覺有合作到
+00:17 +0800 <hwchiu>: 不過snort跟controoler並非直接溝通
+00:18 +0800 <pichuang>: LIPSIN
+00:18 +0800 <pichuang>: 沒看過
+00:18 +0800 <hwchiu>: 做安全的看完告訴我結論好了
+00:19 +0800 <Davy_CC_>: John_aduim: 有點像是新聞網之類的？
+00:19 +0800 <John_aduim>: Davy_CC_: 對
+00:19 +0800 <John_aduim>: 我們可以把資訊放上去
+00:20 +0800 <pichuang>: 對吼還有贊助商專區
+00:20 +0800 <pichuang>: xd
+00:20 +0800 <pichuang>: 說不定隔沒多久就有露天再賣台灣of sw
+00:20 +0800 <John_aduim>: 簡單一點像這樣 http://taiwan-py.appspot.com/
+00:20 +0800 <sdnsd-tw_Bot>: ==> Python Taiwan – 台灣的Python社群
+00:20 +0800 <John_aduim>: 對啊 我覺得你那個賣可以比他便宜
+00:21 +0800 <John_aduim>: 然後提供Technical support
+00:21 +0800 <John_aduim>: 另外收月費之類.
+00:21 +0800 <pichuang>: 我可以把整個 solution 都可以做得更好 XD
+00:21 +0800 <adaam>: GJ
+00:22 +0800 <John_aduim>: 然後你也提供完整教學 給大家自行學習
+00:22 +0800 <pichuang>: 只要我先把一些奇怪的BUG解掉就差不多了
+00:22 +0800 <adaam>: 要賣錢了嗎
+00:22 +0800 <John_aduim>: 省麻煩的就可以跟你買了XD
+00:22 +0800 <adaam>: 軟體解決方案？
+00:22 +0800 <pichuang>: 完整教學應該是不用 因為我會想辦法做再OS裡面
+00:22 +0800 <hwchiu>: 我覺得他好強喔..Srini Seetharaman
+00:22 +0800 <pichuang>: adaam: 你居然出現了
+00:22 +0800 <adaam>: @pichuang 一直都有在看好不
+00:23 +0800 <adaam>: 想當初我也做過吼ＸＤＤ
+00:23 +0800 <pichuang>: adaam: 居然你幹嘛都偷偷不講話 話說你們也有要搞這個嗎
+00:23 +0800 <adaam>: 還用ＮＥＴＧＥＡＲ
+00:23 +0800 <pichuang>: adaam: 也是XD
+00:23 +0800 <adaam>: 我們有用，可是不是我們部門
+00:23 +0800 <pichuang>: hwchiu: 邱牛你也可以阿 先簽個博班
+00:23 +0800 <pichuang>: 不要去研替了
+00:23 +0800 <pichuang>: adaam: = = 為啥你們也會用到 SDN
+00:23 +0800 <pichuang>: 我怎麼想都八竿子打不著
+00:23 +0800 <hwchiu>: pichuang: 他做的事情都是我想要做的，但是都比我早做完好多 幹＝＝
+00:24 +0800 <pichuang>: hwchiu: 你現在知道了 所以你跟他平等 xd
+00:24 +0800 <adaam>: pichuang: 我們有做很多啊，也有根ＶＭＷＡＲＥ合作
+00:24 +0800 <adaam>: 虛擬機器的防火牆
+00:24 +0800 <adaam>: 掃毒
+00:25 +0800 <adaam>: 不過最近ＥＬＡＳＴＩＣＳＥＡＲＣＨ遇到比較多問題，你們那邊有沒有專業的ＸＤＤＤ
+00:26 +0800 <adaam>: 還有ＲＡＢＢＩＴＭＱ
+00:27 +0800 <pichuang>: ...
+00:27 +0800 <pichuang>: 完全沒有
+00:27 +0800 <pichuang>: xd
+00:29 +0800 <pichuang>: adaam: 挖難得看你出現 有空多聊個幾句阿~~
+00:29 +0800 <pichuang>: 先來睡覺 明天要玩ctf
+00:31 +0800 <John_aduim>: XD
+00:31 +0800 <John_aduim>: 你也有報名啊
+00:31 +0800 <John_aduim>: 我也是
+00:31 +0800 <pichuang>: xd 手下留情
+00:32 +0800 <John_aduim>: 我是新手..
+00:32 +0800 <John_aduim>: 好吧 我也要去休息了
+00:32 +0800 <John_aduim>: 晚安囉 各位
+00:36 +0800 <Shanyu>: hwchiu 剛剛快速看一下 分析惡意行為就是交給snort這種signature-based IDS去做 OF controller只是負責做一些policy決策(擋掉在blacklist裡面的hosts)
+00:38 +0800 <hwchiu>: 所以是 snort把結果寫入某處， controoler定期去某處抓來下policy
+00:39 +0800 <hwchiu>: 還是snort一分析完畢，馬上透過某方法通知OF controller去下policy?
+00:42 +0800 <Shanyu>: snort分析之後 寫進去DB controller定期check DB
+00:42 +0800 <hwchiu>: 嗯嗯，了解<(_ _)>
+00:44 +0800 <Shanyu>: <(_ _)> <(_ _)>  <(_ _)>
+00:45 +0800 <hwchiu>: 不愧是leader
+02:06 +0800 <JalenLin>: QQ...
+02:06 +0800 <JalenLin>: 我怎麼無故中槍了
+09:36 +0800 <adaam>: JalenLin ++
+10:20 +0800 <PoWen>: 哇
+10:20 +0800 <PoWen>: 好多要follow
+10:22 +0800 <PoWen>: pichuang> 先來睡覺 明天要玩ctf → 啥是CTF？
+11:10 +0800 <PoWen>: 有人在嗎
+11:11 +0800 <PoWen>: seems no
+11:11 +0800 <PoWen>: XD
+11:11 +0800 <PoWen>: 我一直在想，SDN與NFV, 或許能降低CapEx, 但真的能降低OpEx嗎？
+12:16 +0800 <John_mobile>:  PoWen: http://hitcon.org/2014/CTF/
+12:16 +0800 <sdnsd-tw_Bot>: ==> CTF | 台灣駭客年會 HITCON 2014 — Adapt to the new era of security threats.
+12:35 +0800 <PoWen>: oh
+12:35 +0800 <PoWen>: ok thanks
+12:36 +0800 <PoWen>: 哇賽
+12:36 +0800 <PoWen>: 48小時賽
+12:36 +0800 <PoWen>: 真的是hackthon
+19:39 +0800 <hwchiu>: 今天大家都在忙XD
+20:04 +0800 <JalenLin>: hwchiu: 你不忙一下嗎?
+20:37 +0800 <PoWen>: XD
+20:59 +0800 <chiehwen2>: 好多人今天都去打 wargame 是嗎？XD
+21:02 +0800 <ws23>: 感覺是xD
+23:07 +0800 <gtx>: agg學長好
+23:09 +0800 <chma>: agg學長好+1 來找你報到了!!
+23:10 +0800 <shhu>: gtx chma 是我學弟，目前升大三，都有在學網路，今天吃飯，被我拉進來一起學sdn XDDD
+23:18 +0800 <hwchiu>: mooo
+23:18 +0800 <hwchiu>: gtx,chma 你們好，希望有朝一日，你們可以跟學長(shhu)一樣簽博
+23:19 +0800 <shhu>: gtx, chma: 博班學長出來講話了，快拜 <(_ _)>
+23:23 +0800 <hwchiu>: shhu: = =
+23:23 +0800 <PoWen>: 大家一起簽博
