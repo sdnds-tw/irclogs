@@ -1,0 +1,67 @@
+00:27 +0800 <ws23>: 好欸 有跟我同年紀的了好感動QQ
+00:41 +0800 <hwchiu>: XD
+00:42 +0800 <ws23>: xDD 啊就一直看到不是研究生就是就業中咩……所以看到有大學生有點開心xD
+01:31 +0800 <Davy_CC_>: ws23: 你還是比我老（壞
+01:48 +0800 <ws23>: Davy_CC_: ……對啦對啦Orz
+09:06 +0800 <PoWen>: Davy_CC 和 ws23 都還是大學生？
+14:03 +0800 <Davy_CC_>: PoWen: 升大二 OAO"
+16:01 +0800 <pichuang>: 這幾天有點小忙
+16:01 +0800 <pichuang>: 都在看人打hitcon ctf xd
+16:29 +0800 <PoWen>: 哇賽，升大二，來弄SDN
+16:29 +0800 <PoWen>: 超厲害的啊
+16:29 +0800 <PoWen>: hitcon ctf結束沒
+16:29 +0800 <PoWen>: XD
+16:36 +0800 <pichuang>: 到明日12:00
+16:48 +0800 <PoWen>: 好久
+16:48 +0800 <PoWen>: 小飛機，你熟Linux Kernal嗎
+16:59 +0800 <Davy_CC_>: 我只是來當倒茶小妹的
+17:03 +0800 <PoWen>: 不會啦
+17:03 +0800 <PoWen>: 我33歲了，有點大叔
+17:03 +0800 <PoWen>: 當年大二還在狂打魔獸，是個小廢柴
+17:04 +0800 <PoWen>: 各位真是後生可畏
+17:04 +0800 <PoWen>: 太好了
+17:04 +0800 <PoWen>: 幹掉對面SDNAP
+17:04 +0800 <PoWen>: YAYA~~~
+22:44 +0800 <PoWen>: 有人有在玩OpenStack的嗎
+22:46 +0800 <hwchiu>: Lab有
+22:48 +0800 <PoWen>: 有架起來？已經能跑基本的cloud service？
+22:54 +0800 <John_aduim>: 我們Lab也會架OpenStack
+22:54 +0800 <John_aduim>: 之前用cloudstack
+22:54 +0800 <John_aduim>: OpenStack現在很火啊！
+22:58 +0800 <PoWen>: yes
+22:58 +0800 <PoWen>: it's on fire
+23:01 +0800 <PoWen>: SDNAP上，剛找到一篇 OpenStack + OVSDB + OpenDayLight的測試環境
+23:01 +0800 <PoWen>: 很有意思
+23:02 +0800 <PoWen>: 得實際架一個才知道是怎麼回事
+23:02 +0800 <hwchiu>: 有起來
+23:02 +0800 <hwchiu>: 過程滿辛苦的就是了ＸＤ
+23:02 +0800 <hwchiu>: 底下開出的ＶＭ的網路都能夠順利運行
+23:03 +0800 <hwchiu>: 然後controller可以根據網路環境去調整path以及做vm migration
+23:04 +0800 <PoWen>: 了不起耶
+23:04 +0800 <PoWen>: vm migratoin，時間大概要多久？
+23:05 +0800 <PoWen>: 我想感受一下那個辛苦的過程 XDDD
+23:05 +0800 <hwchiu>: 我忘了ＸＤ 畢竟不是我在弄
+23:05 +0800 <hwchiu>: 環境用1X台i7組成
+23:05 +0800 <hwchiu>: 有些灌ＯＶＳ
+23:07 +0800 <PoWen>: 哇　好多
+23:07 +0800 <PoWen>: 十幾台　ｉ７
+23:08 +0800 <hwchiu>: ＸＤ 環境單純點比較好做事情
+23:10 +0800 <PoWen>: ODL controller能去調整path, 這有意思喔
+23:12 +0800 <PoWen>: http://www.internet2.edu/products-services/advanced-networking/innovative-application-awards/
+23:12 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/OwMM3  ==> Innovative Application Awards | Internet2
+23:12 +0800 <PoWen>: SDN的應用，大型計畫
+23:13 +0800 <hwchiu>: 應該都要可以＃調整路徑
+23:13 +0800 <hwchiu>: 直接改flow entry即可
+23:14 +0800 <hwchiu>: 我們ＬＡＢ主要都用FL
+23:14 +0800 <PoWen>: 怪不得你這麼熟fl
+23:14 +0800 <PoWen>: 一直contribute, 神人 XD
+23:15 +0800 <hwchiu>: QQ運氣好而已，剛好有興趣
+23:44 +0800 <PoWen>: 噢
+23:44 +0800 <PoWen>: Metadata: a maskable register value that is used to carry information from one table to the next.
+23:44 +0800 <PoWen>: 看到了...
+23:44 +0800 <PoWen>: 那metadata可以是 instruction啊
+23:46 +0800 <PoWen>: 應該啦 XD
+23:50 +0800 <hwchiu>: Write-Metadata metadata / mask
+23:50 +0800 <hwchiu>: 有這個instruction
+23:55 +0800 <PoWen>: 瞭解
+23:55 +0800 <PoWen>: 感謝
