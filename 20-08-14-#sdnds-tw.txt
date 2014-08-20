@@ -1,0 +1,565 @@
+00:01 +0800 <PoWen>: XD
+00:08 +0800 <hwchiu>: http://hwchiu.logdown.com/posts/221370-mininet-parsing
+00:08 +0800 <sdnsd-tw_Bot>: ==> Mininet 解析 « hwchiu's Blog
+00:08 +0800 <hwchiu>: 剛寫好的XDD
+00:37 +0800 <PoWen>: nice !
+00:41 +0800 <PoWen>: 底下會描述要如何在系統中仿真出一個如下圖般的拓樸
+00:41 +0800 <PoWen>: 欸
+00:41 +0800 <PoWen>: 倣真
+00:42 +0800 <PoWen>: 變成大陸仔了...
+00:43 +0800 <hwchiu>: XDD
+00:43 +0800 <hwchiu>: emulate該怎翻阿QQ
+00:46 +0800 <PoWen>: 可能只能繞口一點了
+00:46 +0800 <PoWen>: 100%模擬
+00:46 +0800 <PoWen>: XD
+00:47 +0800 <PoWen>: 擬真
+00:47 +0800 <PoWen>: 好鳥...
+00:47 +0800 <hwchiu>: XD
+00:50 +0800 <hwchiu>: http://limetext.org/
+00:50 +0800 <sdnsd-tw_Bot>: ==> Lime Text Editor
+00:50 +0800 <hwchiu>: 新的文字編輯器
+00:55 +0800 <PoWen>: interesting
+00:55 +0800 <PoWen>: study tomorrow
+00:55 +0800 <PoWen>: sleep
+00:55 +0800 <PoWen>: good night
+00:56 +0800 <hwchiu>: 晚安
+01:19 +0800 <adaam>: emulate應該就是模擬吧
+01:28 +0800 <hwchiu_znc>: simulate吧
+01:31 +0800 <adaam>: http://stackoverflow.com/questions/2174638/whats-the-difference-between-emulation-and-simulation
+01:31 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/Y1UsG  ==> emulator - What's the difference between emulation and simulation? - Stack Overflow
+01:31 +0800 <adaam>: 感覺在中文差不多同義，應該不用計較太多
+01:32 +0800 <adaam>: 轉換成中文應該是模擬內部跟外部的差異
+01:32 +0800 <adaam>: 所以通稱模擬器應該ok
+08:23 +0800 <PoWen>: emulator 中文只翻作模擬器
+08:24 +0800 <PoWen>: simulation 就講做跑模擬
+08:24 +0800 <PoWen>: but seems that emulator is more strict than simulator
+09:07 +0800 <hwchiu_znc>: 還是習慣這樣XD 如同ESTINET
+09:07 +0800 <hwchiu_znc>: 他有simulation and emulation
+09:08 +0800 <hwchiu_znc>: Btw estinet的研發是我老闆， 所以這兩個名詞給他教育多次了
+09:09 +0800 <PoWen>: EstiNEt的研發？
+09:09 +0800 <PoWen>: 你好像有說過
+09:10 +0800 <PoWen>: but I forgot
+09:10 +0800 <PoWen>: EstiNet我只認識一些人...
+09:14 +0800 <hwchiu>: 恩阿， 前身是Nctuns
+09:45 +0800 <PoWen>: 你今天怎麼這麼早啊
+09:47 +0800 <hwchiu>: 一直都很早拉XD 只是有時候去游泳就會比較晚回
+10:08 +0800 <PoWen>: 喔！
+10:08 +0800 <PoWen>: 你也練游泳？練跑步？
+10:24 +0800 <jamesLiao>: 有騎單車嗎?
+10:26 +0800 <hwchiu>: 沒有騎單車XD
+10:27 +0800 <hwchiu>: 游泳的話，一次1500吧
+10:27 +0800 <hwchiu>: 跑步就偶而去重訓室跑而已
+10:56 +0800 <PoWen>: 差點就鐵人三項了
+14:19 +0800 <John_mobile>:  irccloud  7天到期
+14:21 +0800 <PoWen>: 2 days left
+14:28 +0800 <hwchiu>: XD 開者就沒事
+14:29 +0800 <jamesLiao>: 這裡會關閉?
+14:29 +0800 <John_aduim>: 已經找台電腦開了!
+14:29 +0800 <John_aduim>: jamesLiao: 是我們用irccloud七天免費到期了
+14:30 +0800 <John_aduim>: 那是給client掛IRC看log的地方
+14:33 +0800 <jamesLiao>: 了解
+14:49 +0800 <hwchiu>: 哈囉
+14:50 +0800 <bske0819>: 你好0..0
+14:50 +0800 <hwchiu>: 看來也是交大的XD
+14:51 +0800 <hwchiu>: 碩一喔
+14:51 +0800 <bske0819>: 生碩二>W<
+14:52 +0800 <bske0819>: 寄生在skysky旗下的廢渣
+14:52 +0800 <bske0819>: xd
+14:57 +0800 <hwchiu>: 哦哦
+14:57 +0800 <hwchiu>: skysky是tutul嗎= =
+14:57 +0800 <hwchiu>: 太多sky了XD
+14:58 +0800 <tutul>: 關鍵字...>  <
+15:02 +0800 <spiegel>: XD
+15:02 +0800 <spiegel>: 改個名@@
+15:02 +0800 <hwchiu>: XD good
+15:03 +0800 <hwchiu>: 你們目前LAB都在ODL?
+15:03 +0800 <spiegel>: tutul表示:都玩
+15:03 +0800 <spiegel>: XDDDDD
+15:12 +0800 <hwchiu>: 靠
+15:12 +0800 <hwchiu>: 好強
+15:13 +0800 <spiegel>: 超強QQ
+15:32 +0800 <tutul>: 嘎.....別亂講話 > <
+15:42 +0800 <hwchiu>: 那目前方向是啥阿~
+15:58 +0800 <tutul>: 我們 目前是走 mutiple controller
+15:58 +0800 <tutul>: 但也有 application的部分
+15:58 +0800 <tutul>: 只是都沒很深 剛開始而已
+16:00 +0800 <PoWen>: multiple controller ?
+16:00 +0800 <PoWen>: 是指每種open source controller都碰？
+16:01 +0800 <PoWen>: 還是指 controller in HA design ?
+16:08 +0800 <tutul>: 不是耶 比較像HA 但又有點不太像
+16:08 +0800 <tutul>: 最遠大的目標是 設計一個 application  只要controller 提供該有的介面 即可 HA兩個　controller
+16:12 +0800 <hwchiu>: 好MO
+16:21 +0800 <pichuang>: 報完了
+16:21 +0800 <pichuang>: 復活
+16:23 +0800 <pichuang>: tutul: ha
+16:23 +0800 <pichuang>: op
+16:25 +0800 <hwchiu>: fu;6u,
+16:25 +0800 <hwchiu>: 強耶!
+16:26 +0800 <pichuang>: 其實 controller 配合 linux heartbeat 應該可以做到很不sdn的 Fault Tolerance
+16:26 +0800 <pichuang>: xd
+16:42 +0800 <hwchiu>: 周六的流程?
+16:45 +0800 <pichuang>: 我會先上去自我介紹 然後講一下sdnds-tw的目標
+16:45 +0800 <pichuang>: 然後分享一下我個人對於sdn的看法
+16:45 +0800 <pichuang>: 交換一下意見
+16:46 +0800 <pichuang>: hwchiu: 你有要講一下floodlight的部分嗎 你可以尋找後人幫你接手contribute
+16:46 +0800 <hwchiu>: 霸氣一小時
+16:46 +0800 <pichuang>: ...
+16:46 +0800 <pichuang>: 我廢話不會很多的
+16:46 +0800 <hwchiu>: 這要有興趣拉XD 不能強求
+16:46 +0800 <pichuang>: 會儘量想辦法讓大家互相交流
+16:46 +0800 <pichuang>: 我知道
+16:47 +0800 <hwchiu>: 恩恩
+16:47 +0800 <pichuang>: 我是說你有沒有想介紹一下floodlight的生態之類的
+16:47 +0800 <pichuang>: 有興趣的可以自行找你詢問
+16:47 +0800 <hwchiu>: 在想，適合嗎 第一次
+16:47 +0800 <pichuang>: y
+16:47 +0800 <hwchiu>: 我不清楚XD
+16:47 +0800 <hwchiu>: 我是OK
+16:47 +0800 <pichuang>: 適合 你不講的話沒機會了
+16:47 +0800 <hwchiu>: John_aduim: 不介紹一下RYU嗎XD
+16:48 +0800 <pichuang>: controller pk
+16:48 +0800 <John_aduim>: 剛剛在忙XD 我看一下log
+16:49 +0800 <hwchiu>: John_aduim: 對於周六的行程，有什麼建議嗎
+16:50 +0800 <John_aduim>: 我想先大家認識之後, 聊一下社群要怎麼運作 再做技術的交流吧！
+16:51 +0800 <John_aduim>: 大家可以分享一下各Controller怎麼做應用程式的嗎
+16:52 +0800 <hwchiu>: 我都OK，我下次還可以講一下OVS的架構&原理
+16:53 +0800 <John_aduim>: 恩 或是分享一下怎麼移植的ㄝ
+16:53 +0800 <John_aduim>: 這應該是很多人都想知道的ＸＤ
+16:53 +0800 <hwchiu>: XD 可是我沒有硬體可以移植，所以只能嘴砲
+16:53 +0800 <hwchiu>: 或是移植到別的平台
+16:55 +0800 <hwchiu>: 會緊張哩XD
+16:57 +0800 <John_aduim>: 家用路由器呀！
+16:58 +0800 <hwchiu>: 恩恩，這些就等第二次之後，再來比較技術的討論了
+17:49 +0800 <tutul>: 那只是理論 根本不懂啊>  <
+17:49 +0800 <tutul>: 我指的是我們實驗室
+17:49 +0800 <tutul>: @@
+17:53 +0800 <hwchiu>: 下次來分享阿XD
+18:03 +0800 <PoWen>: 硬體我可以想辦法提供
+18:03 +0800 <PoWen>: 小飛機你開清單
+18:47 +0800 <PoWen>: 邱渣也開硬體清單
+18:47 +0800 <PoWen>: 我看有沒有辦法
+19:07 +0800 <pichuang>: PoWen: 好哦xd 我會找一下
+19:07 +0800 <pichuang>: 謝謝
+19:09 +0800 <pichuang>: John_aduim: 想問一下大陸他們舉辦meetup的次數會不會很多?
+19:09 +0800 <pichuang>: 還有一些他們進行的模式之類的
+19:10 +0800 <John_aduim>: 她們舉辦次數其實不會太多
+19:11 +0800 <John_aduim>: 至於進行的模式我就不清楚 因為我也沒去
+19:11 +0800 <John_aduim>: 可是他們通常都是有廠商去Host
+19:11 +0800 <John_aduim>: 跟我們這種性質比較不一樣
+19:18 +0800 <pichuang>: 恩...
+19:19 +0800 <pichuang>: 如果我們要長久的話
+19:19 +0800 <pichuang>: 可能要先想想辦法聚集人氣
+19:19 +0800 <pichuang>: 我剛剛很認真的在想台灣在玩sdn的人
+19:19 +0800 <pichuang>: 大部份都是研究所
+19:19 +0800 <pichuang>: 學界居多
+19:20 +0800 <pichuang>: PoWen: 想請問一下業界的想接觸的sdn廠商會很多嗎?
+19:30 +0800 <John_aduim>: 廠商需要曝光度, 網站做好的話 對他們是一種吸引
+19:32 +0800 <pichuang>: JalenLin: 請假蘭大神賜予我們一個網站
+19:33 +0800 <pichuang>: John_aduim: 所以網站應該要在近期儘量弄起來嗎?
+19:34 +0800 <John_aduim>: 我覺得應該要做，社群上應該還是有人會寫web吧？但是需要點內容！
+19:35 +0800 <John_aduim>: 如果要拉廠商來贊助的話
+19:35 +0800 <John_aduim>: 我們也可以辦個meetup帳號
+19:35 +0800 <John_aduim>: 不知道有沒有辦了？
+19:36 +0800 <pichuang>: 對我們需要內容
+19:36 +0800 <pichuang>: meetup 的會議開起來要$$
+19:36 +0800 <pichuang>: 而且還有點貴= =
+19:36 +0800 <pichuang>: 廠商如果要來贊助 我們需要給對應的回饋給廠商
+19:39 +0800 <John_aduim>: 是喔 meetup帳號需要$喔
+19:40 +0800 <pichuang>: 恩恩 需要年費
+19:42 +0800 <John_aduim>: 半年 150 TWD
+19:44 +0800 <hwchiu>: 這樣喔
+19:44 +0800 <John_aduim>: 其實也還好啦 看大家要不要均分 XD
+19:44 +0800 <hwchiu>: 好少= =
+19:44 +0800 <pichuang>: 有這麼便宜嗎xd
+19:44 +0800 <hwchiu>: 我可以買一年送你
+19:44 +0800 <John_aduim>: 恩啊 其實不多
+19:44 +0800 <John_aduim>: 但是要有辦活動再用 不然有點浪費
+19:45 +0800 <pichuang>: 先透過kktix先辦幾個見面討論會 我們再來看後續大家反應如何
+19:45 +0800 <hwchiu>: 恩恩
+19:45 +0800 <John_aduim>: 好
+19:45 +0800 <pichuang>: 希望是能持續保持下去xd
+19:45 +0800 <hwchiu>: GO
+19:46 +0800 <pichuang>: 至少我想要想辦法做到像sdnap的規模一樣
+19:46 +0800 <John_aduim>: 一個月或三個禮拜聚會一次如何QQ
+19:46 +0800 <pichuang>: 一個月差不多
+19:46 +0800 <John_aduim>: 恩
+19:46 +0800 <pichuang>: 我們這種topic可能沒辦法做workshop
+19:46 +0800 <pichuang>: 我在想
+19:46 +0800 <hwchiu>: 背後支持你
+19:46 +0800 <pichuang>: hackthon倒可以考慮一下
+19:46 +0800 <pichuang>: xd
+19:46 +0800 <hwchiu>: 之後頂多是下班後
+19:46 +0800 <hwchiu>: 才能夠自由摸索
+19:46 +0800 <hwchiu>: 看看那下班時間XD
+19:47 +0800 <pichuang>: 但要進行hackthon需要人
+19:47 +0800 <John_aduim>: 恩啊 我可以幫忙
+19:49 +0800 <pichuang>: John_aduim: 一起想一下如何利用現有資源來推動 sdnds 參與率
+19:49 +0800 <pichuang>: xd
+19:49 +0800 <pichuang>: 偶而可能也要移師至臺北舉辦
+19:50 +0800 <John_aduim>: 恩 也是可以 臺北很多簡餐店
+19:54 +0800 <John_aduim>: 我覺得需要做一些問卷
+19:55 +0800 <pichuang>: 移師臺北的目的是想要把臺北的朋友找出來聊聊
+19:55 +0800 <John_aduim>: 看大家的需求，例如：想了解開發 controller應用程式，OVS移植家用路由器，OpenFlow Spec 深入了解
+19:55 +0800 <John_aduim>: 之類
+19:56 +0800 <pichuang>: 對對
+19:56 +0800 <John_aduim>:  google doc開一下來做
+19:56 +0800 <pichuang>: hackpad?
+19:56 +0800 <John_aduim>: 然後也可以去PTT Network 通知大家一下
+19:56 +0800 <John_aduim>: google doc能開問卷的表單
+19:57 +0800 <John_aduim>: 有連結可以讓大家點 它會自動統計分析
+19:59 +0800 <pichuang>: 有道理
+19:59 +0800 <pichuang>: 會後表單能麻煩你幫忙一下嗎
+19:59 +0800 <John_aduim>: ok的
+19:59 +0800 <pichuang>: thx
+20:00 +0800 <John_aduim>: 我近期先弄 到時候開放權限讓你們上來加選項
+20:01 +0800 <pichuang>: ok
+20:05 +0800 <John_aduim>: 上次忘記做snort 跟sdn的是哪幾位了XD
+20:05 +0800 <John_aduim>: 不知道在不在線上？
+20:06 +0800 <pichuang>: shanyu:
+20:06 +0800 <pichuang>: shhu:
+20:06 +0800 <John_aduim>: 最近我在把ryu跟snort 做整合
+20:06 +0800 <John_aduim>: 不知道會不會對ryu有興趣一些? XD
+20:07 +0800 <John_aduim>: 我把snort 的unix socket接口 接到ryu 上面
+20:07 +0800 <pichuang>: 疑 這樣可以work哦xd
+20:07 +0800 <John_aduim>: snort可以寫event handler 去處理發生 alert該做的事情
+20:07 +0800 <John_aduim>: ryu可以寫event handler 去處理發生 alert該做的事情
+20:07 +0800 <John_aduim>: 可以！
+20:08 +0800 <John_aduim>: 因為unix socket是同一檯電腦 之前meeting報的時候被老闆嫌snort會讓效能低落..
+20:08 +0800 <John_aduim>: 因為snort太耗效能
+20:08 +0800 <pichuang>: John_aduim: 丟道別台跑?
+20:08 +0800 <John_aduim>: 後來改用network socket 做接口 應該可以把他們分開了
+20:09 +0800 <pichuang>: 我覺得controller 應該要獨立一台 基本上應該是會比較好
+20:09 +0800 <John_aduim>: 恩 不過如果做原型開發同一檯也是可以 DEMO用
+20:10 +0800 <John_aduim>: 可是需要在官方ryu加一個patch進去
+20:10 +0800 <John_aduim>: 所以我近期會聯絡那個
+20:10 +0800 <pichuang>: ohoh
+20:10 +0800 <John_aduim>: ryu project lead
+20:10 +0800 <John_aduim>: 問他看看有沒有興趣XD
+20:11 +0800 <pichuang>: 丟patch 真大大
+20:11 +0800 <John_aduim>: 之前他們就有這個專案 就是ryu跟snort的
+20:11 +0800 <John_aduim>: 後來因為沒有人維護 就被砍了
+20:11 +0800 <pichuang>: 你想把她接回來做嗎
+20:12 +0800 <John_aduim>: 那天NTT研討會 我就問他為什麼snort整合消失了
+20:12 +0800 <John_aduim>: 他就說好像沒人力維護那塊吧 聽起來像是這樣
+20:12 +0800 <pichuang>: 哇
+20:12 +0800 <pichuang>: https://www.snort.org/
+20:12 +0800 <sdnsd-tw_Bot>: ==> Snort.Org
+20:12 +0800 <pichuang>: ....
+20:13 +0800 <pichuang>: 改頭換面椰
+20:13 +0800 <John_aduim>: 後來我跟他說我很有興趣 他就給我舊的Readme 跟source code 拿去做了
+20:13 +0800 <John_aduim>: 現在已經在目前新版ryu上面可以執行
+20:13 +0800 <pichuang>: John_aduim: 太神啦
+20:13 +0800 <pichuang>: 有github嗎
+20:13 +0800 <John_aduim>: 我目前還在寫doc跟文件
+20:14 +0800 <John_aduim>: source code有在github
+20:14 +0800 <John_aduim>: https://github.com/John-Lin/ryu
+20:14 +0800 <sdnsd-tw_Bot>: ==> John-Lin/ryu · GitHub
+20:14 +0800 <pichuang>: 哦哦 如果時間許可的話 你可以找天來分享一下 順便找個同好一起做
+20:14 +0800 <John_aduim>: 我fork出來 文件目前還沒有寫很多
+20:15 +0800 <John_aduim>: 好啊XD
+20:15 +0800 <pichuang>: social code
+20:15 +0800 <pichuang>: xd
+20:17 +0800 <hwchiu>: good
+20:17 +0800 <hwchiu>: 年輕真好= =
+20:17 +0800 <hwchiu>: 應該說，自由真好
+20:18 +0800 <John_aduim>: XD
+20:18 +0800 <John_aduim>: shanyu:
+20:18 +0800 <John_aduim>: shhu:
+20:18 +0800 <John_aduim>: 想要把lib裝上去的話可以看https://github.com/John-Lin/ryu/wiki/Snort-Integration
+20:18 +0800 <sdnsd-tw_Bot>: ==> Snort Integration · John-Lin/ryu Wiki · GitHub
+20:19 +0800 <pichuang>: 我覺得他們會用 floodlight做這件事情xd
+20:19 +0800 <Shanyu>: 哈摟～
+20:19 +0800 <John_aduim>: 也是可以啊 哈哈
+20:19 +0800 <pichuang>: shanyu: 領導出沒 <(_ _)>
+20:20 +0800 <hwchiu>: 對snort不熟，他本來就可以產生sock供alert用?
+20:20 +0800 <hwchiu>: 不需要改source code這樣?
+20:20 +0800 <John_aduim>: 它本身的
+20:20 +0800 <John_aduim>: alert有unix socket
+20:20 +0800 <John_aduim>: 但是需要寫unix socket 的server去聽
+20:21 +0800 <John_aduim>: 所以把server寫進ryu
+20:21 +0800 <hwchiu>: 那如果要分開的話? network socket
+20:21 +0800 <John_aduim>: 這就麻煩了XD
+20:21 +0800 <hwchiu>: 可能要動到snort囉XD?
+20:21 +0800 <John_aduim>: 在snort那檯機器上 需要再跑一隻程式
+20:21 +0800 <John_aduim>: 不用
+20:22 +0800 <hwchiu>: 轉出去嗎
+20:22 +0800 <John_aduim>: 一邊聽unix socket的資料 一邊往network socket打
+20:22 +0800 <John_aduim>: 恩
+20:22 +0800 <hwchiu>: unix接snort，再轉出去XD?
+20:22 +0800 <John_aduim>: 對
+20:22 +0800 <John_aduim>: 然後再ryu加個network socket 的server
+20:23 +0800 <hwchiu>: 恩恩
+20:23 +0800 <hwchiu>: 問一下
+20:23 +0800 <hwchiu>: 目前simple_switch_snort.py
+20:24 +0800 <PoWen>: 廠商做SDN的喔，多啊，看作哪部份
+20:24 +0800 <pichuang>: 現在沒paper壓力
+20:24 +0800 <pichuang>: 晚上來認真一下好了
+20:24 +0800 <pichuang>: xd
+20:24 +0800 <PoWen>: good
+20:24 +0800 <John_aduim>: hwchiu: 恩 我這個只有打封包資訊出來
+20:24 +0800 <PoWen>: 各位都是強者 XD
+20:24 +0800 <hwchiu>: 所以收到PacketIn後
+20:25 +0800 <hwchiu>: flow action的snort_port
+20:25 +0800 <John_aduim>: 不需要收到packetin的訊息
+20:25 +0800 <hwchiu>: 是幹嘛的那個port
+20:25 +0800 <John_aduim>: packet in 是打給controller的
+20:25 +0800 <hwchiu>: 恩恩
+20:25 +0800 <hwchiu>: _dump_alert這個吧
+20:26 +0800 <John_aduim>: 哦 因為我的snort+ryu是一檯兩張網卡的電腦
+20:26 +0800 <hwchiu>: snort會透過unix socket促發這個 handler
+20:26 +0800 <PoWen>: 硬體廠商做SDN switch的，多啊, 晶片的就有RTK, MTK, 做box的：廣達，Alpha, DNI, Accton, Foxconn, Celstica, Flextronic
+20:26 +0800 <PoWen>: ㄟ我不亂入了 XD
+20:26 +0800 <hwchiu>: 好多
+20:26 +0800 <hwchiu>: XD
+20:26 +0800 <pichuang>: PoWen: 好多家
+20:26 +0800 <John_aduim>: snort的 eth1  是接port 3
+20:26 +0800 <hwchiu>: 哦哦
+20:26 +0800 <hwchiu>: 有點類似mirror?
+20:26 +0800 <John_aduim>: 對
+20:26 +0800 <hwchiu>: 進來的封包都轉發一份給snort
+20:27 +0800 <John_aduim>: 沒錯
+20:27 +0800 <hwchiu>: snort分析後，透過unix socket
+20:27 +0800 <hwchiu>: 觸發controller內的handler去後續處理
+20:27 +0800 <John_aduim>: 告訴controller alert
+20:27 +0800 <hwchiu>: 大概瞭解了
+20:27 +0800 <John_aduim>: 恩
+20:27 +0800 <John_aduim>: 當然controller拿到alert就能drop 封包
+20:28 +0800 <hwchiu>: 恩恩
+20:28 +0800 <John_aduim>: 加進FL吧 XD
+20:28 +0800 <hwchiu>: 需要時間XD
+20:28 +0800 <hwchiu>: 不然這應該很OK
+20:28 +0800 <Shanyu>: John_aduim: 所以目前就是在controller上面寫收到alert後的後續處理？！
+20:29 +0800 <John_aduim>: 沒錯！
+20:32 +0800 <PoWen>: 我有個疑問
+20:33 +0800 <hwchiu>: ?
+20:33 +0800 <pichuang>: John_aduim: 若是有大量的packate送進來 這樣snort來的及處理嗎
+20:33 +0800 <hwchiu>: 這應該是snort的事情了XD
+20:33 +0800 <pichuang>: 還有這樣會不會controller為了等 snort 分析完才回應 會導致latency有點高
+20:34 +0800 <John_aduim>: pichuang: 沒錯這是snort的事了 一般snort處理不完它會先buffer
+20:34 +0800 <PoWen>: 我的問題跟小飛機一樣
+20:34 +0800 <PoWen>: 但重點在於
+20:34 +0800 <PoWen>: 封包的時間順序
+20:34 +0800 <John_aduim>: 等buffer爆了 就掉包
+20:34 +0800 <hwchiu>: 我是覺得controller本來就做本來的事情
+20:35 +0800 <hwchiu>: 若是遇到alert，就塞一個priority高一點的flow entry
+20:35 +0800 <hwchiu>: 去檔掉
+20:35 +0800 <John_aduim>: 還有這樣會不會controller為了等 snort 分析完才回應 會導致latency有點高<<<<<
+20:35 +0800 <PoWen>: yes
+20:35 +0800 <John_aduim>: 應該是不會
+20:35 +0800 <PoWen>: 這是一個問題
+20:35 +0800 <hwchiu>: 不同的event
+20:35 +0800 <John_aduim>: 沒錯
+20:35 +0800 <John_aduim>: 有點類似multi thread的概念 但不是
+20:35 +0800 <hwchiu>: 他的寫法並不會卡那個問題
+20:36 +0800 <PoWen>: 應該這樣問：所有的封包都會進snort分析，再讓OF agent做forward嗎？
+20:36 +0800 <hwchiu>: 並行處理XD
+20:36 +0800 <John_aduim>: Coroutine 我是用這個去做的
+20:36 +0800 <hwchiu>: 他不會先分析完再forward
+20:37 +0800 <John_aduim>: 例如 你正再吃泡麵 但客人按門鈴 你不會先把泡麵吃完再去開門吧XD
+20:37 +0800 <hwchiu>: 感覺是 先forward，之後有收到分析結果在檔掉後續封包
+20:37 +0800 <PoWen>: 那，有沒有可能有問題的packet, 已經有些被forward了，才被snort分析出來，然後加flow entry擋掉？
+20:37 +0800 <hwchiu>: right
+20:37 +0800 <PoWen>: hmm
+20:37 +0800 <hwchiu>: 這樣的話，就是有些有問題的，會先進去了
+20:37 +0800 <hwchiu>: 後續的才被檔
+20:37 +0800 <PoWen>: yes
+20:37 +0800 <John_aduim>: 這就是IDS跟IPS的差異了
+20:37 +0800 <PoWen>: 網路一大，switching capacity一高，漏網之魚可能會不少
+20:37 +0800 <John_aduim>: IDS只會通報 所以有機會讓惡意封包過去
+20:38 +0800 <John_aduim>: IPS就不會 但是他就會影響網路的速率
+20:38 +0800 <PoWen>: 如果想讓Ryu+Snort做到IPS
+20:38 +0800 <PoWen>: hmm
+20:38 +0800 <PoWen>: ok
+20:38 +0800 <PoWen>: 那這樣清楚了
+20:38 +0800 <PoWen>: 謝啦
+20:38 +0800 <John_aduim>: IPS他是每一包都拆開看 看完沒問題後他才放行
+20:39 +0800 <PoWen>: 客戶有在問我們要用NPU做DPI
+20:39 +0800 <John_aduim>: IDS就只單純看，沒看完就算了，但是有問題在通報
+20:39 +0800 <PoWen>: hmm ok
+20:39 +0800 <PoWen>: 研究一下IPS好了
+20:39 +0800 <PoWen>: 糗了一堆看不完...
+20:40 +0800 <hwchiu>: XD
+20:40 +0800 <PoWen>: 期待各位分享技術與看法啦
+20:40 +0800 <John_aduim>: hwchiu: 你也研究過ryu嗎
+20:40 +0800 <PoWen>: 文件化與分享是個issue就是了
+20:40 +0800 <hwchiu>: 基本上沒有
+20:40 +0800 <John_aduim>: 怎麼看你好像知道他底層運作XD
+20:41 +0800 <hwchiu>: 就他看起來是那副德性XD
+20:41 +0800 <hwchiu>: FU!
+20:41 +0800 <John_aduim>: soga
+20:42 +0800 <hwchiu>: 運動去XD 掰
+20:43 +0800 <John_aduim>: bye
+20:43 +0800 <pichuang>: xd
+20:45 +0800 <pichuang>: PoWen: 現在有台灣公司想要導入 sdn 的網路嗎
+20:53 +0800 <hwchiu>: shanyu: shhu 你們有興趣弄那個嗎 snort?
+20:54 +0800 <pichuang>: snort
+20:54 +0800 <pichuang>: 看起來好像變得有點猛
+20:55 +0800 <pichuang>: 以前好像有停止一陣子開發
+20:57 +0800 <pichuang>: 不知道分析準確度如何
+20:57 +0800 <hwchiu>: 該出發了 還在想一個問題
+20:58 +0800 <Shanyu>: hwchiu: snort是signature_based的～ 我要做的是behavior_based的
+20:58 +0800 <Shanyu>: hwchiu: snort可能只是我之後實驗的比較對象
+20:58 +0800 <hwchiu>: 牛領導
+20:58 +0800 <pichuang>: shanyu: 所以我以後如果看了一些影片
+20:58 +0800 <pichuang>: 可能會被你分析出來囉?
+20:58 +0800 <hwchiu>: 你會被檔掉
+20:59 +0800 <PoWen>: 啊邱渣不是去運動了
+20:59 +0800 <hwchiu>: 要去了XD
+20:59 +0800 <PoWen>: XD
+20:59 +0800 <PoWen>: 想哪個問題
+20:59 +0800 <pichuang>: hwchiu: 你早上游泳 中午??? 晚上還運動
+21:00 +0800 <PoWen>: 台灣公司導入sdn喔
+21:00 +0800 <hwchiu>: snort 多個switch的話,alert是不是也要帶入相關訊息
+21:00 +0800 <pichuang>: PoWen: 恩啊
+21:00 +0800 <hwchiu>: pichuang: 昨天早上游泳，今天晚上跑步
+21:00 +0800 <hwchiu>: 掰
+21:00 +0800 <pichuang>: 我們若是開發的東西都沒人用 那不是很可惜xd
+21:00 +0800 <PoWen>: telecom operator比較有在想，企業網路還在觀望
+21:00 +0800 <PoWen>: 主要都是Data Center在用
+21:01 +0800 <PoWen>: hwchiu> snort 多個switch的話,alert是不是也要帶入相關訊息
+21:01 +0800 <PoWen>: 帶入相關訊息，是指哪個alert屬於哪個switch ?
+21:03 +0800 <pichuang>: PoWen: data center 他們大多數是會考量用在core layer還是edge layer 呢?
+21:04 +0800 <PoWen>: both
+21:04 +0800 <PoWen>: but edge layer很critical
+21:04 +0800 <PoWen>: 因為flow table size不夠用，edge端會爆
+21:05 +0800 <PoWen>: 已經有小型的Data Center完成使用 pure OpenFlow了
+21:05 +0800 <pichuang>: wow
+21:05 +0800 <PoWen>: 但目前商用的chipset限制TCAM size, 所以就限制網路大小
+21:05 +0800 <pichuang>: 這麼猛 實務使用上他們有什麼feedback嗎?
+21:06 +0800 <PoWen>: 現在Pica8已經有在用FIB來擴增flow table siz
+21:06 +0800 <PoWen>: 現在Pica8已經有在用FIB來擴增flow table size
+21:06 +0800 <pichuang>: 網路大小 有個比較值可以對照一下嗎
+21:06 +0800 <PoWen>: feedback喔，我找一下
+21:06 +0800 <pichuang>: fib 對硬體不是很熟xd
+21:06 +0800 <PoWen>: 噢，大概是幾十台switch, 與幾千台，上萬台這兩種對照
+21:07 +0800 <PoWen>: pure SDN network, 之前聽說 NEC的programmable Flow, 一個controller能管兩百台OF switch, 就已經很強了
+21:07 +0800 <pichuang>: 200 of sw
+21:07 +0800 <pichuang>: ...
+21:07 +0800 <pichuang>: 有點猛= =
+21:07 +0800 <PoWen>: yes
+21:07 +0800 <PoWen>: 這是去年的效能
+21:07 +0800 <PoWen>: 今年的，還沒空去關注
+21:07 +0800 <PoWen>: XD
+21:08 +0800 <pichuang>: 環境是用在data center嗎?
+21:08 +0800 <pichuang>: 太扯了 200台
+21:08 +0800 <PoWen>: NEC的環境，可以用在很多情況，Data Center, Cloud Data Center, Enterprise, NFV都可以
+21:08 +0800 <pichuang>: 看樣子nec真的很認真的要搞定這塊
+21:08 +0800 <PoWen>: 對啊，那個controller有點強
+21:08 +0800 <pichuang>: controller能力太好了
+21:08 +0800 <PoWen>: 日本非常瘋OpenFlow
+21:09 +0800 <PoWen>: 中國大陸也很瘋
+21:09 +0800 <PoWen>: US覺得OF快死了
+21:09 +0800 <PoWen>: 歐洲比較迷NFV
+21:09 +0800 <pichuang>: 日本超瘋狂的xd
+21:09 +0800 <PoWen>: 我看的俄羅斯，正在起步玩OpenFlow XDDDD
+21:10 +0800 <pichuang>: 這是中國大陸白牌硬體可以逆天的機會
+21:10 +0800 <pichuang>: us 覺得 of 快死了? 為何@@?
+21:11 +0800 <PoWen>: 因為覺得OF只是個過渡期的產物
+21:11 +0800 <PoWen>: 真正的殺手還沒出來
+21:12 +0800 <PoWen>: 所以ONF很務實，就說OpenFlow只是一種南向接口的選擇，但不是唯一
+21:12 +0800 <PoWen>: 而且 OF的限制很明顯
+21:13 +0800 <PoWen>: 就是現在的晶片廠商，非常難去做一顆TCAM size超大的pure openflow晶片
+21:13 +0800 <PoWen>: 有包袱啊
+21:13 +0800 <pichuang>: soga
+21:13 +0800 <PoWen>: 既然做不了這種晶片，那OF的真正威力就無法突顯
+21:13 +0800 <PoWen>: 那不如就另尋他路吧...
+21:14 +0800 <PoWen>: 市面上有很多種其他的實現方式
+21:14 +0800 <PoWen>: 有用Network Processor的
+21:14 +0800 <PoWen>: 用CPU硬幹的
+21:14 +0800 <PoWen>: 用FPGA的
+21:14 +0800 <pichuang>: 對xddddd
+21:14 +0800 <PoWen>: 用Network Processor + FPGA的
+21:14 +0800 <PoWen>: 但都卡在switching capacity不夠大
+21:15 +0800 <PoWen>: 一個rack, 40U, 裝40台server, 每台server 裝10G網卡，至少就要400G了
+21:15 +0800 <pichuang>: 所以依您所見 southbound 有可能會有風向轉換的狀況囉xd
+21:15 +0800 <PoWen>: 其他solution要作到至少400G switching capacity, 都太貴
+21:16 +0800 <PoWen>: 您個頭
+21:16 +0800 <pichuang>: xd
+21:17 +0800 <PoWen>: Cisco就提OpFlex啊
+21:17 +0800 <PoWen>: FlexSDN
+21:17 +0800 <pichuang>: 恩恩
+21:17 +0800 <PoWen>: 還有另一種方式，是I2RS還什麼的
+21:17 +0800 <PoWen>: 忘了
+21:18 +0800 <PoWen>: 大概就是讓switch變成有programmable能力的
+21:18 +0800 <PoWen>: 一種定義
+21:18 +0800 <PoWen>: SDNAP上有寫
+21:18 +0800 <PoWen>: 熊熊想不起來
+21:18 +0800 <PoWen>: 總之，SDN燒到現在
+21:18 +0800 <PoWen>: OF能不能笑到最後，還不知道
+21:19 +0800 <pichuang>: 燒了一陣子 卡在硬體沒辦法到位
+21:19 +0800 <pichuang>: 說不定不會有 of 1.5 了
+21:19 +0800 <pichuang>: xd
+21:19 +0800 <PoWen>: 但能確定的是，openess和programmable, hardware-agnostic這些特性，會一直留下來
+21:19 +0800 <PoWen>: 現在要直接跳OF 2.0了 XD
+21:19 +0800 <PoWen>: Broadcom推的那個OF-DPA, data plane abstraction, 據說算是pre OF2.0
+21:20 +0800 <PoWen>: 阿災 XD
+21:20 +0800 <pichuang>: 我該來follow一下資訊了
+21:20 +0800 <pichuang>: 囧> 感覺好像有漏掉不少資訊
+21:20 +0800 <PoWen>: 互相交流囉
+21:21 +0800 <PoWen>: 不會啦 惡補一下就有了
+21:21 +0800 <PoWen>: 產業在變，也沒這麼快
+21:21 +0800 <pichuang>: 只要誰能看對風向 就是下一波的風頭了
+21:22 +0800 <PoWen>: 你說的對
+21:22 +0800 <PoWen>: 但沒人敢賭
+21:22 +0800 <PoWen>: 所以就都做
+21:22 +0800 <PoWen>: 於是晶片就變成都做，然後TCAM還是一小咪咪，不夠用 XD
+21:23 +0800 <PoWen>: 現在都靠矽谷的starup和日本在撐
+21:23 +0800 <PoWen>: 幾乎啦
+21:24 +0800 <pichuang>: soga
+21:24 +0800 <pichuang>: 沒關係 至少我知道我們不是孤獨的T_T
+22:08 +0800 <PoWen>: sure
+22:09 +0800 <PoWen>: SDN非常有學術研究的價值
+22:09 +0800 <PoWen>: 有顛覆產業的絕佳潛力
+22:09 +0800 <PoWen>: 一定會很多資源投入的
+22:09 +0800 <PoWen>: 只是能不能像當初Linux那樣引領風潮
+22:09 +0800 <PoWen>: 就有勞各位Contribution了
+22:09 +0800 <PoWen>: XD
+22:13 +0800 <John_mobile>:   一般snort都放在最外面那個switch 應該不會有多檯switch給snort的情況，目前估計只會弄switch一檯來mirror吧
+22:15 +0800 <PoWen>: 我的客戶剛好在測BigTap
+22:15 +0800 <PoWen>: 等我搞清楚他們怎麼用Network Tapping
+22:15 +0800 <PoWen>: 再分享topology給你
+22:16 +0800 <hwchiu>: John_mobile: 嗯嗯，我也在想，應該是對外那個綁而已
+22:17 +0800 <hwchiu>: 但是這樣的話，從內網外打出去的就無法處理了？
+22:17 +0800 <hwchiu>: PoWen: <(_ _)>
+22:18 +0800 <hwchiu>: PoWen: 話說我以為是
+22:18 +0800 <hwchiu>: OF-Agent
+22:18 +0800 <hwchiu>: broadcom ofpda SDK
+22:18 +0800 <hwchiu>: hardware
+22:19 +0800 <hwchiu>: 只是hardware那邊是按照ofpda的規格去設計
+22:19 +0800 <John_mobile>: 內往外可以 內打內不行
+22:19 +0800 <hwchiu>: 喔幹 我講錯ＸＤ
+22:19 +0800 <hwchiu>: 嗯嗯
+22:19 +0800 <hwchiu>: OF-Agent
+22:19 +0800 <hwchiu>: ofpda-SDK
+22:19 +0800 <hwchiu>: Broadcom silicon SDK
+22:19 +0800 <hwchiu>: hardware
+22:20 +0800 <John_mobile>: ofagent？ 是ryu在open stack上的plugin耶
+22:28 +0800 <PoWen>: OF agent，不是指OF switch喔？
+22:31 +0800 <PoWen>: 有耶
+22:31 +0800 <PoWen>: Controller plane和data plane都有agent
+22:32 +0800 <PoWen>: https://www.opennetworking.org/images/stories/downloads/sdn-resources/technical-reports/TR_SDN_ARCH_1.0_06062014.pdf
+22:32 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/bJVVe  ==> https://www.opennetworking.org/images/stories/downloads/sdn-resources/technical-reports/TR_SDN_ARCH_1.0_06062014.pdf
+22:34 +0800 <PoWen>: Controller上的agent似乎是對到北向街口
+22:35 +0800 <PoWen>: ONF還真會定義名詞
+22:35 +0800 <PoWen>: Controller上的叫 NBI agent
+22:36 +0800 <PoWen>: network element上的叫CDPI agent
+22:51 +0800 <PoWen>: https://www.opennetworking.org/images/stories/downloads/sdn-resources/solution-briefs/sb-of-enabled-transport-sdn.pdf
+22:51 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/CbW7V  ==> https://www.opennetworking.org/images/stories/downloads/sdn-resources/solution-briefs/sb-of-enabled-transport-sdn.pdf
+22:51 +0800 <PoWen>: OpenFlow定義到transport network去了
+22:52 +0800 <PoWen>: 有定義use cases and key benefits
+22:55 +0800 <PoWen>: 人都不見了...
+22:55 +0800 <PoWen>: ㄟ睡覺 bye
+22:56 +0800 <John_aduim>: 現在是昏睡期XD 1-3AM 會是生產力高峰期
+23:04 +0800 <PoWen>: XDDD
+23:04 +0800 <PoWen>: excellent
+23:04 +0800 <PoWen>: 真的要去睡了 XD
+23:04 +0800 <PoWen>: by the way
+23:04 +0800 <PoWen>: OF spec竟然有1.3.4
+23:04 +0800 <PoWen>: 剛剛才注意到
+23:17 +0800 <John_mobile>: 有1.4呀
+23:23 +0800 <PoWen>: yes
+23:23 +0800 <PoWen>: 1.4  去年底出來
+23:23 +0800 <PoWen>: 但今年五月出1.3.4
+23:23 +0800 <PoWen>: weird
+23:23 +0800 <PoWen>: 好了真的要睡了
+23:23 +0800 <PoWen>: 掰 XDDDD
