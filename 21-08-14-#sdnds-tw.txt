@@ -1,0 +1,247 @@
+00:50 +0800 <hwchiu>: XD 剛剛去玩貓
+00:52 +0800 <hwchiu>: 我講的of-agent類似這種 https://github.com/floodlight/indigo
+00:52 +0800 <sdnsd-tw_Bot>: ==> floodlight/indigo · GitHub
+08:17 +0800 <pichuang>: morning
+08:30 +0800 <Davy_CC_>: pichuang: morning ( ´・_・`)
+08:31 +0800 <pichuang>: Davy_CC_: = = 你是沒睡還是睡起來
+08:33 +0800 <Davy_CC_>: pichuang: 睡起來啦，在值班
+08:35 +0800 <pichuang>: 待會我也要值班 XD
+08:37 +0800 <Davy_CC_>: pichuang: 噗XDDDDDDDDDDD 同甘共苦（？
+08:42 +0800 <pichuang>: 難得值到班
+08:45 +0800 <adaam>: pichuang moring~
+08:46 +0800 <pichuang>: adaam: 太扯了
+08:47 +0800 <pichuang>: adaam: 依照我對你的認識 你怎麼現在爬起來
+08:47 +0800 <adaam>: pichuang: 不得已阿～
+08:47 +0800 <pichuang>: adaam: xddd
+08:47 +0800 <adaam>: 住離公司太遠
+08:52 +0800 <Davy_CC_>: pichuang: 太慘了，CC DNS 炸裂，全數陣亡
+08:55 +0800 <pichuang>: Davy_CC_: wowowow  那你怎麼還在這邊
+08:55 +0800 <pichuang>: adaam: 住近點啊~
+08:57 +0800 <pichuang>: hwchiu: http://www.muzixing.com/pages/2014/08/10/openflow13xue-xi-bi-ji.html
+08:57 +0800 <sdnsd-tw_Bot>: ==> Milestone
+08:57 +0800 <pichuang>: hwchiu: 真的無所不在耶xd
+08:59 +0800 <Davy_CC_>: pichuang: 我沒權限只能坐在這搬救兵哈哈哈哈
+09:09 +0800 <freetsubasa>: Davy_CC_: 拍拍
+09:17 +0800 <Davy_CC_>: freetsubasa: 看來在我搬救兵的時候系統自己切到另外一臺上了
+09:29 +0800 <John_mobile>: pichuang: 你認識那位李呈嗎？
+09:41 +0800 <hwchiu_znc>: 早安
+09:42 +0800 <JalenLin>: 早安
+09:42 +0800 <hwchiu_znc>: 我找錯字而已XD
+09:48 +0800 <hwchiu>: 話說，我第一次以為他叫做李星 XD
+09:58 +0800 <Davy_CC_>: hwchiu: 我剛剛也看錯QQ
+09:58 +0800 <Davy_CC_>: pichuang: DNS 修好了哈哈哈哈，結果 DHCP 壞了 G_G
+10:03 +0800 <PoWen>: 值班？
+10:03 +0800 <pichuang>: hwchiu: 我也看成李星xd
+10:03 +0800 <pichuang>: John_mobile: 那位我不認識耶
+10:03 +0800 <John_mobile>: 哦XD
+10:03 +0800 <pichuang>: Davy_CC_: G_G
+10:04 +0800 <John_mobile>: 我認識他 剛好去北京郵電大學有跟她見過一次面
+10:04 +0800 <pichuang>: PoWen: 對啊 我有在系上計中打雜倒茶水
+10:04 +0800 <John_mobile>: XD
+10:04 +0800 <Davy_CC_>: pichuang: 我要實體搬救兵了  G_G
+10:04 +0800 <pichuang>: John_mobile: 太牛了
+10:04 +0800 <pichuang>: Davy_CC_: dhcp 發不出來嗎?
+10:04 +0800 <pichuang>: 手動先上個 ip 連出去修
+10:05 +0800 <PoWen>: 小飛機就是個計中當家的
+10:05 +0800 <PoWen>: 還倒茶水
+10:05 +0800 <hwchiu>: 超強
+10:06 +0800 <pichuang>: 大部份還是靠同事幫忙
+10:12 +0800 <PoWen>: DNS為啥會掛？DHCP為啥會掛？
+10:18 +0800 <pichuang>: hwchiu: 你前幾天不是有問 multi controller
+10:18 +0800 <pichuang>: http://kiyotoryou.github.io/2013/06/OPenFlow%E5%A4%9A%E6%8E%A7%E5%88%B6%E5%99%A8%E7%9A%84%E8%81%94%E8%B0%83%E5%85%A5%E9%97%A8%E8%A7%A3%E6%83%91/
+10:18 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/cE2N5  ==> Openflow多控制器的联调入门解惑 | Ryou
+10:18 +0800 <pichuang>: 剛剛看到的
+10:19 +0800 <hwchiu>: 恩恩
+10:19 +0800 <hwchiu>: 我之前看CODE
+10:19 +0800 <hwchiu>: 就有看到
+10:19 +0800 <Davy_CC_>: pichuang: 對……現在正在手動IP 修理中 囧
+10:19 +0800 <hwchiu>: 可以吃多個TCP連線了
+10:19 +0800 <hwchiu>: 只是沒有測試過
+10:21 +0800 <pichuang>: 所以有slave master這類角色囉?
+10:21 +0800 <pichuang>: Davy_CC_: +u
+10:22 +0800 <hwchiu>: 有喔
+10:22 +0800 <hwchiu>: floodlight本身就有
+10:23 +0800 <hwchiu>: 雖然OF1.0還沒有此概念
+10:23 +0800 <hwchiu>: 但是FL把他弄在nicira的VENDOR的協定中
+10:24 +0800 <Davy_CC_>: pichuang: 重啓就好了，奇怪
+10:57 +0800 <pichuang>: 我有個問題想請問大家
+10:57 +0800 <pichuang>: 我對於有個名詞其實到現在還不是很清楚
+10:57 +0800 <pichuang>: 就是 nfv
+10:57 +0800 <pichuang>: Network Function VIrtualization
+10:58 +0800 <pichuang>: 這東西在sdn來講是站在什麼角色上
+10:58 +0800 <pichuang>: 我一直都不是很清楚
+10:58 +0800 <pichuang>: 有人可以幫忙解惑的嗎
+11:25 +0800 <PoWen>: 嗨小飛機
+11:32 +0800 <pichuang>: PoWen: 早安xd
+11:32 +0800 <PoWen>: NFV不必然使用SDN
+11:32 +0800 <PoWen>: 但是SDN可以讓NFV如虎添翼
+11:33 +0800 <PoWen>: NFV可以先簡單看成，把L7 service全部虛擬化，跑在便宜x86機器上
+11:34 +0800 <pichuang>: 有比較具體的描述嗎 我經常在聽nfv但是對他超無感
+11:34 +0800 <PoWen>: 不再需要貴鬆鬆的硬體機器被綁死
+11:34 +0800 <PoWen>: 比如說，重寫 IPS/IDS的軟體，跑在x86硬體上
+11:34 +0800 <PoWen>: 你就不需要跟FortiNet買貴死人的機器，想要新功能還得買新機器
+11:35 +0800 <PoWen>: 有了NFV，免！
+11:35 +0800 <PoWen>: 有NFV搭上SDN，可以讓佈署更彈性更迅速
+11:35 +0800 <PoWen>: 大致上這樣瞭解即可
+11:35 +0800 <PoWen>: 反正說穿了，也是軟體和硬體脫鉤
+11:35 +0800 <hwchiu>: 你就把一台一台實體的Firewall、Load Balancer
+11:35 +0800 <hwchiu>: 全部虛擬化成一個軟體，現在可以佈署在同一個機器中
+11:35 +0800 <hwchiu>: 虛擬化成多個軟體
+11:37 +0800 <PoWen>: yes
+11:38 +0800 <pichuang>: 哦...所以要全部軟體化了
+11:39 +0800 <pichuang>: 以後的設備可能可以當 switch 也可以具有特別功能之類的嗎
+11:48 +0800 <PoWen>: 特別的功能是指？
+11:48 +0800 <PoWen>: 飛天嗎 XDDDD
+11:48 +0800 <PoWen>: sorry
+11:48 +0800 <PoWen>: 正經！
+13:57 +0800 <hwchiu>: 會有人想要開發OVSDB的module在controller上嗎
+13:58 +0800 <PoWen>: OVSDB，這是？有聽過但不瞭解
+14:02 +0800 <hwchiu>: 跟ONF所推的 OFConfig大概同等級
+14:02 +0800 <hwchiu>: 用來控制OVS的
+14:03 +0800 <hwchiu>: 譬如創造tunnel、創造Queue
+14:03 +0800 <hwchiu>: 這一些控制的行為
+14:10 +0800 <PoWen>: 控制行為
+14:18 +0800 <hwchiu>: 目前我都是到SW上下ovs-XX的指令來控制
+14:19 +0800 <hwchiu>: 這樣其實滿累的XD
+14:19 +0800 <hwchiu>: 想要測試QOS的時候，也會被限制整個彈性
+14:19 +0800 <hwchiu>: 都要先到SW上 創好有哪些Queue，每個Queue的限制為何
+14:19 +0800 <hwchiu>: 誰叫OFConfig不爭氣
+14:34 +0800 <PoWen>: 這也是我納悶的
+14:34 +0800 <PoWen>: 為啥OFConfig作成這樣
+16:31 +0800 <jamesLiao>: 請問可以自訂Floodlight 控制封包的功能嗎?
+16:31 +0800 <hwchiu>: 可
+16:32 +0800 <jamesLiao>: 比方說看到哪一個卡號ip的封包就drop
+16:32 +0800 <hwchiu>: forwarding.java 這是本來預設的處理方式
+16:32 +0800 <hwchiu>: 你可以仿造他來改
+16:33 +0800 <jamesLiao>: 好喔
+16:33 +0800 <jamesLiao>: 謝啦
+16:33 +0800 <John_aduim>: forwarding.java 在FL上是做 L2 switch嗎？
+16:33 +0800 <hwchiu>: 預設是L2
+16:33 +0800 <John_aduim>: ＯＫ
+16:33 +0800 <hwchiu>: L2 match
+16:34 +0800 <hwchiu>: 但是會採shortest path走
+16:34 +0800 <John_aduim>: 他會學mac?
+16:34 +0800 <hwchiu>: 不會
+16:34 +0800 <hwchiu>: 直接跑dijkstra
+16:34 +0800 <hwchiu>: 找出一條路徑直接走完
+16:34 +0800 <John_aduim>: 恩 有趣
+16:35 +0800 <John_aduim>: dijkstra 是實作在forwarding.java？
+16:35 +0800 <hwchiu>: no
+16:35 +0800 <John_aduim>: 還是FL的source
+16:35 +0800 <hwchiu>: TopologyInstance.java
+16:36 +0800 <John_aduim>: 恩, 這兩隻都要一起啟動？
+16:36 +0800 <hwchiu>: 恩恩
+16:36 +0800 <hwchiu>: 該怎講
+16:36 +0800 <hwchiu>: 我覺得nox,ryu,pox,trema都滿像的
+16:36 +0800 <hwchiu>: 好像少了一種processing chain的感覺
+16:36 +0800 <hwchiu>: 我想想怎說XD
+16:37 +0800 <hwchiu>: FL跟ODL就比較像
+16:37 +0800 <John_aduim>: 恩 你說的很像 是指？
+16:37 +0800 <hwchiu>: 你執行都是指定一個app(?)之類的
+16:37 +0800 <hwchiu>: 去執行
+16:37 +0800 <John_aduim>: 恩恩
+16:37 +0800 <John_aduim>: FL怎麼做
+16:37 +0800 <hwchiu>: 每個module獨立一個功能
+16:37 +0800 <hwchiu>: 執行FL後就載入所有module
+16:38 +0800 <John_aduim>: 那主程式 會去載入module?
+16:38 +0800 <hwchiu>: 恩恩
+16:38 +0800 <hwchiu>: 對
+16:38 +0800 <hwchiu>: 主程式透過config去載入module
+16:38 +0800 <John_aduim>: 哦 原來
+16:38 +0800 <hwchiu>: module間可以分享service供其他使用
+16:38 +0800 <hwchiu>: 譬如LinkDiscovery會去發LLDP
+16:39 +0800 <hwchiu>: 然後topology會去註冊LinkDiscovey，當你發現新Link的時候告訴我，我要更新網路拓墣
+16:39 +0800 <hwchiu>: 就有種，已經寫好的東西可以互相串在一起直接使用
+16:40 +0800 <hwchiu>: 不需要再把程式碼搬來搬去之類的
+16:40 +0800 <hwchiu>: ryu我不確定
+16:40 +0800 <hwchiu>: trema我記得頗麻煩
+16:40 +0800 <John_aduim>: 你說的搬來搬去是指？
+16:40 +0800 <hwchiu>: 譬如已經有一個檔案已經寫好了L2 forwarding
+16:40 +0800 <hwchiu>: 但是我的新module本身也要支援L2 forwarding
+16:40 +0800 <hwchiu>: 我能不能直接呼叫本來就有的檔案去處理
+16:41 +0800 <hwchiu>: 不行的話，我就要把那邊處理L2的code都複製到我的module這邊
+16:41 +0800 <jamesLiao>: 請問一下是改完forwarding.java然後重啟動flooglight?
+16:41 +0800 <hwchiu>: trema要這樣做的話我記得很麻煩
+16:41 +0800 <hwchiu>: jamesLiao: 記得重新建置
+16:41 +0800 <John_aduim>: 哦 一種方法是可以啟動兩個app(module)
+16:42 +0800 <John_aduim>: ryu是叫做app
+16:42 +0800 <John_aduim>: 他們一樣是有event才會觸發handler
+16:42 +0800 <hwchiu>: 恩恩
+16:42 +0800 <hwchiu>: 問一下
+16:42 +0800 <hwchiu>: 假如兩個app都想要聽PacketIn
+16:42 +0800 <hwchiu>: 順序怎麼決定?
+16:42 +0800 <hwchiu>: Nox是看你app在指令的先後順序決定的
+16:43 +0800 <John_aduim>: 這個問題我目前也不知道...之前我跟我同事也在討論
+16:43 +0800 <hwchiu>: 譬如有時候firewall module可能要在forwarding前先處理PacketIn
+16:43 +0800 <hwchiu>: 恩恩瞭解
+16:43 +0800 <John_aduim>: 恩 我們之前有遇過
+16:43 +0800 <hwchiu>: FL是透過註冊，標示每個module自己的順序，希望在誰以前或是在誰以後
+16:43 +0800 <hwchiu>: 然後FL會跑DFS
+16:43 +0800 <hwchiu>: 找出一個順序
+16:44 +0800 <hwchiu>: 如果遇到DEADLOCK 就噴錯誤XD
+16:44 +0800 <John_aduim>: 哦 了解 這個我要記錄一下看看怎麼解
+16:44 +0800 <hwchiu>: NOX的話，我剛剛講錯
+16:44 +0800 <hwchiu>: 他是可以寫一個優先度的值
+16:44 +0800 <hwchiu>: 優先度一樣的就看誰先註冊
+16:45 +0800 <hwchiu>: 印象是先把所有module都放到List，根據priority採stable sort
+16:45 +0800 <jamesLiao>: 重新建置是?
+16:45 +0800 <hwchiu>: 你可以用eclipse重新編譯
+16:46 +0800 <hwchiu>: shell的話用ant
+16:46 +0800 <John_aduim>: 恩恩 我先從會場回去 剛剛你說的packetin 我剛問我同事他有解了
+16:47 +0800 <John_aduim>: hitcon結束
+16:47 +0800 <hwchiu>: OKOK，等等吃飯看LUCY去XD
+16:48 +0800 <John_aduim>: good 晚上再跟你討論
+17:44 +0800 <PoWen>: good discussion
+17:44 +0800 <PoWen>: let me follow-up
+17:52 +0800 <John_aduim>: 這裡有要畢業的學長嗎? ＸＤ
+18:31 +0800 <hwchiu_znc>: 我啊XD
+18:31 +0800 <hwchiu_znc>: 哦幹 已經畢業了
+19:52 +0800 <John_mobile>: 哦哦 XD 未來要做network方面的工作嗎？
+21:00 +0800 <PoWen>: XD
+21:00 +0800 <PoWen>: 他變心了
+21:21 +0800 <hwchiu_znc>: 部門不知道 XD
+22:43 +0800 <John_aduim>: hi
+22:44 +0800 <John_aduim>: 之前hwchiu提到packetin 順序的問題
+22:45 +0800 <John_aduim>: 兩個都會收到packetin 但是順序的話，目前了解好像是ryu-manager決定，所以要寫flow的時候要協調好不然會很困擾..
+22:47 +0800 <pichuang>: http://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml?search=openflow
+22:47 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/nDemK  ==> Service Name and Transport Protocol Port Number Registry
+22:47 +0800 <pichuang>: openflow的port 在iana被定義為6653
+22:47 +0800 <pichuang>: 所以我們用的6633是舊的
+22:49 +0800 <John_aduim>: xd
+22:50 +0800 <John_aduim>: 改一下應該不難
+22:53 +0800 <hwchiu>: John_aduim: 瞭解
+22:54 +0800 <hwchiu>: pichuang: yes
+22:54 +0800 <hwchiu>: pichuang: FL 1.3, trema 都改用6653
+23:22 +0800 <PoWen>: packetin的順序
+23:24 +0800 <hwchiu>: m
+23:39 +0800 <pichuang>: http://qmaw.pixnet.net/blog/post/379735755-openflow-1.3-%E7%B8%AE%E5%AF%AB%E8%A7%A3%E9%87%8B
+23:39 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/Lmnpa  ==> OpenFlow 1.3 縮寫解釋 @ qmaw的部落格 :: 痞客邦 PIXNET ::
+23:40 +0800 <pichuang>: 看code必備良帖xd
+23:40 +0800 <hwchiu>: X
+23:40 +0800 <hwchiu>: XD
+23:40 +0800 <hwchiu>: 我習慣邊開spec邊看
+23:41 +0800 <hwchiu>: 不然你知道他是啥TYPE，你也不知道他到底有啥
+23:42 +0800 <pichuang>: 她都混在一起的 我在看 openflow-common部分
+23:44 +0800 <hwchiu>: 恩恩
+23:44 +0800 <hwchiu>: 1.4還沒有仔細看過
+23:53 +0800 <PoWen>: 邱渣
+23:53 +0800 <PoWen>: 一個Strongly Conneted Components (SCC)內的Switch就稱為一個Cluster。
+23:53 +0800 <PoWen>: 這哪裡能看到定義？
+23:53 +0800 <hwchiu>: 這是Floodlight自己的定義XD
+23:53 +0800 <PoWen>: 我以為Cluster是Controller in HA叫做Cluster
+23:53 +0800 <PoWen>: 噢
+23:53 +0800 <hwchiu>: 不同層級的東西XD
+23:53 +0800 <PoWen>: 用同一個naming, 好困擾
+23:54 +0800 <hwchiu>: 真的QQ
+23:54 +0800 <hwchiu>: 這是Floodlight內部邏輯使用的名詞
+23:56 +0800 <PoWen>: 啊啊啊啊狂抱頭
+23:56 +0800 <PoWen>: 怎會這樣
+23:56 +0800 <PoWen>: Networking裡面，即使是switch形成的cluster, 也是指好幾台switch形成一個cluster
+23:56 +0800 <hwchiu>: 我改個文字好了
+23:56 +0800 <PoWen>: ㄟ
+23:56 +0800 <hwchiu>: 你那樣對
+23:57 +0800 <PoWen>: floodlight不是這樣寫嗎
+23:57 +0800 <hwchiu>: #好幾台switch形成一個cluster
+23:58 +0800 <hwchiu>: 每個Cluster都會包含一個以上的Switch，同一個Cluster內的Switch可以組成一個Strongly Connected Components (SCC)的網路拓墣。
+23:58 +0800 <hwchiu>: 這樣哩?
+23:58 +0800 <hwchiu>: 後面的"的網路拓樸" 拔掉好了
