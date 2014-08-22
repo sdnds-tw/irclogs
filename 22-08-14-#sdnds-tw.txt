@@ -1,0 +1,115 @@
+00:00 +0800 <PoWen>: i
+00:00 +0800 <PoWen>: 喔
+00:00 +0800 <PoWen>: 懂了
+00:01 +0800 <PoWen>: strongly connected component
+00:01 +0800 <PoWen>: 所以一個cluster被視為一個網路元件
+00:01 +0800 <PoWen>: oh.
+00:01 +0800 <hwchiu>: 恩恩
+00:05 +0800 <hwchiu>: 先準備睡拉
+00:07 +0800 <PoWen>: ok good night
+00:08 +0800 <PoWen>: bye
+00:09 +0800 <hwchiu>: bye
+08:44 +0800 <Davy_CC_>: morning ( ´・_・`)
+09:09 +0800 <Zespre>: 早安～
+09:09 +0800 <hwchiu>: 早
+10:14 +0800 <pichuang>: monring ~
+10:14 +0800 <hwchiu>: 你起了
+10:15 +0800 <hwchiu>: 下午要來討論一下嗎
+10:15 +0800 <pichuang>: ok 阿
+10:16 +0800 <hwchiu>: 三四點左右
+10:16 +0800 <pichuang>: kk
+14:38 +0800 <PoWen>: ?
+14:38 +0800 <PoWen>: 我被踢掉了
+14:38 +0800 <PoWen>: 噢
+14:38 +0800 <PoWen>: trial到期
+14:38 +0800 <PoWen>: 好像無法一直掛著
+14:38 +0800 <PoWen>: 會被踢掉？
+15:51 +0800 <Zespre>: irccloud 頁面一直開著可以，但掛久了他好像會死掉，然後就被踢了 XD
+16:23 +0800 <hwchiu>: 所以即使開者也不行喔QQ?
+16:38 +0800 <Davy_CC_>: Zespre: 不要斷線吧
+19:10 +0800 <PoWen>: 之前我都可以直接把firefox關掉
+19:10 +0800 <PoWen>: 電腦關機
+19:10 +0800 <PoWen>: 再電腦開機，打開frefox
+19:11 +0800 <PoWen>: 還是在線上
+19:11 +0800 <PoWen>: 試用期剛過，就被踢了...
+19:32 +0800 <hwchiu>: QQ
+19:35 +0800 <PoWen>: 邱渣
+19:35 +0800 <PoWen>: 你想來玩BigSwitch嗎 XD
+19:35 +0800 <PoWen>: 工商時間 XD
+19:36 +0800 <hwchiu>: bsn那套嗎
+19:36 +0800 <PoWen>: yes
+19:37 +0800 <PoWen>: 剛release的最新版
+19:37 +0800 <hwchiu>: 如果沒有任何侵權問題的話當然好ＸＤ
+19:37 +0800 <PoWen>: 我在考慮請工讀生來測
+19:37 +0800 <PoWen>: 你覺得呢？
+19:37 +0800 <hwchiu>: 我好想接ＸＤ但是我下禮拜四要去成功嶺了
+19:38 +0800 <PoWen>: 噢
+19:38 +0800 <PoWen>: 無妨
+19:38 +0800 <PoWen>: 算時薪，算一天的
+19:38 +0800 <PoWen>: 都ok
+19:38 +0800 <hwchiu>: 嗯嗯
+19:38 +0800 <hwchiu>: 明天可以討論一下
+19:38 +0800 <PoWen>: 好
+19:38 +0800 <PoWen>: 沒問題
+19:38 +0800 <hwchiu>: 嗯嗯 感謝拉ＸＤ
+19:39 +0800 <PoWen>: 之前一直就想問了啦 XD
+19:41 +0800 <hwchiu>: 嗯嗯
+19:41 +0800 <PoWen>: 我在研究你的blog
+19:41 +0800 <hwchiu>: 哈，有些明天可以直接問
+19:41 +0800 <hwchiu>: 應該會講得比較清楚
+19:42 +0800 <PoWen>: 你有看完整個OVS source code ?
+19:44 +0800 <PoWen>: 你也有玩Nox STP
+19:44 +0800 <hwchiu>: ＯＶＳ我看kernel那邊
+19:44 +0800 <hwchiu>: 看了不少
+19:44 +0800 <hwchiu>: Nox以前看過，後來沒啥興趣用 就轉ＦＬ
+19:45 +0800 <hwchiu>: OVS全部太多ＸＤ 我後來就專注在packet 處理方面而已
+19:48 +0800 <PoWen>: 瞭解
+19:48 +0800 <PoWen>: Pica8全都用OVS去弄
+19:48 +0800 <hwchiu>: 嗯嗯
+19:49 +0800 <hwchiu>: Centec我記得也差不多
+19:51 +0800 <PoWen>: yeah
+19:53 +0800 <PoWen>: 原來IRC機器人是你寫的啊
+19:53 +0800 <hwchiu>: 我有寫過，但是這邊的是 JalenLin 寫的
+19:53 +0800 <hwchiu>: 我們那邊有各種語言機器人 ＸＤ
+19:55 +0800 <PoWen>: 各種語言機器人 XD
+19:55 +0800 <PoWen>: JalenLin
+19:55 +0800 <PoWen>: 明天也會去嗎
+19:55 +0800 <hwchiu>: 會吧
+20:03 +0800 <PoWen>: 邱渣，你知道VxLAN嗎
+20:04 +0800 <hwchiu>: 不熟 聽過
+20:11 +0800 <PoWen>: ok
+20:12 +0800 <PoWen>: 我在研究如何用OpenFlow實現VxLAN
+20:12 +0800 <PoWen>: 它是一種封裝技術
+20:12 +0800 <PoWen>: 利用L3 multicast去模擬各種L2 traffic
+20:13 +0800 <PoWen>: 所以是利用VxLAN封裝，去做到L2 over L3
+20:13 +0800 <PoWen>: 因此可以跨網域，跨Data Center
+20:13 +0800 <PoWen>: 讓VM橫跨很遠的距離，完成VM motion
+20:18 +0800 <hwchiu>: 嗯嗯， 我在看這篇 http://wangcong.org/blog/archives/2170
+20:18 +0800 <sdnsd-tw_Bot>: ==>    深入理解 VXLAN - A Geek's Page
+20:25 +0800 <PoWen>: nice
+20:36 +0800 <PoWen>: VXLAN Series – Different Components – Part 1
+20:36 +0800 <PoWen>: http://blogs.vmware.com/vsphere/2013/04/vxlan-series-different-components-part-1.html
+20:36 +0800 <PoWen>: VXLAN Series – Multicast usage in VXLAN – Part 3
+20:36 +0800 <PoWen>: VXLAN Series – Multicast Basics – Part 2
+20:36 +0800 <PoWen>: http://blogs.vmware.com/vsphere/2013/05/vxlan-series-multicast-basics-part-2.html
+20:36 +0800 <PoWen>: http://blogs.vmware.com/vsphere/2013/05/vxlan-series-multicast-usage-in-vxlan-part-3.html
+20:36 +0800 <PoWen>: VXLAN Series – Multiple logical networks mapped to one Multicast group address – Part 4
+20:36 +0800 <PoWen>: http://blogs.vmware.com/vsphere/2013/05/vxlan-series-multiple-logical-networks-mapped-to-one-multicast-group-address-part-4.html
+20:36 +0800 <PoWen>: VXLAN Series – How VTEP Learns and Creates Forwarding Table – Part 5
+20:36 +0800 <PoWen>: http://blogs.vmware.com/vsphere/2013/05/vxlan-series-how-vtep-learns-and-creates-forwarding-table-part-5.html
+20:36 +0800 <PoWen>: VXLAN Series – How vMotion impacts the forwarding table – Part 6
+20:36 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/LnrhN  ==> VXLAN Series – Multicast Basics – Part 2 | VMware vSphere Blog - VMware Blogs
+20:36 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/Yl0AZ  ==> VXLAN Series - Different Components - Part 1 | VMware vSphere Blog - VMware Blogs
+20:36 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/cJKbq  ==> VXLAN Series – Multicast usage in VXLAN – Part 3 | VMware vSphere Blog - VMware Blogs
+20:36 +0800 <PoWen>: http://blogs.vmware.com/vsphere/2013/07/vxlan-series-how-vmotion-impacts-the-forwarding-table-part-6.html
+20:36 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/aYG6W  ==> VXLAN Series – How VTEP Learns and Creates Forwarding Table – Part 5 | VMware vSphere Blog - VMware Blogs
+20:36 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/itFTu  ==> http://blogs.vmware.com/vsphere/2013/05/vxlan-series-multiple-logical-networks-mapped-to-one-multicast-group-address-part-4.html
+20:36 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/OkkGT  ==> VXLAN Series – How vMotion impacts the forwarding table – Part 6 | VMware vSphere Blog - VMware Blogs
+20:36 +0800 <PoWen>: 邱渣，有空可以看看這些
+20:36 +0800 <PoWen>: 最基本運作原理
+20:37 +0800 <PoWen>: http://tools.ietf.org/html/draft-mahalingam-dutt-dcops-vxlan-09
+20:37 +0800 <sdnsd-tw_Bot>: ==> draft-mahalingam-dutt-dcops-vxlan-09 - VXLAN: A Framework for Overlaying Virtualized Layer 2 Networks over Layer 3 Networks
+20:37 +0800 <PoWen>: 最新draft RFC
+20:37 +0800 <hwchiu>: OKOK
+20:38 +0800 <hwchiu>: thx
+20:39 +0800 <PoWen>: 這個VxLAN算是目前Data Center業界最熱的題目
