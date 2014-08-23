@@ -1,0 +1,79 @@
+00:12 +0800 <John_aduim>: 明天兩點見面！
+00:13 +0800 <pichuang>: 我們會提前到xd 可以先來聊聊XD
+00:14 +0800 <John_aduim>: ok~
+00:15 +0800 <PoWen>: ok
+11:09 +0800 <JalenLin>: Hello~
+11:14 +0800 <hwchiu>: Hi
+13:39 +0800 <John_mobile>: 我今天會晚到…
+13:51 +0800 <hwchiu_znc>: QQ
+17:26 +0800 <hwchiu_znc>: Hi
+17:26 +0800 <hwchiu_znc>: Moo
+18:04 +0800 <chma>:  /who
+19:29 +0800 <hwchiu>: 感謝大家今天的參與~
+19:41 +0800 <Jkl_Rz>: test
+19:42 +0800 <Vivian>: test
+19:44 +0800 <BillyKinG>: test
+19:47 +0800 <hwchiu>: see
+20:05 +0800 <John_aduim>: 小飛機在線上嗎
+20:07 +0800 <katy_>: TESTING!!
+20:09 +0800 <hwchiu>: John_aduim: 估計在弄ＦＢ
+20:09 +0800 <John_aduim>: 哦 想說要merge 問卷一下 你要來加一下選項嗎？
+20:09 +0800 <freetsubasa>: Hi, FB 社團建立好囉 https://www.facebook.com/groups/710533069012545/
+20:09 +0800 <sdnsd-tw_Bot>: ==> Facebook
+20:11 +0800 <freetsubasa>: John_aduim: 小飛機應該晚一點才會上線 xd
+20:11 +0800 <John_aduim>: ok !
+20:18 +0800 <John_aduim>: Hi 社團可以設定一下電郵地址 那個會變成網址的路徑ex: www.facebook.com/groups/sdnds.tw
+20:22 +0800 <freetsubasa>: John_aduim: 謝啦，設定好了XD
+20:27 +0800 <John_aduim>: Good!
+20:55 +0800 <PoWen>: 又被踢了...
+20:58 +0800 <ken_ho>: 呵呵
+21:16 +0800 <ken_ho>: 今天的投影片可以在哪看 ?
+21:27 +0800 <pichuang>: ken_ho: 我整理一下丟上slideshare
+21:27 +0800 <pichuang>: John_aduim: 我剛起床xd
+21:28 +0800 <ken_ho>: :)
+21:28 +0800 <John_aduim>: XD
+21:29 +0800 <John_aduim>: 我開問卷分享給你
+21:29 +0800 <John_aduim>: 加一下選項>
+21:29 +0800 <John_aduim>: 你的Gmail給我一下
+21:29 +0800 <ken_ho>: 好
+21:31 +0800 <pichuang>: John_aduim: inceptioninx@gmail.com
+21:44 +0800 <PoWen>: 剛起床 XD
+21:51 +0800 <John_aduim>: 大家來填一下會後問卷吧！http://goo.gl/WlfvJR
+21:51 +0800 <sdnsd-tw_Bot>: ==> SDNDS-TW Meetup #1 會後問卷調查
+21:55 +0800 <pichuang>: https://sdnds-tw.hackpad.com/SDNDS-TW-Meetup-1-KSBTDlRqaWU
+21:55 +0800 <sdnsd-tw_Bot>: ==> SDNDS-TW Meetup #1 - sdnds-tw.hackpad.com
+21:55 +0800 <pichuang>: 我頭影片丟上去了
+21:56 +0800 <PoWen>: 小飛機
+21:56 +0800 <PoWen>: COSCUP
+21:57 +0800 <PoWen>: 明年七八月
+21:57 +0800 <PoWen>: 你想怎麼弄啊
+22:01 +0800 <pichuang>: 投speak
+22:01 +0800 <pichuang>: xd
+22:01 +0800 <pichuang>: 看看有沒有辦法投到一場talk
+22:01 +0800 <pichuang>: 如果不行的話我應該閃電秀會上去講
+22:02 +0800 <pichuang>: 或者是舉辦一個bof
+22:03 +0800 <PoWen>: ok
+22:04 +0800 <PoWen>: 明年COSCUP之前，我們社群來辦場比賽吧
+22:04 +0800 <PoWen>: XD
+22:04 +0800 <PoWen>: 先睡 晚安啦
+22:04 +0800 <pichuang>: 比賽!? xd 晚安
+22:24 +0800 <hwchiu>: http://hwchiu.logdown.com/posts/203260-mininet-and-network-subnet
+22:24 +0800 <sdnsd-tw_Bot>: ==> Mininet with  multiple network subnet « hwchiu's Blog
+22:25 +0800 <hwchiu>: 如何在mininet中測試不同subnet
+22:56 +0800 <hwchiu>: 我寫信給Jason Parraga問網站更新的事情了ＸＤ
+22:59 +0800 <pichuang>: xd
+22:59 +0800 <pichuang>: hwchiu: 他知道你在五天就消失在陽間嗎
+22:59 +0800 <pichuang>: 怕你14天出來可能連ls都不知道是什麼xd
+23:02 +0800 <hwchiu>: = =
+23:02 +0800 <hwchiu>: 每天晚上有30分鐘左右可以用手機
+23:02 +0800 <hwchiu>: 我用手機看spec複習人間的歸ㄗㄜˊ
+23:02 +0800 <hwchiu>: 規則
+23:07 +0800 <John_aduim>: 進去
+23:08 +0800 <John_aduim>: 進去1.4 出來 2.4
+23:42 +0800 <TakoTsai>: <(_ _)>
+23:43 +0800 <TakoTsai>: 大家好 請問臉書的社團創好了嗎~XDDD?
+23:46 +0800 <hwchiu>: YES
+23:46 +0800 <hwchiu>: https://www.facebook.com/groups/sdnds.tw/
+23:46 +0800 <sdnsd-tw_Bot>: ==> Facebook
+23:50 +0800 <TakoTsai>: 有了~ 感謝~
+23:57 +0800 <hwchiu>: :)
