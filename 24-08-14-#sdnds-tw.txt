@@ -1,0 +1,228 @@
+00:01 +0800 <pichuang>: http://osrg.github.io/ryu-book/en/Ryubook.pdf
+00:02 +0800 <pichuang>: ryu的文件好像完整超多的= =
+00:02 +0800 <pichuang>: http://osrg.github.io/ryu/resources.html#wiki
+00:02 +0800 <sdnsd-tw_Bot>: ==> Ryu Resources
+00:57 +0800 <John_aduim>: 真的超多..
+00:57 +0800 <John_aduim>: 我去實習的時候 原本只有日文都是啃日文
+00:57 +0800 <John_aduim>: 後來就有英文後就搭配spec邊寫邊看很順XD
+01:47 +0800 <hwchiu>: 還真的滿詳細的ＸＤ
+01:48 +0800 <hwchiu>: 有其他controller也這麼詳細嗎
+06:24 +0800 <pichuang>: morning 人在高雄xd
+07:01 +0800 <Zespre>: 你是半夜下高雄喔 XD
+09:27 +0800 <Davy_CC_>: pichuang: morining
+09:28 +0800 <Jkl_Rz>: morning
+09:31 +0800 <hwchiu>: 一堆斷線XD
+10:01 +0800 <hwchiu>: 
+10:05 +0800 <PoWen>: http://technews.tw/2014/08/23/fireeye-something-in-free-android-app/
+10:05 +0800 <sdnsd-tw_Bot>: ==> FireEye 行動安全小組：7 成免費 Android App 有線上傳輸加密漏洞！ | TechNews 科技新報
+10:05 +0800 <PoWen>: 看起來SSL/TLS也無法很好的解決MITM的問題？
+10:06 +0800 <PoWen>: ㄟ
+10:06 +0800 <PoWen>: 看起來是寫APP的人沒嚴謹使用SSL/TLS
+10:06 +0800 <PoWen>: XD
+10:07 +0800 <PoWen>: 我以為又是另一個heartbleed
+10:07 +0800 <hwchiu>: XD
+10:32 +0800 <Davy_CC_>: PoWen: XDDDDDDD
+10:56 +0800 <ken_ho>: Good morning
+21:51 +0800 <John_aduim>: 有人知道 in band 跟 out of band 嗎?
+21:52 +0800 <John_aduim>: 這篇文章寫的不錯 http://blog.ipspace.net/2013/12/control-plane-in-openflow-networks.html
+21:52 +0800 <sdnsd-tw_Bot>: ==> 
+Control Plane in OpenFlow Networks « ipSpace.net by @ioshints
+      
+22:01 +0800 <hwchiu>: tutul: 現在ＯＤＬ預設還要設定gateway嗎？
+22:08 +0800 <katy_>: 應該是要的.....
+22:11 +0800 <hwchiu>: 我印象一開始都要，我好像曾經後來某個版本就不用了?
+22:12 +0800 <katy_>: 你是指wiki上的範例嗎??
+22:12 +0800 <katy_>: 那個好像不用設gateway了
+22:14 +0800 <hwchiu>: 嗯嗯
+22:14 +0800 <hwchiu>: 因為論壇那個人回信的問題
+22:14 +0800 <hwchiu>: 我在想有沒有可能他的版本比較舊＆＆剛好要設定 ＸＤ
+22:15 +0800 <hwchiu>: https://groups.google.com/forum/#!topic/sdnds-tw/gDwCWV2MeD4
+22:15 +0800 <sdnsd-tw_Bot>: ==> Google Groups
+22:15 +0800 <katy_>: 但我發現如果要讓controller所控制的host連上internet，需自己撰寫一個bundle，讓host的pkt轉送到gateway
+22:16 +0800 <hwchiu>: 你的host是模擬的還是真實硬體？
+22:17 +0800 <katy_>: 實體
+22:17 +0800 <hwchiu>: 嗯嗯，所以你的bundle需要幫忙下一些flow做處理吧？
+22:18 +0800 <katy_>: 對
+22:19 +0800 <katy_>: 我現在的方式是將原有的simpleforwarding disable，在分析pkt的dst_ip是否屬於外網，如果是的話,下flow，轉送至gateway
+22:20 +0800 <hwchiu>: 你的host是private IP還是public ip?
+22:21 +0800 <katy_>: host是private
+22:22 +0800 <katy_>: 我是把環境都架在一個AP下
+22:22 +0800 <hwchiu>: 話說host一開始就送外網的ＩＰ的話，一開始的dst_ip_address應該就是gateway的吧？
+22:24 +0800 <katy_>: 但我在bundle中，將pkt的dst_ip印出，他不是gateway_ip...........
+22:24 +0800 <hwchiu>: 講錯
+22:24 +0800 <hwchiu>: dst_mac_address
+22:25 +0800 <katy_>: 這我沒注意耶.....下次來試試看XDD
+22:25 +0800 <katy_>: 感謝!!
+22:30 +0800 <hwchiu>: 你需要做ＮＡＴ嗎？
+22:33 +0800 <katy_>: 應該是還不用
+22:34 +0800 <hwchiu>: 這樣你外網會收到private ip的封包？
+22:36 +0800 <katy_>: 恩~我還沒考慮到這塊
+22:37 +0800 <hwchiu>: 嗯嗯 想說應該要弄個ＮＡＴ
+22:37 +0800 <John_aduim>: 你們是在討論什麼環境啊？
+22:37 +0800 <hwchiu>: 他應該是真實環境下用ODL
+22:37 +0800 <John_aduim>: 真實是...?
+22:38 +0800 <John_aduim>: 相對于mininet的虛擬嗎
+22:38 +0800 <katy_>: 接實體機
+22:39 +0800 <John_aduim>: 恩 然後需要gateway? 是要連外部的wan嗎
+22:41 +0800 <katy_>: 想問說floodlight是如何處理這塊的呢?
+22:44 +0800 <hwchiu>: 預設沒有3的處理
+22:45 +0800 <katy_>: 3是指??
+22:45 +0800 <John_aduim>: 我終於看懂了
+22:45 +0800 <hwchiu>: L3
+22:45 +0800 <John_aduim>: 應該是Network layer
+22:46 +0800 <John_aduim>: 其實可以用L2 switch做到呀
+22:46 +0800 <John_aduim>: 外部網路的線拉一條接到switch上, 然後sw跑L2 switching
+22:47 +0800 <John_aduim>: 然後外網不要設定DHCP 用手動設定IP
+22:47 +0800 <John_aduim>: 這樣每一檯host都能internet
+22:48 +0800 <hwchiu>: 外網不要設定dhcp ? 外網不是我們能控制的吧？
+22:49 +0800 <John_aduim>: 我們的外網是在 public底下
+22:49 +0800 <katy_>: 但如果有很多台SWITCH
+22:49 +0800 <katy_>: ??
+22:49 +0800 <John_aduim>: 就是140.114之後在接一檯ap 變成
+22:49 +0800 <John_aduim>: private
+22:49 +0800 <katy_>: 恩恩~現在是這樣
+22:50 +0800 <hwchiu>: 哦哦
+22:50 +0800 <John_aduim>: 很多檯switch 的話要看拓樸 不然我不太確定
+22:50 +0800 <hwchiu>: 我懂你的意思了
+22:50 +0800 <John_aduim>: 不過都可以用剛剛的方式連到外網
+22:50 +0800 <John_aduim>: 恩啊！
+22:50 +0800 <katy_>: 所以我才會接在AP下
+22:50 +0800 <John_aduim>: 我之前寫過NAT
+22:51 +0800 <John_aduim>: 很痛苦的
+22:51 +0800 <katy_>: 擴充環境
+22:51 +0800 <John_aduim>: XDD
+22:51 +0800 <John_aduim>: NAT他沒辦法再OF switch上正常運行
+22:51 +0800 <hwchiu>: 你是說透過flow table還是說本身系統預設的？
+22:51 +0800 <John_aduim>: 因為它用到set field 去改header
+22:52 +0800 <katy_>: 恩恩~是說如果不處理NAT會有什麼BUG嗎??
+22:52 +0800 <John_aduim>: 先說一下為什麼set field不行
+22:52 +0800 <John_aduim>: 因為那種很貴的switch 好像是chip不知援的關係所以沒辦法改header
+22:53 +0800 <John_aduim>: 所以封包沒辦法轉private
+22:53 +0800 <John_aduim>: 但是OVS移植家用路由器 或是裝在PC上是可以做到的
+22:53 +0800 <John_aduim>: 因為它是用軟體去做 就可以做到set field的功能
+22:53 +0800 <hwchiu>: 因為裝在PC上這部分會直接在kernel改sk_buff
+22:54 +0800 <John_aduim>: 我不太懂你的意思
+22:55 +0800 <John_aduim>: 我意思是ovs裝在PC上因為它是軟體跑vSwitch的關係，所以她可以改封包。
+22:55 +0800 <hwchiu>: 是
+22:55 +0800 <hwchiu>: 我講的是他的實作XD
+22:55 +0800 <hwchiu>: 他是軟體
+22:55 +0800 <John_aduim>: 但是很貴的那種機器 估計是晶片沒支援
+22:55 +0800 <John_aduim>: 還有一個！
+22:55 +0800 <hwchiu>: 如果你OVS有用kernel module的話，會在kernel那邊修改sk_buff來做到set field的功能
+22:55 +0800 <John_aduim>: set field是OF  的一個action
+22:55 +0800 <John_aduim>: 哦
+22:56 +0800 <John_aduim>: 這樣子啊
+22:56 +0800 <John_aduim>: 剛說到還有一個
+22:56 +0800 <hwchiu>: katy_: 等等討論你的ＸＤ
+22:56 +0800 <John_aduim>: Spec 定義set field 不是主要的功能是option
+22:57 +0800 <hwchiu>: 嗯嗯
+22:57 +0800 <John_aduim>: 所以“我猜”那些大廠不敢做就怕spec 又改動他們就白做
+22:57 +0800 <hwchiu>: 不過就我所知
+22:57 +0800 <hwchiu>: 目前市面大部分的都是
+22:57 +0800 <hwchiu>: 傳統switch的晶片
+22:57 +0800 <hwchiu>: 最上層是OVS
+22:58 +0800 <hwchiu>: 中間是個adapter
+22:58 +0800 <hwchiu>: 把OpenFlow的功能想辦法用傳統的晶片做出來
+22:58 +0800 <hwchiu>: 所以以前晶片沒有實作的話，就沒有辦法做
+22:58 +0800 <John_aduim>: 恩恩
+22:58 +0800 <katy_>: 恩恩~
+22:58 +0800 <hwchiu>: 不過我覺得目前正在開發的OPnelfow chip 應該都會做吧ＸＤ
+22:58 +0800 <hwchiu>: 可能要問問業界了
+22:58 +0800 <John_aduim>: 對啊！
+22:59 +0800 <hwchiu>: katy_: 話說我剛剛腦袋想的拓墣比較不一樣拉ＸＤ 所以才會提出ＮＡＴ的問題
+22:59 +0800 <John_aduim>: katy_ 不處理NAT的話底下的host沒辦法連外部的網路喔
+22:59 +0800 <hwchiu>: 嗯嗯， John_aduim 剛剛的話，這是透過那台ＡＰ幫忙處裏掉了吧
+23:00 +0800 <John_aduim>: 對的
+23:00 +0800 <John_aduim>: 可以想像那檯OF SW只是一般L2 SW
+23:00 +0800 <hwchiu>: 嗯嗯
+23:00 +0800 <katy_>: 是阿~
+23:00 +0800 <katy_>: 恩恩
+23:01 +0800 <katy_>: 對了，可以問說妳們剛才提到的"sk_buff"是什麼嗎??
+23:02 +0800 <hwchiu>: linux kernel中 網路子系統那邊的一種資料結構
+23:02 +0800 <hwchiu>: 可以用來存放封包的各種資訊(L2,L3,L4..等）
+23:03 +0800 <katy_>: 喔~~THX!
+23:04 +0800 <hwchiu>: 有興趣可以研究看看，會覺得自己完全不懂Ｃ了
+23:04 +0800 <John_aduim>: ＸＤ
+23:04 +0800 <katy_>: XDDD
+23:05 +0800 <hwchiu>: XD
+23:05 +0800 <hwchiu>: 話說論壇那封信
+23:05 +0800 <hwchiu>: #1.作為openvswitch的那台vm,雖然可以順利連到controller了，但其它的網路(同網段或internet都不通，請問這是正常的嗎？
+23:05 +0800 <hwchiu>: 他用的是opendaylight
+23:05 +0800 <John_aduim>: 它可以連到controller, 其他網斷不通不知道他怎麼測的
+23:06 +0800 <John_aduim>: 看起來很詭異
+23:06 +0800 <hwchiu>: 估計一個ping而已
+23:06 +0800 <John_aduim>: 我是建議他先把TLS改回TCP
+23:06 +0800 <hwchiu>: 可能連arp都不會通
+23:07 +0800 <hwchiu>: 嗯嗯
+23:07 +0800 <John_aduim>: 然後SW ping controller 然後在SW ping 其他人
+23:07 +0800 <John_aduim>: 還要看一下arp
+23:07 +0800 <John_aduim>: 然後再不行就wireshark看看為啥不通了..
+23:08 +0800 <katy_>: 我好像也有遇過這問題，發現好像是ARP的問題，我覺得ODL的ARP處理好像不大穩.........
+23:08 +0800 <katy_>: ODL的arphandler
+23:09 +0800 <John_aduim>: 可是 他問的是sw 那邊的問題
+23:09 +0800 <John_aduim>: 他的意思是sw 跟controller
+23:09 +0800 <John_aduim>: 這是在controller plane
+23:10 +0800 <John_aduim>: 如果他是out of band 這裡controller管不到的說
+23:10 +0800 <katy_>: 信是在哪?GOOGLE論壇?
+23:10 +0800 <John_aduim>: yeah
+23:11 +0800 <hwchiu>: 感覺 訊息不夠多
+23:12 +0800 <hwchiu>: 只能通靈了
+23:12 +0800 <John_aduim>: 對了 有可能是他的CP那邊沒有network?
+23:12 +0800 <John_aduim>: 他的CP 那邊是誰在管網路
+23:13 +0800 <hwchiu>: 還是不知道
+23:13 +0800 <hwchiu>: 想辦法讓他上ＩＲＣ問好了ＸＤ
+23:13 +0800 <John_aduim>: 恩他的環境都是在虛擬的環境
+23:14 +0800 <hwchiu>: (1.win7 test client. 2.web server1. 3.web
+23:14 +0800 <hwchiu>: > server2. 4.Vswitch 5.Controller )
+23:15 +0800 <John_aduim>: 他的2345都是在VM對嗎
+23:18 +0800 <hwchiu>: 看起來應該是
+23:33 +0800 <hwchiu>: 希望大家都去訂閱google group的
+23:33 +0800 <hwchiu>: 這樣有問題才會及時收到
+23:38 +0800 <John_aduim>: OK
+23:39 +0800 <John_aduim>: 問一下大家
+23:39 +0800 <John_aduim>: http://twimgs.com/networkcomputing/2012/5/sdn-arch.png
+23:39 +0800 <John_aduim>: 這張圖應該不陌生吧XD
+23:40 +0800 <John_aduim>: 大家認為 Application layer 的App是我們在開發controller 上的應用程式嗎
+23:40 +0800 <John_aduim>: 還是我們在controller開發的 App (module, bundle) 是在controller layer上的應用程式？
+23:45 +0800 <hwchiu>: 我比較傾向於Application layer
+23:46 +0800 <hwchiu>: 只是我們的北向介面是程式本身API
+23:46 +0800 <hwchiu>: 有些順便提供ＲＥＳＴＡＰＩ出去
+23:46 +0800 <John_aduim>: 可是我覺得是後者耶！
+23:47 +0800 <John_aduim>: 我覺得提供的RESTful 可以給其他應用程式使用例如Openstack
+23:47 +0800 <hwchiu>: 靠杯
+23:48 +0800 <hwchiu>: 我在講啥
+23:48 +0800 <hwchiu>: ＸＤ
+23:48 +0800 <John_aduim>: 或者是像Web GUI界面他呼叫 RESTful 去控制SW
+23:48 +0800 <hwchiu>: 我比較傾向於
+23:48 +0800 <John_aduim>: XD  所以你覺得是前者還後者? 其實我從一開始也是以為Application layer
+23:48 +0800 <hwchiu>: 應用的mobulde是上面（app)
+23:49 +0800 <hwchiu>: 網路控制相關的就屬於中間
+23:49 +0800 <hwchiu>: 等等
+23:49 +0800 <hwchiu>: 我整籬下
+23:49 +0800 <hwchiu>: 我整理一下
+23:49 +0800 <John_aduim>: 哦 不同見解 所以你是認為開發出來的App (module) 可以是Application或controller layer
+23:50 +0800 <hwchiu>: 你這邊的定義 我們在controller開發的 App (module, bundle)
+23:50 +0800 <John_aduim>: 現在我們是這個階段 http://www.metanoia-inc.com/blog/wp-content/uploads/2013/02/SDN-Reality-Check-BlindMen-and-Elephant.jpg
+23:50 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/aIEos  ==> http://www.metanoia-inc.com/blog/wp-content/uploads/2013/02/SDN-Reality-Check-BlindMen-and-Elephant.jpg
+23:51 +0800 <hwchiu>: 嗯嗯
+23:51 +0800 <hwchiu>: 你的定義是指 在controller上，透過controoler本身的語言api來完成的(module,app,bundle)嗎？
+23:52 +0800 <John_aduim>: 對
+23:52 +0800 <hwchiu>: 這樣我會與你相同，都認為是controller layer這層
+23:52 +0800 <hwchiu>: 只是我有個問題，你覺得firewall 這個要開發的話，會是屬於哪一層？
+23:52 +0800 <John_aduim>: controller這層
+23:52 +0800 <John_aduim>: 但！
+23:53 +0800 <John_aduim>: 也可以上到application
+23:53 +0800 <hwchiu>: 嗯嗯
+23:53 +0800 <John_aduim>: 原因是web GUI界面那邊可以直接呼叫restful控制FW
+23:54 +0800 <hwchiu>: 這樣看來應該是web GUI是application那層？
+23:54 +0800 <John_aduim>: 我把web GUI界面 那邊看成application
+23:54 +0800 <hwchiu>: 透過restful呼叫controller那邊的firewall
+23:54 +0800 <John_aduim>: 恩 呼叫restful 就是最上層
+23:54 +0800 <hwchiu>: 嗯嗯
+23:54 +0800 <John_aduim>: 應該不是由restful控制FW
+23:55 +0800 <John_aduim>: 而是restful到controller layer還要實作跟OF api的接口才能控制SW
+23:55 +0800 <John_aduim>: 所以開發的app module bundle 都是在controller 的 "應用程式"
+23:56 +0800 <hwchiu>: 嗯嗯
+23:56 +0800 <hwchiu>: 不過應該要分離看吧？ 底下是南向接口的區域
+23:56 +0800 <hwchiu>: 等哦，我找找個圖
+23:56 +0800 <John_aduim>: 恩
