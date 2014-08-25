@@ -1,0 +1,388 @@
+00:00 +0800 <hwchiu>: http://imgur.com/0300gH6
+00:00 +0800 <sdnsd-tw_Bot>: ==>             
+    
+    
+    imgur: the simple image sharer
+00:00 +0800 <hwchiu>: 張衛峰的書
+00:00 +0800 <hwchiu>: 這是他裡面提的架構
+00:02 +0800 <hwchiu>: 他把LLDP,FW,LB,monitoring, performance management等都稱為service
+00:02 +0800 <John_aduim>: 所以是在northbound之上？
+00:03 +0800 <hwchiu>: 他定義的北向接口是
+00:03 +0800 <hwchiu>: controller跟應用程序之間的接口
+00:03 +0800 <hwchiu>: 這邊無定義，無標準，很複雜ＸＤ
+00:04 +0800 <hwchiu>: 嗯嗯，他把所有service都放到northbound上
+00:04 +0800 <John_aduim>: controller跟應用程序之間的接口 <<< 這個不是restful嗎
+00:04 +0800 <hwchiu>: 透過程式語言的ＡＰＩ，不知到他是不是覺得這個也算？
+00:05 +0800 <John_aduim>: 他說程式語言的api有點不太具體
+00:06 +0800 <hwchiu>: 他沒有講
+00:06 +0800 <hwchiu>: 他原文很簡單
+00:06 +0800 <hwchiu>: controller跟應用程序之間的接口，目前該街口尚無標準化。這也是一些標準組織想要推進的事情，這邊比南向複雜很多
+00:07 +0800 <hwchiu>: 因為轉發面向容易抽象其通用接口，應用層面則變數太多
+00:07 +0800 <John_aduim>: 恩 restful 只是一種比較通用的方式嗎？
+00:07 +0800 <hwchiu>: 沒了
+00:07 +0800 <hwchiu>: 嗯嗯 我覺得是目前比較通用且簡單的一種方式
+00:08 +0800 <hwchiu>: 光這邊就跟你剛剛的圖一樣
+00:08 +0800 <hwchiu>: 大家都摸得都不一樣
+00:08 +0800 <hwchiu>: ＯＮＦ官網有自己的圖
+00:09 +0800 <hwchiu>: 我去幫貓剪指甲ＸＤ
+00:09 +0800 <John_aduim>: 其實我沒深入研究過restful那邊。有個情況我想要問的是假設今天要判斷某種封包的IP有辦法上到service 那邊嗎透過restful
+00:09 +0800 <John_aduim>: OK~
+00:09 +0800 <cftyn>: 話說REST API適合像controller要資料或是下指令
+00:09 +0800 <John_aduim>: 你說拿flow entry資料 或要sw ID吧
+00:10 +0800 <cftyn>: 那有沒有什麼方法可以讓controller有類似callback的機制
+00:10 +0800 <hwchiu>: socket囉
+00:10 +0800 <hwchiu>: restful都單向的
+00:10 +0800 <John_aduim>: 我剛剛那個問題有人有解嗎
+00:10 +0800 <hwchiu>: 我看看
+00:11 +0800 <hwchiu>: 這就是一個問題了ＸＤ
+00:11 +0800 <hwchiu>: restful那邊沒有辦法讓controller主動通知
+00:11 +0800 <hwchiu>: 所以如果controller收到封包把它quque起來
+00:11 +0800 <hwchiu>: 其他的service透過restufal定期去拿
+00:11 +0800 <hwchiu>: 是可以拿到封包的所有資料，包含ＩＰ啥的 這些應該都可以
+00:11 +0800 <hwchiu>: 只是就不即時了，除非一直polling去問
+00:11 +0800 <hwchiu>: 我的認知拉
+00:11 +0800 <John_aduim>: 恩 可是que 起來就慢了
+00:12 +0800 <hwchiu>: 嗯嗯
+00:12 +0800 <John_aduim>: 這樣不太合理 所以彈性大的還是在controller layer
+00:12 +0800 <John_aduim>: OK~
+00:12 +0800 <hwchiu>: 感覺應該是說
+00:12 +0800 <hwchiu>: 有call back的就彈性大？
+00:12 +0800 <hwchiu>: event/register
+00:13 +0800 <hwchiu>: cftyn: 大哥你覺得呢
+00:13 +0800 <John_aduim>: 恩啊
+00:14 +0800 <cftyn>: 不確定，感覺起來event/register好像容易會被OS之類的綁住
+00:15 +0800 <hwchiu>: 會變成盡量同一台機器？
+00:18 +0800 <cftyn>: 不知道實際應用上控制controller跟controller有沒有必要分開
+00:18 +0800 <hwchiu>: John_aduim: 跟你介紹一下， cftyn是我lab學弟，對ovs的實作也有些瞭解，做的研究也挺變態的
+00:18 +0800 <John_aduim>: 還有一個問題 restful那邊的
+00:18 +0800 <cftyn>: 哪裡變態了
+00:18 +0800 <hwchiu>: 嗯嗯 但是目前看起來都沒分開
+00:18 +0800 <John_aduim>: XD
+00:18 +0800 <hwchiu>: cftyn: 就是變態
+00:19 +0800 <John_aduim>: 不知道實際應用上控制controller跟controller有沒有必要分開 <<<
+00:19 +0800 <John_aduim>: 不太懂這個一絲
+00:19 +0800 <John_aduim>: *意思
+00:19 +0800 <hwchiu>: 他的意思應該是, controller & service 有沒有在同一台機器
+00:20 +0800 <hwchiu>: 吧。
+00:20 +0800 <hwchiu>: ?
+00:20 +0800 <John_aduim>: 哦 我覺得可以分開啊
+00:21 +0800 <John_aduim>: 你這個問題我又產生了另外一個問題了XD
+00:21 +0800 <cftyn>: XD
+00:22 +0800 <John_aduim>: 如果要呼叫restful 應該是要叫controller的IP吧
+00:22 +0800 <cftyn>: 對阿
+00:23 +0800 <John_aduim>: 這樣就有趣了
+00:23 +0800 <cftyn>: 怎麼說?
+00:24 +0800 <John_aduim>: 因為分開service 跟controller 的話，service的網域要在哪裡
+00:24 +0800 <John_aduim>: 在controller plane嗎 還是data plane
+00:27 +0800 <cftyn>: 不能都可以嗎?
+00:27 +0800 <cftyn>: 雖然覺得control plane比較正常
+00:27 +0800 <John_aduim>: 就我之前談到的 in band 跟out of band 的問題
+00:28 +0800 <John_aduim>: 如果是out of band 他們的網段是實體的分離
+00:28 +0800 <John_aduim>: 那這樣data plane 看不到 controller 的
+00:30 +0800 <John_aduim>: out of band 是把CP跟DP徹底的分開（不同的網段）
+00:34 +0800 <hwchiu>: 傳統不是都會有獨立的management port
+00:36 +0800 <John_aduim>: 對
+00:36 +0800 <John_aduim>: 他的
+00:36 +0800 <John_aduim>: management port 跟 其他的port是分開的 （out of band）
+00:36 +0800 <hwchiu>: 嗯嗯
+00:36 +0800 <hwchiu>: 不知道未來ＯＦＳＷ會不會也這樣弄
+00:37 +0800 <John_aduim>: 就是這樣呀XD
+00:37 +0800 <John_aduim>: 你那邊有OF SW嗎
+00:37 +0800 <hwchiu>: 我這沒有
+00:37 +0800 <hwchiu>: 應該說，就算有
+00:37 +0800 <hwchiu>: 部署網路下去的時候
+00:37 +0800 <hwchiu>: 也會這樣弄嗎?
+00:37 +0800 <John_aduim>: 那你們是AP的？應該也是可以這樣設定
+00:37 +0800 <hwchiu>: 每個都接出來？
+00:37 +0800 <John_aduim>: 你說的這樣弄是指？
+00:38 +0800 <hwchiu>: 全都走out of band
+00:38 +0800 <John_aduim>: 我貼一篇文章給你看
+00:38 +0800 <John_aduim>: 只要看612~635就好
+00:38 +0800 <John_aduim>: http://git.openvswitch.org/cgi-bin/gitweb.cgi?p=openvswitch;a=blob;f=DESIGN;h=4d654d01d7b140a32e5974f7d0c7a08f6b5aa800;hb=HEAD#l599
+00:38 +0800 <hwchiu>: ok
+00:38 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/gn0w3  ==> git.openvswitch.org Git - openvswitch/blob - DESIGN
+00:38 +0800 <hwchiu>: 嗯嗯
+00:41 +0800 <hwchiu>: 大致OK，可以理解
+00:41 +0800 <John_aduim>: 這是OVS實作的一些記錄 他其實兩種都有實作
+00:42 +0800 <John_aduim>: 可以直接在設定裡面改你要Out-of-band還是In-band
+00:42 +0800 <hwchiu>: 嗯嗯，有個mode可以設定
+00:42 +0800 <John_aduim>: 我通常在做開發都是Out-of-band
+00:42 +0800 <John_aduim>: 所以我才想到剛剛那個問題 假設是service 在DP沒辦法聯絡controller的
+00:43 +0800 <hwchiu>: 妳弄out-of-band
+00:43 +0800 <John_aduim>: 變成說“只有”controller那檯或是在CP網段的才可以控制網路
+00:43 +0800 <hwchiu>: 是那個port就沒有透過add-port丟進去給br嗎？
+00:43 +0800 <hwchiu>: 還是說跟controller連接的那個port也有加入到br中，不過是設定那個set_mode?
+00:43 +0800 <John_aduim>: 那個port應該是不歸ovs管了
+00:44 +0800 <hwchiu>: 嗯嗯
+00:44 +0800 <John_aduim>: 他就是你剛剛說的management port
+00:44 +0800 <hwchiu>: 我比較好奇他怎實做的
+00:44 +0800 <hwchiu>: out-of-band的mode
+00:44 +0800 <hwchiu>: 我猜是把receive handler拔掉
+00:44 +0800 <hwchiu>: 讓OS去處理這個port近來的封包
+00:45 +0800 <John_aduim>: 恩 應該是
+00:46 +0800 <hwchiu>: 那跟del-port
+00:46 +0800 <hwchiu>: 直接拔掉
+00:46 +0800 <hwchiu>: 會有什麼差別
+00:46 +0800 <hwchiu>: 你都加進來後，在設定out-of-band的mode
+00:46 +0800 <hwchiu>: 跟不要加進來，直接用
+00:46 +0800 <hwchiu>: 我都是第二種方式去弄的 #跟controller連接的port就不要透過add-port加入到br了
+00:46 +0800 <John_aduim>: 我想是這樣的 management port 如果在in band應該是不作用的
+00:47 +0800 <John_aduim>: 然後若要運作在in band CP會ep
+00:47 +0800 <John_aduim>: *跟DP混在一起
+00:47 +0800 <hwchiu>: 恩
+00:47 +0800 <hwchiu>: 對
+00:47 +0800 <John_aduim>: 也就是在48port 之中
+00:47 +0800 <hwchiu>: 所以他才用hidden flow來特別處理in band情況中controller的訊息
+00:48 +0800 <John_aduim>: 恩 你剛說的第二種方式 是out of band嗎
+00:48 +0800 <hwchiu>: 嗯嗯
+00:48 +0800 <hwchiu>: 跟controller溝通的訊息完全不經過Openflow的處理
+00:49 +0800 <hwchiu>: 我的ＰＣ有五個port， 其中四個port當作opefnlow-enabled swtich來用
+00:49 +0800 <John_aduim>: XD
+00:49 +0800 <hwchiu>: 第五個port直接跟controller連
+00:49 +0800 <John_aduim>: 你有五個port的PC
+00:49 +0800 <hwchiu>: 有XD
+00:49 +0800 <John_aduim>: 恩 這就是out of band
+00:49 +0800 <hwchiu>: 那應該是這樣
+00:49 +0800 <hwchiu>: 買來的switch
+00:50 +0800 <John_aduim>: 太神啦 這怎麼接interface
+00:50 +0800 <hwchiu>: 可能預設都幫你把48個port都加進來了
+00:50 +0800 <John_aduim>: 沒錯
+00:50 +0800 <hwchiu>: 設定那個mode
+00:50 +0800 <hwchiu>: 可能比較方便XD
+00:50 +0800 <hwchiu>: 我有一個投影片，在講怎麼運作的# 我剛剛的那種情形
+00:51 +0800 <John_aduim>: 我如果從網路安全角度去看 我在In-band 只要能打掛controller 網路就GG
+00:51 +0800 <hwchiu>: 嗯嗯對
+00:51 +0800 <John_aduim>: 所以out of band就完全沒轍
+00:51 +0800 <hwchiu>: 嘿啊
+00:52 +0800 <John_aduim>: 對了你的5port怎麼弄的
+00:53 +0800 <hwchiu>: 一張4 port網卡
+00:53 +0800 <hwchiu>: 加主機板一個就五port了
+00:53 +0800 <John_aduim>: 哦哦 原來
+00:53 +0800 <hwchiu>: 走ＰＣＩＥ
+00:53 +0800 <John_aduim>: PCIe
+00:53 +0800 <John_aduim>: 恩恩
+00:53 +0800 <hwchiu>: lab有台好像有道10port
+00:53 +0800 <hwchiu>: PCIE*2+PCE*?+主機板
+00:54 +0800 <hwchiu>: USB也插轉接頭
+00:54 +0800 <John_aduim>: XD 太神了
+00:54 +0800 <Davy_CC_>: 我的 MBA 也有 3port ...
+00:54 +0800 <John_aduim>: 天啊 我們剛的LOG還蠻重要的 畫一下分隔線＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿
+00:55 +0800 <John_aduim>: 你怎麼做的啊？
+00:55 +0800 <John_aduim>: usb 網卡嗎
+00:56 +0800 <Davy_CC_>: 接了一個 U3 dock /w 1G ethernet 再接 1G 100M 的在上面啊 O_o......
+00:56 +0800 <hwchiu>: John_aduim: 給你看看 我們lab一年前跟現在的差異
+00:56 +0800 <hwchiu>: http://imgur.com/thZQPW2
+00:56 +0800 <sdnsd-tw_Bot>: ==>             
+    
+    
+    imgur: the simple image sharer
+00:57 +0800 <John_aduim>: 哦 所以你有在上面裝OVS?
+00:57 +0800 <hwchiu>: 應該說碰了ＳＤＮ後的差異
+00:57 +0800 <hwchiu>: 我嗎？
+00:57 +0800 <John_aduim>: 我說的是davy
+00:57 +0800 <John_aduim>: 你應該會裝吧
+00:57 +0800 <hwchiu>: 嗯嗯
+00:57 +0800 <hwchiu>: 我有
+00:58 +0800 <hwchiu>: lab幾乎都裝
+00:58 +0800 <John_aduim>: 恩 那張圖上面是玩SDN 下面是沒有嗎XD
+00:59 +0800 <hwchiu>: 對ＸＤ
+01:00 +0800 <hwchiu>: 環境都弄真實一點，都慣OVS到所有pc
+01:00 +0800 <John_aduim>: 那你們OS呢
+01:01 +0800 <hwchiu>: 應該都ubuntu
+01:01 +0800 <John_aduim>: 恩恩 14.04嗎 ?
+01:02 +0800 <John_aduim>: ovs在14.04不知道支援好不好
+01:02 +0800 <hwchiu>: 12.04 LTS
+01:02 +0800 <John_aduim>: 恩
+01:02 +0800 <hwchiu>: 先準備睡覺XD 禮拜五捕的牙齒，今天吃飯就掉了.. 明天要去搶救
+01:03 +0800 <John_aduim>: ok~
+01:03 +0800 <John_aduim>: 晚安
+01:04 +0800 <hwchiu>: 晚安
+09:56 +0800 <PoWen>: good morning..
+10:05 +0800 <hwchiu>: 早安
+10:06 +0800 <PoWen>: 你回到新竹囉？還是還在高雄？
+10:09 +0800 <hwchiu>: 你說的是小飛機吧ＸＤ？
+10:22 +0800 <JalenLin>: 小飛機才跑去高雄
+10:25 +0800 <pichuang>: 大家早
+10:25 +0800 <pichuang>: server 終於回來了= =
+10:27 +0800 <hwchiu>: 早安，我家LAB的還沒有
+10:37 +0800 <PoWen>: 對耶是小飛機
+10:37 +0800 <PoWen>: 昏頭了
+10:44 +0800 <tutul>: hwchiu: sorry 昨天有點暈 我9點就倒地了~  你問的問題我應該無法回答> < 因為我好像從來沒在ODL設定過gatway
+10:44 +0800 <tutul>: 所以我也不去定有什麼情況是要的
+10:44 +0800 <tutul>: *確定
+10:44 +0800 <hwchiu>: tutul: okok
+10:46 +0800 <tutul>: hwchiu: > <
+10:50 +0800 <hwchiu>: > <大大
+14:40 +0800 <jamesLiao>: 請問一下需要用cpu i7的電腦來當controller嗎？還是i3 i5就夠用了？
+14:52 +0800 <tacchen>: 測試用i7有點太好XD
+14:54 +0800 <jamesLiao>: XD
+15:16 +0800 <ken_ho>: hihi
+15:20 +0800 <ken_ho>: 小飛機，我想請教你，用Mininet 或 Linux KVM來模擬網路環境測試，哪一種效能會比較好? 哪一種會較接近實際環境?
+15:23 +0800 <jamesLiao>: LXC?
+15:32 +0800 <ken_ho>: LXC是另一套軟體不是?
+15:36 +0800 <jamesLiao>: 是的
+15:37 +0800 <jamesLiao>: 因為我最近也在想說要用哪一種作實驗XD
+15:38 +0800 <ken_ho>: 呵
+15:38 +0800 <ken_ho>: 你是清大or交大的學生?
+15:38 +0800 <jamesLiao>: 都不是XDD
+15:39 +0800 <ken_ho>: 那是?
+15:39 +0800 <ken_ho>: 成大?中央?
+15:39 +0800 <ken_ho>: 台大?
+15:39 +0800 <jamesLiao>: 淡江XDD
+15:40 +0800 <ken_ho>: ...都猜錯了
+15:42 +0800 <jamesLiao>: 版上好像幾乎都是清交的
+15:42 +0800 <jamesLiao>: 猜不到很正常XD
+15:51 +0800 <John_aduim>: 他應該是powen的同事吧？
+15:51 +0800 <ken_ho>: 是
+15:51 +0800 <ken_ho>: 我是Powen同事
+15:52 +0800 <John_aduim>: mininet效能不會說太好，但是它可以做出很多種不同的topology
+15:53 +0800 <John_aduim>: 在實機測試很難做出的topology 都可以做得出來（很難做出是指沒那麼多檯sw跟host）
+15:57 +0800 <John_aduim>: 我覺得你要測試的話大概可以分三種 1. mininet 2. KVM/VM 3. 全部實體機器
+15:58 +0800 <John_aduim>: 全部實體機就會比較真實，但是需要大量的網路線跟host sw去做topology
+15:59 +0800 <John_aduim>: mininet就完全不用考慮硬體他全部都模擬的 但是他效能就很差，
+16:04 +0800 <ken_ho>: mininet v.s KVM 的話，KVM會較接近真實嗎?
+16:04 +0800 <ken_ho>: 因為KVM是 linux kernel support ?
+16:06 +0800 <hwchiu_znc>: Mininet use network namespace to emulate the switches and hosts
+16:06 +0800 <ken_ho>: 神人出現了..
+16:06 +0800 <ken_ho>: yes.. I saw your blog
+16:07 +0800 <hwchiu_znc>: 台北走路中QQ
+16:08 +0800 <John_aduim>: 我覺得KVM比較接近真實
+16:10 +0800 <hwchiu_znc>: ++
+16:10 +0800 <ken_ho>: hmm
+16:11 +0800 <John_aduim>: hwchiu_znc 我以為你在臺北走路中央
+16:11 +0800 <John_aduim>: XD
+16:11 +0800 <hwchiu_znc>: XD 前往中山站中
+16:12 +0800 <John_aduim>: 靠近我住的地方啊 ！
+16:12 +0800 <John_aduim>: 我住中山國中站
+16:12 +0800 <John_aduim>: 我現在也在臺北的說
+16:13 +0800 <hwchiu_znc>: 哦哦 看租屋去
+16:13 +0800 <John_aduim>: 恩 我住在中山區附近 這很貴
+16:13 +0800 <ken_ho>: 租屋?
+16:14 +0800 <hwchiu_znc>: 台北工作用
+16:14 +0800 <John_aduim>: S家在哪XD
+16:15 +0800 <ken_ho>: 恩
+16:15 +0800 <ken_ho>: 大同路?
+16:15 +0800 <John_aduim>: 就在中山國中站
+16:15 +0800 <hwchiu_znc>: 京站隔壁
+16:15 +0800 <hwchiu_znc>: 長安西路
+16:15 +0800 <hwchiu_znc>: S社
+16:15 +0800 <John_aduim>: 我找到了很近台北車站
+16:16 +0800 <John_aduim>: 哦哦XD
+16:17 +0800 <jamesLiao>: S社?
+16:18 +0800 <John_aduim>: 做NAS的S社
+16:20 +0800 <jamesLiao>: 懂了XD
+16:24 +0800 <John_aduim>: IRCcloud會踢人
+16:34 +0800 <ken_ho>: 神人...jopenflow and openflowj << 兩者差異很大嗎??
+16:36 +0800 <hwchiu_znc>: 晚點回去看下， 本質上應該不大
+16:36 +0800 <ken_ho>: :)
+16:37 +0800 <hwchiu_znc>: 頂多新增一些功能之類的，畢竟是以對方為基礎而修改的
+16:38 +0800 <hwchiu_znc>: https://bitbucket.org/sdnhub/jopenflow
+16:38 +0800 <sdnsd-tw_Bot>: ==> 
+  sdnhub / jopenflow   — Bitbucket
+16:38 +0800 <hwchiu_znc>: 看這邊應該就夠了
+16:39 +0800 <ken_ho>: 恩，我有看... 我好奇的是，為什麼不能把他merge回openflowj
+16:39 +0800 <ken_ho>: 你現在做的不也是以openflowj 去修改成1.3?
+16:40 +0800 <ken_ho>: 兩者會有不同嗎
+16:40 +0800 <hwchiu_znc>: 好像不夠 詳細的可能要翻一下
+16:40 +0800 <hwchiu_znc>: 剩餘的我晚點回 手機打字比較慢
+16:41 +0800 <ken_ho>: ok~~~
+16:41 +0800 <ken_ho>: 晚點聊
+18:16 +0800 <vivi>: 想詢問大家有成功用過Opendaylight 1.3的web ui下過flow到controller
+18:17 +0800 <vivi>: 因為我下載了opendaylight(支援OF1.3)的integration package，build完後run起來
+18:18 +0800 <vivi>: 進到web ui後，要下flow，但按下button都會馬上跳不見
+18:37 +0800 <hwchiu_znc>: tutul
+19:58 +0800 <chma>: clear
+21:28 +0800 <cftyn>: cd
+21:28 +0800 <cftyn>: 錯頻XD
+21:37 +0800 <John_aduim>: XD
+21:59 +0800 <cathy_>: 大家好，我剛接觸SDN的新人，請大家多多指教
+22:00 +0800 <John_aduim>: 你好:)
+22:01 +0800 <cathy_>: 你好^^
+22:02 +0800 <John_aduim>: 有什麼問題可以直接發問噢
+22:05 +0800 <cathy_>: 不知大家都用什麼controller了呢?，因我最近在了解及嘗試ODL，發現OF13的功能好像不支援
+22:06 +0800 <cathy_>: 不知大家有沒有遇到這些問題呢?
+22:07 +0800 <John_aduim>: 我用Ryu
+22:08 +0800 <John_aduim>: 你說的ODL在OF13好像不支援我也有聽說
+22:10 +0800 <cathy_>: 好奇怪......那官方怎麼會說有呢?不知這裡有人也是做ODL嗎?
+22:11 +0800 <cathy_>: 因為我是被指定要做這個Controller，現在頗苦惱
+22:13 +0800 <John_aduim>: 問一下 @katy
+22:35 +0800 <hwchiu>: wow 剛回來= =
+22:35 +0800 <hwchiu>: tutul:
+22:44 +0800 <katy_>: operating OF13的support我也還在研究的說，也還沒成功...
+22:44 +0800 <katy_>: opendaylight
+22:47 +0800 <hwchiu>: John_aduim: 昨天的有回信了
+22:47 +0800 <hwchiu>: 我先處理一下FL的信件XD
+22:47 +0800 <John_aduim>: 他要更新網站了嗎ＸＤ
+22:48 +0800 <hwchiu>: 還沒，是別人的問題XD
+22:48 +0800 <hwchiu>: 對方應該還沒起床
+22:49 +0800 <John_aduim>: 哦哦
+22:59 +0800 <hwchiu>: ken_ho: 其實我也很納悶，為什麼不merge回去，而是自己以openflowJ為base去開發
+23:00 +0800 <hwchiu>: 這部分可能真的就是要問SDNHUB才知道
+23:06 +0800 <ken_ho>: Hmm
+23:07 +0800 <John_aduim>: 我這裡有SDNHUB的google group
+23:07 +0800 <John_aduim>: 有興趣可以進去丟問題
+23:07 +0800 <John_aduim>: 我找一下
+23:08 +0800 <John_aduim>: https://groups.google.com/forum/#!forum/sdnhub
+23:08 +0800 <sdnsd-tw_Bot>: ==> Google Groups
+23:19 +0800 <hwchiu>: 審核中
+23:29 +0800 <hwchiu>: tutul: 你有用成功1.3嗎 (ODL)
+23:31 +0800 <hwchiu>: 我來裝看看好了
+23:37 +0800 <hwchiu>: katy_: 你們測試有沒有支援OF13，是用什麼樣的方式?
+23:44 +0800 <John_aduim>: 裡面活動率極低
+23:46 +0800 <hwchiu>: 恩恩
+23:48 +0800 <pichuang>: @15:20 < ken_ho> 小飛機，我想請教你，用Mininet 或 Linux KVM來模擬網路環境測試，哪一種效能會比較好? 哪一種會較接近實際環境?
+23:49 +0800 <pichuang>: ken_ho: KVM一定會比較好xd
+23:49 +0800 <pichuang>: 比較符合真實環境 印象中有個教學影片是用 KVM 當 hosts 作模擬的
+23:50 +0800 <hwchiu>: 你是跑去哪了XD 現在才出現
+23:50 +0800 <hwchiu>: pichuang:
+23:51 +0800 <pichuang>: hwchiu: 高雄跑透透
+23:51 +0800 <pichuang>: 明日最後一天
+23:51 +0800 <pichuang>: xd
+23:51 +0800 <hwchiu>: 回娘家了嗎
+23:51 +0800 <John_aduim>: 你高雄人嗎
+23:51 +0800 <pichuang>: 我以前讀道明
+23:51 +0800 <pichuang>: 在這邊混了三年xd
+23:51 +0800 <John_aduim>: 你是我學長！
+23:52 +0800 <pichuang>: John_aduim: 安安 你是哪班
+23:52 +0800 <katy__>: 我之前都還是跑在OF10，關於OF13(ODL)，我也才剛在測，但......也還沒成功過
+23:52 +0800 <John_aduim>: 我3A !
+23:52 +0800 <pichuang>: ...
+23:52 +0800 <pichuang>: 我也是3a
+23:52 +0800 <John_aduim>: XD
+23:52 +0800 <pichuang>: 那你可能小我一屆
+23:52 +0800 <pichuang>: xd
+23:53 +0800 <pichuang>: 或兩屆
+23:53 +0800 <pichuang>: katy__: odl of13靠你們了!
+23:53 +0800 <John_aduim>: 奇怪怎麼沒看過你
+23:53 +0800 <hwchiu>: katy_: 你怎測?  單純ping嗎XD?
+23:54 +0800 <pichuang>: John_aduim: 我都在亂跑啊XD
+23:54 +0800 <pichuang>: 而且
+23:54 +0800 <pichuang>: 我是男的
+23:54 +0800 <John_aduim>: 這什麼怪理由XD
+23:54 +0800 <pichuang>: 男的比較不會被注意到啊
+23:54 +0800 <pichuang>: 我明天要來回道明一下
+23:54 +0800 <John_aduim>: 應該來好好聊一下
+23:55 +0800 <John_aduim>: 你老師是哪一位
+23:55 +0800 <pichuang>: y
+23:55 +0800 <John_aduim>: 導師
+23:55 +0800 <pichuang>: 陳梅香
+23:55 +0800 <John_aduim>: 阿哈哈哈
+23:55 +0800 <John_aduim>: 我們國文老師
+23:55 +0800 <pichuang>: yes
+23:55 +0800 <pichuang>: xd
+23:55 +0800 <John_aduim>: 他應該認識我
+23:55 +0800 <pichuang>: xd
+23:55 +0800 <John_aduim>: 你可以抱一下我名字看看
+23:55 +0800 <John_aduim>: 太巧啦
+23:56 +0800 <katy__>: 我目前是先用WEB UI上的功能下flow，來測測看controller跟switch之間的溝通，但odl好像有bug，我一選擇switch就畫面重整
+23:56 +0800 <John_aduim>: 可以直接在controller下flow entry?
+23:57 +0800 <John_aduim>: 試試看 UI可能有bug吧？
+23:57 +0800 <katy__>: 是阿
+23:57 +0800 <pichuang>: katy__: 不要用ui trytry
+23:57 +0800 <hwchiu>: 編譯中
+23:57 +0800 <pichuang>: tutul: 好像有提到說 gui有點bug
+23:57 +0800 <John_aduim>: ＸＤ
+23:58 +0800 <John_aduim>: 直接在controller bundle 寫入flow entry吧
+23:58 +0800 <katy__>: 我剛才有問了另一位學長，他好像也遇到一樣的問題，他建議我用看看rest api，我打算明天try try
+23:58 +0800 <katy__>: 我現在正在寫bundle.....
+23:59 +0800 <hwchiu>: GOD
