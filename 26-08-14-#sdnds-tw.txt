@@ -1,0 +1,569 @@
+00:00 +0800 <John_aduim>: 可以直接呼叫OF API寫flow entry不
+00:00 +0800 <katy__>: 但要寫of 13(odl)的bundle，很麻煩.....，跟之前的差很多，ODL改把OF13的plugin改開發在md-sal上，現成的api不能用，要自己在上面還要自己寫yang tool
+00:01 +0800 <hwchiu>: John_aduim: 我印象可以，我以前有測試過
+00:01 +0800 <hwchiu>: 真麻煩
+00:01 +0800 <John_aduim>: 對哦 你那邊是1.3 的SW
+00:02 +0800 <katy__>: 真的嗎??!!!!!怎麼在odl上用OF API
+00:03 +0800 <hwchiu>: 我講錯了= = 我講的是Rest API
+00:03 +0800 <hwchiu>: XDD
+00:04 +0800 <katy__>: OAQ
+00:05 +0800 <hwchiu>: QQ
+00:10 +0800 <pichuang>: 問問有人有在研究openflow 的 vlan設定嗎
+00:11 +0800 <hwchiu>: 應該就傳統那樣設定吧
+00:12 +0800 <pichuang>: 應該沒有那麼簡單T_T 我有測過floodlight好像不work
+00:12 +0800 <pichuang>: 打算回新竹用ryu測
+00:12 +0800 <hwchiu>: 就那麼簡單= =
+00:13 +0800 <hwchiu>: 我就測過，floodlight+openstack
+00:13 +0800 <hwchiu>: 你的flow entry要針對vlan喔
+00:13 +0800 <John_aduim>: welcome to ryu
+00:13 +0800 <pichuang>: #00:51 +0800 <John_aduim>: 我如果從網路安全角度去看 我在In-band 只要能打掛controller 網路就GG
+00:13 +0800 <pichuang>: oob的狀況 打掛controller也可以讓網路gg
+00:13 +0800 <pichuang>: hwchiu: ._. wow好 我在研究一下
+00:14 +0800 <hwchiu>: pichuang: 我確定是可以，我LAB之前我有幫忙弄過XD 在一堆PC海中間是可以WORK的
+00:14 +0800 <John_aduim>: oob要怎麼怎麼打controller
+00:14 +0800 <pichuang>: #01:02 +0800 <John_aduim>: ovs在14.04不知道支援好不好
+00:14 +0800 <pichuang>: 這個問題應該要換成說...ovs在哪個kernel能正常work
+00:14 +0800 <pichuang>: xd
+00:14 +0800 <hwchiu>: 感覺應該要問kernel
+00:14 +0800 <hwchiu>: XD
+00:15 +0800 <hwchiu>: 3.3後的應該都支援了( OVS2.3)
+00:15 +0800 <pichuang>: 用對kernel就有kernel mode可以用
+00:15 +0800 <pichuang>: 如果kernel不支援
+00:16 +0800 <pichuang>: 頂多還有userspace的ovs可以用
+00:16 +0800 <hwchiu>: 就用純user-space吧XD
+00:16 +0800 <pichuang>: y
+00:16 +0800 <pichuang>: 效能...我沒測過 理論上應該會比kmod的還要差
+00:16 +0800 <hwchiu>: catcy消失了,想問她是怎樣的不知原OF13 (ODL)
+00:16 +0800 <John_aduim>: 恩
+00:16 +0800 <pichuang>: #00:14 < John_aduim> oob要怎麼怎麼打controller
+00:16 +0800 <pichuang>: 我是用 routing 分開控制
+00:17 +0800 <pichuang>: routing table打不同網段xd
+00:17 +0800 <pichuang>: 我前陣子有弄一個 real full mesh topology
+00:17 +0800 <pichuang>: 兩檯pc
+00:17 +0800 <John_aduim>: 恩恩
+00:17 +0800 <pichuang>: 兩檯愛訊
+00:18 +0800 <pichuang>: 一檯dhcp + nat
+00:18 +0800 <pichuang>: 再一台controller用的 nat
+00:18 +0800 <pichuang>: 有弄起來
+00:19 +0800 <hwchiu>: XD
+00:19 +0800 <PoWen>: interesting
+00:19 +0800 <hwchiu>: pichuang: 論壇那個好像都沒有回覆到論壇，導致大家會看埠到
+00:19 +0800 <PoWen>: sleep now
+00:19 +0800 <pichuang>: 我光搞一個2*2的 full mesh 就搞了好幾個晚上
+00:19 +0800 <PoWen>: good night, will try to follow up your discussion tomorrow
+00:19 +0800 <pichuang>: PoWen: 晚安~
+00:20 +0800 <pichuang>: hwchiu: T_T 她可能沒注意吧
+00:20 +0800 <hwchiu>: PoWen: 晚安XD 等你list
+00:21 +0800 <pichuang>: hwchiu: 其實應該是要請他轉會比較好
+00:21 +0800 <pichuang>: 不然我回信會回到你身上去
+00:21 +0800 <pichuang>: xd
+00:26 +0800 <hwchiu>: 手動加吧XD，可能他沒有用回覆所有人
+00:28 +0800 <John_aduim>: 奇怪 他怎麼沒上論壇問啊
+00:28 +0800 <John_aduim>: 都是看你用轉寄得上來
+00:28 +0800 <hwchiu>: 因為他都沒寄信到論壇 害羞嗎XD
+00:29 +0800 <John_aduim>: 那也可以直接加入論壇 在上面按留言發問
+00:29 +0800 <John_aduim>: 下次你們回信跟他說一下好了
+00:29 +0800 <hwchiu>: 阿災，可能不熟悉?
+00:29 +0800 <hwchiu>: 恩恩
+00:31 +0800 <John_aduim>: 恩 你們通常sdn環境也都用VM嗎
+00:31 +0800 <John_aduim>: 還是實體機
+00:33 +0800 <hwchiu>: 我都實體
+00:35 +0800 <John_aduim>: 恩
+00:35 +0800 <pichuang>: hwchiu: 我猜論壇那位
+00:36 +0800 <pichuang>: 應該是route 沒寫好
+00:38 +0800 <hwchiu>: 我猜他是用預設的功能吧
+00:39 +0800 <hwchiu>: 你說的是
+00:39 +0800 <hwchiu>: 哦哦，我懂你的XD
+00:39 +0800 <hwchiu>: 也有可能，所以根本出不去吧
+00:41 +0800 <pichuang>: route add 要自己寫
+00:41 +0800 <pichuang>: 不然就是要在network那個file寫好
+00:42 +0800 <hwchiu>: 恩恩
+00:42 +0800 <pichuang>: 大部份都會遇到這種狀況xd
+00:42 +0800 <pichuang>: 我猜只是route沒弄好而已
+00:43 +0800 <hwchiu>: 恩
+00:58 +0800 <John_mobile>:  pichung 你大我一輪XD
+00:59 +0800 <John_mobile>: 因為我在學的時候老師是教2A 跟我們同級
+00:59 +0800 <hwchiu>: 可以帶A4去成功領，我要帶啥呢XD
+01:01 +0800 <John_mobile>: 濃縮版open flow spec
+01:03 +0800 <pichuang>: https://www.ptt.cc/bbs/Headphone/M.1408822440.A.09B.html
+01:03 +0800 <pichuang>: = =
+01:03 +0800 <sdnsd-tw_Bot>: ==> [閒聊] LINUX優化之連續記憶體篇 - 看板 Headphone - 批踢踢實業坊
+01:03 +0800 <pichuang>: 這人瘋了
+01:03 +0800 <pichuang>: John_mobile: 我78年次的
+01:04 +0800 <pichuang>: hwchiu: 我新訊的時候
+01:04 +0800 <pichuang>: 有帶一疊a4進去
+01:04 +0800 <pichuang>: 來準備丁組口試xd
+01:08 +0800 <John_mobile>: 我80！
+01:39 +0800 <hwchiu>: XD
+02:20 +0800 <Davy_CC__>: pichuang: OP
+08:51 +0800 <hwchiu_znc>: 早安
+08:52 +0800 <ken_ho>: 11:48 PM <pichuang> @15:20 < ken_ho> 小飛機，我想請教你，用Mininet 或 Linux KVM來模擬網路環境測試，哪一種效能會比較好? 哪一種會較接近實際環境?
+08:52 +0800 <ken_ho>: 11:49 PM <pichuang> ken_ho: KVM一定會比較好xd
+08:52 +0800 <ken_ho>: 11:49 PM <pichuang> 比較符合真實環境 印象中有個教學影片是用 KVM 當 hosts 作模擬的
+08:52 +0800 <ken_ho>: got it, thanks
+08:52 +0800 <ken_ho>: 早安~~
+08:52 +0800 <ken_ho>: 今天這麼早?
+09:02 +0800 <hwchiu_znc>: 早起打刺客教條XD
+09:03 +0800 <ken_ho>: ....
+09:04 +0800 <ken_ho>: 好羨慕
+09:23 +0800 <JalenLin>: hwchiu_znc: .....
+09:29 +0800 <pichuang>: hwchiu_znc: ....
+09:29 +0800 <pichuang>: 哦對吼 你快進去了
+09:31 +0800 <pichuang>: ken_ho: https://www.youtube.com/watch?v=13F1gWjsRPE
+09:31 +0800 <sdnsd-tw_Bot>: ==> SDN Lab OpenFlow, OpenvSwitch and KVM Installation - YouTube
+09:35 +0800 <ken_ho>: cool
+09:42 +0800 <ken_ho>: 他是在ubuntu 上裝virtualbox?
+09:45 +0800 <pichuang>: 有兩個
+09:45 +0800 <pichuang>: 一個是用kvm
+09:45 +0800 <pichuang>: 一個是用vbox
+09:45 +0800 <pichuang>: 兩個都可以
+09:46 +0800 <pichuang>: 但是若要用vbox做環境模擬的話 限定用在linux的環境
+09:46 +0800 <pichuang>: 他要改一些東西把openvswitch attach進去
+09:52 +0800 <hwchiu>: XD
+10:07 +0800 <hwchiu>: 結果我ODL(OF13) 開一個晚上不動，就自己當掉了= =
+10:50 +0800 <tutul>: hwchiu pichuang: 抱歉@@  我好像很不常看irc XDDD
+10:50 +0800 <tutul>: 每次看到大家問題就解決了>   <
+10:51 +0800 <hwchiu>: XD OK啦
+10:51 +0800 <hwchiu>: 所以你測ODL (OF13) 是可以的囉
+10:51 +0800 <tutul>: 只有ping all可以@@
+10:51 +0800 <tutul>: 沒在上面跑過其他演算法
+10:51 +0800 <tutul>: 他的  web畫面 問題蠻嚴重的 不知道後來有沒有再改
+10:52 +0800 <tutul>: 他有時候會顯示 神奇的switch 有時候會隱藏 link
+10:52 +0800 <hwchiu>: 哦哦
+10:52 +0800 <tutul>: 不過如果 每次都有重開 ODL 才去測試底下的拓樸
+10:52 +0800 <tutul>: 就還好 會正常一點 我猜是資料庫cache?!
+10:55 +0800 <hwchiu>: 阿災 交給你研究
+10:56 +0800 <tutul>: 嘎~~
+10:56 +0800 <tutul>: 你最近有在新竹> <
+10:56 +0800 <tutul>: 不知道你對osgi 熟不熟@@ 想問問關於這方面的知識.....
+10:56 +0800 <tutul>: 我雖然有看code 但看懂歸看懂 要在上面開發 有點頭痛....
+10:56 +0800 <hwchiu>: 我後天就消失在世界上了
+10:57 +0800 <tutul>: 好吧XDDDDDD
+10:58 +0800 <hwchiu>: http://www.osgi.org/Links/BasicEducation
+10:58 +0800 <sdnsd-tw_Bot>: ==> OSGi Alliance | Links / Basic Education and Training 
+10:58 +0800 <hwchiu>: 可以來這邊學
+11:33 +0800 <tutul>: hwchiu: 謝謝～～
+13:55 +0800 <PoWen>: 小飛機
+13:55 +0800 <PoWen>: ArchLinux，有啥好處
+13:56 +0800 <PoWen>: 讓你想研究？
+14:18 +0800 <John_aduim>: arch 比較接近原汁
+14:19 +0800 <PoWen>: oh
+14:19 +0800 <PoWen>: 比Debian distribution更接近原始的Linux kernal ?
+14:20 +0800 <John_aduim>: 應該吧 kernel 都是一樣的
+14:20 +0800 <John_aduim>: 但是各家版本都會有一些小幅修改
+14:21 +0800 <John_aduim>: arch聽說是最接近原汁的
+14:31 +0800 <PoWen>: 原來如此，明白了
+14:32 +0800 <PoWen>: thanks.
+15:56 +0800 <JalenLin>: Gentoo不好嗎? QAQ
+15:56 +0800 <JalenLin>: ACTION {G,F}untoo派的~
+15:57 +0800 <Davy_CC__>: Funtoo？
+16:04 +0800 <JalenLin>: Davy_CC__: Yes
+16:14 +0800 <Davy_CC__>: ACTION 不熟 Gentoo 系…… 我是 Ubuntu 派的
+16:36 +0800 <S3p_lin_>: 當年有一個 trustix 也是很乾淨的  # John_aduim> arch聽說是最接近原汁的
+16:39 +0800 <JalenLin>: 等等就要出現LFS了阿...
+20:02 +0800 <hwchiu>: HI 你好
+20:06 +0800 <pichuang>: hi 你好
+20:06 +0800 <ken_ho>: hi 你好
+20:06 +0800 <pichuang>: Jim___: 我和 hwchiu 就是在論壇跟你互通信件的人
+20:06 +0800 <pichuang>: 話說我從高雄玩爽了
+20:07 +0800 <pichuang>: 要來回新竹上工了T_T
+20:14 +0800 <pichuang>: PoWen: 我覺得 archlinux 還蠻乾淨的 用到的source很多都是直接拉upstream
+20:14 +0800 <pichuang>: 就算有些需要打patch 也可以把相對應的source 透過某些工作把他拉下來看
+20:14 +0800 <pichuang>: 自己改一改
+20:15 +0800 <pichuang>: s/工作/功能
+20:16 +0800 <pichuang>: 我是覺得還蠻乾淨的
+20:16 +0800 <pichuang>: 但是要如果linux新手的話我會比較建議用ubuntu
+20:16 +0800 <pichuang>: 先熟悉上層運作 之後再從較底層慢慢玩上來
+20:17 +0800 <pichuang>: 我以前也適用 ubuntu 的
+20:18 +0800 <tacchen>: ubuntu大好 <3
+20:18 +0800 <hwchiu>: freebsd大好
+20:19 +0800 <pichuang>: ubuntu 做一些實驗性的測試還不錯用
+20:20 +0800 <pichuang>: 但就是肥很多=_=
+20:25 +0800 <PoWen>: i6
+20:25 +0800 <PoWen>: 噢 瞭解
+20:25 +0800 <PoWen>: 好
+20:25 +0800 <PoWen>: 邱渣和小飛機明天有空嗎
+20:25 +0800 <PoWen>: 請你們來智邦拜訪一下
+20:25 +0800 <PoWen>: 吃個午餐
+20:26 +0800 <hwchiu>: 我可以
+20:26 +0800 <PoWen>: 我想請你們簡介一下 OVS 和 FloodLight, 預計11:30~2:00，還有什麼你們覺得很重要要說的
+20:26 +0800 <pichuang>: 我看一下我明天有沒有會要開
+20:26 +0800 <PoWen>: 好
+20:26 +0800 <PoWen>: 我晚點回來
+20:27 +0800 <pichuang>: 明天就要簡介了嗎xd
+20:27 +0800 <ken_ho>: 酷喔~~很歡迎你們來
+20:33 +0800 <pichuang>: 我明天也可以
+20:33 +0800 <pichuang>: 剛好沒會開
+20:41 +0800 <tacchen>: 會錄影嘛XD
+20:44 +0800 <pichuang>: 賣啦 我有鏡頭不耐症
+20:45 +0800 <tacchen>: 要想這是造福世人阿阿阿阿XD
+20:45 +0800 <tacchen>: 第一次ovs+floodlight就上手
+20:48 +0800 <pichuang>: 我還在坐車 投影片連第一頁都沒有
+20:48 +0800 <pichuang>: = =
+20:49 +0800 <hwchiu>: ok
+20:57 +0800 <hwchiu>: floodlight希望聽啥ＸＤ？
+20:58 +0800 <ken_ho>: 如何快速上手 :)
+20:58 +0800 <hwchiu>: okok
+20:58 +0800 <pichuang>: ovs 的部分也是嗎?
+20:58 +0800 <ken_ho>: 恩恩
+20:58 +0800 <pichuang>: 快速上手的話應該拿blog就可以講了XD
+20:59 +0800 <pichuang>: 我們能再多帶個領導嗎?
+20:59 +0800 <ken_ho>: 學長?
+21:00 +0800 <pichuang>: shanyu
+21:00 +0800 <pichuang>: 上次有見過面的
+21:00 +0800 <hwchiu>: 我可能傾向於把Floodlight的架構，以其他一些運作的原理講清楚ＸＤ
+21:01 +0800 <ken_ho>: OH，好呀
+21:02 +0800 <pichuang>: hwchiu: fl 牛人
+21:02 +0800 <hwchiu>: mo
+21:02 +0800 <ken_ho>: 恩恩，從程式角度說明
+21:02 +0800 <pichuang>: 話說地點在哪裡
+21:02 +0800 <hwchiu>: OVS我可以補充十五分鐘 XD
+21:02 +0800 <ken_ho>: 害我好想重拾書本
+21:02 +0800 <ken_ho>: 回學校讀個書
+21:03 +0800 <hwchiu>: XD 我倒是好後悔 暑假沒有把刺客教條全系列都破＝＝
+21:03 +0800 <pichuang>: ...
+21:03 +0800 <ken_ho>: 智邦科技  研新三路1號
+21:03 +0800 <pichuang>: 這是什麼煩惱
+21:03 +0800 <ken_ho>: ...
+21:03 +0800 <pichuang>: xd
+21:03 +0800 <ken_ho>: 從交大後門，研發六路那上來會比較近
+21:03 +0800 <pichuang>: ok
+21:03 +0800 <hwchiu>: pichuang: 一起去？
+21:04 +0800 <hwchiu>: 之前夏日特賣會在特價，就不小心收了全套ＸＤ
+21:04 +0800 <pichuang>: hwchiu: ok 阿
+21:04 +0800 <pichuang>: 我們11:00北大門?
+21:04 +0800 <ken_ho>: https://www.google.com.tw/maps/place/智邦科技股份有限公司/@24.778673,120.988585,17z/data=!4m5!1m2!2m1!1z56CU5paw5LiJ6LevMeiZnw!3m1!1s0x3468361d9f3eda1f:0x4b1cd6e3bb6d8928?hl=zh-TW
+21:04 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/Wf4sd  ==> Google 地圖
+21:05 +0800 <hwchiu>: pichuang:  還是南大門？ 我沒有辦法進學校了ＸＤ
+21:06 +0800 <pichuang>: hwchiu: 阿好
+21:06 +0800 <pichuang>: 11:00南大門好了
+21:06 +0800 <hwchiu>: okok
+21:08 +0800 <ken_ho>: 你們對openstack有興趣嗎
+21:08 +0800 <ken_ho>: http://seminar.ithome.com.tw/live/openstack_taiwanday2014/
+21:08 +0800 <sdnsd-tw_Bot>: ==> 2014 OpenStack Taiwan
+21:08 +0800 <hwchiu>: tacchen:
+21:08 +0800 <pichuang>: tacchen:
+21:08 +0800 <pichuang>: xd
+21:09 +0800 <pichuang>: 林一平｜科技部 政務次長
+21:14 +0800 <ken_ho>: https://www.sdncentral.com/education/open-sdn-when-is-open-really-open/2014/08/?utm_content=buffer660a6&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+21:14 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/BolIo  ==> Open SDN: When is 'Open' Not Really Open?
+21:15 +0800 <ken_ho>: Open is the new Closed
+21:15 +0800 <ken_ho>: :)
+21:34 +0800 <PoWen>: 小飛機邱渣那明天見
+21:34 +0800 <PoWen>: 希望你們講得過癮
+21:34 +0800 <PoWen>: Ken會聽，我可能會很多會議
+21:36 +0800 <pichuang>: ok
+21:44 +0800 <PoWen>: ok thanks
+21:44 +0800 <PoWen>: 小飛機，你之後會很忙對嗎？
+21:45 +0800 <PoWen>: 可能不定期想邀請你來開講？
+21:45 +0800 <PoWen>: 可惜邱渣要去爆笑國家，要去S社...
+21:47 +0800 <ken_ho>: S社會搞openstack? 如果有 還有機會再碰SDN
+21:47 +0800 <hwchiu>: 應該不會ＸＤ
+21:48 +0800 <ken_ho>: So sad
+21:50 +0800 <pichuang>: PoWen: 其實我一直都頗忙的xd 這三天是我碩一到現在第一次跑出外地連玩三天xd
+21:51 +0800 <hwchiu>: pichuang: ...
+21:51 +0800 <hwchiu>: pichuang: 這麼可憐ＸＤ 快學我出國王
+21:51 +0800 <hwchiu>: 出國玩
+21:52 +0800 <pichuang>: hwchiu: 你是牛人 小弟只能靠努力和毅力存活xd
+21:52 +0800 <hwchiu>: 偷偷出國玩
+21:52 +0800 <ken_ho>: 玩國軍online
+21:52 +0800 <ken_ho>: ...
+21:52 +0800 <hwchiu>: 我碩二偷偷出國玩了四次，老闆發現一次而已XD
+21:52 +0800 <pichuang>: 真好xd
+21:53 +0800 <hwchiu>: 你看看你家拉拉
+21:53 +0800 <pichuang>: ken_ho: 我已經登出一年了xd
+21:53 +0800 <pichuang>: 拉牛不一樣啊
+21:53 +0800 <pichuang>: 產能差太多了xd
+21:54 +0800 <ken_ho>: 當完兵有差厚
+21:54 +0800 <pichuang>: 下週就是登出滿一週年了
+21:54 +0800 <pichuang>: 有
+21:54 +0800 <pichuang>: 時間可貴 讀書真好
+21:55 +0800 <ken_ho>: 羨慕
+21:55 +0800 <ken_ho>: ：（
+21:55 +0800 <pichuang>: 我現在有點像是把讀書當工作xd
+21:57 +0800 <pichuang>: http://www.slideshare.net/hiroaki.kawai/tremaswitch?qid=0fa2bc8e-1922-46d0-948e-709490cef82b&v=qf1&b=&from_search=12
+21:57 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/uIOIk  ==> できる！trema-switch
+21:57 +0800 <ken_ho>: 抱持這態度就對了
+21:58 +0800 <pichuang>: 真的有人拿pi 塞openwrt進去xd
+21:58 +0800 <pichuang>: 12/28
+22:15 +0800 <pichuang>: http://www.slideshare.net/rajdeep/openvswitch-deep-dive?qid=e5218807-56af-44c9-ab2d-420c03ad6244&v=default&b=&from_search=1
+22:15 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/BxibE  ==> OpenvSwitch Deep Dive
+22:15 +0800 <pichuang>: openvswitch deep dive 這篇不錯
+22:17 +0800 <hwchiu>: 恩嗯
+22:17 +0800 <pichuang>: 咦 有 l4 hashing
+22:18 +0800 <pichuang>: 不知道他是不是指link aggregation
+22:30 +0800 <PoWen>: 小飛機當完兵了？
+22:30 +0800 <pichuang>: PoWen: 對啊 我當完兵了
+22:33 +0800 <PoWen>: 哇
+22:33 +0800 <PoWen>: nice
+22:34 +0800 <PoWen>: good
+22:34 +0800 <PoWen>: 話說我又得出差莫斯科三個禮拜
+22:34 +0800 <PoWen>: 連玩都沒玩過...
+22:34 +0800 <hwchiu>: QQ
+22:34 +0800 <PoWen>: 我從去年十一月到現在，都把運動健身丟一邊了...
+22:34 +0800 <PoWen>: qq
+22:34 +0800 <pichuang>: QQ
+22:34 +0800 <pichuang>: 莫斯科耶
+22:34 +0800 <PoWen>: yes
+22:34 +0800 <pichuang>: 連瞧都沒瞧過
+22:35 +0800 <PoWen>: 我負責俄羅斯地區的業務，身兼Data Center PLM
+22:35 +0800 <PoWen>: 最近有點亂
+22:35 +0800 <PoWen>: xd
+22:35 +0800 <PoWen>: 等過一陣子再去遊玩
+22:35 +0800 <PoWen>: XD
+22:35 +0800 <PoWen>: 剛剛這個VMWare的 OVS deep dive
+22:35 +0800 <hwchiu>: Jim___: hi
+22:36 +0800 <PoWen>: 裡面寫說，要讓 in-kernel code as small as possible, why?
+22:37 +0800 <hwchiu>: 在想，畢竟switch上都不會用到kernel 部分
+22:37 +0800 <hwchiu>: 如果能把所有功能都在user space都做完，這樣套到switch上能夠發揮的功能就愈多
+22:38 +0800 <hwchiu>: 猜的拉
+22:38 +0800 <pichuang>: micro kernel 的概念嗎?
+22:38 +0800 <pichuang>: 最小化 kernel
+22:39 +0800 <hwchiu>: 不知道ＸＤ是不是想要把kernel module的部分盡量拔除？
+22:39 +0800 <pichuang>: hwchiu: 結果你論文把它全部塞到kernle去xd
+22:40 +0800 <hwchiu>: pichuang: ＸD都是屎
+22:41 +0800 <PoWen>: XD
+22:41 +0800 <hwchiu>: 分身乏術，沒太多時間繼續研究OVS
+22:41 +0800 <PoWen>: 我以為放到kernel space, 效能會比放在user space較好
+22:41 +0800 <pichuang>: 理論上會比較好
+22:41 +0800 <PoWen>: yeah, 該研究的實在太多了
+22:41 +0800 <hwchiu>: 會有一些限制
+22:41 +0800 <hwchiu>: 空間大小之類的
+22:41 +0800 <PoWen>: 噢
+22:41 +0800 <PoWen>: 限制？
+22:41 +0800 <hwchiu>: 以及難以維護
+22:42 +0800 <PoWen>: 空間大小是指，記憶體？
+22:42 +0800 <pichuang>: 但功能沒辦法像放在user space這麼多樣
+22:42 +0800 <PoWen>: oh hmm.
+22:43 +0800 <hwchiu>: 恩嗯
+22:44 +0800 <hwchiu>: 我看目前一些switch都是 user-space的OVS 直接呼叫adapter，再轉去呼叫底下晶片的ＡＰＩ來完成的
+22:44 +0800 <hwchiu>: 沒有用到kernel 部分
+22:46 +0800 <ken_ho>: 恩恩
+22:47 +0800 <ken_ho>: 對了，那記憶體部份該怎麼管理? 用dynamic or static allocate?
+22:50 +0800 <pichuang>: 這部分我沒研究耶
+22:50 +0800 <pichuang>: 之後有看到在跟你說
+22:50 +0800 <pichuang>: xd
+22:50 +0800 <ken_ho>: XD
+22:53 +0800 <PoWen>: adapter ?
+22:53 +0800 <PoWen>: 這樣算是直接 bypass kernal哦？
+22:53 +0800 <hwchiu>: yes
+22:53 +0800 <PoWen>: 這樣的好處是？
+22:54 +0800 <hwchiu>: 好實作
+22:55 +0800 <hwchiu>: 明天若是有空閒時間，我可以跟你講講
+22:55 +0800 <PoWen>: 好喔
+22:55 +0800 <hwchiu>: 我有trace過某牌switch的code
+22:55 +0800 <PoWen>: 哦？
+22:55 +0800 <PoWen>: 真強者
+22:55 +0800 <PoWen>: 竟然有時間trace
+22:55 +0800 <pichuang>: p牌嗎
+22:55 +0800 <Jim___>: 各位好
+22:55 +0800 <pichuang>: Jim___: 安安
+22:56 +0800 <PoWen>: Hi Jim
+22:56 +0800 <PoWen>: 好長的底線
+22:56 +0800 <PoWen>: ___
+22:56 +0800 <PoWen>: 至少三次
+22:56 +0800 <Jim___>: 我是Jim,是一個學習SDN的新手,請多指教
+22:56 +0800 <hwchiu>: 安安
+22:56 +0800 <ken_ho>: p牌
+22:56 +0800 <hwchiu>: pichuang: no
+22:56 +0800 <ken_ho>: p牌?
+22:57 +0800 <hwchiu>: 不是XD
+22:57 +0800 <Jim___>: 很謝謝hwchiu and Ping Chun的大力幫忙
+22:58 +0800 <hwchiu>: ＸＤ 你可以講講你的問題，這邊大家討論討論
+22:59 +0800 <pichuang>: Jim___: 不會不會 歡迎在這邊發問
+22:59 +0800 <Jim___>: 我今晩又做了一個實驗,將openvswitch的vm加了一張br並2張(ovs-br,br0),然後發現其實ovs-add-port並不是一定要的
+23:00 +0800 <Jim___>: 只要set-controller就能連到opendaylight controller了
+23:00 +0800 <hwchiu>: add-port只是用來加入openflow switch的port而已
+23:00 +0800 <pichuang>: Jim___: 但是你這樣你那兩個port 就不會被controller到
+23:01 +0800 <Jim___>: 然後由另一張br去和eth0介接
+23:01 +0800 <pichuang>: connect controller是一回事 能控制的port是另一件事
+23:01 +0800 <Jim___>: 結果網路是通了,但是一台除了switch外,一台client也看不到
+23:02 +0800 <pichuang>: 一台client ?
+23:02 +0800 <PoWen>: 可能是沒看到任何Client的意思
+23:03 +0800 <Jim___>: 對
+23:03 +0800 <PoWen>: 這意思就像，沒有人會來救你的
+23:03 +0800 <PoWen>: 然後我就是沒有人
+23:03 +0800 <PoWen>: YA~~~
+23:03 +0800 <Jim___>: 只看得到vswitch
+23:03 +0800 <hwchiu>: ＸＤ
+23:04 +0800 <Jim___>: 唉,結果我又改回用有add-port的br去連controller,就又可以看到client了...但是沒意外的...openvswitch的網路不通
+23:05 +0800 <pichuang>: Jim___: 你能把 route -n 的結果貼上來看看嗎
+23:05 +0800 <PoWen>: 哎呀，魚與熊掌不可兼得...
+23:06 +0800 <Jim___>: 什麼設定下時的routing
+23:06 +0800 <pichuang>: 你說你openvswitch的往路不通
+23:06 +0800 <pichuang>: 這時候的route -n
+23:08 +0800 <Jim___>: 好,可是要等明天,因為我是用不同顆hd在做,那顆現在關起來了
+23:09 +0800 <Jim___>: 請問你們知道pin chun在教學中的interface設定的那個$FACE是什麼意思嗎
+23:09 +0800 <Jim___>: 這個變數是從那來的
+23:09 +0800 <pichuang>: Jim___: 那個哦 那個是看 /etc/interface/network的sample檔
+23:10 +0800 <pichuang>: 還有一些別人的範例何起來的
+23:10 +0800 <pichuang>: 主要是要讓開關機都還能正常work
+23:10 +0800 <pichuang>: 開關機通常都會遇到一些問題
+23:10 +0800 <pichuang>: 這個是一些眉角
+23:11 +0800 <pichuang>: 像你設定了一個brdige叫做 ovs-br
+23:11 +0800 <Jim___>: 嗯
+23:11 +0800 <pichuang>: 啊...
+23:11 +0800 <pichuang>: 我想一下 那個應該是給restart用的
+23:12 +0800 <pichuang>: 我想到別的事情去了 抱歉
+23:12 +0800 <Jim___>: 可是我還是發現openswitch和opendaylight這2台vm每次關機或restart都不成功,最後都停在system hat...然後我再強迫關機或reset
+23:13 +0800 <pichuang>: failsafe有設定嗎
+23:13 +0800 <pichuang>: 那邊的秒數要調一下
+23:13 +0800 <Jim___>: 有的,不然開機會等很久
+23:14 +0800 <pichuang>: 恩恩
+23:14 +0800 <Jim___>: 我是在想,會不會是openvswitch,和ms的hyper-v vswitch有衝突...
+23:14 +0800 <pichuang>: 應該是不會
+23:15 +0800 <pichuang>: 你是用bridge嗎
+23:15 +0800 <Jim___>: 您說hyper-v的network設定嗎
+23:15 +0800 <pichuang>: 你如果都用bridge應該是都要能work
+23:15 +0800 <pichuang>: 恩
+23:16 +0800 <Jim___>: 對啊,是用public的,就會出現一張hyper-v網卡br在2012,然後所有機器就能從我分享器直接get dhcp了
+23:17 +0800 <Jim___>: 我指的所有機器是hyper-v下的vm
+23:17 +0800 <pichuang>: 恩恩
+23:17 +0800 <Jim___>: 實在是想不出辦法了
+23:17 +0800 <pichuang>: 那我在想應該是openvswitch設定問題了
+23:18 +0800 <pichuang>: 不知道你有 route -n 的輸出可以看看嗎
+23:18 +0800 <Jim___>: 有沒有可能雖然openvswitch雖然只能和controller連結,但它還是可以被controller了指令去制呢
+23:19 +0800 <Jim___>: 我今天也有試了一下,可是在add flow的時候,port都只有一個eth0....
+23:19 +0800 <pichuang>: 你那樣子的狀況 是不是client可以出去
+23:19 +0800 <pichuang>: 但是openvswitch本身那檯vm出不去
+23:19 +0800 <Jim___>: 對,只有openvswitch不能出去
+23:19 +0800 <pichuang>: xd
+23:20 +0800 <pichuang>: route
+23:20 +0800 <Jim___>: 沒錯
+23:20 +0800 <pichuang>: 你在看一下
+23:20 +0800 <pichuang>: 應該是route沒寫好
+23:20 +0800 <pichuang>: 我當初在弄的時候也被搞了一下
+23:20 +0800 <pichuang>: 後來把route寫好就出去了
+23:20 +0800 <pichuang>: 你現在應該都是在做in-band的實驗
+23:21 +0800 <pichuang>: 看網路資料 out-of-band好像比較少人會做
+23:21 +0800 <Jim___>: 我知道您是懷疑routing的問題,但是為何我只要一和controller離線就出的去了
+23:21 +0800 <Jim___>: routing table並沒有變啊
+23:22 +0800 <pichuang>: 一離線 ovs就會進行 fail-mode: standalone
+23:22 +0800 <pichuang>: 你應該有手動設定
+23:22 +0800 <pichuang>: 所以才出得去
+23:22 +0800 <Jim___>: 其實若openvswitch仍然可以控制到每台vm,出不出去是不是也無所謂呢?
+23:22 +0800 <pichuang>: 如果沒設的話 預設是 secure
+23:22 +0800 <hwchiu>: pichuang: oob ++
+23:23 +0800 <pichuang>: Jim___: 無所謂
+23:23 +0800 <pichuang>: 只是你不能從外面連到你那檯openvswitch
+23:23 +0800 <pichuang>: 會有點管理不易而已
+23:23 +0800 <pichuang>: 你把你的opevswitch想成一般的switch就好了
+23:23 +0800 <pichuang>: 一般 l2 switch
+23:24 +0800 <pichuang>: 實際上部署我都會建議oob的模式做實驗
+23:24 +0800 <Jim___>: 可我可以從我的2012 host OS 用Browse 連到opendaylight的gui連進去做設定不是嗎?
+23:24 +0800 <Jim___>: oob??
+23:25 +0800 <pichuang>: out-of-band
+23:25 +0800 <Jim___>: 喔....
+23:25 +0800 <Jim___>: 對了,今天再問最後一個問題....
+23:25 +0800 <pichuang>: Jim___: 你看到的gui是 opendaylight 的畫面
+23:26 +0800 <pichuang>: 恩恩?
+23:26 +0800 <Jim___>: 為何我在opendaylight的gui是可以看到switch和各台vm....但那些vm閒置一段時間後就會不見
+23:27 +0800 <pichuang>: 不見哦...這我就不知道了
+23:27 +0800 <pichuang>: 原則上是不會不見的
+23:27 +0800 <pichuang>: 如果有建立連線的狀況下
+23:27 +0800 <Jim___>: 然後我跑去vm再ping一下,opendaylight的ip,它就又跑出來了
+23:27 +0800 <pichuang>: 有人odl的朋友可幫忙回答一下嗎xd這個我不知道是不是opendaylight的特色 ?
+23:28 +0800 <Jim___>: 請問你們都是交大資工所的學生嗎
+23:28 +0800 <hwchiu>: flush掉
+23:28 +0800 <hwchiu>: 我猜測是
+23:28 +0800 <PoWen>: 特色 XD
+23:28 +0800 <hwchiu>: 對於ODL來說，底下的host如果一段時間沒有收到來自於他的封包
+23:28 +0800 <hwchiu>: 就認為此host已經從網路中拔離
+23:28 +0800 <hwchiu>: 故flush掉
+23:28 +0800 <hwchiu>: FL也有此機制
+23:28 +0800 <pichuang>: = =
+23:28 +0800 <pichuang>: fl有?
+23:29 +0800 <hwchiu>: 有啊
+23:29 +0800 <hwchiu>: 一小時吧ＸＤ
+23:29 +0800 <Jim___>: 嗯,所以是正常的囉
+23:29 +0800 <hwchiu>: 恩嗯
+23:29 +0800 <pichuang>: 很好= = 我從來沒開過一個小時
+23:29 +0800 <Jim___>: 那有辦法讓各台vm一直和vswitch連線住嗎
+23:29 +0800 <hwchiu>: 因為host消失，controller不會被通知
+23:29 +0800 <PoWen>: flush掉的意思是？
+23:29 +0800 <hwchiu>: 裝作我不認識你ＸＤ
+23:29 +0800 <hwchiu>: 我曾經認識你
+23:29 +0800 <hwchiu>: 但是你一小時不跟我講話
+23:30 +0800 <hwchiu>: 我就不跟你做朋友
+23:30 +0800 <PoWen>: 這麼絕情...
+23:30 +0800 <hwchiu>: 直到你在跟我講話，我才跟你當朋友
+23:30 +0800 <pichuang>: hwchiu: 這是fl的機制嗎?
+23:30 +0800 <PoWen>: 那你要14天不跟我講話，哇賽
+23:30 +0800 <hwchiu>: FL有
+23:30 +0800 <hwchiu>: 我猜應該都有做
+23:30 +0800 <Jim___>: 可我的情形不用一小時耶....大概3分鐘就不見了
+23:30 +0800 <PoWen>: nice info
+23:30 +0800 <hwchiu>: 不同controller
+23:30 +0800 <pichuang>: 居然有這件事情xd
+23:30 +0800 <pichuang>: 3mins可能是openvswitch的問題
+23:31 +0800 <PoWen>: 可能這有參數可以設定
+23:31 +0800 <pichuang>: 你可以看ovs-vsctl 有沒有維持著 is_connected
+23:31 +0800 <pichuang>: is_connected: yes
+23:31 +0800 <pichuang>: 如果沒有的話 就是網路有點問題
+23:31 +0800 <Jim___>: 那個opendaylight,我除了./run.sh...其實其它的我都還在摸索
+23:32 +0800 <hwchiu>: 沒關係，我odl除了run以及一點點的運作外，我也都不懂
+23:32 +0800 <hwchiu>: ＸＤ
+23:32 +0800 <Jim___>: 有,openvswitch會一直保持連線
+23:32 +0800 <pichuang>: 感覺是odl特色
+23:32 +0800 <pichuang>: "特色"
+23:32 +0800 <Jim___>: 天啊,還有3個月,論文小本就要交了...我死定了
+23:33 +0800 <pichuang>: 啊我到新竹了
+23:33 +0800 <pichuang>: 先慢慢走回家
+23:33 +0800 <hwchiu>: 能要先
+23:33 +0800 <hwchiu>: 可能要這樣找
+23:33 +0800 <PoWen>: wow 小飛機真拼
+23:33 +0800 <hwchiu>: 先看ODL中，網頁部分的host是如何透過哪些資料結構來維護的
+23:33 +0800 <hwchiu>: 然後看這個資料結構是哪個bundle負責去管理
+23:34 +0800 <Jim___>: 你們願遠端連線進來看看是怎麼回事嗎?
+23:34 +0800 <hwchiu>: 你等一下小飛機走路 應該快了
+23:34 +0800 <hwchiu>: 我趕一下投影片ＱＱ
+23:34 +0800 <Jim___>: 我白天都是在公司偷俞連回家邊做的
+23:35 +0800 <PoWen>: 公司？
+23:35 +0800 <PoWen>: 你是在職生呀？
+23:35 +0800 <PoWen>: 哪一間公司？好強
+23:35 +0800 <Jim___>: 對啊
+23:35 +0800 <Jim___>: asus
+23:35 +0800 <Jim___>: 一點也不強
+23:36 +0800 <hwchiu>: 你是公司要弄嗎？
+23:36 +0800 <hwchiu>: 還是個人想玩
+23:36 +0800 <Jim___>: 我在淡大唸研究所,教授要我寫的論文
+23:37 +0800 <hwchiu>: 恩恩
+23:37 +0800 <Jim___>: SDN....
+23:37 +0800 <PoWen>: ASUS不是很操嗎
+23:37 +0800 <PoWen>: 竟然還有空念在職....
+23:37 +0800 <PoWen>: 你太猛了吧
+23:37 +0800 <Jim___>: 看單位
+23:38 +0800 <Jim___>: 像我星期六到日就連續30幾個小時沒睡覺
+23:38 +0800 <PoWen>: @_@
+23:38 +0800 <Jim___>: 為了搞定這東西....
+23:39 +0800 <PoWen>: 辛苦了...
+23:39 +0800 <PoWen>: 還好有這個頻道可以一起討論
+23:39 +0800 <PoWen>: 不過我還幫不上忙 XD
+23:39 +0800 <PoWen>: 你加油 XD
+23:40 +0800 <Jim___>: 我上一屆學長有用openvswitch和opendaylight做了一個避免ddos攻擊的論文...
+23:41 +0800 <Jim___>: 好像教授很喜歡...結果我就得寫用openvswitch和opendaylight做loadblance了
+23:41 +0800 <PoWen>: 瞭解...
+23:41 +0800 <PoWen>: 加油！
+23:41 +0800 <PoWen>: ㄟ我先去睡了 XD
+23:41 +0800 <PoWen>: 各位晚安
+23:42 +0800 <Jim___>: 能找到會odl的高手嗎
+23:42 +0800 <hwchiu>: tutul:
+23:42 +0800 <hwchiu>: 他在研究這個
+23:42 +0800 <Jim___>: 他在線上嗎
+23:43 +0800 <hwchiu>: 不確定ＸＤ
+23:43 +0800 <Jim___>: 看他都沒說話也許在暗地笑我嗎
+23:44 +0800 <hwchiu>: 沒拉 應該只是不再線上
+23:44 +0800 <Jim___>: 好,我明天就把openvswitch連上controller時不通的畫面寄給您參考
+23:45 +0800 <Jim___>: arp -n也要嗎?
+23:45 +0800 <hwchiu>: 也可
+23:45 +0800 <Jim___>: 好的,感謝您....明天還要接project我得睡了...
+23:46 +0800 <Jim___>: 祝各位有毎好夢....
+23:46 +0800 <Jim___>: 晚安
+23:47 +0800 <hwchiu>: 晚安
+23:54 +0800 <pichuang>: 好我剛走道
+23:54 +0800 <pichuang>: 走到
+23:54 +0800 <pichuang>: xd
+23:55 +0800 <hwchiu>: D
+23:56 +0800 <pichuang>: 然後回來第一件事情
+23:56 +0800 <pichuang>: 媽啦我的冷氣遙控器不會動= =
+23:59 +0800 <hwchiu>: ...
