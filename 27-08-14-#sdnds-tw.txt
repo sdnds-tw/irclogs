@@ -1,0 +1,214 @@
+00:00 +0800 <pichuang>: hwchiu: 我覺得明日要靠你carry了
+00:00 +0800 <pichuang>: ...
+00:00 +0800 <pichuang>: 好熱完全不想動
+00:01 +0800 <pichuang>: 先來睡覺好了= =
+00:03 +0800 <hwchiu>: 好
+00:03 +0800 <adaam>: pichuang: 小飛機自轉螺旋槳降溫
+00:31 +0800 <tutul>: hwchiu: 嘎 剛在忙沒看到@@ 怎了?! 我才剛踏入ODL這不歸路世界.....
+00:31 +0800 <hwchiu>: some one need u
+00:31 +0800 <tutul>: 恩 我有看到@ @  但其實我不太懂 他的問題哀
+00:31 +0800 <hwchiu>: D
+00:31 +0800 <hwchiu>: XD
+00:31 +0800 <hwchiu>: 明天再問問吧
+00:33 +0800 <tutul>: 嗯嗯 因為不懂 host 消失有什麼關係嗎> <
+00:33 +0800 <tutul>: 在發封包不就看到了><?
+00:36 +0800 <hwchiu>: 恩嗯，這應該只是小問題
+00:36 +0800 <hwchiu>: 他主要環境起不來ＸＤ
+00:37 +0800 <tacchen>: @_@ ODL算好編吧
+00:39 +0800 <tacchen>: ken_ho: 先前有看過相關資訊，已經報名了 :D
+00:40 +0800 <tacchen>: 感謝XD
+00:40 +0800 <tacchen>: 有人知道 Resubmitted regs: reg0=0x0 reg1=0x0 reg2=0x0 reg3=0x0 reg4=0x0 reg5=0x0 reg6=0x0 reg7=0x0
+00:40 +0800 <tacchen>: 的regX 代表的意思嘛@@?
+00:56 +0800 <hwchiu>: register for something
+00:59 +0800 <hwchiu>: 我猜是
+00:59 +0800 <hwchiu>: Nicira Registers
+09:11 +0800 <PoWen>: good morning
+09:13 +0800 <hwchiu>: good morning
+09:13 +0800 <ken_ho>: good morning
+10:56 +0800 <Davy_CC_>: good morning
+15:48 +0800 <PoWen>: IRC channel，我只要一年付5美金，就能一直保持上線？
+15:49 +0800 <ken_ho>: it looks like per month
+15:49 +0800 <ken_ho>: it looks like $5US per month
+15:53 +0800 <hwchiu>: 每個月XD
+15:57 +0800 <ken_ho>: https://www.irccloud.com/pastebin/UgeToo8V
+15:57 +0800 <sdnsd-tw_Bot>: ==> Pastebin: UgeToo8V | IRCCloud
+15:57 +0800 <ken_ho>: rally?
+15:57 +0800 <ken_ho>: really?
+16:02 +0800 <hwchiu>: 他指得就是現在的服務?
+16:03 +0800 <hwchiu>: 你網頁關掉 之後開起來還是有XD 只是沒有講 不繳錢就踢掉你
+16:03 +0800 <ken_ho>: XD
+16:53 +0800 <ken_ho>: 只好找台電腦掛機了
+16:54 +0800 <ken_ho>: 只要電腦開著就不會被踢，是嗎?
+16:54 +0800 <John_aduim>:  irccloud 會踢
+16:54 +0800 <ken_ho>: ...
+16:55 +0800 <hwchiu>: $$ 一百五NT
+16:55 +0800 <John_aduim>: 他好像掛不到一天就踢了
+16:55 +0800 <John_aduim>: 有點討厭
+16:55 +0800 <ken_ho>: ...那你們怎麼掛?
+16:56 +0800 <John_aduim>: 應該會用實驗室電腦掛 irssi
+16:57 +0800 <hwchiu>: 我有自己架znc來用
+16:57 +0800 <hwchiu>: &&用學校機器上irssi
+16:57 +0800 <hwchiu>: znc是給我手機用的
+16:58 +0800 <ken_ho>: i see...
+16:59 +0800 <ken_ho>: i can setup the same environment in my LAB
+16:59 +0800 <John_aduim>: XD
+16:59 +0800 <John_aduim>: 其實可以看log就好
+19:35 +0800 <PoWen>: 我要去俄羅斯三個禮拜了
+19:35 +0800 <PoWen>: SDN business是其中一個主題
+19:35 +0800 <PoWen>: 到時有任何information, 再share給大家
+19:38 +0800 <ken_ho>: 比hwchiu還久
+19:41 +0800 <John_aduim>: 強國
+20:08 +0800 <hwchiu>: XDD 比我還久
+20:09 +0800 <Jim___>: hwchiu在嗎?
+20:09 +0800 <hwchiu>: 等等要剃頭
+20:09 +0800 <Jim___>: 剃頭?
+20:10 +0800 <Jim___>: 您好,我是要告知您,您要的照片,我己經mail給您了
+20:10 +0800 <Jim___>: 還請這裡的各位SDN先進多多幫忙
+20:43 +0800 <Jim___>: 請有人知道在opendaylight下如何確定vswitch可以控制底下的其它client呢
+20:49 +0800 <John_mobile>: 其他的client是什麼?
+20:52 +0800 <Jim___>: 還有二台Ubuntu14.04的web server(tomcat).及一台win7 sp1 x64
+21:05 +0800 <John_mobile>: 你的client是指host嗎
+21:06 +0800 <Jim___>: 我的環境全是在hyper-v底下的create的vm
+21:08 +0800 <Jim___>: 總共5台,1.opendaylight controller(Ubuntu14.04.1 server). 2.OpenVswitch2.3.0(Ubuntu14.04.1 server).3.tomcat web server(Ubuntu14.04 server). 4.tomcat web server(Ubuntu14.04 server). 5.win7sp1 x64
+21:11 +0800 <Jim___>: win7x64構想是做client像web server連線(利用一些程式做大量連線),然後由opendaylight controller依據設定好的條件去做2台web server間的分流(load balance)
+21:11 +0800 <Jim___>: 但目前就卡在openvswitch那台一和controller連線,網路就會不通
+21:12 +0800 <katy__>: 各位~~想研究ODL(support OF13)的大家，可以參考這篇喔
+21:12 +0800 <katy__>: http://www.slideshare.net/bbsali0/augmenting-flow-operations-and-feedback-on-the-model-driven-mdsal-approach-in-opendaylight
+21:12 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/Y4FrV  ==> Augmenting Flow Operations and Feedback on the Model Driven MD_SAL Ap…
+21:13 +0800 <katy__>: 我今天有嘗試寫一個bundle(MD-SAL)，下flow進switch，應該是有成功下近switch
+21:17 +0800 <tacchen_>: Jim___: ovs-ofctl dump-flows <bridge name> 有rule嘛？
+21:18 +0800 <Jim___>: 應該只有預設的hidden flow
+21:18 +0800 <John_mobile>: 或許你要寫flow才能控制client
+21:18 +0800 <tacchen_>: spec有寫預設會drop
+21:19 +0800 <tacchen_>: 所以你要自己新增flow rule進去
+21:19 +0800 <Jim___>: 嗯,我有看到3行的drop的flow只是我看不懂......
+21:21 +0800 <tacchen_>: 可以截圖一下嘛XD 用這指令 ovs-appctl bridge/dump-flows <bridge name>
+21:21 +0800 <tacchen_>: 或是直接貼上來也可以
+21:21 +0800 <Jim___>: 這裡可以貼圖嗎
+21:21 +0800 <tacchen_>: 可能要先上傳到免空之類的XD
+21:23 +0800 <Jim___>: hwchiu是有和我要一些資料,我有mail給他了
+21:23 +0800 <Jim___>: 可惜,他說他去剃頭了.....
+21:24 +0800 <Jim___>: 除了我,你們都是交大的研究生嗎?
+21:25 +0800 <tacchen_>: 我是
+21:28 +0800 <tacchen_>: 最近ODL可能會比較不穩，看官方irc今天merge一堆code XD，可能在趕9月release
+21:29 +0800 <Jim___>: 交大是在那個縣市啊
+21:30 +0800 <Jim___>: 我好想立刻衝去拜師學藝啊
+21:30 +0800 <John_mobile>: 應該在新竹吧XD
+21:31 +0800 <tacchen_>: 在一個食物難吃又很貴的地方
+21:31 +0800 <Jim___>: 一個小時車程.....如果版上有人肯拉我一把,小弟必定厚禮回饋啊
+21:31 +0800 <Jim___>: 台北也是個很貴又很擠的地方...
+21:32 +0800 <tacchen_>: 推一下這本書： http://www.books.com.tw/products/0010641709
+21:32 +0800 <sdnsd-tw_Bot>: ==> 博客來-網路設備都能虛擬化：SDN軟體定義網路實作白皮書
+21:32 +0800 <tacchen_>: 我覺得寫不錯，可以少掉很多找資料的時間
+21:33 +0800 <John_mobile>: 他有用什麼controller嗎
+21:33 +0800 <Jim___>: 天龍有賣嗎
+21:33 +0800 <Jim___>: 我看了一下介紹,也是opendaylight
+21:35 +0800 <tacchen_>: no 他是介紹 floodlight的
+21:36 +0800 <Jim___>: 1.1.3 OpenDaylight 開放原始碼專案
+21:36 +0800 <Jim___>: 還是這只是提一下而己
+21:37 +0800 <tacchen_>: 一頁而已
+21:37 +0800 <Jim___>: 啥
+21:37 +0800 <tacchen_>: 主軸是在floodlight上練習XD
+21:37 +0800 <Jim___>: 其實我的教授也沒說一定要opendaylight啦,只要是在SDN框架中就可以
+21:38 +0800 <tacchen_>: 我覺得ryu可以考慮
+21:38 +0800 <tacchen_>: ODL目前還沒到非常穩定
+21:38 +0800 <Jim___>: 只是上一屆的學長用opendaylight做了一個防ddos的攻擊論文....
+21:39 +0800 <John_mobile>: XD
+21:39 +0800 <John_mobile>: 歡迎來ryu
+21:39 +0800 <tacchen_>: 是可以阿XD，但只是*論文*
+21:39 +0800 <tacchen_>: 真的要實用的話，ODL不推薦XD
+21:39 +0800 <Jim___>: ryu...這也是一種sdn controller嗎
+21:40 +0800 <John_mobile>: 防ddos攻擊 是用snort嗎？
+21:40 +0800 <tacchen_>: ryu, floodlight, nox, pox, odl
+21:40 +0800 <tacchen_>: 你要不要先看他ddos怎麼檔的阿，只果只是統計封包異常流量然後drop的話....
+21:41 +0800 <John_mobile>: XD
+21:41 +0800 <Jim___>: 對啊,用snort去摸擬ddos,然後用controller去擋....
+21:41 +0800 <John_mobile>: snort 沒辦法模擬ddos吧
+21:42 +0800 <John_mobile>: 他被打會發警告
+21:42 +0800 <Jim___>: 掃port吧...然後就發警告,於是controller接到警告就動作了
+21:44 +0800 <John_mobile>: 恩！我把這個做進去ryu了
+21:44 +0800 <Jim___>: ryu是什麼
+21:45 +0800 <John_mobile>: 恩
+21:45 +0800 <John_mobile>: controller
+21:46 +0800 <Jim___>: 能做load balance嗎
+21:47 +0800 <Jim___>: 需不需寫到code,還是像opendaylight那樣有現成的api可call
+21:49 +0800 <John_mobile>: 都要寫code啊XD 你說的是rest嗎
+21:49 +0800 <John_mobile>: load balance 應該沒有現成
+21:49 +0800 <John_mobile>: 要自己寫
+21:51 +0800 <tacchen_>: 基本上都要自己寫，odl有可能是因為有廠商在開發
+21:52 +0800 <Jim___>: rest要自己寫我明白,只是不用到c吧
+21:52 +0800 <John_mobile>: ryu 是python
+21:53 +0800 <Jim___>: 這也是種語言....可我沒學過.....
+21:54 +0800 <Jim___>: 抱欺,小弟平時是在做hw的.....
+21:54 +0800 <Jim___>: 頂多寫一些shell script....早年學校教的c啊,java等幾乎全忘了
+21:55 +0800 <Jim___>: 看來我研究所是很難畢業了.....
+21:56 +0800 <Jim___>: 請問你們認識hwchiu嗎
+21:56 +0800 <tacchen_>: 別太擔心吧XD，花時間學就好
+21:56 +0800 <Jim___>: 他今天怎麼都沒出現
+21:57 +0800 <tacchen_>: 剃頭慶功吧XD
+21:57 +0800 <Jim___>: 很擔心啊,12月就要交了.....3月就要口試了....卻完全沒頭緒....
+21:57 +0800 <Jim___>: 剃頭慶功?
+21:57 +0800 <Jim___>: 要去當兵嗎?
+21:58 +0800 <tacchen_>: 嗯嗯
+21:59 +0800 <Jim___>: 研究生怎麼不去當研發替代役....
+21:59 +0800 <Jim___>: 我公司常找這種的
+21:59 +0800 <John_mobile>: 他是啊XD
+21:59 +0800 <Jim___>: 那幹嘛剃頭....
+22:00 +0800 <John_mobile>: 不都要新訓嗎
+22:00 +0800 <Jim___>: 喔,對不起我離當兵實在太遠了....己經是快二十年前的事了
+22:01 +0800 <Jim___>: 只知道現在當兵時間又短又涼....不像我當年......唉.....
+22:01 +0800 <ken_ho>: jim..你在哪間公司呀?
+22:01 +0800 <Jim___>: asus
+22:01 +0800 <ken_ho>: oh..在台北呀
+22:02 +0800 <Jim___>: 對啊...你們都在新竹嗎
+22:02 +0800 <ken_ho>: Y
+22:02 +0800 <Jim___>: 我直接這樣問好了,新竹我開一小時車就到了...
+22:02 +0800 <katy_>: ODL上有load balance的sample你可以參考一下，trace一下他的code
+22:03 +0800 <Jim___>: 請問你們有人肯幫我嗎?
+22:03 +0800 <Jim___>: 公司本來有人要幫我,結果老婆突然要生了....
+22:03 +0800 <katy_>: 且在ODL的Routing module中的dijastra也有做相關的load balance
+22:04 +0800 <Jim___>: katy,你可以教我嗎?
+22:05 +0800 <katy_>: 你是說寫bundle嗎??@@
+22:06 +0800 <Jim___>: 我不太懂你說bundle的意思耶....bundle(內建)??
+22:06 +0800 <katy_>: 因ODL的framework是osgi
+22:06 +0800 <katy_>: osgi裡將每個module稱為一個bundle
+22:06 +0800 <katy_>: 你應該有看過odl的architecture
+22:07 +0800 <katy_>: 在SAL層以上的每個MODULE都是由一個BUNDLE構成
+22:08 +0800 <katy_>: 因此如果你要在ODL上開發Application，多是要寫一個bundle
+22:08 +0800 <Jim___>: 喔,有點懂了
+22:09 +0800 <Jim___>: 你有時間研究odl嗎?
+22:10 +0800 <katy_>: 你可以先參考一下hackpad上的一些連結，在最下面的tutorial我有放一些odl的資料進去
+22:10 +0800 <katy_>: 裡面有教如何建一個bundle
+22:10 +0800 <Jim___>: hackpad??
+22:11 +0800 <katy_>: https://sdnds-tw.hackpad.com/
+22:11 +0800 <sdnsd-tw_Bot>: ==> sdnds-tw
+22:12 +0800 <katy_>: 這裡又odl提供的api可以用
+22:12 +0800 <katy_>: https://jenkins.opendaylight.org/controller/job/controller-merge/lastSuccessfulBuild/artifact/target/apidocs/overview-summary.html
+22:12 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/xtSCG  ==> Overview (releasepom 0.1.2-SNAPSHOT API)
+22:12 +0800 <katy_>: 在開發application的時候可以call
+22:13 +0800 <Jim___>: 好多api啊...
+22:14 +0800 <Jim___>: 怎麼和論文寫的不一樣....
+22:14 +0800 <Jim___>: 學長的論文只有幾條....
+22:15 +0800 <Jim___>: katy,可以麻煩你給我mail嗎?
+22:17 +0800 <katy_>: 1494166437@qq.com
+22:17 +0800 <Jim___>: 待會麻煩你收一下
+22:17 +0800 <katy_>: 收什麼@@
+22:17 +0800 <hwchiu>: 拍洩
+22:17 +0800 <hwchiu>: 我還在整理明天要去成功嶺的東西XD
+22:17 +0800 <hwchiu>: 剛剛在剃頭
+22:21 +0800 <hwchiu>: 你是要server服務的load balancer
+22:21 +0800 <hwchiu>: 還是網路流量的load balancing ?
+22:23 +0800 <Jim___>: 應該算是web server的load balance吧.....
+22:24 +0800 <hwchiu>: 恩恩
+22:24 +0800 <hwchiu>: 如果你想要單純看
+22:24 +0800 <hwchiu>: 設計的概念的話
+22:24 +0800 <hwchiu>: https://github.com/floodlight/floodlight/tree/master/src/main/java/net/floodlightcontroller/loadbalancer
+22:24 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/k1Boo  ==> floodlight/src/main/java/net/floodlightcontroller/loadbalancer at master · floodlight/floodlight · GitHub
+22:24 +0800 <hwchiu>: 這邊有現成的XD
+22:24 +0800 <hwchiu>: 我先回家一下
+22:25 +0800 <Jim___>: 當初和同事設想的條件有3樣,1.cpu utilitzaion 2.連線數量. 3.memory數量
+22:26 +0800 <hwchiu>: 恩恩
+22:26 +0800 <Jim___>: hwchiu,您有看到我的mail了嗎
+22:26 +0800 <Jim___>: 我的routing table有不正常嗎...
+22:37 +0800 <Jim___>: hi,katy 請問mail有收到嗎
+22:49 +0800 <Jim___>: katy,您回我的mail全是亂碼耶....
