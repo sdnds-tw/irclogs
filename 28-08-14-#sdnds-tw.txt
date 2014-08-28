@@ -1,0 +1,29 @@
+09:19 +0800 <ken_ho>: good moring
+09:35 +0800 <Aliceequeen>: good morning
+09:47 +0800 <jamesLiao>: 早上好
+10:27 +0800 <PoWen>: good morning
+10:34 +0800 <freetsubasa>:  good moring
+13:15 +0800 <pichuang>: 大家好= =
+14:38 +0800 <PoWen>: 哇
+14:38 +0800 <PoWen>: 小飛機醒了
+16:00 +0800 <PoWen>: 小飛機你在嗎
+17:05 +0800 <PoWen>: 小飛機
+18:51 +0800 <PoWen>: 小飛機喔
+18:56 +0800 <Davy_CC_>: pichuang: 不見了XDDDD
+19:24 +0800 <pichuang>: QQ
+19:24 +0800 <pichuang>: 剛開會
+19:24 +0800 <pichuang>: 到現在= =
+20:00 +0800 <pichuang>: http://openvswitch.org/cgi-bin/ovsman.cgi?page=utilities%2Fovs-ctl.8
+20:00 +0800 <sdnsd-tw_Bot>: ==> ovs−ctl
+20:00 +0800 <pichuang>: 今天有人跟我講到這個 ovs-ctl
+20:00 +0800 <pichuang>: 他簡化了一些ovs-*ctl的操作
+20:00 +0800 <pichuang>: 有些很實用
+20:00 +0800 <ken_ho>: XD..我還在研究中
+20:00 +0800 <ken_ho>: 看不懂
+20:01 +0800 <pichuang>: 但是預設不知道為什麼編譯不會放進去到/usr/local/bin/底下
+20:01 +0800 <pichuang>: 怪怪的
+20:01 +0800 <pichuang>: 但我實際上跑可以正常work
+20:01 +0800 <pichuang>: 是一隻.sh檔
+20:01 +0800 <pichuang>: 各位如果想要簡單操作的話可以先從這個看起
+20:01 +0800 <pichuang>: 不然光是ovs-*ctl就搞死了x
+20:01 +0800 <pichuang>: xd
