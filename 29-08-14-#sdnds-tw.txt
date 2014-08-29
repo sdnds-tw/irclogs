@@ -1,0 +1,50 @@
+09:17 +0800 <PoWen>: good morning
+09:35 +0800 <pichuang>: good morning
+09:56 +0800 <PoWen>: 小飛機真早
+10:00 +0800 <pichuang>: 今天算晚的
+10:00 +0800 <pichuang>: 昨天在看東西
+10:00 +0800 <pichuang>: 有點晚睡
+10:01 +0800 <PoWen>: 這麼精實
+10:01 +0800 <PoWen>: 你一天睡幾小時啊
+10:01 +0800 <pichuang>: 6 -7
+10:03 +0800 <Davy_CC_>: pichuang: 早
+10:04 +0800 <pichuang>: Davy_CC_: morning
+10:13 +0800 <freetsubasa>: 早._.
+10:24 +0800 <JalenLin>: 早
+10:30 +0800 <tutul>: 早
+10:42 +0800 <Aliceequeen>: 早安~
+11:11 +0800 <pichuang>: 誒...這幾天是不是有人有寄信給我= = 如果我沒回的話
+11:11 +0800 <pichuang>: 提醒我一下
+11:12 +0800 <pichuang>: 感謝= =
+13:42 +0800 <pichuang>: 不知道有沒有人對於sdn用在 l2 switching 上的應用有什麼看法
+15:36 +0800 <ken_ho>: https://www.sdncentral.com/sdn-use-cases/?utm_content=bufferd22fa&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer
+15:36 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/4Ls5L  ==> NFV, Network Virtualization, OpenFlow & SDN Use Cases
+15:37 +0800 <ken_ho>: 小飛機 ，分站給你、
+15:37 +0800 <ken_ho>: 分享給你
+15:53 +0800 <pichuang>: ken_ho: thx
+17:19 +0800 <pichuang>: 如果有要測試 mininet 又想升級 ovs 版本至2.3.0
+17:19 +0800 <pichuang>: https://gist.github.com/pichuang/9b362f802f40913c4b8f
+17:19 +0800 <sdnsd-tw_Bot>: ==> Installing new version of Open vSwitch 2.3.0 use Mininet
+17:19 +0800 <pichuang>: 可以跑一下這隻程式
+17:19 +0800 <pichuang>: 剛剛弄起來沒啥問題
+17:20 +0800 <pichuang>: 如果有人遇到ovs-controller不見的別太緊張
+17:20 +0800 <pichuang>: 因為那個已經老早被ovs officail 拔掉了
+19:33 +0800 <PoWen>: 嗨小飛機
+19:33 +0800 <PoWen>: thanks for the tour
+19:33 +0800 <PoWen>: 工商時間：版上有強者對 VxLAN + OpenStack + OVS 整合有興趣的嗎~~~~~~
+19:59 +0800 <ken_ho>: Me
+20:01 +0800 <PoWen>: XD
+20:02 +0800 <PoWen>: 我也有興趣，好巧！
+20:02 +0800 <PoWen>: 那一起來研究吧！
+20:02 +0800 <PoWen>: hahaha
+20:03 +0800 <ken_ho>: Ha ha ha
+20:53 +0800 <pichuang>: XD
+20:54 +0800 <pichuang>: 整合的話其實應該是要研究 neutron ovs plugin
+20:54 +0800 <pichuang>: http://docs.openstack.org/havana/install-guide/install/apt/content/install-neutron.install-plug-in.ovs.html
+20:54 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/z24z0  ==> Install the Open vSwitch (OVS) plug-in - OpenStack Installation Guide for Ubuntu 12.04 (LTS)  - havana
+23:12 +0800 <PoWen>: yes, 會用neutron
+23:12 +0800 <PoWen>: 不會考慮nova-net
+23:19 +0800 <PoWen>: 感謝小飛機分享link
+23:19 +0800 <PoWen>: 飛機上研究了
+23:23 +0800 <PoWen>: 小飛機啊
+23:24 +0800 <PoWen>: SDNAP上在講Docker耶
