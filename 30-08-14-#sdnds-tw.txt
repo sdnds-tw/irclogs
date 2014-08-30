@@ -1,0 +1,19 @@
+00:21 +0800 <John_mobile>: Docker最ㄐㄧㄣㄐ很紅
+00:21 +0800 <John_mobile>: 近
+00:22 +0800 <John_mobile>: Ryu team 最近也在推
+08:52 +0800 <pichuang>: 大家早
+08:52 +0800 <pichuang>: docker最近好常聽到
+09:41 +0800 <PoWen>: 大家早
+09:41 +0800 <PoWen>: 即使看了SDNAP
+09:41 +0800 <PoWen>: 我還是不太清楚Docker的公用
+09:42 +0800 <PoWen>: 功用
+09:43 +0800 <ken_ho>: http://lab.howie.tw/2014/08/docker-docker-lxc-hypervisor.html?m=1
+09:43 +0800 <sdnsd-tw_Bot>: ==> 阿貝好威的實驗室: 初探Docker - Docker 跟 LXC 以及一般Hypervisor有何差別？
+15:42 +0800 <PoWen>: 關電腦出發去莫斯科了...
+18:30 +0800 <tacchen>: LXC比較好用XD
+18:30 +0800 <tacchen>: docker改太多了，但就管理上來說docker好一點
+22:41 +0800 <chma>:      ] [ ltroot_     ] [ tshtsai ]
+22:41 +0800 <chma>: 22:39 [ chihhsin_cloud] [ hwchiu     ] [ pichuang    ] [ tutul   ]
+23:50 +0800 <tacchen>: PoWen 整合過 Openstack + ODL + vxlan
+23:50 +0800 <tacchen>: *我
+23:50 +0800 <tacchen>: 需要相關資料嘛？
