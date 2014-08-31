@@ -1,0 +1,124 @@
+01:27 +0800 <tutul>: 我我我 我要 有空想看一下> < ((雖然沒什麼空....
+01:27 +0800 <tutul>: tacchen: 跪求~
+01:28 +0800 <pichuang>: vxlan openstack整合嗎@@?
+01:28 +0800 <pichuang>: 我們需要先知道vxlan到底在做啥的xd
+01:37 +0800 <pichuang>: 參考一下 http://www.arista.com/en/products/eos
+01:37 +0800 <sdnsd-tw_Bot>: ==> Arista - Arista EOS
+01:38 +0800 <pichuang>: arista 出產的 sdn solution
+01:38 +0800 <pichuang>: EOS Application Extensibility for the ability to run cloud infrastructure automation applications (such as Chef, Puppet or Ansible) and network analytics applications (such as Splunk)
+01:43 +0800 <tacchen>: tutul: https://www.dropbox.com/s/6m7vz95jmn3f15o/Presentation3.pdf?dl=0
+01:43 +0800 <sdnsd-tw_Bot>: ==> Dropbox - Presentation3.pdf
+02:59 +0800 <Guest89306>: hello
+07:33 +0800 <ken_ho_>: http://blogs.vmware.com/vsphere/2013/04/vxlan-series-different-components-part-1.html
+07:33 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/Yl0AZ  ==> VXLAN Series - Different Components - Part 1 | VMware vSphere Blog - VMware Blogs
+07:33 +0800 <ken_ho_>: Part 1 - part 6
+07:33 +0800 <ken_ho_>: Vxlan introduction
+07:50 +0800 <ken_ho_>: tacchen: 你有整合過openstack and vxlan?
+14:23 +0800 <pichuang>: 剛剛看資料翻到一個有趣的專案
+14:23 +0800 <pichuang>: http://www.nongnu.org/quagga/
+14:23 +0800 <sdnsd-tw_Bot>: ==> Quagga Software Routing Suite
+14:23 +0800 <pichuang>:  routing software suite
+14:23 +0800 <pichuang>: 用這個就可以用一般pc實現常見的routing protocol
+14:24 +0800 <pichuang>: 大部份該有的 routing protocol都有支援
+14:25 +0800 <pichuang>: 有人如果有做 hybrid sdn network
+14:25 +0800 <pichuang>: 可以參考一下
+14:25 +0800 <PoWen>: 嗨小飛機
+14:25 +0800 <pichuang>: PoWen: hi 莫斯科好玩嗎
+14:25 +0800 <PoWen>: Cumulus是用Quagga
+14:25 +0800 <PoWen>: 好冷...
+14:25 +0800 <PoWen>: 10度吧
+14:26 +0800 <pichuang>: PoWen: 是喔!!!
+14:26 +0800 <pichuang>: xd
+14:26 +0800 <pichuang>: 有點酷
+14:26 +0800 <pichuang>: 我看他還在更新 24-Jun-2014 11:561.6M
+14:27 +0800 <pichuang>: cumulus 在 quagga上面再多實做openflow的部分嗎?
+14:28 +0800 <pichuang>: PoWen: 聽說俄羅斯人喝whisky跟喝開水一樣
+14:28 +0800 <pichuang>: 不知道是不是真的
+14:29 +0800 <pichuang>: http://www.nongnu.org/quagga/thanks.html
+14:29 +0800 <sdnsd-tw_Bot>: ==> Quagga Software Routing Suite
+14:29 +0800 <pichuang>: xd
+14:29 +0800 <pichuang>: 6wind
+14:29 +0800 <pichuang>: Vyatta
+14:34 +0800 <PoWen>: Cumulus不會做OpenFlow
+14:35 +0800 <PoWen>: 這很確定
+14:35 +0800 <PoWen>: OpenFlow的市場，Cumulus會refer給BigSwitch
+14:35 +0800 <PoWen>: 大部分俄羅斯人喜歡喝酒
+14:35 +0800 <PoWen>: 喜歡喝得爛醉
+14:35 +0800 <PoWen>: 要看地區
+14:37 +0800 <PoWen>: Cumulus就是Quagga的主要贊助者
+14:37 +0800 <pichuang>: wow
+14:37 +0800 <pichuang>: 原來
+14:38 +0800 <pichuang>: 所以cumulus現在跟bigswitch合作中囉?
+14:39 +0800 <pichuang>: 一個弄controller一個弄switch?
+14:40 +0800 <PoWen>: 非也非也
+14:40 +0800 <PoWen>: Cumulus和BigSwitch兩家都是新創公司
+14:40 +0800 <PoWen>: 新創公司需要故事
+14:40 +0800 <PoWen>: 需要獨特的市場切入點
+14:41 +0800 <PoWen>: Cumulus的獨特在於把Switch OS變成Linux, 而非Linux-based
+14:41 +0800 <pichuang>: quagga這專案嗎?
+14:41 +0800 <PoWen>: BigSwitch的獨特在於 pure OpenFlow for SDN, 包含APP, Controller, 與Switch OS
+14:42 +0800 <PoWen>: Quagga只是Cumulus Linux的其中一小部份
+14:42 +0800 <pichuang>: ok
+14:42 +0800 <PoWen>: 你有skype嗎
+14:42 +0800 <pichuang>: y
+14:42 +0800 <PoWen>: 正在線上？
+16:10 +0800 <tacchen>: ken_ho_: 有整合過~
+16:22 +0800 <PoWen>: 整合過什麼呢？
+17:12 +0800 <ken_ho_>: Openstack and Vxlan
+18:58 +0800 <PoWen>: oh 對，有人有完成過
+19:37 +0800 <tacchen>: PoWen ken_ho_ : https://www.dropbox.com/s/6m7vz95jmn3f15o/Presentation3.pdf?dl=0
+19:37 +0800 <sdnsd-tw_Bot>: ==> Dropbox - Presentation3.pdf
+19:37 +0800 <tacchen>: 這是Openstack icehouse + odl + ml2 plugin with vxlan/gre mode
+19:37 +0800 <tacchen>: 有需要可以看看
+20:05 +0800 <ken_ho_>: tacchen: thank you
+20:21 +0800 <PoWen>: 哇
+20:21 +0800 <PoWen>: 感謝！
+23:24 +0800 <pichuang>: google groups 如果大家有興趣 歡迎幫忙回信xd
+23:28 +0800 <pichuang>: John_aduim: 我最近想做點ryu的開發 有沒有什麼好文章可以好入手的
+23:28 +0800 <John_aduim>: XD
+23:28 +0800 <John_aduim>: ryu裝起來了嗎？
+23:28 +0800 <pichuang>: John_aduim: 我看了一下ryu的文件太扯了
+23:28 +0800 <pichuang>: 完整到爆
+23:28 +0800 <pichuang>: 裝起來了
+23:28 +0800 <John_aduim>: http://osrg.github.io/ryu-book/en/html/
+23:28 +0800 <sdnsd-tw_Bot>: ==> RYU SDN Framework — Ryubook 1.0 documentation
+23:29 +0800 <John_aduim>: 這個很完整一系列的文章
+23:29 +0800 <John_aduim>: 比較快速看API怎麼用的話
+23:29 +0800 <John_aduim>: http://ryu.readthedocs.org/en/latest/
+23:29 +0800 <sdnsd-tw_Bot>: ==> Welcome to RYU the Network Operating System(NOS) — Ryu 3.12 documentation
+23:29 +0800 <John_aduim>: 這篇
+23:30 +0800 <pichuang>: 話說我ryu也是看你文章裝起來的
+23:31 +0800 <pichuang>: 但是好像會缺一堆東西
+23:31 +0800 <John_aduim>: 我通常看這兩篇 + Spec
+23:31 +0800 <John_aduim>: 恩啊 他後來改版時候相依性還是有問題
+23:31 +0800 <John_aduim>: 你缺什麼
+23:31 +0800 <John_aduim>: 有traceback嗎
+23:31 +0800 <pichuang>: 就一堆python lib
+23:31 +0800 <pichuang>: 後來我修好了
+23:31 +0800 <John_aduim>: 恩
+23:32 +0800 <John_aduim>: 我建議你以後要裝不要用pip
+23:32 +0800 <pichuang>: 使用的時候 我只要 ryu-manager xxx.py 這樣就好了嗎
+23:32 +0800 <John_aduim>: 我不知道是不是他們的問題pip那邊廂一套件沒用好
+23:32 +0800 <John_aduim>: 恩
+23:32 +0800 <pichuang>: 那如果我要兩個app同時run起來
+23:32 +0800 <John_aduim>: 就在後面加你要的app
+23:32 +0800 <pichuang>: 就只要 ryu-manager xxx.py ooo.py
+23:32 +0800 <pichuang>: 這樣嗎
+23:32 +0800 <John_aduim>: 對
+23:32 +0800 <pichuang>: 所以我只打 ryu-manager
+23:32 +0800 <pichuang>: 預設是啥都不會做就是了
+23:33 +0800 <John_aduim>: 也可以
+23:33 +0800 <John_aduim>: 恩
+23:33 +0800 <pichuang>: oh...所以我可以把它那個 ryu/app/*
+23:33 +0800 <pichuang>: 底下的.py放到任何地方都可以囉
+23:33 +0800 <John_aduim>: 恩
+23:33 +0800 <pichuang>: ok 我知道了
+23:33 +0800 <pichuang>: 我還在擔心會不會有depend的問題
+23:33 +0800 <John_aduim>: 還有一個奇怪的 bug我之前發現的
+23:34 +0800 <John_aduim>: 你的ryu只會裝一次吧？
+23:34 +0800 <pichuang>: yes
+23:34 +0800 <John_aduim>: 因為我有時候改source要重裝好多次
+23:34 +0800 <pichuang>: 等等我先回家xd
+23:34 +0800 <pichuang>: 待會說
+23:34 +0800 <John_aduim>: 恩
+23:34 +0800 <John_aduim>: ok~
