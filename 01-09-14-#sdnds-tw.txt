@@ -1,0 +1,86 @@
+00:05 +0800 <pichuang>: 如果改source的話都要重跑一次安裝對吧
+00:05 +0800 <pichuang>: 這樣會有什麼問題嗎
+00:05 +0800 <pichuang>: 改ryu的source
+00:31 +0800 <John_aduim>: 就是我發現你如果存在兩個ryu的
+00:31 +0800 <John_aduim>: source
+00:31 +0800 <John_aduim>: 會有一些安裝的問題
+00:31 +0800 <John_aduim>: 通常發生在某一包source目錄在比較上層的時候
+00:32 +0800 <John_aduim>: 所以如果有兩包source的話 建議你都放在同一層目錄
+00:32 +0800 <John_aduim>: 然後移除ryu 可以用sudo pip uninstall ryu -y
+00:32 +0800 <John_aduim>: 安裝就用sudo python setup.py install
+00:44 +0800 <PoWen>: John
+00:44 +0800 <PoWen>: 我剛在看Ryu的文件
+00:45 +0800 <John_aduim>: 恩？
+00:45 +0800 <John_aduim>: 怎麼大家都開始轉投入Ryu XD
+00:45 +0800 <PoWen>: 你貼我就看啊 XD
+00:46 +0800 <John_aduim>: good
+00:46 +0800 <John_aduim>: 我現在也想了解一下FL怎麼運做的
+00:46 +0800 <PoWen>: 我在看spanning tree的部份
+00:46 +0800 <PoWen>: yes, 我也覺得多瞭解是好事
+00:47 +0800 <John_aduim>: 恩
+00:47 +0800 <John_aduim>: http://sourceforge.net/p/ryu/mailman/ryu-devel/?viewmonth=201408
+00:47 +0800 <sdnsd-tw_Bot>: ==> ryu / Mailing Lists
+00:47 +0800 <PoWen>: 我不明白的是
+00:48 +0800 <John_aduim>: 這是Mailing Lists
+00:48 +0800 <PoWen>: 為啥，SDN需要spanning tree
+00:48 +0800 <John_aduim>: 我估計是在解loop吧..
+00:48 +0800 <PoWen>: 如果路徑都能事先算好，再下發flow，為什麼還要spanning tree
+00:48 +0800 <John_aduim>: 其實我也不是很理解如果controller都能handle的話
+00:48 +0800 <John_aduim>: 恩啊
+00:49 +0800 <PoWen>: 嘿啊
+00:49 +0800 <PoWen>: 我腦袋打架了
+00:49 +0800 <PoWen>: XD
+00:49 +0800 <John_aduim>: 我猜目前的app 都是復刻出以前傳統網路能做的事情
+00:50 +0800 <John_aduim>: 未來需要有一些創新的想法，就能有新的應用程式
+00:51 +0800 <PoWen>: 小飛機咧
+00:51 +0800 <PoWen>: 還沒回家嗎
+00:51 +0800 <PoWen>: 趕快發表一下看法
+00:51 +0800 <PoWen>: hmm
+00:51 +0800 <PoWen>: 看起來的確在復刻
+00:54 +0800 <PoWen>: https://www.irccloud.com/pastebin/LVYWHtom
+00:54 +0800 <sdnsd-tw_Bot>: ==> Pastebin: LVYWHtom | IRCCloud
+00:54 +0800 <PoWen>: 我想，大概可以解釋原因了
+00:55 +0800 <PoWen>: 應該是因為當初OpenFlow提出時，本來就是讓Campus Network可以做protocol experiment的 XD
+00:55 +0800 <PoWen>: 既然如此，當然要模仿legacy L2/L3的ASIC方式
+00:56 +0800 <PoWen>: 要不然OpenFlow實驗出來，卻沒辦法讓ASIC實作，那真是白折騰了...
+00:56 +0800 <PoWen>: 好，這解釋似乎有點道理 XDDDDD
+00:59 +0800 <PoWen>: 原來OVS的出現這麼重要啊
+00:59 +0800 <PoWen>: 比Linux bridge好這麼多
+01:01 +0800 <John_aduim>: 其實OVS當初也不是為了openflow而出來的
+01:01 +0800 <PoWen>: 哦？
+01:01 +0800 <PoWen>: 所以OF的支持是後來才有的？
+01:01 +0800 <John_aduim>: 恩啊 它本身就有了
+01:01 +0800 <John_aduim>: 沒錯 他做了OF後才更紅的
+01:04 +0800 <PoWen>: 原來如此
+01:05 +0800 <John_aduim>: http://neokentblog.blogspot.tw/  這裡也有些文章可以參考
+01:05 +0800 <sdnsd-tw_Bot>: ==> Start a New Journey
+01:05 +0800 <John_aduim>: XD
+01:05 +0800 <John_aduim>: 以前同事的
+01:15 +0800 <PoWen>: 你前同事也在問SDN還需要spanning tree嗎 xd
+01:17 +0800 <John_aduim>: 沒啦 只是貼一下他的文張
+01:17 +0800 <John_aduim>: 文章
+01:17 +0800 <PoWen>: 他也有分析PicOS
+01:18 +0800 <John_aduim>: 恩恩
+01:18 +0800 <PoWen>: 你好像以前有提過他？
+01:18 +0800 <John_aduim>: 恩 有吧
+01:18 +0800 <John_aduim>: 他跟你同名啊ＸＤ
+01:20 +0800 <PoWen>: 也叫博文喔XD
+01:21 +0800 <PoWen>: 以前交大的？
+01:21 +0800 <PoWen>: 我忘了
+01:21 +0800 <PoWen>: 你提過的樣子
+01:21 +0800 <PoWen>: 倒是你還不睡喔
+01:21 +0800 <John_aduim>: 哦 不
+01:21 +0800 <PoWen>: 都一點半了
+01:21 +0800 <John_aduim>: 她台大了
+01:21 +0800 <John_aduim>: 的
+01:21 +0800 <John_aduim>: 正要去休息了
+01:21 +0800 <John_aduim>: 改天再聊吧
+01:22 +0800 <John_aduim>: 先來睡了 晚安
+01:25 +0800 <PoWen>: 好
+01:25 +0800 <PoWen>: 改天聊
+01:25 +0800 <PoWen>: 晚安啦
+14:18 +0800 <pichuang>: http://ithelp.ithome.com.tw/ironman7/earlybird/#/index
+14:18 +0800 <sdnsd-tw_Bot>: ==> 2014 第 7 屆 iT 邦幫忙鐵人賽
+14:18 +0800 <pichuang>: 有沒有人要去挑戰的xd
+14:21 +0800 <John_aduim>: hackthon sdn嗎
+14:41 +0800 <John_aduim1>: Snort integrate 的lib 的 patch 加進ryu了!
