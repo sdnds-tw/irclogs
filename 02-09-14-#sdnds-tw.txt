@@ -1,0 +1,28 @@
+13:42 +0800 <John4irc>: hi
+13:42 +0800 <John4irc>: 是不是沒有9/2的log?
+13:42 +0800 <John4irc>: http://sdnds.tw/irclogs/
+13:42 +0800 <sdnsd-tw_Bot>: ==> Index of /irclogs
+14:12 +0800 <PoWen>: 沒注意...orz.
+14:28 +0800 <John4irc>: 看起來好像沒存
+14:40 +0800 <JalenLin>: 9/2 有阿?
+14:40 +0800 <JalenLin>: 不是第二個嗎?
+14:41 +0800 <JalenLin>:  02-09-14-#sdnds-tw.txt  2014-09-02 14:28  260
+14:41 +0800 <JalenLin>: 不過也沒啥內容就是了XD
+15:00 +0800 <John4irc>: 出現了！
+15:01 +0800 <John4irc>: 因為我剛剛看第二個不是9/2
+15:09 +0800 <JalenLin>: John4irc: 因為在你看之前沒有人說過話，自然沒有LOG囉
+15:10 +0800 <John4irc>: soga
+16:31 +0800 <pichuang>: 今天要忙死了= =
+16:31 +0800 <pichuang>: 重灌電腦教室
+21:04 +0800 <JalenLin>: 新手請問：現在有Controller做NAT的嗎?
+21:20 +0800 <John4irc>: 我有做ryu 的XD
+21:38 +0800 <JalenLin>: John4irc: 詳細希望
+21:42 +0800 <John4irc>: 什麼意思
+21:47 +0800 <JalenLin>: hmm..想了解詳細XD
+21:47 +0800 <JalenLin>: 是app嗎?
+21:47 +0800 <John4irc>: 哦～ 我當初沒有留下文件只有程式
+21:48 +0800 <John4irc>: 恩啊
+21:48 +0800 <John4irc>: 我稍後把它放到github
+21:54 +0800 <JalenLin>: Thanks
+22:57 +0800 <John4irc>: https://github.com/John-Lin/nat
+22:57 +0800 <sdnsd-tw_Bot>: ==> John-Lin/nat · GitHub
