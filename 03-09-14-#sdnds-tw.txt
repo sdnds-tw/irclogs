@@ -1,0 +1,81 @@
+10:53 +0800 <pichuang>: morning
+10:54 +0800 <pichuang>: 雖然我早起很久了xd
+11:04 +0800 <jamesLiao>: good morning
+13:24 +0800 <jamesLiao>: 請問一下版上有人把ovs跟kvm或是lxc連結起來的嗎？
+14:00 +0800 <pichuang>: kvm 我有用
+14:00 +0800 <pichuang>: http://roan.logdown.com/posts/192977-openvswitch-lab-2-openvswitch-and-kvm
+14:00 +0800 <sdnsd-tw_Bot>: ==> OpenvSwitch Lab 2$ OpenvSwitch and KVM « roan's Blog
+14:00 +0800 <pichuang>: lxc 我就沒用過了
+14:04 +0800 <jamesLiao>: 感謝小飛機！
+14:04 +0800 <pichuang>: 不會xd
+14:05 +0800 <jamesLiao>: 請問hwchiu怎麼好久沒上線的樣子
+14:06 +0800 <pichuang>: 他在陰間xd
+14:06 +0800 <jamesLiao>: ？
+14:06 +0800 <pichuang>: 成功嶺陰間
+14:06 +0800 <jamesLiao>: 國軍？
+14:06 +0800 <pichuang>: yes
+14:06 +0800 <jamesLiao>: 哈哈哈
+14:06 +0800 <pichuang>: 應該還有一個禮拜
+14:06 +0800 <jamesLiao>: 了解
+16:03 +0800 <tacchen>: jamesLiao: 我用過
+16:04 +0800 <tacchen>: 文件整理好就放到hackpad上~
+16:04 +0800 <tacchen>: 我是包含kvm + ovs or lxc + ovs
+16:04 +0800 <jamesLiao>: 感謝感謝
+16:17 +0800 <jamesLiao>: pichuang: # OpenvSwitch Interface的ip是自己設的？還是ovs上的那個bridge的ip?
+16:19 +0800 <pichuang>: ovs上的那個bridge的ip
+16:19 +0800 <pichuang>: 自己設的
+16:19 +0800 <jamesLiao>: ok
+16:19 +0800 <pichuang>: tacchen: mo~~
+16:32 +0800 <jamesLiao>: 拍謝拍謝
+16:32 +0800 <jamesLiao>: 是在ovs上設定還是在我的kvm那台機器設定？
+16:34 +0800 <pichuang>: ovs上面 kvm 只是個 hosts端
+16:37 +0800 <jamesLiao>: 嗯
+17:45 +0800 <pichuang>: http://roan.logdown.com/posts/230705-rpcapd-remote-capture-remote-system-network-traffic
+17:45 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/9uBB9  ==> rpcapd: Capture Remote System Network Traffic « roan's Blog
+17:45 +0800 <pichuang>: 剛剛我找到一個可以remote capture network traffic的方式
+17:45 +0800 <pichuang>: 大家可以參考一下
+17:45 +0800 <pichuang>: 超方便QQ
+17:46 +0800 <pichuang>: 主要用途是可以即時把 linux server 的封包mirror至wireshark gui 裡面看
+17:46 +0800 <pichuang>: 不用先收集pcap 再放用wireshark gui 開
+17:46 +0800 <pichuang>: 像我linux server都是用純文字介面的 對我來說這樣超級方便
+17:47 +0800 <pichuang>: 現在wireshark 也支援openflow了
+17:47 +0800 <pichuang>: 可以嘗試看看
+18:41 +0800 <wxx>: 有人在吗
+18:41 +0800 <pichuang>: hi
+18:42 +0800 <wxx>: 呵呵 我第一次玩IRC
+18:43 +0800 <wxx>: 这个room是加密的吗?
+18:44 +0800 <pichuang>: 不是哦
+18:44 +0800 <pichuang>: 歡迎你
+18:46 +0800 <wxx>: 这里是讨论什么的啊?
+18:46 +0800 <pichuang>: sdn 相關技術的irc
+18:46 +0800 <wxx>: 有玩hacking 的吗?
+18:46 +0800 <pichuang>: 哪方面的hacking
+18:47 +0800 <wxx>: web
+18:48 +0800 <pichuang>: wxx: 這邊沒有在玩web hacking的xd
+18:49 +0800 <wxx>: 那有玩哪方面hacking的啊?
+18:49 +0800 <wxx>: 学习下
+18:50 +0800 <pichuang>: xd 這我就不知道了
+18:50 +0800 <pichuang>: 要問問其他人
+18:51 +0800 <wxx>: SDN是云服务方面的吗?
+18:51 +0800 <pichuang>: 算是
+19:17 +0800 <pichuang>: John4irc: ping
+19:17 +0800 <pichuang>: https://nsrc.org/workshops/2014/nznog-sdn/raw-attachment/wiki/Agenda/
+19:17 +0800 <sdnsd-tw_Bot>: ==> 
+      Agenda – Attachments
+     – NZNOG SDN Tutorial
+    
+19:17 +0800 <pichuang>: 我剛剛看到 nsrc 的介紹一些 ryu 的東西
+19:17 +0800 <pichuang>: 裡面有提到 snort 的部分 你把它做完了耶xd
+19:24 +0800 <John4irc>: Yo
+19:25 +0800 <John4irc>: 對啊 我把它加進去ryu了
+19:25 +0800 <John4irc>: 你說從哪裡看到的啊
+19:26 +0800 <John4irc>: 哦 我剛看了 那個不是我做的
+19:26 +0800 <John4irc>: 那個是很舊版的Ryu他們原版有做
+19:27 +0800 <John4irc>: 後來因為沒人繼續維護 還有他們大改版之後 整合就被移除了
+19:29 +0800 <John4irc>: http://linton.tw/2014/09/03/Ryu-with-Snort-Integration/
+19:29 +0800 <sdnsd-tw_Bot>: ==> Ryu with Snort Integration | John's Lin Blog
+19:29 +0800 <John4irc>: 新版在這
+19:52 +0800 <pichuang>: <(_ _)>
+23:50 +0800 <tacchen>: jamesLiao: LXC + OVS http://tacchen.logdown.com/posts/2014/09/03/230738
+23:50 +0800 <sdnsd-tw_Bot>: ==> LXC with OpenvSwitch « Ta-Ching, Chen
+23:50 +0800 <tacchen>: KVM的明天補上XD
