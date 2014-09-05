@@ -1,0 +1,107 @@
+00:20 +0800 <John_mobile>:  good
+00:20 +0800 <John_mobile>:  他們都用ODL？
+00:21 +0800 <pichuang>: 對啊
+00:34 +0800 <John4irc>: 這邊有要參加sdn比賽的人嗎!
+00:34 +0800 <John4irc>: 雖然上次問過了...再問一下好了XD
+00:34 +0800 <John4irc>: pichuang 工研院那邊是不是也有隊伍？
+00:34 +0800 <pichuang>: 不知道耶
+00:34 +0800 <pichuang>: 沒有詳細問
+00:35 +0800 <pichuang>: 只有打個招呼而已
+00:35 +0800 <pichuang>: xd
+00:35 +0800 <John4irc>: 恩恩！
+00:44 +0800 <pichuang>: 工研院楊慧卿小姐 SDN and OpenFlow Introduction 那份投影片是我認為到目前為止介紹sdn及openflow最完整的投影片
+00:45 +0800 <pichuang>: 我去年有上過他的課 我直到現在印象還是很深刻xd
+00:45 +0800 <pichuang>: 我晚點寄信問問可不可以把它的slide放出來
+00:46 +0800 <John4irc>: 感謝啊～
+00:46 +0800 <pichuang>: 今天有看到不少 sdnds-tw 社群的人參加活動XD
+00:47 +0800 <pichuang>: 還有專程高鐵的
+00:47 +0800 <pichuang>: 太猛了
+00:47 +0800 <John4irc>: 成大那幾個嗎
+00:47 +0800 <pichuang>: 要連跑四天耶
+00:47 +0800 <pichuang>: 不是
+00:47 +0800 <John4irc>: 哦
+00:47 +0800 <John4irc>: 高鐵費>>>學費
+00:47 +0800 <pichuang>: xdddd
+12:01 +0800 <kigipaul>: 大家好 我是SDN新人 請多多指教
+12:06 +0800 <kigipaul>: 最近在看ryu 想問一下 對於取狀態的request, reply 有甚麼比較好的方式嗎?
+12:07 +0800 <kigipaul>: ryu.app.ofctl_rest裡的取法是用lock的方式來做 感覺這樣的效率好像不大好?
+13:34 +0800 <pichuang>: kigipaul: 你好
+13:34 +0800 <pichuang>: kigi耶
+13:42 +0800 <pichuang>: 你是指哪部分lock住?
+13:48 +0800 <kigipaul>: 狀態的資料 ryu要先送Request給switch reply甚麼時候回來不知道 所以他會先lock住 等這個reply回來 才繼續送下個request
+13:50 +0800 <kigipaul>: ryu/lib/ofctl_v1_3.py 567行 send_stats_request 下面
+13:51 +0800 <kigipaul>: 有lock.wait()
+14:28 +0800 <John4irc>: 你是說Openflow 的message嗎
+14:29 +0800 <John4irc>: 如果從application那邊來看，他不會一直在那裡等待
+14:29 +0800 <John4irc>: 他用eventlet框架去做，如果有其他event被觸發他會去執行其他event的handler
+14:42 +0800 <kigipaul>: 我是指 假如我要向四台switch要port stats 現在的情形是要等到第一台switch reply完才會向第二台發request
+14:44 +0800 <kigipaul>: port stats的reply中沒有紀錄是哪個dpid的stats
+14:48 +0800 <John4irc>: 應該可以一齊發四檯switch呀
+14:48 +0800 <John4irc>: request
+14:49 +0800 <John4irc>: 你是想要拿到每一檯的dpid嗎？
+14:50 +0800 <kigipaul>: 恩 不然不知道這個reply是哪台switch的reply
+14:50 +0800 <John4irc>: 我誤會了你是想要dpid對應每一個 port stats
+14:51 +0800 <John4irc>: 應該可行我記得我有看過 我找看看有沒有範例
+14:54 +0800 <John4irc>: http://ryu.readthedocs.org/en/latest/ofproto_v1_3_ref.html#port-status-message
+14:54 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/1i5CM  ==> OpenFlow v1.3 Messages and Structures — Ryu 3.13 documentation
+14:55 +0800 <John4irc>: 這個handler寫進去之後<假設你有四檯sw應該會拿到4個datapath
+14:58 +0800 <John4irc>: 前提是四檯都剛好加近datapath或是離開datapath, controller會受到通知
+15:03 +0800 <kigipaul>: 但現在我是想知道現在已上線switch的port status 那這handler就不能用了
+15:04 +0800 <John4irc>: 那應該就不是用port status吧
+15:06 +0800 <kigipaul>: 我現在是用 @set_ev_cls(ofp_event.EventOFPPortStatus, MAIN_DISPATCHER)
+15:06 +0800 <kigipaul>: def port_status_handler(self, ev): msg = ev.msg
+15:06 +0800 <kigipaul>:     ofp = dp.ofproto
+15:06 +0800 <kigipaul>:     dp = msg.datapath
+15:06 +0800 <kigipaul>:     if msg.reason == ofp.OFPPR_ADD:
+15:06 +0800 <John4irc>: Openflow switch剛與controller連線的時候會做handshake
+15:06 +0800 <kigipaul>:         reason = 'ADD'
+15:06 +0800 <kigipaul>:     elif msg.reason == ofp.OFPPR_DELETE:
+15:07 +0800 <kigipaul>:         reason = 'DELETE'
+15:07 +0800 <kigipaul>:     elif msg.reason == ofp.OFPPR_MODIFY:
+15:07 +0800 <kigipaul>:         reason = 'MODIFY'
+15:07 +0800 <kigipaul>:     else:
+15:07 +0800 <John4irc>: 你可以用一個叫做switch feature的方式
+15:07 +0800 <kigipaul>:         reason = 'unknown'
+15:07 +0800 <kigipaul>:     self.logger.debug('OFPPortStatus received: reason=%s desc=%s',
+15:07 +0800 <kigipaul>: 貼錯@@
+15:07 +0800 <kigipaul>: 我現在適用OFPPortDescStatsRequest和Reply來取
+15:07 +0800 <kigipaul>: 但是就會有我剛剛的問題
+15:08 +0800 <kigipaul>: OFPFlowStatsRequest Reply 也會有同樣問題
+15:09 +0800 <John4irc>: 你送的datapath 是什麼
+15:09 +0800 <John4irc>: 你發request的時候datapath 有發四組出去嗎
+15:09 +0800 <kigipaul>: 從switchFeatures取得的datapath
+15:10 +0800 <John4irc>: 那你switchFeatures 有拿到4個dp?
+15:10 +0800 <kigipaul>: 我試過發四組 會有四個reply這沒問題
+15:10 +0800 <kigipaul>: 但是問題在於 1,2,3,4這樣發 可能回來的reply是 3,2,1,4
+15:10 +0800 <John4irc>: 你需要按照順序？
+15:11 +0800 <kigipaul>: reply的內容沒有夾帶dpid的訊息
+15:11 +0800 <kigipaul>: 我是需要知道 這個reply是哪個datapath的reply
+15:11 +0800 <John4irc>: 我了解你意思了
+15:12 +0800 <John4irc>: 你reply回來有ev這個物件
+15:12 +0800 <John4irc>: ev.msg.datapath.dpid有嗎
+15:13 +0800 <kigipaul>: PortDescReply ev.msg裡面只有.body
+15:14 +0800 <kigipaul>: 裡面只有記錄問回來的port資料
+15:15 +0800 <John4irc>: 恩 我想想
+15:23 +0800 <John4irc>: 暫時想不到
+15:23 +0800 <John4irc>: 不然你就發一組拿一組
+15:24 +0800 <kigipaul>: ryu原本就是這樣做  我是想說有沒有比較好的方法
+15:26 +0800 <John4irc>: 你想要拿port的什麼資訊
+15:29 +0800 <kigipaul>: mac port_no這種
+15:29 +0800 <John4irc>: 你有試過用ryu提供的api嗎
+15:30 +0800 <kigipaul>: FlowStats 也是這種情形
+15:30 +0800 <John4irc>: class ryu.controller.dpset.DPSet(*args, **kwargs)
+15:31 +0800 <John4irc>: get_port(dpid, port_no)
+15:31 +0800 <John4irc>: 或是get_ports(dpid)
+15:34 +0800 <kigipaul>: 我看看
+15:46 +0800 <John4irc>: kigipaul 剛剛的ev.msg.datapath.id可以吧
+15:47 +0800 <John4irc>: EventOFPFlowStatsReply 有 ev.msg.datapath.id
+16:01 +0800 <kigipaul>: 是 兩個好像都有 我想一下 為什麼ryu還要特地lock住
+16:13 +0800 <John4irc>: 你剛剛說的OFPPortDescStatsRequest 也有id嗎
+16:13 +0800 <kigipaul>: 恩 之前沒用好可能是我打錯
+16:14 +0800 <John4irc>: 可以用dir(msg)
+16:14 +0800 <John4irc>: 就可以看裡面有什麼method
+16:48 +0800 <John_mobile>:  你是想要幾乎同時拿到reply嗎
+22:34 +0800 <John4irc>: 之前有人貼一個在defcon的sdn controller攻擊的slide
+22:34 +0800 <John4irc>: 我找到了source code
+22:34 +0800 <John4irc>: http://sourceforge.net/projects/sdn-toolkit/
+22:34 +0800 <sdnsd-tw_Bot>: ==> SDN-Toolkit | SourceForge.net
