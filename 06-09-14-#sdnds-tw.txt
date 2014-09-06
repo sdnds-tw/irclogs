@@ -1,0 +1,19 @@
+16:00 +0800 <John4irc>: .c 5+3
+16:01 +0800 <John4irc>: 這邊有用irc bot 嗎？
+19:38 +0800 <pichuang>: irc bot @@?
+19:38 +0800 <pichuang>: 有啊
+19:38 +0800 <pichuang>: JalenLin: 有放
+21:15 +0800 <JalenLin>: sdnsd-tw_Bot_:
+21:15 +0800 <JalenLin>: 還在阿
+21:16 +0800 <JalenLin>: 怎麼?
+21:41 +0800 <John4irc>: 沒啦 只是剛好最近在研究bot
+21:41 +0800 <John4irc>: 那個bot是怎麼做的
+21:44 +0800 <JalenLin>: 我用ruby+cinch寫的
+21:46 +0800 <John4irc>: 它是有另外開一檯電腦連上來 還是server 那檯
+21:49 +0800 <JalenLin>: 不太懂你的意思，寫好執行就會用執行的電腦連上來
+21:50 +0800 <John4irc>: 哦, 我說的是IRC server
+21:51 +0800 <JalenLin>: 現在的IRC SERVER是freenode阿
+21:51 +0800 <John4irc>: 哦
+21:55 +0800 <John4irc>: git fetch upstream
+21:55 +0800 <John4irc>: 打錯地方了~
+23:43 +0800 <JalenLin>: XDDD
