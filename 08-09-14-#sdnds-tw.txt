@@ -1,0 +1,4 @@
+09:51 +0800 <adaam>: 莫斯科網路好像不便宜
+09:52 +0800 <adaam>: @jal
+09:52 +0800 <adaam>: JalenLin: 所以bot有紀錄對話嗎？
+14:15 +0800 <John_mobile>: adaam: 有的有log
