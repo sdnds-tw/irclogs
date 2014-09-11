@@ -1,0 +1,115 @@
+11:45 +0800 <jamesLiao>: 早安
+11:46 +0800 <jamesLiao>: 請問一下OVS sFlow可以針對不同的port number去抓traffic嗎？
+11:52 +0800 <pichuang>: 你的port是指 port number 還是 interface ?
+11:53 +0800 <jamesLiao>: port number
+11:54 +0800 <jamesLiao>: 比方說針對一個port number去抓trafficu這樣
+11:58 +0800 <pichuang>: http://alliedtelesis.com/manuals/awplusv212weba/sflow.html
+11:58 +0800 <sdnsd-tw_Bot>: ==> Setting sFlow
+11:58 +0800 <pichuang>: 看起來是有的@@
+11:58 +0800 <pichuang>: 我是沒玩的很仔細啦xd
+11:59 +0800 <jamesLiao>: 哈哈 了解
+12:15 +0800 <pichuang>: 我把 ryu 打包成 pkgbuild 放到 archlinux 的 aur 了
+12:15 +0800 <pichuang>: archlinux愛好者可以用 yaourt ryu-git 安裝
+12:25 +0800 <John4irc>: cool
+12:25 +0800 <John4irc>: arch用source code裝應該可行吧？
+12:25 +0800 <John4irc>: sudo python setup.py install
+12:25 +0800 <John4irc>: 我一個朋友也是arch狂熱者XD
+12:26 +0800 <pichuang>: 一堆東西會掉
+12:26 +0800 <pichuang>: https://github.com/pichuang/ryu-aur
+12:26 +0800 <sdnsd-tw_Bot>: ==> pichuang/ryu-aur · GitHub
+12:27 +0800 <pichuang>: 可以看一下
+12:27 +0800 <John4irc>: setup也會嗎
+12:27 +0800 <pichuang>: y
+12:27 +0800 <pichuang>: 會掉一堆東西
+12:27 +0800 <John4irc>: pip一定會掉
+12:27 +0800 <pichuang>: setup.py就是去call pip
+12:27 +0800 <pichuang>: 掉了一堆
+12:27 +0800 <John4irc>: 哦
+12:27 +0800 <pichuang>: depends=('python2' 'python2-setuptools' 'python2-pip' 'python2-lxml' 'python2-greenlet' 'python2-webob' 'python2-six' 'python2-routes' 'python2-paramiko' 'python2-oslo-config' 'python2-msgpack')
+12:27 +0800 <pichuang>: 你看
+12:27 +0800 <pichuang>: 一整排
+12:27 +0800 <pichuang>: xd
+12:27 +0800 <John4irc>: 可是他如果更新你還要重製？
+12:28 +0800 <pichuang>: 我拉git的
+12:28 +0800 <pichuang>: 應該不用
+12:28 +0800 <John4irc>: 哦哦
+12:28 +0800 <John4irc>: 該來個deb包
+12:28 +0800 <John4irc>: XD
+12:28 +0800 <pichuang>: 沒有deb嗎
+12:29 +0800 <pichuang>: 我看 ryu github上有debian
+12:29 +0800 <John4irc>: 沒呀 我裝在ubuntu都是setup
+12:29 +0800 <pichuang>: 我是沒包過啦xd
+12:29 +0800 <John4irc>: 沒用過
+12:29 +0800 <John4irc>: 我在mac上也都是setup
+12:29 +0800 <pichuang>: 我都不敢裝在我的mac上 怕弄亂
+12:30 +0800 <John4irc>: 你是說弄亂python嗎
+12:31 +0800 <pichuang>: 弄亂 mac 上的檔案
+12:31 +0800 <pichuang>: 我都開vm
+12:31 +0800 <pichuang>: 一個 ryu 專用 一個 mininet專用
+12:31 +0800 <pichuang>: 話說我先前有想要把mininet porting到archlinux
+12:31 +0800 <pichuang>: 各種困難
+12:32 +0800 <John4irc>: 恩 其實我放上去還好誒
+12:32 +0800 <pichuang>: 你放在archlinux?
+12:32 +0800 <John4irc>: 我也不知道會怎麼亂法
+12:32 +0800 <John4irc>: mac
+12:32 +0800 <pichuang>: 哦哦
+12:32 +0800 <John4irc>: ryu+mac
+12:33 +0800 <pichuang>: 我不太喜歡在筆電上搞 大部分都在vm裡面處理或者是工作站上
+12:33 +0800 <John4irc>: 恩恩
+12:38 +0800 <John4irc>: 那你用過docker嗎?
+12:39 +0800 <pichuang>: 沒耶
+12:39 +0800 <pichuang>: 聽 tacchen_ 說非常牛
+12:39 +0800 <John4irc>: XD
+12:39 +0800 <pichuang>: 但我現在分身乏術xd
+12:39 +0800 <pichuang>: 先一個一個來
+12:39 +0800 <John4irc>: 恩 ryu有提供docker的repo
+12:40 +0800 <John4irc>: 因為pip掉很多套件的關係
+12:40 +0800 <John4irc>: 那個開發者說叫大家用這個 haha
+12:40 +0800 <pichuang>: 為何
+12:40 +0800 <John4irc>: 因為常常在mailing list一堆人在問為啥安裝失敗的問題
+12:40 +0800 <pichuang>: 哦哦
+12:40 +0800 <pichuang>: 他包在裡面嗎xd
+12:41 +0800 <John4irc>: 對
+12:41 +0800 <John4irc>: 他就包好了
+12:41 +0800 <pichuang>: 我看他setup.py 有寫好 但是為啥不會更新@@
+12:41 +0800 <pichuang>: 怪怪的
+12:41 +0800 <pichuang>: pip <--
+12:41 +0800 <John4irc>: 你說更新什麼
+12:42 +0800 <pichuang>: 那些安裝的套件
+12:42 +0800 <John4irc>: 恩 這個真的挺困擾的
+12:43 +0800 <John4irc>: 上次他們來啊 就大力推薦大家用docker
+12:43 +0800 <John4irc>: 然後因為這個GO寫的
+12:43 +0800 <John4irc>: 他就說未來有機會要把ryu用GO重寫XD
+12:43 +0800 <pichuang>: 官方有說為什麼會這樣嗎?
+12:43 +0800 <pichuang>: 用go哦xd 沒寫過
+12:44 +0800 <John4irc>: 他沒解釋為啥 他就說你不要管pip啦 來用docker
+12:44 +0800 <John4irc>: 不然就要在寫信問他了 （攤
+12:45 +0800 <Davy_CC_>: 話說最近要開始研究docker . _____ .
+12:45 +0800 <John4irc>: 加油ＸＤ 到時候分享一下
+12:45 +0800 <ken_ho>: Good morning
+12:49 +0800 <pichuang>: ken_ho: 早安
+12:49 +0800 <pichuang>: 應該是午安了xd
+12:50 +0800 <ken_ho>: 好久不見:)
+12:56 +0800 <pichuang>: ken_ho: xd 好久不見
+12:56 +0800 <pichuang>: Davy_CC_: 你怎麼忽然要研究docker @@?
+13:02 +0800 <John4irc>: 下一次實體聚會什麼時候? 感覺還沒把ID跟大家的臉配上XD
+13:05 +0800 <Davy_CC_>: pichuang: 就……興趣（？
+13:15 +0800 <pichuang>: John4irc: 月底辦
+13:15 +0800 <pichuang>: John4irc: 大大有沒有要分享一下 ryu 開發流程
+13:15 +0800 <pichuang>: 推坑一下 ryu
+13:16 +0800 <pichuang>: http://qmaw.pixnet.net/blog/category/4690154
+13:16 +0800 <sdnsd-tw_Bot>: ==> SDN @ qmaw的部落格 :: 痞客邦 PIXNET ::
+13:16 +0800 <pichuang>: 這位講了不少 ryu 的相關研究 可以參考一下
+13:20 +0800 <John4irc>: 恩 可以稍微簡單介紹一下啦XD
+13:22 +0800 <pichuang>: 挑個9/27好了
+13:22 +0800 <pichuang>: 禮拜六
+13:22 +0800 <pichuang>: 同地點
+13:22 +0800 <pichuang>: 還是有人想進去交大的xd
+13:22 +0800 <John4irc>: 我都行～有地點就好
+20:53 +0800 <adaam>: 台北++
+22:41 +0800 <pichuang>: John4irc: 先原地點好了xd
+22:41 +0800 <pichuang>: http://www.slideshare.net/yamahata/ryu-sdnframeworkupload
+22:41 +0800 <sdnsd-tw_Bot>: ==> Ryu sdn framework 
+22:42 +0800 <pichuang>: 這篇在講 ryu arch 的文章不錯
+22:42 +0800 <pichuang>: adaam: 靠你辦了xd
+23:41 +0800 <John4irc>: ok~
