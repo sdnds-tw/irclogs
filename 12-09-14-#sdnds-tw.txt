@@ -1,0 +1,156 @@
+14:53 +0800 <hwchiu_znc>: 陽間
+15:01 +0800 <John4irc>: hwchiu_znc 回家囉？
+15:02 +0800 <hwchiu_znc>: 路上
+15:02 +0800 <John4irc>: 恭喜XD
+15:02 +0800 <hwchiu_znc>: 我遇到黃能富的博班
+15:02 +0800 <John4irc>: 我學長
+15:02 +0800 <John4irc>: 一如
+15:03 +0800 <John4irc>: 你們同踢
+15:03 +0800 <hwchiu_znc>: 嗯嗯
+15:03 +0800 <hwchiu_znc>: 誰我上面
+15:03 +0800 <hwchiu_znc>: 睡
+15:03 +0800 <John4irc>: ＸＤ
+15:03 +0800 <hwchiu_znc>: 挺變態的 只能這樣描述
+15:04 +0800 <John4irc>: 哈哈哈哈哈
+15:04 +0800 <hwchiu_znc>: 不破壞你心目的形象
+15:04 +0800 <John4irc>: 她蠻有趣的啊 至於變態我還不清楚
+15:07 +0800 <hwchiu_znc>: 嗯嗯
+15:33 +0800 <S3p_lin>: 她?
+15:41 +0800 <pichuang>: hwchiu_znc: 壞掉了
+15:42 +0800 <pichuang>: 15:03 < hwchiu_znc> 誰我上面
+15:42 +0800 <pichuang>: 15:03 < hwchiu_znc> 睡
+15:43 +0800 <Davy_CC_>: 在上面 >//////<
+15:47 +0800 <jamesLiao>: 歡迎回來陽間XDD
+15:51 +0800 <John4irc>: XD
+15:58 +0800 <John4irc>: 學長回來了
+16:51 +0800 <JalenLin>: 大師兄回來啦~!!
+18:08 +0800 <pichuang>: 有人有用 RYU 透過 REST ADD過 FLOW嗎
+18:09 +0800 <pichuang>: 最近超有障礙
+18:09 +0800 <pichuang>: 不知道有人知道相關的field要去哪裡看
+19:28 +0800 <hwchiu_znc>: Source code 翻下
+19:39 +0800 <John4irc>: 你說什麼field
+20:55 +0800 <pichuang>: http://qmaw.pixnet.net/blog/post/370430519
+20:55 +0800 <sdnsd-tw_Bot>: ==> 在RYU上使用Rest API控制flow entry @ qmaw的部落格 :: 痞客邦 PIXNET ::
+20:55 +0800 <pichuang>: 我照這個做不會work@@
+21:39 +0800 <John_aduim>: 沒玩過rest
+21:39 +0800 <John_aduim>: 不過之前有試用過應該可以正常的
+22:27 +0800 <John_aduim>: 各位Ryubook 出繁體中文版啦
+22:27 +0800 <John_aduim>: http://osrg.github.io/ryu-book/zh_tw/Ryubook.pdf'
+22:27 +0800 <John_aduim>: http://osrg.github.io/ryu-book/zh_tw/Ryubook.pdf
+22:27 +0800 <John_aduim>: 第二個連結
+22:34 +0800 <ken_ho>: 讚喔
+22:36 +0800 <John_aduim>: 之前的同事翻譯的
+22:36 +0800 <John_aduim>: 太神啦！
+22:36 +0800 <ken_ho>: cool
+22:41 +0800 <John_aduim>: 習慣在網頁上看的可以來這
+22:41 +0800 <John_aduim>: http://osrg.github.io/ryu-book/zh_tw/html/
+22:41 +0800 <sdnsd-tw_Bot>: ==> RYU SDN Framework — Ryubook 1.0 documentation
+23:13 +0800 <hwchiu>: 我真的快便智障了= =
+23:13 +0800 <ken_ho>: !!!
+23:13 +0800 <ken_ho>: 邱神回來了
+23:14 +0800 <ken_ho>: 好玩嗎?
+23:14 +0800 <hwchiu>: 還不錯
+23:14 +0800 <ken_ho>: :)
+23:15 +0800 <hwchiu>: 今天十點就想睡了XD
+23:15 +0800 <ken_ho>: 呵~
+23:15 +0800 <ken_ho>: 現在是休假嗎??
+23:15 +0800 <ken_ho>: 啥時要去s社報到?
+23:15 +0800 <hwchiu>: 22
+23:15 +0800 <hwchiu>: 明天去DSM 5.1的發表會
+23:16 +0800 <ken_ho>: 見習?
+23:17 +0800 <hwchiu>: NO
+23:17 +0800 <hwchiu>: 就去聽聽而已XD
+23:17 +0800 <ken_ho>: 喔喔 ~~~
+23:19 +0800 <hwchiu>: 恩恩 先準備睡覺XD 明天又要早起
+23:19 +0800 <ken_ho>: 晚安啦~~~
+23:20 +0800 <John_aduim>: 我有用他們的產品！
+23:20 +0800 <hwchiu>: 恩恩
+23:20 +0800 <John_aduim>: dsm要出5.1囉？
+23:21 +0800 <hwchiu>: 恩恩
+23:22 +0800 <hwchiu>: https://www.synology.com/zh-tw/events/2015_Synology_Live
+23:22 +0800 <sdnsd-tw_Bot>: ==> 群暉科技 Network Attached Storage (NAS)
+23:23 +0800 <ken_ho>: vs-vsctl add-br br0 – set bridge br0 datapath_type=pica8
+23:23 +0800 <ken_ho>: 問一下...
+23:24 +0800 <ken_ho>: 後面這串"– set bridge br0 datapath_type=pica8" 是什麼意思? 設定名稱而已?
+23:25 +0800 <hwchiu>: 這應該是pica8賣的OVS吧?
+23:25 +0800 <ken_ho>: 是呀
+23:25 +0800 <ken_ho>: 我正在study
+23:26 +0800 <hwchiu>: 她們應該有客制化底下那些ofproto的寫法，所以這邊指名datapath_type使用pica8的版本，而非原本的netdev
+23:26 +0800 <ken_ho>: !!
+23:27 +0800 <ken_ho>: 我在ovs-vsctl manual 沒找到datapath_type的說明...
+23:27 +0800 <ken_ho>: 原來是pica8自已客制的
+23:27 +0800 <hwchiu>: http://git.openvswitch.org/cgi-bin/gitweb.cgi?p=openvswitch;a=blob_plain;f=INSTALL.userspace;hb=HEAD
+23:27 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/ahBKC  ==> http://git.openvswitch.org/cgi-bin/gitweb.cgi?p=openvswitch;a=blob_plain;f=INSTALL.userspace;hb=HEAD
+23:29 +0800 <hwchiu>: 先睡覺XD 晚安
+23:29 +0800 <ken_ho>: 謝啦謝啦
+23:29 +0800 <ken_ho>: 晚安
+23:32 +0800 <ken_ho>: ovs-vsctl add-port br0 ge-1/1/1 - set interface ge-1/1/1 type=pica8
+23:32 +0800 <ken_ho>: ovs-vsctl add-port br0 ge-1/1/2 - set interface ge-1/1/2 type=pica8
+23:32 +0800 <ken_ho>: ovs-vsctl add-port br0 ge-1/1/3 - set interface ge-1/1/3 type=pica8
+23:32 +0800 <ken_ho>: ovs-vsctl add-port br0 ge-1/1/4 - set interface ge-1/1/4 type=pica8
+23:32 +0800 <ken_ho>: 所以說這些type=pica8也是同樣的意思xd?
+23:34 +0800 <John_aduim>: 這個應該是他們自己克制畫的一些指令
+23:34 +0800 <John_aduim>: 給pica8  機器吃的
+23:34 +0800 <John_aduim>: 通常在ovs沒那們多
+23:35 +0800 <ken_ho>: hmm
+23:35 +0800 <John_aduim>: 像我在centec上 操作幾乎跟ovs一樣
+23:35 +0800 <John_aduim>: 跳到pica8有些不習慣
+23:36 +0800 <ken_ho>: 恩
+23:36 +0800 <ken_ho>: 看來我只能先照著Pica8上面的指令先做
+23:36 +0800 <John_aduim>: 恩恩
+23:37 +0800 <ken_ho>: 對了
+23:38 +0800 <John_aduim>: 恩
+23:38 +0800 <ken_ho>: 你們用macbook，有用serial console 嗎
+23:38 +0800 <John_aduim>: 有
+23:38 +0800 <ken_ho>: and hyperterminal
+23:38 +0800 <John_aduim>: 我用screen
+23:38 +0800 <ken_ho>: 用哪一套tool?? mininet , tmux ?
+23:39 +0800 <ken_ho>: oh...
+23:39 +0800 <ken_ho>: screen..hmm
+23:39 +0800 <John_aduim>: screen好用
+23:39 +0800 <John_aduim>: 一個指令就能連上
+23:39 +0800 <John_aduim>: screen /dev/tty.usbserial 128000
+23:39 +0800 <John_aduim>: 像這樣
+23:40 +0800 <ken_ho>: 好喔，那我google一下
+23:40 +0800 <ken_ho>: 看怎麼裝
+23:40 +0800 <John_aduim>: 你用mac
+23:40 +0800 <John_aduim>: ?
+23:40 +0800 <ken_ho>: YES
+23:40 +0800 <John_aduim>: 你先裝 brew
+23:41 +0800 <John_aduim>: 它是一套在mac上的套件管理工具
+23:41 +0800 <John_aduim>: 裝好之後你就可以用brew install screen
+23:41 +0800 <ken_ho>: http://brew.sh/index_zh-tw.html
+23:41 +0800 <sdnsd-tw_Bot>: ==> Homebrew — OS X 缺少的套件管理工具
+23:42 +0800 <ken_ho>: this one?
+23:42 +0800 <John_aduim>: 
+23:42 +0800 <John_aduim>: 恩 你按照她的步驟一步步來
+23:43 +0800 <John_aduim>: 它的安裝在下面喔
+23:43 +0800 <John_aduim>: 只有一步
+23:44 +0800 <ken_ho>: $ brew install wget
+23:44 +0800 <ken_ho>: 就這個 ?
+23:44 +0800 <ken_ho>: ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+23:44 +0800 <ken_ho>: 看到了...
+23:45 +0800 <John_aduim>: 是
+23:46 +0800 <pichuang>: 疑 mac 上用 serial console可以work?
+23:46 +0800 <pichuang>: 我都不行耶xddd
+23:46 +0800 <pichuang>: 一直卡driver
+23:47 +0800 <John_aduim>: 可以啊～
+23:47 +0800 <John_aduim>: 不介意的話可以參考我這篇
+23:47 +0800 <John_aduim>: http://linton.tw/2014/07/28/in-the-mac-os-x-install-aten-mavericks-uc-232a-usb-to-serial-driver/
+23:47 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/ug34V  ==> 在 Mac OS X Mavericks 上安裝 Aten UC-232A USB to Serial 驅動程式 | John's Lin Blog
+23:47 +0800 <John_aduim>: driver很重要
+23:47 +0800 <John_aduim>: 儘量不要買太差的rs232 to isb
+23:47 +0800 <John_aduim>: usb
+23:52 +0800 <John_aduim>: 這篇是我在解一個 console沒辦法再mac上使用的問題
+23:53 +0800 <John_aduim>: 如果你挑比較好一點的console就不會有這個問題
+23:57 +0800 <pichuang>: 哀傷 我挑到一個地雷牌
+23:57 +0800 <pichuang>: 害我要裝vm塞windows
+23:58 +0800 <ken_ho>: 安裝screen , 只需要$ brew install screen ??
+23:58 +0800 <pichuang>: 然後用一個很奇怪的方式連console
+23:58 +0800 <pichuang>: ken_ho: y
+23:58 +0800 <ken_ho>: XD
+23:59 +0800 <ken_ho>: $ brew install screen
+23:59 +0800 <ken_ho>: Error: No available formula for screen
+23:59 +0800 <ken_ho>: Apple distributes screen with OS X, you can find it in /usr/bin.
+23:59 +0800 <pichuang>: 應該有裝好了吧
+23:59 +0800 <pichuang>: /usr/bin/screen 找找看
