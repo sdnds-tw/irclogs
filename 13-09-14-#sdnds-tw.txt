@@ -1,0 +1,207 @@
+00:00 +0800 <ken_ho>: $ which screen
+00:00 +0800 <ken_ho>: /usr/bin/screen
+00:00 +0800 <ken_ho>: yes XD
+00:02 +0800 <pichuang>: 找個好看的.screenrc用
+00:11 +0800 <John_aduim>: 有了嗎
+00:12 +0800 <ken_ho>: 我的serial console似乎不需要安裝driver就能用了
+00:12 +0800 <ken_ho>: screen也裝好了，正在熟悉中
+00:12 +0800 <John_aduim>: 是啊！
+00:12 +0800 <ken_ho>: 以前是用tmux
+00:12 +0800 <ken_ho>: XD
+00:12 +0800 <John_aduim>: 好的console 通常不需要的
+00:15 +0800 <ken_ho>: 我錯了
+00:15 +0800 <ken_ho>: 要裝driver
+00:15 +0800 <John_aduim>: 你是哪個牌子的啊
+00:15 +0800 <ken_ho>: 我找不到 /dev/tty.usbserial
+00:15 +0800 <ken_ho>: 我看一下
+00:16 +0800 <John_aduim>: 不一定喔
+00:16 +0800 <John_aduim>: 他名字有時候不同
+00:16 +0800 <John_aduim>: 你可以打tty.usb然後tab看看
+00:16 +0800 <ken_ho>: https://www.irccloud.com/pastebin/NOUai003
+00:16 +0800 <sdnsd-tw_Bot>: ==> Pastebin: NOUai003 | IRCCloud
+00:17 +0800 <ken_ho>: 沒有 xd
+00:18 +0800 <John_aduim>: 恩恩
+00:18 +0800 <John_aduim>: 抓一下吧
+00:19 +0800 <ken_ho>: 應該是用你的方法就可以了吧
+00:19 +0800 <John_aduim>: 同一款的console嗎
+00:19 +0800 <ken_ho>: 不同款
+00:19 +0800 <John_aduim>: 我的那個牌子因為久沒更新才那樣
+00:19 +0800 <John_aduim>: 如果你買正常一點的話是不需要的
+00:19 +0800 <John_aduim>: 找了driver就能直接用
+00:20 +0800 <ken_ho>: 我找看看
+00:21 +0800 <ken_ho>: 我的這個serial console也是非常非常舊款的
+00:21 +0800 <ken_ho>: 150 還是200 一條
+00:21 +0800 <John_aduim>: 恩
+00:21 +0800 <John_aduim>: 我買http://goods.ruten.com.tw/item/show?21012080762908
+00:21 +0800 <John_aduim>: 這是後來買的
+00:22 +0800 <John_aduim>: 你找到driver下載試試吧 我那個是要同一款的才能那樣改噢
+00:22 +0800 <ken_ho>: hmm
+00:23 +0800 <ken_ho>: http://goods.ruten.com.tw/item/show?21405070253818
+00:23 +0800 <ken_ho>: 我的是這一款
+00:24 +0800 <John_aduim>: 他沒有給driver?
+00:25 +0800 <ken_ho>: 有小光碟，但買來就丟了...
+00:25 +0800 <ken_ho>: 我用ubuntu 原生就支援
+00:25 +0800 <ken_ho>: 所以沒理他driver...
+00:25 +0800 <ken_ho>: 這下慘了
+00:25 +0800 <ken_ho>: xd
+00:25 +0800 <John_aduim>: 他晶片組是什麼名字
+00:26 +0800 <ken_ho>: http://www.krn.ru/gmt/gmus-03en.htm
+00:26 +0800 <sdnsd-tw_Bot>: ==> USB-COM (RS-232) - GMUS-03
+00:26 +0800 <ken_ho>: 我找到了
+00:27 +0800 <ken_ho>: Driver for MAC 10.x	--	 GMUS-Mac10x.zip (31365)
+00:27 +0800 <John_aduim>: 恩 試試吧
+00:28 +0800 <ken_ho>: 我看晶片應該是跟你一樣
+00:28 +0800 <ken_ho>: 同個廠商
+00:28 +0800 <ken_ho>: 不同牌子而已
+00:29 +0800 <John_aduim>: 恩
+00:29 +0800 <John_aduim>: 那你遇到一樣的問題在用我那個方法解吧
+00:29 +0800 <John_aduim>: http://www.prolific.com.tw/US/ShowProduct.aspx?p_id=229&pcid=41
+00:29 +0800 <sdnsd-tw_Bot>: ==> 
+	Products
+00:29 +0800 <John_aduim>: 我這邊有找到PL2303的
+00:30 +0800 <ken_ho>: 恩恩，我試試
+00:30 +0800 <John_aduim>: 恩
+00:35 +0800 <PoWen>: 看得到我嗎
+00:35 +0800 <John_aduim>: yup
+00:35 +0800 <ken_ho>: YES
+00:36 +0800 <John4irc>: PoWen感謝你資料
+00:36 +0800 <pichuang>: ndn
+00:36 +0800 <pichuang>: 有趣
+00:36 +0800 <ken_ho>: https://www.irccloud.com/pastebin/jXDTR4av
+00:36 +0800 <sdnsd-tw_Bot>: ==> Pastebin: jXDTR4av | IRCCloud
+00:36 +0800 <John4irc>: 有個很像mininet的 我覺得還不賴有空來研究
+00:36 +0800 <pichuang>: 那個我看了一下 可以當一般模擬網路的軟體
+00:36 +0800 <pichuang>: 類似ns2
+00:37 +0800 <John4irc>: ken_ho 這樣應該是裝好了
+00:37 +0800 <ken_ho>: John4irc>  xd
+00:37 +0800 <PoWen>: oh 太好了
+00:37 +0800 <PoWen>: 好久沒上IRC
+00:37 +0800 <PoWen>: 都快失聯了
+00:37 +0800 <PoWen>: sure
+00:37 +0800 <John4irc>: pichuang 我剛剛有貼ryu有中文版了不知道你有沒有看到XD
+00:37 +0800 <pichuang>: PoWen: 有人剛出來 連鍵盤都不知道怎麼打了xd
+00:37 +0800 <pichuang>: John4irc: 有我有看到
+00:37 +0800 <PoWen>: 俄羅斯客戶，接觸很多有意思的東西，在考慮要佈建成商用網路
+00:38 +0800 <pichuang>: 超猛的阿
+00:38 +0800 <PoWen>: wow Ryu有中文版
+00:38 +0800 <pichuang>: PoWen: 哪部分要佈建?
+00:38 +0800 <John4irc>: YES
+00:38 +0800 <PoWen>: 酷耶
+00:38 +0800 <John4irc>: PoWen http://osrg.github.io/ryu-book/zh_tw/html/index.html
+00:38 +0800 <sdnsd-tw_Bot>: ==> RYU SDN Framework — Ryubook 1.0 documentation
+00:39 +0800 <PoWen>: autonetkit + 25GbE
+00:39 +0800 <PoWen>: 25GbE, 客戶在等我們做出來
+00:40 +0800 <pichuang>: 25GbE ._. 太扯了 我連10GbE都很難見到
+00:40 +0800 <PoWen>: 應該說，我的客戶都是network architect, 所以他們都在看最新網路架構，哪個最好
+00:40 +0800 <PoWen>: 10G喔
+00:40 +0800 <PoWen>: 不會啦
+00:40 +0800 <John4irc>: autonetkit 不是只有模擬嗎？
+00:40 +0800 <PoWen>: 以後我會用機器塞爆你實驗室
+00:40 +0800 <PoWen>: 好像不只模擬
+00:41 +0800 <PoWen>: 有點像是即時網管
+00:41 +0800 <pichuang>: PoWen: xd 太扯了xd
+00:41 +0800 <PoWen>: 25GbE的出現，是因為100G太貴了
+00:41 +0800 <PoWen>: 40G很普及，但是目前Server網卡還是只有10G, 如果Server網卡有25GbE, switch也支援25GbE, 那就perfect了
+00:42 +0800 <PoWen>: 100G的transceiver非常貴，但是已經有實際商用
+00:42 +0800 <PoWen>: autonetkit, 我得仔細研究一下，因為我的客戶在用
+00:42 +0800 <PoWen>: ㄟ，我的客戶其實就是Yandex啦
+00:42 +0800 <pichuang>: 好扯哦 @@
+00:42 +0800 <PoWen>: Russian version Google
+00:43 +0800 <PoWen>: 嘿啊，給大家參考一下
+00:44 +0800 <pichuang>: backplane capacity 大概多少?
+00:44 +0800 <PoWen>: 至少3TB
+00:44 +0800 <pichuang>: ...............
+00:44 +0800 <PoWen>: ㄟ不對，sorry, 6TB
+00:44 +0800 <pichuang>: 太扯了
+00:44 +0800 <PoWen>: Broadcom的tomahawk chipset, 支援32x100G
+00:45 +0800 <PoWen>: 所以switching capacity, Full-Duplex是 6.4TB
+00:45 +0800 <PoWen>: 所以backplane至少6.4TB
+00:45 +0800 <John_aduim>: Yandex 他們市場是不是只有他們境內啊
+00:45 +0800 <PoWen>: 還有包含歐洲
+00:45 +0800 <John_aduim>: 哦 原來
+00:45 +0800 <PoWen>: Yandex在整個歐洲都有
+00:45 +0800 <pichuang>: 總部在荷蘭
+00:45 +0800 <PoWen>: yes
+00:45 +0800 <John_aduim>: 不過一個俄羅斯也夠大了
+00:45 +0800 <PoWen>: 沒錯
+00:46 +0800 <PoWen>: 搜尋引擎，在俄羅斯市占率至少75%
+00:46 +0800 <pichuang>: 所以他們跟google不太熟囉
+00:46 +0800 <PoWen>: 現在俄羅斯和歐洲美國，又這麼交惡，市占率又提昇了
+00:46 +0800 <John_aduim>:  恩啊 強國討厭美帝吧
+00:46 +0800 <PoWen>: 技術人員，私底下交流，都有認識
+00:46 +0800 <pichuang>: 不愧是戰鬥民族
+00:46 +0800 <PoWen>: 俄羅斯現在在拉攏伊朗啊
+00:47 +0800 <PoWen>: 俄羅斯拉攏伊朗對抗西方
+00:47 +0800 <PoWen>: 美國拉攏伊朗對抗伊斯蘭世界
+00:47 +0800 <John_aduim>: Yandex是目前世界第五大搜索引擎：在2012年4月，平均每日的搜索量超過1.5億次
+00:47 +0800 <PoWen>: 伊朗：超爽der~~~~
+00:47 +0800 <John_aduim>: 難怪剛剛說25GbE
+00:48 +0800 <John_aduim>: 像我知道韓國也不太用google
+00:48 +0800 <PoWen>: yes
+00:48 +0800 <John_aduim>: 他們也有自己一套
+00:48 +0800 <PoWen>: yes
+00:48 +0800 <John_aduim>: NAVER
+00:49 +0800 <PoWen>: Russia這裡的社交軟體第一名，是VK, 也不是Facebook
+00:49 +0800 <PoWen>: naver, 我也想去接觸 XD
+00:49 +0800 <PoWen>: Ken Ho現在在幫我support俄羅斯客戶的BigSwitch測試，還有歐洲客戶的Pica8測試
+00:49 +0800 <PoWen>: 還好有跟你們交流
+00:49 +0800 <ken_ho>: XD
+00:49 +0800 <PoWen>: 不然會爆 XD
+00:50 +0800 <John_aduim>: XD
+00:50 +0800 <pichuang>: xd 教學相長
+00:50 +0800 <John_aduim>: 應該連上了吧ken_ho？
+00:50 +0800 <ken_ho>: yup
+00:50 +0800 <John_aduim>: good 有需要改嗎
+00:50 +0800 <John_aduim>: 還是直接連上
+00:50 +0800 <ken_ho>: 完全不需改，直接安裝driver
+00:50 +0800 <ken_ho>: 搞定
+00:50 +0800 <John_aduim>: 恩
+00:57 +0800 <PoWen>: Ryubook中文化，是誰弄的啊
+00:57 +0800 <PoWen>: 好強
+00:57 +0800 <PoWen>: 用github完成中文化的？
+01:07 +0800 <John4irc>: 恩啊
+01:08 +0800 <John4irc>: 我的舊同事
+01:08 +0800 <PoWen>: 厲害
+01:08 +0800 <John4irc>: 他被派到日本okinawa open lab
+01:08 +0800 <John4irc>: 有一陣子了
+01:10 +0800 <John4irc>: 大家在看的同時有錯別字可以發發patch阿～
+02:02 +0800 <PoWen>: 好喔
+08:30 +0800 <hwchiu_znc>: 有時間 想研究 switchlight
+09:33 +0800 <ken_ho>: hello
+09:33 +0800 <ken_ho>: 早安
+10:07 +0800 <ken_ho>: 請問ovs-ofctl add-flow "in_port"可以設定range嗎
+10:07 +0800 <ken_ho>: 譬如in_port = 1,2,3,4
+10:07 +0800 <ken_ho>: or in_port = 1-4
+10:07 +0800 <ken_ho>: range 1-4 .
+10:07 +0800 <ken_ho>: 之類的
+12:34 +0800 <John4irc>: pica8 ?
+12:35 +0800 <John4irc>: 好像要一個個加
+12:36 +0800 <ken_ho>: Yes , pica8
+15:48 +0800 <ken_ho>: !!
+15:48 +0800 <ken_ho>: 今天 irc怪怪的嗎
+15:48 +0800 <ken_ho>: 會連不上
+15:49 +0800 <John4irc>: 不會耶
+15:49 +0800 <ken_ho>: 該不會，是irccloud的問題xd
+15:50 +0800 <John4irc>: 有可能喔
+18:59 +0800 <PoWen>: 嗨邱宏偉，好久不見啊
+19:00 +0800 <PoWen>: 歡迎來研究switchlight噢
+19:00 +0800 <PoWen>: 只是得在我們LAB就是了
+19:56 +0800 <hwchiu_znc>: 只是研究那個 我會沒有bare metal來測試 比較麻煩
+22:03 +0800 <PoWen>: 喔
+22:03 +0800 <PoWen>: 我提供bare metail
+22:03 +0800 <ken_ho>: XD
+22:04 +0800 <PoWen>: bare metak switch
+22:04 +0800 <PoWen>: 看你要1G, 10G, 40G
+22:04 +0800 <PoWen>: all ok
+22:04 +0800 <PoWen>: Ken你反應還真快
+22:04 +0800 <PoWen>: ha
+22:05 +0800 <PoWen>: 只是我bare metal數量有限，本來想放小飛機實驗室讓他玩個夠
+22:05 +0800 <PoWen>: 主要是提供給新竹地區的SDNDS-TW們借測使用
+22:13 +0800 <ken_ho>: 問一下，ovs原先就support WEB interface?
+22:22 +0800 <hwchiu>: 印象沒有
+22:22 +0800 <ken_ho>: OH
+22:23 +0800 <ken_ho>: 那...就是Pica8有為OVS做了一個web interface
+22:31 +0800 <hwchiu>: ＸＤ好用嗎
+22:31 +0800 <ken_ho>: 指令比較好用~~
+22:32 +0800 <ken_ho>: 呵
+23:45 +0800 <PoWen>: John, 原來你是磨課師的助教耶
