@@ -1,0 +1,204 @@
+00:05 +0800 <John4irc>: 恩啊
+00:05 +0800 <John4irc>: 老師下令
+00:05 +0800 <John4irc>: 還有北京清華的學堂在線
+00:05 +0800 <John4irc>: ken_ho pica8的ovs指令真的不好用XD centec超好用
+00:06 +0800 <ken_ho>: !!
+00:06 +0800 <ken_ho>: 那...我是從難的開始學XD
+00:07 +0800 <John4irc>: 你用過在PC上使用的軟體ovs嗎
+00:07 +0800 <ken_ho>: 還沒
+00:07 +0800 <John4irc>: centec 指令幾乎跟她一樣 所以無痛轉移
+00:07 +0800 <ken_ho>: 雖然我們LAB很多台電腦讓我玩...但實在是沒時間...
+00:08 +0800 <John4irc>: 我唯一最喜歡pica8的一點是 它可以關風扇＝＝
+00:08 +0800 <John4irc>: 不然我每次做實驗超吵 centec就無法關
+00:08 +0800 <ken_ho>: ...
+00:08 +0800 <ken_ho>: 這還不簡單，把機殼拆了
+00:08 +0800 <ken_ho>: 風扇電源拔掉
+00:09 +0800 <ken_ho>: 但記得要加USB風扇讓他吹
+00:09 +0800 <John4irc>: 也是＝＝ 還要動刀有點懶惰
+00:10 +0800 <John4irc>: 通常你那些指令可以寫成shell放在目錄底下啦
+00:10 +0800 <John4irc>: 例如add port
+00:10 +0800 <John4irc>: 比較例行性的指令
+00:11 +0800 <ken_ho>: 恩恩..
+00:11 +0800 <John4irc>: 然後你開機就執行那隻shell就能用了
+00:11 +0800 <ken_ho>: OVS指令不能存嗎
+00:12 +0800 <John4irc>: 可以寫到shell檔案裡面
+00:12 +0800 <ken_ho>: 我今天測PICA8，bridge and port有自動存起來。但flow entry 重開就沒了
+00:13 +0800 <John4irc>: flow entry應該不能存
+00:15 +0800 <ken_ho>: 恩...
+00:17 +0800 <John4irc>: 存了不好吧XD還要刪除
+00:17 +0800 <John4irc>: 挺麻煩的
+00:26 +0800 <ken_ho>: https://www.irccloud.com/pastebin/G0HDddLP
+00:26 +0800 <sdnsd-tw_Bot>: ==> Pastebin: G0HDddLP | IRCCloud
+00:26 +0800 <ken_ho>: 怪
+00:26 +0800 <ken_ho>: 為什麼沒有br0
+00:30 +0800 <ken_ho>: https://www.irccloud.com/pastebin/T9RnvE7K
+00:30 +0800 <sdnsd-tw_Bot>: ==> Pastebin: T9RnvE7K | IRCCloud
+00:31 +0800 <ken_ho>: 有什麼原因會導致ovs-ofctl會找不到br0?
+00:34 +0800 <PoWen>: John, 有什麼辦法能讓ovs記住flow嗎？重開機以後, 某些特定的flow還在
+00:35 +0800 <PoWen>: pre-installed的flow, 要寫入預設的開機config
+00:35 +0800 <hwchiu>: 太酷了ＸＤ 不知道為什麼找不到
+00:35 +0800 <ken_ho>: !!
+00:35 +0800 <hwchiu>: 真的要做就寫個script,透過ovs-ofctl add-flows 開機後寫入吧？
+00:36 +0800 <John4irc>: 我沒有做過這方面的動作椰
+00:36 +0800 <John4irc>: 還有一個方法就是配合controller
+00:36 +0800 <PoWen>: 原因是考慮 in-band management control時，需要有預先install好的flow, 才能認得網管的traffic
+00:36 +0800 <ken_ho>: flow-entry要能存，這是我目前要解決的問題XD
+00:36 +0800 <PoWen>: script能存在哪裡？
+00:36 +0800 <John4irc>: 存在任何地方都行
+00:37 +0800 <John4irc>: 可能要再開機的時候自動跑這個shell
+00:37 +0800 <PoWen>: yes
+00:37 +0800 <hwchiu>: 恩嗯
+00:37 +0800 <PoWen>: 我和Ken在找這個解法
+00:37 +0800 <hwchiu>: init.d/ ?
+00:38 +0800 <PoWen>: 我對軟體實在不熟，無法很好的理解該如何實作
+00:38 +0800 <PoWen>: 我先解釋原因好了
+00:38 +0800 <John4irc>: 恩
+00:38 +0800 <John4irc>: init.d
+00:38 +0800 <PoWen>: 俄羅斯幅員廣大
+00:38 +0800 <PoWen>: 電信營運商，如果要佈SDN
+00:38 +0800 <PoWen>: 需要考慮如何佈建management network
+00:39 +0800 <PoWen>: 如果是out-of-band, 那cabling會很貴，不在同一機房，距離一長，這成本就貴
+00:39 +0800 <PoWen>: 所以勢必要考慮in-band management
+00:40 +0800 <John4irc>: 那為什麼會有開關機的問題？
+00:40 +0800 <PoWen>: 好問題
+00:40 +0800 <John4irc>: switch不都設定好之後，不都沒再關機嗎XD
+00:40 +0800 <PoWen>: 理論上來說
+00:40 +0800 <PoWen>: 這是用在第一次安裝
+00:40 +0800 <PoWen>: 一插電，插網路線，就能用，傻瓜安裝
+00:41 +0800 <PoWen>: 這樣安裝人員的素質就不用高，又可以降低人員成本
+00:41 +0800 <PoWen>: 如果需要用ovs-ofctl去手動安裝flow
+00:41 +0800 <PoWen>: 一安裝錯，就很麻煩，人為很容易出錯
+00:41 +0800 <PoWen>: 再者
+00:41 +0800 <PoWen>: 還需要考慮
+00:42 +0800 <PoWen>: 萬一OF switch, 與controller長時間斷線
+00:42 +0800 <PoWen>: flow全部都timeout掉以後
+00:42 +0800 <PoWen>: ( 當然不希望全部timeout掉啦
+00:42 +0800 <PoWen>: 要能維持基本的service
+00:42 +0800 <John4irc>: 恩
+00:43 +0800 <PoWen>: 又要能認得網管
+00:43 +0800 <PoWen>: 實際佈建時有點麻煩，要考慮的有點多
+00:43 +0800 <John4irc>: 我記得ovs有個設定是在與controller失去聯繫後 你可以選擇要跑傳統l2 switch的模式或不做事
+00:43 +0800 <PoWen>: 是喔
+00:43 +0800 <PoWen>: 我剛有讀到這個
+00:43 +0800 <PoWen>: 還不確定怎麼用
+00:44 +0800 <PoWen>: init.d
+00:44 +0800 <PoWen>: 感謝分享
+00:44 +0800 <John4irc>: secure mode / standalone mode
+00:44 +0800 <PoWen>: 之後試一下
+00:45 +0800 <PoWen>: 噢 standalone mode
+00:45 +0800 <PoWen>: I see
+00:45 +0800 <John4irc>: 我剛說的那個在ovs指令裡面有
+00:45 +0800 <John4irc>: 找一下vsctl fail-mode的指令
+00:46 +0800 <John4irc>: http://roan.logdown.com/posts/191801-set-openvswitch
+00:46 +0800 <sdnsd-tw_Bot>: ==> 設定 OpenvSwitch « roan's Blog
+00:46 +0800 <John4irc>: 這篇有 XD
+00:46 +0800 <John4irc>: 關於 fallback 的那一個section看一下
+00:46 +0800 <ken_ho>: john, thanks :)
+00:47 +0800 <PoWen>: reading
+00:47 +0800 <PoWen>: thanks
+00:47 +0800 <hwchiu>: 不過我記得預設沒有l3
+00:47 +0800 <John4irc>: 另外 init.d 是linux的一種服務
+00:47 +0800 <PoWen>: 預設沒有l3, ok. noted.
+00:47 +0800 <PoWen>: 服務？
+00:47 +0800 <PoWen>: 指daemon ?
+00:48 +0800 <hwchiu>: learning switch & spanning tree預設有
+00:48 +0800 <hwchiu>: 我講的是 fail_mode
+00:48 +0800 <John4irc>: 你把shell放進去那個目錄底下設定好後，他會去執行那個shell
+00:48 +0800 <John4irc>: 應該是l2
+00:49 +0800 <PoWen>: interesting
+00:49 +0800 <John4irc>: init.d可以看一下鳥哥
+00:49 +0800 <John4irc>: http://linux.vbird.org/linux_basic/0560daemons.php#whereisdaemon
+00:49 +0800 <sdnsd-tw_Bot>: ==> 鳥哥的 Linux 私房菜 -- 認識 Linux 系統服務的 daemons
+00:53 +0800 <PoWen>: thank you.
+00:55 +0800 <PoWen>: 我有問題
+00:56 +0800 <PoWen>: OVS似乎支援在一台switch上創見多個bridge
+00:56 +0800 <PoWen>: 多個bridge之間，應該是獨立的
+00:56 +0800 <PoWen>: 問題一：兩個bridge之間，怎麼建立link ?
+00:57 +0800 <PoWen>: 問題二：兩個bridge, 各自的flow table, 應該也是獨立？這是怎麼實作在hardware switch上的啊...
+00:58 +0800 <John4irc>: 這兩個問題我無法XD 召喚小飛機跟 hwchiu
+00:59 +0800 <hwchiu>: 話說
+00:59 +0800 <hwchiu>: 什麼情況下
+00:59 +0800 <hwchiu>: 會想要在hardware switch上 跑多個bridge
+00:59 +0800 <hwchiu>: 我們研究中會遇到通常是使用mininet來emulate 網路
+01:00 +0800 <hwchiu>: 才會有多個bridge, 這中間透過veth特需的介面來在系統中打通兩個bridge
+01:00 +0800 <hwchiu>: flow table話是獨立的
+01:00 +0800 <hwchiu>: 要如何實作ＸＤ 就變成你要看
+01:01 +0800 <hwchiu>: 通常hardware switch上不會運行kernel mode，所以他的datapath(bridge)是採用user_space的方式去實作
+01:01 +0800 <hwchiu>: 可能就要看它的程式碼
+01:01 +0800 <hwchiu>: 是如何把flow table跟底下硬體的去結合的
+01:02 +0800 <PoWen>: 瞭解
+01:02 +0800 <PoWen>: 為什麼喔
+01:02 +0800 <PoWen>: 這比較像是service level的問題
+01:03 +0800 <PoWen>: 切成邏輯上獨立不同的bridge，如果flow table不一樣，那就可以重複使用MAC, 重複使用IP等等
+01:03 +0800 <PoWen>: 這可以用很容易的方式提供VPN
+01:03 +0800 <hwchiu>: 哦哦
+01:03 +0800 <PoWen>: Cloud 環境裡面，可以非常容易的提供 multi-tenancy的isolation
+01:04 +0800 <ken_ho>: multiple routing table
+01:04 +0800 <PoWen>: 不只physical level, 到application level的isolation，都很簡單
+01:04 +0800 <hwchiu>: 恩嗯
+01:04 +0800 <PoWen>: OpenStack的Neutron, 我記得有人有實作這種multi-tenancy isolation
+01:05 +0800 <ken_ho>: OH
+01:05 +0800 <PoWen>: 看來HW Switch上實作得問Pica8
+01:05 +0800 <hwchiu>: 恩恩
+01:06 +0800 <ken_ho>:  Neutron 是用router來切private cloud ...我想他的概念應該差不多
+01:06 +0800 <PoWen>: VRF, Virtual Routing Forwarding, 就是在一台Router上, 有多張獨立的routing table, 可以很簡單的提供 IP-VPN service, 而且IP位置可以重複使用，不會有問題
+01:06 +0800 <hwchiu>: ohoh 感謝
+01:07 +0800 <PoWen>: sure no problem
+01:07 +0800 <PoWen>: 講都很簡單，我都不會做 XDDDDDDDDDDDDDD
+01:07 +0800 <PoWen>: 實作能力 = 0 = 弱...
+01:08 +0800 <PoWen>: 所以我決定，效法Ken讓磨課師的程式設計，讓John折磨一下 XDDDDD
+01:09 +0800 <PoWen>: 好像開課了噢
+01:09 +0800 <hwchiu>: XD
+01:10 +0800 <PoWen>: 邱渣，我有看到那個synology的照片
+01:10 +0800 <PoWen>: 那是迎新哦？
+01:10 +0800 <PoWen>: 嗨小飛機
+01:10 +0800 <PoWen>: 很晚咧
+01:11 +0800 <hwchiu>: PoWen: DSM 5.1 BETA發表會而已ＸＤ
+01:11 +0800 <hwchiu>: 去看看 順便拼抽獎 結果都抽不到
+01:12 +0800 <PoWen>: 那代表好運都留在後面啦
+01:13 +0800 <ken_ho>: http://www.brocade.com/forms/jsp/vyatta-download/index.jsp?src=SM&lsd=TW&lst=Website_Cards&cn=SDN-GDG-14Q4-EVAL-Vyatta
+01:13 +0800 <sdnsd-tw_Bot>: URL: http://phdta.info/lDOj8  ==> Brocade Vyatta 5400 vRouter Free Trial
+01:13 +0800 <hwchiu>: XD
+01:14 +0800 <ken_ho>: https://www.irccloud.com/pastebin/f1i9L9Ac
+01:14 +0800 <sdnsd-tw_Bot>: ==> Pastebin: f1i9L9Ac | IRCCloud
+01:14 +0800 <ken_ho>: 24/7 support !!
+01:14 +0800 <ken_ho>: 好威
+01:15 +0800 <PoWen>: Brocade Vyatta
+01:15 +0800 <PoWen>: yes
+01:15 +0800 <John4irc>: 5.1有什麼新功能嗎XD
+01:15 +0800 <PoWen>: 24x7是weakness
+01:16 +0800 <hwchiu>: John4irc: 一言難盡，你等beta release後去玩玩看
+01:16 +0800 <John4irc>: 好的XD
+01:16 +0800 <PoWen>: 一言難盡 XD
+01:19 +0800 <PoWen>: 請教一個問題
+01:19 +0800 <PoWen>: linux裡面，有個服務，叫做mgmtd嗎
+01:22 +0800 <hwchiu>: 不熟ＸＤ
+01:23 +0800 <hwchiu>: ＨＡ？
+01:30 +0800 <PoWen>: 好像不是HA
+01:30 +0800 <PoWen>: 我google也go不太到
+01:30 +0800 <PoWen>: 應該說，go了我也看不懂
+01:32 +0800 <PoWen>: Linux HA mailing list
+01:32 +0800 <PoWen>: 看不懂
+01:35 +0800 <hwchiu>: heartbeat
+01:45 +0800 <PoWen>: 啊哈
+01:45 +0800 <PoWen>: heartbeat, 沒仔細看，我也不敢亂問蠢問題 XD
+02:55 +0800 <PoWen>: 該睡覺了耶
+09:29 +0800 <ken_ho>: 早
+09:30 +0800 <ken_ho>: xd
+14:22 +0800 <pichuang>: 該來開聚會通知了
+14:22 +0800 <pichuang>: xd
+14:22 +0800 <pichuang>: 這個月講一下openvswitch的介紹好了
+14:22 +0800 <pichuang>: 順便講一下一些debug會用到的方法
+14:23 +0800 <pichuang>: ryu 就要麻煩 John4irc 大大了
+14:31 +0800 <hwchiu>: mo
+14:35 +0800 <pichuang>: 9/27 13:00
+14:35 +0800 <pichuang>: 不知道有沒有人有建議的XD
+14:40 +0800 <hwchiu>: 我都好 我只能六日盡量
+20:48 +0800 <pichuang>: 如果大家都沒意見的話我明天就要開聚會了
+20:57 +0800 <ken_ho>: 明天?
+20:57 +0800 <pichuang>: 明天發佈聚會通知
+20:57 +0800 <pichuang>: xd
+20:58 +0800 <ken_ho>: 呵，我剛還在想，明天不是禮拜一嗎
+21:20 +0800 <hwchiu>: XD
+23:47 +0800 <John4irc>: ok~
+23:55 +0800 <hwchiu>: 台北新竹？
