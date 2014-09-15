@@ -1,0 +1,47 @@
+00:23 +0800 <John4irc>: 上次好像有說新竹
+00:23 +0800 <hwchiu>: okok
+06:15 +0800 <JalenLin_>: hwchiu: 你可以辦台北場阿
+14:47 +0800 <kigipaul_>: 想請問一下  有人有做過  會自動偵測 Flow Overlap 的 Application 嗎?
+14:48 +0800 <kigipaul_>: 像是 原本已經有 Flow: match{vlan:10},actions{output:1}
+14:49 +0800 <kigipaul_>: 當我下令一個 Flow: match{src_ip:10.0.0.1},actions{output:2}
+14:50 +0800 <kigipaul_>: 的時候 自動偵測 而額外再自行增加高優先度 Flow: match{vlan:10,src_ip:10.0.0.1},actions{output:1,output:2}
+14:52 +0800 <kigipaul_>: 目前想到的方法是想說 在每次 要下 Flow 的時候  都先去詢問現在的 Flow Table狀態 檢查是否會發生 Overlap
+14:54 +0800 <kigipaul_>: 但這樣的方法 好像效能會很差  不知道有沒有比較好的建議
+15:32 +0800 <hwchiu>: 我記得有overlap的flag
+15:32 +0800 <hwchiu>: switch會主動通知
+15:32 +0800 <tacchen_>: 就上面例子看來我覺得沒有overlap @@?
+15:33 +0800 <hwchiu>: ++
+15:33 +0800 <hwchiu>: XD
+15:33 +0800 <tacchen_>: 因為我剛剛看很久想說是不是我搞錯什麼0.0
+16:12 +0800 <kigipaul>: 當兩個優先度一樣的時候 來了個封包是 vlan:10 src_ip:10.0.0.1 到這台switch 先match到 vlan10 就被 output:1了
+16:13 +0800 <kigipaul>: 這封包就不會送到port 2  但我希望是這封包同時送port 1 and 2
+16:14 +0800 <kigipaul>: 所以希望有一個application可以 幫我自動增加一個flow 在這種情形 可以同時送port 1 and 2
+16:14 +0800 <kigipaul>: 應該是我搞錯overlap的意思了@@
+16:18 +0800 <hwchiu>: 話說這種情況下，你要如何決定哪些flow要合併
+16:22 +0800 <kigipaul>: 我舉的這個例子 是因為封包同時會 存在 這兩個資料 但我卻分別下兩個flow 才會出問題
+16:23 +0800 <kigipaul>: 所以我要取得 目前的Flow 看是否會發生 多個flow的match 有可能同時存在單一封包內
+16:24 +0800 <kigipaul>: 這是我目前這樣想  但是需要 取得目前的Flow
+16:25 +0800 <kigipaul>: 目前Switch 上的 flow table*
+16:33 +0800 <hwchiu>: multi table不知道能否更好解決?
+16:37 +0800 <tacchen_>: multi table+1
+16:55 +0800 <kigipaul>: 來試看看
+16:55 +0800 <kigipaul>: 感謝
+16:56 +0800 <John4irc>: 以寫兩筆action
+16:56 +0800 <John4irc>: output 1 output 2
+17:21 +0800 <John4irc>: kigipaul switch會發 error msg 當overlap出現的時候controller會知道
+17:21 +0800 <John4irc>: 但是你剛剛的例子好像沒有overlap
+17:22 +0800 <John4irc>: 當兩個優先度一樣的時候 來了個封包是 vlan:10 src_ip:10.0.0.1 到這台switch 先match到 vlan10 就被 output:1了<<
+17:23 +0800 <John4irc>: 應該還需要match 到src_ip才會output 1
+17:23 +0800 <John4irc>: 如果你想要同一個flow 兩個output最快的方式就是寫兩個actions
+20:39 +0800 <hwchiu>: 我發現我目前最大的問題是，我沒有機器可以跑mininet了ＸＤ 失去lab後快不能跑東西了＝＝
+20:41 +0800 <ken_ho>: :(
+20:57 +0800 <pichuang>: G_G
+20:57 +0800 <pichuang>: 場地都被借光光了
+20:57 +0800 <pichuang>: 我明天來問系計中能不能外借好了
+20:59 +0800 <hwchiu>: 恩嗯
+21:00 +0800 <pichuang>: 如果不行的話再來研究看還有啥場地= =
+21:00 +0800 <pichuang>: 還是看有沒有人要幫忙找一下的
+21:02 +0800 <hwchiu>: 了
+21:10 +0800 <JalenLin>: hwchiu: 快在家裡自己建lab
+21:10 +0800 <JalenLin>: ky會跟你推薦 3U 8nodes
+21:12 +0800 <hwchiu>: ...
