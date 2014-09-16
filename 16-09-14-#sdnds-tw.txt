@@ -1,0 +1,72 @@
+19:17 +0800 <ken_ho>: hihi
+19:18 +0800 <pichuang>: hihi
+19:18 +0800 <ken_ho>: hihi
+19:18 +0800 <ken_ho>: 小飛機
+19:19 +0800 <ken_ho>: hihi John...
+19:19 +0800 <ken_ho>: 我在上moocs的程式設計導論xd
+19:19 +0800 <ken_ho>: 請教一下...xcode..你們有用嗎
+19:21 +0800 <pichuang>: 沒有耶XD 我看人家說很好用
+19:21 +0800 <pichuang>: 我都打打vim
+19:28 +0800 <ken_ho>: VI and VIM不同?
+19:29 +0800 <pichuang>: vim = vi improved
+19:29 +0800 <pichuang>: 我都用 vim 居多
+19:29 +0800 <ken_ho>: !!
+19:29 +0800 <ken_ho>: 那 ~~我也來裝一下好了
+19:30 +0800 <pichuang>: 恩恩
+19:30 +0800 <pichuang>: 配合適當的.vimrc會很方便
+19:30 +0800 <pichuang>: 好看好用
+19:31 +0800 <John_aduim>: vim +1
+19:34 +0800 <ken_ho>: https://code.google.com/p/macvim/
+19:34 +0800 <sdnsd-tw_Bot>: ==> 
+ macvim -
+ 
+ 
+ Vim for the Mac - Google Project Hosting
+ 
+19:34 +0800 <ken_ho>: macvim?
+19:35 +0800 <John_aduim>: 純ivm
+19:35 +0800 <John_aduim>: vim
+19:35 +0800 <John_aduim>: brew install vim
+19:36 +0800 <ken_ho>: hmm...
+19:36 +0800 <hwchiu_znc>: Macvim is vim plus plugin youcompleteme
+19:36 +0800 <hwchiu_znc>: 印象啦
+19:36 +0800 <hwchiu_znc>: 讓你用起來很強大
+19:38 +0800 <ken_ho>: http://blog.linton.tw/posts/2014/05/04/share-my-vim-configuration-file
+19:38 +0800 <ken_ho>: XD
+19:38 +0800 <sdnsd-tw_Bot>: ==> [分享] 我的Vim設定檔 « John Lin's Blog
+19:39 +0800 <John_aduim>: lol
+19:40 +0800 <ken_ho>: 我應該把.vimrc檔放在home資料夾底下，對吧?
+19:40 +0800 <pichuang>: yes
+19:41 +0800 <John_aduim>: 我記得那門課是寫Ｃ
+19:42 +0800 <ken_ho>: 是呀~~
+19:42 +0800 <John_aduim>: 我的syntax highlight 是python的
+19:42 +0800 <John_aduim>: 你如果要快速地入門可以直接用sublime text
+19:43 +0800 <hwchiu_znc>: 你可以裝macvim後試試看
+19:44 +0800 <John_aduim>: 或是跟老師一樣用codeblock
+19:44 +0800 <ken_ho>: XD你好多plugin
+19:44 +0800 <ken_ho>: 我昨天試了用codeblock...好像不行用
+19:45 +0800 <John_aduim>: 是喔 她有出mac版
+21:05 +0800 <JalenLin>: test
+21:06 +0800 <JalenLin>: https://code.google.com/p/macvim/
+21:06 +0800 <sdnsd-tw_Bot>: ==> 
+ macvim -
+ 
+ 
+ Vim for the Mac - Google Project Hosting
+ 
+21:22 +0800 <JalenLin>: bot下線1mins
+21:23 +0800 <JalenLin>: 修好那個奇怪的網址標題多行
+21:23 +0800 <JalenLin>: finish
+23:10 +0800 <Aliceequeen>: test
+23:11 +0800 <ken_ho>: ?
+23:14 +0800 <PoWen>: alicequeen
+23:14 +0800 <PoWen>: Hi Ken
+23:14 +0800 <PoWen>: 我剛回到飯店....
+23:14 +0800 <ken_ho>: hi
+23:14 +0800 <PoWen>: 累爆...
+23:14 +0800 <Aliceequeen>: 辛苦了....俄羅斯冷嗎?
+23:15 +0800 <PoWen>: Hi Alice
+23:15 +0800 <PoWen>: 偏涼
+23:15 +0800 <PoWen>: 還ok
+23:15 +0800 <ken_ho>: 台灣好熱...
+23:21 +0800 <PoWen>: 秋老虎...
