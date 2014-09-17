@@ -1,0 +1,90 @@
+00:08 +0800 <ken_ho>: 怪了
+00:08 +0800 <ken_ho>: 我安裝macvim (brew install macvim)
+00:08 +0800 <ken_ho>: 裝好後，怎麼執行 ?
+00:12 +0800 <pichuang>: /usr/bin/macvim trytry
+00:13 +0800 <ken_ho>: 沒有...
+00:13 +0800 <ken_ho>: bash-3.2$ which macvim
+00:13 +0800 <ken_ho>: bash-3.2$ brew list
+00:13 +0800 <ken_ho>: cscope  macvim  vim
+00:13 +0800 <ken_ho>: bash-3.2$
+00:14 +0800 <ken_ho>: 我裝錯了嗎..
+00:14 +0800 <ken_ho>: 怪
+00:15 +0800 <ken_ho>: http://blog.carlcarl.me/893/brew-install-macvi/
+00:15 +0800 <sdnsd-tw_Bot>: ==> brew install Macvim
+00:15 +0800 <ken_ho>: xd...
+00:15 +0800 <pichuang>: xd
+01:09 +0800 <hwchiu>: 直接編輯檔案
+01:09 +0800 <hwchiu>: 他應該只是裝vimrc而已
+01:28 +0800 <Davy_CC>: vim 就好了啊XD
+10:51 +0800 <ken_ho>: !!
+10:51 +0800 <ken_ho>: 可是我看不到有什麼變化...
+10:51 +0800 <ken_ho>: 他是會針對特定的副檔名做變化?
+10:52 +0800 <ken_ho>: 譬如.c的
+10:52 +0800 <ken_ho>: ?
+10:55 +0800 <pichuang>: 應該會有highlight
+10:57 +0800 <ken_ho>: 裝了macvim ，跟vim好像沒什麼差別
+10:57 +0800 <ken_ho>: 呵呵
+10:57 +0800 <ken_ho>: https://code.google.com/p/macvim/
+10:57 +0800 <sdnsd-tw_Bot>: ==>   macvim -      Vim for the Mac - Google Project Hosting  
+10:57 +0800 <ken_ho>: 看他還有圖型介面
+10:57 +0800 <ken_ho>: 我的沒有xd
+11:48 +0800 <hwchiu_znc>: 你寫一個簡單的cpp
+11:48 +0800 <hwchiu_znc>: 引用個vector之類的看看
+11:48 +0800 <ken_ho>: ...
+16:13 +0800 <pichuang>: gg 系計中也不能借
+16:20 +0800 <Davy_CC>: ken_ho: 你要修改 .vimrc 讓工具列出來XD
+20:04 +0800 <ken_ho>: XD
+20:27 +0800 <pichuang>: 有人有參加過新竹碼農嗎
+20:27 +0800 <pichuang>: 想問他們平時聚會地點都在哪裡@@
+21:17 +0800 <hwchiu>: 阿災
+22:42 +0800 <hwchiu>: https://github.com/OneSourceConsult/floodlight-queuepusher
+22:42 +0800 <sdnsd-tw_Bot>: ==> OneSourceConsult/floodlight-queuepusher · GitHub
+22:43 +0800 <hwchiu>: 在floodlight上，透過ovsdb來管理OVS的queue
+22:43 +0800 <hwchiu>: ＸＤ 有人做出來了
+23:29 +0800 <pichuang>: op
+23:30 +0800 <hwchiu>: http://www.onesource.pt/
+23:30 +0800 <sdnsd-tw_Bot>: ==> OneSource
+23:30 +0800 <hwchiu>: 這個組織的人
+23:31 +0800 <pichuang>: http://hwchiusource.tw/
+23:32 +0800 <hwchiu>: = =
+23:33 +0800 <ken_ho>: http://hwchiusource.tw << 這打不開耶
+23:33 +0800 <pichuang>: xdddd
+23:33 +0800 <pichuang>: 這是我亂掰的
+23:33 +0800 <ken_ho>: …
+23:34 +0800 <ws23>: hwchiusource.tw 感覺蠻棒的啊xD
+23:34 +0800 <pichuang>: hwchiu: 好domain不買嗎
+23:34 +0800 <hwchiu>: 轉向到小飛機的fb
+23:36 +0800 <pichuang>: 我fb太正經了 不行
+23:36 +0800 <hwchiu>: ...
+23:40 +0800 <ws23>: 那轉到這裡 https://www.youtube.com/watch?v=f5aD4s2XubQ （快溜
+23:40 +0800 <sdnsd-tw_Bot>: ==> COSCUP 2011 - 小飛機 - YouTube
+23:41 +0800 <hwchiu>: ＸＤＤＤ
+23:42 +0800 <pichuang>:   = =居然
+23:42 +0800 <pichuang>: 黑歷史=  =
+23:42 +0800 <ws23>: 沒辦法，我認識小飛機就是因為這個啊……
+23:43 +0800 <pichuang>: T_T
+23:43 +0800 <ws23>: xD
+23:43 +0800 <pichuang>: 那是一個愛與勇氣和承諾的故事
+23:43 +0800 <hwchiu>: 飛機傳說
+23:44 +0800 <ws23>: 其實我前面的故事是真的不知道xD 那是我第一次接觸社群的活動咩（聳肩
+23:44 +0800 <pichuang>: 哦哦XDDD
+23:44 +0800 <pichuang>: 沒關係啦
+23:44 +0800 <pichuang>: 前面的故事很久以前了
+23:45 +0800 <pichuang>: 有機會再說吧xd
+23:45 +0800 <ws23>: 可惡害我好奇了xD
+23:46 +0800 <pichuang>: xd 有順利聚會再說吧XD
+23:46 +0800 <pichuang>:  沒場地啊阿啊啊
+23:46 +0800 <John_aduim>: ＸＤ
+23:46 +0800 <John_aduim>: 這真的是小飛機？
+23:47 +0800 <ws23>: 聚會都擺在新竹我也無法去啊QQ 花蓮到新竹好遠啊（遠望
+23:47 +0800 <hwchiu>: 那去台北
+23:47 +0800 <John_aduim>: ＸＤ
+23:48 +0800 <John_aduim>: 這lightning talk 太有趣啦
+23:48 +0800 <pichuang>: 久遠
+23:48 +0800 <pichuang>: 應該是歷史遺跡
+23:49 +0800 <ws23>: COSCUP 2011也才四屆前而已啊……
+23:49 +0800 <ws23>: :D
+23:50 +0800 <pichuang>: 四年耶 大學都讀完一輪了
+23:50 +0800 <hwchiu>: 妹子都換了幾個了
+23:51 +0800 <ws23>: 也是啦xD 想當初我才嫩嫩高中生啊（遠望 現在也大三了QQ
+23:54 +0800 <hwchiu>: 老了
