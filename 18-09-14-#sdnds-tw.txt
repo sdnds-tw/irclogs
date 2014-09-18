@@ -1,0 +1,105 @@
+00:04 +0800 <JalenLin>: 小飛機粉絲越來越多了阿
+00:04 +0800 <JalenLin>: https://www.facebook.com/XiaoFeiJi
+00:04 +0800 <sdnsd-tw_Bot>: ==> 走在通往博班美好未來道路上的小飛機 | Facebook
+00:15 +0800 <John_aduim>: 已讚
+00:48 +0800 <freetsubasa>: 好懷念的東西
+00:53 +0800 <Davy_CC>: wwwwwwwwwwww
+08:39 +0800 <JalenLin>: hwchiu: 突然發現你說的。...所以你四年換了幾個XD?
+10:18 +0800 <jamesLiao>: 大家早
+12:30 +0800 <pichuang>: morning
+17:09 +0800 <hwchiu_znc>: 安
+19:14 +0800 <pichuang>: http://roan.logdown.com/posts/233613-sdn-lab-5-rest-and-ryu
+19:14 +0800 <sdnsd-tw_Bot>: ==> SDN Lab 5$ REST and Ryu  « roan's Blog
+19:14 +0800 <pichuang>: 最近研究了一下ryu和他restful怎麼用
+19:15 +0800 <pichuang>: 有興趣的可以看一下
+19:16 +0800 <pichuang>: 這邊最主要要注意一下rest reply的訊息
+19:16 +0800 <pichuang>: controller 回報 200 OK, 但 switch 是錯的
+19:16 +0800 <pichuang>: controller 回報 400 Bad Request, 因為 raw data 有問題
+19:16 +0800 <pichuang>: controller 回報 500 Internal Server Error, 大部分都是OpenFlow格式錯誤
+19:16 +0800 <pichuang>: 這三類
+19:16 +0800 <pichuang>: 第一個最麻煩 感謝有 hwchiu_znc 神救援
+19:17 +0800 <pichuang>: 有在使用的可以參考一下
+19:30 +0800 <ken_ho>: XD
+22:09 +0800 <hwchiu>: = =
+22:09 +0800 <John4irc>: Good
+22:10 +0800 <John4irc>: REST API 也可以用requests的套件
+22:11 +0800 <pichuang>: hwchiu 神出沒
+22:12 +0800 <pichuang>: requests?
+22:12 +0800 <John4irc>: 恩恩 你寫的那個做測試比較快 寫code的話可以用requests
+22:13 +0800 <pichuang>: John4irc: 教學文 <(_ _)>
+22:13 +0800 <John4irc>: http://docs.python-requests.org/en/latest/
+22:13 +0800 <sdnsd-tw_Bot>: ==> Requests: HTTP for Humans — Requests 2.4.1 documentation
+22:13 +0800 <John4irc>: 我最近也才剛進來看rest
+22:13 +0800 <John4irc>: 你要寫之前那個UI的adapter嗎
+22:14 +0800 <pichuang>: John4irc: 我有個學弟要寫
+22:14 +0800 <pichuang>: 老闆指定
+22:14 +0800 <John4irc>: 恩恩 我不太了解那個怎麼做
+22:15 +0800 <John4irc>: 不過我最近在看xinui
+22:15 +0800 <John4irc>: 衛信寫的一套UI給ryu用的
+22:16 +0800 <John4irc>: https://github.com/xinguard/XinUI
+22:16 +0800 <sdnsd-tw_Bot>: ==> xinguard/XinUI · GitHub
+22:26 +0800 <John4irc>: 剛剛找了Firefox REST測試套件 Restclient
+22:26 +0800 <John4irc>: 我比較喜歡Firefox XD
+22:38 +0800 <pichuang>: John4irc: firefox打從他的版本號
+22:38 +0800 <pichuang>: 如火箭一般發射
+22:38 +0800 <pichuang>: 我就沒用了
+22:42 +0800 <John_aduim>: 我愛用是因為firefox套件的Vimperator
+22:42 +0800 <John_aduim>: 趁機推薦一下 這個可以把Firefox當vim用
+22:42 +0800 <John_aduim>: XD
+22:44 +0800 <hwchiu>: good
+22:44 +0800 <hwchiu>: Floodlight不知道多久後會滅亡XD
+22:44 +0800 <hwchiu>: 大交換機已經沒有人去維護了
+22:44 +0800 <hwchiu>: Jason是最後一位
+22:44 +0800 <john_irc>: 怎麼突然
+22:44 +0800 <john_irc>: 還有你啊！
+22:46 +0800 <hwchiu>: XD
+22:57 +0800 <JalenLin>: Chrome我比較愛Advanced REST Client
+23:09 +0800 <John_irc>: XD
+23:36 +0800 <John_irc>: 不知道大家有沒有看到Northbound API rest有在做加密的嗎？
+23:37 +0800 <pichuang>: NO 我沒看過
+23:38 +0800 <John_irc>: 這樣好像只要對controller下rest就能控制網路了
+23:38 +0800 <hwchiu>: 恩恩
+23:40 +0800 <John_irc>: 感覺脆弱啊 你們有什麼看法嗎
+23:41 +0800 <John_irc>: Northbound API 沒有看到有標準出來 也許未來會要求用https
+23:41 +0800 <hwchiu>: 目前沒標準
+23:43 +0800 <pichuang>: Southbound 的要先上 ssl
+23:43 +0800 <pichuang>: 不上的話超危險= =
+23:44 +0800 <John_irc>: 有個問題是switch會認controller
+23:44 +0800 <John_irc>: set-controller
+23:44 +0800 <John_irc>: 不過要破解的話也行拿到controller的ip後改成controller的ip
+23:45 +0800 <pichuang>: 只要在同網段設定一個同ip就好了XD
+23:46 +0800 <John_irc>: 也是齁XD
+23:47 +0800 <John_irc>: 之前有個人貼出一個slide是在devconf講security的
+23:47 +0800 <pichuang>: 恩恩 在fb社團有
+23:47 +0800 <John_irc>: 我看了一下他的code很有趣的，送給controller hello msg她會回的
+23:48 +0800 <John_irc>: 而且不難寫
+23:48 +0800 <John_irc>: controller回feature request
+23:49 +0800 <John_irc>: 我後來對switch 送feature request 但是他不回我reply
+23:50 +0800 <pichuang>: 你是在什麼環境下測試的@@?
+23:50 +0800 <pichuang>: 測試ssl嗎?
+23:50 +0800 <John_irc>: 當然不是ssl
+23:51 +0800 <John_irc>: ssl太難解了
+23:51 +0800 <John_irc>: 沒加密的情況下
+23:51 +0800 <hwchiu>: 不回你?
+23:51 +0800 <hwchiu>: 會不會你格式沒有對
+23:51 +0800 <John_irc>: 我也是 這樣覺得可是我已經照著spec寫了 還是不懂為什麼
+23:53 +0800 <pichuang>: John_irc: 你有嘗試過讓ovs跟ryu透過ssl做溝通嗎
+23:54 +0800 <John_irc>: 沒做過耶
+23:54 +0800 <John_irc>: 你要做嗎？
+23:55 +0800 <pichuang>: ryu說有做
+23:55 +0800 <pichuang>: 但我沒測成功
+23:55 +0800 <pichuang>: 最近會詳細研究一下
+23:55 +0800 <pichuang>: 如果有bug就會來嘗試送送patch
+23:56 +0800 <John_irc>: 有篇doc有說明
+23:56 +0800 <John_irc>: 你看過那篇嗎？
+23:58 +0800 <pichuang>: yes
+23:58 +0800 <pichuang>: 我試過了
+23:58 +0800 <pichuang>: http://roan.logdown.com/posts/208707-openvswitch-lab-6-ssl
+23:58 +0800 <sdnsd-tw_Bot>: ==> OpenvSwitch Lab 6$ TLS SSL « roan's Blog
+23:58 +0800 <hwchiu>: 阿災，我不知道為什麼不回你XD
+23:58 +0800 <hwchiu>: 至少我自己測是
+23:58 +0800 <hwchiu>: Floodlight都匯回我
+23:59 +0800 <John_irc>: 你要不要發個mailing list?
+23:59 +0800 <pichuang>: floodlight 喜歡牛人蹂躪xd
+23:59 +0800 <pichuang>: 我在想是不是我自己測錯方法
+23:59 +0800 <pichuang>: 有興趣看一下
