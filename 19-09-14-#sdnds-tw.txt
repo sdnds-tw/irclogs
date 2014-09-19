@@ -1,0 +1,124 @@
+00:03 +0800 <hwchiu>: SONG
+00:05 +0800 <John_irc>: wow
+00:08 +0800 <John_irc>: 下次聚回地點還在新竹嗎
+00:08 +0800 <pichuang>: 我懶得跑臺北 應該還是會繼續在新竹
+00:08 +0800 <pichuang>: 但是要先有場地阿啊阿啊阿啊阿啊啊
+00:10 +0800 <John_irc>: 剛剛上面有人說有找到不錯場地？
+00:10 +0800 <John_irc>: Facebook
+00:11 +0800 <pichuang>: 我晚點問拉拉
+00:11 +0800 <pichuang>: 應該是明天有遇到再問問
+00:16 +0800 <John_irc>: 你們有用過slack嗎
+00:17 +0800 <pichuang>: 沒
+00:17 +0800 <pichuang>: 聽說這陣子很紅
+00:17 +0800 <John_irc>: 我也是聽說 不知道這可不可以取代irc上面的不便
+00:18 +0800 <pichuang>: 但要辦帳號 不知道接受度如何
+00:18 +0800 <pichuang>: 雖然門檻可能比irc低一點
+00:18 +0800 <pichuang>: XD
+00:19 +0800 <John_irc>: 恩 我來試試水溫一下
+00:20 +0800 <hwchiu>: 台北好拉
+00:21 +0800 <John_irc>: 我剛剛辦了帳號 介不介意我用sdnds的名字呀？在組織的名稱上
+00:21 +0800 <pichuang>: 不會
+00:21 +0800 <pichuang>: 歡迎取用
+00:21 +0800 <pichuang>: xd
+00:22 +0800 <John_irc>: 你們要不要一起加入測試我發個邀請函給你們
+00:22 +0800 <John_irc>: 給我gmail就可以
+00:25 +0800 <pichuang>: inceptioninx@gmail.com
+00:25 +0800 <John_irc>: 送囉
+00:26 +0800 <John_irc>:  https://sdnds-tw.slack.com
+00:26 +0800 <sdnsd-tw_Bot>: ==> SDNDS-TW Slack
+00:31 +0800 <JalenLin>: 台北場是邱渣辦阿
+00:33 +0800 <John_irc>: 目前想要測一下slack 大家有興趣的可以給我gmail我發邀請函給你們
+00:34 +0800 <pichuang>: hwchiu 應該是沒空的 他要被s社蹂躪了
+00:34 +0800 <John_irc>: XD
+01:20 +0800 <adaam>: slack不是可以直接沈請嗎？
+01:20 +0800 <adaam>: 申請
+08:58 +0800 <ken_ho>: good morning
+09:08 +0800 <pichuang>: morning
+09:08 +0800 <pichuang>: adaam: 你也有在用喔@@
+09:39 +0800 <adaam>: 我們有可能會用到，所以有在測試
+09:39 +0800 <adaam>: 還有pushbullet
+11:03 +0800 <John_irc>: adaam slack可以直接對團體提出申請嗎？
+11:15 +0800 <hsiehth>: whois hsiehth
+11:15 +0800 <hsiehth>: whoami
+11:17 +0800 <pichuang>: http://ttsubo.hatenablog.com/entry/2014/03/23/223751
+11:17 +0800 <sdnsd-tw_Bot>: ==> ネットワーク仮想化技術の実践活用（２）　〜OpenvSwitch管理プロトコル（OVSDB）編〜 - SDN開発エンジニアを目指した活動ブログ
+11:18 +0800 <pichuang>: 我看完這篇重點是 這日本人也喜歡 babymetal XDDDDDDDDD
+12:24 +0800 <kigipaul>: 大家好  上次問的那個單一封包 match多條flow的問題 用multi table 可以處理
+12:26 +0800 <kigipaul>: 我是將每條 flow 設成 一個table  雖然這樣就能讓功能實現 但效能好像不大好
+12:26 +0800 <John_irc>: HI 上次我沒看得很清楚你的需求 你可以在描述一次嗎
+12:31 +0800 <kigipaul>: 就是 假如我現在設兩個flow match{src_ip:10.0.0.1},actions{output:1} and match{dst_ip:10.0.1.1},actions{output:2} prority相同
+12:31 +0800 <John_irc>: 恩恩 你想要match兩次嗎
+12:31 +0800 <kigipaul>: 上次用multi table就是match兩次
+12:32 +0800 <John_irc>: 可以output兩次
+12:32 +0800 <John_irc>: 試過嗎
+12:32 +0800 <kigipaul>: 我一開始是想說 是否可以寫支application來自動增加 match{src_ip:10.0.0.1,dst_ip:10.0.1.1},actions{output:1,output:2}
+12:33 +0800 <John_irc>: flow match{src_ip:10.0.0.1},actions{output:1,output:2}
+12:33 +0800 <kigipaul>: 下了這條就可以兩個都送  但目前都是靠 工人智慧 來完成這件事
+12:34 +0800 <John_irc>: 兩個都送可以滿足你的需求嗎？
+12:34 +0800 <John_irc>: 可以做output 兩次呀 我不知道這樣是不是滿足你的需求
+12:36 +0800 <kigipaul>: 你指的output兩次 是單一flow的actions 設兩個output?
+12:36 +0800 <John_irc>: 對
+12:37 +0800 <kigipaul>: 恩 我的目標就是要做這樣沒錯  但是現在 是靠我們自己來判斷 "這兩條flow該合併 讓他們在一個flow的action output兩次"
+12:37 +0800 <kigipaul>: 我希望可以自動化
+12:38 +0800 <John_irc>: 哦 所以switch是存在這兩筆flow, 你希望把它合併成一筆
+12:38 +0800 <kigipaul>: 應該說 多一筆
+12:38 +0800 <kigipaul>: 因為 還是有只有 src_ip:10.0.0.1的封包 需要被match
+12:39 +0800 <kigipaul>: src_ip:10.0.0.1 and dst_ip:10.0.1.1 這算是 特殊情形
+12:41 +0800 <John_irc>: 我剛剛沒看仔細 原來你的match也不一樣
+12:41 +0800 <John_irc>: 所以你也想把match field合併 是嗎
+12:41 +0800 <kigipaul>: 恩
+12:41 +0800 <kigipaul>: 因為會有那種封包出現
+12:41 +0800 <John_irc>: 恩恩 那上次做的multi table怎麼說效能不好？
+12:42 +0800 <kigipaul>: 有可能是我的作法錯誤拉  我每多一個multi table大概會增加0.070~0.100 ms
+12:42 +0800 <kigipaul>: 在ping的第一個封包
+12:43 +0800 <kigipaul>: 前輩說 multi table有數量限制  而且在實體switch上 大家都用CPU做 效能不好
+12:44 +0800 <John_irc>: 恩multi table的確數量有限 可能要再想其他辦法
+12:44 +0800 <kigipaul>: 前輩有用pica8 做過multi table 他說 會掉包
+12:44 +0800 <John_irc>: 可以拿回目前的flow entry再controller做判斷 然後再重寫flow嗎
+12:45 +0800 <kigipaul>: 目前我是想這樣做 只是想問看看有沒有人有經驗而已
+12:45 +0800 <John_irc>: 沒做過 不過這樣看似可行
+12:46 +0800 <kigipaul>: 我還在想是否需要在controller建立資料庫
+12:46 +0800 <kigipaul>: 直接從資料庫拿 這樣就不用再問了
+12:48 +0800 <John_irc>: 為什麼需要資料庫？
+12:48 +0800 <kigipaul>: 之前好像有討論說 switch重啟 要將之前設定的Flow 在重送回去  原本的controller(Ryu)會做這件事嗎?
+12:50 +0800 <kigipaul>: 想說用資料庫 儲存我下過的Flow 這樣就能像opendaylight那樣 enable disable 各條flow
+12:50 +0800 <kigipaul>: 而不用每次都要重下
+12:50 +0800 <John_irc>: 你可以query controller
+12:50 +0800 <John_irc>: 看看目前的flow
+12:51 +0800 <John_irc>: 如果在controller開一個db感覺效能就沒那麼好 他還要去查
+12:52 +0800 <John_irc>: 如果你知道目前flow需要合併的話 query controlller flow entry再合併
+12:52 +0800 <John_irc>: 不知道可不可行？
+12:53 +0800 <kigipaul>: 晚點來側看看 兩個的效能好了
+13:09 +0800 <John_irc>: OFPFlowStatsRequest 可以看flow entry
+13:09 +0800 <John_irc>: 拿到flow entry在controller做判斷合併 再重寫一次flow應該可以
+13:13 +0800 <adaam>: John_irc: 印象中他是申請的時候就填，再拉人進來
+13:14 +0800 <John_irc>: 恩 目前我想要的是說想要加入的可不可以自動提出申請要求
+13:31 +0800 <hwchiu_znc>: 資料庫的很話，你要注意flow會不會timeout
+13:40 +0800 <PoWen>: ㄟ，邱渣在耶
+13:41 +0800 <John_irc>: hi powen hwchiu_znc 要不要一起試用slack最近開了一個
+13:46 +0800 <PoWen>: slack
+13:46 +0800 <PoWen>: 我ok啊
+13:46 +0800 <PoWen>: 那是啥？
+13:47 +0800 <John_irc>: 類似IRC 的一個溝通平台 可以解決一些目前irc上不便的問題
+13:47 +0800 <John_irc>: 給我一個你想要用來申請的mail 我會發邀請信給你
+13:53 +0800 <hwchiu_znc>: hwchiu@cs.nctu.edu.tw
+13:55 +0800 <John_irc>: ok 寄出了
+13:59 +0800 <PoWen>: pureblue.cmos@gmail.com
+14:00 +0800 <John_irc>: ok
+15:17 +0800 <hwchiu>: thx
+15:17 +0800 <John_irc>: kigipaul 還在嗎
+15:18 +0800 <John_irc>: 目前有人有用過multi table的硬體switch嗎
+15:18 +0800 <hwchiu>: 不知道有沒有已經設計完畢的了
+15:18 +0800 <hwchiu>: PoWen:
+15:18 +0800 <John_irc>: 剛剛發現ovs內建254張tablesa
+15:19 +0800 <John_irc>: 他剛剛說效能比較差 我想如果換到硬體上應該不至於太差
+15:20 +0800 <John_irc>: 我剛找了centec v350 v330 pica8 3290都沒有multi table
+15:21 +0800 <hwchiu>: 嗯嗯，可能要問問 有沒有硬體支援的
+15:22 +0800 <John_irc>: 恩 是說如果未來有支援的話 應該不是cpu去處理這些事情吧？
+15:27 +0800 <hwchiu>: 嗯嗯，我也覺得不會是cpu了
+15:27 +0800 <hwchiu>: 應該說還沒完全設計好
+15:27 +0800 <hwchiu>: 我也不知道硬體目前設計得如何ＸＤ
+15:29 +0800 <John_irc>: 恩 想知道
+16:18 +0800 <S3p_lin_>: https://www.linkedin.com/jobs2/view/21724915
+16:18 +0800 <sdnsd-tw_Bot>: ==> SDN Software Technical Lead/ Engineer for SDN Technology at ITRI in Taiwan - Job | LinkedIn
+16:24 +0800 <hwchiu>: XD 感謝學長分享
