@@ -1,0 +1,19 @@
+09:21 +0800 <ken_ho>: 早安
+09:27 +0800 <PoWen>: 嗨嗨
+10:26 +0800 <ken_ho>: http://mopcon.kktix.cc/events/2014-registration
+10:26 +0800 <sdnsd-tw_Bot>: ==> MOPCON 2014
+13:09 +0800 <Davy_CC>: 早安
+13:48 +0800 <hwchiu>: 早安
+13:54 +0800 <Davy_CC>: 突然發現，bot 的名字打錯了 sdnsd-tw_Bot_
+14:50 +0800 <PoWen>: 真的耶
+14:50 +0800 <PoWen>: sd
+14:59 +0800 <pichuang>: 這幾天在搞 mininet 不務正業中
+14:59 +0800 <pichuang>: https://gist.github.com/pichuang/3cc43035af7a791a2a24
+14:59 +0800 <sdnsd-tw_Bot>: ==> two_web.py
+14:59 +0800 <pichuang>: 這個
+14:59 +0800 <pichuang>: 利用 mininet 配合 SimpleHTTPServer 建立多個 web server 測試環境
+15:00 +0800 <pichuang>: 有做web load-balance 的應該會蠻需要的
+15:00 +0800 <pichuang>: 這樣可以不用架一堆 webserver XD
+15:52 +0800 <hwchiu>: cool
+22:00 +0800 <JalenLin>: XDD....
+22:00 +0800 <JalenLin>: bot下線改名
