@@ -1,0 +1,3 @@
+09:27 +0800 <kigipaul>: John_irc 我前輩是用pica8測的 型號我再問問  他是說pica8是用CPU算地所以效能差 而且 Packet in到CPU的封包有時會掉包
+09:29 +0800 <kigipaul>: 沒掉包 他最後下下去的entry 也會和原本下的有差異 增減或改變
+09:29 +0800 <kigipaul>: 然後tables數 限制70 的樣子
