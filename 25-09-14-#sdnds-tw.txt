@@ -1,0 +1,24 @@
+13:29 +0800 <ken_ho>: hello
+13:30 +0800 <hwchiu>: HI
+13:30 +0800 <ken_ho>: oh
+13:30 +0800 <ken_ho>: 上班中?
+14:01 +0800 <ken_ho_aws>: test
+14:02 +0800 <ken_ho_aws>: good
+14:03 +0800 <ken_ho_aws>: 測試
+14:45 +0800 <pichuang>: ken_ho: aws 不給長時間連線嗎
+14:47 +0800 <hwchiu>: no screen ?
+15:28 +0800 <John_irc>: http://h17007.www1.hp.com/docs/sdn/HP_SDN-SDK_brochure-1767-4234.pdf
+15:29 +0800 <John_irc>: HP 的產品
+15:29 +0800 <John_irc>: 剛剛稍微瀏覽一下發現他們要做SDN app store XD
+15:29 +0800 <John_irc>: cool
+15:36 +0800 <John_irc>: 這周27號 聚會有成嗎
+15:42 +0800 <pichuang>: 無成 無位置
+15:42 +0800 <pichuang>: 要到下個月
+15:42 +0800 <pichuang>: 但最近小忙沒空處理= =
+15:42 +0800 <pichuang>: 學校這邊沒資源可以用xd
+16:09 +0800 <John_irc>: OK~
+19:22 +0800 <ken_ho_aws>: ken_ho
+20:01 +0800 <ken_ho_aws>: 對了...下次聚會是什麼時候呀
+21:37 +0800 <John_irc>: 大家用linux的記得修bash的漏洞啊～
+21:50 +0800 <adaam>: pichuang:
+21:50 +0800 <adaam>: pichuang: 長時間連線是啥意思?
