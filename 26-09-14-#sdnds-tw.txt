@@ -1,0 +1,40 @@
+12:18 +0800 <ken_ho_aws>: good morning
+12:29 +0800 <ken_ho_aws>: 最近是不是很冷清呀
+12:29 +0800 <ken_ho_aws>: 很少人說話
+12:37 +0800 <ken_ho_aws>: £
+16:16 +0800 <tacchen>: 開學各種忙碌XDD
+16:17 +0800 <tacchen>: 臨時被換方向 最近在看NSC QQ
+16:29 +0800 <pichuang>: 開學各種忙碌
+16:29 +0800 <pichuang>: 各種被抓
+16:30 +0800 <pichuang>: adaam: 我以為aws 不給長時間登入
+16:30 +0800 <pichuang>: xd
+16:36 +0800 <pichuang>: 這陣子有個發現
+16:36 +0800 <pichuang>: 如果用openflow的方式下vlan tag
+16:37 +0800 <pichuang>: 要從 4096 開始算
+16:37 +0800 <pichuang>: 我看ryu的測資也是相同做法
+16:38 +0800 <hwchiu>: 1.0試試看?
+16:40 +0800 <pichuang>: 我看floodlight好像可以下vlan
+16:40 +0800 <pichuang>: 他下的set_filed參數是多少
+16:42 +0800 <pichuang>: https://github.com/osrg/ryu/blob/master/ryu/tests/switch/of13/action/25_SET_FIELD/06_VLAN_VID.json
+16:42 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/qlfGh  ==> ryu/06_VLAN_VID.json at master · osrg/ryu · GitHub
+16:42 +0800 <pichuang>: A value of VLAN_VID (4196) means '100 | OFPVID_PRESENT(0x1000)
+16:42 +0800 <pichuang>: vid 就理解上來講應該就是 vlan id吧
+16:42 +0800 <pichuang>: 還是我有會錯意
+16:43 +0800 <hwchiu>: set_field是有OXM後的做法
+16:43 +0800 <hwchiu>: 看來跟協定內有關?
+16:44 +0800 <hwchiu>: 晚點再研究 繼續上班= =
+16:53 +0800 <adaam>: pichuang: SSH一陣子沒動好像是會踢掉
+17:22 +0800 <pichuang>: 現在遇到鬼
+17:22 +0800 <pichuang>: procmail不幫忙送信件QQ
+20:47 +0800 <ken_ho_aws>: AWS可長時間登呀~
+20:47 +0800 <ken_ho_aws>: 不過...我的時間好怪呀
+20:47 +0800 <ken_ho_aws>: 是12:47
+20:48 +0800 <ken_ho_aws>: 不過...我該怎麼往上捲....
+20:49 +0800 <ken_ho_aws>: 沒辦法往上看之前的記錄
+20:51 +0800 <ken_ho_aws>: .
+20:53 +0800 <ken_ho_aws>: AWS主機也有漏洞
+20:54 +0800 <ken_ho_aws>: http://tdohacker.org
+20:54 +0800 <sdnds-tw_Bot>: ==> TDOHacker
+21:22 +0800 <adaam>: Aws不會幫你升級主機裡面的軟體XD
+21:22 +0800 <adaam>: 要自己升
+22:16 +0800 <ken_ho_aws>: 恩呀
