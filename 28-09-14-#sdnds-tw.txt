@@ -1,0 +1,92 @@
+01:18 +0800 <John_irc>: @pichuang 上次說到在mac裝ryu 你可以考慮用virtualenv
+01:18 +0800 <John_irc>: pip install virtualenv 先裝好
+01:20 +0800 <John_irc>: 然後利用virtualenv生一個虛擬的目錄
+01:20 +0800 <John_irc>:  例如 $ virtualenv myenv
+01:21 +0800 <John_irc>: 之後進入虛擬目錄 $ source myenv/bin/activate
+01:21 +0800 <John_irc>: (myenv) $ pip install what-i-want
+01:21 +0800 <John_irc>: 進去之後你就可以亂裝套件了 不會影響整個環境
+01:22 +0800 <John_irc>: 從虛擬目錄出來的話 就打 $ deactive
+01:22 +0800 <John_irc>: 如果環境爛了 出來之後把myenv砍了就好
+01:22 +0800 <John_irc>: 參考看看
+01:26 +0800 <John_irc>: 更正一下typo 離開虛擬目錄 $ deactivate
+01:26 +0800 <John_irc>: ref http://stackoverflow.com/questions/15028648/is-it-acceptable-safe-to-run-pip-install-under-sudo
+01:26 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/Z3uaM  ==> python - Is it acceptable & safe to run pip install under sudo? - Stack Overflow
+08:04 +0800 <pichuang>: John_irc: ok 感謝 XD
+08:05 +0800 <pichuang>: 我以前建一建都會忘記我有用 virtualenv 或者是忘記 virtualenv 放在哪裡 xd
+08:06 +0800 <pichuang>: 但我都還是在工作站上用
+08:06 +0800 <pichuang>: 我不知道mac也有 virtualenv
+08:06 +0800 <pichuang>: xd
+11:12 +0800 <ken_ho_a1s>: good morning
+11:13 +0800 <ken_ho_a1s>: exit
+11:13 +0800 <ken_ho_a1s>: exit
+11:15 +0800 <ken_ho>: good morning...
+11:15 +0800 <ken_ho>: AWS怪怪的= =
+11:28 +0800 <pichuang>: https://www.mail-archive.com/openwrt-devel@lists.openwrt.org/msg26150.html
+11:28 +0800 <pichuang>: xd
+11:28 +0800 <sdnds-tw_Bot>: ==> Re: [OpenWrt-Devel] libatomic patch
+11:28 +0800 <pichuang>: 我居然看到openvwrt在上面
+11:28 +0800 <pichuang>: 雖然他叫我們閱讀方針送patch上去
+11:28 +0800 <pichuang>: 但是...
+11:28 +0800 <pichuang>: 在去年的時候就有人送過
+11:28 +0800 <pichuang>: 但沒有accpet
+21:41 +0800 <pichuang>: hwchiu_: mo牛 你知道 mininet innamespace 是在做什麼事情嗎
+21:42 +0800 <pichuang>: 我看了一些資料還是不太理解
+21:55 +0800 <hwchiu_>: 待我完成新手報告後，會幫你看
+21:55 +0800 <hwchiu_>: 之前沒有研究過這個 #innamespace
+21:56 +0800 <pichuang>: hwchiu_: 新手報告???? 你應該是去教育訓練吧xd
+21:56 +0800 <hwchiu_>: ohoh
+21:56 +0800 <hwchiu_>: 我大概了解
+21:56 +0800 <hwchiu_>: mininet原本的模擬是
+21:57 +0800 <hwchiu_>: host都有自己的namespace，全部都獨立的
+21:57 +0800 <pichuang>: 他的全部獨立是指怎樣的獨立法
+21:57 +0800 <hwchiu_>: 但是switch則沒有獨立，所有的switch跟預設的controller都放在同一個namespace
+21:57 +0800 <hwchiu_>: network namespace isoloation
+21:57 +0800 <pichuang>: 即是說 hosts 之間的行為互不影響囉?
+21:59 +0800 <hwchiu_>: ip netns
+21:59 +0800 <hwchiu_>: yes
+21:59 +0800 <hwchiu_>: 所以你原本每個host都可以獨立一個自己的xterm
+21:59 +0800 <pichuang>: 預設應該是關閉的 那以前我開 "mn" 起來後
+21:59 +0800 <pichuang>: 打xterm
+21:59 +0800 <pichuang>: 那個都沒有 isolation?
+22:04 +0800 <hwchiu_>: 預設都有
+22:04 +0800 <pichuang>: 疑
+22:04 +0800 <hwchiu_>: 都有isolation
+22:04 +0800 <pichuang>: 是喔xd
+22:04 +0800 <hwchiu_>: 不然你看 每個host都有自己的eth0 XD
+22:04 +0800 <pichuang>:  那我搞錯了
+22:05 +0800 <hwchiu_>: 搞錯妹仔了嗎
+22:05 +0800 <pichuang>: 恩 搞錯妹仔了
+22:05 +0800 <hwchiu_>: 加油，下一個會更好
+22:09 +0800 <pichuang>: 現在都不清楚 nbl 現在在幹嘛
+22:09 +0800 <pichuang>: 然後也不知道他們已經做到哪裡了
+22:09 +0800 <pichuang>: 感覺我們好像還在石器時代 他們已經在文藝復興了
+22:09 +0800 <pichuang>: 這幾天心情有點鬱悶
+22:10 +0800 <hwchiu_>: 找NBL聊聊XD?
+22:10 +0800 <hwchiu_>: 看看她們如何 有沒有興趣一起推廣
+22:11 +0800 <pichuang>: 可能要先想辦法認識nbl的人
+22:11 +0800 <pichuang>: 多聊聊才知道有沒有著力點
+22:11 +0800 <hwchiu_>: 林盈達?
+22:12 +0800 <pichuang>: 我的層級不太可能找到大老闆層級談
+22:13 +0800 <pichuang>: 而且我也沒有籌碼可以跟他談xdddddd
+22:13 +0800 <hwchiu_>: 恩恩XD 她們LAB的呢
+22:13 +0800 <hwchiu_>: 你可以簽博
+22:13 +0800 <pichuang>: 他們lab 要問一下 但新生好像都不是很清楚
+22:14 +0800 <hwchiu_>: 恩恩
+22:25 +0800 <John_irc>: 他們在做測試
+22:25 +0800 <John_irc>: 之前在資策會實習時候有跟他們接觸過
+22:26 +0800 <John_irc>: 幾次的開會都在nbl XD
+22:28 +0800 <pichuang>: 總覺得有點可惜
+22:28 +0800 <John_irc>: 恩？
+22:29 +0800 <pichuang>: 感覺整個情報有個大落差
+22:29 +0800 <pichuang>: orz
+22:31 +0800 <John_irc>: 那我寫個信問他們單位的一個許郡泓來介紹一下他們XD
+22:32 +0800 <John_irc>: 看看下次meetup什麼時候
+22:33 +0800 <pichuang>: xdddddddddd
+22:33 +0800 <John_irc>: 有認識XD
+22:33 +0800 <pichuang>: 真假xdddd
+22:33 +0800 <John_irc>: 就NBL經理
+22:33 +0800 <John_irc>: 恩啊
+22:33 +0800 <pichuang>: 這位大大
+22:33 +0800 <hwchiu_>: beachdog喔
+22:34 +0800 <John_irc>: 我是不知道他什麼 id
+22:37 +0800 <John_irc>: 之前工作有合作過一段時間, 細節想了解可能要私下聊XD
