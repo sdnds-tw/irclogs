@@ -1,0 +1,100 @@
+01:48 +0800 <S3p_lin>: 一直都是產品測試跟驗證, 還有出報告吧   # pichuang> 現在都不清楚 nbl 現在在幹嘛
+11:24 +0800 <ken_ho>: http://macdown.uranusjr.com
+11:24 +0800 <sdnds-tw_Bot>: ==> MacDown: The open source Markdown editor for OS X.
+13:33 +0800 <PoWen>: 嗨小飛機
+13:33 +0800 <PoWen>: 在嗎
+14:12 +0800 <hwchiu>: ?
+14:12 +0800 <pichuang>: 安安
+14:12 +0800 <pichuang>: 剛剛在機房沒網路中xd
+14:13 +0800 <jamesLiao>: 午安
+14:15 +0800 <hwchiu>: 安
+14:16 +0800 <jamesLiao>: 請問一下
+14:16 +0800 <jamesLiao>: 關於floodlight
+14:18 +0800 <PoWen>: ㄟ，邱渣也在
+14:18 +0800 <jamesLiao>: 如何去實作出自己想要的功能
+14:19 +0800 <jamesLiao>: 從之前到現在我的controller都只是一個default的controller
+14:20 +0800 <jamesLiao>: 如果我想去定義自己的功能該從何下手呢?
+14:22 +0800 <hwchiu>: 你的功能是什麼類型的?
+14:22 +0800 <hwchiu>: 是在哪一個層級的?
+14:22 +0800 <hwchiu>: PoWen: 安 上班偷用中
+14:24 +0800 <jamesLiao>: 比方說 看到某個ip的封包就自動丟掉
+14:28 +0800 <hwchiu>: 寫道controller內
+14:29 +0800 <hwchiu>: 寫一個自己的module，然後讓floodlight啟動時你的module給一併仔入
+14:30 +0800 <jamesLiao>: 請問有教學的網頁還是參考之類的嗎?
+14:40 +0800 <hwchiu>: http://www.openflowhub.org/display/floodlightcontroller/How+to+Write+a+Module
+14:40 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/nCpfH  ==> How to Write a Module - Floodlight Controller - OpenFlowHub - OpenFlow news and projects
+16:56 +0800 <jamesLiao>: hwchiu
+16:56 +0800 <jamesLiao>: 沒有辦法匯入floodlight到eclipse裡面
+16:57 +0800 <jamesLiao>: 也沒辦法ant
+16:57 +0800 <jamesLiao>: 是我什麼套件沒裝嗎？
+17:10 +0800 <hwchiu>: 我沒有用eclipse耶XD
+17:10 +0800 <hwchiu>: 你ant要裝
+17:16 +0800 <jamesLiao>: 有不用eclipse也可編譯的方法？
+17:17 +0800 <jamesLiao>: 直接用vim?
+17:17 +0800 <jamesLiao>: 我ant有裝了
+17:21 +0800 <hwchiu>: ant就可以編譯了
+19:48 +0800 <jamesLiao>: 怎麼編譯？
+19:48 +0800 <hwchiu>: type ant
+19:49 +0800 <jamesLiao>: 如果沒有去修改然後輸入ant
+19:50 +0800 <jamesLiao>: 會在build一次？
+19:51 +0800 <jamesLiao>: https://www.irccloud.com/pastebin/rMtQNbFD
+19:51 +0800 <sdnds-tw_Bot>: ==> Pastebin: rMtQNbFD | IRCCloud
+19:52 +0800 <jamesLiao>: 這個錯誤訊息是？
+19:59 +0800 <hwchiu>: 你沒有build.xml這個檔案
+20:00 +0800 <hwchiu>: 你要在主目錄下
+20:00 +0800 <hwchiu>: 不要在module內
+20:01 +0800 <jamesLiao>: ？
+20:02 +0800 <jamesLiao>: 主目錄？
+20:13 +0800 <jamesLiao>: floodlight那個目錄下？
+20:16 +0800 <hwchiu>: p
+20:18 +0800 <jamesLiao>: 怪了 還是不行
+20:22 +0800 <jamesLiao>: 是有修改code才能build還是沒修改也可以重新ant去build?
+20:24 +0800 <hwchiu>: 沒修改去build的話，他會幫你略過
+20:25 +0800 <jamesLiao>: 所以不會出現剛剛那個error訊息？
+20:25 +0800 <hwchiu>: 不會
+20:25 +0800 <hwchiu>: 那個就是你連build的設定擋都沒有
+20:25 +0800 <hwchiu>: 才會該
+20:26 +0800 <jamesLiao>: 怪了 可是我的floodlight可以順利執行耶
+20:42 +0800 <hwchiu>: 恩阿，你以前有build成工過
+20:42 +0800 <hwchiu>: 就會有*.jar
+20:42 +0800 <hwchiu>: 供你用
+22:00 +0800 <jamesLiao>: 我的,jar是在/target裡面耶
+22:01 +0800 <hwchiu>: 對阿
+22:01 +0800 <hwchiu>: 他build.xml內有設定那個路徑
+22:02 +0800 <jamesLiao>: 想說不用eclipse
+22:02 +0800 <jamesLiao>: 結果卡在ant
+22:02 +0800 <jamesLiao>: 哈哈
+22:02 +0800 <hwchiu>: 恩恩
+22:04 +0800 <jamesLiao>: 我看我去改code再build看看
+22:04 +0800 <hwchiu>: 恩恩
+22:04 +0800 <jamesLiao>: 或許會不會是因為都沒更改code所以不會產生.xml那個黨
+22:05 +0800 <hwchiu>: 不是
+22:05 +0800 <hwchiu>: 那個是floodlight預先產生的
+22:05 +0800 <hwchiu>: 那個是設定檔
+22:06 +0800 <jamesLiao>: 了解
+22:06 +0800 <jamesLiao>: 那有沒有什麼方法?
+22:07 +0800 <hwchiu>: 嗯?
+22:07 +0800 <jamesLiao>: 就是讓ant能build起來
+22:08 +0800 <hwchiu>: 你的家目錄下沒有build.xml嗎?
+22:08 +0800 <hwchiu>: https://github.com/floodlight/floodlight
+22:08 +0800 <sdnds-tw_Bot>: ==> floodlight/floodlight · GitHub
+22:08 +0800 <hwchiu>: 這邊抓的嗎
+22:09 +0800 <jamesLiao>: 嗯嗯
+22:09 +0800 <hwchiu>: 你看裡面有builx.xml
+22:11 +0800 <jamesLiao>: 嗯
+22:11 +0800 <jamesLiao>: 把他加回去?
+22:18 +0800 <hwchiu>: 恩
+22:18 +0800 <hwchiu>: 你怎會少?
+22:18 +0800 <hwchiu>: 建議全部重抓
+22:18 +0800 <hwchiu>: 不然可能東少稀少
+22:23 +0800 <jamesLiao>: OK
+22:23 +0800 <jamesLiao>: 我在試試看
+22:23 +0800 <jamesLiao>: 謝啦
+22:25 +0800 <hwchiu>: 恩恩 加油
+23:36 +0800 <hwchiu>: 有沒有OVS QoS熟的?
+23:39 +0800 <pichuang>: hwchiu: 身為一個新手 我碰 switch 無論是 cisco 2960 還是 ovs 到現在都沒有很認真的用過qos耶 XDDDDD
+23:44 +0800 <hwchiu>: XD
+23:45 +0800 <pichuang>: 我個人沒有情境會用到 qos XDDDD
+23:45 +0800 <pichuang>: 難道我要對我自己q嗎
+23:45 +0800 <pichuang>: xddddd
+23:49 +0800 <hwchiu>: 也是XD 合理
