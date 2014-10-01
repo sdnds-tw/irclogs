@@ -1,0 +1,47 @@
+00:07 +0800 <death_>: 大家好  小弟今天剛加入這個社群  請各位多多指教^ ^
+00:08 +0800 <pichuang>: 安安
+00:08 +0800 <pichuang>: 非常歡迎你的加入
+00:09 +0800 <death_>: ^ ^
+00:10 +0800 <hwchiu>: 安安
+00:13 +0800 <beachdog>: 我也是今天加入的, 請大家多多指教
+00:14 +0800 <beachdog>: 我們專做測試及測試工具開發的, 有機會希望可以多跟大家交流 :P
+00:16 +0800 <death_>: 小弟只是大學部專題生XD  但是還滿開心台灣也有這樣子的社群^ ^
+00:20 +0800 <hwchiu>: 晚了XD大家都睡了
+00:27 +0800 <John_irc>: Hi
+00:47 +0800 <death_>: pichuang大  小弟最近在使用您的 openvwrt當作tplink1043nd的firmware 但是不太了解怎麼去設定openvswitch的參數@@
+00:49 +0800 <death_>: 這部分有牽涉到openwrt的 network裡的設定  但是不知道怎麼把裡面的參數套到openvswitch裡...像是interface QQ
+00:50 +0800 <death_>: 連簡單的bridge都建不起來  Orz
+07:43 +0800 <pichuang>: death_:  安安
+07:44 +0800 <pichuang>: 你需要先把 interface 先切出來
+07:44 +0800 <pichuang>: 原先應該ㄓ只有兩個
+07:44 +0800 <pichuang>: eth0.1 eth0.2
+07:44 +0800 <pichuang>: 那你要想辦法把它變成 eth0.1 eth0.2 eth0.3 eth0.4 eth0.5
+07:45 +0800 <pichuang>: 這樣才能讓openvswitch針對每個interfacce進行控制
+07:45 +0800 <pichuang>: 若你不這樣做的話
+07:45 +0800 <pichuang>: openvswitch 只能控制 eth0.1 eth0.2
+07:45 +0800 <pichuang>: 而eth0.2 實際上代表的就是你所認知的四個 lan port
+07:45 +0800 <pichuang>: 若用openvswitch去控制eth0.2
+07:46 +0800 <pichuang>: 四個port行為將會一模一樣
+07:47 +0800 <pichuang>: 那問題就回到 如何切出interface
+07:47 +0800 <pichuang>: https://gist.github.com/pichuang/9464974
+07:47 +0800 <sdnds-tw_Bot>: ==> openwrt_network
+07:47 +0800 <pichuang>: 參考一下這個設定
+07:47 +0800 <pichuang>: 利用vlan切出五張inteface eth0.1 eth0.2 eth0.3 eth0.4 eth0.5
+07:48 +0800 <pichuang>: 裡面的設定要看一下
+07:49 +0800 <pichuang>: 另外wlan0 可以直接視為一個port
+07:49 +0800 <pichuang>: 不用做任何設定
+07:50 +0800 <pichuang>: 直接 ovs-vsctl add-port ovs-br wlan0 即可
+07:51 +0800 <pichuang>: 順便提醒一下 這幾天openwrt official 針對 openvswitch porting 把一個非常重要的patch打上去了
+07:51 +0800 <pichuang>: 名字是 libatomic
+07:51 +0800 <pichuang>: 所以如果你是看我blog進行安裝的話
+07:51 +0800 <pichuang>: 我寫在上面的那個patch可以不用打
+07:52 +0800 <pichuang>: 我自己有編譯過一次 可以順利跑完 但我現在手邊沒機器給我安裝
+07:55 +0800 <pichuang>: 抱歉 要再 make menuconfig 時 search一下 "libatomic" 並選取它 #07:51 < pichuang> 我寫在上面的那個patch可以不用打
+12:28 +0800 <John_irc>: 最近南韓一家網通公司 naimnetworks 把ryubook的韓語版完成翻譯，已經發PR給NTT的ryu team了！
+15:08 +0800 <pichuang>: http://blog.csdn.net/yuzhihui_no1/article/details/39188373
+15:09 +0800 <pichuang>: http://blog.csdn.net/column/details/openvswitch.html <====
+15:10 +0800 <pichuang>: hwchiu:
+15:11 +0800 <pichuang>: xd
+15:11 +0800 <pichuang>: John_irc: 太猛啦~
+19:29 +0800 <hwchiu_znc>: 真詳細
+19:34 +0800 <pichuang>: 但他看的是先前的版本 有些東西被拿掉了
