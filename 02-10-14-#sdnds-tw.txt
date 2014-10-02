@@ -1,0 +1,7 @@
+00:54 +0800 <PoWen>: John你分享的link, 太強了
+00:54 +0800 <PoWen>: 感謝
+01:26 +0800 <John_irc>: 應該是 pichuang 分享的吧！？
+01:26 +0800 <John_irc>: 我只是說有韓語版的資源XD
+01:27 +0800 <John_irc>: 想問一下 目前 openflow switch 都支援幾張group table?
+01:27 +0800 <John_irc>: 還是group table 沒有像flow table那麼需要硬體資源 所以都很多張？
+12:50 +0800 <ken_ho>: Good morning
