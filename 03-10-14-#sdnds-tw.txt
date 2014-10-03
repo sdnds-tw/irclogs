@@ -1,0 +1,60 @@
+02:11 +0800 <pichuang>: https://github.com/mininet/mininet/commit/89cc29b4c296d91a4065259fcae7ce0000d008e4
+02:11 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/zs7h7  ==> Merge pull request #367 from cdburkard/devel/Ryu · 89cc29b · mininet/mininet · GitHub
+02:11 +0800 <pichuang>: ryu 包進 mininet source 了
+02:12 +0800 <pichuang>: lantzlantz merged commit 89cc29b into mininet:master from cdburkard:devel/Ryu 6 days ago
+09:03 +0800 <hwchiu>: cool
+16:42 +0800 <John_irc>: wow 內建controller了嗎
+16:42 +0800 <pichuang>: yes
+16:43 +0800 <John_irc>: 這樣需要在自己把ryu裝好 才能用？
+16:43 +0800 <John_irc>: 還是都包好了
+16:43 +0800 <pichuang>: 不用
+16:43 +0800 <pichuang>: mininet包好了
+16:43 +0800 <pichuang>: wow
+16:43 +0800 <John_irc>: 有看到XD
+16:44 +0800 <John_irc>: 方便耶
+16:44 +0800 <pichuang>: ryu 起飛啦~
+16:44 +0800 <John_irc>: 大家快來用ryu XD
+16:56 +0800 <hwchiu>: python一家親
+16:57 +0800 <pichuang>: 昨天跟拉拉在想 為啥沒人寫 js controller
+16:57 +0800 <pichuang>: dx
+16:57 +0800 <pichuang>: xd
+16:57 +0800 <pichuang>: 你不覺得js來寫這個controller超適合的
+16:58 +0800 <hwchiu>: 動手吧
+16:59 +0800 <pichuang>: 好
+16:59 +0800 <pichuang>: js怎麼寫
+16:59 +0800 <pichuang>: xd
+16:59 +0800 <pichuang>: 我不會寫native js
+16:59 +0800 <pichuang>: xd
+17:00 +0800 <hwchiu>: 簽博就有時間了
+17:00 +0800 <hwchiu>: 去改標題XD
+17:05 +0800 <pichuang>: hwchiu: 我終於會改了xd
+17:09 +0800 <hwchiu>: cool
+17:29 +0800 <JalenLin>: 不是有NodeFlow?
+17:30 +0800 <JalenLin>: NodeJS controller
+18:36 +0800 <pichuang>: 真假!
+18:36 +0800 <pichuang>: xd
+19:24 +0800 <death_>: pichuang大：不好意思，這幾天一直參考您設定在try 但是每次都會出現" 'radio0' is diabled"的錯誤訊息  然後就與switch斷線了QQ  只能利用ttl線連上  但是改了數次參數，還是會產生錯誤0.0
+19:25 +0800 <death_>: 實際上小弟還是不太了解每個參數的原理呢@@
+19:31 +0800 <death_>: 最重要的是  依您的解說  interface切出eth0.1 eth0.2 eth0.3  eth0.4  eth0.5這5個之後  但是要怎麼讓interface連到各個實際上的port呢？
+20:34 +0800 <ken_ho>: Hello guys
+21:09 +0800 <hwchiu>: HI
+21:09 +0800 <hwchiu>: 台北游泳好貴ＱＱ設施還普通
+21:11 +0800 <hwchiu>: Can anyone suggest me how to create a topology in mininet with multi-homing feature.
+21:11 +0800 <hwchiu>: 有人有想法嗎
+22:05 +0800 <pichuang>: death_: radio0 xd 你看過 /etc/config/wireless
+22:05 +0800 <pichuang>: 裡面有神秘的一行註解
+22:05 +0800 <pichuang>: XDDDD
+22:06 +0800 <pichuang>: 實際上怎麼連上去  就是用
+22:06 +0800 <pichuang>: ovs-vsctl add-br ovs-br # create a ovs bridge
+22:06 +0800 <pichuang>: ovs-vsctl add-port ovs-br eth0.1 # Add eth0.1 to ovs-br
+22:06 +0800 <pichuang>: ovs-vsctl add-port ovs-br eth0.2 # Add eth0.2 to ovs-br
+22:06 +0800 <pichuang>: ovs-vsctl add-port ovs-br eth0.3 # Add eth0.3 to ovs-br
+22:06 +0800 <pichuang>: ...etc
+22:54 +0800 <pichuang>: hwchiu: 那個是不是要做load-balancing的?
+22:54 +0800 <pichuang>: 如果是的話 我前陣子不是有用個 two_web.py
+22:54 +0800 <pichuang>: 那個就可以拿去做研究了
+22:54 +0800 <pichuang>: xd
+22:55 +0800 <pichuang>: shanyu 好像也有用
+23:43 +0800 <hwchiu>: http://en.wikipedia.org/wiki/Multihoming
+23:43 +0800 <sdnds-tw_Bot>: ==> Multihoming - Wikipedia, the free encyclopedia
+23:43 +0800 <hwchiu>: 按照這個定意，好像跟你講的不太一樣XD
