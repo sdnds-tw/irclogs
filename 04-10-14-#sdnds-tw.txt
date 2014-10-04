@@ -1,0 +1,156 @@
+02:04 +0800 <pichuang>: 剛剛去推坑歪國人來channel
+02:05 +0800 <pichuang>: 她寫信來問問題 然後我就說解一解 最後跟她說 阿還有啥問題來這邊問xd
+02:05 +0800 <pichuang>: 各種推坑
+10:35 +0800 <pichuang>: morning
+11:01 +0800 <hwchiu>: MORNING
+17:38 +0800 <pichuang>: devnet: hi XD
+17:51 +0800 <death_>: 歐歐  原來如此XD
+17:54 +0800 <death_>: 是說...改完後switch還是會無法使用(苦笑)  大概是設定上的問題 小弟在 try try 看好了QQ
+18:35 +0800 <pichuang>: death_: 你說的無法使用是指哪部分
+18:46 +0800 <death_>: 喔喔!!剛剛成功了(灑花)
+18:47 +0800 <death_>: 原來 eth0.X  X是指vlan的編號   我想說應該是隨意自訂
+18:47 +0800 <death_>: 哈哈
+18:48 +0800 <death_>: http://wiki.openwrt.org/doc/uci/network/switch   我從官網這篇看到的XDDDD
+18:48 +0800 <sdnds-tw_Bot>: ==> Switch Documentation    - OpenWrt Wiki
+18:48 +0800 <death_>: 感謝pichuang大阿阿阿!!!
+18:48 +0800 <pichuang>: xd
+18:48 +0800 <pichuang>: 哦哦
+18:49 +0800 <pichuang>: 我知道這個有點麻煩
+18:49 +0800 <pichuang>: 我當初看超久的 跟我另一個同事研究半天
+18:50 +0800 <death_>: 網路上好像都沒有人做openwrt的vlan設定教學
+18:50 +0800 <death_>: 只能從官網慢慢找QQ
+18:51 +0800 <pichuang>: 有啊~ 不是有貼給你那個設定檔
+18:51 +0800 <pichuang>: 雖然我沒有講那個就是vlan了
+18:51 +0800 <pichuang>: 你可以把那個 0t 的t拿掉
+18:51 +0800 <pichuang>: 他就會帶tag了
+18:53 +0800 <pichuang>: death_: 有興趣寫個blog分享一下設定嗎
+18:53 +0800 <pichuang>: 整個流程之類的
+18:53 +0800 <pichuang>: 幫助後人
+18:56 +0800 <death_>: 其實我看了很久是不太了解tag的作用是什麼@@   只有官網上有提到加 t 的 port 會在傳出去時加上 tag  而且官方是說帶tag的port 一般是與cpu相連的那個
+18:57 +0800 <pichuang>: vlan tag
+18:57 +0800 <pichuang>: cpu 本身也有一個port 是 port 0
+18:58 +0800 <death_>: 當然當然^ ^  其實小弟已經有寫一些教學文了   只是因為資料不夠齊所以還沒架一個blog專門來放這些訊息   大致上是新手怎麼從0開始到實際上機   可以自己架一個SDN
+18:59 +0800 <pichuang>: death_: good
+18:59 +0800 <pichuang>: 太好了xd
+19:00 +0800 <death_>: 不過按1043ND的規格   port0是1043nd原本的wan port  1~4是lan port     5是與cpu相連的port
+19:00 +0800 <death_>: 這個還滿特別的  與pichuang大您的不太一樣
+19:01 +0800 <pichuang>: 是喔@@ 可能 1043nd的profile跟dir835的profile不太一樣
+19:01 +0800 <pichuang>: 通常要用到openwrt + openvswitch
+19:02 +0800 <pichuang>: 要理解幾個地方 linux + openwrt + openvswitch + controller
+19:02 +0800 <death_>: ^ ^沒有各位前輩哪會有現在呢   當然要留下一些資料讓小弟的後人參考XDDD
+19:02 +0800 <pichuang>: 光是前三個難度就算是很高的
+19:02 +0800 <pichuang>: 先前有稍微看了一下 targe profile 做了什麼事情
+19:02 +0800 <pichuang>: 花了不少時間xd
+19:03 +0800 <pichuang>: death_: 我們需要更多的有志之士啊~~
+19:04 +0800 <death_>: 其實小弟也只懂皮毛而已@@  只是大概知道每個步驟  每個流程怎麼走 原因也只有大概了解   但是真的要深究起來那我就...(苦笑)
+19:04 +0800 <pichuang>: xd 所以才需要更多交流
+19:04 +0800 <pichuang>: 降低入門門檻 讓後面的人有時間可以往底下研究
+19:11 +0800 <death_>: pichuang大  ovs-vsctl add-port br0 wlan0不能work呢   會跳錯誤0.0
+19:12 +0800 <death_>: openvswitch抓不到wlan 0這個interface
+19:14 +0800 <pichuang>: ifconfig 有顯示出 wlan0 這個 interface 嗎
+19:16 +0800 <death_>: 有的
+19:17 +0800 <pichuang>: 會噴什麼錯誤
+19:21 +0800 <death_>: root@OpenWrt:~# ovs-vsctl add-port br0 wlan0
+19:21 +0800 <death_>: ovs-vsctl: Error detected while setting up 'wlan0'.  See ovs-vswitchd log for details.
+19:22 +0800 <death_>: 長這樣子
+19:23 +0800 <pichuang>: ovs-vswitchd log寫什麼
+19:24 +0800 <pichuang>: 如果你有開的話應該是會在/tmp底下會有兩個關於ovs的log
+19:27 +0800 <death_>: 恩....請問小弟要怎麼開= =?
+19:27 +0800 <pichuang>: cat /tmp/ooxx.log
+19:27 +0800 <pichuang>: 我忘記檔名了
+19:27 +0800 <pichuang>: xd
+19:29 +0800 <death_>: root@OpenWrt:~# ls /tmp
+19:29 +0800 <death_>: TZ                dnsmasq.d         hosts             log               luci-modulecache  overlay           resolv.conf.auto  state
+19:29 +0800 <death_>: 不好意思小弟的問題有點多 @@
+19:29 +0800 <death_>: 請問是哪個呢0.0
+19:29 +0800 <death_>: dhcp.leases       etc               lock              luci-indexcache   luci-sessions     resolv.conf       run               sysinfo
+19:30 +0800 <pichuang>: 啊...
+19:30 +0800 <pichuang>: xd
+19:30 +0800 <pichuang>: /var/log/ovs-vswitchd.log
+19:30 +0800 <pichuang>: cat /var/log/ovs-vswitchd.log
+19:30 +0800 <pichuang>: 看一下
+19:31 +0800 <pichuang>: 如果沒有的話
+19:31 +0800 <pichuang>: 就是你沒有開
+19:31 +0800 <death_>: 真的沒有耶XDDD
+19:32 +0800 <pichuang>: 哦
+19:32 +0800 <pichuang>: 那你要開起來
+19:32 +0800 <pichuang>: 不然看不到
+19:32 +0800 <pichuang>: https://github.com/pichuang/openvwrt/blob/master/openvswitch/files/etc/init.d/openvswitch.init
+19:32 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/9qXbz  ==> openvwrt/openvswitch.init at master · pichuang/openvwrt · GitHub
+19:32 +0800 <pichuang>: 改一下你的config 重開openwrt吧
+19:33 +0800 <death_>: 不是  ovs-vsctl --no-wait init   就會完整啟動openvswitch了嗎?  0.0
+19:34 +0800 <pichuang>: nono
+19:34 +0800 <pichuang>: 那個不一樣
+19:35 +0800 <death_>: 所以是單純是用PC版的嗎0.0
+19:36 +0800 <pichuang>: ?
+19:36 +0800 <pichuang>: pc版?
+19:36 +0800 <pichuang>: 不太懂意思
+19:37 +0800 <death_>: 歐歐
+19:42 +0800 <death_>: 因為小弟參考的blog中   大都是以pc版為基底來安裝 openvswitch
+19:42 +0800 <death_>: 當中都是把指令大致拆成兩部分   啟動資料庫
+19:42 +0800 <death_>: ovsdb-server /usr/local/etc/openvswitch/conf.db \
+19:42 +0800 <death_>: --remote=db:Open_vSwitch,manager_options \
+19:42 +0800 <death_>: --remote=punix:/usr/local/var/run/openvswitch/db.sock \
+19:42 +0800 <death_>: --private-key=db:SSL,private_key \
+19:42 +0800 <death_>: --certificate=db:SSL,certificate \
+19:42 +0800 <death_>: --bootstrap-ca-cert=db:SSL,ca_cert --pidfile --detach --log-file
+19:42 +0800 <death_>: 啟動openvswitch主要元件
+19:42 +0800 <death_>: sudo ovs-vsctl --no-wait init
+19:42 +0800 <death_>: sudo ovs-vswitchd --pidfile --detach
+19:42 +0800 <death_>: sudo ovs-vsctl show
+19:42 +0800 <death_>: 不過換到openwrt這類嵌入式系統上   這些commands似乎就不能通用了
+19:43 +0800 <death_>: 恩  應該不是'pc版'  是pc
+19:43 +0800 <death_>: 才對
+19:44 +0800 <pichuang>: 還是可以用啊~xd
+19:44 +0800 <pichuang>: 不然你怎麼編進去
+19:45 +0800 <death_>: 只剩下 ovs-vsctl --no-wait init會作用  其他都會跳錯  QQ
+19:45 +0800 <death_>: 像是找不到目錄之類的
+19:46 +0800 <pichuang>: 你應該path 沒抓到而已
+19:46 +0800 <pichuang>: 至少我現在操作都是跟一般pc無異
+19:46 +0800 <death_>: 所以是把/etc/init.d/openvswitch 裡的東西換成pichuang大您給的連結的內容就會正常啟動囉??
+19:46 +0800 <pichuang>: y
+19:47 +0800 <pichuang>: 如果有錯的話就是path沒對到
+19:47 +0800 <pichuang>: $PATH
+19:47 +0800 <death_>: 歐歐XD  小弟來try try看^ ^
+20:27 +0800 <death_>: pichuang大   小弟試了您給的設定檔   但是出了點問題   @@
+20:27 +0800 <death_>: 第一是 開機後ovs-vsctl show會顯示database connection failed   我猜應該是沒有成功啟動
+20:27 +0800 <death_>: 所以我把command手動打了一次    結果在
+20:27 +0800 <death_>: start-stop-daemon -q -S -x /usr/sbin/ovsdb-server -- remote=puni
+20:27 +0800 <death_>: x:var/run/db.sock --remote=db:Open_vSwitch,Open_vSwitch,manager_options --pidfil
+20:27 +0800 <death_>: e=/var/run/osdb-server.pid --detach --log-file=/var/log/ovsdb-server.log
+20:27 +0800 <death_>: 這一步時   就會產生
+20:27 +0800 <death_>: ovsdb-server: I/O error: remote=punix:var/run/db.sock: failed to lock lockfile (No such file or directory)
+20:27 +0800 <death_>: 這個error呢0.0
+20:30 +0800 <pichuang>: 哦................
+20:30 +0800 <pichuang>: 少了一個/
+20:33 +0800 <Davy_CC>: remote=punix:var/run/db.sock => remote=punix:/var/run/db.sock
+20:34 +0800 <death_>: 歐歐  抱歉抱歉@@  小第眼殘了
+20:41 +0800 <death_>: pichuang大  小弟找到錯誤了!!
+20:41 +0800 <death_>: 2014-09-26T15:14:31.982Z|00015|dpif|WARN|system@ovs-system: failed to add wlan0 as port: Device or resource busy
+20:41 +0800 <death_>: 果然人工還是比不上電腦@@
+20:43 +0800 <pichuang>: 哦哦 resource busy
+20:43 +0800 <pichuang>: 我想想
+20:44 +0800 <pichuang>: 你先 ifconfig wlan0 down
+20:44 +0800 <pichuang>: ovs-vsctl add-port br0 wlan0
+20:44 +0800 <pichuang>: 這樣試試?
+20:44 +0800 <death_>: 好的
+20:44 +0800 <pichuang>: 應該會失敗
+20:44 +0800 <pichuang>: xd
+20:45 +0800 <pichuang>: 再用 ifconfig wlan0 up
+20:45 +0800 <pichuang>: ovs-vsctl add-port br0 wlan0
+20:45 +0800 <pichuang>: 試試
+20:45 +0800 <pichuang>: 再不行的話
+20:45 +0800 <pichuang>: iwconfig wlan0 down
+20:45 +0800 <pichuang>: iwconfig wlan0 mode montior
+20:45 +0800 <pichuang>: iwconfig wlan0 up
+20:46 +0800 <pichuang>: ovs-vsctl add-port br0 wlan0
+20:46 +0800 <pichuang>: trytry
+20:46 +0800 <pichuang>: 如果沒有 iwconfig 的話 裝起來吧
+20:50 +0800 <death_>: XD  還真的失敗惹
+20:50 +0800 <death_>: 好的  小弟在試試
+20:50 +0800 <death_>: 不好意思勞煩pichuang大您了@@
+20:50 +0800 <pichuang>: 不會啦
+20:50 +0800 <pichuang>: 我自己也很好奇xd
+20:50 +0800 <death_>: 真的很不好意思
+20:50 +0800 <pichuang>: 如果我思路是對的話 應該要可以正常work
+20:50 +0800 <pichuang>: 如果不能動的話 就代表我可能有地方沒想清楚
