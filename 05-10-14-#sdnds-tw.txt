@@ -1,0 +1,15 @@
+09:48 +0800 <ken_ho>: Hello
+10:13 +0800 <hwchiu>: Hi 早安
+10:14 +0800 <ken_ho>: :) just read your  blog
+10:14 +0800 <ken_ho>: 好巧
+10:40 +0800 <hwchiu>: XD
+10:43 +0800 <hwchiu>: 有人說他用mininet模擬網路，什麼都不做的情況下， controller會學到hosts的MAC address
+10:57 +0800 <hwchiu>: 我以前觀察的是host會送ipv6 advertisemenets的封包，有遇到此情形的可以注意一下
+23:11 +0800 <adaam>: hwchiu: 用哪個controller啊?
+23:11 +0800 <adaam>: 我以前測試也是這樣沒錯
+23:14 +0800 <hwchiu>: 任何應該都無所謂
+23:16 +0800 <adaam>: 我以為mininet的動作應該只是幫忙模擬各個host，controller的行為應該是個controller的預設規則去設定的
+23:18 +0800 <hwchiu>: 恩恩
+23:18 +0800 <hwchiu>: 結果這些host天生就會發ipv6 ad
+23:19 +0800 <adaam>: 應該是現在預設都有開ipv6的關係吧@@
+23:19 +0800 <hwchiu>: 對
