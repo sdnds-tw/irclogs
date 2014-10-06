@@ -1,0 +1,271 @@
+12:46 +0800 <PoWen>: hello
+12:46 +0800 <PoWen>: anyone can see me?
+12:51 +0800 <hwchiu>: yes
+12:51 +0800 <hwchiu>: i can
+13:03 +0800 <PoWen>: hi
+13:03 +0800 <PoWen>: 怪怪
+13:03 +0800 <PoWen>: 失聯好幾天，連不上來
+13:03 +0800 <PoWen>: ha
+13:03 +0800 <PoWen>: slack那邊倒是比較少
+13:14 +0800 <hwchiu>: 恩恩
+14:27 +0800 <PoWen>: 這裡有對交大NBL
+14:27 +0800 <PoWen>: 很熟的嗎
+14:27 +0800 <PoWen>: 小飛機？
+14:42 +0800 <hwchiu>: beachdog勒
+15:05 +0800 <jamesLiao>: 午安
+15:05 +0800 <jamesLiao>: 請問一下
+15:05 +0800 <jamesLiao>: ovs可以手動去加queue嗎？
+15:06 +0800 <hwchiu>: 可
+15:07 +0800 <jamesLiao>: ！
+15:07 +0800 <jamesLiao>: 哈哈 那要怎麼加？
+15:08 +0800 <hwchiu>: http://hwchiu.logdown.com/posts/197231-config-qos-on-ovs-with-floodlight
+15:08 +0800 <sdnds-tw_Bot>: ==> Config Qos on Ovs with Floodlight « hwchiu's Blog
+15:09 +0800 <jamesLiao>: hwchiu大 我是在自己架的環境
+15:09 +0800 <jamesLiao>: 不是用mininet耶
+15:09 +0800 <jamesLiao>: 還是都一樣？
+15:09 +0800 <hwchiu>: 一樣
+15:09 +0800 <hwchiu>: ovs-vsctl
+15:10 +0800 <hwchiu>: 這是OVS的工具
+15:10 +0800 <hwchiu>: mininet只是借用OVS
+15:10 +0800 <jamesLiao>: 喔喔
+15:11 +0800 <jamesLiao>: 所以用ovs-vsctl在ovs上建queue就是了？
+15:11 +0800 <hwchiu>: 恩恩
+15:11 +0800 <jamesLiao>: 抄收
+15:12 +0800 <jamesLiao>: 感謝！
+17:40 +0800 <jamesLiao>: ovs有把特定的port number導到特定的queue的功能嗎？
+17:40 +0800 <jamesLiao>: 比方說我要把port 1000讓他跑到queue1這樣
+17:46 +0800 <hwchiu>: flow?
+17:46 +0800 <hwchiu>: flow match & actions
+17:48 +0800 <jamesLiao>: ?
+17:49 +0800 <hwchiu>: 用match去比對port=1000的
+17:49 +0800 <hwchiu>: 然後action設定enqueue
+17:49 +0800 <hwchiu>: 導入某個queue
+19:13 +0800 <John_irc>: 是說有port 1000嗎?! XD
+19:18 +0800 <jamesLiao>: 哈哈 假設的啦
+19:28 +0800 <_devnet_>: Hi
+19:29 +0800 <_devnet_>: I am setting up openvswitch 2.3.0 on TP-Link WDR3600 router running openwrt
+19:30 +0800 <_devnet_>: Openvswich is running and is able to communicate with controller
+19:30 +0800 <_devnet_>: but after i add the wlan interfaces to ovs bridge, i can not connect to it anymore
+19:31 +0800 <_devnet_>: connection get stuck at "obtaining ip address"
+19:31 +0800 <_devnet_>: nothing happens after that
+19:31 +0800 <_devnet_>: can you please tell me how to debug this issue
+20:50 +0800 <_devnet_>: Hi
+20:58 +0800 <hwchiu>: hi
+20:58 +0800 <hwchiu>: pichuang: dlinking, do you have any idea about that ?
+22:14 +0800 <pichuang>: how do you connect to tp-link wdr3600?
+22:14 +0800 <pichuang>: wlan or lan?
+22:19 +0800 <hwchiu>: _devnet_:
+22:27 +0800 <pichuang>: hwchiu: 我英文超爛的 如果有非常奇怪的錯誤 幫忙訂正一下
+22:27 +0800 <pichuang>: xd
+22:33 +0800 <_devnet_>: through lan
+22:35 +0800 <pichuang>: how many ports do you have?
+22:35 +0800 <pichuang>: 5 or 4 ?
+22:35 +0800 <pichuang>: if you have 4 ports
+22:36 +0800 <pichuang>: try to add 3 ports into ovs-bridge, the other don't add to it.
+22:36 +0800 <pichuang>: and you need bind one ip on the other port
+22:37 +0800 <pichuang>: control your tp-link by that.
+22:37 +0800 <_devnet_>: i have 5 ports
+22:38 +0800 <_devnet_>: 4 lan and 1 wan
+22:38 +0800 <pichuang>: ok
+22:38 +0800 <_devnet_>: i need to use openvswitch for wlans
+22:38 +0800 <_devnet_>: i have 2 wlans
+22:38 +0800 <_devnet_>: 2.4 and 5 GHz
+22:38 +0800 <pichuang>: who send dhcp?
+22:39 +0800 <_devnet_>: i didnt get ur qn
+22:39 +0800 <_devnet_>: please elaborate
+22:39 +0800 <pichuang>: hmmm
+22:40 +0800 <pichuang>: what's your ovs-bridge ip?
+22:40 +0800 <pichuang>: do you know that?
+22:40 +0800 <_devnet_>: i have set it to 192.168.1.1
+22:40 +0800 <pichuang>: ok
+22:40 +0800 <_devnet_>: and then removed the ip from eth0.1
+22:40 +0800 <pichuang>: ok
+22:41 +0800 <pichuang>: can you paste your `ifconfig` result?
+22:41 +0800 <_devnet_>: one second
+22:49 +0800 <_devnet_>: sorry for the delay
+22:50 +0800 <_devnet_>: br0       Link encap:Ethernet  HWaddr E8:94:F6:BB:BD:2A
+22:50 +0800 <_devnet_>:           inet addr:192.168.1.1  Bcast:192.168.1.255  Mask:255.255.255.0
+22:50 +0800 <_devnet_>:           inet6 addr: fe80::ea94:f6ff:febb:bd2b/64 Scope:Link
+22:50 +0800 <_devnet_>:           UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+22:50 +0800 <_devnet_>:           RX packets:72337 errors:0 dropped:0 overruns:0 frame:0
+22:50 +0800 <hwchiu>: 第一次看到 #Excess Flood
+22:50 +0800 <hwchiu>: pichuang: 你請他貼gist之類的?
+22:50 +0800 <hwchiu>: _devnet_: hi, could you use the paste service like gist to post your config ?
+22:51 +0800 <_devnet_>: br0 is ovs bridge
+22:51 +0800 <_devnet_>: sorry
+22:52 +0800 <pichuang>: hwchiu: xd
+22:52 +0800 <pichuang>: hwchiu: 我好想睡覺
+22:52 +0800 <pichuang>: - -
+22:52 +0800 <pichuang>: 他應該是沒設好ip
+22:52 +0800 <hwchiu>: 等他一下XD 你加油
+22:53 +0800 <pichuang>: 怎麼辦 他是貴寶地第一個歪國人
+22:54 +0800 <_devnet_>: https://gist.github.com/anonymous/12416d652b9a34ef39e8
+22:54 +0800 <sdnds-tw_Bot>: ==> ifconfig
+22:54 +0800 <_devnet_>: ifconfig details
+22:55 +0800 <pichuang>: ovs-vsctl show ?
+22:56 +0800 <_devnet_>: https://gist.github.com/anonymous/cebeb63570f5bdbd9939
+22:56 +0800 <sdnds-tw_Bot>: ==> ovs
+22:57 +0800 <pichuang>: hmmmm
+22:57 +0800 <_devnet_>: but when i try to connect to wlan
+22:57 +0800 <_devnet_>: client is not getting the ip address
+22:57 +0800 <_devnet_>: it waits for a while and then disconnects
+23:00 +0800 <pichuang>: how to get your client ip?
+23:00 +0800 <pichuang>: dhcp? manual?
+23:00 +0800 <_devnet_>: the dhcp client should be running in the router right
+23:00 +0800 <pichuang>: ok
+23:01 +0800 <pichuang>: if you use openvswitch, maybe can not use dhcp service or nat service.
+23:01 +0800 <pichuang>: any communication will be talk with controller
+23:01 +0800 <_devnet_>: oh k
+23:02 +0800 <pichuang>: your controller doesn't know how to handle this packet
+23:02 +0800 <_devnet_>: but how does lan clients are able to get the ip address
+23:02 +0800 <pichuang>: so you can not get any ip
+23:02 +0800 <pichuang>: really?
+23:02 +0800 <pichuang>: let me think.
+23:02 +0800 <_devnet_>: yeah now i am connected to lan
+23:03 +0800 <_devnet_>: and my laptop has ip address
+23:03 +0800 <pichuang>: try 'ifconfig wlan0 0.0.0.0'
+23:03 +0800 <pichuang>: 'ifconfig wlan1 0.0.0.0'
+23:03 +0800 <_devnet_>: i already did that
+23:03 +0800 <_devnet_>: there is no ip on wlan0 or wlan1
+23:04 +0800 <pichuang>: you say you can get dhcp ip
+23:04 +0800 <_devnet_>: yes for lan
+23:04 +0800 <pichuang>: so any openflow flow on your device?
+23:04 +0800 <_devnet_>: yeah
+23:04 +0800 <_devnet_>: i can see
+23:05 +0800 <_devnet_>: some flows in related to lan port
+23:05 +0800 <pichuang>: wow
+23:05 +0800 <pichuang>: it's interesting
+23:05 +0800 <_devnet_>: wlan port is shown but no flows since there is no client connected to it
+23:05 +0800 <_devnet_>: have you tried with wlan and ovs?
+23:06 +0800 <pichuang>: yes
+23:06 +0800 <pichuang>: i can controller any port on my device
+23:06 +0800 <pichuang>: my device is dlink dir-835
+23:06 +0800 <_devnet_>: can you please send me your network config
+23:06 +0800 <pichuang>: ovs-ofctl show br0
+23:06 +0800 <pichuang>: can you see wlan0?
+23:06 +0800 <pichuang>: or wlan1?
+23:07 +0800 <_devnet_>: https://gist.github.com/anonymous/cebeb63570f5bdbd9939
+23:07 +0800 <sdnds-tw_Bot>: ==> ovs
+23:07 +0800 <pichuang>: it's ovs-vsctl show result
+23:08 +0800 <_devnet_>: sorry
+23:08 +0800 <pichuang>: xD that's fine.
+23:09 +0800 <_devnet_>: https://gist.github.com/anonymous/e4a764a541fde32bf1cb
+23:09 +0800 <sdnds-tw_Bot>: ==> ofctl
+23:09 +0800 <_devnet_>: i was playing around wlan0 interface
+23:09 +0800 <_devnet_>: so it is not shown there
+23:11 +0800 <_devnet_>: can you please send me your network config
+23:11 +0800 <_devnet_>: send me /etc/config/wireless
+23:11 +0800 <pichuang>: ok
+23:11 +0800 <_devnet_>: please send me /etc/config/network
+23:11 +0800 <pichuang>: https://gist.github.com/pichuang/9876454
+23:11 +0800 <sdnds-tw_Bot>: ==> OpenWrt /etc/config/network
+23:12 +0800 <_devnet_>: wireless
+23:12 +0800 <pichuang>: i dont save wireless config, sorry
+23:12 +0800 <pichuang>: but i just modify one line.
+23:13 +0800 <pichuang>: umm.. delete one line.
+23:13 +0800 <pichuang>: maybe you already saw that.
+23:15 +0800 <pichuang>: hwchiu: 我兩眼快合上了
+23:15 +0800 <pichuang>: hwchiu: xd
+23:17 +0800 <hwchiu>: 加油ＱＱ
+23:17 +0800 <hwchiu>: 有想法嗎
+23:17 +0800 <pichuang>: 他的時區好像是+2
+23:18 +0800 <pichuang>: 沒想法 我沒有用過他的方式
+23:18 +0800 <pichuang>: 問題應該在那個eth0
+23:18 +0800 <pichuang>: 我的config 是預設拿掉eth0 但他的還留著
+23:19 +0800 <hwchiu>: 我沒有無線的經驗ＱＱ
+23:19 +0800 <pichuang>: 其實不用想的這麼複雜 就是一個port
+23:20 +0800 <hwchiu>: 我比較好奇為什麼lan順利wan失敗
+23:20 +0800 <pichuang>: 2jo4
+23:20 +0800 <pichuang>: 對啊
+23:20 +0800 <pichuang>: 重點是還有流量
+23:20 +0800 <pichuang>: ovs-ofctl 也有東西出來
+23:21 +0800 <hwchiu>: 嗯嗯
+23:22 +0800 <_devnet_>: you mean i need to disable the list network line right wireless config right?
+23:22 +0800 <pichuang>: yes
+23:22 +0800 <_devnet_>: yeah i already did that
+23:23 +0800 <_devnet_>: no other changes?
+23:23 +0800 <pichuang>: ok
+23:23 +0800 <pichuang>: no
+23:23 +0800 <_devnet_>: it works for you?
+23:23 +0800 <pichuang>: just that
+23:23 +0800 <_devnet_>: its really strange
+23:23 +0800 <_devnet_>: then i created the ovs bridge manually and added all hte interfaces
+23:24 +0800 <_devnet_>: eth0.1 is the switch with 2, 3, 4 , 5 ports
+23:24 +0800 <pichuang>: maybe i need a lab to reappear your scenario.
+23:24 +0800 <pichuang>: yes
+23:24 +0800 <pichuang>: eth0.1 include 2,3,4,5
+23:24 +0800 <pichuang>: a.k.a lan ports
+23:24 +0800 <_devnet_>: what you mean by #admin port
+23:24 +0800 <_devnet_>: yep
+23:25 +0800 <_devnet_>: is that a probelm
+23:25 +0800 <pichuang>: no
+23:25 +0800 <_devnet_>: right now i am not worried controlling individual ports
+23:25 +0800 <pichuang>: i dont add that port to ovs virdge
+23:25 +0800 <pichuang>: s/virdge/bridge
+23:25 +0800 <_devnet_>: you connect that port to controller right?
+23:26 +0800 <pichuang>: yes
+23:26 +0800 <pichuang>: hmm..
+23:26 +0800 <_devnet_>: for normal tcp/ip
+23:27 +0800 <pichuang>: the port let me connect to my device by normal tcp/ip.
+23:28 +0800 <pichuang>: not for connect to controller
+23:28 +0800 <pichuang>: it's in-band
+23:28 +0800 <_devnet_>: then how do connect ap to controller?
+23:28 +0800 <pichuang>: set one ip on ovs-vridge
+23:29 +0800 <_devnet_>: where is your controller located?
+23:29 +0800 <pichuang>: s/vrdige/brdige
+23:29 +0800 <pichuang>: outside, public network
+23:29 +0800 <_devnet_>: oh k
+23:30 +0800 <pichuang>: it's not different to public network or private network.
+23:30 +0800 <_devnet_>: yeah i got that
+23:31 +0800 <pichuang>: i think that is not our problem of points
+23:31 +0800 <pichuang>: xd
+23:32 +0800 <pichuang>: maybe we need more test
+23:32 +0800 <pichuang>: i will do a lab to reappear that.
+23:32 +0800 <pichuang>: can you send your all config to me?
+23:32 +0800 <pichuang>: /etc/config/*
+23:33 +0800 <pichuang>: and your openwrt version
+23:33 +0800 <devnet_>: sure
+23:33 +0800 <devnet_>: one sec
+23:33 +0800 <pichuang>: send to my email
+23:33 +0800 <pichuang>: pichuang@cs.nctu.edu.tw
+23:33 +0800 <pichuang>: hwchiu: 他這問題麻煩了
+23:33 +0800 <pichuang>: 我沒遇過xdddd
+23:34 +0800 <pichuang>: 感覺就是被openwrt雷到
+23:34 +0800 <devnet_>: great
+23:34 +0800 <devnet_>: i will send it your email id
+23:34 +0800 <hwchiu>: maybe you can re-produce his problem by install the same version openwrt to your ap
+23:35 +0800 <pichuang>: i need to find my tp-link XDDDD
+23:36 +0800 <pichuang>: i dont know where it was.
+23:36 +0800 <pichuang>: XDDDD
+23:38 +0800 <pichuang>: devnet_: btw, what's your deployment options?
+23:38 +0800 <pichuang>: do you try to deploy by out-of-band?
+23:39 +0800 <pichuang>: i choice it now
+23:39 +0800 <devnet_>: sorry
+23:39 +0800 <devnet_>: i didnt get u r qn
+23:40 +0800 <pichuang>: http://blog.ipspace.net/2014/01/is-open-vswitch-control-plane-in-band.html
+23:40 +0800 <sdnds-tw_Bot>: ==>  Is Open vSwitch Control Plane In-Band or Out-of-Band? « ipSpace.net by @ioshints        
+23:44 +0800 <pichuang>: hwchiu: 有請翻譯精靈 XD
+23:45 +0800 <hwchiu>: devnet_: how do your ovs connect to your contoller? via a openvswitch-managed port ?
+23:46 +0800 <devnet_>: nope
+23:46 +0800 <devnet_>: public
+23:46 +0800 <hwchiu>: so, the connection between the OVS and controller won't control by the OVS, right ?
+23:46 +0800 <pichuang>: hwchiu: 他可能不知道有in-band 跟 oob 的存在
+23:47 +0800 <hwchiu>: pichuang: mm
+23:48 +0800 <devnet_>: i have sent the e-mail
+23:48 +0800 <devnet_>: please check
+23:48 +0800 <devnet_>: thats right
+23:48 +0800 <hwchiu>: OK, That's the way we call Out-of-Band
+23:49 +0800 <devnet_>: oh k
+23:49 +0800 <devnet_>: should i use some port in ap to connect to controller?
+23:49 +0800 <devnet_>: and make it tcp ip port using different vlan?
+23:50 +0800 <pichuang>: different vlan?
+23:50 +0800 <pichuang>: you means eth0.* ?
+23:51 +0800 <devnet_>: yep
+23:53 +0800 <pichuang>: no, it isn't necessary
+23:53 +0800 <devnet_>: connecting to controller via public is fine right?
+23:54 +0800 <pichuang>: y
+23:55 +0800 <devnet_>: i am using floodlight controller running in other machine
+23:58 +0800 <pichuang>: ok
+23:58 +0800 <pichuang>: btw i don't receive your email QQ
+23:59 +0800 <pichuang>: maybe send to  another one
+23:59 +0800 <pichuang>: inceptioninx@gmail.com
