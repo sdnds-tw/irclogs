@@ -1,0 +1,35 @@
+00:00 +0800 <pichuang>: i need go to sleep now
+00:01 +0800 <devnet_>: i will send the e-mail to this id
+00:02 +0800 <devnet_>: thank you for your support
+00:02 +0800 <pichuang>: : )
+02:27 +0800 <death_>: 小弟終於試出來了!!!   --參考這幾篇-->>http://wiki.openwrt.org/doc/recipes/routedap   http://wiki.openwrt.org/doc/recipes/guest-wlan
+02:27 +0800 <death_>: 是說滿奇怪的事，原本加入openvswitch bridge內會跳錯的wlan0
+02:27 +0800 <death_>: 把它從lan這個interface切出來，之後再加入新的interface中，OpenvSwitch就不會再報錯了!!
+02:27 +0800 <death_>: 之後看了很久還是不太懂背後的原理@@，只能說openwrt的很奇妙...
+02:27 +0800 <sdnds-tw_Bot>: ==> Routed AP    - OpenWrt Wiki
+02:27 +0800 <death_>: 接下來小弟終於能已正式上controller了（灑花）
+09:25 +0800 <hwchiu>: cool
+10:22 +0800 <jamesLiao>: 早
+10:23 +0800 <jamesLiao>: 關於昨天的match & action
+10:24 +0800 <jamesLiao>: 請問是用ovs ofctl add-flow 去做的嗎？
+10:30 +0800 <hwchiu>: YES
+10:50 +0800 <jamesLiao>: ovs-ofctl add-flow br0 "in_port=2,actions=enqueue:1:0''
+10:51 +0800 <jamesLiao>: 請問 in_port=2 ,enqueue:1:0 這些參數所代表的意思是？
+11:40 +0800 <hwchiu>: http://openvswitch.org/cgi-bin/ovsman.cgi?page=utilities%2Fovs-ofctl.8
+11:40 +0800 <sdnds-tw_Bot>: ==> ovs−ofctl
+11:47 +0800 <jamesLiao>: 要怎麼知道in_port是我指定的那一個呢？
+12:17 +0800 <pichuang>: 透過觀察 ovs-ofctl show bridge 上面的 port number 做對照
+12:18 +0800 <pichuang>: ovs-ofctl show <bridge>
+14:19 +0800 <jamesLiao>: 2(eth2): address:00:07:e9:48:99:11
+14:20 +0800 <jamesLiao>: 最前面的2 跟in_port=2是同一個？
+14:27 +0800 <pichuang>: y
+14:28 +0800 <jamesLiao>: enqueue:<port>:<queue>
+14:29 +0800 <jamesLiao>: 那port 跟queue呢？
+14:44 +0800 <jamesLiao>: 是指我in_port=2還有我自己建立的q0 q1 q2其中的一個這樣嗎？
+14:45 +0800 <jamesLiao>: 還是port是一個port number, ex:80
+15:12 +0800 <jamesLiao>: 哈哈 拍謝上面的問題請自行忽略XDD
+15:12 +0800 <jamesLiao>: 自D
+15:22 +0800 <devnet_>: Hi
+15:22 +0800 <devnet_>: @pichuang: Did you get my email?
+17:18 +0800 <pichuang>: death_: yes
+17:18 +0800 <pichuang>: i got it
