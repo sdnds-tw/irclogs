@@ -1,0 +1,14 @@
+14:55 +0800 <pichuang>: John_irc: 問問 ryu 要如何送patch
+14:55 +0800 <pichuang>: 如果他們不收pr的話 要怎麼做比較恰當
+14:59 +0800 <hwchiu>: email
+15:01 +0800 <pichuang>: 上 patch 送mail?
+15:01 +0800 <pichuang>: 上
+15:01 +0800 <pichuang>: = =
+15:02 +0800 <pichuang>: 上
+15:02 +0800 <pichuang>: ....
+15:02 +0800 <pichuang>: ㄈ ㄨˋ
+15:02 +0800 <pichuang>: 為啥會吃字= =
+15:02 +0800 <John_irc>: yes email
+15:03 +0800 <John_irc>: FYI http://osrg.github.io/ryu-book/zh_tw/html/contribute.html#id5
+15:03 +0800 <sdnds-tw_Bot>: ==> 協助專案開發 — Ryubook 1.0 documentation
+23:45 +0800 <_devnet_>: Hi
