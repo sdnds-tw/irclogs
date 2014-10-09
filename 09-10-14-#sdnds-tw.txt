@@ -1,0 +1,87 @@
+00:49 +0800 <devnet_>: Hi
+02:12 +0800 <devnet_>: Hi
+02:31 +0800 <devnet_>: Hi
+09:31 +0800 <pichuang>: hi
+09:31 +0800 <hwchiu>: 時差嗎XD
+09:31 +0800 <pichuang>: xd
+09:32 +0800 <pichuang>: 可能差六小時
+09:32 +0800 <hwchiu>: 恩恩
+17:27 +0800 <devnet_>: Hi
+17:38 +0800 <hwchiu>: pichuang
+18:15 +0800 <devnet_>: Hi hwchiu
+18:16 +0800 <devnet_>: can you please send me /etc/config/firewall rules for ovs config?
+18:21 +0800 <hwchiu>: Hi, I have no experience with openwrt.
+19:24 +0800 <jamesLiao>: 請問一下
+19:27 +0800 <jamesLiao>: 我的server兩張網卡 要接兩台不同的ovs 該如何設定？
+20:51 +0800 <hwchiu>: add-br創兩個
+20:54 +0800 <jamesLiao>: ovs上創兩個？
+20:56 +0800 <hwchiu>: 等
+20:56 +0800 <hwchiu>: 你有幾台機器?
+20:56 +0800 <jamesLiao>: 2台ovs
+20:56 +0800 <jamesLiao>: 2台server
+20:57 +0800 <jamesLiao>: 然後在server上跑kvm虛擬氣
+20:57 +0800 <jamesLiao>: 每台server各有4台虛擬機
+20:58 +0800 <jamesLiao>: 之前都是用一個ovs接兩台server
+20:58 +0800 <jamesLiao>: 現在多了一台ovs這樣
+21:07 +0800 <hwchiu>: 恩恩
+21:07 +0800 <hwchiu>: 不是很懂你的問題 #我的server兩張網卡 要接兩台不同的ovs
+21:07 +0800 <hwchiu>: 不就網路線嗎XD?
+21:07 +0800 <jamesLiao>: XDD
+21:07 +0800 <jamesLiao>: 斷線沒有錯啊
+21:08 +0800 <jamesLiao>: 一張網卡會通一張網卡不通
+21:08 +0800 <jamesLiao>: 都是在192.168.1的網段下
+21:10 +0800 <hwchiu>: 怎樣的情形
+21:10 +0800 <hwchiu>: 叫做通
+21:10 +0800 <jamesLiao>: 我在想一下要怎麼描述問題
+21:10 +0800 <hwchiu>: 叫做不通
+21:11 +0800 <jamesLiao>: 哈哈 讓我重新整理一下
+21:14 +0800 <hwchiu>: 恩恩OK
+21:49 +0800 <pichuang>: devnet_: good evening
+21:51 +0800 <pichuang>: 她討厭我了= =
+21:51 +0800 <pichuang>: 聽 tutul 說 http://roan.logdown.com/posts/230671-sdn-lab-4-mininet-upgrade
+21:51 +0800 <sdnds-tw_Bot>: ==> SDN Lab 4$ Mininet Upgrade « roan's Blog
+21:51 +0800 <pichuang>: 我這篇有問題
+21:52 +0800 <pichuang>: XD 有人有相關經驗的可以跟我說說嗎 因為我測試都是用這升完後才測的
+21:53 +0800 <devnet_>: pichuang: good evening
+21:54 +0800 <pichuang>: devnet_: I try to rebuild openvwrt
+21:54 +0800 <devnet_>: can you please send me /etc/config/firewall file for ovs?
+21:54 +0800 <devnet_>: oh k
+21:54 +0800 <pichuang>: https://github.com/pichuang/openvwrt
+21:54 +0800 <sdnds-tw_Bot>: ==> pichuang/openvwrt · GitHub
+21:54 +0800 <pichuang>: but i got a bug XD
+21:54 +0800 <pichuang>: https://github.com/pichuang/openvwrt/issues/3
+21:54 +0800 <sdnds-tw_Bot>: ==> Some error when make openvwrt · Issue #3 · pichuang/openvwrt · GitHub
+21:54 +0800 <pichuang>: I am trying to fix it
+21:55 +0800 <pichuang>: my /etc/config/firewall is default
+21:55 +0800 <pichuang>: i dont modify that.
+21:55 +0800 <devnet_>: oh k
+21:57 +0800 <devnet_>: i saw the bug report
+21:57 +0800 <devnet_>: missing libatomic.so.1
+21:57 +0800 <pichuang>: btw, what times is it there?
+21:57 +0800 <devnet_>: i didn't face this problem
+21:57 +0800 <devnet_>: 2.57PM
+21:57 +0800 <devnet_>: afternoon
+21:57 +0800 <pichuang>: you use my solution or yours?
+21:57 +0800 <pichuang>: wow
+21:57 +0800 <pichuang>: i see XD
+21:57 +0800 <devnet_>: solution?
+21:58 +0800 <devnet_>: openvswitch u mean?
+21:58 +0800 <pichuang>: porting openvswitch to openwrt
+21:58 +0800 <devnet_>: i used your solution
+21:58 +0800 <devnet_>: build went through with out any problem
+21:58 +0800 <devnet_>: i am on OpenWrt Chaos Calmer r42701 / LuCI Trunk (svn-r10457)
+21:59 +0800 <pichuang>: hwchiu: 有鬼啊xd  他沒踩到雷 我踩到了
+21:59 +0800 <hwchiu>: 下載 mininet且切換tag 你哪來的切換tag XD
+21:59 +0800 <pichuang>: hwchiu: 啊我拿掉了 我改一下 blog
+21:59 +0800 <pichuang>: devnet_: ok
+22:01 +0800 <pichuang>: 救命啊 有沒有有在一起玩 openwrt的
+22:01 +0800 <hwchiu>: QQ
+22:01 +0800 <pichuang>: 啊 好像有一位 XD
+22:02 +0800 <pichuang>: 我現在覺得一天24hr 根本不夠用
+22:09 +0800 <devnet_>: pichuang: you are not setting any ip address in /etc/config/network for lan interfaces
+22:09 +0800 <devnet_>: then how do you connect to your ap?
+22:12 +0800 <pichuang>: i set a ip address on eth0.4
+22:12 +0800 <devnet_>: oh k
+22:12 +0800 <pichuang>: and then use 'ifconfig ovs-br x.x.x.x'
+22:13 +0800 <devnet_>: oh k
+23:46 +0800 <devnet_>: pichuang: do you add wlan ports to ovs as ports?
