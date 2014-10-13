@@ -1,0 +1,168 @@
+19:14 +0800 <jamesLiao>: hi
+19:15 +0800 <jamesLiao>: 有人有
+19:16 +0800 <jamesLiao>: 設定server兩張網卡可以同時使用的嗎？
+19:17 +0800 <jamesLiao>: 這問題好像跟SDN沒啥關西XD
+19:17 +0800 <hwchiu>: 你IP怎設定
+19:17 +0800 <jamesLiao>: 給eth0 eth1各一個ip
+19:18 +0800 <jamesLiao>: 192.168.1.X
+19:18 +0800 <hwchiu>: route那邊呢?
+19:19 +0800 <jamesLiao>: ？
+19:19 +0800 <jamesLiao>: 不懂
+19:20 +0800 <hwchiu>: 應該講
+19:20 +0800 <hwchiu>: 你如何判斷他無法同時使用 #設定server兩張網卡可以同時使用的嗎？
+19:21 +0800 <hwchiu>: 你是使用了怎樣的環境，進行了怎樣的測試
+19:21 +0800 <jamesLiao>: 喔喔
+19:21 +0800 <hwchiu>: 拿到了怎樣的結果，以至於你判斷無法同時使用
+19:21 +0800 <jamesLiao>: 所以是我要講清楚就對了
+19:22 +0800 <hwchiu>: 恩恩
+19:22 +0800 <hwchiu>: 可能要詳細一點
+19:22 +0800 <hwchiu>: 才好判斷
+19:22 +0800 <hwchiu>: 你可能是哪邊沒有設定清楚
+19:23 +0800 <jamesLiao>: 這個版可以po圖嗎?
+19:26 +0800 <hwchiu>: 貼連結才可以XD
+19:26 +0800 <hwchiu>: 無法直接PO
+19:26 +0800 <jamesLiao>: 了解
+19:27 +0800 <jamesLiao>: 我用描述的好了 哈哈
+19:27 +0800 <hwchiu>: 恩恩
+19:28 +0800 <jamesLiao>: 我的架構裡面是兩台ovs接兩台server
+19:29 +0800 <hwchiu>: 恩
+19:29 +0800 <jamesLiao>: 一台server兩個port ,一個port各連一台ovs
+19:30 +0800 <jamesLiao>: 然後現在就是我給兩個port各一個ip
+19:31 +0800 <jamesLiao>: 然後就出現其中一個port不通
+19:31 +0800 <jamesLiao>: 我的問題是
+19:34 +0800 <jamesLiao>: 是不是不能同時兩個一起啟動？
+19:42 +0800 <hwchiu>: 應該要可以
+19:42 +0800 <hwchiu>: 假設server上的兩個port為1跟2
+19:42 +0800 <hwchiu>: 1進去的，會送到2嗎?
+19:43 +0800 <hwchiu>: 有設定route之類的幫她轉向嗎
+19:44 +0800 <jamesLiao>: 都沒設定
+19:44 +0800 <jamesLiao>: 欸 等等
+19:44 +0800 <jamesLiao>: 我看一下
+19:45 +0800 <hwchiu>: 恩恩
+20:18 +0800 <pichuang>: route
+20:18 +0800 <pichuang>: xd
+20:18 +0800 <pichuang>: 哦哦 hwchiu 講了 XD
+20:18 +0800 <pichuang>: route 接的 device要看一下是不是對的
+20:44 +0800 <jamesLiao>: 第一個就出不去了XDD
+20:45 +0800 <pichuang>: 第一個?
+20:46 +0800 <jamesLiao>: 就server的不通的port連gateway都不知道
+20:47 +0800 <jamesLiao>: 令一個會通的就很順利traceroute到
+20:49 +0800 <pichuang>: 你ip設同subnet ?
+20:49 +0800 <pichuang>: 還是不同subnet ?
+20:49 +0800 <jamesLiao>: 同一個
+20:51 +0800 <pichuang>: default gw試試?
+20:52 +0800 <jamesLiao>: gw嗎？
+20:52 +0800 <jamesLiao>: gw 192.168.1.254
+20:52 +0800 <pichuang>: 你print 一下你的 route出來看看
+20:53 +0800 <jamesLiao>: ok
+20:55 +0800 <jamesLiao>: https://www.irccloud.com/pastebin/3FrD0hsI
+20:55 +0800 <sdnds-tw_Bot>: ==> Pastebin: 3FrD0hsI | IRCCloud
+20:56 +0800 <pichuang>: 這樣不行嗎
+20:57 +0800 <jamesLiao>: 不行
+20:58 +0800 <jamesLiao>: 然後令一個port的route跟這個一樣
+20:58 +0800 <jamesLiao>: 但是會通
+21:00 +0800 <pichuang>: 你這是一台機器設定兩個ip
+21:00 +0800 <jamesLiao>: 嗯
+21:00 +0800 <pichuang>: 然後都綁在ovs birdge上嗎
+21:01 +0800 <jamesLiao>: 還沒綁上去
+21:01 +0800 <pichuang>: br0不是嗎
+21:01 +0800 <pichuang>: br0 br1
+21:02 +0800 <jamesLiao>: 那是我用來連kvm的
+21:02 +0800 <jamesLiao>: 因為我需要跑虛擬機
+21:03 +0800 <pichuang>: !!
+21:03 +0800 <pichuang>: 你是在一台電腦上跑kvm ?
+21:03 +0800 <jamesLiao>: 對
+21:03 +0800 <pichuang>: 你有看過我寫的文章嗎
+21:03 +0800 <pichuang>: http://roan.logdown.com/posts/192977-openvswitch-lab-2-openvswitch-and-kvm
+21:03 +0800 <sdnds-tw_Bot>: ==> OpenvSwitch Lab 2$ OpenvSwitch and KVM « roan's Blog
+21:03 +0800 <pichuang>: 這個
+21:04 +0800 <pichuang>: 如果你是kvm的話 你應該要在 kvm 裡面做ip設定
+21:07 +0800 <jamesLiao>: 這個是ovs和kvm同一台機器？
+21:09 +0800 <pichuang>: es
+21:09 +0800 <pichuang>: yes
+21:09 +0800 <jamesLiao>: 我的是分開
+21:09 +0800 <jamesLiao>: ovs和kvm分開
+21:09 +0800 <pichuang>: 咦
+21:10 +0800 <pichuang>: 哦
+21:11 +0800 <pichuang>: ...等等我還是有點沒想清楚
+21:11 +0800 <pichuang>: 有圖嗎xd
+21:11 +0800 <jamesLiao>: 有貼圖的網頁嗎？
+21:13 +0800 <pichuang>: ptt 縮網址
+21:16 +0800 <jamesLiao>: http://ppt.cc/TNDQ
+21:16 +0800 <sdnds-tw_Bot>: ==> 來個 PPT 短網址 :: OVS 縮圖剪剪樂!
+21:16 +0800 <jamesLiao>: 有看到嗎？
+21:17 +0800 <pichuang>: ovs 本身也是一檯server
+21:17 +0800 <pichuang>: 嗎
+21:17 +0800 <pichuang>: 應該是兩檯?
+21:17 +0800 <jamesLiao>: 對
+21:17 +0800 <pichuang>: 你要做load balance?
+21:18 +0800 <jamesLiao>: 可是我現在先接在我的switch下
+21:18 +0800 <jamesLiao>: 先測看看
+21:18 +0800 <pichuang>: 你的switch有什麼特殊功能嗎
+21:18 +0800 <hwchiu>: 我回家了XD= =
+21:18 +0800 <jamesLiao>: 只是單純從163導到192.168
+21:19 +0800 <pichuang>: 你routing找誰做
+21:19 +0800 <pichuang>: ovs?
+21:19 +0800 <pichuang>: 那檯機器做掉嗎
+21:19 +0800 <jamesLiao>: 因為我一開始連ovs不通
+21:19 +0800 <pichuang>: 不然你現在哪一段是能ping通的
+21:19 +0800 <jamesLiao>: 想說先用swich看是哪一個不通
+21:20 +0800 <hwchiu>: 192.168.1.0     0.0.0.0         255.255.255.0   U     0      0        0 br0
+21:20 +0800 <hwchiu>: 192.168.1.0     0.0.0.0         255.255.255.0   U     0      0        0 br1
+21:20 +0800 <hwchiu>: 到底要走誰XD
+21:20 +0800 <pichuang>: 應該是看default gw
+21:20 +0800 <jamesLiao>: br0通
+21:20 +0800 <pichuang>: 哦 我懂你意思了
+21:20 +0800 <pichuang>: 回來的封包
+21:20 +0800 <pichuang>: 可能會有問題
+21:20 +0800 <pichuang>: 出去可以 會來應該會有問題
+21:21 +0800 <pichuang>: routing 應該也是 first match first out
+21:22 +0800 <hwchiu>: 恩
+21:22 +0800 <hwchiu>: 設定寫好吧
+21:22 +0800 <jamesLiao>: 所以他第二張網卡就被幹掉？
+21:22 +0800 <pichuang>: 你原本要送到第二張的應該會被送到br0去
+21:22 +0800 <pichuang>: 但是因為網卡看到這不是source ip不是他
+21:22 +0800 <pichuang>: 會drop
+21:24 +0800 <jamesLiao>: 嗯嗯
+21:25 +0800 <jamesLiao>: 所以我該怎麼去設定？
+21:27 +0800 <pichuang>: 我沒試過這樣行不行
+21:27 +0800 <pichuang>: 你這狀況我沒試過
+21:28 +0800 <pichuang>: 同台電腦 不同 interface 綁同 subnet 的 ip
+21:31 +0800 <jamesLiao>: 你的意思是eth0 eth1 綁起來用一個ip?
+21:31 +0800 <pichuang>: 你目的是什麼
+21:31 +0800 <pichuang>: 我想想看有沒有別招可以解
+21:31 +0800 <jamesLiao>: 目的是hadoop各個node作傳輸
+21:32 +0800 <pichuang>: http://pontus.ullgren.com/view/multiple_interfaces_on_the_same_subnet
+21:32 +0800 <sdnds-tw_Bot>: ==> Multiple interfaces on the same subnet | Pontus Scratchpad
+21:32 +0800 <pichuang>: 這個你看一下
+21:32 +0800 <pichuang>: hadoop是你的server 嗎
+21:32 +0800 <jamesLiao>: 是的
+21:33 +0800 <jamesLiao>: 我在server上跑hadoop的node
+21:33 +0800 <pichuang>: 如果做server side 做bonding 把lacp mode=6
+21:33 +0800 <pichuang>: 應該可以達到你的需求
+21:33 +0800 <jamesLiao>: 我一開始也有想到用bonding
+21:34 +0800 <pichuang>: 後來考量呢?
+21:34 +0800 <jamesLiao>: 那個是兩張網卡弄不起來的最後方案
+21:34 +0800 <jamesLiao>: 哈哈
+21:36 +0800 <pichuang>: xddddd
+21:36 +0800 <pichuang>: 好
+21:36 +0800 <pichuang>: 你看一下我剛剛貼給你的那個
+21:36 +0800 <pichuang>: 關鍵應該是    up ip route add 192.168.1.0/24 dev eth2 proto kernel scope link src 192.168.61.20 table 20
+21:36 +0800 <pichuang>: 他分table處理
+21:37 +0800 <jamesLiao>: ok
+21:37 +0800 <pichuang>: 但這塊我沒有很熟 你可以要自己研究一下
+21:37 +0800 <pichuang>: 有心得可以交流一下xd
+21:37 +0800 <jamesLiao>: 哈哈
+21:37 +0800 <pichuang>: 我有點想知道xd
+21:37 +0800 <jamesLiao>: 當然
+21:38 +0800 <jamesLiao>: 我survey看看
+21:38 +0800 <jamesLiao>: 有問題再跟你們討論XDD
+21:39 +0800 <pichuang>: okok
+21:39 +0800 <pichuang>: 歡迎大家來這邊拯救自己論文 xd
+21:39 +0800 <jamesLiao>: XDDD
+21:41 +0800 <hwchiu>: 最簡單
+21:41 +0800 <hwchiu>: 直接灌個$O%VSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
+21:41 +0800 <hwchiu>: = =被貓攻擊
+21:41 +0800 <hwchiu>: OVS 把兩個port的封包互傳
+21:48 +0800 <pichuang>: hwchiu 的貓也懂ovs
+22:08 +0800 <jamesLiao>: XDD
