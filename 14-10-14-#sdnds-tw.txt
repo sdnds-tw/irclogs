@@ -1,0 +1,58 @@
+16:22 +0800 <pichuang>: 有人知道 controller 下 flow 之後
+16:22 +0800 <pichuang>: 在沒有被match的狀況下 為什麼該flow會跑到datapath去嗎
+16:22 +0800 <pichuang>: 我原先理解是會先存在userspace上面的table
+16:23 +0800 <pichuang>: 等到有packet match到了才會透過netlink送到datapath table去
+16:23 +0800 <pichuang>: 但剛剛看了一下好像不是這樣
+16:23 +0800 <pichuang>: 無論是dpctl或者是ofctl都有該條flow
+16:27 +0800 <hwchiu>: 我測起來沒有耶XD
+16:27 +0800 <hwchiu>: ovs 2.3
+16:28 +0800 <hwchiu>: 我透過ovs-ofctl add-flow後，只有在ofctl看得到
+16:28 +0800 <pichuang>: 領導說有
+16:29 +0800 <pichuang>: 我覺得應該是被match到所以才會跑到dpctl去
+16:29 +0800 <hwchiu>: 他有沒有先確認 ovs-ofctl上面的counter
+16:29 +0800 <pichuang>: 但領導說他還沒有match就跑下去了= =
+16:29 +0800 <pichuang>: 他用floodlight
+16:29 +0800 <hwchiu>: 我在想，他的rule有沒有wildcard?
+16:29 +0800 <pichuang>: 沒
+16:30 +0800 <hwchiu>: 沒有wildcard的話
+16:30 +0800 <pichuang>: 都是strict
+16:30 +0800 <hwchiu>: 那我覺得有可能直接打下去耶
+16:30 +0800 <hwchiu>: 我不確定拉
+16:30 +0800 <hwchiu>: 你叫他把一個filed拔掉 用wildcard試試看
+16:30 +0800 <pichuang>: 不然你怎麼測的
+16:30 +0800 <hwchiu>: 我連controller都沒有XD
+16:31 +0800 <hwchiu>: 直接打command塞flow
+16:31 +0800 <hwchiu>: 先觀察
+16:31 +0800 <hwchiu>: 接下來ping
+16:31 +0800 <hwchiu>: 在觀察
+16:32 +0800 <pichuang>: 對了
+16:32 +0800 <pichuang>: add-flow這件事情
+16:32 +0800 <pichuang>: 有什麼filed勢必要填寫的
+16:32 +0800 <pichuang>: 這個我一直沒弄明白
+16:33 +0800 <hwchiu>: action
+16:35 +0800 <pichuang>: oh~
+16:35 +0800 <pichuang>: ok
+16:36 +0800 <hwchiu>: ovs-ofctl: must specify an action
+16:37 +0800 <pichuang>: xd 好
+17:38 +0800 <JalenLin>: ydlin出現了!?...
+17:43 +0800 <pichuang>: yes
+17:43 +0800 <JalenLin>: I’ve invited the founder and CEO of Pica8
+17:43 +0800 <JalenLin>: QQ
+17:44 +0800 <hwchiu>: Wed 無法參加 靠杯
+18:21 +0800 <pichuang>: http://www.sdnap.com/sdn-technology/5114.html
+18:21 +0800 <sdnds-tw_Bot>: ==> 基于 Open vSwitch 的 OpenFlow 实践（陈沙克） | SDN技术讨论 | SDN联合播报
+18:21 +0800 <pichuang>: ovs-vsctl add-port ovs-switch p0 -- set Interface p0 ofport_request=100
+18:22 +0800 <pichuang>: 原來port號可以自己改xd
+20:45 +0800 <pichuang>: ovs-appctl ofproto/trace
+20:45 +0800 <pichuang>: 這個超有趣
+20:45 +0800 <pichuang>: 有興趣的可以看看
+22:53 +0800 <pichuang>: 在fb社團林盈達教授有請 pica8 CEO 來做talk 有人有興趣的可以去看一下
+23:07 +0800 <xeriou>: 終於進來了...各位大大安安<(_ _)>
+23:08 +0800 <pichuang>: 安安
+23:10 +0800 <hwchiu>: 安安
+23:17 +0800 <devnet_>: @pichuang: Hi
+23:18 +0800 <pichuang>: hi
+23:18 +0800 <pichuang>: xd
+23:18 +0800 <pichuang>: i dont have time to solove your problem. XD sorry
+23:30 +0800 <devnet_>: oh k...
+23:30 +0800 <devnet_>: Thank you for your support...
