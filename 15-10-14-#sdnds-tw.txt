@@ -1,0 +1,182 @@
+10:27 +0800 <jamesLiao>: 請問ofproto/trace主要功能是？
+10:44 +0800 <hwchiu>: 可以幫你模擬各種field的packet進入到switch後，會怎麼走
+10:44 +0800 <hwchiu>: 可以用來讓你確認自己的rule是否正確
+11:19 +0800 <pichuang>: hwchiu: 邱牛先前有玩過喔?
+11:22 +0800 <hwchiu>: 沒 剛剛玩了幾分鐘
+11:23 +0800 <pichuang>: xd
+11:24 +0800 <pichuang>: 我發現還可以de controller bug
+11:24 +0800 <pichuang>: xd
+11:24 +0800 <pichuang>: 我昨天有嘗試打了一個封包上去到controller
+11:24 +0800 <pichuang>: 然後...
+11:24 +0800 <pichuang>: ryu 炸了
+11:24 +0800 <pichuang>: xd
+11:24 +0800 <hwchiu>: 就crash了
+11:24 +0800 <hwchiu>: XD
+11:24 +0800 <pichuang>: 昨天看到差點昏倒
+11:29 +0800 <hwchiu>: WOW
+11:29 +0800 <hwchiu>: 你打了啥東西
+11:29 +0800 <hwchiu>: 怎會讓他爆炸
+11:30 +0800 <pichuang>: ovs-appctl ofproto/trace s1 in_port=1,dl_src=00:00:00:00:00:01,dl_dst=00:00:00:00:00:02 -generate
+11:31 +0800 <pichuang>: linear,2
+11:35 +0800 <hwchiu>: 好奇，這種封包中，他的ip會填啥
+11:37 +0800 <pichuang>: 是說送到controller的封包嗎?
+11:44 +0800 <hwchiu>: 恩恩
+11:44 +0800 <hwchiu>: 他的skb_buff內
+11:44 +0800 <hwchiu>: 會怎樣填ip
+12:27 +0800 <John_irc>: 他會traceback但是應該還可以用吧？
+12:31 +0800 <pichuang>: 行
+12:31 +0800 <pichuang>: 不行
+12:31 +0800 <pichuang>: 我的會掛xd
+12:38 +0800 <hwchiu>: 是在parse data 欄位的時候掛的嗎
+13:18 +0800 <pichuang>: yes
+13:18 +0800 <pichuang>: 但是
+13:18 +0800 <pichuang>: 如果你先pingall
+13:18 +0800 <pichuang>: 再送的話
+13:18 +0800 <pichuang>: 就會是正常的
+13:19 +0800 <hwchiu>: 庫唷
+15:40 +0800 <pichuang>: 我成功了xddd
+15:40 +0800 <pichuang>: vlan
+15:40 +0800 <pichuang>: 超爽
+15:44 +0800 <hwchiu>: wow
+15:44 +0800 <hwchiu>: 還是一樣+4095嗎
+15:44 +0800 <pichuang>: no
+15:45 +0800 <pichuang>: https://gist.github.com/pichuang/b1fc5ebfab471ef896b3
+15:45 +0800 <sdnds-tw_Bot>: ==> two_vlan.py
+15:45 +0800 <hwchiu>: 所以上次到底為什麼要+4095 XD
+15:45 +0800 <pichuang>: 那個應該是另一個問題
+15:46 +0800 <hwchiu>: in_port=1,dl_vlan=0xffff,actions=mod_vlan_vid:100,output:3
+15:46 +0800 <pichuang>: l_vlan=0xffff
+15:46 +0800 <hwchiu>: 如果不指定 dl_valn=0xffff
+15:46 +0800 <hwchiu>: 會怎樣
+15:46 +0800 <pichuang>: 這個意思是 對於沒有上vlan tag的封包作處理
+15:46 +0800 <pichuang>: 我試試
+15:46 +0800 <hwchiu>: 恩恩
+15:46 +0800 <hwchiu>: 感謝
+15:47 +0800 <pichuang>: 部拿掉嗎
+15:47 +0800 <pichuang>: 全部?
+15:48 +0800 <hwchiu>: 恩
+15:48 +0800 <hwchiu>: 都不要指定dl_vlan=0xffff
+15:51 +0800 <pichuang>: 也可以
+15:51 +0800 <pichuang>: 同樣結果
+15:52 +0800 <pichuang>: 重點應該是 mod_vlan_vid 這個
+15:52 +0800 <hwchiu>: 恩恩
+15:52 +0800 <pichuang>: 但有無vlan tag可以透過 dl_vlan=0xffff 做判斷
+15:52 +0800 <hwchiu>: 瞭解
+15:52 +0800 <pichuang>: 依照這個topo來解釋
+15:53 +0800 <pichuang>: openflow不會知道什麼是trunk
+15:53 +0800 <pichuang>: 所以要另外下類似trunk效果的flow
+15:54 +0800 <pichuang>: strip_vlan就是拔掉vlan_tag
+15:54 +0800 <pichuang>: 不知道能不能跟傳統網路街在一起
+15:55 +0800 <pichuang>: 爽爽
+15:55 +0800 <hwchiu>: ㄎㄎ
+15:55 +0800 <hwchiu>: 拿起你的openwrt
+15:55 +0800 <hwchiu>: 然後實際跑
+15:55 +0800 <pichuang>: openstack isolation 是 per-interface 上tag
+15:56 +0800 <pichuang>: 他的做法是ovs-vsctl s1 tag=3 類似這樣
+15:56 +0800 <pichuang>: 不是用我這種flow做控制
+15:56 +0800 <pichuang>: 我這方式是是per-flow
+15:57 +0800 <hwchiu>: 哦哦
+15:57 +0800 <hwchiu>: 瞭解
+15:57 +0800 <hwchiu>: 那per-interface 上tag
+15:57 +0800 <hwchiu>: 這樣的話
+15:57 +0800 <pichuang>: 就直接用ovs-vsctl tag
+15:57 +0800 <hwchiu>: 封包在進出此interface時，就會先處理了
+15:57 +0800 <pichuang>: 這種方式上就好了
+15:57 +0800 <pichuang>: 對
+15:57 +0800 <pichuang>: 他會直接上
+15:58 +0800 <hwchiu>: 如果是近來的，應該是先處理好，才接到OVS?
+15:58 +0800 <pichuang>: 但是flow表示是怎樣我沒有特別看是不是長一樣
+15:58 +0800 <hwchiu>: 送出去的是OVS後才接到interface
+15:58 +0800 <pichuang>: tag是ovs上
+15:58 +0800 <hwchiu>: 這樣到底哪一段處理
+15:58 +0800 <hwchiu>: 好好奇XD
+15:58 +0800 <pichuang>: 設定的話應該是都要在ovs上設定
+15:58 +0800 <hwchiu>: 恩恩
+15:59 +0800 <hwchiu>: 這樣是會再查flow table前先弄?
+15:59 +0800 <pichuang>: 他都hook走device了
+15:59 +0800 <hwchiu>: 感覺
+15:59 +0800 <hwchiu>: 也是
+15:59 +0800 <pichuang>: 這...
+15:59 +0800 <pichuang>: 有可能
+15:59 +0800 <hwchiu>: 你家有MOD嗎
+15:59 +0800 <pichuang>: 可能要特別研究差別
+15:59 +0800 <pichuang>: 沒
+15:59 +0800 <hwchiu>: 好
+15:59 +0800 <pichuang>: 我是窮苦學生
+15:59 +0800 <hwchiu>: 開玩笑，dlinking
+15:59 +0800 <pichuang>: ...
+15:59 +0800 <pichuang>: 沒錢
+16:00 +0800 <pichuang>: 這個月要窮死了
+16:01 +0800 <hwchiu>: 只剩下美金這樣
+16:01 +0800 <pichuang>: 美金3塊半
+16:02 +0800 <pichuang>: 到時候來寫一些關於vlan的文章好了
+16:02 +0800 <pichuang>: 不然整天踩雷
+16:03 +0800 <hwchiu>: 恩恩
+16:04 +0800 <pichuang>: 到時候再來反過來研究4095+那是啥奇怪問題
+16:06 +0800 <hwchiu>: 環境一樣嗎?為什麼這次不需要4095+
+16:06 +0800 <pichuang>: 不太一樣
+16:06 +0800 <pichuang>: 我沒有透過ryu rest做
+16:06 +0800 <pichuang>: 我直接再ovs上add-flow
+16:07 +0800 <pichuang>: 我等下週報告完先拯救一下歪國人好了
+16:07 +0800 <pichuang>: xd
+16:07 +0800 <hwchiu>: 但是!
+16:07 +0800 <hwchiu>: 上次我跟你，也有透過ovs add-flow
+16:08 +0800 <hwchiu>: 去下，也是一樣GG
+16:08 +0800 <hwchiu>: 你還記得嗎
+16:09 +0800 <pichuang>: 我記得
+16:09 +0800 <pichuang>: 我們可能有什麼地方搞錯 或者是有些東西不能混用
+16:10 +0800 <pichuang>: 可能要翻一下先前的冊資
+16:11 +0800 <hwchiu>: 那你OVS版本都相同嗎?
+16:11 +0800 <hwchiu>: 不然就是那台OVS被ryu綁架了XD
+16:12 +0800 <pichuang>: 一樣
+16:12 +0800 <pichuang>: 我都用同樣的環境
+16:13 +0800 <hwchiu>: 恩恩
+16:14 +0800 <hwchiu>: 不然你有空試試看，連到ryu &手動打flow
+16:14 +0800 <hwchiu>: 先這樣，然後再透過ryu再打一次
+16:14 +0800 <hwchiu>: 打完在手動打
+16:14 +0800 <pichuang>: 連到ryu &手動打flow
+16:14 +0800 <pichuang>: 我有連上去
+16:17 +0800 <hwchiu>: 哦哦
+16:18 +0800 <pichuang>: 話說 hwchiu 你知道$ ovs-vsctl set Interface p0 type=internal
+16:18 +0800 <pichuang>: type=internal
+16:18 +0800 <pichuang>: 是啥意思
+16:18 +0800 <pichuang>: 我看pica8後面的值是不一樣的
+16:19 +0800 <hwchiu>: 我"印象"
+16:20 +0800 <hwchiu>: 是說使用某部分跑去使用pica自行開發的
+16:20 +0800 <hwchiu>: 我曾經查過
+16:20 +0800 <hwchiu>: 我在查一下
+16:21 +0800 <pichuang>: ...
+16:22 +0800 <pichuang>: 等等 你這樣真的歹就顧?
+16:26 +0800 <hwchiu>: pica8那邊是用啥字眼?
+16:26 +0800 <hwchiu>: pronto ?
+16:29 +0800 <pichuang>: 好問題 我忘了xd
+16:31 +0800 <hwchiu>: 還是
+16:31 +0800 <hwchiu>: datapath_type ?
+16:31 +0800 <hwchiu>: type= 我有看過internal & gre
+16:32 +0800 <hwchiu>: and vxlan
+16:32 +0800 <hwchiu>: datapath_type 有netdev, 我看pica8應該是用pronto
+16:32 +0800 <hwchiu>: http://rascov.logdown.com/posts/230635-bridge-remote-networks-using-vxlan
+16:32 +0800 <sdnds-tw_Bot>: ==> Bridge Remote Mininets using VXLAN « Mirabell Studio
+16:32 +0800 <hwchiu>: https://ask.openstack.org/en/question/4276/what-is-the-internal-interface-and-port-for-on-openvswitch/
+16:32 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/XCuml  ==> What is the "internal" interface and port for on Openvswitch? - Ask OpenStack: Q&A Site for OpenStack Users and Developers
+16:34 +0800 <hwchiu>: http://prontosystems.wordpress.com/2011/09/21/running-ovs-on-pronto/
+16:34 +0800 <sdnds-tw_Bot>: ==> Running OVS on Pronto | Pronto Systems
+16:34 +0800 <hwchiu>: 感覺是datapath那邊 改用非原生的
+17:38 +0800 <pichuang>: 所以type=internal == openvswitch datapath ?
+17:41 +0800 <hwchiu>: no， 應該是有兩個設定吧
+17:41 +0800 <hwchiu>: type&datapath_type
+23:40 +0800 <pichuang>: hwchiu: mmmaaaagic
+23:40 +0800 <pichuang>: 這兩個是分別為userspace和 datapath的實作?
+23:41 +0800 <pichuang>: 另外問一下板上有沒有測過ssl的連線
+23:41 +0800 <pichuang>: SSLError: [Errno 1] _ssl.c:510: error:14094418:SSL routines:SSL3_READ_BYTES:tlsv1 alert unknown ca
+23:41 +0800 <pichuang>: SSLError: [Errno 1] _ssl.c:510: error:1408F10B:SSL routines:SSL3_GET_RECORD:wrong version number
+23:41 +0800 <pichuang>: http://www.cs.tau.ac.il/~schiffli/sdn/ryu_docs/tls.html
+23:41 +0800 <sdnds-tw_Bot>: ==> Setup TLS Connection — Ryu 3.5 documentation
+23:42 +0800 <pichuang>: 我照這篇弄沒用xd
+23:42 +0800 <pichuang>: 會噴這兩個錯誤
+23:48 +0800 <hwchiu>: 第一個我猜只是interface而已XD
+23:48 +0800 <hwchiu>: 他有gre,vlan,internal
+23:52 +0800 <pichuang>: ohoh
+23:52 +0800 <pichuang>: interface
+23:52 +0800 <pichuang>: 所以vxlan也算在內囉
+23:59 +0800 <hwchiu>: 恩
