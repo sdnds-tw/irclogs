@@ -1,0 +1,23 @@
+06:10 +0800 <pichuang>: https://github.com/openwrt/packages/tree/master/net/openvswitch
+06:10 +0800 <sdnds-tw_Bot>: ==> packages/net/openvswitch at master · openwrt/packages · GitHub
+06:10 +0800 <pichuang>: G_G
+06:25 +0800 <pichuang>: 這個高手
+06:25 +0800 <pichuang>: = =
+06:25 +0800 <pichuang>: 厲害厲害
+12:35 +0800 <John_irc>: http://www.sdnap.com/sdnap-post/5223.html
+12:35 +0800 <John_irc>: 好文
+12:35 +0800 <sdnds-tw_Bot>: ==> SDN，请别忽悠我 | SDNAP原创 | SDN联合播报
+12:42 +0800 <hwchiu>: 开源的精神是开放、共享和交流，起步公司在利用开源资源的同时，别忘了为开源做出应有的贡献，这也是在业界增加影响力的有效途径。
+12:44 +0800 <hwchiu>: 好像台灣這邊比較少?
+12:45 +0800 <John_irc>: 我看到亂碼字 >> 好像台灣這邊���較少?
+12:46 +0800 <John_irc>: 你說台灣這邊什麼較少？
+12:51 +0800 <hwchiu>: 有這種想法的公司XD
+12:51 +0800 <hwchiu>: SDN方面的
+12:56 +0800 <John_irc>: 哦 畢竟開源，沒有錢可以撐比較期待的是大廠可以投入這塊研發吧
+13:04 +0800 <hwchiu>: 是也沒錯
+15:28 +0800 <pichuang>: John_irc: 這文章不錯耶 要不要貼到fb去
+15:30 +0800 <pichuang>: http://www.sdnap.com/sdnap-post/5197.html
+15:30 +0800 <sdnds-tw_Bot>: ==> 台湾同学John-Lin的SDN学习博客 | SDNAP原创 | SDN联合播报
+15:30 +0800 <pichuang>: 牛人xd
+15:34 +0800 <John_irc>: 哦 XD
+19:17 +0800 <PoWen>: John是牛人 XD
