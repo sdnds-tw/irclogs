@@ -1,0 +1,9 @@
+02:32 +0800 <pichuang>: 沒有 mac air retina
+02:32 +0800 <pichuang>: xd
+02:58 +0800 <pichuang>: 禮拜六的slide就在剛剛寫好了
+02:58 +0800 <pichuang>: 我打算來講一下openvswitch的debugging
+02:59 +0800 <pichuang>: system administrator 層級的 debugging 該怎麼做
+11:40 +0800 <hwchiu>: 我以為是 mail to pichuang@cs.nctu.edu.tw呢
+12:30 +0800 <pichuang>: = = ?
+12:51 +0800 <hwchiu>: 有問題就丟給你 就可以DEBUG
+17:04 +0800 <pichuang>: debug一次很辛苦的 = =
