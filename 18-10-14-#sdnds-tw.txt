@@ -1,0 +1,18 @@
+19:24 +0800 <pichuang>: http://www.slideshare.net/FeiJiSiao/sdnds-twmeetup2
+19:24 +0800 <sdnds-tw_Bot>: ==> Sdnds tw-meetup-2
+19:24 +0800 <pichuang>: 本日slide
+21:29 +0800 <hsiehth>: exit
+22:02 +0800 <john_M5>: 我把ryu install script 放進
+22:02 +0800 <john_M5>: SDNDS-TW
+22:02 +0800 <john_M5>: 的Repos
+22:10 +0800 <john_M5>: https://github.com/sdnds-tw/ryuInstallHelper
+22:10 +0800 <sdnds-tw_Bot>: ==> sdnds-tw/ryuInstallHelper · GitHub
+22:21 +0800 <pichuang>: ok
+22:21 +0800 <pichuang>: 感謝
+22:53 +0800 <pichuang>: http://events.linuxfoundation.org/sites/events/files/slides/Evolution%20of%20OVS.pdf
+22:53 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/uNYKU  ==> http://events.linuxfoundation.org/sites/events/files/slides/Evolution%20of%20OVS.pdf
+22:53 +0800 <pichuang>: 今年在 LinuxCon 2014 VMWare 針對 OpenvSwitch 做的 talk
+22:53 +0800 <pichuang>: 可以看到他們今年會針對 OpenvSwitch Performance 做比較多的著墨
+22:53 +0800 <pichuang>: 有興趣的可以看一下他們的觀點
+22:54 +0800 <pichuang>: John_irc: 你今天不是有講到一個template 我覺得那個頗為適合放在 github 上
+22:55 +0800 <pichuang>: 有點類似 skeleton code 給後面的人比較好上手
