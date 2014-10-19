@@ -1,0 +1,25 @@
+00:18 +0800 <pichuang>: slack 有提供專屬的irc server
+00:18 +0800 <pichuang>: 有點厲害
+00:22 +0800 <pichuang>: 各位可以找 John_irc  申請一下帳號
+00:22 +0800 <pichuang>: 這樣的話 上班可以用 不用會 irssi 的也能用
+00:42 +0800 <pichuang>: ACTION 下次聚會時間定在 11/22 地點我會在研究
+00:42 +0800 <pichuang>: 有人那時候還在期中考的嗎
+00:46 +0800 <hwchiu>: 我
+00:47 +0800 <pichuang>: hwchiu: ....你是去期中考別人的吧
+00:47 +0800 <hwchiu>: = =
+01:12 +0800 <pichuang>: 這邊會同時與 slack-irc 共存一個禮拜
+01:13 +0800 <pichuang>: 一個禮拜後如果都沒有人使用上的問題的話 我們會全部轉移至 slack
+01:13 +0800 <pichuang>: slack 有提供web ui 和 irssi connect 的方式
+01:14 +0800 <pichuang>: 就長期發展來講的話 多了一個 web ui 應該是可以增加交流人數
+01:15 +0800 <pichuang>: 這邊lock時間定為下週日 基本上我這帳號還是會在這邊掛著
+01:15 +0800 <pichuang>: 但希望後續討論是能儘量請各位移至slack去
+01:15 +0800 <pichuang>: 感謝各位的配合
+06:41 +0800 <JalenLin>: 我倒覺得這邊不要關吧，畢竟slack是封閉的
+06:42 +0800 <JalenLin>: 可以透過一些plug in讓兩邊同步
+06:42 +0800 <JalenLin>: https://github.com/jimmyhillis/slack-irc-plugin
+06:42 +0800 <sdnds-tw_Bot>: ==> jimmyhillis/slack-irc-plugin · GitHub
+06:42 +0800 <JalenLin>: 第一次加入的使用者不一定有slack
+06:44 +0800 <JalenLin>: https://github.com/rknLA/irc-slack-echo
+06:44 +0800 <sdnds-tw_Bot>: ==> rknLA/irc-slack-echo · GitHub
+06:46 +0800 <JalenLin>: http://www.everybodyhertz.co.uk/slack-and-irc/
+06:46 +0800 <sdnds-tw_Bot>: ==> Slack and IRC Integration | Everybody HertzEverybody Hertz  –  Slack and IRC
