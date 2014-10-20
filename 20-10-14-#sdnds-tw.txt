@@ -1,0 +1,86 @@
+00:10 +0800 <pichuang>: 這個有人用過嗎 #06:42 < JalenLin> 可以透過一些plug in讓兩邊同步
+16:53 +0800 <jamesLiao>: 請問如果 ovs-pfctl指令下錯了
+16:54 +0800 <jamesLiao>: 是直接在打一次覆蓋過去還是要下清除的指令?
+16:54 +0800 <pichuang>: pfctl ?
+16:54 +0800 <jamesLiao>: ofctl
+16:55 +0800 <jamesLiao>: 拍謝打錯沒注意到
+16:55 +0800 <pichuang>: 你下什麼指令?
+16:56 +0800 <jamesLiao>: sudo ovs-ofctl br0 "in_port=2 ,dl_type=0x0800, nw_proto=6, tp_src=50060"
+16:57 +0800 <jamesLiao>: 少打後面的action
+16:57 +0800 <jamesLiao>: 也就是我還沒打完就按到enter
+16:58 +0800 <jamesLiao>: 少打add flow
+16:59 +0800 <jamesLiao>: 整串應該是這樣 sudo ovs-ofctl add-flow br0 "in_port=2 ,dl_type=0x0800, nw_proto=6, tp_src=50060"
+17:01 +0800 <jamesLiao>: 是再打一次完整的就會蓋過去嗎?
+17:03 +0800 <hwchiu>: jamesLiao: 你之後可以切換來slack
+17:03 +0800 <hwchiu>: 你可以試試看
+17:03 +0800 <hwchiu>: ovs-ofctl dump-flows br0
+17:03 +0800 <hwchiu>: 我沒有很準確的掌握什麼情況下會蓋掉，什麼情況下會新增
+17:04 +0800 <jamesLiao>: 所以還是要看ovs-ofctl dump-flows的資訊就是了
+17:24 +0800 <hwchiu>: 恩恩
+19:07 +0800 <adaam>: slack什麼時候會加啊，我前幾天送了
+19:07 +0800 <adaam>: 還是他不能用已經加其他群組的再重複加？
+19:12 +0800 <hwchiu>: 我問問管理的
+19:13 +0800 <hwchiu>: adaam: john說都有處理耶
+19:13 +0800 <JalenLin>: hwchiu: 快去弄個bot
+19:13 +0800 <hwchiu>: = =
+19:13 +0800 <JalenLin>: hwchiu: moooo 等晚餐嗎?
+19:14 +0800 <John_irc>: 我都有加 adam adam.cws@gmail.com/
+19:14 +0800 <John_irc>: 對嗎？
+19:14 +0800 <John_irc>: 看一下垃圾信件
+19:15 +0800 <JalenLin>: John_irc: 邀我一下 我還需要API KEY
+19:15 +0800 <JalenLin>: 我填表單了
+19:15 +0800 <John_irc>: 岡田嗎
+19:15 +0800 <JalenLin>: ?
+19:15 +0800 <John_irc>: 剛填嗎
+19:15 +0800 <JalenLin>: 下午田的
+19:15 +0800 <John_irc>: 哦
+19:16 +0800 <John_irc>: 稍等
+19:16 +0800 <hwchiu>: JalenLin: y
+19:16 +0800 <hwchiu>: adaam:
+19:17 +0800 <JalenLin>: 我好像還需要多一個帳號給BOT
+19:17 +0800 <JalenLin>: XD
+19:17 +0800 <John_irc>: 再填一次
+19:18 +0800 <JalenLin>: 填了
+19:18 +0800 <John_irc>: 你的BOT跟你一樣email?
+19:18 +0800 <JalenLin>: 喔喔XD
+19:18 +0800 <JalenLin>: 是BOT的阿
+19:18 +0800 <JalenLin>: 等我一下
+19:18 +0800 <John_irc>: 恩恩
+19:18 +0800 <John_irc>: 我就刪掉一比重複的囉
+19:19 +0800 <John_irc>: 你的已經幫你加入了
+19:19 +0800 <John_irc>: adaam 還在嗎
+19:20 +0800 <JalenLin>: 送了
+19:22 +0800 <John_irc>: 都邀請了
+19:22 +0800 <JalenLin>: 然後我需要API KEY XD
+19:22 +0800 <JalenLin>: 可能要給全縣
+19:23 +0800 <JalenLin>: 權限
+19:23 +0800 <John_irc>: ok
+19:25 +0800 <John_irc>: 這樣你拿得到key了嗎
+19:25 +0800 <JalenLin>: 我看到api.slack.com有了
+19:25 +0800 <JalenLin>: 不過其實我發現好像你不用開也可以
+19:25 +0800 <JalenLin>: 不是很確定
+19:25 +0800 <JalenLin>: 我開看看那個plugin來試試看
+19:27 +0800 <John_irc>: ok 沒差 就開著囉
+19:41 +0800 <JalenLin>: 123
+19:42 +0800 <sdnds-slackbot>: I'm all over you slackers
+19:42 +0800 <JalenLin>: 123
+19:43 +0800 <JalenLin>: IRC 1234
+19:47 +0800 <sdnds-slackbot>: I'm all over you slackers
+19:50 +0800 <hwchiu>: = =
+19:50 +0800 <hwchiu>: wow
+19:54 +0800 <JalenLin>: 123
+19:54 +0800 <sdnds-slackbot>: I'm all over you slackers
+19:56 +0800 <sdnds-slackbot>: I'm all over you slackers
+19:56 +0800 <JalenLin>: 123
+20:06 +0800 <John_irc>: 轉訊息測試
+20:06 +0800 <John_irc>: .about
+23:09 +0800 <adaam>: John_irc: 回來了XD
+23:09 +0800 <adaam>: 信箱也沒看到信說
+23:09 +0800 <adaam>: 莫非我打錯字＠＠？
+23:09 +0800 <John_irc>: 我重發信了
+23:10 +0800 <John_irc>: 你有收到嗎
+23:10 +0800 <John_irc>: adam adam
+23:10 +0800 <John_irc>: adam.cws@gmail.com
+23:13 +0800 <adaam>: 有
+23:13 +0800 <adaam>: 感謝
+23:14 +0800 <John_irc>: 恩
