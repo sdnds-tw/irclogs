@@ -1,0 +1,4 @@
+08:42 +0800 <jeffbrl>: Hello, everyone. I'm trying to compile an openwrt image with ovs for my TL-WR1043-ND v2.1. I'm using the directions pichuang provides on his blog. I'm encountering a build error documented at https://dev.openwrt.org/ticket/14158.
+08:43 +0800 <jeffbrl>: there is no fix listed for that issue
+08:43 +0800 <jeffbrl>: I've tried 'trunk' and 14.07
+08:43 +0800 <jeffbrl>: I'm very stuck. Can anyone share compilation notes? Or a binary?
