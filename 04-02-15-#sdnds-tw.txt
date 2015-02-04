@@ -1,0 +1,151 @@
+14:04 +0800 <JalenLin_>: test
+14:04 +0800 <sdnds-slackbot>: <jalen>: 123
+14:04 +0800 <sdnds-slackbot>: <jalen>: test
+14:04 +0800 <sdnds-slackbot>: <davy>: test
+14:04 +0800 <sdnds-slackbot>: <jalen>: 看來可以了，感謝 @davy
+14:05 +0800 <sdnds-slackbot>: <davy>: @jalen 太好了
+14:05 +0800 <sdnds-slackbot>: <jalen>: 奇怪，我昨天好像有嘗試改，應該是大小寫弄錯XD
+14:05 +0800 <sdnds-slackbot>: <jalen>: 我記得我改成this.ircbot.speak(channel, message);
+14:05 +0800 <sdnds-slackbot>: <jalen>: QAQ
+14:09 +0800 <sdnds-slackbot>: <davy>: ircBot
+14:09 +0800 <sdnds-slackbot>: <davy>: XDDDD
+14:09 +0800 <sdnds-slackbot>: <davy>: 大小寫神煩，他有大寫有小寫
+14:12 +0800 <sdnds-slackbot>: <freetsubasa>: XD
+14:13 +0800 <sdnds-slackbot>: <jalen>: 昨天沒有細trace.....嘗試了一下就聽 @freetsubasa 說的開issue了XD
+14:14 +0800 <freetsubasa>: 順便提醒月湖該更新 github 面的版本這樣 (?)
+14:14 +0800 <sdnds-slackbot>: <davy>: 開 issue 就會有人來忙～
+14:41 +0800 <sdnds-slackbot>: <fntsrlike>: 各位好，我是月湖 :smiley:
+14:42 +0800 <sdnds-slackbot>: <davy>: hi
+14:42 +0800 <sdnds-slackbot>: <fntsrlike>: @davy: 感謝大大幫忙 hot-fixed m(_ _)m
+22:47 +0800 <sdnds-slackbot>: <john-lin>: @undefined:  Hi
+22:48 +0800 <sdnds-slackbot>: <lin199281715>: hi~~
+22:49 +0800 <sdnds-slackbot>: <lin199281715>: 抱歉抱歉 我才剛碰觸sdn沒多久 還有很多不懂
+22:49 +0800 <sdnds-slackbot>: <john-lin>: @pichuang: @undefined 有移植ovs 的問題想問你
+22:50 +0800 <sdnds-slackbot>: <hwchiu>: Openwrt?
+22:50 +0800 <sdnds-slackbot>: <john-lin>: @undefined:  沒關係這大部分都是研究生XD
+22:50 +0800 <sdnds-slackbot>: <john-lin>: 對啊
+22:50 +0800 <sdnds-slackbot>: <lin199281715>: 是歐 哈哈
+22:50 +0800 <sdnds-slackbot>: <lin199281715>: 對阿
+22:50 +0800 <sdnds-slackbot>: <john-lin>: 你先把問題打一下吧
+22:51 +0800 <sdnds-slackbot>: <john-lin>: 或許 @hwchiu 大大可以幫你解決:)
+22:52 +0800 <sdnds-slackbot>: <rascov>: @hwchiu: 大大好棒棒，自從我認識他，SDN都變強
+22:52 +0800 <sdnds-slackbot>: <lin199281715>: 目前我用的硬體為TL1043nd v2 現在想把ovs移植進去  目前問題是打上make menuconfig 找不到openvswitchswitch-common,  openvswitch-switch
+22:53 +0800 <sdnds-slackbot>: <lin199281715>: 然後編輯完後發現我sysupgrade.bin時間並沒有做修改
+22:54 +0800 <sdnds-slackbot>: <lin199281715>: 所以燒進router 等於沒反應XD
+22:54 +0800 <sdnds-slackbot>: <lin199281715>: 之前我參考這部落格<http://vishalshahane.blogspot.tw/2014/04/compiling-custom-firmware-for-wireless.html>
+22:54 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/cfuqa  ==> Vishal Shahane's blog
+22:54 +0800 <sdnds-slackbot>: <lin199281715>: 剛好
+22:54 +0800 <sdnds-slackbot>: <lin199281715>: XDD
+22:55 +0800 <sdnds-slackbot>: <pichuang>: ohoh
+22:55 +0800 <sdnds-slackbot>: <lin199281715>: ofprotocol 有成功讓他在router運行
+22:56 +0800 <sdnds-slackbot>: <lin199281715>: 另外想請問 這樣我還需要移植ovs進router嗎?
+22:56 +0800 <sdnds-slackbot>: <pichuang>: 囧
+22:56 +0800 <sdnds-slackbot>: <lin199281715>: :sweat:
+22:56 +0800 <sdnds-slackbot>: <pichuang>: 你應該要做的事 走ovs的路線
+22:57 +0800 <sdnds-slackbot>: <lin199281715>: 恩恩 好
+22:57 +0800 <sdnds-slackbot>: <pichuang>: 這是過去 openwrt 沒人 porting ovs 的時候 拿 Pantou 兜的方案
+22:57 +0800 <sdnds-slackbot>: <pichuang>: 現行有兩個方案保證可行
+22:57 +0800 <sdnds-slackbot>: <pichuang>: 1. ovs + openwrt
+22:57 +0800 <sdnds-slackbot>: <pichuang>: 大陸白牌有人在賣 賣的超貴
+22:58 +0800 <sdnds-slackbot>: <pichuang>: 2. cpqd openflow ofswitch13 + openwrt
+22:58 +0800 <sdnds-slackbot>: <pichuang>: 商用不推薦 效能可能不是這麼好
+22:58 +0800 <sdnds-slackbot>: <pichuang>: 但是就測試新功能來講的話  方案2會比較好
+22:59 +0800 <sdnds-slackbot>: <lin199281715>: 恩恩 但我可能只能走方案一
+23:00 +0800 <sdnds-slackbot>: <pichuang>: 那更簡單啦~
+23:00 +0800 <sdnds-slackbot>: <lin199281715>: 那請問 我現在最應該做的是先將ovs移植進tl1043嗎?
+23:00 +0800 <sdnds-slackbot>: <pichuang>: 你也不用porting 了
+23:00 +0800 <sdnds-slackbot>: <pichuang>: 現在都打包好等你選
+23:01 +0800 <sdnds-slackbot>: <lin199281715>: 是歐 那請問該如何用呢....
+23:01 +0800 <sdnds-slackbot>: <pichuang>: <https://github.com/openwrt/packages/tree/master/net/openvswitch>
+23:01 +0800 <sdnds-slackbot>: <pichuang>: 這個
+23:02 +0800 <sdnds-slackbot>: <pichuang>: <http://roan.logdown.com/posts/165911-compiled-openwrt>
+23:02 +0800 <sdnds-tw_Bot>: ==> 編譯 OpenWrt « roan's Blog
+23:02 +0800 <sdnds-slackbot>: <pichuang>: make menuconfig 去 network 找一下有沒有 openviswtch
+23:02 +0800 <sdnds-slackbot>: <pichuang>: 勾一勾就有了
+23:02 +0800 <sdnds-slackbot>: <lin199281715>: 有這個
+23:02 +0800 <sdnds-slackbot>: <pichuang>: 有
+23:03 +0800 <sdnds-slackbot>: <pichuang>: 編譯現在都不是重點了
+23:03 +0800 <sdnds-slackbot>: <pichuang>: 最重要是要怎麼設定
+23:03 +0800 <sdnds-slackbot>: <pichuang>: 當初卡最久是在這邊
+23:03 +0800 <sdnds-slackbot>: <pichuang>: 但現在你也不用慢慢研究了
+23:03 +0800 <sdnds-slackbot>: <pichuang>: <http://roan.logdown.com/posts/239799-openvswitch-lab-7-setting-openwrt>
+23:03 +0800 <sdnds-tw_Bot>: ==> OpenvSwitch Lab 7$ Setting OpenWrt « roan's Blog
+23:03 +0800 <sdnds-slackbot>: <pichuang>: 照著做 應該不會有問題
+23:03 +0800 <sdnds-slackbot>: <lin199281715>: 恩恩 我之前在設定那邊....network 那邊 一直設定錯 所以一直進不去ap= =
+23:03 +0800 <sdnds-slackbot>: <pichuang>: xd
+23:04 +0800 <sdnds-slackbot>: <pichuang>: 那邊有個雷要注意
+23:04 +0800 <sdnds-slackbot>: <pichuang>: 你只要設定一寫錯
+23:04 +0800 <sdnds-slackbot>: <lin199281715>: 我跟你硬體不一樣 也能照著做嗎請問
+23:04 +0800 <sdnds-slackbot>: <pichuang>: 馬上就爆了
+23:04 +0800 <sdnds-slackbot>: <lin199281715>: 我現在就不太敢 再亂設定
+23:04 +0800 <sdnds-slackbot>: <lin199281715>: =  =
+23:04 +0800 <sdnds-slackbot>: <pichuang>: 哦哦 不會啦 設錯就重刷而已
+23:04 +0800 <sdnds-slackbot>: <pichuang>: 一個晚上大概刷個兩十幾次 之後閉著眼睛都知道要怎麼做
+23:05 +0800 <sdnds-slackbot>: <lin199281715>: 對阿 可是不斷重刷 結果有一台現在變重刷也無法再進去XDD
+23:05 +0800 <sdnds-slackbot>: <pichuang>: 我寫的那份設定檔要先看得懂xd
+23:05 +0800 <sdnds-slackbot>: <pichuang>: 囧>
+23:05 +0800 <sdnds-slackbot>: <pichuang>: 那....
+23:05 +0800 <sdnds-slackbot>: <pichuang>: 我沒招了
+23:05 +0800 <sdnds-slackbot>: <pichuang>: 自行救磚
+23:05 +0800 <sdnds-slackbot>: <lin199281715>: 哈哈 好的
+23:06 +0800 <sdnds-slackbot>: <lin199281715>: 所以我照著你的設定檔的話 可能還是會需要常常重刷囉XDD
+23:06 +0800 <sdnds-slackbot>: <pichuang>: 應該不會
+23:06 +0800 <sdnds-slackbot>: <pichuang>: 你先把文章看懂
+23:06 +0800 <sdnds-slackbot>: <pichuang>: 我裡面有一個特別的設定
+23:07 +0800 <sdnds-slackbot>: <pichuang>: 是為了讓你不要整天重刷用
+23:07 +0800 <sdnds-slackbot>: <lin199281715>: 恩恩
+23:08 +0800 <pichuang>: irc teeeest
+23:09 +0800 <pichuang>: 還是在terminal 用比較順手xd
+23:09 +0800 <sdnds-slackbot>: <lin199281715>: 所以目前我先造著http://roan.logdown.com/posts/165911-compiled-openwrt重做 先把OVS給先裝好嗎
+23:09 +0800 <sdnds-tw_Bot>: ==> 編譯 OpenWrt « roan's Blog
+23:09 +0800 <sdnds-slackbot>: <lin199281715>: 0.0
+23:09 +0800 <sdnds-slackbot>: <lin199281715>: XDD
+23:09 +0800 <pichuang>: 對啊
+23:09 +0800 <pichuang>: 基本上你一定先裝好這個才有研究的可能性吧
+23:09 +0800 <pichuang>: xd
+23:10 +0800 <pichuang>: 記得要選 openvswitch 如果沒的話肯定是...眼花
+23:11 +0800 <sdnds-slackbot>: <lin199281715>: 選了OVS 多跑出了三個跟OVS有關的
+23:11 +0800 <sdnds-slackbot>: <lin199281715>: 都給他選下去嗎?
+23:12 +0800 <pichuang>: 等等
+23:12 +0800 <pichuang>: 我看一下 source code
+23:12 +0800 <pichuang>: openvswitch
+23:12 +0800 <pichuang>: python  benchmark 不要選
+23:12 +0800 <sdnds-slackbot>: <lin199281715>: 多了OVS-benchmark , ovs-ipsec , ovs-python
+23:12 +0800 <sdnds-slackbot>: <lin199281715>: 恩恩
+23:13 +0800 <pichuang>: 那兩個沒用
+23:13 +0800 <pichuang>: xd
+23:13 +0800 <sdnds-slackbot>: <lin199281715>: 選了ipsec , python自動選起來欸XDD
+23:13 +0800 <pichuang>: 啊~~不要裝python 啊~~~
+23:14 +0800 <pichuang>: 我當初剛摸的時候天真的以為 可以跑python 是件幸福的事情
+23:14 +0800 <pichuang>: 後來我發現我錯了xd
+23:14 +0800 <pichuang>:  太胖 + 殘廢 > 很難用
+23:14 +0800 <sdnds-slackbot>: <lin199281715>: 不能取消掉欸...
+23:15 +0800 <sdnds-slackbot>: <hwchiu>: openwrt based的kernel是幾版?
+23:15 +0800 <pichuang>: 哦哦
+23:15 +0800 <pichuang>: ipsec 也不要選
+23:15 +0800 <sdnds-slackbot>: <lin199281715>: :sweat: 那個怎麼看......抱歉
+23:16 +0800 <pichuang>: 這個
+23:16 +0800 <sdnds-slackbot>: <lin199281715>: 恩好
+23:16 +0800 <pichuang>: 你是抓哪個 openwrt source 回來?
+23:16 +0800 <sdnds-slackbot>: <lin199281715>: svn co <svn://svn.openwrt.org/openwrt/trunk/>
+23:16 +0800 <sdnds-slackbot>: <lin199281715>: 打這個指令
+23:17 +0800 <pichuang>: 喔喔
+23:18 +0800 <pichuang>: 應該是follow 14.07 的
+23:18 +0800 <pichuang>: 3.10
+23:18 +0800 <pichuang>: official website
+23:18 +0800 <pichuang>: 有寫
+23:19 +0800 <sdnds-slackbot>: <hwchiu>: 所以現在是內建就有ovs囉?
+23:19 +0800 <sdnds-slackbot>: <hwchiu>: 只是kconfig開開就好?
+23:19 +0800 <pichuang>: openwrt package 可選
+23:20 +0800 <sdnds-slackbot>: <lin199281715>: 0.0
+23:20 +0800 <sdnds-slackbot>: <lin199281715>: 也在network下嗎
+23:20 +0800 <pichuang>: 不然你怎麼選xd
+23:21 +0800 <sdnds-slackbot>: <pichuang>: sdn gg test
+23:21 +0800 <sdnds-slackbot>: <pichuang>: ...咦真的可以同步耶
+23:21 +0800 <sdnds-slackbot>: <lin199281715>: 那個 我沒看到欸 是我眼瞎嗎
+23:21 +0800 <sdnds-slackbot>: <pichuang>: 好扯
+23:22 +0800 <sdnds-slackbot>: <pichuang>: 你有跑 ./scrtips/feeds update ?
+23:22 +0800 <sdnds-slackbot>: <pichuang>: 有的話應該要有
+23:23 +0800 <sdnds-slackbot>: <lin199281715>: 有 不過都是參照之前部落格做的 現在正在餐造你的部落格重弄@@
+23:25 +0800 <pichuang>: 哦哦xd 有問題可以跟我說 我起碼看著我自己寫的東西弄過好幾台
+23:25 +0800 <pichuang>: <-記憶力不太好
