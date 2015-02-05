@@ -1,0 +1,52 @@
+16:24 +0800 <sdnds-slackbot>: <john-lin>: @pichuang:  之前用 docker 的時候
+16:24 +0800 <sdnds-slackbot>: <jalen>: 囧....bot放著竟然會自己 Error: connect ETIMEDOUT
+16:24 +0800 <sdnds-slackbot>: <john-lin>: 他有自己的 NIC嗎
+16:26 +0800 <sdnds-slackbot>: <john-lin>: 應該是說network interface
+16:27 +0800 <sdnds-slackbot>: <john-lin>: virtual ip 之類的
+16:28 +0800 <sdnds-slackbot>: <davy>: @jalen: freenode 抽抽
+16:28 +0800 <sdnds-slackbot>: <jalen>: @davy: 這是freenode的問題阿XD?.....下一步該思考auto reconnect了嗎XD?
+16:29 +0800 <sdnds-slackbot>: <davy>: 必須的XD
+16:29 +0800 <sdnds-slackbot>: <jalen>: 我是被slack寄信才注意到bot離線了XD
+16:29 +0800 <sdnds-slackbot>: <jalen>: Something went wrong with your Outgoing Webhook integration
+16:29 +0800 <freetsubasa>: QQ
+16:45 +0800 <sdnds-slackbot>: <davidlee>: hi
+16:47 +0800 <sdnds-slackbot>: <davidlee>: 這邊想請教一下有人在摸openstack這一塊嗎~?
+16:48 +0800 <sdnds-slackbot>: <john-lin>: 我曾經架過
+16:48 +0800 <sdnds-slackbot>: <davidlee>: !
+16:48 +0800 <sdnds-slackbot>: <john-lin>: 可以參考 <https://github.com/life1347/openstack-icehouse-scripts>
+16:49 +0800 <sdnds-slackbot>: <john-lin>: @ta-ching: 是專家XD
+16:49 +0800 <sdnds-slackbot>: <davidlee>: 我目前是在架 devstack跟Opendaylight
+16:50 +0800 <sdnds-slackbot>: <davidlee>: Opendaylight快速用好 但是devstack卻出問題 Orz
+16:52 +0800 <sdnds-slackbot>: <john-lin>: devstack不太敢用
+16:52 +0800 <sdnds-slackbot>: <davidlee>: 目前又把 local.conf重新寫一遍 在除錯中QQ
+16:52 +0800 <sdnds-slackbot>: <john-lin>: 因為出很多問題
+16:53 +0800 <sdnds-slackbot>: <davidlee>: 主要是單純手動安裝openstack跟opendaylight教學實在太少了lol
+16:53 +0800 <sdnds-slackbot>: <john-lin>: 然後就照著手冊安裝  一步步來
+16:53 +0800 <sdnds-slackbot>: <john-lin>: 你的 opendaylight 是裝在哪
+16:54 +0800 <sdnds-slackbot>: <davidlee>: 我環境是用三台電腦
+16:54 +0800 <sdnds-slackbot>: <davidlee>: 一台裝opendaylight 另外一台是openstack controller 第三台是compute node
+16:55 +0800 <sdnds-slackbot>: <john-lin>: network node呢
+16:56 +0800 <sdnds-slackbot>: <davidlee>: 因為 opendaylight helium 版本已經有包進去 ovsdb 還有vtn coordinator
+16:57 +0800 <sdnds-slackbot>: <davidlee>: 所以主要是要透過opendaylight輔助我這邊的openstack
+16:58 +0800 <sdnds-slackbot>: <john-lin>: 哦 這方面我就不太了解了 ODL 現在可以取代network node了嗎
+16:58 +0800 <sdnds-slackbot>: <davidlee>: <http://networkstatic.net/wp-content/uploads/2014/02/OVSDB-Architecture.png>
+16:58 +0800 <sdnds-slackbot>: <davidlee>: 這是她架構圖
+16:58 +0800 <sdnds-slackbot>: <davidlee>: ODL第一版還沒有這功能
+16:59 +0800 <sdnds-slackbot>: <davidlee>: ODL第二版開始有把這一項功能吃進去 並說這一版就是為了要跟Openstack做深度整合
+17:00 +0800 <sdnds-slackbot>: <john-lin>: 恩 那你剛剛說到你的問題出在哪裡？
+17:02 +0800 <sdnds-slackbot>: <davidlee>: <https://wiki.opendaylight.org/view/Release/Helium/VTN/User_Guide/OpenStack_Support>
+17:02 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/mIQqy  ==> Bad title - Daylight Project
+17:03 +0800 <sdnds-slackbot>: <davidlee>: 我目前是按照ODL官方WIKI來做
+17:04 +0800 <sdnds-slackbot>: <davidlee>: 做到Devstack Setup這一步驟後 因為在啟動./stack.sh之前要先手動編輯 local.conf
+17:04 +0800 <sdnds-slackbot>: <davidlee>: 按照官方<https://wiki.opendaylight.org/view/OpenDaylight_Virtual_Tenant_Network_(VTN):Scripts:devstack>
+17:04 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/SVyq3  ==> Bad title - Daylight Project
+17:06 +0800 <sdnds-slackbot>: <davidlee>: 來做作後出錯 我把環境整理一下正在確定是否是連線問題導致在安裝devstack最後出現
+17:08 +0800 <sdnds-slackbot>: <john-lin>: 是權限問題嗎
+17:12 +0800 <sdnds-slackbot>: <davidlee>: 不太像
+17:12 +0800 <sdnds-slackbot>: <davidlee>: 最先出錯的是 create network那行就錯了
+17:13 +0800 <sdnds-slackbot>: <davidlee>: 最後才又出現權限
+17:13 +0800 <sdnds-slackbot>: <davidlee>: 問題
+17:16 +0800 <sdnds-slackbot>: <john-lin>: 我也不太了解要怎麼解這問題
+17:16 +0800 <sdnds-slackbot>: <john-lin>: 之前沒裝過ODL跟devstack
+17:17 +0800 <sdnds-slackbot>: <davidlee>: 呵呵  繼續找問題 謝謝你~!
+17:18 +0800 <sdnds-slackbot>: <john-lin>: 恩
