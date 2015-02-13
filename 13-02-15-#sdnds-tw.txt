@@ -1,0 +1,16 @@
+19:31 +0800 <beedee>: hello i need help in correcting this error
+19:31 +0800 <beedee>: http://paste.ubuntu.com/10203109/plain/
+19:33 +0800 <beedee>: hello
+19:33 +0800 <beedee>: pls i need help in correcting this error
+19:33 +0800 <beedee>: http://paste.ubuntu.com/10203109/plain/
+19:33 +0800 <beedee>: its on the link
+19:34 +0800 <beedee>: I am trying to run ryu and its giving me this problem
+19:34 +0800 <beedee>: can you pls help in fixing it
+19:34 +0800 <beedee>:  I am trying to run ryu and its giving me this problem, can you pls help in fixing it
+19:35 +0800 <sdnds-slackbot>: <john-lin>: Cannot access this page
+19:45 +0800 <beedee>:  File "/usr/lib/python2.7/dist-packages/pkg_resources.py", line 2749, in <module>
+19:46 +0800 <beedee>: this is one line of the page
+19:46 +0800 <beedee>: it is also on line 446, 459 and 628
+19:46 +0800 <beedee>: and all are on pkg_resources.py
+20:14 +0800 <sdnds-slackbot>: <john-lin>: Try this installation shell script
+20:14 +0800 <sdnds-slackbot>: <john-lin>: <https://github.com/sdnds-tw/ryuInstallHelper>
