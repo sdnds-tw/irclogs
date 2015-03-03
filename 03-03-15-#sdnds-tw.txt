@@ -1,0 +1,16 @@
+15:19 +0800 <sdnds-slackbot>: <james>: hi 有個問題想請問
+15:21 +0800 <sdnds-slackbot>: <james>: 我寫了一個簡單的網頁來實做 floodlight static flow pusher的功能
+15:21 +0800 <sdnds-slackbot>: <james>: 主要是要用來建立flow
+15:21 +0800 <sdnds-slackbot>: <james>: 然後遇到一個error
+15:22 +0800 <sdnds-slackbot>: <james>: {status: 'Error' Could not parse food mod, see log for details. '}
+15:23 +0800 <sdnds-slackbot>: <james>: 請問有人有遇過這樣子的問題嗎？
+15:35 +0800 <sdnds-slackbot>: <hwchiu>: food mod?
+15:36 +0800 <sdnds-slackbot>: <hwchiu>: flow mod?
+15:36 +0800 <sdnds-slackbot>: <hwchiu>: log有啥嗎
+15:36 +0800 <sdnds-slackbot>: <hwchiu>: 看起來是格式有問題
+15:37 +0800 <sdnds-slackbot>: <james>: 了解
+15:37 +0800 <sdnds-slackbot>: <james>: 我再調整一下
+15:37 +0800 <sdnds-slackbot>: <james>: log   裡面會多出很多\
+15:39 +0800 <sdnds-slackbot>: <james>: {\"switch":"00:00:00:00:00",\}
+18:22 +0800 <sdnds-slackbot>: <pichuang>: <http://finance.sina.com.hk/news/-18-7386431/1.html>
+19:09 +0800 <sdnds-slackbot>: <jalen>: 徵求一位主講人在台北場的活動分享一下.... @hwchiu 太害羞了....
