@@ -1,0 +1,15 @@
+01:17 +0800 <sdnds-slackbot>: <pichuang>: jalen: 你要上去台北嗎
+02:01 +0800 <sdnds-slackbot>: <jalen>: 我會去吧
+17:42 +0800 <sdnds-slackbot>: <john-lin>: 有要開kktix嗎
+21:09 +0800 <sdnds-slackbot>: <jalen>: 應該要開吧
+21:09 +0800 <sdnds-slackbot>: <jalen>: 不過缺一個議程(只有拉拉一個好像太空了)
+23:23 +0800 <sdnds-slackbot>: <pichuang>: 要開
+23:23 +0800 <sdnds-slackbot>: <pichuang>: 第二個議程賈蘭大大要來講嗎xd
+23:55 +0800 <sdnds-slackbot>: <jalen>: 我沒啥SDN可以講的阿
+23:55 +0800 <sdnds-slackbot>: <jalen>: 應該說根本沒有XD
+23:55 +0800 <sdnds-slackbot>: <john-lin>: 這裏有修王協源教授的 SDN 課程嗎？
+23:55 +0800 <sdnds-slackbot>: <john-lin>: 找隊員XD
+23:56 +0800 <sdnds-slackbot>: <hwchiu>: 不需要找一個人打全場
+23:56 +0800 <sdnds-slackbot>: <jalen>: @hwchiu: 出來面對
+23:57 +0800 <sdnds-slackbot>: <john-lin>: 老師要分組報paper 跟final presentation 啊XD
+23:58 +0800 <sdnds-slackbot>: <john-lin>: 修那門課好多人啊 位置都不夠
