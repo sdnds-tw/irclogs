@@ -1,0 +1,132 @@
+00:08 +0800 <sdnds-slackbot>: <pichuang>: xd
+00:09 +0800 <sdnds-slackbot>: <john-lin>: @pichuang:  沒修啊？
+00:09 +0800 <sdnds-slackbot>: <pichuang>: john-lin: 你是去捻壓全場的吧xd
+00:09 +0800 <sdnds-slackbot>: <john-lin>: 沒看到你
+00:09 +0800 <sdnds-slackbot>: <pichuang>: john-lin: 沒 我要顧論文 被老闆善意提醒多次了
+00:09 +0800 <sdnds-slackbot>: <john-lin>: XD
+00:09 +0800 <sdnds-slackbot>: <pichuang>: 我學分已經修完了
+00:09 +0800 <sdnds-slackbot>: <john-lin>: 原來
+00:10 +0800 <sdnds-slackbot>: <pichuang>: 前陣子在弄交接的事情 覺得人生跑馬燈一直轉
+00:10 +0800 <sdnds-slackbot>: <john-lin>: 你要交接給下一屆啊？
+00:11 +0800 <sdnds-slackbot>: <hwchiu>: paper還是一個人就可以看了
+00:11 +0800 <sdnds-slackbot>: <pichuang>: 對啊抓交替中
+00:11 +0800 <sdnds-slackbot>: <john-lin>: 我想要在學一些東西 跟找論文題材的想法
+00:12 +0800 <sdnds-slackbot>: <jalen>: @hwchiu: 快去研究你的軟體定義阿嬤..
+00:12 +0800 <sdnds-slackbot>: <john-lin>: @hwchiu: 大大左手寫論文 右手寫floodlight 真是嚴重了XD
+00:12 +0800 <sdnds-slackbot>: <hwchiu>: = =
+00:12 +0800 <sdnds-slackbot>: <pichuang>: hwchiu: 周伯通是你?
+00:13 +0800 <sdnds-slackbot>: <john-lin>: @hwchiu:  來場Floodlight introduction 啊
+00:13 +0800 <sdnds-slackbot>: <jalen>: Good
+00:13 +0800 <sdnds-slackbot>: <john-lin>: 台北那場空的session
+00:13 +0800 <sdnds-slackbot>: <pichuang>: shanyu: 領導要講否
+00:14 +0800 <sdnds-slackbot>: <pichuang>: hwchiu: 邱牛上去的話 大家都要跪著聽
+00:14 +0800 <sdnds-slackbot>: <pichuang>: xd
+00:14 +0800 <sdnds-slackbot>: <pichuang>: 阿不對
+00:14 +0800 <sdnds-slackbot>: <pichuang>: 還有拉牛
+00:14 +0800 <sdnds-slackbot>: <pichuang>: 從頭跪到尾
+00:14 +0800 <sdnds-slackbot>: <john-lin>: 準備一下瑜珈墊 要跪整場
+00:14 +0800 <sdnds-slackbot>: <jalen>: 為什麼要把趨勢場地搞得像是紫衣神教..
+00:16 +0800 <S3p_lin>: Y! 也是紫衣....
+00:16 +0800 <sdnds-slackbot>: <jalen>: Yahoo.......對齁
+00:17 +0800 <sdnds-slackbot>: <pichuang>: 好可怕的紫色神教
+00:17 +0800 <sdnds-slackbot>: <john-lin>: 說個八卦
+00:18 +0800 <sdnds-slackbot>: <pichuang>: 八卦?
+00:18 +0800 <sdnds-slackbot>: <john-lin>: 前幾個禮拜前 智邦有個歪果工程師來清大講OFDPA簡介，桌布就放紫衣神教
+00:19 +0800 <sdnds-slackbot>: <jalen>: 真的假的.....連歪國人都淪陷?
+00:19 +0800 <sdnds-slackbot>: <pichuang>: 宗教實在是太厲害了
+00:19 +0800 <sdnds-slackbot>: <john-lin>: 整片紫的寫了 個禪 XD
+00:20 +0800 <sdnds-slackbot>: <jalen>: 會不會只是覺得那中文字很好看(?
+00:20 +0800 <sdnds-slackbot>: <john-lin>: 壓了妙禪的印
+00:20 +0800 <sdnds-slackbot>: <john-lin>: 應該不是吧XD
+00:21 +0800 <sdnds-slackbot>: <john-lin>: 剛剛 search 要下載桌布要登入的
+00:21 +0800 <sdnds-slackbot>: <john-lin>: 看起來需要善款才能下載XD
+00:21 +0800 <sdnds-slackbot>: <pichuang>: ...這麼厲害
+00:21 +0800 <sdnds-slackbot>: <pichuang>: 也要捐330000嗎
+00:21 +0800 <sdnds-slackbot>: <john-lin>: ＸＤＤ備註：桌布僅開放同修下載，下載時請先輸入您的同修證號與姓名。
+00:22 +0800 <sdnds-slackbot>: <jalen>: 真扯
+00:22 +0800 <sdnds-slackbot>: <jalen>: 來個黑黑去戳看看吧
+00:23 +0800 <sdnds-slackbot>: <pichuang>: xdddddd
+00:23 +0800 <sdnds-slackbot>: <pichuang>: 不知道搞電腦的要拜什麼好
+00:24 +0800 <sdnds-slackbot>: <jalen>: 當然是乖乖阿
+00:24 +0800 <sdnds-slackbot>: <john-lin>: 老牌乖乖
+00:25 +0800 <sdnds-slackbot>: <pichuang>: ...
+00:25 +0800 <sdnds-slackbot>: <pichuang>: 我知道了 拜圖靈
+00:27 +0800 <sdnds-slackbot>: <hwchiu>: XD
+00:27 +0800 <sdnds-slackbot>: <pichuang>: 謝謝捧場
+00:27 +0800 <sdnds-slackbot>: <jalen>: 拜完電腦沒變強，工程師都變甲甲
+00:28 +0800 <sdnds-slackbot>: <john-lin>: :satisfied:
+00:29 +0800 <sdnds-slackbot>: <pichuang>: 今天跟itri的開會 他們已經再access端 針對幾個樓層換了openflow switch再用了
+00:30 +0800 <sdnds-slackbot>: <pichuang>: 覺得非常有魄力xd
+00:33 +0800 <sdnds-slackbot>: <john-lin>: 是把openflow  switch 跑 L2 packet switching 的 application 去用嗎？
+00:35 +0800 <sdnds-slackbot>: <pichuang>: y
+00:35 +0800 <sdnds-slackbot>: <pichuang>: 他們有針對vlan做不少著墨
+00:35 +0800 <sdnds-slackbot>: <pichuang>: 因為想要與 traditional network 混著一起用
+00:36 +0800 <sdnds-slackbot>: <pichuang>: 看起來是運作得很正常
+00:36 +0800 <sdnds-slackbot>: <john-lin>: 哦 他們這樣跑起來有說controller 跑幾台嗎
+00:37 +0800 <sdnds-slackbot>: <pichuang>: 1
+00:37 +0800 <sdnds-slackbot>: <pichuang>: opendaylight
+00:37 +0800 <sdnds-slackbot>: <pichuang>: 未來要做ha
+00:37 +0800 <sdnds-slackbot>: <john-lin>: 恩恩
+00:37 +0800 <sdnds-slackbot>: <pichuang>: 他們主要是針對企業需求做開發
+00:38 +0800 <sdnds-slackbot>: <john-lin>: 著重在vlan嗎 有其他use case嗎
+00:38 +0800 <sdnds-slackbot>: <john-lin>: 像是security xf
+00:38 +0800 <sdnds-slackbot>: <pichuang>: campus 他們沒想過 所以透過交流的方式詢問校園的問題
+00:38 +0800 <sdnds-slackbot>: <john-lin>: 恩
+00:39 +0800 <sdnds-slackbot>: <john-lin>: 校園網路的wifi 在NBL那個solution  上面 不知道run得如何
+00:40 +0800 <sdnds-slackbot>: <pichuang>: 不同設備放在同一個subnet底下 但是他的access是用 pica8 接 透過 odl 控制
+00:40 +0800 <sdnds-slackbot>: <pichuang>: 不同設備如 ip-cam, itri ubike, desktop, ap
+00:40 +0800 <sdnds-slackbot>: <pichuang>: 今天我有問他們一個問題
+00:40 +0800 <sdnds-slackbot>: <pichuang>: 就是說 今天我要抓私架ap
+00:41 +0800 <sdnds-slackbot>: <pichuang>: 私架ap底下跑 nat+dhcp
+00:41 +0800 <sdnds-slackbot>: <john-lin>: 恩
+00:41 +0800 <sdnds-slackbot>: <pichuang>: 這件事情我詢問他們 他們也說應該是抓不到的
+00:41 +0800 <sdnds-slackbot>: <pichuang>: 要用人工下去偵測
+00:42 +0800 <sdnds-slackbot>: <john-lin>: 人工怎麼偵測啊
+00:42 +0800 <sdnds-slackbot>: <pichuang>: 拿天線抓ssid
+00:42 +0800 <sdnds-slackbot>: <john-lin>: 我覺得鎖MAC之後 AP還可以換MAC就沒招了XD
+00:42 +0800 <sdnds-slackbot>: <pichuang>: 或者是用ap有一個scan的機制 他可以掃他附近的ap訊號強弱
+00:42 +0800 <sdnds-slackbot>: <john-lin>: 哦 抓WiFi 得ssid
+00:42 +0800 <sdnds-slackbot>: <pichuang>: 收集資料 產生出個report 再請人工去抓
+00:42 +0800 <sdnds-slackbot>: <john-lin>: 但是ssid 可以隱藏啊
+00:43 +0800 <sdnds-slackbot>: <pichuang>: 可以送probe讓 ap回應
+00:43 +0800 <sdnds-slackbot>: <pichuang>: 他總是要回應的吧xd
+00:43 +0800 <sdnds-slackbot>: <pichuang>: 這件事辦得到
+00:43 +0800 <sdnds-slackbot>: <john-lin>: 恩 但可能太耗成本
+00:43 +0800 <sdnds-slackbot>: <pichuang>: 對xd
+00:43 +0800 <sdnds-slackbot>: <john-lin>: 還要請工讀生拿機器去抓
+00:43 +0800 <sdnds-slackbot>: <pichuang>: 超傷人力
+00:43 +0800 <sdnds-slackbot>: <john-lin>: 可能走在宿舍一半被圍毆吧XDD
+00:43 +0800 <sdnds-slackbot>: <pichuang>: 目前是想不到有啥辦法解決
+00:44 +0800 <sdnds-slackbot>: <pichuang>: xddddddd
+00:44 +0800 <sdnds-slackbot>: <pichuang>: 若在學校的話 不要說宿舍了 光是研究室就會抗議了
+00:45 +0800 <sdnds-slackbot>: <john-lin>: 要抓的原因是因為太多ap的讓wifi 頻道干擾嗎
+00:45 +0800 <sdnds-slackbot>: <pichuang>: 對
+00:45 +0800 <sdnds-slackbot>: <john-lin>: 還是有其他原因
+00:45 +0800 <sdnds-slackbot>: <pichuang>: 還有資安問題
+00:45 +0800 <sdnds-slackbot>: <pichuang>: ap底下做了哪些事情 因為非官方管理 所以一概通通不知
+00:46 +0800 <sdnds-slackbot>: <pichuang>: 如果ap設定不良導致被入侵
+00:46 +0800 <sdnds-slackbot>: <pichuang>: 這樣就很麻煩了
+00:46 +0800 <sdnds-slackbot>: <hwchiu>: 架設者自己負責?
+00:46 +0800 <sdnds-slackbot>: <pichuang>: 原則上是連架都不能架
+00:46 +0800 <sdnds-slackbot>: <pichuang>: 但學校
+00:47 +0800 <sdnds-slackbot>: <pichuang>: 誰鳥你
+00:47 +0800 <sdnds-slackbot>: <pichuang>: xd
+00:47 +0800 <sdnds-slackbot>: <john-lin>: 應該都綁mac吧 但是好的ap有clone mac可以複製
+00:47 +0800 <sdnds-slackbot>: <hwchiu>: 弄一個超強的蓋過整棟宿舍，大家一起死(誤
+00:48 +0800 <sdnds-slackbot>: <pichuang>: hwchiu: 衛星xd
+00:48 +0800 <sdnds-slackbot>: <pichuang>: john-lin: 他申請的時候填 ap的mac就可以了 不一定要clone mac
+00:48 +0800 <sdnds-slackbot>: <john-lin>: 也是
+00:48 +0800 <sdnds-slackbot>: <pichuang>: 或者是刷 ap 自己改 mac 這些事情都非常容易
+00:49 +0800 <sdnds-slackbot>: <pichuang>: 我覺得現行認證若是以 mac-based 為主的都不太算是好方案
+00:49 +0800 <sdnds-slackbot>: <pichuang>: mac雖然號稱是唯一辨識
+00:49 +0800 <sdnds-slackbot>: <pichuang>: 但實際上都可以隨便亂改
+00:51 +0800 <sdnds-slackbot>: <pichuang>: 先回家 最近養身要早睡
+00:51 +0800 <sdnds-slackbot>: <hwchiu>: 這種時間點說要養身
+00:51 +0800 <sdnds-slackbot>: <john-lin>: :wave:
+14:34 +0800 <sdnds-slackbot>: <pichuang>: oracle也加入sdn的戰局了
+14:34 +0800 <sdnds-slackbot>: <pichuang>: <http://www.sdnlab.com/8722.html>
+14:47 +0800 <sdnds-slackbot>: <allen.huang>: oracle 也自己開發 switch ?
+14:47 +0800 <sdnds-slackbot>: <allen.huang>: 看新聞內容感覺像跟 cisco 宣戰
+14:54 +0800 <sdnds-slackbot>: <pichuang>: <http://www.oracle.com/us/products/networking/virtual-networking/sdn/overview/index.html>
+14:54 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/IQ7rt  ==> Error Page 404
+14:54 +0800 <sdnds-slackbot>: <pichuang>: 宣戰?
