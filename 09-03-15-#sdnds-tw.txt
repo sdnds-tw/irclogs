@@ -1,0 +1,13 @@
+00:33 +0800 <sdnds-slackbot>: <jalen>: <http://sdnds-tw.kktix.cc/events/cb77c10f-657a10-7985ee-4546f0>
+00:33 +0800 <sdnds-tw_Bot>: ==> SDNDS-TW Taipei Meetup #1
+00:34 +0800 <sdnds-slackbot>: <john-lin>: 趨勢場地怎麼借到的＠＠
+00:34 +0800 <sdnds-slackbot>: <jalen>: 請人幫忙bookmark囉
+00:35 +0800 <sdnds-slackbot>: <john-lin>: 是公開可以讓大家借的場地？還是認識的朋友
+00:35 +0800 <sdnds-slackbot>: <jalen>: 請他們員工
+00:35 +0800 <sdnds-slackbot>: <jalen>: 有在社群內阿
+00:35 +0800 <sdnds-slackbot>: <john-lin>: 哦
+00:36 +0800 <sdnds-slackbot>: <john-lin>: 怎麼還是Meetup #1 是區分地點喔
+00:36 +0800 <sdnds-slackbot>: <john-lin>: 台北第一場
+22:05 +0800 <sdnds-slackbot>: <chchen>: <http://showipprotocols-tw.blogspot.tw/2014/10/wi-fi-marriott-hotel-fcc-usd-600k.html?m=1>
+22:05 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/j0fF8  ==> Cisco學習資訊分享: 封鎖客人自帶的 Wi-Fi 是違法的。萬豪酒店(Marriott Hotel)被 FCC 罰款 USD$ 600K
+22:06 +0800 <sdnds-slackbot>: <chchen>: 這一類的Wi-Fi封鎖原理，都是採用這個方式，當Wi-Fi基礎建設偵測到有Wi-Fi使用者啟動接入目標AP的程序時，就偽冒AP的身分，發送802.11協議的 De-authentication封包，讓使用者的產品誤以為AP拒絕接入，而達到封鎖的目的。
