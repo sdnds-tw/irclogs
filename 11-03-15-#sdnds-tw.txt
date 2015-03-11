@@ -1,0 +1,5 @@
+22:05 +0800 <sdnds-slackbot>: <powen_tsai>: John
+22:05 +0800 <sdnds-slackbot>: <powen_tsai>: 更新一下
+22:05 +0800 <sdnds-slackbot>: <powen_tsai>: PicOS implement OF-DPA 2.0, 是用indigo做OF agent
+22:06 +0800 <sdnds-slackbot>: <powen_tsai>: 是BRCM實作的
+22:27 +0800 <sdnds-slackbot>: <john-lin>: 哦 了解
