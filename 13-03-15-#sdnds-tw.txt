@@ -1,0 +1,22 @@
+03:57 +0800 <sdnds-slackbot>: <hellblazzar>: 不好意思各位大大，小弟是剛入門的新手，目前是用floodlight + OpenvSwitch on OpenWrt on TPL1043ND作為實驗的平台，但是目前遇到了一些瓶頸，不知道有哪位大大能不吝為小弟解惑...
+04:07 +0800 <sdnds-slackbot>: <hellblazzar>: 現在的狀況是，我把各個port各自切成vlan，在加入ovs bridge之下，但是在將host(一台laptop、一隻手機)連上Switch後，卻無法互相ping通，設定上都是以static ip來連線，host的ip皆為192.168.1.X，ovs bridge的ip為192.168.5.1，gateway為192.168.5.254，各interface都沒有配置ip，基本上是參照了pichuan大大教學上的設定，在加上ovs一部分的原文資料��%8
+08:34 +0800 <pichuang>: 192.168.5.254 你在openwrt裡面ping的到嗎
+08:35 +0800 <pichuang>: 阿這問題應該要問說 你controller有connected嗎?
+16:17 +0800 <yahooc>: hihi
+18:10 +0800 <sdnds-slackbot>: <hellblazzar>: 是說，現在問題還是卡在standalone下，不論怎麼調整網路設定，host之間就是ping不通呢....
+18:14 +0800 <sdnds-slackbot>: <hwchiu>: 你改用Linux bridge試試看?
+18:18 +0800 <sdnds-slackbot>: <hellblazzar>: 不過...這樣用ovs-bridge的意義不就不見了嗎?所以到頭來失去controller的switch就會變成一塊磚嗎XD??
+18:19 +0800 <sdnds-slackbot>: <hwchiu>: 只是先釐清問題點
+18:19 +0800 <sdnds-slackbot>: <hwchiu>: 到底是OVS那邊沒有弄好
+18:19 +0800 <sdnds-slackbot>: <hwchiu>: 還是其他網路環境問題
+18:21 +0800 <sdnds-slackbot>: <hellblazzar>: 歐歐  好的，那麼我試試看，麻煩hwchiu大了
+20:04 +0800 <sdnds-slackbot>: <pichuang>: 你是用openwrt吧?
+20:04 +0800 <sdnds-slackbot>: <pichuang>: 你整個prcoess重開
+20:04 +0800 <sdnds-slackbot>: <pichuang>: 依照順序從開
+20:05 +0800 <sdnds-slackbot>: <pichuang>: ovs-ofctl show br0 明顯指出你的 port 沒有放進去
+20:05 +0800 <sdnds-slackbot>: <pichuang>: 但ovs-vsctl show卻有
+20:05 +0800 <sdnds-slackbot>: <pichuang>: 代表ovs-vswitchd <-> ovsdb-server撈資料的時候有些問題
+20:06 +0800 <sdnds-slackbot>: <pichuang>: <http://roan.logdown.com/posts/238771-openvswitch-debug-enviroment>
+20:06 +0800 <sdnds-tw_Bot>: ==> OpenvSwitch Debug$  Enviroment « roan's Blog
+20:06 +0800 <sdnds-slackbot>: <pichuang>: 詳細可以看一下整個檢查流程
+21:36 +0800 <sdnds-slackbot>: <hellblazzar>: 那我再試試好了@@，不好意思麻煩各位了
