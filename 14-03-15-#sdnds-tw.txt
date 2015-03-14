@@ -1,0 +1,10 @@
+23:10 +0800 <sdnds-slackbot>: <john-lin>: 最近在 ryu mailing list 看到一段 跟大家分享一下XD
+23:11 +0800 <sdnds-slackbot>: <john-lin>: Hi Eftikhar,
+23:11 +0800 <sdnds-slackbot>: <john-lin>:
+23:11 +0800 <sdnds-slackbot>: <john-lin>: Ryu is single-thread model using kernel-thread in "OS-level". However, it
+23:11 +0800 <sdnds-slackbot>: <john-lin>: is multi-thread using userland-thread (a.k.a coroutine, green-thread)
+23:11 +0800 <sdnds-slackbot>: <john-lin>: actually. (Ryu's userland-thread is "greenlet" library)
+23:11 +0800 <sdnds-slackbot>: <john-lin>:
+23:11 +0800 <sdnds-slackbot>: <john-lin>: And Ryu's application works in event driven using "eventlet" library.
+23:11 +0800 <sdnds-slackbot>: <john-lin>: Therefore, Ryu's application can handle multiple switches in single-thread
+23:11 +0800 <sdnds-slackbot>: <john-lin>: (userland-thread).
