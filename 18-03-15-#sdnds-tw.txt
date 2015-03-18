@@ -1,0 +1,9 @@
+08:51 +0800 <sdnds-slackbot>: <allen.huang>: 今天也在 ryu mailing list 看到一個有趣的議題
+08:51 +0800 <sdnds-slackbot>: <allen.huang>: dynamic loading app
+08:52 +0800 <sdnds-slackbot>: <allen.huang>: 之前公司的 solution 在取捨 OpenDayLight 和 Ryu 的時候因為這點盧了很久
+19:25 +0800 <sdnds-slackbot>: <james>: 請問一下
+19:25 +0800 <sdnds-slackbot>: <james>: 我照著這篇
+19:25 +0800 <sdnds-slackbot>: <james>: <http://www.sdnlab.com/4603.html>
+19:25 +0800 <sdnds-slackbot>: <james>: 安裝onos
+19:25 +0800 <sdnds-slackbot>: <james>: 但是最後要karaf clean
+19:26 +0800 <sdnds-slackbot>: <james>: 都找不到 karaf
