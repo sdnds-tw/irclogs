@@ -1,0 +1,8 @@
+00:49 +0800 <sdnds-slackbot>: <rascov>: karaf 要另外抓喔
+00:50 +0800 <sdnds-slackbot>: <rascov>: 你可以參考官網wiki的 ONoS from Scratch 這個頁面
+00:51 +0800 <sdnds-slackbot>: <rascov>: 然後path要記得設
+01:16 +0800 <sdnds-slackbot>: <rascov>: <https://wiki.onosproject.org/display/ONOS/ONOS+from+Scratch>
+01:16 +0800 <sdnds-slackbot>: <rascov>: karaf 解壓縮完就可以用了，不用 compile 什麼的
+01:17 +0800 <sdnds-slackbot>: <rascov>: 然後如果是按照該 tutorial 用 karaf clean 這個方式 run 起來的話，只能跑 single instance
+01:17 +0800 <sdnds-slackbot>: <rascov>: 如果跑 cluster mode 會有點問題，有幾個 config 會找不到
+01:18 +0800 <sdnds-slackbot>: <rascov>: cluster mode 用 wiki 的 run 法才 run 的起來
