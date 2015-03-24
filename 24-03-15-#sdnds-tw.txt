@@ -1,0 +1,8 @@
+11:22 +0800 <sdnds-slackbot>: <pichuang>: <http://coscup2015.kktix.cc/events/2ff2de9e>
+11:22 +0800 <sdnds-tw_Bot>: ==> COSCUP 2015 Workshop 活動申請
+11:23 +0800 <sdnds-slackbot>: <pichuang>: 各位覺得要不要報一個
+16:54 +0800 <sdnds-slackbot>: <james>: 請問一下
+16:54 +0800 <sdnds-slackbot>: <james>: curl -d '{"switch": "00:00:00:00:00:00:00:01", "name":"flow-mod-1", "cookie":"0", "priority":"32768", "ingress-port":"1","active":"true", "actions":"output=2"}' http://<controller_ip>:8080/wm/staticflowentrypusher/json
+16:55 +0800 <sdnds-slackbot>: <james>: 加 “active":"true"的意思是什麼？
+16:56 +0800 <sdnds-slackbot>: <james>: 我沒有加“active":"true"還是可以建立flow
+20:38 +0800 <sdnds-slackbot>: <rascov>: 感覺可以報啊 coscup
