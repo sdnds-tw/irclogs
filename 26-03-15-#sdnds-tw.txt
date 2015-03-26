@@ -1,0 +1,18 @@
+00:52 +0800 <sdnds-slackbot>: <rascov>: 我覺得這個可以SDNDS聯合NCTU一起辦欸
+00:52 +0800 <sdnds-slackbot>: <rascov>: 找其他老師或是大聯盟成員上去報
+00:52 +0800 <sdnds-slackbot>: <rascov>: 感覺應該不錯
+01:25 +0800 <sdnds-slackbot>: <rascov>: 我們lab至少可以出三個session
+01:26 +0800 <sdnds-slackbot>: <rascov>: 辦一天的workshop只要六個session ，再去大聯盟或工研院開源計畫邀稿應該開得起來
+01:27 +0800 <sdnds-slackbot>: <rascov>: @jalen: 你覺得以SDNDS的人力有可能辦得起來嗎，還是需要找老闆商量看大聯盟要不要來一起玩
+02:46 +0800 <sdnds-slackbot>: <jalen>: 要找老闆絕對不是我去交涉阿QAQ
+02:46 +0800 <sdnds-slackbot>: <jalen>: 我是不知道workshop需要怎樣的程度
+02:48 +0800 <sdnds-slackbot>: <jalen>: 看了一下去年議程，workshop短則一個議程，長則似乎三個
+02:48 +0800 <sdnds-slackbot>: <jalen>: <=從來沒去過workshop的場XD
+02:49 +0800 <sdnds-slackbot>: <jalen>: 話說今年coscup時 @rascov 你不是要去美國了?
+03:00 +0800 <sdnds-slackbot>: <jalen>: QQ....眼殘沒看到辦一天六個session
+12:34 +0800 <sdnds-slackbot>: <rascov>: 我看main conference一天是六個時段
+12:35 +0800 <sdnds-slackbot>: <rascov>: 還沒吧我應該22或23才飛
+14:33 +0800 <sdnds-slackbot>: <jalen>: workshop好像可以不用要求一整天的場地
+14:34 +0800 <sdnds-slackbot>: <rascov>: 嗯，那應該蠻容易辦得起來吧
+14:49 +0800 <sdnds-slackbot>: <jalen>: 這樣要找大聯盟嗎?
+15:07 +0800 <sdnds-slackbot>: <rascov>: 似乎可不用
