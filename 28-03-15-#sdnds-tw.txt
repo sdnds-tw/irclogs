@@ -1,0 +1,7 @@
+17:25 +0800 <sdnds-slackbot>: <john-lin>: http://slackhq.com/post/114696167740/march-2015-security-incident-and-launch-of-2fa slack 被駭該換密碼了
+17:25 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/6hHUr  ==> March 2015 Security Incident and the Launch of Two... | Several People Are Typing
+17:52 +0800 <sdnds-slackbot>: <john-lin>: 今天 @rascov  Github開不起來的原因可能是被DDoS
+17:52 +0800 <sdnds-slackbot>: <john-lin>: <https://github.com/blog/1981-large-scale-ddos-attack-on-github-com>
+17:52 +0800 <sdnds-tw_Bot>: ==> Large Scale DDoS Attack on github.com · GitHub
+23:30 +0800 <sdnds-slackbot>: <pichuang>: 所以我們所有使用者都應該要換密碼了?
+23:46 +0800 <sdnds-slackbot>: <john-lin>: 建議啦
