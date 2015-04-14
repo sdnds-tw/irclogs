@@ -1,0 +1,77 @@
+18:00 +0800 <sdnds-slackbot>: <james>: 我裝完onos
+18:00 +0800 <sdnds-slackbot>: <james>: 啟動onos 之後
+18:01 +0800 <sdnds-slackbot>: <james>: 畫面還是karaf
+18:01 +0800 <sdnds-slackbot>: <james>: 但是裡面已經有onos的那些功能了
+18:01 +0800 <sdnds-slackbot>: <james>: 這是什麼東西沒裝好嗎？
+19:16 +0800 <sdnds-slackbot>: <rascov>: 你是裝什麼版本? 1.1? master?
+19:17 +0800 <sdnds-slackbot>: <rascov>: master 的話跑一下 onos-setup-karaf，第65行附近onos-branding那段會解決這個問題
+19:19 +0800 <sdnds-slackbot>: <rascov>: 1.1 的話建議你還是按照 onos-build -> onos-package -> onos-install 的方式跑起來
+19:20 +0800 <sdnds-slackbot>: <rascov>: 除非你有多餘時間研究 onos-setup-karaf 裡面做了什麼然後如法炮製一番 XD
+19:27 +0800 <sdnds-slackbot>: <rascov>: 不過我覺得你說 「裡面已經有onos的那些功能」我存疑
+19:27 +0800 <sdnds-slackbot>: <rascov>: 如果你沒有跑 onos-setup-karaf 或 onos-install，你進去雖然看到 onos console 可是你應該打個 hosts 就會發現 service not found，然後 log 一堆 error
+19:28 +0800 <sdnds-slackbot>: <rascov>: error msg 應該會類似 cluster.json file not found 之類的 (?
+19:46 +0800 <sdnds-slackbot>: <james>: 1.1
+19:47 +0800 <sdnds-slackbot>: <james>: 我照wiki上面安裝的
+19:48 +0800 <sdnds-slackbot>: <james>: mvn clean install
+19:48 +0800 <sdnds-slackbot>: <james>: 然後karaf clean啟動
+19:49 +0800 <sdnds-slackbot>: <rascov>: <https://wiki.onosproject.org/display/ONOS/ONOS+from+Scratch>
+19:50 +0800 <sdnds-slackbot>: <rascov>: 你是看哪一頁?
+19:51 +0800 <sdnds-slackbot>: <james>: <https://wiki.onosproject.org/display/ONOS/Installing+and+Running+ONOS#InstallingandRunningONOS-InstallingONOS>
+19:51 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/RIABP  ==> Installing and Running ONOS - ONOS - Wiki
+19:51 +0800 <sdnds-slackbot>: <rascov>: 好，看來你是被 https://wiki.onosproject.org/display/ONOS/Installing+and+Running+ONOS 這頁雷到了
+19:51 +0800 <sdnds-slackbot>: <rascov>: 果然 XDDD
+19:51 +0800 <sdnds-slackbot>: <james>: 哈哈
+19:51 +0800 <sdnds-tw_Bot>: ==> Installing and Running ONOS - ONOS - Wiki
+19:52 +0800 <sdnds-slackbot>: <james>: 這是什麼意思
+19:52 +0800 <sdnds-slackbot>: <james>: 一般人進去不是看這頁？
+19:52 +0800 <sdnds-slackbot>: <james>: 因為他就說安裝和執行onos
+19:52 +0800 <sdnds-slackbot>: <james>: XDDD
+19:54 +0800 <sdnds-slackbot>: <rascov>: 我推薦你我剛貼的連結，那一頁是我 edit 的，品質有保證
+19:54 +0800 <sdnds-slackbot>: <rascov>: 你那頁已經雷到不只一個人了，昨天還前天才有人在 mail list 問
+19:54 +0800 <sdnds-slackbot>: <james>: 哈哈哈 是喔
+19:54 +0800 <sdnds-slackbot>: <james>: 了解
+19:57 +0800 <sdnds-slackbot>: <rascov>: <https://groups.google.com/a/onosproject.org/forum/#!topic/onos-discuss/IGnSm96OGhk>
+19:57 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/1ixag  ==> Google Groups
+19:58 +0800 <sdnds-slackbot>: <rascov>: 我有空改一下 wiki 好了
+19:58 +0800 <sdnds-slackbot>: <rascov>: 雷死了
+20:00 +0800 <sdnds-slackbot>: <rascov>: 1.1.1 會把 onos-setup-karaf backport 回去
+20:00 +0800 <sdnds-slackbot>: <james>: 請問一下
+20:01 +0800 <sdnds-slackbot>: <james>: 裝好之後重開還要重設路徑嗎？
+20:03 +0800 <sdnds-slackbot>: <rascov>: 路徑指的是？
+20:03 +0800 <sdnds-slackbot>: <rascov>: ONOS_ROOT 這類的 environment variable 嗎
+20:03 +0800 <sdnds-slackbot>: <james>: yes
+20:04 +0800 <sdnds-slackbot>: <rascov>: 你可以在你的 ~/.bashrc 加入一行 source ~/onos/tools/dev/bash_profile
+20:04 +0800 <sdnds-slackbot>: <rascov>: 這樣你每次打開 bash 就會自動設定好了
+20:04 +0800 <sdnds-slackbot>: <james>: 了解
+20:05 +0800 <sdnds-slackbot>: <rascov>: 如果你用的不是預設路徑 (~/onos) 那你可能還是得自己在你的 .bashrc 加入 ONOS_ROOT 去 override onos bash_profile 裡面的設定
+20:06 +0800 <sdnds-slackbot>: <rascov>: export ONOS_ROOT=~/repo/onos
+20:06 +0800 <sdnds-slackbot>: <rascov>: source $ONOS_ROOT/tools/dev/bash_profile
+20:06 +0800 <sdnds-slackbot>: <rascov>: 類似這樣
+20:27 +0800 <sdnds-slackbot>: <rascov>: 我暫時不知道怎麼解這個問題比較好，所以我在那頁雷人的 wiki 先加入一段警告請大家先用 onos-package + onos-install 的方式來跑
+20:28 +0800 <sdnds-slackbot>: <rascov>: 我寫信跟 ONOS Technical Lead 討論一下，應該會採取把 onos-setup-karaf 這個東西 back port 回 1.1 的方式
+20:29 +0800 <sdnds-slackbot>: <james>: 我啟動之後用list
+20:29 +0800 <sdnds-slackbot>: <james>: 71 | Active |  80 | 1.2.0.SNAPSHOT   | onlab-thirdparty
+20:29 +0800 <sdnds-slackbot>: <james>:  72 | Active |  80 | 1.0.7            | mapdb
+20:29 +0800 <sdnds-slackbot>: <james>:  73 | Active |  80 | 1.2.0.SNAPSHOT   | onlab-misc
+20:29 +0800 <sdnds-slackbot>: <james>:  74 | Active |  80 | 1.2.0.SNAPSHOT   | onlab-osgi
+20:29 +0800 <sdnds-slackbot>: <james>:  75 | Active |  80 | 1.2.0.SNAPSHOT   | onos-api
+20:29 +0800 <sdnds-slackbot>: <james>:  76 | Active |  80 | 1.2.0.SNAPSHOT   | onos-app-fwd
+20:29 +0800 <sdnds-slackbot>: <james>:  92 | Active |  80 | 1.2.0.SNAPSHOT   | onos-core-net
+20:29 +0800 <sdnds-slackbot>: <james>:  93 | Active |  80 | 1.2.0.SNAPSHOT   | onos-core-common
+20:29 +0800 <sdnds-slackbot>: <james>: 跑出這些算是正常？
+20:30 +0800 <sdnds-slackbot>: <rascov>: 不太正常，為什麼你抓的是1.1可是上面是1.2.0.SNAPSHOT XD
+20:30 +0800 <sdnds-slackbot>: <james>: 拍謝 我剛剛改成1.2.0-SNAPSHOT
+20:30 +0800 <sdnds-slackbot>: <rascov>: 喔，那 應該正常 XD
+20:31 +0800 <sdnds-slackbot>: <rascov>: 然後 1.2.0 也不用 list 了，有一個更神奇的指令叫做 apps
+20:32 +0800 <sdnds-slackbot>: <rascov>: feature:install/uninstall 在 1.2.0 被廢止了，改用 app install/uninstall
+20:32 +0800 <sdnds-slackbot>: <rascov>: 差別：前者影響的範圍只有當前下這個指令的 cluster instance，後者是全體同步
+20:32 +0800 <sdnds-slackbot>: <rascov>: 但如果你只 run 1 instance 好像是沒查
+20:32 +0800 <sdnds-slackbot>: <rascov>: 沒差
+20:33 +0800 <sdnds-slackbot>: <james>: 我也是剛開始用而已
+20:33 +0800 <sdnds-slackbot>: <james>: 很多東西還要在摸一下
+20:34 +0800 <sdnds-slackbot>: <james>: 哈哈
+20:37 +0800 <sdnds-slackbot>: <rascov>: (Y)
+20:38 +0800 <sdnds-slackbot>: <rascov>: 先暫離，有問題可以再留言
+23:34 +0800 <sdnds-slackbot>: <rascov>: @james: 感謝回報
+23:35 +0800 <sdnds-slackbot>: <rascov>: 老大踹共了 XD
+23:35 +0800 <sdnds-slackbot>: <rascov>: Clearly, this particular issue is severely impacting the out-of-box experience and we need to fix it in 1.1.1 patch. It has escaped us because our QA does not test local setup and all us devs have had their environments setup.
