@@ -1,0 +1,3 @@
+01:48 +0800 <sdnds-slackbot>: <takotsai>: 請問一下openvswitch編譯完之後～
+01:48 +0800 <sdnds-slackbot>: <takotsai>: 要怎麼restart?
+08:39 +0800 <pichuang>: /etc/init.d/openvswitch restart ?
