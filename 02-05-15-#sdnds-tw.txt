@@ -1,0 +1,193 @@
+13:49 +0800 <sdnds-slackbot>: <hellblazzar>: 不好意思上來問個問題，最近做實驗遇到了奇怪的狀況，在Controller端可以看見host，但是實際上各host間及controller與host卻無法ping通，也嘗試過直接下flow到switch上，依然是不行，請問這種狀況該怎麼解決呢？(我的環境是OpenWrt+OpenvSwitch配上Floodlight)
+13:56 +0800 <sdnds-slackbot>: <john-lin>: Controller 本來就ping不到host啊
+13:57 +0800 <sdnds-slackbot>: <hellblazzar>: 那host間跟host ping controller也是不允許嗎？
+14:00 +0800 <sdnds-slackbot>: <hellblazzar>: 還有就是如果controller不能ping host，這樣controller是怎麼看到host的呢?
+14:00 +0800 <sdnds-slackbot>: <john-lin>: Host間可以互通 但要在flow entry下的正確的前提之下
+14:01 +0800 <sdnds-slackbot>: <john-lin>: Controller 只管switch上的每一個link status
+14:02 +0800 <sdnds-slackbot>: <hellblazzar>: 所以在host互ping前，我必須先下好flow entry囉?
+14:02 +0800 <sdnds-slackbot>: <john-lin>: 對啊
+14:03 +0800 <sdnds-slackbot>: <john-lin>: 沒有entry 封包怎麼forward
+14:07 +0800 <sdnds-slackbot>: <hellblazzar>: 但是在switch不知道怎麼導封包的狀況下，照理來說會塞給floodlight  controller，再藉由floodlight controller來導吧？
+14:08 +0800 <sdnds-slackbot>: <john-lin>: 會
+14:08 +0800 <sdnds-slackbot>: <john-lin>: 所以你要在controller 處理這事
+14:09 +0800 <sdnds-slackbot>: <john-lin>: 但是你還是要有一筆entry是forward到controller
+14:10 +0800 <sdnds-slackbot>: <john-lin>: Table miss
+14:11 +0800 <sdnds-slackbot>: <hellblazzar>: 可是openvswitch不是本來就知道怎麼到controller嗎？還是它只是知道controller是誰，但是不知道怎麼到controller
+14:12 +0800 <sdnds-slackbot>: <john-lin>: 1.3 預設是把table miss drop
+14:13 +0800 <sdnds-slackbot>: <john-lin>: 除非你把table miss 改為forward to controller
+14:16 +0800 <sdnds-slackbot>: <hellblazzar>: 歐歐，那這部分是我還不夠熟openflow的protocol，我再把openflow多看幾次好了@@
+14:16 +0800 <sdnds-slackbot>: <hellblazzar>: 謝謝john-lin大
+14:16 +0800 <sdnds-slackbot>: <john-lin>: 不會
+15:11 +0800 <sdnds-slackbot>: <hellblazzar>: 不好意思john-lin大，剛剛忘了說我是用OpenFlow1.0，而就我查證過關於openvswitch關於table miss的處理，官方上是說針對openflow1.0的部分會是在table miss後導向controller，而floodlight本身預設會去做forward封包的動作，但是這樣就我就不了解為什麼互ping會失敗這件事了
+15:12 +0800 <sdnds-slackbot>: <john-lin>: 先確認一下你的 table miss 確實有寫進去
+15:14 +0800 <sdnds-slackbot>: <hellblazzar>: 是指從controller端去把封包撈出來看嗎?
+15:15 +0800 <sdnds-slackbot>: <hellblazzar>: 我試試
+15:16 +0800 <sdnds-slackbot>: <john-lin>: 直接在switch上用OVS的dump flows指令
+15:16 +0800 <sdnds-slackbot>: <hellblazzar>: 歐歐
+15:20 +0800 <sdnds-slackbot>: <hellblazzar>: 我這邊看到是空的，這樣是代表沒有table miss的動作嗎?
+15:20 +0800 <sdnds-slackbot>: <john-lin>: 是的
+15:21 +0800 <sdnds-slackbot>: <hellblazzar>: 不過 確認table miss不是使用 dump-table-features這個指令嗎??
+15:21 +0800 <sdnds-slackbot>: <john-lin>: 沒有features吧
+15:21 +0800 <sdnds-slackbot>: <hellblazzar>: 是說  ovs會吐回來限定1.3之後才省用這個指令的錯誤訊息
+15:21 +0800 <sdnds-slackbot>: <hellblazzar>: @@
+15:22 +0800 <sdnds-slackbot>: <john-lin>: ovs-ofctl dump-flows
+15:22 +0800 <sdnds-slackbot>: <john-lin>: 指定protocol -O openflow10
+15:26 +0800 <sdnds-slackbot>: <hellblazzar>: 現在長這樣
+15:26 +0800 <sdnds-slackbot>: <hellblazzar>: 不知道為什麼又多2到flow entry了@@
+15:28 +0800 <sdnds-slackbot>: <john-lin>: 先指定一下protocol吧
+15:28 +0800 <sdnds-slackbot>: <john-lin>: -O
+15:28 +0800 <sdnds-slackbot>: <hellblazzar>: 是說，這樣看來我的openvswitch把table miss的本機當成192.168.1.1了
+15:28 +0800 <sdnds-slackbot>: <hellblazzar>: 好的
+15:30 +0800 <sdnds-slackbot>: <hellblazzar>: 請問一下這兩條就是table miss了嗎?
+15:30 +0800 <sdnds-slackbot>: <john-lin>: 不是
+15:30 +0800 <sdnds-slackbot>: <hellblazzar>: 歐歐
+15:31 +0800 <sdnds-slackbot>: <john-lin>: Table miss 是match 所有封包 priority 最低的那條
+15:32 +0800 <sdnds-slackbot>: <john-lin>: Action 是controller
+15:34 +0800 <sdnds-slackbot>: <hellblazzar>: 那麼，按1.0的規定來看，ovs會去生成table miss entry嗎?還是基本上我要自己來下?
+15:35 +0800 <sdnds-slackbot>: <john-lin>: 是floodlight 自己要去handle
+15:36 +0800 <sdnds-slackbot>: <john-lin>: 但是我不知道floodlight是不是有在framework 做這件事 還是要開發者自己去寫table miss
+15:37 +0800 <sdnds-slackbot>: <john-lin>: 這可能要問 floodlight 的核心開發者 @hwchiu
+15:37 +0800 <sdnds-slackbot>: <hellblazzar>: 恩...在我把ovs接上controller後，每次都會自動生成這兩條flow倒是有的
+15:38 +0800 <sdnds-slackbot>: <hellblazzar>: 只是我的ovs-bridge ip卻是192.168.5.1
+15:38 +0800 <sdnds-slackbot>: <hellblazzar>: 明顯不合現狀呢...
+15:39 +0800 <sdnds-slackbot>: <john-lin>: 我也不知道你那兩條是怎麼生出來的 但你確實需要一條table miss 不然沒辦法繼續做下去
+15:40 +0800 <sdnds-slackbot>: <john-lin>: 有沒有那兩條其實無所謂 有table miss的entry 你就能在controller 去處理packet in 的事件
+15:42 +0800 <sdnds-slackbot>: <hellblazzar>: 原來如此...那麼我自己手動建一條好了
+15:43 +0800 <sdnds-slackbot>: <hellblazzar>: 現在看來也只有這個用做法來因應一下現狀@@
+15:43 +0800 <sdnds-slackbot>: <rascov>: 1.0 應該不用 controller 手動下
+15:43 +0800 <sdnds-slackbot>: <rascov>: 應該有一條 hidden entry
+15:43 +0800 <sdnds-slackbot>: <rascov>: 若我沒記錯的話
+15:44 +0800 <sdnds-slackbot>: <hellblazzar>: 歐歐
+15:45 +0800 <sdnds-slackbot>: <hellblazzar>: rascov大，那我要怎麼知道hidden entry有沒有確實被建立起來了
+15:45 +0800 <sdnds-slackbot>: <rascov>: 你們剛剛檢查過hidden entry了嗎
+15:46 +0800 <sdnds-slackbot>: <hellblazzar>: 還沒有，這部分也能透過ovs查到嗎?
+15:46 +0800 <sdnds-slackbot>: <hellblazzar>: 我試試
+15:46 +0800 <sdnds-slackbot>: <rascov>: 我現在在外面無法告訴你
+15:46 +0800 <sdnds-slackbot>: <rascov>: 你Google ovs hidden entry 通告可以找到小飛機部落格某一篇
+15:46 +0800 <sdnds-slackbot>: <rascov>: http://Roan.logdown.com 好像在這
+15:46 +0800 <sdnds-tw_Bot>: ==> roan's Blog
+15:47 +0800 <sdnds-slackbot>: <hellblazzar>: 好的，我試試看
+15:47 +0800 <sdnds-slackbot>: <john-lin>: 可以
+15:48 +0800 <sdnds-slackbot>: <john-lin>: ovs-appctl bridge/dump-flows ovs-br
+15:48 +0800 <sdnds-slackbot>: <hellblazzar>: 歐歐  要用到appctl呀
+15:49 +0800 <sdnds-slackbot>: <john-lin>: 但是我在ryu上 table miss的flow 不是hidden 的
+15:49 +0800 <sdnds-slackbot>: <john-lin>: 你還是先check吧
+15:50 +0800 <sdnds-slackbot>: <rascov>: 我OVS開起來沒有任何entry就預設會回controller (1.0)
+15:50 +0800 <sdnds-slackbot>: <hellblazzar>: 歐歐  我在FAQ裡有看到了  在controller的章節
+15:54 +0800 <sdnds-slackbot>: <hellblazzar>: 照結果看來，就和rascov大說的那樣，有hidden flow存在
+15:54 +0800 <sdnds-slackbot>: <hellblazzar>: 不過行為卻是normal而非controller
+15:55 +0800 <sdnds-slackbot>: <hellblazzar>: @@
+15:56 +0800 <sdnds-slackbot>: <john-lin>: 有forward to controller 倒數第三筆
+15:59 +0800 <sdnds-slackbot>: <hellblazzar>: 歐歐0.0  我眼殘了
+16:00 +0800 <sdnds-slackbot>: <hellblazzar>: 但是dump-tables只有到253
+16:01 +0800 <sdnds-slackbot>: <hellblazzar>: 所以這254指的是全部miss才會到達的一張table囉?
+16:02 +0800 <sdnds-slackbot>: <john-lin>: 嗯 他預設 pipeline 應該會跑到最後一張
+16:03 +0800 <sdnds-slackbot>: <hellblazzar>: 只是...就結果來看，我還是不懂為什麼ping不通這件事，如果應有的規則都有了，照理說網路會正常運作才是
+16:04 +0800 <sdnds-slackbot>: <hellblazzar>: 還是問題其實是在floodlight?
+16:04 +0800 <sdnds-slackbot>: <john-lin>: 你現在只確認他會forward 到controller 還沒有確認controller接到packet in 該做什麼事
+16:05 +0800 <sdnds-slackbot>: <hellblazzar>: 恩
+16:05 +0800 <sdnds-slackbot>: <hellblazzar>: 那我重新檢查一下floodlight這邊的狀況
+16:06 +0800 <sdnds-slackbot>: <john-lin>: 應該看一下floodlight 的application 有沒有做learning bridge
+16:06 +0800 <sdnds-slackbot>: <john-lin>: 不然他還是ping不通
+16:17 +0800 <sdnds-slackbot>: <hellblazzar>: 不過...就我看到的來說，在floodlight核心的元件中，確實有著forwarding的部分，就在Forwarding.java內有規範說如果有paket in的封包近來，會先檢驗目標是不是在同一台ovs上，在決定要不要flood，但是我啟動時是直接載入預設的模組，Forwarding這個module是會被載進來才對
+16:18 +0800 <sdnds-slackbot>: <hellblazzar>: 而forward這部分就不是以application的方式存在了
+16:20 +0800 <sdnds-slackbot>: <hellblazzar>: 只是這樣子的話，問題感覺不像在ovs到controller這部分，比較像在我的ovs上?
+16:22 +0800 <sdnds-slackbot>: <hellblazzar>: 感覺比較接近防火牆之類的，我在想想好了@@
+16:22 +0800 <sdnds-slackbot>: <john-lin>: 那意思就是已經預載了 modules 你要不要嘗試先把packet in的封包資訊打出來看
+16:24 +0800 <sdnds-slackbot>: <hellblazzar>: 那我實際把封包撈出來看好了，確認一下封包有沒有真的進來controller，還是在這中間就被吃掉了
+17:40 +0800 <sdnds-slackbot>: <hellblazzar>: john-lin大，我現在測出來的狀況是這樣：在controller上我用wireshark監聽controller的網卡，當有host ping controller時，我有看到controller有收到來自ovs的詢問的訊息，而且controller也有廣播自己的mac回去，但是ping controller的host並沒有收到(這台host上的wireshark只有看到他自己詢問時的廣播封包)，這證明controller的運作是正常的，而且%E
+17:43 +0800 <sdnds-slackbot>: <hellblazzar>: 而在controller上ettercap看不到ping controller的host，nmap也是失敗
+17:43 +0800 <sdnds-slackbot>: <john-lin>: 你為什麼想用host ping controller?
+17:44 +0800 <sdnds-slackbot>: <hellblazzar>: 因為我想從別台host下rest api給controller
+17:44 +0800 <sdnds-slackbot>: <john-lin>: Data plane 跟control plane 是分離的
+17:45 +0800 <sdnds-slackbot>: <john-lin>: Dataplane沒辦法去access controller
+17:45 +0800 <sdnds-slackbot>: <john-lin>: 你應該要在control plane 那邊去發rest
+17:47 +0800 <sdnds-slackbot>: <hellblazzar>: 那這樣子 ，一般的利用north bound api的application 或service和controller間連接時，不能透過openflow嗎?
+17:47 +0800 <sdnds-slackbot>: <hellblazzar>: 還是這時是把controller當成普通的host來看?
+17:48 +0800 <sdnds-slackbot>: <hellblazzar>: 因為我最終是想利用SDN的特性進行VoIP
+17:49 +0800 <sdnds-slackbot>: <hellblazzar>: 所以勢必會利用到call controller的rest api這部分
+17:49 +0800 <sdnds-slackbot>: <john-lin>: 用openflow protocol 是在southbound
+17:51 +0800 <sdnds-slackbot>: <hellblazzar>: 那麼，我openflow網路內的host要怎麼存取到northbound的services呢？
+17:52 +0800 <sdnds-slackbot>: <john-lin>: 照SDN 架構來說Data plane 應該是存取不到controller的
+17:54 +0800 <sdnds-slackbot>: <john-lin>: 你應該是在controller那邊有一隻程式去發rest api跟controller溝通
+17:55 +0800 <sdnds-slackbot>: <john-lin>: 如果硬要在dataplane 去access controller 也不是不行 你變成要有一台第三方的 host同時掛在data plane 跟control plane上
+19:04 +0800 <sdnds-slackbot>: <hellblazzar>: 所以northbound  application基本上是以這兩種形式存在囉?
+19:05 +0800 <sdnds-slackbot>: <hellblazzar>: 第二種感覺比較清楚，但john-line大說的第一種(右邊那張)感覺比較模糊，不知道是不是那樣?
+19:06 +0800 <sdnds-slackbot>: <john-lin>: 看不出來你綠色那個是在做什麼
+19:06 +0800 <sdnds-slackbot>: <john-lin>: 還有service 不一定要access dataplane啊
+19:08 +0800 <sdnds-slackbot>: <rascov>: 覺得這設計有點奇怪
+19:08 +0800 <sdnds-slackbot>: <rascov>: 應該是網路要偵測host的行為做應對，不應該host直接跟controller溝通
+19:09 +0800 <sdnds-slackbot>: <rascov>: 偵測到host送出 VoIP 流量controller再去設定網路就好了啊
+19:10 +0800 <sdnds-slackbot>: <john-lin>: 嗯 想知道為什麼一定要讓host 跟controller 接
+19:11 +0800 <sdnds-slackbot>: <rascov>: 對啊 可以描述一下你想達到什麼目標嗎
+19:20 +0800 <sdnds-slackbot>: <hellblazzar>: 我想達到的目標是這樣：我的VoIP server(我是使用 SIP協定)也建在OpenFlow網路中，當我底下host打電話時，就必須向server索取受話的host的IP，這時SIP Server便利用rest-api要求controller建立一條連通兩台Host的通道(以下flow的方式達成)，接下來利用SIP p2p的特性，以後通話就不需要再經過server，而是在底下的OpenFlow network��%8
+19:20 +0800 <sdnds-slackbot>: <hellblazzar>: 還是我的架構有問題呢?因為照我想這是最直觀的方式了
+19:23 +0800 <sdnds-slackbot>: <rascov>: 你有沒有辦法聽 SIP server 傳回給 client 的封包就決定路徑
+19:23 +0800 <sdnds-slackbot>: <rascov>: 把所有SIP control packet In 給controller
+19:26 +0800 <sdnds-slackbot>: <rascov>: 若你的流量有加密，或是這個解法不行
+19:26 +0800 <sdnds-slackbot>: <rascov>: Host也有辦法跟controller溝通啦，可參考ONOS BGP server 跟controller app溝通的方式
+19:28 +0800 <sdnds-slackbot>: <hellblazzar>: 所以是，host與host間p2p後，controller監聽到這兩者間有VoIP封包，就自動去建Flow了?
+19:33 +0800 <sdnds-slackbot>: <john-lin>: 你在controller 可以接到所有SIP 的封包透過packet in 然後decode SIP 就能做到不過加密就很難了。如果SIP server 放在control plane呢？兩個interface
+19:34 +0800 <sdnds-slackbot>: <john-lin>: 等於你畫的圖service 就是SIP server
+19:37 +0800 <sdnds-slackbot>: <hellblazzar>: 可是如果把Server放在Control Plane，那麼在接通前的"向Server要IP"這一步基本上不就會出問題了嗎？
+19:39 +0800 <sdnds-slackbot>: <john-lin>: Hosts 向server要IP 透過server在下面的interface
+19:39 +0800 <sdnds-slackbot>: <john-lin>: 我剛舉的例子是SIP server要有兩個interface
+19:45 +0800 <sdnds-slackbot>: <hellblazzar>: 恩...好抽象@@，是指在controller內加一個module用來解析SIP封包嗎?
+19:47 +0800 <sdnds-slackbot>: <john-lin>: 剛剛 @rascov 舉的例子是 會讓controller預先下一個flow entry是forward 所有的sip封包到controller 然後你要在controller那邊 decode就能做到 這個只要把controller放在data plane就可以完成
+19:48 +0800 <sdnds-slackbot>: <john-lin>: 我剛剛舉的例子是 按照你原先的圖 把你的service方塊換成SIP server 你剛畫了兩條線，所以實體上會有兩個 network interfaces
+19:49 +0800 <sdnds-slackbot>: <john-lin>: 就是你剛放上來的 untitled 3.png  圖
+19:57 +0800 <sdnds-slackbot>: <hellblazzar>: 恩恩，我了解了，因為我最後一張圖也是照著這個想法來畫的
+20:02 +0800 <sdnds-slackbot>: <hwchiu>: 有重點嬤XD
+20:03 +0800 <sdnds-slackbot>: <john-lin>: Floodlight 專家來了XD
+20:03 +0800 <sdnds-slackbot>: <hwchiu>: hellblazzar: 你用什麼版本的floodlight?
+20:04 +0800 <sdnds-slackbot>: <hwchiu>: 0.9? 1.0? 1.1?
+20:05 +0800 <sdnds-slackbot>: <hellblazzar>: 恩...不過不好意思john-lin大，我剛剛又針對host與host間互ping這件事做一次測試(這是目標是OpenFlow網路中的host，不再是controller)，結果還是不行，我的發出端依然收不到目標端傳回的arp@@
+20:05 +0800 <sdnds-slackbot>: <hellblazzar>: 歐歐
+20:05 +0800 <sdnds-slackbot>: <hellblazzar>: 是hwchui大
+20:05 +0800 <sdnds-slackbot>: <hellblazzar>: 你好^^  我用的是1.0版的
+20:06 +0800 <sdnds-slackbot>: <hwchiu>: 就我所知
+20:06 +0800 <sdnds-slackbot>: <hwchiu>: 1.3後， default的行為改變
+20:06 +0800 <sdnds-slackbot>: <hwchiu>: 所以floodlight後來在switch連線後會送一個flow entry: output=controller當作table miss entry
+20:06 +0800 <sdnds-slackbot>: <hwchiu>: 我不確定你的版本有沒有那段code
+20:06 +0800 <sdnds-slackbot>: <hwchiu>: 你要不要試試看目前的1.1
+20:07 +0800 <sdnds-slackbot>: <rascov>: 他跑OF 1.0
+20:07 +0800 <sdnds-slackbot>: <hwchiu>: 哦哦
+20:07 +0800 <sdnds-slackbot>: <hellblazzar>: 我是使用OF1.0
+20:07 +0800 <sdnds-slackbot>: <hellblazzar>: 恩恩
+20:07 +0800 <sdnds-slackbot>: <hwchiu>: 有辦法開個環境讓我去看看嗎XD
+20:08 +0800 <sdnds-slackbot>: <john-lin>: @hellblazzar:  你在controller上的問題要不要再重複一下
+20:08 +0800 <sdnds-slackbot>: <hellblazzar>: 好的
+20:22 +0800 <sdnds-slackbot>: <hellblazzar>: åŸºæœ¬ä¸Šå°±æ˜¯æˆ‘æƒ³è¦�åœ¨æˆ‘å»ºç«‹çš„ç’°å¢ƒä¸‹(Floodlight 1.0 + OpenvSwitch on OpenWrtï¼ŒæŽ¡OpenFlow1.0)ï¼Œè®“å…©å�°Hostäº’ç›¸pingé€šï¼Œè€Œå°±æˆ‘åŽŸå…ˆçš„æƒ³æ³•ï¼Œåœ¨æ²’æœ‰flow entryçš„ç‹€æ³�ä¸‹ï¼Œovsæœƒå°‡å°�åŒ…å°Žå�‘controllerï¼Œä¸¦è—‰ç”±controllerä¾†å¼•å°Žï¼Œä½†æ˜¯å�»å¤±æ•—äº†ï¼Œæ‰€ä»¥æˆ‘æƒ³è¦�é‡�æ¸…å•�é¡Œçš„ç™¥çµ�é»žï¼Œä¸€æ˜¯é—œæ–¼floodlight controllerï¼Œä¹Ÿå°±æ˜¯floodlightæ˜¯å�¦æœƒæœ‰å¼•å°Žå°�åŒ…çš„è¡Œç‚ºï¼ŒäºŒå°±æ˜¯æœ€å·®çš„ç
+20:23 +0800 <sdnds-slackbot>: <hellblazzar>: 雖然就今天與john-lin大討論與實驗的結果看來是二，但還是想聽聽hwchiu大您的意見
+20:24 +0800 <sdnds-slackbot>: <hwchiu>: 先確認幾個點 1) version of OVS, 2)能否包一下 floodlight整個專案借我測試看看
+20:27 +0800 <sdnds-slackbot>: <hellblazzar>: 歐歐，我是使用openwrt官方釋出的ovs 2.3.9的packet，floodlight我是使用乾淨、沒修改過的1.0版，請等我一下
+20:32 +0800 <sdnds-slackbot>: <hwchiu>: 哦哦
+20:34 +0800 <sdnds-slackbot>: <hwchiu>: 你可以先在ovs手動下flow把兩個host的封包互導試試看? 看看沒有controller的介入下，你的ovs &amp; host network 的網路環境是否正確?
+20:36 +0800 <sdnds-slackbot>: <hellblazzar>: <https://drive.google.com/file/d/0BxzGJmUno9p_TjBCc3RTd0R4emM/view?usp=sharing>
+20:37 +0800 <sdnds-slackbot>: <hellblazzar>: 歐歐，這步我倒沒試過，我做看看
+20:56 +0800 <sdnds-slackbot>: <hellblazzar>: 不行，還是失敗了...我fail mode使用standalone，flow加了下面這兩條
+20:57 +0800 <sdnds-slackbot>: <hwchiu>: show一下
+20:58 +0800 <sdnds-slackbot>: <hwchiu>: ovs-dpctl dump-flows
+20:58 +0800 <sdnds-slackbot>: <hwchiu>: 的結果
+20:58 +0800 <sdnds-slackbot>: <hwchiu>: 感覺是2) 你的ovs + openwrt 就有問題
+21:00 +0800 <sdnds-slackbot>: <hwchiu>: 你ofctl dump-flows可以看到entry都沒有被match過
+21:00 +0800 <sdnds-slackbot>: <hwchiu>: 所以封包根本沒有走到ovs上
+21:04 +0800 <sdnds-slackbot>: <rascov>: 牛人突破了盲點
+21:05 +0800 <sdnds-slackbot>: <john-lin>: 這跟下午看的entry不一樣啊～
+21:19 +0800 <sdnds-slackbot>: <hellblazzar>: 恩...這是我開始丟封包前的狀態，在我開始丟封包後，接收的host會看到詢問接收者的arp，然後接收端也有回應自己mac位址，但是回應的訊息卻傳不回發送端的host，當hwchiu大要我看ovs-dpctl dump-flow前，我就被實驗室管理員趕回家惹QAQ
+21:20 +0800 <sdnds-slackbot>: <hellblazzar>: 是說，下午的entry在我把controller拔掉之後就不見了
+21:21 +0800 <sdnds-slackbot>: <hellblazzar>: 不過我依然贊同hwchiu大的說法
+21:21 +0800 <sdnds-slackbot>: <john-lin>: controller 斷線的話 flow 不久後就會清掉
+21:21 +0800 <sdnds-slackbot>: <hellblazzar>: 恩恩
+21:22 +0800 <sdnds-slackbot>: <hellblazzar>: 只是，現在就是openwrt設定上的問題了，感覺這會比較棘手些@@
+21:25 +0800 <sdnds-slackbot>: <pichuang>: 你先不要把你的網卡 add-port
+21:25 +0800 <sdnds-slackbot>: <pichuang>: 先測一般的狀況
+21:26 +0800 <sdnds-slackbot>: <pichuang>: <http://roan.logdown.com/posts/238771-openvswitch-debug-enviroment>
+21:26 +0800 <sdnds-tw_Bot>: ==> OpenvSwitch Debug$  Enviroment « roan's Blog
+21:26 +0800 <sdnds-slackbot>: <pichuang>: 這篇從上面照著慢慢確認下來
+21:28 +0800 <sdnds-slackbot>: <pichuang>: openwrt 如果不裝 ovs 的話 可以ping到外面去嗎
+21:44 +0800 <sdnds-slackbot>: <hellblazzar>: 好的，我明天再去實驗室試試看，只是我建構的環境和pichuang大你不一樣的是，我沒有利用額外的switch來配給ovs bridge一個ip`,
+21:44 +0800 <sdnds-slackbot>: <hellblazzar>: 而是直接建構一個純內網的環境
+21:47 +0800 <sdnds-slackbot>: <hellblazzar>: 只是不知道這樣會不會有影響，主要是差在gateway的部分，因為沒有gateway，所以我直接把gateway設為ovs bridge網域下的 .254，但實際上有沒有設都是一樣的
+21:47 +0800 <sdnds-slackbot>: <hellblazzar>: 如果有差別基本上是在這部分
+21:48 +0800 <sdnds-slackbot>: <hellblazzar>: 因為其實我在架設時也有參照到pichuang大的作法
