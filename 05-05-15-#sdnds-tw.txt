@@ -1,0 +1,5 @@
+18:53 +0800 <sdnds-slackbot>: <pichuang>: @hellblazzar: 剛問了一下我朋友
+18:53 +0800 <sdnds-slackbot>: <pichuang>: 他現在用 2.3.9用的好好的
+18:54 +0800 <sdnds-slackbot>: <pichuang>: 但他硬體是拿 dlink dir835
+18:54 +0800 <sdnds-slackbot>: <pichuang>: 跟你拿tplink不太一樣
+18:54 +0800 <sdnds-slackbot>: <pichuang>: 我雖然沒用過tplink 但我略有耳聞設定上有一些差距
