@@ -1,0 +1,8 @@
+16:27 +0800 <sdnds-slackbot>: <hellblazzar>: @pichuang:  了解了pichuang大，那我再查看看相關資料，也許是OpenWrt Compile時的設定，又或者是OpenWrt的網路設定檔問題，只是我也還不能夠鎖定問題在那個部分@@
+16:28 +0800 <sdnds-slackbot>: <hellblazzar>: 應該還是需要一些時日
+16:43 +0800 <sdnds-slackbot>: <hellblazzar>: 暫時還是用PC灌OVS好了，這是目前最穩的了QQ
+16:44 +0800 <sdnds-slackbot>: <hellblazzar>: 感覺1200丟到水裡，還沒完全沉下去，但也沉了一半了XD
+17:20 +0800 <pichuang>: 1200?
+17:56 +0800 <sdnds-slackbot>: <hellblazzar>: 1043ND呀  XD  當初買了1200
+18:04 +0800 <pichuang>: xd 很便宜了啦
+18:04 +0800 <pichuang>: 你看現在市面上要有 openflow enable switch 都貴死了
