@@ -1,0 +1,51 @@
+01:19 +0800 <arvinchou_>: @davidlee 我有
+01:19 +0800 <arvinchou_>: 不過我試了很久之後 最後想說用這個來試
+01:19 +0800 <arvinchou_>: https://github.com/ChaimaGhribi/OpenStack-Icehouse-Installation/blob/3d9581f92919fedbd984105cb24be623a40c56ec/OpenStack-Icehouse-Installation.rst
+01:19 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/VG741  ==> OpenStack-Icehouse-Installation/OpenStack-Icehouse-Installation.rst at 3d9581f92919fedbd984105cb24be623a40c56ec · ChaimaGhribi/OpenStack-Icehouse-Installation · GitHub
+01:20 +0800 <arvinchou_>: hello 各位好, 我是 arivn
+01:20 +0800 <arvinchou_>: 最近在研究sdn. 然後在找相關文獻的時候發現指irc channel, 請多多指教
+01:20 +0800 <arvinchou_>: arvin*
+01:21 +0800 <pichuang>: hi 你好
+01:21 +0800 <pichuang>: 歡迎加入sdn的行列xd
+02:00 +0800 <arvinchou_>: 這裏的人都不睡覺嗎ＸＤ
+02:00 +0800 <arvinchou_>: pichuang你好
+02:00 +0800 <pichuang>: 你好
+02:01 +0800 <arvinchou_>: 我看#openstack-meeting超熱鬧的 哈
+02:01 +0800 <pichuang>: 台灣的嗎
+02:01 +0800 <arvinchou_>: 不是
+02:01 +0800 <pichuang>: 哦外國的xd
+02:02 +0800 <pichuang>: https://wiki.openstack.org/wiki/Meetings
+02:02 +0800 <sdnds-tw_Bot>: ==> Meetings - OpenStack
+02:02 +0800 <arvinchou_>: 對啊 很high捏 掛在上面三不五時都會跳一下
+02:03 +0800 <pichuang>: xd
+02:03 +0800 <pichuang>: 我們這邊比較local一點
+02:03 +0800 <arvinchou_>: 不行要來睡了 ＠＠ 晚安
+02:03 +0800 <arvinchou_>: 為什麼兩點都還有人在線上 :(
+02:03 +0800 <arvinchou_>: 應該都在用line聊天不用irc, 我覺得
+02:03 +0800 <arvinchou_>: ＸＤ
+02:04 +0800 <pichuang>: xd
+02:04 +0800 <pichuang>: 晚安
+10:46 +0800 <sdnds-slackbot>: <hwchiu>: = =
+10:48 +0800 <sdnds-slackbot>: <john-lin>: 剛那篇openstack整理的不錯
+11:03 +0800 <arvinchou_>: 我找超久的
+11:04 +0800 <arvinchou_>: 因為一直苦於要怎麼在vm 架環境起來
+11:04 +0800 <arvinchou_>: ＸＤ
+11:08 +0800 <sdnds-slackbot>: <john-lin>: 參考一下<https://github.com/life1347/openstack-deploy-scripts>
+11:08 +0800 <sdnds-slackbot>: <john-lin>: 這邊有auto deploy的script
+11:09 +0800 <sdnds-slackbot>: <john-lin>: 我之前是用ice house 假的
+11:09 +0800 <sdnds-slackbot>: <john-lin>: 架
+11:10 +0800 <sdnds-slackbot>: <john-lin>: @ta-ching: maintainer 在這XD
+11:13 +0800 <arvinchou_>: 立馬來看
+11:14 +0800 <arvinchou_>: 馬上案star
+11:14 +0800 <arvinchou_>: lol
+11:15 +0800 <sdnds-slackbot>: <john-lin>: 你也是要架3node?
+11:21 +0800 <sdnds-slackbot>: <ta-ching>: 現在 script 已經更新到 Juno 版本摟 XD
+11:21 +0800 <arvinchou_>: 還有這篇 http://www.cnadn.net/post/1473.htm
+11:21 +0800 <sdnds-tw_Bot>: ==> Ubuntu 14.04安装openstack icehouse版本（多节点模式） | CNadn 应用交付 学习之路
+11:22 +0800 <arvinchou_>: 對啊 3 node是想要先摸一下 因為很沒有fu, 想說直接硬幹最快了
+11:23 +0800 <sdnds-slackbot>: <ta-ching>: 建議看這份教學 <https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_MultiNode/OpenStack_Grizzly_Install_Guide.rst>
+11:23 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/dR8Eg  ==> https://github.com/mseknibilel/OpenStack-Grizzly-Install-Guide/blob/OVS_MultiNode/OpenStack_Grizzly_Install_Guide.rst%3E
+11:24 +0800 <sdnds-slackbot>: <ta-ching>: 雖然是 grizzly 版本，但很多觀念沒有太大差異，建議可以先稍微看過
+11:25 +0800 <sdnds-slackbot>: <john-lin>: 想知道目前比較穩定的版本
+11:35 +0800 <arvinchou_>: @ta-ching 謝謝
+20:47 +0800 <sdnds-slackbot>: <ta-ching>: john-lin: Juno
