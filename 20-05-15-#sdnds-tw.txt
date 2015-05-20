@@ -1,0 +1,132 @@
+12:12 +0800 <arvinchou_>: 不好意思 請問有人碰過類似的問題嗎
+12:12 +0800 <arvinchou_>: `nova image-list`
+12:12 +0800 <arvinchou_>: 之後回傳
+12:12 +0800 <arvinchou_>: Could not find any suitable endpoint. Correct region?
+12:12 +0800 <arvinchou_>: :(
+12:17 +0800 <sdnds-slackbot>: <ta-ching>: 確認一下 cinder 是否有正確安裝
+15:57 +0800 <arvinchou_>: @ta-ching 謝謝提醒
+15:57 +0800 <arvinchou_>: 按照這篇
+15:57 +0800 <arvinchou_>: https://github.com/ChaimaGhribi/OpenStack-Icehouse-Installation/blob/3d9581f92919fedbd984105cb24be623a40c56ec/OpenStack-Icehouse-Installation.rst
+15:57 +0800 <arvinchou_>: 我看到有一段
+15:57 +0800 <arvinchou_>: … -publicurl=http://192.168.100.11:8774 ….
+15:57 +0800 <arvinchou_>: 然後看 8774 port沒有開
+15:57 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/VG741  ==> OpenStack-Icehouse-Installation/OpenStack-Icehouse-Installation.rst at 3d9581f92919fedbd984105cb24be623a40c56ec · ChaimaGhribi/OpenStack-Icehouse-Installation · GitHub
+15:57 +0800 <arvinchou_>: 這代表 nova-api沒有起來 但是log沒有看到
+15:57 +0800 <arvinchou_>: 於是手動下 /usr/bin/python /usr/bin/nova-api --config-file=/etc/nova/nova.conf
+15:57 +0800 <arvinchou_>: 發現 nova.conf參數少了
+15:57 +0800 <arvinchou_>: lock_path=balabala
+15:57 +0800 <arvinchou_>: 加回去 重啟就可以了
+15:57 +0800 <arvinchou_>: 這應該是我設定問題 因為我把預設的 [DEFAULT] section 全部mark起來, 結果mark起來就真的沒有相關的參數
+16:11 +0800 <sdnds-slackbot>: <kigipaul>: 想請問一下  現在有哪個 Openflow controller 有做 event buffer 之類的嗎?
+16:28 +0800 <sdnds-slackbot>: <john-lin>: 你說的event buffer 是指什麼意思
+16:43 +0800 <sdnds-slackbot>: <kigipaul>: 短時間大量event進來後 會先收集起來 過段時間在整理 之類的
+16:43 +0800 <sdnds-slackbot>: <kigipaul>: 收集後 才執行動作
+16:44 +0800 <sdnds-slackbot>: <john-lin>: 我用ryu 他本身就會有一個queue會去蒐集這些events 接著他會把event pop出來交給handler去處理
+16:45 +0800 <sdnds-slackbot>: <john-lin>: <http://osrg.github.io/ryu-book/zh_tw/html/arch.html#application-programming-model>
+16:45 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/vAs3k  ==> 組織架構 — Ryubook 1.0 documentation
+16:45 +0800 <sdnds-slackbot>: <john-lin>: 參考一下 這是他內部把event queue起來的機制
+16:50 +0800 <sdnds-slackbot>: <kigipaul>: 應該說 有controller有辦法判斷 多event發生時 所造成的行為嗎?
+16:50 +0800 <sdnds-slackbot>: <john-lin>: 可以 controller本身設計就是有event再去做事
+16:51 +0800 <sdnds-slackbot>: <kigipaul>: EX: 把switch拔電  在短時間內 會有link down, port down, switch down多條event  但我只想知道 是 switch被拔電
+16:53 +0800 <sdnds-slackbot>: <john-lin>: 那你可以把這些事件在各個event handler都存在同一個buffer理
+16:53 +0800 <sdnds-slackbot>: <kigipaul>: 如果 需要作到這樣的event判斷 應該還是只能 自己寫政策去分析吧
+16:53 +0800 <sdnds-slackbot>: <john-lin>: 因為openflow spec本來就沒定義這種event是拔電啊XD
+16:54 +0800 <sdnds-slackbot>: <john-lin>: 而且你要怎麼判斷大量的這些evetn就是拔電？
+16:54 +0800 <sdnds-slackbot>: <john-lin>: 假如真的有那們多人離線呢
+16:55 +0800 <sdnds-slackbot>: <kigipaul>: 單一台switch 有48個port  只有會有1個switch leave event 但會有48條port down 48條link down event
+16:56 +0800 <sdnds-slackbot>: <kigipaul>: 如果 在switch 沒有leave狀態下  port down 和link down有各自的是要作  但在switch leave的時候 會有另外的事情要作
+16:57 +0800 <sdnds-slackbot>: <kigipaul>: 而且switch leave的事情優先於 port , link down  但是port link down的event會先被觸發
+16:57 +0800 <sdnds-slackbot>: <john-lin>: 你要解決的問題應該是要看交換機是不是離開controller吧？
+16:57 +0800 <sdnds-slackbot>: <kigipaul>: yes
+16:57 +0800 <sdnds-slackbot>: <john-lin>: 還是一定要拔電
+16:57 +0800 <sdnds-slackbot>: <kigipaul>: 應該說 failover
+16:58 +0800 <sdnds-slackbot>: <kigipaul>: 非正常方式 離開controller
+16:58 +0800 <sdnds-slackbot>: <john-lin>: 那你switch leave event不能用嗎
+16:58 +0800 <sdnds-slackbot>: <john-lin>: switch leave event就是離開controller (可能非正常或正常)
+16:58 +0800 <sdnds-slackbot>: <kigipaul>: 可以阿 但是 會有其他96條port link down event會被觸發
+16:59 +0800 <sdnds-slackbot>: <kigipaul>: 所想說如果是觸發switch leave event 那就不要讓他觸發同台的port link down event
+16:59 +0800 <sdnds-slackbot>: <john-lin>: A switch leave A底下的port 就不會發port link down event了
+17:00 +0800 <sdnds-slackbot>: <kigipaul>: 非正常方式離開 觸發是因為timeout吧
+17:00 +0800 <sdnds-slackbot>: <kigipaul>: switch根本沒法在像controller發訊息了
+17:00 +0800 <sdnds-slackbot>: <john-lin>: 你怎麼定義非正常？
+17:00 +0800 <sdnds-slackbot>: <kigipaul>: switch 沒法向controller發訊息
+17:01 +0800 <sdnds-slackbot>: <kigipaul>: 可以發訊息 就好處理了
+17:01 +0800 <sdnds-slackbot>: <john-lin>: switch 沒法向controller發訊息可以分兩種
+17:01 +0800 <sdnds-slackbot>: <john-lin>: 一種事switch自己切斷connection
+17:01 +0800 <sdnds-slackbot>: <john-lin>: 這個會發fin過去 controller會拿到switch leave event
+17:01 +0800 <sdnds-slackbot>: <john-lin>: 一種是直接拔線
+17:02 +0800 <sdnds-slackbot>: <john-lin>: fin不會過去 controller
+17:02 +0800 <sdnds-slackbot>: <kigipaul>: 我只的是拔線  實體上的問題
+17:02 +0800 <sdnds-slackbot>: <john-lin>: controller要確定switch存在與否 何不用echo?
+17:02 +0800 <sdnds-slackbot>: <kigipaul>: 你是說定時詢問?
+17:02 +0800 <sdnds-slackbot>: <john-lin>: echo 就能做到heartbeat
+17:02 +0800 <sdnds-slackbot>: <john-lin>: 恩
+17:03 +0800 <sdnds-slackbot>: <kigipaul>: 那根timeout一樣吧
+17:03 +0800 <sdnds-slackbot>: <john-lin>: 你說的timeout是指什麼的timeout
+17:03 +0800 <sdnds-slackbot>: <john-lin>: 連線timeout嗎
+17:04 +0800 <sdnds-slackbot>: <kigipaul>: 應該說 我們本來就有作echo了
+17:04 +0800 <sdnds-slackbot>: <kigipaul>: 但是 會先確認 link port
+17:04 +0800 <sdnds-slackbot>: <kigipaul>: 所以event會比較找觸發
+17:04 +0800 <sdnds-slackbot>: <kigipaul>: 目前看起來應該是這樣
+17:05 +0800 <sdnds-slackbot>: <kigipaul>: 比較早*
+17:05 +0800 <sdnds-slackbot>: <john-lin>: 有做echo的話應該就能知道switch是不是掛了
+17:05 +0800 <sdnds-slackbot>: <john-lin>: 你說的會先確認link port我不太懂
+17:05 +0800 <sdnds-slackbot>: <kigipaul>: 恩 我先確認一下先後順序
+17:05 +0800 <sdnds-slackbot>: <john-lin>: 為什麼他的event比較早
+17:06 +0800 <sdnds-slackbot>: <kigipaul>: check的時間點吧  我現在用的 會check link port switch的狀態
+17:06 +0800 <sdnds-slackbot>: <kigipaul>: 如果有改變會有event
+22:46 +0800 <sdnds-slackbot>: <hwchiu>: port link up/down event會因為timeout而被處發?
+22:48 +0800 <pichuang>: port link state 是怎麼偵測的阿
+22:49 +0800 <sdnds-slackbot>: <john-lin>: @pichuang:  有對應的 openflow message port status
+22:52 +0800 <sdnds-slackbot>: <hwchiu>: 那是switch丟過去的吧?
+22:53 +0800 <sdnds-slackbot>: <john-lin>: 對 switch 丟給controller的
+22:54 +0800 <sdnds-slackbot>: <hwchiu>: 比較好奇，瞬間斷電的情況下， controller要如何收到這種event?
+22:57 +0800 <sdnds-slackbot>: <john-lin>: controller可以持續送echo給switch
+22:57 +0800 <sdnds-slackbot>: <hwchiu>: 但是controller頂多認為switch斷線
+22:58 +0800 <sdnds-slackbot>: <hwchiu>: 自己還要去解讀成所有的link down?
+22:58 +0800 <sdnds-slackbot>: <hwchiu>: 還想不到什麼情境會需要這種解讀
+22:58 +0800 <sdnds-slackbot>: <john-lin>: 我覺得最多只能認為switch斷線 解讀所有link down有點過頭
+22:59 +0800 <sdnds-slackbot>: <john-lin>: 或許他換了controller?
+22:59 +0800 <pichuang>: 問一下那個meesgae的名字叫什麼
+23:01 +0800 <sdnds-slackbot>: <hwchiu>: Port Status Message
+23:01 +0800 <sdnds-slackbot>: <john-lin>: @pichuang: portstatus
+23:01 +0800 <sdnds-slackbot>: <hwchiu>: As ports are added, modified, and removed from the datapath, the controller needs to be informed with the
+23:01 +0800 <sdnds-slackbot>: <hwchiu>: OFPT_PORT_STATUS message:
+23:01 +0800 <sdnds-slackbot>: <hwchiu>: pichuang_(irc): spec看太少齁~
+23:02 +0800 <sdnds-slackbot>: <john-lin>: :satisfied:
+23:04 +0800 <pichuang>: QQ
+23:04 +0800 <pichuang>: 最近在複習一下
+23:07 +0800 <sdnds-slackbot>: <john-lin>: @hwchiu: 最近遇到FL一個詭異問題，就是再建OF連線的時候 雙方互丟HELLO後 FL還要等一個 feature reply才會認為connection建立完成
+23:08 +0800 <sdnds-slackbot>: <john-lin>: RYU跟ODL 不會有這個問題
+23:08 +0800 <sdnds-slackbot>: <hwchiu>: john-lin: yes, code裡面的確是這樣寫，她要拿到SWITCH的一些狀態才會認為完成
+23:08 +0800 <sdnds-slackbot>: <john-lin>: 可是spec寫的是雙方hello玩就算完成
+23:09 +0800 <sdnds-slackbot>: <hwchiu>: 那只能說
+23:09 +0800 <sdnds-slackbot>: <hwchiu>: FL suck
+23:09 +0800 <sdnds-slackbot>: <john-lin>: page 33頁最下面那一段
+23:09 +0800 <sdnds-slackbot>: <john-lin>: SPEC 1.3.4
+23:09 +0800 <sdnds-slackbot>: <hwchiu>: 感謝
+23:13 +0800 <sdnds-slackbot>: <john-lin>: 測了3個sample FL如果對方不丟reply的話 就不回其他訊息
+23:23 +0800 <sdnds-slackbot>: <hwchiu>: 恩恩
+23:23 +0800 <sdnds-slackbot>: <john-lin>: 我測試的方法是 送hello給 controller 然後等hello 再送echo request
+23:23 +0800 <sdnds-slackbot>: <hwchiu>: 她裡面的finite state machine的確這麼寫XD
+23:23 +0800 <sdnds-slackbot>: <hwchiu>: 只能說沒有走SPEC
+23:24 +0800 <sdnds-slackbot>: <john-lin>: 恩 比較奇怪的是我後來又送feature reply
+23:24 +0800 <sdnds-slackbot>: <john-lin>: 他還是把我的連線切斷了
+23:25 +0800 <sdnds-slackbot>: <john-lin>: 上面那個fl的pcap就有顯示我送給她的reply
+23:25 +0800 <sdnds-slackbot>: <hwchiu>: XD 有點忘了詳細，要看CODE才知道邏輯
+23:25 +0800 <sdnds-slackbot>: <hwchiu>: 有收到她的request吧?
+23:25 +0800 <sdnds-slackbot>: <john-lin>: 有
+23:26 +0800 <sdnds-slackbot>: <hwchiu>: 恩恩
+23:26 +0800 <sdnds-slackbot>: <john-lin>: 我發的feature  reply是等到有feature request才會送
+23:28 +0800 <sdnds-slackbot>: <hwchiu>: 恩恩
+23:28 +0800 <sdnds-slackbot>: <hwchiu>: 去用ONOS~~
+23:28 +0800 <sdnds-slackbot>: <john-lin>: XD
+23:28 +0800 <sdnds-slackbot>: <john-lin>: 我現在只是想做一個機制
+23:29 +0800 <sdnds-slackbot>: <john-lin>: 就是知道 master controller掛了
+23:29 +0800 <sdnds-slackbot>: <john-lin>: 可以換slave
+23:32 +0800 <sdnds-slackbot>: <hwchiu>: XD
+23:32 +0800 <sdnds-slackbot>: <john-lin>: 因為要跨controller平台我 我在送完hello 就會發echo
+23:36 +0800 <sdnds-slackbot>: <john-lin>: 但是把我切斷了我 就少了一個平台
+23:38 +0800 <sdnds-slackbot>: <john-lin>: 因為他沒等到reply所以他把我切斷
+23:54 +0800 <sdnds-slackbot>: <hwchiu>: 66
+23:54 +0800 <sdnds-slackbot>: <hwchiu>: 哦哦
