@@ -1,0 +1,44 @@
+00:10 +0800 <sdnds-slackbot>: <rascov>: 我覺得ONOS不見得沒有這個問題
+00:10 +0800 <sdnds-slackbot>: <rascov>: 他底下也是 loxigen
+00:12 +0800 <sdnds-slackbot>: <rascov>: 剛在解一個ONOS史詩級的bug，還沒處理掉
+00:15 +0800 <sdnds-slackbot>: <john-lin>: 想問一下Loxigen 是產生ofp msg的api 那決定openflow連線完成的流程是在onos本身吧？
+00:22 +0800 <sdnds-slackbot>: <rascov>: 你說的沒錯
+00:22 +0800 <sdnds-slackbot>: <rascov>: 但很難說 XD
+00:22 +0800 <sdnds-slackbot>: <rascov>: 有空再測試
+00:22 +0800 <sdnds-slackbot>: <rascov>: 很難說沒有一樣的問題
+00:28 +0800 <sdnds-slackbot>: <john-lin>: 嗯嗯
+00:30 +0800 <sdnds-slackbot>: <hwchiu>: rascov: 就我所知這邊是FL自己弄得，應該跟loxigen無關XD
+00:33 +0800 <sdnds-slackbot>: <hwchiu>: <https://github.com/floodlight/floodlight/blob/master/src/main/java/net/floodlightcontroller/core/internal/OFChannelHandler.java#L336-L341>
+00:33 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/7Fqnl  ==> floodlight/OFChannelHandler.java at master · floodlight/floodlight · GitHub
+00:34 +0800 <sdnds-slackbot>: <hwchiu>: 這邊，收到 feature reply後才算完成
+00:40 +0800 <sdnds-slackbot>: <rascov>: 好 應該是我今天解bug解到現在才吃晚餐神智不清
+00:49 +0800 <sdnds-slackbot>: <hwchiu>: 輸了 竟然現在才吃晚餐
+00:51 +0800 <sdnds-slackbot>: <john-lin>: 感謝source 提供
+00:54 +0800 <sdnds-slackbot>: <rascov>: 我完全忘記
+00:55 +0800 <sdnds-slackbot>: <john-lin>: 是怎麼樣的bug啊？controller的嗎
+00:55 +0800 <sdnds-slackbot>: <rascov>: 直到剛吃宵夜想說怎麼這麼餓
+00:55 +0800 <sdnds-slackbot>: <rascov>: 啊原來今天忘了吃晚餐啊
+00:56 +0800 <sdnds-slackbot>: <rascov>: controller SB
+00:56 +0800 <sdnds-slackbot>: <rascov>: 把 1.3 的 match 下到 1.0 產生的 exception 要怎麼解的問題
+00:57 +0800 <sdnds-slackbot>: <john-lin>: 1.3用的api跟1.0不同嗎
+01:07 +0800 <sdnds-slackbot>: <rascov>: match field 不同
+01:07 +0800 <sdnds-slackbot>: <rascov>: 如果直接塞會有 unsupported match field 之類的 exception
+01:08 +0800 <sdnds-slackbot>: <john-lin>: 哦 是怕開發者在寫application直接塞造成的exception
+01:08 +0800 <sdnds-slackbot>: <rascov>: 我們正在討論要從哪一層解
+01:08 +0800 <sdnds-slackbot>: <rascov>: 因為ONOS SB好幾個thread很複雜
+13:59 +0800 <sdnds-slackbot>: <davidlee>: 抱歉這幾天沒開  之前試想問openstack架起來之後vm若要對外設定問題 後來有解掉了
+13:59 +0800 <sdnds-slackbot>: <davidlee>: 目前在想要怎麼把打進vm1的封包在送到vm2
+14:04 +0800 <sdnds-slackbot>: <davidlee>: 不知道有這方面相關經驗嗎？ 我目前環境是172.24.4.200用iperf打封包到vm1的floating IP（外面要溝通vm用的ip）172.24.4.4，封包進到vm後想說在利用iptable轉送到vm2  ，此時vm1與vm2是用他們之間的fixed ip再做傳送  vm1 IP:10.0.0.4  vm2:10.0.0.5
+14:05 +0800 <sdnds-slackbot>: <davidlee>: 不知道其他人是如何作的呢？ 轉發方面？
+16:39 +0800 <sdnds-slackbot>: <ta-ching>: @davidlee: 這邊要去patch openstack code
+16:39 +0800 <sdnds-slackbot>: <davidlee>: @@?什麼意思呢？
+16:40 +0800 <sdnds-slackbot>: <ta-ching>: vm2 在收到 vm1 封包後 會對封包作任何處理嗎？
+16:40 +0800 <sdnds-slackbot>: <davidlee>: 目前沒有有作任何處理 目前是要先作觀測是否可以用這種方法讓packet在裡面流動
+16:41 +0800 <sdnds-slackbot>: <ta-ching>: 這邊可以做到，我論文就是有用到類似的東西
+16:41 +0800 <sdnds-slackbot>: <davidlee>: 不知道會不會麻煩到你 可以教我一些相關內容嗎？
+16:41 +0800 <sdnds-slackbot>: <ta-ching>: 感覺 vm1有點類似防火牆？
+16:42 +0800 <sdnds-slackbot>: <davidlee>: 我目前沒有設定vm的功能如何
+16:42 +0800 <sdnds-slackbot>: <davidlee>: 我開啟的vm都純粹只是一台ubuntu server
+16:43 +0800 <sdnds-slackbot>: <davidlee>: 然後想說要讓packet在裡面流動，再來要測試vm的負載量
+16:43 +0800 <sdnds-slackbot>: <ta-ching>: 看private channel ~
+16:43 +0800 <sdnds-slackbot>: <ta-ching>: 敲你了XD
