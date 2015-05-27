@@ -1,0 +1,30 @@
+00:06 +0800 <sdnds-slackbot>: <davidlee>: 謝謝 @john-lin
+00:06 +0800 <sdnds-slackbot>: <john-lin>: 不會~
+14:22 +0800 <sdnds-slackbot>: <james>: 我想請問一下
+14:23 +0800 <sdnds-slackbot>: <james>: 在switch上建立一個flow
+14:23 +0800 <sdnds-slackbot>: <james>: 大家會說建立一個flow entry嗎？
+14:23 +0800 <sdnds-slackbot>: <james>: 還是就很口語的說
+14:23 +0800 <sdnds-slackbot>: <james>: 建立一個flow
+14:28 +0800 <sdnds-slackbot>: <john-lin>: 插入 安裝？ insert or install
+14:28 +0800 <sdnds-slackbot>: <james>: 就是flow的rule
+14:29 +0800 <sdnds-slackbot>: <james>: 比方說建立一個flow給XXX的封包使用之類的
+14:30 +0800 <sdnds-slackbot>: <john-lin>: 建立ok吧
+14:31 +0800 <sdnds-slackbot>: <james>: 在match封包的時候是flow entry在做match
+14:32 +0800 <sdnds-slackbot>: <james>: 那是不是就要改成說
+14:32 +0800 <sdnds-slackbot>: <james>: 建立一個flow entry
+14:34 +0800 <sdnds-slackbot>: <john-lin>: 不太了解你的意思
+14:38 +0800 <sdnds-slackbot>: <james>: 好吧
+14:38 +0800 <sdnds-slackbot>: <james>: 哈哈
+14:39 +0800 <sdnds-slackbot>: <rascov>: flow entry +1
+14:39 +0800 <sdnds-slackbot>: <james>: !!!
+14:39 +0800 <sdnds-slackbot>: <james>: 其實是論文上的敘述
+14:40 +0800 <sdnds-slackbot>: <james>: 哈哈
+14:40 +0800 <sdnds-slackbot>: <james>: flow entry會比較好？
+14:42 +0800 <sdnds-slackbot>: <rascov>: 我覺得啦 XD
+14:42 +0800 <sdnds-slackbot>: <rascov>: 我論文都寫 flow entry
+14:43 +0800 <sdnds-slackbot>: <james>: 比方說：我們在利用ryu在ovs上建立一個flow entry
+14:43 +0800 <sdnds-slackbot>: <james>: 比方說：我們利用ryu在ovs上建立一個flow entry
+14:44 +0800 <sdnds-slackbot>: <james>: 了解！
+14:45 +0800 <sdnds-slackbot>: <james>: 謝謝
+14:57 +0800 <sdnds-slackbot>: <kigipaul>: 我論文也是寫 flow entry
+14:58 +0800 <sdnds-slackbot>: <james>: 謝謝大大們的建議XDD
