@@ -1,0 +1,10 @@
+13:04 +0800 <sdnds-slackbot>: <james>: 請問一下 port number 50060 , 為什麼在floodlight上卻是顯示 -15476 ?
+13:29 +0800 <sdnds-slackbot>: <rascov>: 單純忘了轉 unsigned?
+14:35 +0800 <sdnds-slackbot>: <jalen>: <https://coscup.hackpad.com/COSCUP2015--HKzEa0GjcjL>
+14:35 +0800 <sdnds-tw_Bot>: ==> coscup
+14:35 +0800 <sdnds-slackbot>: <jalen>: 要不要去填阿XD?
+14:36 +0800 <sdnds-slackbot>: <jalen>: 其實清單內有耶XDDD
+14:37 +0800 <sdnds-slackbot>: <jalen>: 原來是 @pichuang 填的
+14:51 +0800 <sdnds-slackbot>: <james>: 對吼 unsigned
+14:51 +0800 <sdnds-slackbot>: <james>: 嘟謝
+14:51 +0800 <sdnds-slackbot>: <james>: 多謝
