@@ -1,0 +1,53 @@
+14:46 +0800 <sdnds-slackbot>: <pichuang>: 有沒有人想上去講個workshop的啊~~
+14:46 +0800 <sdnds-slackbot>: <pichuang>: 有hand-on的最好
+14:48 +0800 <sdnds-slackbot>: <john-lin>: 時間是多久@@
+14:48 +0800 <sdnds-slackbot>: <pichuang>: 40
+14:48 +0800 <sdnds-slackbot>: <pichuang>: 50 40 40
+14:48 +0800 <sdnds-slackbot>: <pichuang>: 應該會拆這樣
+14:50 +0800 <sdnds-slackbot>: <john-lin>: 你也有一場嗎
+14:51 +0800 <sdnds-slackbot>: <pichuang>: 不 我沒有要佔
+14:51 +0800 <sdnds-slackbot>: <pichuang>: 我應該會當主持人吧
+14:51 +0800 <sdnds-slackbot>: <pichuang>: 那天應該會超忙的= =
+14:51 +0800 <sdnds-slackbot>: <pichuang>: xd
+14:51 +0800 <sdnds-slackbot>: <pichuang>: maybe
+14:51 +0800 <sdnds-slackbot>: <pichuang>: john-lin: 你有想要上去講一下嗎
+14:51 +0800 <sdnds-slackbot>: <pichuang>: 我看狀況 如果都沒人想要分享的話我再上去吧
+14:51 +0800 <sdnds-slackbot>: <pichuang>: xd
+14:51 +0800 <sdnds-slackbot>: <john-lin>: 先看看其他人 如果沒有的話我就+1吧
+14:52 +0800 <sdnds-slackbot>: <pichuang>: 機會讓給社群的大大們
+14:52 +0800 <sdnds-slackbot>: <john-lin>: 咪兔
+14:52 +0800 <sdnds-slackbot>: <john-lin>: 對了 日期是在什麼時候
+14:53 +0800 <sdnds-slackbot>: <pichuang>: 8/15 -16
+14:53 +0800 <sdnds-slackbot>: <john-lin>: 哦哦 好
+14:54 +0800 <sdnds-slackbot>: <pichuang>: 每個議程講師跟助教都有一張coscup的門票可以拿
+14:54 +0800 <sdnds-slackbot>: <john-lin>: Cool
+14:54 +0800 <sdnds-slackbot>: <pichuang>: 所以不用搶
+14:54 +0800 <sdnds-slackbot>: <john-lin>: 助教是講師一起的嗎
+14:54 +0800 <sdnds-slackbot>: <pichuang>: 一配一
+14:54 +0800 <sdnds-slackbot>: <john-lin>: 講師可以找一個助教嗎
+14:54 +0800 <sdnds-slackbot>: <pichuang>: 對
+14:55 +0800 <sdnds-slackbot>: <john-lin>: 好哦 coscup不用搶很吸引
+14:55 +0800 <sdnds-slackbot>: <pichuang>: xd
+14:55 +0800 <sdnds-slackbot>: <john-lin>: 每年都拚老命開好幾個tabs
+14:57 +0800 <sdnds-slackbot>: <pichuang>: xdddddd
+14:57 +0800 <sdnds-slackbot>: <pichuang>: 跟江蕙搶票一樣
+14:58 +0800 <sdnds-slackbot>: <pichuang>: 其實我個人預期是想要找
+14:58 +0800 <sdnds-slackbot>: <pichuang>: 學界 業界 社群
+14:58 +0800 <sdnds-slackbot>: <pichuang>: 都各找一個
+14:58 +0800 <sdnds-slackbot>: <john-lin>: 真的 一年一度的推倒售票亭
+14:59 +0800 <sdnds-slackbot>: <pichuang>: 這樣跟我創立這社群的目標頗為一致
+14:59 +0800 <sdnds-slackbot>: <john-lin>: 哦 學界指的是老師？
+14:59 +0800 <sdnds-slackbot>: <pichuang>: 不一定
+14:59 +0800 <sdnds-slackbot>: <pichuang>: 學生也可以
+14:59 +0800 <sdnds-slackbot>: <john-lin>: 嗯嗯
+14:59 +0800 <sdnds-slackbot>: <pichuang>: 學界跟社群性質比較相像
+14:59 +0800 <sdnds-slackbot>: <pichuang>: 因為大多數都重疊xddd
+15:00 +0800 <sdnds-slackbot>: <rascov>: open source contributor 不用搶吧
+15:00 +0800 <sdnds-slackbot>: <pichuang>: 拉拉你有拿到票嗎
+15:02 +0800 <sdnds-slackbot>: <john-lin>: 現在報名好像截止了@@
+15:02 +0800 <sdnds-slackbot>: <john-lin>: Contributor apply
+15:25 +0800 <sdnds-slackbot>: <rascov>: 截止很久了
+15:25 +0800 <sdnds-slackbot>: <rascov>:
+15:25 +0800 <sdnds-slackbot>: <rascov>: 發了嗎票，沒注意欸
+21:45 +0800 <sdnds-slackbot>: <freetsubasa>: 應該 6/6 號會公布 open source contributor  票的結果
+21:45 +0800 <sdnds-slackbot>: <rascov>: 嗯嗯
