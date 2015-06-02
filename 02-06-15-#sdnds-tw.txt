@@ -1,0 +1,25 @@
+00:00 +0800 <sdnds-slackbot>: <john-lin>: COSCUP 移到 #undefined 吧
+00:03 +0800 <sdnds-slackbot>: <john-lin>: @takeshi: 之前你在ryu 那個dns patch後來如何@@?
+00:04 +0800 <sdnds-slackbot>: <takeshi>: 阿，一直都沒有時間去測試耶，其實就只是一個 header 的 parser 而已
+00:04 +0800 <sdnds-slackbot>: <john-lin>: 希望趕快放進去呀XDD 這個有用
+00:05 +0800 <sdnds-slackbot>: <john-lin>: 你想要怎麼測 我可以協助你
+00:05 +0800 <sdnds-slackbot>: <takeshi>: 好
+00:05 +0800 <sdnds-slackbot>: <takeshi>: 但我其實還不確定 controller 看不看的到 DNS 的 內容耶 XD
+00:06 +0800 <sdnds-slackbot>: <john-lin>: 什麼意思 你parser 寫好看不到DNS內容嗎？
+00:07 +0800 <sdnds-slackbot>: <takeshi>: 對
+00:08 +0800 <sdnds-slackbot>: <john-lin>: 恩 改天有空我來試試 你有那篇patch的code在github的link嗎？
+00:13 +0800 <sdnds-slackbot>: <takeshi>: 我印相中有扔到我那邊
+00:15 +0800 <sdnds-slackbot>: <takeshi>: john-lin: <https://github.com/TakeshiTseng/ryu/blob/dns/ryu/lib/packet/dns.py>
+00:15 +0800 <sdnds-slackbot>: <takeshi>: 這個是 parser
+00:16 +0800 <sdnds-slackbot>: <john-lin>: 感謝XD
+00:16 +0800 <sdnds-slackbot>: <takeshi>: 不過我不確定有沒有寫對，我是參照 ipv4.py 寫的 XD
+00:16 +0800 <sdnds-slackbot>: <jalen>: 那個heroku app是誰弄得?
+00:16 +0800 <sdnds-slackbot>: <jalen>: QQ?
+00:16 +0800 <sdnds-slackbot>: <jalen>: 我等等來改網頁
+00:17 +0800 <sdnds-slackbot>: <john-lin>: @takeshi: ok~ 你有修王協源的課對吧XD
+00:17 +0800 <sdnds-slackbot>: <john-lin>: 我好像有看過你
+00:18 +0800 <sdnds-slackbot>: <takeshi>: Yes, 有修 SDN
+00:18 +0800 <sdnds-slackbot>: <takeshi>: 只是 final 其實我跟我同學不太確定要做什麼 XD
+00:19 +0800 <sdnds-slackbot>: <john-lin>: 恩 我們也在傷腦筋..
+00:20 +0800 <sdnds-slackbot>: <john-lin>: 不過上台時間不長所以應該不用做得太複雜XD
+00:21 +0800 <sdnds-slackbot>: <takeshi>: 我之前有想到一個目前好像都沒有人做過的東西，可是頗不實用就是了
