@@ -1,0 +1,17 @@
+07:08 +0800 <sdnds-slackbot>: <jalen>: 對了，下次網域續約我應該會拿掉.info.....這實在是太沒用了XD
+07:08 +0800 <sdnds-slackbot>: <jalen>: 保留 tw  org  net
+09:30 +0800 <sdnds-slackbot>: <john-lin>: http://有沒有.io XD
+09:30 +0800 <sdnds-slackbot>: <john-lin>: 有沒有io
+13:14 +0800 <sdnds-slackbot>: <pichuang>: 我多開了一個 sdn-rss 有把一些常見的網站rss放進去 如果有人有推薦的也歡迎跟我說 我會加進去
+15:33 +0800 <sdnds-slackbot>: <rascov>: SDxCentral 有放了嗎
+16:17 +0800 <sdnds-slackbot>: <pichuang>: 我有嘗試放進去
+16:17 +0800 <sdnds-slackbot>: <pichuang>: 但沒辦法放 他不是正規的 feed format
+16:18 +0800 <sdnds-slackbot>: <pichuang>: <https://www.sdxcentral.com/feed>
+16:18 +0800 <sdnds-slackbot>: <pichuang>: slack 無法處理 他的格式
+17:02 +0800 <sdnds-slackbot>: <jalen>: 有IO阿  不便宜
+17:41 +0800 <sdnds-slackbot>: <dannyaam>: io超貴...
+17:42 +0800 <sdnds-slackbot>: <dannyaam>: 是說何時有domain啦www
+17:49 +0800 <sdnds-slackbot>: <takeshi>: 話說回來，這麼多 domain 要幹嘛 XD?
+19:11 +0800 <sdnds-slackbot>: <dannyaam>: 可能一次多買有折扣啊(?
+19:11 +0800 <sdnds-slackbot>: <ta-ching>: 大概是 domain 櫃裡永遠少一個 domain 的概念
+20:30 +0800 <sdnds-slackbot>: <jalen>: 一直都有domain阿
