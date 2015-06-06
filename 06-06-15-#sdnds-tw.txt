@@ -1,0 +1,39 @@
+00:12 +0800 <sdnds-slackbot>: <jalen>: namecheap也還好，我比較習慣dynadot了
+00:12 +0800 <sdnds-slackbot>: <jalen>: 不過namecheap有送privacy翌年就是了
+00:31 +0800 <sdnds-slackbot>: <jalen>: 主要是namecheap的介面之前用了一下讓我覺得很糟阿XD
+00:35 +0800 <sdnds-slackbot>: <dannyaam>: namecheap有改版過了啦
+00:35 +0800 <sdnds-slackbot>: <dannyaam>: 舊版真的...(默
+00:36 +0800 <sdnds-slackbot>: <dannyaam>: 不過我是沒啥差啦
+00:36 +0800 <sdnds-slackbot>: <dannyaam>: 反正域名商那都是NS設完後
+00:36 +0800 <sdnds-slackbot>: <dannyaam>: 除了renew從來沒再去動過wwwww
+03:26 +0800 <sdnds-slackbot>: <jalen>: 最近才架自己DNS(偷懶拖好久XD) ，不過還沒都轉到自己之下，所以對於各家網域商提供的介面都略有經驗XD
+03:26 +0800 <sdnds-slackbot>: <jalen>: 改版了QQ?....來看看好了
+03:28 +0800 <sdnds-slackbot>: <jalen>: 我比較頭痛的是.tw的部分，要改找台灣廠商續約了
+04:57 +0800 <sdnds-slackbot>: <davy>: 我是用 http://name.com 雖然嘴巴說送一年 privacy 但是其實每次續約都會送…
+04:57 +0800 <sdnds-tw_Bot>: ==> Domain Names | Search and Register New Domains, Web Hosting, Website Builder, SSL Certificates | Name.com
+04:58 +0800 <sdnds-slackbot>: <davy>: tw 我分別用 pchome 跟 網路中文(這間密碼是明碼)
+04:59 +0800 <sdnds-slackbot>: <davy>: DNS 現在都用 cloudflare 了www
+06:14 +0800 <sdnds-slackbot>: <jalen>: name.com也太便宜了.....
+06:18 +0800 <sdnds-slackbot>: <jalen>: 阿...一般價格差不多，特別便宜是transfer....好特別的廠商
+06:18 +0800 <sdnds-slackbot>: <jalen>: 專門搶transfer的客戶阿
+09:07 +0800 <sdnds-slackbot>: <dannyaam>: tw還是找台灣廠商吧
+09:07 +0800 <sdnds-slackbot>: <dannyaam>: 國外都很貴...
+09:07 +0800 <sdnds-slackbot>: <dannyaam>: name.com我也有在用XD
+09:07 +0800 <sdnds-slackbot>: <dannyaam>: 他的介面就不錯了www
+17:53 +0800 <sdnds-slackbot>: <pichuang>: cloudfare免費喔@@
+18:01 +0800 <sdnds-slackbot>: <rascov>: 免費的樣子
+18:01 +0800 <sdnds-slackbot>: <rascov>: 可是我直接用name cheap免費的 XD
+18:43 +0800 <sdnds-slackbot>: <dannyaam>: CF一直都免費啊
+18:43 +0800 <sdnds-slackbot>: <dannyaam>: 現在還有免費SSL XD
+18:53 +0800 <sdnds-slackbot>: <rascov>: 免費SSL！
+19:08 +0800 <sdnds-slackbot>: <takeshi>: 從官網看他的作法是憑證放在 CF 那邊這樣？
+19:09 +0800 <sdnds-slackbot>: <takeshi>: 喔喔，有三種
+19:10 +0800 <sdnds-slackbot>: <takeshi>: 1. 自己的 Server 不用憑證
+19:10 +0800 <sdnds-slackbot>: <takeshi>: 2. Server 放自簽憑證，然後讓 CF 信任
+19:10 +0800 <sdnds-slackbot>: <takeshi>: 3. Server 放合法憑證
+20:30 +0800 <sdnds-slackbot>: <dannyaam>: 我自己是走2
+20:30 +0800 <sdnds-slackbot>: <dannyaam>: 3的話要買就乾脆CF也上自己憑證了XD
+20:53 +0800 <sdnds-slackbot>: <davy>: 我很懶惰我走 1
+20:53 +0800 <sdnds-slackbot>: <davy>: XD
+22:05 +0800 <sdnds-slackbot>: <dannyaam>: 我每台servee本來就上好自簽了
+22:05 +0800 <sdnds-slackbot>: <dannyaam>: 所以只是順便而已www
