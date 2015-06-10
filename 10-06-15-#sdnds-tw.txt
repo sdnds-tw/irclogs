@@ -1,0 +1,39 @@
+15:18 +0800 <sdnds-slackbot>: <pichuang>: 人在 ithome 現場 devops 的議題都還不錯
+15:19 +0800 <sdnds-slackbot>: <pichuang>: brocade arista hitachi 都有來推 sdn
+15:27 +0800 <sdnds-slackbot>: <hwchiu>: 8
+15:28 +0800 <sdnds-slackbot>: <hhuang>: 請問大家用的是哪家的 SDN? 還是 OpenSource 的
+15:29 +0800 <sdnds-slackbot>: <pichuang>: opensource 居多
+15:34 +0800 <sdnds-slackbot>: <pichuang>: 其實無論什麼都可以討論xd
+16:09 +0800 <sdnds-slackbot>: <zespre>: 不揪
+16:13 +0800 <sdnds-slackbot>: <pichuang>: zespre: 我明明就有貼 = =
+16:14 +0800 <sdnds-slackbot>: <zespre>: 被 flush 掉了啦～～
+16:14 +0800 <sdnds-slackbot>: <pichuang>: uccu
+16:24 +0800 <sdnds-slackbot>: <pichuang>: 台上介紹: 引進了  docker container 技術 需要重新思考 networking 架構 或許可以研究一下 sdn 與 docker 的結合
+16:40 +0800 <sdnds-slackbot>: <rascov>: @pichuang: 類似 NSX 吧？只是他是 VM 換成 docker 而已？
+23:18 +0800 <sdnds-slackbot>: <dannyaam>: docker啊
+23:18 +0800 <sdnds-slackbot>: <dannyaam>: 其實主體也就bridge而已
+23:18 +0800 <sdnds-slackbot>: <dannyaam>: 不知道跟OVS兜不兜得起來
+23:18 +0800 <sdnds-slackbot>: <dannyaam>: 不過docker主要靠virtual eth pair
+23:18 +0800 <sdnds-slackbot>: <dannyaam>: 所以應該也沒問題吧OwO
+23:45 +0800 <sdnds-slackbot>: <hwchiu>: docker 跟OVS完全可以
+23:45 +0800 <sdnds-slackbot>: <hwchiu>: 跟mininet一樣
+23:45 +0800 <sdnds-slackbot>: <hwchiu>: 都只是不同的network namespace而以
+23:45 +0800 <sdnds-slackbot>: <hwchiu>: veth建立一下綁進去就好
+23:46 +0800 <sdnds-slackbot>: <powen_tsai>: 小飛機
+23:47 +0800 <sdnds-slackbot>: <powen_tsai>: Switch 用 Intel CPU, 跑 Debian Linux OS, 怎麼裝docker
+23:47 +0800 <sdnds-slackbot>: <powen_tsai>: make sense?
+23:47 +0800 <sdnds-slackbot>: <powen_tsai>: I have no idea
+23:47 +0800 <sdnds-slackbot>: <powen_tsai>: can you try for me? XD
+23:51 +0800 <sdnds-slackbot>: <john-lin>: <https://docs.docker.com/installation/debian/>
+23:51 +0800 <sdnds-slackbot>: <john-lin>: docker很容易裝
+23:51 +0800 <sdnds-slackbot>: <john-lin>: 注意一下版本就好
+23:52 +0800 <sdnds-slackbot>: <john-lin>: docker 跟ovs 結合 目前看到這個<https://github.com/sdnhub/lorispack>
+23:52 +0800 <sdnds-slackbot>: <john-lin>: 另外也可以用pipework <https://github.com/jpetazzo/pipework>
+23:53 +0800 <sdnds-slackbot>: <john-lin>: ovs裝在docker目前看到有這個 <https://github.com/socketplane/docker-ovs>
+23:54 +0800 <sdnds-slackbot>: <john-lin>: socketplane 前陣子被docker收購了
+23:56 +0800 <sdnds-slackbot>: <powen_tsai>: thanks Jogn
+23:56 +0800 <sdnds-slackbot>: <powen_tsai>: this is interesting and helpful
+23:57 +0800 <sdnds-slackbot>: <powen_tsai>: 最近switch廠商在火拼的open source專案
+23:57 +0800 <sdnds-slackbot>: <powen_tsai>: 有Open SAI
+23:57 +0800 <sdnds-slackbot>: <powen_tsai>: Open NSL
+23:57 +0800 <sdnds-slackbot>: <powen_tsai>: ONL
