@@ -1,0 +1,3 @@
+13:11 +0800 <sdnds-slackbot>: <davidlee>: hi all 這邊想問個小問題 我正在用openflow Tutoria with ryu的sdn環境虛擬印象檔
+13:12 +0800 <sdnds-slackbot>: <davidlee>: 在這印象檔中有辦法把內建的controller關掉嗎？  想再他的mininet測試一點東西 （在測試mininet過程中希望在s1的switch上不要溝通到6633port的controller
+13:18 +0800 <sdnds-slackbot>: <davidlee>: 等等我找到方法了 沒事～～
