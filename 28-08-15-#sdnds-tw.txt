@@ -1,0 +1,18 @@
+00:19 +0800 <sdnds-slackbot1>: <rascov>: Referring to our three official deployments (on Internet2, AmLight and GEANT GTS)
+00:19 +0800 <sdnds-slackbot1>: <rascov>:
+00:19 +0800 <sdnds-slackbot1>: <rascov>: ONOS + SDN has been deployed on
+00:19 +0800 <sdnds-slackbot1>: <rascov>: - Juniper MX960 (they work just in the cores, since they still don't have the capability to change the destination MAC address, so basic of doing routing)
+00:19 +0800 <sdnds-slackbot1>: <rascov>: - Brocade MLXe
+00:19 +0800 <sdnds-slackbot1>: <rascov>: - Brocade CES-2024
+00:20 +0800 <sdnds-slackbot1>: <rascov>: 參考參考
+00:40 +0800 <sdnds-slackbot1>: <pichuang>: Survey on Open Source Software Projects
+00:40 +0800 <sdnds-slackbot1>: <pichuang>: 有人有收到這封信嗎
+00:47 +0800 <sdnds-slackbot1>: <rascov>: no
+00:53 +0800 <sdnds-slackbot1>: <hwchiu>: no
+04:13 +0800 <sdnds-slackbot1>: <takeshi>: no
+10:39 +0800 <sdnds-slackbot>: <john-lin>:  我有收到
+11:06 +0800 <sdnds-slackbot>: <rascov>: <http://www.lightwaveonline.com/articles/2015/08/carrier-sdn-a-57-billion-market-by-2019-ihs.html>
+11:06 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/dHZ19  ==> 403 Forbidden
+11:27 +0800 <sdnds-slackbot>: <rascov>: @powen_tsai: 真的都是 switch 的問題 XD
+11:28 +0800 <sdnds-slackbot>: <rascov>: @powen_tsai: 這部分感覺就是你們的專長了，可以思考看看如何應付這麼大的需求
+11:42 +0800 <sdnds-slackbot>: <kigipaul>: 請問一下ryu 的板號是看哪個? 他github上 的tag只有到v3.24
