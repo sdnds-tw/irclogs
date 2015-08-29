@@ -1,0 +1,8 @@
+13:09 +0800 <aptd4869>: 有人知道為什麼 openvswitch 會收不到arp reply 嗎?
+13:09 +0800 <aptd4869>: host1 和 host2 由openvswitch 連著
+13:09 +0800 <aptd4869>: 由host 1 ping host2 時...
+13:10 +0800 <aptd4869>: 能在host2 看到host1 的arp-request
+13:10 +0800 <aptd4869>: 但host1 郤看不到host2 的arp-reply
+13:11 +0800 <aptd4869>: 在openvswitch 上用wireshark 也看不到host2 的arp-reply 通過..
+13:11 +0800 <aptd4869>: 這是什麼原因呢?
+21:18 +0800 <sdnds-slackbot>: <pichuang>: flow table 看一下有沒有 entry
