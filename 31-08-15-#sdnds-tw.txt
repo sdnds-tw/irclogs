@@ -1,0 +1,82 @@
+12:45 +0800 <e831>: 0.0
+13:57 +0800 <sdnds-slackbot>: <john-lin>: http://sdnds.tw 網站 需不需要拉皮一下 我剛做了一個demo
+13:57 +0800 <sdnds-tw_Bot>: ==> SDN開發者社群
+14:28 +0800 <sdnds-slackbot>: <jalen>: 可以啊
+14:28 +0800 <sdnds-slackbot>: <john-lin>: html css js要給誰？
+14:29 +0800 <sdnds-slackbot>: <john-lin>: 還是開一個repo在sdnds-tw的github上
+14:42 +0800 <sdnds-slackbot>: <jalen>: 開個repo可以啊，還是我給你FTP?
+14:43 +0800 <sdnds-slackbot>: <john-lin>: 恩 可以 然後再開個repo
+14:44 +0800 <sdnds-slackbot>: <john-lin>: 這樣我這樣上傳就不用一直找你
+15:41 +0800 <sdnds-slackbot>: <pichuang>: hwchiu: 問問你有處理到 ovs tunnel 相關的經驗嗎
+15:45 +0800 <sdnds-slackbot>: <pichuang>: 問題是這樣的
+15:47 +0800 <sdnds-slackbot>: <pichuang>: 用 linear,2  的架構在不同台電腦下做 bandwidth 測試
+15:47 +0800 <sdnds-slackbot>: <pichuang>: 我用了 `iperf` `netperf` 測試 都沒有接收到資料 但我用 `nc` `ping`做測試都是正常運作的
+15:48 +0800 <sdnds-slackbot>: <pichuang>: 另外還有 兩端 ovs 要打 tunnel 的時候 設定檔需要給一個 key
+15:49 +0800 <sdnds-slackbot>: <pichuang>: 那個 key 算是 tunnel id 嗎?
+15:50 +0800 <sdnds-slackbot>: <powen_tsai>: @hwchiu: 邱渣，來喔
+15:51 +0800 <sdnds-slackbot>: <pichuang>: 他應該還在上班 等他有空xd
+15:51 +0800 <sdnds-slackbot>: <powen_tsai>: at 他一下，強迫他接收訊息
+15:51 +0800 <sdnds-slackbot>: <powen_tsai>: XDDDD
+15:52 +0800 <sdnds-slackbot>: <rascov>: @pichuang: key 就是 VNI, virtual network identifier
+15:52 +0800 <sdnds-slackbot>: <rascov>: @pichuang: <http://blog.mcchan.io/bridge-remote-networks-using-vxlan/>
+15:52 +0800 <sdnds-slackbot>: <pichuang>: 但在gre也要設定一樣的東西
+15:54 +0800 <sdnds-slackbot>: <pichuang>: 如果設定 key=flow 這樣另一端的ovs要如何知道是要跟他做溝通的?
+15:55 +0800 <sdnds-slackbot>: <rascov>: @pichuang: 答案就在下兩行啊
+15:55 +0800 <sdnds-slackbot>: <rascov>: ovs-ofctl add-flow s1 in_port=1,actions=set_field:5566->tun_id,output:9
+15:55 +0800 <sdnds-slackbot>: <rascov>: 你要在 flow action 設 VNI
+15:56 +0800 <sdnds-slackbot>: <pichuang>: 哦哦
+15:56 +0800 <sdnds-slackbot>: <pichuang>: 我看懂了
+15:56 +0800 <sdnds-slackbot>: <pichuang>: 感謝
+15:57 +0800 <sdnds-slackbot>: <rascov>: :thumbsup:
+16:58 +0800 <sdnds-slackbot>: <john-lin>: 等ftp來就能上架
+16:58 +0800 <sdnds-slackbot>: <john-lin>: 會有兩頁
+17:06 +0800 <sdnds-slackbot>: <takeshi>: 不用 github pages ?
+17:15 +0800 <sdnds-slackbot>: <john-lin>: 可以
+17:15 +0800 <sdnds-slackbot>: <john-lin>: 但是他們應該是有買空間吧？
+20:30 +0800 <sdnds-slackbot>: <jalen>: 其實也不是買拉，就一台VPS包含DNS用XD
+20:30 +0800 <sdnds-slackbot>: <takeshi>: Got it
+21:34 +0800 <sdnds-slackbot>: <john-lin>: 放上去了
+21:34 +0800 <sdnds-slackbot>: <john-lin>: google-analytics.js 那邊有點怪怪的
+21:34 +0800 <sdnds-slackbot>: <john-lin>: 不知怎修
+21:34 +0800 <sdnds-slackbot>: <john-lin>: <http://sdnds.tw/>
+21:35 +0800 <sdnds-slackbot>: <takeshi>: 後面的 topology 好噁阿 XDDD
+21:36 +0800 <sdnds-slackbot>: <john-lin>: XD
+21:36 +0800 <sdnds-slackbot>: <john-lin>: 他會跟著滑鼠動
+21:36 +0800 <sdnds-slackbot>: <john-lin>: 看起來是頗吃瀏覽器資源？
+21:36 +0800 <sdnds-slackbot>: <john-lin>: 我開了三個風扇轉不停
+21:36 +0800 <sdnds-slackbot>: <takeshi>: 哈哈哈
+21:37 +0800 <sdnds-slackbot>: <powen_tsai>: 真的
+21:38 +0800 <sdnds-slackbot>: <powen_tsai>: 風扇一直轉...
+21:38 +0800 <sdnds-slackbot>: <john-lin>: 你也會呀
+21:38 +0800 <sdnds-slackbot>: <john-lin>: 我以為是我tab開太多
+21:39 +0800 <sdnds-slackbot>: <powen_tsai>: 我tab也開很多
+21:39 +0800 <sdnds-slackbot>: <powen_tsai>: 我用google chrome
+21:39 +0800 <sdnds-slackbot>: <john-lin>: 我也是
+21:39 +0800 <sdnds-slackbot>: <john-lin>: 超噴資源
+21:39 +0800 <sdnds-slackbot>: <powen_tsai>: yes
+21:39 +0800 <sdnds-slackbot>: <powen_tsai>: 超耗電
+21:39 +0800 <sdnds-slackbot>: <john-lin>: 對啊XDD
+21:39 +0800 <sdnds-slackbot>: <powen_tsai>: 太耗電這點讓我想換瀏覽器...
+21:40 +0800 <sdnds-slackbot>: <jalen>: google analytics其實就是照放就好
+21:40 +0800 <sdnds-slackbot>: <jalen>: 不然我可以晚點再來埋
+21:44 +0800 <sdnds-slackbot>: <john-lin>: 嗯 我也是照著放
+21:44 +0800 <sdnds-slackbot>: <john-lin>: 不過還是找不到
+21:44 +0800 <sdnds-slackbot>: <john-lin>: 真是怪
+21:50 +0800 <sdnds-slackbot>: <pichuang>: <-已改用 safari
+21:57 +0800 <sdnds-slackbot>: <john-lin>: 超省電
+21:57 +0800 <sdnds-slackbot>: <john-lin>: flash那邊怎辦
+21:59 +0800 <sdnds-slackbot>: <pichuang>: 有要用到在開 chrome起來
+21:59 +0800 <sdnds-slackbot>: <pichuang>: 我還會裝 ublock擋廣告
+22:00 +0800 <sdnds-slackbot>: <rascov>: flash 還是可以用吧
+22:00 +0800 <sdnds-slackbot>: <rascov>: 裝 flash player
+22:02 +0800 <sdnds-slackbot>: <powen_tsai>: flash不是要被預設block掉了
+22:05 +0800 <sdnds-slackbot>: <rascov>: 裝 player 還是可以吧
+22:05 +0800 <sdnds-slackbot>: <rascov>: 我還有開過啊
+22:07 +0800 <sdnds-slackbot>: <john-lin>: 記得我在10.9 10.8時候裝Firefox 的flash player 偶爾都會被強制重開
+22:07 +0800 <sdnds-slackbot>: <john-lin>: 後來就索性不裝直接用chrome
+22:07 +0800 <sdnds-slackbot>: <john-lin>: ublock要用origin版的比較好XD
+22:12 +0800 <sdnds-slackbot>: <jalen>: Google analytics在頁面上看不到東西啊
+22:12 +0800 <sdnds-slackbot>: <jalen>: 他是要去GOOGLE後台看的
+22:12 +0800 <sdnds-slackbot>: <john-lin>: 步步
+22:12 +0800 <sdnds-slackbot>: <john-lin>: 我是說他在開發者介面
+22:12 +0800 <sdnds-slackbot>: <john-lin>: 他找不到路徑
