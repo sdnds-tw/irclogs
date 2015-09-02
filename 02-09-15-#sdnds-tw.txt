@@ -1,0 +1,86 @@
+00:00 +0800 <sdnds-slackbot>: <pichuang>: 之後測試應該會用到
+00:01 +0800 <sdnds-slackbot>: <pichuang>: <https://www.juniper.net/techpubs/images/g041997.gif>
+00:02 +0800 <sdnds-slackbot>: <pichuang>: leaf, spine, host數目都可以調
+00:12 +0800 <sdnds-slackbot>: <pichuang>: 我測完了 用 `simple_switch_stp.py` ping不通
+00:22 +0800 <sdnds-slackbot>: <hwchiu>: 好多討論XD
+00:22 +0800 <sdnds-slackbot>: <hwchiu>: ㄚㄚㄚㄚ，好有趣阿
+00:45 +0800 <sdnds-slackbot>: <rascov>: @powen_tsai: host to host intent 就是 shortest path 而已，沒什麼很複雜的東西
+00:46 +0800 <sdnds-slackbot>: <rascov>: @pichuang 現在可以載得到嗎，我想先在ONOS測試看看
+00:53 +0800 <sdnds-slackbot>: <rascov>: 喔喔喔喔，老闆在準備新聞稿了，今天 ONOS Drake 要 RC 啦
+00:53 +0800 <sdnds-slackbot>: <rascov>: 然後接下來就是 Emu 啦
+01:00 +0800 <sdnds-slackbot>: <pichuang>: <https://github.com/pichuang/mininet/tree/leaf-spine>
+01:01 +0800 <sdnds-slackbot>: <pichuang>: 有人可以幫我試一下用mininet  controller指到 140.113.194.251  好否
+01:01 +0800 <sdnds-slackbot>: <pichuang>: 我不知道為什麼我連不回去我實驗室的電腦= =
+01:01 +0800 <sdnds-slackbot>: <pichuang>: <http://night9.cc:8181/onos/ui/index.html#/topo>
+01:01 +0800 <sdnds-tw_Bot>: ==> ONOS Login
+01:01 +0800 <sdnds-slackbot>: <pichuang>: 但web gui卻能動
+01:02 +0800 <sdnds-slackbot>: <rascov>: Unable to contact the remote controller at 140.113.194.251:6633
+01:03 +0800 <sdnds-slackbot>: <pichuang>: 好詭異
+01:03 +0800 <sdnds-slackbot>: <rascov>: 你 local 真的有 listen嗎 XD
+01:03 +0800 <sdnds-slackbot>: <pichuang>: 有阿 不然你也看不到網頁
+01:03 +0800 <sdnds-slackbot>: <pichuang>: 冏
+01:08 +0800 <sdnds-slackbot>: <rascov>: 不知道欸
+01:08 +0800 <sdnds-slackbot>: <pichuang>: 不然你把我那個patch抓下來跑看看好了
+01:09 +0800 <sdnds-slackbot>: <rascov>: 可能明天了，正在處理其他事情
+01:09 +0800 <sdnds-slackbot>: <pichuang>: mn -- topo leafspine,3,3 --mac --switch ovsk,protocols=OpenFlow13 --controller remote, $IP
+01:09 +0800 <sdnds-slackbot>: <pichuang>: KK
+12:02 +0800 <sdnds-slackbot>: <rascov>: CORD 在 compute 端選擇 container 的一些考量，蠻有趣的
+12:02 +0800 <sdnds-slackbot>: <rascov>: 目前看起來可能 container 跟 VM 會同時存在
+12:02 +0800 <sdnds-slackbot>: <rascov>:
+12:02 +0800 <sdnds-slackbot>: <rascov>: ＊1000+ subscribers per server for lightweight services (this includes the U-Verse use-case): relatively low per-subscriber bandwidth, and simple NAT/FW/Routing options
+12:02 +0800 <sdnds-slackbot>: <rascov>: ＊private side traffic arrives to the server with some form of per-subscriber isolation (e.g., VLAN or VXLAN or alike), and must support overlapping IPv4 address spaces
+12:02 +0800 <sdnds-slackbot>: <rascov>: ＊public side traffic may be on the same subnet or a few subnets (VLAN or VXLAN or alike)
+12:02 +0800 <sdnds-slackbot>: <rascov>: complete isolation in the data plane among subscribers)
+12:02 +0800 <sdnds-slackbot>: <rascov>: ＊"sufficient" isolation in the control plane, i.e., in the way the NAT/FW/DHCP/DNS features to be configured, in that the configuration appears to be independent, but we don't assume that the user must be able to log in to the Linux prompt and see a fully isolated view its own iptables, etc.
+12:02 +0800 <sdnds-slackbot>: <rascov>: ＊Support for more sophisticated (high-end) services, but for extra premium; DPI, intrusion detection, complex routing, etc. These may be implemented in the form of 3rd-party VNFs, which may be shipped as VMs and not containers
+12:02 +0800 <sdnds-slackbot>: <rascov>: 有在搞 NFV 的小夥伴可以研究看看
+12:24 +0800 <sdnds-slackbot>: <powen_tsai>: 這在哪裡看到的啊？
+12:27 +0800 <sdnds-slackbot>: <rascov>: CORD mailing list
+13:53 +0800 <sdnds-slackbot>: <powen_tsai>: 有CORD mailing list address嗎
+13:53 +0800 <sdnds-slackbot>: <powen_tsai>: 我得找一下
+13:53 +0800 <sdnds-slackbot>: <rascov>: onos-co
+13:53 +0800 <sdnds-slackbot>: <rascov>: @onosproject.org
+15:08 +0800 <sdnds-slackbot>: <powen_tsai>: 拉拉
+15:08 +0800 <sdnds-slackbot>: <powen_tsai>: 我剛跟Macauley聊過
+15:09 +0800 <sdnds-slackbot>: <powen_tsai>: 他也想弄OFDPA1Pipeline.java這個driver
+15:09 +0800 <sdnds-slackbot>: <powen_tsai>: 他還有提到SDN-IP這個use case只有table 0
+15:10 +0800 <sdnds-slackbot>: <powen_tsai>: 他想弄成可以吃OF-DPA
+15:10 +0800 <sdnds-slackbot>: <powen_tsai>: 跟Atrium一樣
+15:10 +0800 <sdnds-slackbot>: <powen_tsai>: so he want to contribute this part
+15:10 +0800 <sdnds-slackbot>: <powen_tsai>: I ask Luka to add Macauley into slack channel
+15:10 +0800 <sdnds-slackbot>: <powen_tsai>: let's see how it goes
+15:10 +0800 <sdnds-slackbot>: <powen_tsai>: 我要怎麼把Macauley拉來這裡跟大家talk啊？
+15:11 +0800 <sdnds-slackbot>: <powen_tsai>: 我好像無法邀請..
+15:11 +0800 <sdnds-slackbot>: <john-lin>: http://sdnds.tw
+15:11 +0800 <sdnds-tw_Bot>: ==> SDN 開發者社群
+15:11 +0800 <sdnds-slackbot>: <john-lin>: <http://sdnds.tw/#secondPage>
+15:11 +0800 <sdnds-tw_Bot>: ==> SDN 開發者社群
+15:11 +0800 <sdnds-slackbot>: <powen_tsai>: @hwchiu: 這些討論很有趣吧，一起來喔
+15:11 +0800 <sdnds-slackbot>: <john-lin>: 獲得邀請
+15:11 +0800 <sdnds-slackbot>: <powen_tsai>: 噢
+15:11 +0800 <sdnds-slackbot>: <powen_tsai>: 感謝John
+15:44 +0800 <sdnds-slackbot>: <davy>: 哇這網頁誰做的啊好漂亮噢
+15:44 +0800 <sdnds-slackbot>: <john-lin>: 套框架而已XD
+17:02 +0800 <sdnds-slackbot>: <markzeng>: 請問一下
+17:02 +0800 <sdnds-slackbot>: <markzeng>: 這裡有人在用opennet嗎?
+17:10 +0800 <sdnds-slackbot>: <pichuang>: hi
+17:11 +0800 <sdnds-slackbot>: <hwchiu>: 有
+17:14 +0800 <sdnds-slackbot>: <markzeng>: 想請問一下
+17:14 +0800 <sdnds-slackbot>: <markzeng>: 如果想改變AP tx power的話
+17:14 +0800 <sdnds-slackbot>: <markzeng>: 要在哪裡改參數阿
+17:14 +0800 <sdnds-slackbot>: <markzeng>: 我search ns3 資料夾
+17:14 +0800 <sdnds-slackbot>: <markzeng>: 發現裡面有好多跟tx power 有關的參數
+17:14 +0800 <sdnds-slackbot>: <markzeng>: 不知道要改哪個 @@
+17:47 +0800 <sdnds-slackbot>: <pichuang>: 我剛迅速看了一下
+17:48 +0800 <sdnds-slackbot>: <pichuang>: 可能要針對 http://yans-wifi-phy.cc 對應的 python api起來
+17:48 +0800 <sdnds-slackbot>: <pichuang>: 我們預設用的 yanswifiphyhelper 沒有讓你設定 txgain/rxgain的屬性
+17:51 +0800 <sdnds-slackbot>: <rascov>: @pichuang: WAP agent 遲早要用到的吧，不如趁這個機會做一下？
+17:52 +0800 <sdnds-slackbot>: <pichuang>: 列入研究中
+18:35 +0800 <sdnds-slackbot>: <powen_tsai>: txgain/rxgain的設定
+18:35 +0800 <sdnds-slackbot>: <powen_tsai>: 難做嗎
+19:29 +0800 <sdnds-slackbot>: <rascov>: 我個人是覺得不難，只是我沒時間弄 XD
+20:30 +0800 <sdnds-slackbot>: <pichuang>: 主要得處理 ns3那邊的 python binding
+20:31 +0800 <sdnds-slackbot>: <pichuang>: 要花點時間對照一下
+21:06 +0800 <sdnds-slackbot>: <markzeng>: 好
+21:06 +0800 <sdnds-slackbot>: <markzeng>: 我試試看
+21:06 +0800 <sdnds-slackbot>: <markzeng>: 謝謝
