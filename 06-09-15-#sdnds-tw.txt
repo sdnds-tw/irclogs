@@ -1,0 +1,5 @@
+22:39 +0800 <sdnds-slackbot>: <powen_tsai>: very interesting article
+22:43 +0800 <sdnds-slackbot>: <powen_tsai>: <http://packetpushers.net/centec-v330-my-kind-of-openflow-switch/>
+22:43 +0800 <sdnds-slackbot>: <powen_tsai>: 裡面有提到這個分享
+22:44 +0800 <sdnds-slackbot>: <powen_tsai>: 不過
+22:44 +0800 <sdnds-slackbot>: <powen_tsai>: Vello OS倒很久了不是嗎...
