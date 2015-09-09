@@ -1,0 +1,7 @@
+02:34 +0800 <sdnds-slackbot>: <rascov>: 剛有同事被 karaf 雷
+02:34 +0800 <sdnds-slackbot>: <rascov>: karaf 的 exit 指令是離開 subshell 回到 parent shell
+02:35 +0800 <sdnds-slackbot>: <rascov>: 有人一直 exit 然後說 ONOS 為什麼關不掉啊
+02:35 +0800 <sdnds-slackbot>: <rascov>: 可是 CLI prompt 一開始明明有寫
+02:35 +0800 <sdnds-slackbot>: <rascov>: Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown ONOS.
+03:38 +0800 <sdnds-slackbot>: <pichuang>: <= 任何shell下都習慣 ctrl-d 離開
+07:44 +0800 <sdnds-slackbot>: <jalen>: 學cisco設計exit和end吧XD
