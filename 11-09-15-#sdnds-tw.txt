@@ -1,0 +1,194 @@
+00:32 +0800 <sdnds-slackbot>: <takeshi>: @pichuang 有沒有用過 OpenVZ ?
+00:32 +0800 <sdnds-slackbot>: <takeshi>: <https://zh.wikipedia.org/wiki/OpenVZ>
+00:36 +0800 <sdnds-slackbot>: <takeshi>: 強大的學弟最近在弄這套，我覺得蠻有趣的 XD
+00:42 +0800 <sdnds-slackbot>: <takeshi>: 可以把它看成類似 OpenStack 的東西，但是他開的事 container 而不是 VM
+00:43 +0800 <sdnds-slackbot>: <takeshi>: 我比較覺得有趣的是他也可以在裡面自行開 OVS 當做內部的 switch …..
+01:05 +0800 <sdnds-slackbot>: <john-lin>: 既然用container 怎麼不用最近很火的docker呢XD
+01:06 +0800 <sdnds-slackbot>: <pichuang>: 我沒用過但我知道這東西
+01:06 +0800 <sdnds-slackbot>: <pichuang>: 完openvz 不如玩 docekr
+01:07 +0800 <sdnds-slackbot>: <pichuang>: docker 有些概念是從 openvz 延伸過來的
+01:07 +0800 <sdnds-slackbot>: <pichuang>: 譬如共用 host kernel
+01:09 +0800 <sdnds-slackbot>: <pichuang>: 但如果違反docker的精神”一個container 跑一個process"的話 將 container 視為一個vm
+01:09 +0800 <sdnds-slackbot>: <pichuang>: 也可以做得更openvz差不多的效果
+01:09 +0800 <sdnds-slackbot>: <takeshi>: Hmmmmm，也對
+01:09 +0800 <sdnds-slackbot>: <pichuang>: openvz當初是將整個instace視為一個vm在做設計
+01:10 +0800 <sdnds-slackbot>: <pichuang>: docker"基本上"是針對每個app
+01:10 +0800 <sdnds-slackbot>: <pichuang>: 但如果真要講的話 docker hub上面一堆其實都跟養vm沒啥兩樣
+01:10 +0800 <sdnds-slackbot>: <pichuang>: 就看你自己的想法是怎樣
+01:11 +0800 <sdnds-slackbot>: <pichuang>: 但能確定的是 docker 是較為彈性的
+01:11 +0800 <sdnds-slackbot>: <john-lin>: 他的套件太多
+01:11 +0800 <sdnds-slackbot>: <takeshi>: 個人感覺是 Docker  —> 部屬 App 用，比較沒有 vm 概念
+01:11 +0800 <sdnds-slackbot>: <john-lin>: 多到無法想像
+01:11 +0800 <sdnds-slackbot>: <pichuang>: takeshi: 看你的作法想法是什麼 我身旁有些朋友是把他當vm在養
+01:12 +0800 <sdnds-slackbot>: <john-lin>: docker compose/ swarm/machine/registry
+01:12 +0800 <sdnds-slackbot>: <takeshi>: XD
+01:13 +0800 <sdnds-slackbot>: <john-lin>: 我覺得你把 process拆分成一個個docekr用docker compose 來管也可以做到一個vm的感覺
+01:13 +0800 <sdnds-slackbot>: <pichuang>: 我是主推docker compose
+01:13 +0800 <sdnds-slackbot>: <pichuang>: 對
+01:13 +0800 <sdnds-slackbot>: <john-lin>: 不需要通通塞進去一個docker
+01:14 +0800 <sdnds-slackbot>: <pichuang>: 真正要到end user的檔案應該是要給 docker-compose 而不是 dockerfile
+01:14 +0800 <sdnds-slackbot>: <pichuang>: 像我現在拿到一些dockerfile
+01:14 +0800 <sdnds-slackbot>: <pichuang>: 到底要怎麼啟動 怎麼用 要 expose 什麼 掛什麼 volumne 都不知道
+01:14 +0800 <sdnds-slackbot>: <pichuang>: 還要一個一個慢慢研究= =
+01:15 +0800 <sdnds-slackbot>: <pichuang>: 單一個 service還好 但如果是多個 service 集合而成的 如 http php mysql
+01:15 +0800 <sdnds-slackbot>: <john-lin>: 對了後來官方好像把docker改名叫做 docker engines
+01:15 +0800 <sdnds-slackbot>: <pichuang>: 這個就很麻煩了 一個一個處理還要一個一個做link
+01:15 +0800 <sdnds-slackbot>: <pichuang>: 是喔＠＠
+01:15 +0800 <sdnds-slackbot>: <john-lin>: 反正他的核心就變成了 engines
+01:16 +0800 <sdnds-slackbot>: <john-lin>: <https://www.docker.com/products/overview>
+01:16 +0800 <sdnds-slackbot>: <john-lin>: Docker Toolbox
+01:16 +0800 <sdnds-slackbot>: <john-lin>: 從docker engines點進去
+01:17 +0800 <sdnds-slackbot>: <takeshi>: 變成好多東西了 O_O
+01:17 +0800 <sdnds-slackbot>: <pichuang>: 一堆xd
+01:17 +0800 <sdnds-slackbot>: <john-lin>: 嗯 他們發展超快的
+01:17 +0800 <sdnds-slackbot>: <takeshi>: 我怎麼感覺我才幾個星期沒碰 Docker XD
+01:17 +0800 <sdnds-slackbot>: <pichuang>: docker compose 看完後下一個要看 docker swarm
+01:18 +0800 <sdnds-slackbot>: <pichuang>: docker machine我還不知道在幹嘛的xd
+01:18 +0800 <sdnds-slackbot>: <john-lin>: 我現在就用shipyard這套
+01:18 +0800 <sdnds-slackbot>: <john-lin>: 他用swarm把做起來
+01:19 +0800 <sdnds-slackbot>: <pichuang>: qnap之後也要把 swarm塞到他們的nas去
+01:19 +0800 <sdnds-slackbot>: <john-lin>: swarm 類似一個群集
+01:19 +0800 <sdnds-slackbot>: <pichuang>: 他們現在有支援 docker-compose
+01:19 +0800 <sdnds-slackbot>: <john-lin>: 我覺得shipyard更像 openstack了
+01:19 +0800 <sdnds-slackbot>: <john-lin>: 因為他最近大改
+01:20 +0800 <sdnds-slackbot>: <takeshi>: 是說，如果想開多個 container，然後把他們用 ovs 串起來，這樣可行嗎？
+01:20 +0800 <sdnds-slackbot>: <john-lin>: 可以
+01:20 +0800 <sdnds-slackbot>: <pichuang>: 可
+01:20 +0800 <sdnds-slackbot>: <pichuang>: 看一下 libnetwork
+01:20 +0800 <sdnds-slackbot>: <pichuang>: 阿不對
+01:20 +0800 <sdnds-slackbot>: <pichuang>: socketplane才對
+01:20 +0800 <sdnds-slackbot>: <takeshi>: 是直接在 docker 上面幫 container 加 interface 這樣？
+01:21 +0800 <sdnds-slackbot>: <pichuang>: 這我就不知道了 實際上我沒下去玩過
+01:21 +0800 <sdnds-slackbot>: <pichuang>: 黑客頌的時候可以趁機全部玩過一輪
+01:22 +0800 <sdnds-slackbot>: <takeshi>: 我再試試看 XD
+01:22 +0800 <sdnds-slackbot>: <john-lin>: 你要串interface 是指兩個docker串起來 還是跟外網串？
+01:22 +0800 <sdnds-slackbot>: <takeshi>: docker  — ovs — docker
+01:22 +0800 <sdnds-slackbot>: <takeshi>: 類似這樣
+01:22 +0800 <sdnds-slackbot>: <john-lin>: 那ovs也是docker?
+01:23 +0800 <sdnds-slackbot>: <takeshi>: 可以不是 docker
+01:23 +0800 <sdnds-slackbot>: <pichuang>: 我現在看到的都是把ovs dockerize
+01:23 +0800 <sdnds-slackbot>: <john-lin>: 恩恩
+01:23 +0800 <sdnds-slackbot>: <john-lin>: 那你的docker 跟ovs是在同一台機器上？
+01:23 +0800 <sdnds-slackbot>: <pichuang>: 但我不確定 add new ovs bridge 這件事情是怎麼做到的
+01:23 +0800 <sdnds-slackbot>: <takeshi>: 全部都在同一台機器上面
+01:24 +0800 <sdnds-slackbot>: <john-lin>: 我目前想到的做法比較有可能達到的應該是 ovs要放進docker
+01:24 +0800 <sdnds-slackbot>: <takeshi>: 目前我看到學弟用 OpenVZ 的情況是，ovs 是裝在 host 上面的
+01:24 +0800 <sdnds-slackbot>: <john-lin>: 才有辦法串
+01:24 +0800 <sdnds-slackbot>: <john-lin>: 像是有些服務他們部署在docker上的時候
+01:25 +0800 <sdnds-slackbot>: <john-lin>: 都會把db一個docker web server一個docker放在同一個host上串起來
+01:25 +0800 <sdnds-slackbot>: <takeshi>: 直接對接？還是用 linux bridge 之類的？
+01:25 +0800 <sdnds-slackbot>: <john-lin>: docker有個link指令
+01:26 +0800 <sdnds-slackbot>: <john-lin>: 你就可以把兩個docker接起來了
+01:26 +0800 <sdnds-slackbot>: <takeshi>: cool
+01:26 +0800 <sdnds-slackbot>: <john-lin>: 我找一下
+01:27 +0800 <sdnds-slackbot>: <pichuang>: 她的link其實只是幫你把 <container ip> 跟 <container hostname> 寫到 /etc/hosts裡
+01:28 +0800 <sdnds-slackbot>: <pichuang>: 但這件事之所以要做的原因是因為 container 每次啟動的時候 ip 不一定一樣
+01:29 +0800 <sdnds-slackbot>: <pichuang>: 但他們所過的bridge依然都是那個預設 docker0
+01:29 +0800 <sdnds-slackbot>: <john-lin>: `sudo docker run -d  - -name db username/mongodb `
+01:29 +0800 <sdnds-slackbot>: <john-lin>: `sudo docker run -d -P - -name web - -link db:db  username/webapp python web.py `
+01:29 +0800 <sdnds-slackbot>: <john-lin>: 這樣
+01:29 +0800 <sdnds-slackbot>: <john-lin>: 恩恩
+01:29 +0800 <sdnds-slackbot>: <takeshi>: 喔喔，所以會有一個 docker0 的 br 可以用
+01:29 +0800 <sdnds-slackbot>: <pichuang>: 恩 預設會有 那個是 linux bridge
+01:29 +0800 <sdnds-slackbot>: <pichuang>: 你可以換
+01:29 +0800 <sdnds-slackbot>: <pichuang>: xd
+01:29 +0800 <sdnds-slackbot>: <john-lin>: 外面會有一個
+01:30 +0800 <sdnds-slackbot>: <john-lin>: 應該說host裡面
+01:30 +0800 <sdnds-slackbot>: <john-lin>: 會有一個docker0
+01:30 +0800 <sdnds-slackbot>: <pichuang>: 恩恩
+01:30 +0800 <sdnds-slackbot>: <john-lin>: 然後docker都會接上他
+01:30 +0800 <sdnds-slackbot>: <takeshi>: 了解 XD
+01:30 +0800 <sdnds-slackbot>: <john-lin>: 也可以選擇不接
+01:31 +0800 <sdnds-slackbot>: <john-lin>: 可以直接把docker的interface綁在host的interface上
+01:31 +0800 <sdnds-slackbot>: <pichuang>: 所以docker原生沒有處理 network isolation 在 linux 上你得要手動處理 linux bridge
+01:31 +0800 <sdnds-slackbot>: <pichuang>: 對xd
+01:31 +0800 <sdnds-slackbot>: <john-lin>: 也就是說這個docker直接用host的netwrok namespace
+01:31 +0800 <sdnds-slackbot>: <pichuang>: 拉拉就是這樣接出去外網的
+01:31 +0800 <sdnds-slackbot>: <john-lin>: 有好多種方式
+01:32 +0800 <sdnds-slackbot>: <takeshi>: hmmm, 好，我來研究研究好了
+01:33 +0800 <sdnds-slackbot>: <pichuang>: 如果有用過 kvm 的話
+01:33 +0800 <sdnds-slackbot>: <pichuang>: 處理網路的部分是差不多的
+01:33 +0800 <sdnds-slackbot>: <pichuang>: 概念就是那樣
+01:35 +0800 <sdnds-slackbot>: <john-lin>: 要做 service function chain 的都會玩 docker <-> ovs <-> docker
+01:36 +0800 <sdnds-slackbot>: <john-lin>: 思銳目前有在做這個
+01:36 +0800 <sdnds-slackbot>: <john-lin>: 他們串一堆docker跟ovs做 SFC
+01:36 +0800 <sdnds-slackbot>: <john-lin>: 同一台host上還安了一個controller去控制ovs
+01:38 +0800 <sdnds-slackbot>: <takeshi>: 他的 ovs 是用 docker 去弄的吧？
+01:38 +0800 <sdnds-slackbot>: <john-lin>: 這我不清楚
+01:38 +0800 <sdnds-slackbot>: <john-lin>: 但我相信兩個方案應該都可行 ovs在host上比較難做 我覺得
+01:39 +0800 <sdnds-slackbot>: <takeshi>: 了解
+02:02 +0800 <sdnds-slackbot>: <john-lin>: 這邊基本上他就像一個openstack的dashboard
+02:02 +0800 <sdnds-slackbot>: <john-lin>: 你填一些資料他就會幫你部署container出來
+02:03 +0800 <sdnds-slackbot>: <john-lin>: 然後你可以動態加 node (就好像openstack上的nova)
+02:03 +0800 <sdnds-slackbot>: <john-lin>: 完全都用ui加就可以
+02:03 +0800 <sdnds-slackbot>: <takeshi>: 酷耶
+02:03 +0800 <sdnds-slackbot>: <john-lin>: 然後裝這個超簡單 不像openstack 那樣搞的要死不活
+02:03 +0800 <sdnds-slackbot>: <john-lin>: 裝這個只要一行
+02:04 +0800 <sdnds-slackbot>: <john-lin>: 你可以開一個vm在virtualbox上 然後直接部署就可以看到效果
+02:04 +0800 <sdnds-slackbot>: <john-lin>: 建議14.04因為docker的關係
+02:05 +0800 <sdnds-slackbot>: <john-lin>: 你要pull image只需要填下在docker hub上的名稱像是 linton/ryu 這樣他就會去docker hub上拉image 下來然後自己把image跑起來
+02:06 +0800 <sdnds-slackbot>: <john-lin>: 完全無痛XDD
+02:06 +0800 <sdnds-slackbot>: <takeshi>: shipyard 沒有 OSX QQ
+02:06 +0800 <sdnds-slackbot>: <john-lin>: 不 因為docker本身沒辦法在osx上運行
+02:06 +0800 <sdnds-slackbot>: <john-lin>: 他透過virtualbox
+02:06 +0800 <sdnds-slackbot>: <john-lin>: 所以他是建議用linux
+02:07 +0800 <sdnds-slackbot>: <john-lin>: 我是先開一個vm在virtualbox 然後在裡面部署shipyard
+02:07 +0800 <sdnds-slackbot>: <takeshi>: 了解
+02:07 +0800 <sdnds-slackbot>: <takeshi>: 可是 shipyard 應該也只是直接串 docker API 才對？
+02:07 +0800 <sdnds-slackbot>: <john-lin>: 這要分兩個部分來說
+02:08 +0800 <sdnds-slackbot>: <john-lin>: 目前最新版的v3 他的container api (包括啟動一個container跟砍掉container) 是直接串官方的一個叫做Docker  remote API
+02:08 +0800 <sdnds-slackbot>: <john-lin>: 第二個部分是他自己的API
+02:09 +0800 <sdnds-slackbot>: <takeshi>: 了解
+02:09 +0800 <sdnds-slackbot>: <john-lin>: 他自己的API call了可以讓你 加Node(openstack 說法nova)
+02:09 +0800 <sdnds-slackbot>: <john-lin>: 或是加user
+02:09 +0800 <sdnds-slackbot>: <john-lin>: 那些等等
+02:09 +0800 <sdnds-slackbot>: <takeshi>: 嗯嗯
+02:16 +0800 <sdnds-slackbot>: <pichuang>: 弄 sdn 的話 建議 devops 相關技術 agile/scrum 建議都要看一下
+02:17 +0800 <sdnds-slackbot>: <pichuang>: 概念上像快速動態部署及持續改進等等觀念 如果能融合在一起的話 做起來就會很好上手
+02:19 +0800 <sdnds-slackbot>: <takeshi>: 明天來去玩玩看 Shipyard….
+02:19 +0800 <sdnds-slackbot>: <pichuang>: 這樣順便幫友社宣傳一下禮拜六的活動
+02:19 +0800 <sdnds-slackbot>: <pichuang>: 在系計中
+02:19 +0800 <sdnds-slackbot>: <pichuang>: <http://www.accupass.com/go/unittest_tdd>
+02:19 +0800 <sdnds-tw_Bot>: ==> Bad Request - Accupass x active your life with events / Funnest event platform.
+02:19 +0800 <sdnds-slackbot>: <takeshi>: OMG 我在台北 Orzzzz
+02:20 +0800 <sdnds-slackbot>: <pichuang>: 另外再問一下有人想去opensuse asia 2015講workshop嗎
+02:20 +0800 <sdnds-slackbot>: <pichuang>: xd
+02:20 +0800 <sdnds-slackbot>: <pichuang>: 我一個人沒這麼厲害 我需要找個跟我下水
+02:21 +0800 <sdnds-slackbot>: <takeshi>: Hmmmm, 當天有課 XD
+02:21 +0800 <sdnds-slackbot>: <pichuang>: 我會專講 mininet 的部分
+02:22 +0800 <sdnds-slackbot>: <pichuang>: 還有跟無線模擬有關的 opennet
+02:22 +0800 <sdnds-slackbot>: <takeshi>: 嗯嗯
+02:23 +0800 <sdnds-slackbot>: <pichuang>: 然後我mopcon沒上QQ
+02:26 +0800 <sdnds-slackbot>: <takeshi>: QQ
+02:27 +0800 <sdnds-slackbot>: <pichuang>: 原先想跟opensuse asia詢問看有沒有一個議程可以讓我講 但是我想想像性差太多
+02:32 +0800 <sdnds-slackbot>: <takeshi>: 了解，感覺 opensuse 主要的議程應該都是環繞在他們系統上面才對？
+02:32 +0800 <sdnds-slackbot>: <takeshi>: 有點晚了，明天再聊吧 XD
+16:31 +0800 <sdnds-slackbot>: <powen_tsai>: 小飛機你還真晚
+16:31 +0800 <sdnds-slackbot>: <powen_tsai>: 你今早怎麼起床的..
+17:41 +0800 <sdnds-slackbot>: <pichuang>: <https://cloudplatformonline.com/APAC-Taipei-Big-Data-ITDM-Workshop-Q32015_Home.html>
+17:41 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/eLtq8  ==> Google for Work - Enterprise Solutions to Work the Way You Live
+17:42 +0800 <sdnds-slackbot>: <pichuang>: powen_tsai: 有固定早餐團夥伴 xd
+17:46 +0800 <sdnds-slackbot>: <powen_tsai>: 早餐團 XD
+17:46 +0800 <sdnds-slackbot>: <powen_tsai>: 這麼猛
+17:50 +0800 <sdnds-slackbot>: <pichuang>: 對阿 盡量都早起做事
+19:14 +0800 <sdnds-slackbot>: <takeshi>: 早餐團 OAO！！
+19:15 +0800 <sdnds-slackbot>: <takeshi>: 聽說萊爾富要進駐一餐了？
+20:55 +0800 <sdnds-slackbot>: <pichuang>: 對
+20:55 +0800 <sdnds-slackbot>: <pichuang>: 一餐終於有點救了
+21:18 +0800 <sdnds-slackbot>: <pichuang>: <http://www.jiankongbao.com/>
+22:09 +0800 <sdnds-slackbot>: <takeshi>: ＝口＝！
+23:22 +0800 <sdnds-slackbot>: <takeshi>: <https://packer.io/intro/platforms.html>
+23:22 +0800 <sdnds-slackbot>: <takeshi>: packer -> 寫一個 config 就可以產生一堆不同平台的 image
+23:30 +0800 <sdnds-slackbot>: <takeshi>: @pichuang @john-lin: 你們有用過 docker 官方的 kitematic 嗎？
+23:30 +0800 <sdnds-slackbot>: <pichuang>: 這 packer 上次聽趨勢分享感覺不錯用
+23:31 +0800 <sdnds-slackbot>: <pichuang>: kitematic 我沒用過
+23:32 +0800 <sdnds-slackbot>: <john-lin>: 用過 還不錯
+23:32 +0800 <sdnds-slackbot>: <john-lin>: 這就是electron寫的
+23:33 +0800 <sdnds-slackbot>: <takeshi>: 嗯嗯
+23:33 +0800 <sdnds-slackbot>: <takeshi>: electron 真是好物 XD
+23:33 +0800 <sdnds-slackbot>: <john-lin>: 這團隊超短的時間內就被docker收購
+23:34 +0800 <sdnds-slackbot>: <takeshi>: 喔喔，原本 Kitematic 是獨立的團隊？
+23:35 +0800 <sdnds-slackbot>: <john-lin>: 嗯嗯
+23:36 +0800 <sdnds-slackbot>: <takeshi>: Hmmmm
+23:37 +0800 <sdnds-slackbot>: <takeshi>: 好像可以來搞個複雜的東西到 Dragon Knight 上面......
+23:54 +0800 <sdnds-slackbot>: <john-lin>: 像什麼XD
