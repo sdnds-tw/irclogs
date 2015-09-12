@@ -1,0 +1,43 @@
+00:04 +0800 <sdnds-slackbot>: <takeshi>: 例如輸入 ryu app github repo，他會自動幫你 clone 下來然後幫你啟動（XD
+00:04 +0800 <sdnds-slackbot>: <takeshi>: 不過應該是沒啥意義就是了 XD
+00:58 +0800 <sdnds-slackbot>: <takeshi>: @john-lin @pichuang 這篇寫的還不錯，剛剛測試可以 work
+00:58 +0800 <sdnds-slackbot>: <takeshi>: <http://dockerpool.com/article/1420789152>
+00:58 +0800 <sdnds-slackbot>: <takeshi>: 他的 OVS 是在 Host 上面的
+01:08 +0800 <sdnds-slackbot>: <john-lin>: 你接通了嗎
+01:31 +0800 <sdnds-slackbot>: <takeshi>: 嗯嗯
+01:32 +0800 <sdnds-slackbot>: <john-lin>: 他看起來不像是容器接容器？
+01:34 +0800 <sdnds-slackbot>: <takeshi>: 不是
+01:34 +0800 <sdnds-slackbot>: <takeshi>: 他是把 docker0 抽換掉
+01:34 +0800 <sdnds-slackbot>: <john-lin>: 哦
+01:34 +0800 <sdnds-slackbot>: <john-lin>: 這樣一來你在docker上的網路都要靠ovs
+01:35 +0800 <sdnds-slackbot>: <takeshi>: hmmmmm
+01:35 +0800 <sdnds-slackbot>: <takeshi>: 我明天來寫個 script，看有沒有辦法做出 docker host 版的 mininet 好了？ XDDDDD
+01:35 +0800 <sdnds-slackbot>: <john-lin>: 感覺上會多一大堆手動操作的cmd
+01:35 +0800 <sdnds-slackbot>: <john-lin>: docker 版的mininet目前還沒看到
+01:35 +0800 <sdnds-slackbot>: <john-lin>: 之前有一個現在沒在維護了
+01:35 +0800 <sdnds-slackbot>: <john-lin>: 不知道為什麼
+01:35 +0800 <sdnds-slackbot>: <takeshi>: 喔？
+01:36 +0800 <sdnds-slackbot>: <takeshi>: 還真的有人問耶 =_=
+01:36 +0800 <sdnds-slackbot>: <john-lin>: 對呀
+01:36 +0800 <sdnds-slackbot>: <john-lin>: 還有dind的
+01:36 +0800 <sdnds-slackbot>: <john-lin>: 接近瘋狂
+01:36 +0800 <sdnds-slackbot>: <john-lin>: 哈哈
+01:36 +0800 <sdnds-slackbot>: <takeshi>: XD
+01:36 +0800 <sdnds-slackbot>: <john-lin>: docker in docker
+01:37 +0800 <sdnds-slackbot>: <takeshi>: 喔喔
+01:37 +0800 <sdnds-slackbot>: <takeshi>: 是說他的目的是什麼？
+01:37 +0800 <sdnds-slackbot>: <takeshi>: docker in docker
+01:40 +0800 <sdnds-slackbot>: <takeshi>: 明天繼續弄這塊好了
+10:34 +0800 <sdnds-slackbot>: <powen_tsai>: I heard docker in docker before
+10:34 +0800 <sdnds-slackbot>: <powen_tsai>: but I also do not understand what this is
+10:50 +0800 <sdnds-slackbot>: <rascov>: I also don't understand the purpose
+13:32 +0800 <sdnds-slackbot>: <john-lin>: <https://github.com/jpetazzo/dind>
+13:46 +0800 <sdnds-slackbot>: <powen_tsai>: <https://www.sdxcentral.com/articles/news/oops-open-container-initiative-realizes-its-horrible-mistake/2015/07/>
+13:47 +0800 <sdnds-slackbot>: <powen_tsai>: Open Container Project?
+13:46 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/j9D7Z  ==> Page Not Found - SDxCentral
+13:47 +0800 <sdnds-slackbot>: <powen_tsai>: XDDDDD
+13:47 +0800 <sdnds-slackbot>: <powen_tsai>: 竟然用Inception那顆陀螺來做DinD的說明頁面
+14:44 +0800 <sdnds-slackbot>: <takeshi>: XD
+14:44 +0800 <sdnds-slackbot>: <takeshi>:
+14:44 +0800 <sdnds-slackbot>: <takeshi>: 剛剛研究 docker 掛到 OVS 的方法就是他們把它的 namespace 拿出來，這樣就可以像 mininet 的方法去連他了
+14:44 +0800 <sdnds-slackbot>: <takeshi>:  ln -s /proc/"$PID"/ns/net /var/run/netns/"$PID"
