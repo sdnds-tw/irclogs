@@ -1,0 +1,38 @@
+10:55 +0800 <llaf>: 大家好，我是openvswitch和linux kernel開發的新手，我希望在ovs的内核datapath中添加一部分自己的代碼，但是對於如何調試卻找不到任何頭緒。我嘗試用printk輸出一些信息，但是也沒有效果。可以有前輩給出一些建議嗎？謝謝
+15:20 +0800 <llaf>: 大家好
+15:20 +0800 <llaf>: 有人嗎~
+15:33 +0800 <sdnds-slackbot>: <takeshi>: 有 O_O/
+15:34 +0800 <sdnds-slackbot>: <takeshi>: 可是我對 linux kernel 不熟 >_<
+15:34 +0800 <sdnds-slackbot>: <hwchiu>: 你是改datapath.c ?
+15:34 +0800 <sdnds-slackbot>: <hwchiu>: 你有reload openvswitch.ko ?
+15:34 +0800 <sdnds-slackbot>: <hwchiu>: 你去哪邊看 kernel message 的?
+15:43 +0800 <sdnds-slackbot>: <hwchiu>: 話說 docker + OVS
+15:43 +0800 <sdnds-slackbot>: <takeshi>: ?
+15:44 +0800 <sdnds-slackbot>: <hwchiu>: 我們公司的 docker DSM
+15:44 +0800 <sdnds-slackbot>: <hwchiu>: 就是這樣弄得
+15:44 +0800 <sdnds-slackbot>: <takeshi>: :+1:
+15:45 +0800 <sdnds-slackbot>: <hwchiu>: 概念都差不多，ns各種掛載
+15:46 +0800 <sdnds-slackbot>: <powen_tsai>: 哇
+15:46 +0800 <sdnds-slackbot>: <powen_tsai>: 邱渣
+15:46 +0800 <sdnds-slackbot>: <powen_tsai>: 最近如何啊？
+15:46 +0800 <sdnds-slackbot>: <powen_tsai>: 好久不見！
+15:46 +0800 <sdnds-slackbot>: <hwchiu>: 各種忙碌XD
+15:46 +0800 <sdnds-slackbot>: <hwchiu>: 在弄公司的 router 產品
+15:46 +0800 <sdnds-slackbot>: <powen_tsai>: 小飛機這兩天來我們公司玩switch + ONOS Controller
+15:46 +0800 <sdnds-slackbot>: <powen_tsai>: 真希望你在
+15:46 +0800 <sdnds-slackbot>: <powen_tsai>: XDDDD
+15:46 +0800 <sdnds-slackbot>: <hwchiu>: 哈哈
+15:47 +0800 <sdnds-slackbot>: <powen_tsai>: 最近貴公司消息不斷
+15:48 +0800 <sdnds-slackbot>: <hwchiu>: RD各種趕工弄功能
+15:48 +0800 <sdnds-slackbot>: <hwchiu>: 發表會後要等beta釋出，所以頗忙
+15:49 +0800 <sdnds-slackbot>: <powen_tsai>: 感覺你忙得很開心！
+15:49 +0800 <sdnds-slackbot>: <powen_tsai>: nice !
+15:49 +0800 <sdnds-slackbot>: <hwchiu>: 哈哈XD 不同領域的東西也學了不少
+15:53 +0800 <sdnds-slackbot>: <powen_tsai>: 這讓我更想hire你了！
+15:53 +0800 <sdnds-slackbot>: <powen_tsai>: hahahaha
+15:54 +0800 <sdnds-slackbot>: <powen_tsai>: NAS領域與儲存領域
+15:54 +0800 <sdnds-slackbot>: <powen_tsai>: 我也不甚懂
+15:57 +0800 <sdnds-slackbot>: <hwchiu>: 先繼續忙，之後聊~
+15:57 +0800 <sdnds-slackbot>: <hwchiu>: @llaf ~
+16:38 +0800 <sdnds-slackbot>: <powen_tsai>: sure
+16:38 +0800 <sdnds-slackbot>: <powen_tsai>: talk later
