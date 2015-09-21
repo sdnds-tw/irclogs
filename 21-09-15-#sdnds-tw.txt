@@ -1,0 +1,9 @@
+11:58 +0800 <sdnds-slackbot>: <takotsai>: <https://azure.microsoft.com/blog/microsoft-showcases-the-azure-cloud-switch-acs/>
+11:58 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/PHtKW  ==> https://azure.microsoft.com/blog/microsoft-showcases-the-azure-cloud-switch-acs/%3E
+11:58 +0800 <sdnds-slackbot>: <takotsai>: 剛剛在社群看到的 微軟的SDN交換機系統
+12:00 +0800 <sdnds-slackbot>: <takotsai>: <http://www.ithome.com.tw/news/98819>
+12:00 +0800 <sdnds-tw_Bot>: ==> | iThome
+13:57 +0800 <sdnds-slackbot>: <takeshi>: 問一下，有人玩 OpenDaylight 嗎？
+14:10 +0800 <sdnds-slackbot>: <takeshi>: 目前在做一些有關於各家 Controller 的核心(core)研究
+16:13 +0800 <sdnds-slackbot>: <powen_tsai>: Hi @takotsai  , 請教一下，你是在哪個社群看到這個新聞的啊？
+23:36 +0800 <NJ_>: hi?
