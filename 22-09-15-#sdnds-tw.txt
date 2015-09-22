@@ -1,0 +1,16 @@
+00:16 +0800 <sdnds-slackbot>: <takeshi>: Hi
+01:01 +0800 <sdnds-slackbot>: <pichuang>: <https://community.opensourcesdn.org/wg/OSSDN/workgroup/home>
+01:01 +0800 <sdnds-slackbot>: <pichuang>: 如果有人對這裏面的 workshop 有興趣的話 可以在這邊一起討論
+01:01 +0800 <sdnds-slackbot>: <pichuang>: 我現在有在看 atrium
+13:18 +0800 <sdnds-slackbot>: <powen_tsai>: 我有個問題耶
+13:18 +0800 <sdnds-slackbot>: <powen_tsai>: openflow message between OpenFlow controller and physical OpenFlow switch
+13:18 +0800 <sdnds-slackbot>: <powen_tsai>: 如果用 out-of-band 方式佈署
+13:19 +0800 <sdnds-slackbot>: <powen_tsai>: 那L2 management network for OpenFlow message
+13:19 +0800 <sdnds-slackbot>: <powen_tsai>: 這個L2 management network, 有什麼特殊要求，才能讓OpenFlow message交換？
+13:19 +0800 <sdnds-slackbot>: <powen_tsai>: 還是沒什麼特殊要求？
+13:20 +0800 <sdnds-slackbot>: <pichuang>: 沒有特殊要求
+13:20 +0800 <sdnds-slackbot>: <pichuang>: 只要 ip 連的到就好
+13:22 +0800 <sdnds-slackbot>: <pichuang>: 一般都會獨立一個網段 + 上 vlan 出來做管理
+13:22 +0800 <sdnds-slackbot>: <powen_tsai>: 瞭解
+13:22 +0800 <sdnds-slackbot>: <powen_tsai>: 感謝
+16:17 +0800 <sdnds-slackbot>: <takotsai>: @powen_tsai 我是在一個ubuntu社團的人分享的
