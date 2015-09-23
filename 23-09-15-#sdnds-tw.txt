@@ -1,0 +1,2 @@
+14:10 +0800 <sdnds-slackbot>: <powen_tsai>: 瞭解
+14:10 +0800 <sdnds-slackbot>: <powen_tsai>: NTT LAB sharing the DPDK summit 2015
