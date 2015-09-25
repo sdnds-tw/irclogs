@@ -1,0 +1,11 @@
+13:03 +0800 <sdnds-slackbot>: <pichuang>: <https://plus.google.com/events/c15ijs0234t21aepvinf1b0i5vo>
+13:03 +0800 <sdnds-tw_Bot>: ==> Google+
+22:00 +0800 <sdnds-slackbot>: <powen_tsai>: 微軟弄的SAI
+22:00 +0800 <sdnds-slackbot>: <powen_tsai>: <https://github.com/opencomputeproject/OCP-Networking-Project-Community-Contributions/tree/master/sai/doc>
+22:00 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/5gNP2  ==> https://github.com/opencomputeproject/OCP-Networking-Project-Community-Contributions/tree/master/sai/doc%3E
+22:00 +0800 <sdnds-slackbot>: <powen_tsai>: <https://azure.microsoft.com/zh-tw/blog/microsoft-showcases-the-azure-cloud-switch-acs/>
+22:00 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/daybq  ==> https://azure.microsoft.com/zh-tw/blog/microsoft-showcases-the-azure-cloud-switch-acs/%3E
+22:00 +0800 <sdnds-slackbot>: <powen_tsai>: 這個ACS要跟BigSwitch的ONL distribution打對台了
+22:01 +0800 <sdnds-slackbot>: <powen_tsai>: XDDD
+22:01 +0800 <sdnds-slackbot>: <powen_tsai>: <https://azure.microsoft.com/zh-tw/blog/microsoft-furthers-open-networking-specification/>
+22:01 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/fjPyB  ==> https://azure.microsoft.com/zh-tw/blog/microsoft-furthers-open-networking-specification/%3E
