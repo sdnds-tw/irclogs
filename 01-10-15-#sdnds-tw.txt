@@ -1,0 +1,97 @@
+21:19 +0800 <mopacko46866>: 大家好!
+21:19 +0800 <mopacko46866>: 我想請教一下,我是使用開發板,把ovs移植上去
+21:20 +0800 <mopacko46866>: 也移植成功,我現在卡在一個問題是說 我現在host接上 ovs不會通
+21:21 +0800 <mopacko46866>: 我是採用in band方式
+21:22 +0800 <sdnds-slackbot>: <pichuang>: flow entry 有下下去嗎
+21:22 +0800 <sdnds-slackbot>: <pichuang>: 查一下 flow table
+21:23 +0800 <mopacko46866>: 摁有
+21:23 +0800 <sdnds-slackbot>: <pichuang>: 上面寫什麼?
+21:23 +0800 <sdnds-slackbot>: <pichuang>: 結個圖看一下
+21:25 +0800 <mopacko46866>: 阿等等哦 在另外一台上面
+21:29 +0800 <mopacko46866>: 上面顯示說 cookie=0x0, duration=148.554s, table=0, n_packets=0, n_bytes=0, priority=0 actions=CONTROLLER 65535
+21:29 +0800 <sdnds-slackbot>: <pichuang>: 這是打到controller的
+21:29 +0800 <sdnds-slackbot>: <pichuang>: 還有嗎
+21:30 +0800 <mopacko46866>: 沒有了
+21:30 +0800 <sdnds-slackbot>: <pichuang>: 那就是沒下flow啦
+21:30 +0800 <sdnds-slackbot>: <pichuang>: 你要不要先檢查一下你到controller這端有沒有問題
+21:30 +0800 <sdnds-slackbot>: <pichuang>: 一步一步看
+21:30 +0800 <mopacko46866>: 有顯示connected_true
+21:31 +0800 <sdnds-slackbot>: <pichuang>: 那就是封包沒進去到 ovs-vswitchd 處理了
+21:31 +0800 <sdnds-slackbot>: <pichuang>: 檢查一下 dpctl 那張table有沒有相對應符合的 flow entry
+21:31 +0800 <mopacko46866>: 然後我執行simple_switch13
+21:32 +0800 <mopacko46866>: 有Event出來
+21:32 +0800 <sdnds-slackbot>: <pichuang>: event內容?
+21:38 +0800 <mopacko46866>: packet in 1
+21:38 +0800 <mopacko46866>: 中間有mac address內容 最後在1
+21:39 +0800 <mopacko46866>: 還是我在自己試試看把controller 的port獨立出來
+21:39 +0800 <sdnds-slackbot>: <pichuang>: 所以看起來是有 packet_in
+21:40 +0800 <sdnds-slackbot>: <pichuang>: packet_out 假設是正常的
+21:40 +0800 <sdnds-slackbot>: <pichuang>: 你有嘗試直接對 switch 下 flow嗎
+21:40 +0800 <sdnds-slackbot>: <pichuang>: 不要接 controller
+21:40 +0800 <sdnds-slackbot>: <pichuang>: secure mode 開 standalone
+21:41 +0800 <mopacko46866>: 我沒嘗試對switch 下flow
+21:41 +0800 <sdnds-slackbot>: <pichuang>: 試試
+21:41 +0800 <sdnds-slackbot>: <pichuang>: 感覺是 switch 本身有些問題存在
+21:41 +0800 <mopacko46866>: 摁 我來設一下看看
+21:41 +0800 <sdnds-slackbot>: <pichuang>: 你得定位出來
+21:42 +0800 <mopacko46866>: 好 謝謝您了:D
+21:42 +0800 <sdnds-slackbot>: <pichuang>: 不會
+21:42 +0800 <sdnds-slackbot>: <pichuang>: 順便請教一下你是哪所大學的
+21:42 +0800 <sdnds-slackbot>: <pichuang>: 最近是有老師在教這個嗎?
+21:42 +0800 <mopacko46866>: 義守大學
+21:42 +0800 <sdnds-slackbot>: <pichuang>: okok
+21:44 +0800 <mopacko46866>: 沒有老師做 ,是我自己找題目來做的
+21:44 +0800 <sdnds-slackbot>: <pichuang>: 哦哦 論文囉?
+21:44 +0800 <sdnds-slackbot>: <pichuang>: xd
+21:44 +0800 <sdnds-slackbot>: <pichuang>: 還是專題
+21:45 +0800 <sdnds-slackbot>: <pichuang>: 不錯啊 弄在開發版上玩
+21:45 +0800 <mopacko46866>: 可是超級麻煩...我很後悔沒用虛擬機
+21:45 +0800 <sdnds-slackbot>: <pichuang>: 為何不用?
+21:48 +0800 <mopacko46866>: 在kernel那邊 很難處理 因為剛好買的版子 記憶體有更新過 要重新自己編譯
+21:50 +0800 <sdnds-slackbot>: <pichuang>: 哦哦
+21:51 +0800 <mopacko46866>: 在make那裡卡很久 後來才知道kernel位置沒對到
+21:51 +0800 <mopacko46866>: 因為是arm的擺的跟他ovs指定要make kernel不一樣
+21:52 +0800 <sdnds-slackbot>: <pichuang>: 你最終目的是想要做成怎樣
+21:52 +0800 <sdnds-slackbot>: <pichuang>: 整個計畫
+22:47 +0800 <mopacko46866_>: 設置standalone還是一樣
+22:47 +0800 <mopacko46866_>: 這邊要如何附圖呢
+23:04 +0800 <sdnds-slackbot>: <pichuang>: 截 flow table 圖
+23:13 +0800 <mopacko46866_>: 這邊要怎麼貼圖呢
+23:13 +0800 <sdnds-slackbot>: <pichuang>: 直接拉
+23:16 +0800 <sdnds-slackbot>: <john-lin>: 他好像在irc?
+23:17 +0800 <sdnds-slackbot>: <pichuang>: 哦哦
+23:17 +0800 <sdnds-slackbot>: <pichuang>: 放imgur?
+23:17 +0800 <sdnds-slackbot>: <john-lin>: <http://imgur.com>
+23:20 +0800 <mopacko46866>: http://imgur.com/7Ampk5E
+23:20 +0800 <sdnds-tw_Bot>: ==>                        Imgur: The most awesome images on the Internet
+23:20 +0800 <sdnds-slackbot>: <pichuang>: 冏 我需要有 flow 的那張表 這個已經到253了
+23:21 +0800 <sdnds-slackbot>: <pichuang>: flow-dump
+23:25 +0800 <mopacko46866>: 你式說剛剛controller有連上的那個嗎
+23:26 +0800 <sdnds-slackbot>: <pichuang>: 不是 那個是 ovs-vsctl show  的結果
+23:26 +0800 <sdnds-slackbot>: <pichuang>: 我需要 ovs-ofctl dump-flows  xxx
+23:27 +0800 <mopacko46866>: http://imgur.com/UsjqLMa
+23:27 +0800 <sdnds-tw_Bot>: ==>                        Imgur: The most awesome images on the Internet
+23:28 +0800 <sdnds-slackbot>: <pichuang>: ovs-ofctl dump-flows  xxx
+23:29 +0800 <mopacko46866>: http://imgur.com/mwbePGc
+23:29 +0800 <sdnds-tw_Bot>: ==>                        Imgur: The most awesome images on the Internet
+23:29 +0800 <sdnds-slackbot>: <pichuang>: 你flow下下去 在dump-flow 依次
+23:29 +0800 <mopacko46866>: 好
+23:31 +0800 <mopacko46866>: 他還是一樣結果
+23:32 +0800 <sdnds-slackbot>: <pichuang>: 不要接 controller 在下下看
+23:32 +0800 <sdnds-slackbot>: <pichuang>: 看有沒有出現
+23:32 +0800 <sdnds-slackbot>: <pichuang>: 記得要調 standalone
+23:39 +0800 <mopacko46866>: 變空空
+23:39 +0800 <mopacko46866>: 只剩下版訊息
+23:39 +0800 <mopacko46866>: 版本
+23:39 +0800 <sdnds-slackbot>: <pichuang>: 下 flow 都沒東西嗎
+23:40 +0800 <mopacko46866>: 摁
+23:40 +0800 <mopacko46866>: 我在想我是不是橋接器那邊問題
+23:40 +0800 <sdnds-slackbot>: <pichuang>: 那這就是問題了 為什麼add-flow有問題
+23:41 +0800 <sdnds-slackbot>: <pichuang>: 你手動下應該要能寫進去
+23:47 +0800 <mopacko46866>: 好我再來整個check一下
+23:48 +0800 <mopacko46866>: 謝謝您
+23:59 +0800 <sdnds-slackbot>: <hwchiu>: 你最單純都不要設定
+23:59 +0800 <sdnds-slackbot>: <hwchiu>: 直接add-br xxx
+23:59 +0800 <sdnds-slackbot>: <hwchiu>: add-port
+23:59 +0800 <sdnds-slackbot>: <hwchiu>: 直接弄，應該預設會給你 normal action
+23:59 +0800 <sdnds-slackbot>: <hwchiu>: 看看有沒有
