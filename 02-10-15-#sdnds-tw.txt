@@ -1,0 +1,8 @@
+15:32 +0800 <sdnds-slackbot>: <adaam>: @pichuang: 我問了sdx support這件事情，他說請我去忘記密碼，然後重新設定密碼就好了
+15:32 +0800 <sdnds-slackbot>: <adaam>: 有沒有收到信要之後再看看．不過忘記密碼的信確定有ＸＤ
+15:39 +0800 <mopacko46866>: 阿不好意思昨天問題,是我橋接器那有問題
+15:40 +0800 <mopacko46866>: host通了 只是 在controller那裡卻沒有任何entry
+15:40 +0800 <mopacko46866>: 執行完simple_switch_13.py
+15:46 +0800 <mopacko46866>: ㄜ抱歉我controller中間好像斷開
+15:46 +0800 <mopacko46866>: 重啟看到flow entry了
+15:46 +0800 <mopacko46866>: 謝謝
