@@ -1,0 +1,10 @@
+19:47 +0800 <sdnds-slackbot>: <takeshi>: 問一下有關 OVS in-band mode 的問題
+19:47 +0800 <sdnds-slackbot>: <takeshi>: 我不確定我是不是有理解錯誤
+19:47 +0800 <sdnds-slackbot>: <takeshi>: 「如果將某台 OVS設成 in-band mode 的話，通過該 OVS 的一些特殊封包（如OpenFlow）都會用 Normal 規則去forward」
+19:47 +0800 <sdnds-slackbot>: <takeshi>: 這樣解釋對嗎？
+19:47 +0800 <sdnds-slackbot>: <takeshi>:
+19:47 +0800 <sdnds-slackbot>: <takeshi>: 參考
+19:47 +0800 <sdnds-slackbot>: <takeshi>: <http://tocai.dia.uniroma3.it/compunet-wiki/index.php/In-band_control_with_Open_vSwitch>
+19:47 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/AqLE6  ==> Error
+20:18 +0800 <sdnds-slackbot>: <john-lin>: 我的理解也是這樣
+20:46 +0800 <sdnds-slackbot>: <pichuang>: same
