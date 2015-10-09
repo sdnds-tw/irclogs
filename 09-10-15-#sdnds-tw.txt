@@ -1,0 +1,4 @@
+00:19 +0800 <sdnds-slackbot>: <takeshi>: 昨天看了一下 hidden rules，應該是沒有錯了，Thanks
+16:17 +0800 <sdnds-slackbot>: <takeshi>: <https://www.opennetworking.org/skills-engineer>
+16:17 +0800 <sdnds-slackbot>: <takeshi>: 原來 SDN 也有證照 XD
+16:17 +0800 <sdnds-tw_Bot>: ==> Error 404 - Open Networking Foundation
