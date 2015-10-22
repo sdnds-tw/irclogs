@@ -1,0 +1,10 @@
+22:54 +0800 <sdnds-slackbot>: <james>: 請問市面上有支援openflow的switch大概都要多少錢?
+22:54 +0800 <sdnds-slackbot>: <james>: 因為很多網頁都沒寫價錢XDD
+22:56 +0800 <sdnds-slackbot>: <james>: 還是這是商業機密...
+23:04 +0800 <sdnds-slackbot>: <takeshi>: 好像有聽到有到十幾萬的？（不確定
+23:07 +0800 <sdnds-slackbot>: <james>: @@
+23:08 +0800 <sdnds-slackbot>: <james>: 哇 真的好貴
+23:22 +0800 <sdnds-slackbot>: <powen_tsai>: 白牌的，1G的十萬左右吧
+23:24 +0800 <sdnds-slackbot>: <james>: 白牌是指?
+23:24 +0800 <sdnds-slackbot>: <james>: 沒有品牌?
+23:24 +0800 <sdnds-slackbot>: <james>: 不太懂 哈哈
