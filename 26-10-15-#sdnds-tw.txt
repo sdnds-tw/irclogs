@@ -1,0 +1,5 @@
+10:28 +0800 <sdnds-slackbot>: <hsiang>: http://www.sdnds.tw/ slack邀請的web app 掛了
+10:28 +0800 <sdnds-tw_Bot>: ==> SDN 開發者社群
+15:07 +0800 <sdnds-slackbot>: <pichuang>: <https://sdnds-tw.herokuapp.com>
+15:07 +0800 <sdnds-slackbot>: <pichuang>: re-deploy
+15:32 +0800 <sdnds-slackbot>: <hwchiu>: 問問題的有在這嗎
