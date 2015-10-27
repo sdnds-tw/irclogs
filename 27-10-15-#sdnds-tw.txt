@@ -1,0 +1,13 @@
+00:32 +0800 <sdnds-slackbot>: <powen_tsai>: which question?
+09:28 +0800 <sdnds-slackbot>: <hwchiu>: OVS with wireless interface.
+16:51 +0800 <sdnds-slackbot>: <takeshi>: 有人會去嗎？
+16:51 +0800 <sdnds-slackbot>: <takeshi>: <http://www.communications.org.tw/news/conference/item/8766-2015sdn.html>
+16:51 +0800 <sdnds-tw_Bot>: ==> 經濟部通訊產業發展推動小組
+22:54 +0800 <sdnds-slackbot>: <powen_tsai>: I guess I will go
+22:55 +0800 <sdnds-slackbot>: <powen_tsai>: will you go?
+23:08 +0800 <sdnds-slackbot>: <takeshi>: not sure
+23:14 +0800 <sdnds-slackbot>: <powen_tsai>: XD
+23:15 +0800 <sdnds-slackbot>: <powen_tsai>: 如果你去，我就能認識你了
+23:35 +0800 <sdnds-slackbot>: <takeshi>: XD
+23:43 +0800 <sdnds-slackbot>: <rascov>: 講者有我老闆喔
+23:44 +0800 <sdnds-slackbot>: <rascov>: <-想去但沒機票去
