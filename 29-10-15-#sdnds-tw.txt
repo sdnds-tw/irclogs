@@ -1,0 +1,9 @@
+11:57 +0800 <sdnds-slackbot>: <adaam>: floodlight耶，好久沒看到他了
+12:02 +0800 <sdnds-slackbot>: <hwchiu>: 超久
+15:07 +0800 <sdnds-slackbot>: <rascov>: 問，有人會去 OPNFV summit 嗎
+15:07 +0800 <sdnds-slackbot>: <rascov>: 在想要不要去顧攤
+21:31 +0800 <sdnds-slackbot>: <powen_tsai>: ㄟ邱渣這禮拜你在日本喔
+21:31 +0800 <sdnds-slackbot>: <powen_tsai>: 好巧喔 我也在日本耶
+21:32 +0800 <sdnds-slackbot>: <powen_tsai>: 我公司的副總會去OPNFV summit
+21:32 +0800 <sdnds-slackbot>: <powen_tsai>: 我可能要明年
+21:32 +0800 <sdnds-slackbot>: <powen_tsai>: 我現在在support日本
