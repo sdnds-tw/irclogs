@@ -1,0 +1,8 @@
+05:52 +0800 <sdnds-slackbot>: <rascov>: <https://www.kickstarter.com/projects/northboundnetworks/zodiac-fx-the-worlds-smallest-openflow-sdn-switch>
+05:52 +0800 <sdnds-slackbot>: <rascov>: 這個募資成功了欸
+05:52 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/VjPdL  ==> The page you were looking for doesn't exist (404)
+08:42 +0800 <sdnds-slackbot>: <powen_tsai>: wow so cool !
+09:43 +0800 <sdnds-slackbot>: <hwchiu>: <http://blog.docker.com/2015/11/docker-multi-host-networking-ga/>
+10:03 +0800 <sdnds-slackbot>: <hwchiu>: 還沒很確定底層怎實作VXLAN的
+11:51 +0800 <sdnds-slackbot>: <powen_tsai>: 哇賽
+11:52 +0800 <sdnds-slackbot>: <powen_tsai>: thanks for sharing
