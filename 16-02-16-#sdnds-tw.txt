@@ -1,0 +1,12 @@
+17:44 +0800 <sdnds-slackbot>: <jalen>: 突然發現....IRC LOG BOT死了一陣子Orz
+17:44 +0800 <sdnds-slackbot>: <jalen>: 該找時間改成g0v那種IRC LOG模式了...
+18:58 +0800 <sdnds-slackbot>: <takeshi>: 只是目前 irc 那邊還有人？
+18:58 +0800 <sdnds-slackbot>: <jalen>: sync
+18:59 +0800 <sdnds-slackbot>: <takeshi>: 喔喔
+19:13 +0800 <sdnds-slackbot>: <davy>: g0v 的真的很方便
+19:14 +0800 <S3p_lin_>: <- irc 這邊的人
+19:17 +0800 <sdnds-slackbot>: <jalen>: sync一直活著....log掛了XD
+19:17 +0800 <sdnds-slackbot>: <jalen>: 我找個時間整理這邊遺失的LOG好了
+19:17 +0800 <sdnds-slackbot>: <jalen>: 恩恩.....或許找個時間轉成g0v模式
+22:09 +0800 <sdnds-slackbot>: <pichuang>: 對社群有益的
+22:09 +0800 <sdnds-slackbot>: <pichuang>: do it
