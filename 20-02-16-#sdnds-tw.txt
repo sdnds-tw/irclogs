@@ -1,0 +1,7 @@
+01:54 +0800 <sdnds-slackbot>: <pichuang>: 剛在 sdnds-tw github上開了一個專案
+01:54 +0800 <sdnds-slackbot>: <pichuang>: <https://github.com/sdnds-tw/ONIE_Installation>
+01:54 +0800 <sdnds-slackbot>: <pichuang>: 我打算把 onie 相關的一些編譯產出物 open出來
+01:54 +0800 <sdnds-slackbot>: <pichuang>: 讓後續的人比較簡單上手
+01:55 +0800 <sdnds-slackbot>: <pichuang>: 但文件的話我還沒寫
+01:55 +0800 <sdnds-slackbot>: <pichuang>: 有興趣的人可以先看相簿
+01:55 +0800 <sdnds-slackbot>: <pichuang>: 相簿是為了後續寫文章用的
