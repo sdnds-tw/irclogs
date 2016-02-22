@@ -1,0 +1,2 @@
+13:13 +0800 <sdnds-slackbot>: <pichuang>: 這邊有人玩過 as5712 + openswitch 嗎
+13:14 +0800 <sdnds-slackbot>: <rascov>: 沒有，只有玩過 5712 + OFDPA
