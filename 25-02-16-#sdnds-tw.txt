@@ -1,0 +1,18 @@
+19:34 +0800 <sdnds-slackbot>: <lin199281715>: 大家好，最近剛開始研究openflow spec有許多困難XD，所以有一些問題想要請教大家，
+19:34 +0800 <sdnds-slackbot>: <lin199281715>: 1.在flow table內做match時，會找出highest priority的entry做比對，想請問是如何找到highest priority?
+19:34 +0800 <sdnds-slackbot>: <lin199281715>: 是會先做排序的動作將priority在flow table內由高至低排好，當packet進來的時候就可以從第一條依序做match嗎?
+19:34 +0800 <sdnds-slackbot>: <lin199281715>:
+19:34 +0800 <sdnds-slackbot>: <lin199281715>: 2.spec1.3.2內提到有許多條same highest priority的entry時，應該要選擇哪一條好像尚未定義，
+19:34 +0800 <sdnds-slackbot>: <lin199281715>: 因此在實測上假設10條same highest priority，想請問這10條都要依序去比對嗎有比對的順序嗎?
+19:34 +0800 <sdnds-slackbot>: <lin199281715>:
+19:34 +0800 <sdnds-slackbot>: <lin199281715>: 3.對於match的方法，也有去看openvswitch的sourec code，裡面有提及hash，但spec好像沒有定義?!
+19:34 +0800 <sdnds-slackbot>: <lin199281715>: 對於hash目前還不太了解，大概知道是利用key將資料轉成一組值，再利用值去快速比對到需要的rule，
+19:34 +0800 <sdnds-slackbot>: <lin199281715>: sourec code提及的packet先跟wildcard做mask之後再做hash的意思和意義?是做完之後就可以直接找到需要的flow rule嗎?
+19:34 +0800 <sdnds-slackbot>: <lin199281715>: 那跟上述說先找highest priority的entry做比對的的match就都不一樣了?
+19:53 +0800 <sdnds-slackbot>: <hwchiu>: 1) designed by switch.  OVS 會用 tree + hash 來處理，然後最高優先的就會被先match到
+19:54 +0800 <sdnds-slackbot>: <hwchiu>: 2) 未定義，看 switch 怎麼實作
+19:55 +0800 <sdnds-slackbot>: <hwchiu>: 3) spec 沒規定怎麼實作，所以你看不同的 switch 有不同的做法。
+19:55 +0800 <sdnds-slackbot>: <hwchiu>: 你看的match是 kernel 內的 flow table，還是 user space 上的 flow table (真正 controller 看到的 flow table)?
+19:59 +0800 <sdnds-slackbot>: <hwchiu>: 我快兩年沒有看那些了， 目的是為了加速查詢，但是中間過程我忘光了
+21:05 +0800 <sdnds-slackbot>: <lin199281715>: 目前match是看kernel內的flow table，在kernel不是不考慮wildcard的部分?
+21:29 +0800 <sdnds-slackbot>: <hwchiu>: OVS 2.1(忘了確切版本) 後有了，稱為 mega flow 吧
