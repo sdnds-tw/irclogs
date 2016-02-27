@@ -1,0 +1,15 @@
+03:39 +0800 <sdnds-slackbot>: <rascov>: <https://gerrit.onosproject.org/#/c/7959/>
+03:39 +0800 <sdnds-tw_Bot>: ==> Gerrit Code Review
+03:39 +0800 <sdnds-slackbot>: <rascov>: @takeshi: P4 專家什麼看法 XD
+07:18 +0800 <sdnds-slackbot>: <takeshi>: 有點猛
+07:18 +0800 <sdnds-slackbot>: <takeshi>: 等等來看看
+16:09 +0800 <sdnds-slackbot>: <takeshi>: 剛剛 review 了一下，感覺好像有一些地方要加強 O_O
+16:13 +0800 <sdnds-slackbot>: <takeshi>: OpenFlow Switch : Switch 主動連接 Controller
+16:13 +0800 <sdnds-slackbot>: <takeshi>: P4 Switch : Controller 主動連接 Switch
+16:13 +0800 <sdnds-slackbot>: <takeshi>:
+16:13 +0800 <sdnds-slackbot>: <takeshi>: ONOS 的作法看起來就是直接開一個 Client 去連接 Switch，舉例來說 Bmv2PortGetterDriver 的 getPorts 實作中有一個 new Bmv2ThriftClient(…) 建立連線
+16:13 +0800 <sdnds-slackbot>: <takeshi>:
+16:13 +0800 <sdnds-slackbot>: <takeshi>: 這邊有兩個問題：
+16:13 +0800 <sdnds-slackbot>: <takeshi>: 1. 似乎沒有呼叫 Close
+16:23 +0800 <sdnds-slackbot>: <rascov>: 2 的意思是變成 persistent 嗎
+16:32 +0800 <sdnds-slackbot>: <takeshi>: 算吧？
