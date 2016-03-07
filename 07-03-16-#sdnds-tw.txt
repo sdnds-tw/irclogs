@@ -1,0 +1,1 @@
+10:40 +0800 <sdnds-slackbot>: <takeshi>: 我發現我錯了，他們在做 P4 ThriftCLient 時有一個 static 的 CLIENT_CACHE 變數 :stuck_out_tongue:
