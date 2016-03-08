@@ -1,0 +1,33 @@
+00:38 +0800 <sdnds-slackbot>: <takeshi>: @pichuang:
+00:38 +0800 <sdnds-slackbot>: <takeshi>: Software Defined Network Developer Society
+00:38 +0800 <sdnds-slackbot>: <takeshi>: 是不是要改成
+00:38 +0800 <sdnds-slackbot>: <takeshi>: Software-Defined Networking Developer Society ?
+00:38 +0800 <sdnds-slackbot>: <takeshi>: 會比較好？ >_<
+00:53 +0800 <sdnds-slackbot>: <pichuang>: 無意見xd
+00:53 +0800 <sdnds-slackbot>: <pichuang>: <-英文不是很好
+00:55 +0800 <sdnds-slackbot>: <takeshi>: 我最近才知道我一直念錯，是 Network”ing” 而不是 Network XDD
+01:03 +0800 <sdnds-slackbot>: <pichuang>: xd
+01:04 +0800 <sdnds-slackbot>: <pichuang>: 那就..改吧xd
+01:04 +0800 <sdnds-slackbot>: <pichuang>: 但網站權限誰有啊xd
+01:09 +0800 <Mountain>: hi
+01:11 +0800 <sdnds-slackbot>: <pichuang>: hihi
+01:12 +0800 <sdnds-slackbot>: <jalen>: @john-lin: 可以上傳修改，新的網頁是他當初做的
+01:12 +0800 <sdnds-slackbot>: <jalen>: 雖然我也可以直接改XD...
+01:15 +0800 <sdnds-slackbot>: <john-lin>: @jalen:  上次你私訊給我的密碼沒記下來..
+01:15 +0800 <sdnds-slackbot>: <john-lin>: 只有在改的那時候有用
+01:15 +0800 <sdnds-slackbot>: <john-lin>: 現在都忘了
+01:15 +0800 <sdnds-slackbot>: <jalen>: XDDDD
+01:16 +0800 <sdnds-slackbot>: <jalen>: 我自己都忘了密碼XD...
+01:16 +0800 <sdnds-slackbot>: <jalen>: 我去改一下好了
+01:16 +0800 <sdnds-slackbot>: <jalen>: 我直接去改一下網頁
+01:16 +0800 <sdnds-slackbot>: <jalen>: 應該不會跑版吧
+01:16 +0800 <sdnds-slackbot>: <john-lin>: 改字不會
+01:21 +0800 <sdnds-slackbot>: <jalen>: Done~這樣?
+03:03 +0800 <sdnds-slackbot>: <takeshi>: @pichuang:  @rascov  ONS 應該用這個 Demo
+03:03 +0800 <sdnds-slackbot>: <takeshi>: <https://www.facebook.com/767608673382918/videos/771654456311673/>
+03:03 +0800 <sdnds-tw_Bot>: ==> Log into Facebook | Facebook
+17:06 +0800 <sdnds-slackbot>: <takeshi>: 之後我 P4 的文章會移到這邊
+17:06 +0800 <sdnds-slackbot>: <takeshi>: http://p4tw.org
+17:06 +0800 <sdnds-tw_Bot>: ==> P4 台灣非官方社群 – P4 相關研究及推廣
+17:06 +0800 <sdnds-slackbot>: <takeshi>:
+17:06 +0800 <sdnds-slackbot>: <takeshi>: 不過我應該也只有閒暇時間可以寫 XD
