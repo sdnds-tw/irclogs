@@ -1,0 +1,21 @@
+00:44 +0800 <sdnds-slackbot>: <pichuang>: 話說好久沒辦活動了 如果我在台北辦個黑客松活動 目標是 "實際貢獻任一 sdn/nfv 相關專案程式碼” 當作活動主軸, 沒有排名也沒有獎項, 這樣的活動各位會有興趣嗎?
+00:46 +0800 <sdnds-slackbot>: <pichuang>: 實際執行大概是 “Find bug, Fix it, Find bug, Fix it...(loop)"
+00:47 +0800 <sdnds-slackbot>: <pichuang>: 或者是從各專案現有的 issue tracker 裡面找尋議題來解
+06:50 +0800 <sdnds-slackbot>: <powen_tsai>: 我可以出獎項？
+06:51 +0800 <sdnds-slackbot>: <powen_tsai>: SDN獎項：一台switch+PicOS license+一年support之類的？
+06:52 +0800 <sdnds-slackbot>: <powen_tsai>: NFV獎項：一台SAF4121?
+09:43 +0800 <sdnds-slackbot>: <hwchiu>: 比較麻煩的是，可能部分專案都必須要有相對應的架構才可以運行XD
+09:43 +0800 <sdnds-slackbot>: <hwchiu>: 可能要測試issue的環境就麻煩到哭
+09:44 +0800 <sdnds-slackbot>: <powen_tsai>: 這部份不容易克服
+13:28 +0800 <sdnds-slackbot>: <pichuang>: 這個...就是 issue 要挑的好 xd
+13:30 +0800 <sdnds-slackbot>: <powen_tsai>: 所以是挑一個issue, 每隊拼最快解？
+13:32 +0800 <sdnds-slackbot>: <pichuang>: 恩...最快解倒也不好
+13:32 +0800 <sdnds-slackbot>: <pichuang>: 我再想想
+13:32 +0800 <sdnds-slackbot>: <pichuang>: 品質至上
+13:43 +0800 <sdnds-slackbot>: <powen_tsai>: 且如果SDN 新手也有興趣呢？
+14:08 +0800 <sdnds-slackbot>: <pichuang>: hmmm
+14:08 +0800 <sdnds-slackbot>: <pichuang>: 只能教 ryu + mininet
+14:08 +0800 <sdnds-slackbot>: <pichuang>: xd
+14:09 +0800 <sdnds-slackbot>: <pichuang>: 然後從 ryu 或 mininet方面著手改進
+18:55 +0800 <sdnds-slackbot>: <pichuang>: <https://www.youtube.com/watch?v=Ul_vgUUSEu4>
+18:55 +0800 <sdnds-tw_Bot>: ==> NEC Enterprise Solution 標的型攻擊對策 - YouTube
