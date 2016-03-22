@@ -1,0 +1,13 @@
+23:27 +0800 <sdnds-slackbot>: <john-lin>: 這邊有玩過 openwrt + ovs 用meter去實現qos的嗎
+23:29 +0800 <sdnds-slackbot>: <john-lin>: 不知道 meter 有沒有在 openwrt + ovs 裡面實作？
+23:29 +0800 <sdnds-slackbot>: <pichuang>: 我是沒玩過 但是清大好像有人去年問過我同樣問題= =
+23:32 +0800 <sdnds-slackbot>: <john-lin>: 他們蠻悲劇的 最近還在問我們這個問題
+23:34 +0800 <sdnds-slackbot>: <john-lin>: <https://github.com/openvswitch/ovs/blob/master/FAQ.md#q-does-open-vswitch-support-openflow-meters>
+23:34 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/sr8zO  ==> ovs/FAQ.md at master · openvswitch/ovs · GitHub
+23:35 +0800 <sdnds-slackbot>: <john-lin>: ovs 沒有 meter 的 implementation
+23:35 +0800 <sdnds-slackbot>: <john-lin>: 所以可以合理推斷 各家switch 都是自己實作 openwrt 應該沒有這種功能
+23:35 +0800 <sdnds-slackbot>: <john-lin>: 不知道有沒有人有其他看法？
+23:36 +0800 <sdnds-slackbot>: <pichuang>: openwrt 只是個 os 他沒有提供meter的功能很合理
+23:36 +0800 <sdnds-slackbot>: <pichuang>: 其他我就不太清楚了 要研究一下
+23:37 +0800 <sdnds-slackbot>: <john-lin>: 恩 最近有其他出ap 的廠商做專門的 openflow wifi ap嗎
+23:41 +0800 <sdnds-slackbot>: <pichuang>: 好問題耶 這我倒不知道xd
