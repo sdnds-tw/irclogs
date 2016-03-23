@@ -1,0 +1,11 @@
+00:02 +0800 <sdnds-slackbot>: <hwchiu>: 印象沒有
+00:02 +0800 <sdnds-slackbot>: <hwchiu>: 沒市場吧
+00:04 +0800 <sdnds-slackbot>: <pichuang>: 誒不對啊邱牛你家的wifi 不是有塞ovs
+00:04 +0800 <sdnds-slackbot>: <john-lin>: XD 真的喔
+00:08 +0800 <sdnds-slackbot>: <john-lin>: RT1900ac 這台嗎
+00:13 +0800 <sdnds-slackbot>: <hwchiu>: 沒啊
+00:14 +0800 <sdnds-slackbot>: <hwchiu>: 我沒有build進去
+00:16 +0800 <sdnds-slackbot>: <hwchiu>: 只有NAS
+00:17 +0800 <sdnds-slackbot>: <john-lin>: 哪一款型號的 NAS 有裝 ovs ?
+00:17 +0800 <sdnds-slackbot>: <john-lin>: 想看一下官方的簡介
+00:17 +0800 <sdnds-slackbot>: <hwchiu>: Support DDSM or VDSM
