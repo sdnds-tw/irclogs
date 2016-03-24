@@ -1,0 +1,54 @@
+12:55 +0800 <sdnds-slackbot>: <pichuang>: Open Networking Summit (ONS) 2016 ‪#‎ONS2016‬
+12:55 +0800 <sdnds-slackbot>: <pichuang>: Watch 175+ Recorded Sessions <https://url.fit/ZtN68>
+12:55 +0800 <sdnds-slackbot>: <pichuang>: Session Slides <https://url.fit/ZwNKV>
+12:55 +0800 <sdnds-slackbot>: <pichuang>: 多數影片都放出來了 有興趣的可以自行查閱
+12:55 +0800 <sdnds-tw_Bot>: ==> UrlFit - Your Powerful URL shortener
+12:55 +0800 <sdnds-tw_Bot>: ==> UrlFit - Your Powerful URL shortener
+17:23 +0800 <sdnds-slackbot>: <takeshi>: 結果剛入手的小 Switch，他只有 3 個 Port 可以用，其中一個是連 Controller 用的..
+17:23 +0800 <sdnds-slackbot>: <john-lin>: 有wifi/
+17:25 +0800 <sdnds-slackbot>: <takeshi>: no
+17:26 +0800 <sdnds-slackbot>: <john-lin>: 這塊要自己裝ovs嗎？
+17:42 +0800 <sdnds-slackbot>: <takeshi>: 他是直接韌體去處理
+17:43 +0800 <sdnds-slackbot>: <john-lin>: 剛看到你在fb po的文章了 買來就支援 openflow13?
+17:50 +0800 <sdnds-slackbot>: <takeshi>: 他可以切換版本
+17:50 +0800 <sdnds-slackbot>: <takeshi>: 目前 1.3 好像也還是在 beta 的樣子
+18:18 +0800 <sdnds-slackbot>: <pichuang>: 好像有點猛
+18:18 +0800 <sdnds-slackbot>: <pichuang>: 一張多少元啊
+18:18 +0800 <sdnds-slackbot>: <pichuang>: 台幣
+18:19 +0800 <sdnds-slackbot>: <john-lin>: 想知道跟 ryu 可以連嗎？
+18:19 +0800 <sdnds-slackbot>: <john-lin>: 台灣不知道有沒有管道可以購買？
+18:20 +0800 <sdnds-slackbot>: <john-lin>: @pichuang: 官網 $99.00 AUD
+18:21 +0800 <sdnds-slackbot>: <john-lin>: 2414 NTD
+18:22 +0800 <sdnds-slackbot>: <pichuang>: 我想一下我買回來可以幹麻...
+18:22 +0800 <sdnds-slackbot>: <pichuang>: 放在我家 routeros 前面 然後做一些flow 控制
+18:23 +0800 <sdnds-slackbot>: <john-lin>: 這種小台的交換機 聚會或黑客松的時候蠻適合的
+18:24 +0800 <sdnds-slackbot>: <john-lin>: 做些概念驗證性的小專案
+18:28 +0800 <sdnds-slackbot>: <pichuang>: 有道理 但是它支援的protocol 完不完整可能要測一下才知道
+18:30 +0800 <sdnds-slackbot>: <john-lin>: 嗯嗯 想買一台XD
+20:28 +0800 <sdnds-slackbot>: <powen_tsai>: 要來開團購嗎？
+20:29 +0800 <sdnds-slackbot>: <takeshi>: XD
+20:29 +0800 <sdnds-slackbot>: <powen_tsai>: 我也想買
+20:29 +0800 <sdnds-slackbot>: <powen_tsai>: Takeshi做主購嗎XD
+20:29 +0800 <sdnds-slackbot>: <takeshi>: 我已經有啦 XD
+20:29 +0800 <sdnds-slackbot>: <takeshi>: 你們自己買 XD
+20:30 +0800 <sdnds-slackbot>: <powen_tsai>: 也是...QQ
+20:30 +0800 <sdnds-slackbot>: <powen_tsai>: 有網頁嗎？
+20:30 +0800 <sdnds-slackbot>: <powen_tsai>: 看你網誌？
+20:30 +0800 <sdnds-slackbot>: <john-lin>: @takeshi:  跟ryu 可以連嗎
+20:31 +0800 <sdnds-slackbot>: <takeshi>: @powen_tsai: 這幾天太累了，還沒寫
+20:31 +0800 <sdnds-slackbot>: <takeshi>: @john-lin: 還沒有測試過，正要測試
+20:38 +0800 <sdnds-slackbot>: <powen_tsai>: 期待網誌分享啊
+20:48 +0800 <sdnds-slackbot>: <takeshi>: _____             ___               _______  __
+20:48 +0800 <sdnds-slackbot>: <takeshi>: /__  /  ____  ____/ (_)___ ______   / ____/ |/ /
+20:48 +0800 <sdnds-slackbot>: <takeshi>:   / /  / __ \/ __  / / __ `/ ___/  / /_   |   /
+20:48 +0800 <sdnds-slackbot>: <takeshi>:  / /__/ /_/ / /_/ / / /_/ / /__   / __/  /   |
+20:48 +0800 <sdnds-slackbot>: <takeshi>: /____/\____/\__,_/_/\__,_/\___/  /_/    /_/|_|
+20:48 +0800 <sdnds-slackbot>: <takeshi>:             by Northbound Networks
+20:48 +0800 <sdnds-slackbot>: <takeshi>:
+20:48 +0800 <sdnds-slackbot>: <takeshi>:
+20:48 +0800 <sdnds-slackbot>: <takeshi>: Type 'help' for a list of available commands
+20:48 +0800 <sdnds-slackbot>: <takeshi>:
+20:48 +0800 <sdnds-slackbot>: <takeshi>: Zodiac_FX#
+20:53 +0800 <sdnds-slackbot>: <takeshi>: 有人手邊有 thunderblot ethernet adapter 可以借一下嗎？
+22:46 +0800 <sdnds-slackbot>: <pichuang>: <-
+22:47 +0800 <sdnds-slackbot>: <pichuang>: 但要等我晚上回新竹 才能給你 不然你就要來電資找我領xd
