@@ -1,0 +1,20 @@
+00:02 +0800 <sdnds-slackbot>: <takeshi>: 剛剛在整理 ONS2016 (SOSR Openning Keynote) 的筆記
+00:02 +0800 <sdnds-slackbot>: <takeshi>: Open Flow has failed
+00:02 +0800 <sdnds-slackbot>: <takeshi>:
+00:02 +0800 <sdnds-slackbot>: <takeshi>: Failed at what ?
+00:02 +0800 <sdnds-slackbot>: <takeshi>: 1. Creating an ecosystem at independent controller and switch
+00:02 +0800 <sdnds-slackbot>: <takeshi>: 2. Breaking the stronghold of hardware vendors on switching
+00:02 +0800 <sdnds-slackbot>: <takeshi>: 3. Enabling faster innovation in networking
+00:02 +0800 <sdnds-slackbot>: <takeshi>:
+00:02 +0800 <sdnds-slackbot>: <takeshi>: SOSR 沒有錄影，當時也沒有記錄到細節，有人有印象具體的內容嗎？ XD
+01:34 +0800 <sdnds-slackbot>: <rascov>: 1. 是說根本沒有人會 controller 跟 switch 買不同家，都是買整個 solution
+01:34 +0800 <sdnds-slackbot>: <rascov>: 2. 3. 我也有點忘了
+01:35 +0800 <sdnds-slackbot>: <rascov>: anyway, I totally agree OpenFlow sucks XD
+01:39 +0800 <sdnds-slackbot>: <takeshi>: Keynote 還有一句話：“Think beyond ‘standard’ SDN”
+01:39 +0800 <sdnds-slackbot>: <takeshi>: Yeah, OpenFlow sucks XD
+09:27 +0800 <sdnds-slackbot>: <adaam>: 為什麼openflow被唾棄啊ＸＤ  他不是一開始ＳＤＮ的始祖嗎？
+09:53 +0800 <sdnds-slackbot>: <rascov>: 通常第一代的東西都有缺點啊
+11:40 +0800 <sdnds-slackbot>: <adaam>: 這個可以理解，只是想知道為什麼說sucks
+11:40 +0800 <sdnds-slackbot>: <adaam>: 之前一開始在弄的時候覺得他感覺滿簡單易懂的
+15:26 +0800 <sdnds-slackbot>: <takeshi>: "Think beyond ‘standard’ SDN” — SOSR Keynote
+15:27 +0800 <sdnds-slackbot>: <takeshi>: OpenFlow 能處理的封包還是很固定，看看 P4 (堆坑
