@@ -1,0 +1,22 @@
+21:59 +0800 <sdnds-slackbot>: <pichuang>: coscup
+21:59 +0800 <sdnds-slackbot>: <pichuang>: 有 workshop 3 hr
+22:00 +0800 <sdnds-slackbot>: <pichuang>: 我在想這個會議的 workshop 都比較偏向推廣
+22:01 +0800 <sdnds-slackbot>: <pichuang>: 我想要弄個 ONOS 跟 Mininet 的教學
+22:01 +0800 <sdnds-slackbot>: <pichuang>: 動手操作的那種
+22:02 +0800 <sdnds-slackbot>: <pichuang>: 如果 @takeshi 的 sdn-ip-example 如果到那時候可以運作, 也可以融入進去
+22:02 +0800 <sdnds-slackbot>: <pichuang>: 各位覺得如何?
+22:03 +0800 <sdnds-slackbot>: <pichuang>: onos
+22:03 +0800 <sdnds-slackbot>: <pichuang>: 1. 下載
+22:03 +0800 <sdnds-slackbot>: <pichuang>: 2. 安裝
+22:03 +0800 <sdnds-slackbot>: <pichuang>: 3. 選擇版本 branch
+22:03 +0800 <sdnds-slackbot>: <pichuang>: 4. 基本 karaf 指令教學
+22:03 +0800 <sdnds-slackbot>: <pichuang>: 5. 基本 web gui 教學
+22:03 +0800 <sdnds-slackbot>: <pichuang>: 6. 更新 onos
+22:05 +0800 <sdnds-slackbot>: <pichuang>: mininet
+22:05 +0800 <sdnds-slackbot>: <pichuang>: 1. 下載
+22:05 +0800 <sdnds-slackbot>: <pichuang>: 2. 安裝
+22:05 +0800 <sdnds-slackbot>: <pichuang>: 3. 快速介紹 mininet (只要有 legacy switch + sdn switch + host 的概念就好)
+22:05 +0800 <sdnds-slackbot>: <pichuang>: 4. 客製自己的 topology (現場不會讓他們慢慢寫 直接拿定義好的用)
+22:05 +0800 <sdnds-slackbot>: <pichuang>: 5. 基本 mininet 指令操作
+22:05 +0800 <sdnds-slackbot>: <pichuang>: 6. 結合 onos 介紹
+22:06 +0800 <sdnds-slackbot>: <pichuang>: Topic of the workshop / 工作坊主題 <- 幫忙集思廣益一下
