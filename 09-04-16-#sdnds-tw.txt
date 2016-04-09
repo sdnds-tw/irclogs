@@ -1,0 +1,13 @@
+10:04 +0800 <sdnds-slackbot>: <powen_tsai>: <http://git.openswitch.net/cgit/openswitch/ops-switchd-p4switch-plugin/tree/>
+10:04 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/5xJfG  ==> openswitch/ops-switchd-p4switch-plugin - OpenSwitch P4 switch OVS plugin
+10:04 +0800 <sdnds-slackbot>: <powen_tsai>: Information about how P4 switch simulation platform is integrated into OpenSwitch can be found here (DESIGN.md). Also what current version of switch.p4 is capable of (README.md) and other info:
+10:04 +0800 <sdnds-slackbot>: <powen_tsai>: This is cool
+10:09 +0800 <sdnds-slackbot>: <pichuang>: OpenSwitch 沒到六月正式發 release version 前, 都看看就好 XD
+10:09 +0800 <sdnds-slackbot>: <powen_tsai>: XDDD
+10:11 +0800 <sdnds-slackbot>: <rascov>: @pichuang: 安安踩地雷大隊
+10:14 +0800 <sdnds-slackbot>: <pichuang>: 號稱 2500 人月投入
+10:14 +0800 <sdnds-slackbot>: <pichuang>: 沒有一版可以動
+10:14 +0800 <sdnds-slackbot>: <pichuang>: 所以請容我再度強調 六月之前 看看就好
+10:14 +0800 <sdnds-slackbot>: <rascov>: 人多又沒用
+10:15 +0800 <sdnds-slackbot>: <powen_tsai>: 投入做研究XD
+10:15 +0800 <sdnds-slackbot>: <pichuang>: 我都不知道他們到底怎麼測試的
