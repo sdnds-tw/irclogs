@@ -1,0 +1,9 @@
+17:17 +0800 <sdnds-slackbot>: <takeshi>: 糟糕 =“=
+17:17 +0800 <sdnds-slackbot>: <takeshi>: gobgp 的 port  好像鎖死了....
+17:17 +0800 <sdnds-slackbot>: <takeshi>: <https://github.com/osrg/gobgp/blob/311324fab8bf7d9e39365d53f7e810af90476d85/server/fsm.go#L293>
+17:17 +0800 <sdnds-slackbot>: <takeshi>:
+17:17 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/FMGY8  ==> gobgp/fsm.go at 311324fab8bf7d9e39365d53f7e810af90476d85 · osrg/gobgp · GitHub
+17:17 +0800 <sdnds-slackbot>: <takeshi>: ONOS 是在 2000 port
+17:17 +0800 <sdnds-slackbot>: <takeshi>: 指能自己改了嗎？ XD
+22:52 +0800 <sdnds-slackbot>: <takeshi>: 結果不知不覺 awesome-sdn 長到 16 顆星星了耶....
+23:46 +0800 <sdnds-slackbot>: <takeshi>: 成就達成，在不會 go 語言的情況下在 gobgp 中加入新 Feature…….
