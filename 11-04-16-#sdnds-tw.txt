@@ -1,0 +1,16 @@
+00:34 +0800 <sdnds-slackbot>: <pichuang>: ooopp
+16:18 +0800 <sdnds-slackbot>: <takeshi>: <https://github.com/osrg/gobgp/pull/833>
+16:18 +0800 <sdnds-slackbot>: <takeshi>:
+16:18 +0800 <sdnds-slackbot>: <takeshi>: CI 過了，等他們 review XD
+16:28 +0800 <sdnds-slackbot>: <pichuang>: 是還蠻屌的
+17:17 +0800 <sdnds-slackbot>: <takeshi>: GG, GoBGP 沒辦法像 Quagga 一樣，設定 BGP network
+17:17 +0800 <sdnds-slackbot>: <takeshi>: 但是可以用 RIB 指令設定..
+17:29 +0800 <sdnds-slackbot>: <takeshi>: 正確的 route 出來了，但還是 ping 不到..
+17:36 +0800 <sdnds-slackbot>: <takeshi>: amlight router, kreonet router, gobgp1 and gobgp2 route 都正常
+17:36 +0800 <sdnds-slackbot>: <takeshi>: 可能是我 SDN-IP 用法有誤 O_O
+18:21 +0800 <sdnds-slackbot>: <pichuang>: bgp-routes ?
+18:22 +0800 <sdnds-slackbot>: <pichuang>: bgp-neighbor
+18:22 +0800 <sdnds-slackbot>: <pichuang>: 看一下
+18:26 +0800 <sdnds-slackbot>: <takeshi>: 先吃個飯，晚點看看
+23:42 +0800 <sdnds-slackbot>: <rascov>: ONOS 必須學到 next-hop 的 host 資訊才能 program flow
+23:42 +0800 <sdnds-slackbot>: <rascov>: 看一下你的 hosts 有沒有 192.168.{2,3}.11
