@@ -1,0 +1,57 @@
+00:01 +0800 <sdnds-slackbot>: <rascov>: GJ. Did you override the default font in your browser? It doesn’t seem similar to mine.
+00:04 +0800 <sdnds-slackbot>: <takeshi>: I don’t know, I use 100% size, and use Chrome from OSX
+00:08 +0800 <sdnds-slackbot>: <rascov>: hmm anyway
+00:10 +0800 <sdnds-slackbot>: <pichuang>: 狂
+00:14 +0800 <sdnds-slackbot>: <takeshi>: 然後扔給 GoBGP 的 PR 也被收進去了 XD
+00:15 +0800 <sdnds-slackbot>: <rascov>: 所以我現在可以結論 SDN-IP + GoBGP 會 work 嗎
+00:16 +0800 <sdnds-slackbot>: <rascov>: Quagga 可以直接被取代？
+00:16 +0800 <sdnds-slackbot>: <takeshi>: 嗯.... 把它上到 NCTU-site 看看？
+00:16 +0800 <sdnds-slackbot>: <takeshi>:
+00:16 +0800 <sdnds-slackbot>: <takeshi>: 其實 GoBGP 跟 Quagga 還是有一點點差異
+00:17 +0800 <sdnds-slackbot>: <takeshi>: 舉例來說 Quagga 可以透過文件設定一台 Router 去廣播說他後面有哪些網路（IP）
+00:17 +0800 <sdnds-slackbot>: <rascov>: 可是你 route 都可以 push 了應該就沒問題了吧
+00:17 +0800 <sdnds-slackbot>: <takeshi>: 但是 GoBGP 需要手動設定，不能靠文件
+00:17 +0800 <sdnds-slackbot>: <rascov>: detail 暫時不 care
+00:17 +0800 <sdnds-slackbot>: <takeshi>: 對，原則上沒有問題
+00:17 +0800 <sdnds-slackbot>: <rascov>: got it.
+00:18 +0800 <sdnds-slackbot>: <takeshi>: 不然我們來把 NCTU 這座城改改看看？
+00:23 +0800 <sdnds-slackbot>: <rascov>: 可以跟 Luca 討論看看
+00:27 +0800 <sdnds-slackbot>: <takeshi>: 還是在花些 $$ 建另一做 XD
+00:30 +0800 <sdnds-slackbot>: <rascov>: 感覺交大沒錢讓你建第二座 XD
+00:30 +0800 <sdnds-slackbot>: <takeshi>: :joy:
+00:38 +0800 <sdnds-slackbot>: <pichuang>: 應該是沒錢建  xd
+00:39 +0800 <sdnds-slackbot>: <pichuang>: 感覺應該可以換
+00:39 +0800 <sdnds-slackbot>: <pichuang>: 還是改一邊試試?
+00:40 +0800 <sdnds-slackbot>: <pichuang>: 如果設定沒啥問題 應該是可以動
+00:46 +0800 <sdnds-slackbot>: <takeshi>: BTW, Fujita san 知道我在搞 SDN-IP + gobgp
+00:49 +0800 <sdnds-slackbot>: <rascov>: Ryu 那位？
+01:10 +0800 <sdnds-slackbot>: <takeshi>: 應該是
+01:10 +0800 <sdnds-slackbot>: <takeshi>: 我是在 gobgp 裡面講的
+01:10 +0800 <sdnds-slackbot>: <takeshi>: 對，NTT的
+01:10 +0800 <sdnds-slackbot>: <takeshi>: <mailto:fujita.tomonori@lab.ntt.co.jp|fujita.tomonori@lab.ntt.co.jp>
+01:35 +0800 <sdnds-slackbot>: <rascov>: got it
+04:48 +0800 <sdnds-slackbot>: <rascov>: <https://github.com/sdnds-tw/SDN-IP-Example-VM>
+04:48 +0800 <sdnds-slackbot>: <rascov>: 這個你們有興趣 contribute 到 upstream 嗎
+05:02 +0800 <sdnds-slackbot>: <takeshi>: 你說 ONOS/ON.Lab 嗎？
+05:04 +0800 <sdnds-slackbot>: <rascov>: 之類的
+05:04 +0800 <sdnds-slackbot>: <takeshi>: 好阿
+05:04 +0800 <sdnds-slackbot>: <rascov>: 我再看看怎麼進行
+05:04 +0800 <sdnds-slackbot>: <takeshi>: 官方提供的 tutorial VM有點舊
+05:04 +0800 <sdnds-slackbot>: <takeshi>: 好
+05:05 +0800 <sdnds-slackbot>: <takeshi>: wiki 的 VM 沒記錯好像是 ONOS 1.2.1 版的
+05:15 +0800 <sdnds-slackbot>: <pichuang>: xd
+14:37 +0800 <sdnds-slackbot>: <takeshi>: Done, new documents
+14:37 +0800 <sdnds-slackbot>: <takeshi>: <https://github.com/sdnds-tw/SDN-IP-Example-VM>
+21:48 +0800 <sdnds-slackbot>: <powen_tsai>: 那個
+21:48 +0800 <sdnds-slackbot>: <powen_tsai>: sdnds-tw/awesome-sdn
+21:48 +0800 <sdnds-slackbot>: <powen_tsai>: <https://azure.github.io/SONiC/>
+21:48 +0800 <sdnds-slackbot>: <takeshi>: ok
+21:48 +0800 <sdnds-slackbot>: <powen_tsai>: 應該可以把Microsoft的SONiC加入Network Operating System
+21:49 +0800 <sdnds-slackbot>: <takeshi>: 好，我等等把它加上去
+21:49 +0800 <sdnds-slackbot>: <powen_tsai>: ok thanks
+21:49 +0800 <sdnds-slackbot>: <powen_tsai>: SAI不知道能加在哪...
+21:51 +0800 <sdnds-slackbot>: <powen_tsai>: SAI能把ASIC抽象化
+21:51 +0800 <sdnds-slackbot>: <powen_tsai>: 使得NOS不再需要考慮ASIC pipeline
+21:51 +0800 <sdnds-slackbot>: <powen_tsai>: 只是不知道要怎麼歸類這個東西...
+21:55 +0800 <sdnds-slackbot>: <powen_tsai>: SONiC有用到SAI
+23:17 +0800 <sdnds-slackbot>: <takeshi>: sdnds-tw 簡介在哪邊？
