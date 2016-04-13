@@ -1,0 +1,11 @@
+00:11 +0800 <sdnds-slackbot>: <takeshi>: @rascov:  我有放到 ONOS Slack 上面
+01:42 +0800 <sdnds-slackbot>: <takeshi>: 我以為那個 VM 花很久的時間在搞
+01:42 +0800 <sdnds-slackbot>: <takeshi>: 結果只花了我 20 小時....
+01:42 +0800 <sdnds-slackbot>: <takeshi>: <https://wakatime.com/@YiTseng/projects/utctgjxzil?start=2016-03-01&amp;end=2016-04-13>
+01:42 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/c2Zfa  ==> SDN-IP-Example-VM · WakaTime
+01:47 +0800 <sdnds-slackbot>: <pichuang>: 哎呦 這還蠻有趣的
+01:47 +0800 <sdnds-slackbot>: <takeshi>: 你之後可以裝來玩玩看 XD
+01:49 +0800 <sdnds-slackbot>: <pichuang>: xd 算這個幹嘛
+01:49 +0800 <sdnds-slackbot>: <takeshi>: 就好玩吧？
+01:50 +0800 <sdnds-slackbot>: <pichuang>: 好吧 感覺就很像是走路時做個監控這樣
+01:53 +0800 <sdnds-slackbot>: <takeshi>: 嗯嗯
