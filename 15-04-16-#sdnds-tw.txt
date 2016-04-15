@@ -1,0 +1,9 @@
+12:18 +0800 <sdnds-slackbot>: <jalen>: 現在交大BGP是public AS?
+12:20 +0800 <sdnds-slackbot>: <pichuang>: 不知道耶@@
+12:22 +0800 <sdnds-slackbot>: <jalen>: 阿...我是要問你們這次SDN IP用的
+12:22 +0800 <sdnds-slackbot>: <jalen>: 交大自己有AS XD
+12:35 +0800 <sdnds-slackbot>: <pichuang>: private
+15:45 +0800 <sdnds-slackbot>: <pichuang>: <http://www.sdnlab.com/16553.html>
+15:45 +0800 <sdnds-slackbot>: <pichuang>: = = 誠哥怎麼了
+17:14 +0800 <sdnds-slackbot>: <john-lin>:  太神了 居然拿SDN 題材寫起了小說XD
+20:43 +0800 <sdnds-slackbot>: <takeshi>: 壓力太大吧他 XD
