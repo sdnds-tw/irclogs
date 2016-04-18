@@ -1,0 +1,2 @@
+19:31 +0800 <sdnds-slackbot>: <takeshi>: 看來要客製化一個可離線安裝的 mininet ansible script =“=
+19:31 +0800 <sdnds-slackbot>: <takeshi>: 剛剛一個不穩，結果 mininet ansible 舊安裝失敗啦 XD
