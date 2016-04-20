@@ -1,0 +1,4 @@
+07:54 +0800 <sdnds-slackbot>: <powen_tsai>: <http://www.bigswitch.com/blog/2016/04/18/architecting-modern-data-centers-with-dcos-and-sdn-fabrics-0>
+07:54 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/91x5t  ==> http://www.bigswitch.com/blog/2016/04/18/architecting-modern-data-centers-with-dcos-and-sdn-fabrics-0%3E
+07:54 +0800 <sdnds-slackbot>: <powen_tsai>: DC/OS + Containers + BCF
+07:54 +0800 <sdnds-slackbot>: <powen_tsai>: This is very interesting
