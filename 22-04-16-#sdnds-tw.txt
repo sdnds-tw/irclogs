@@ -1,0 +1,6 @@
+01:59 +0800 <sdnds-slackbot2>: <rascov>: 我想貼 google drive 裡面東西比較多
+01:59 +0800 <sdnds-slackbot2>: <rascov>: 但是那個資料夾權限錯了，我問一下
+02:01 +0800 <sdnds-slackbot2>: <rascov>: <https://drive.google.com/drive/u/1/folders/0BzPojHadzRZVekxEcGxaUGNVNnM>
+02:01 +0800 <sdnds-slackbot2>: <rascov>: 根據設定我猜你們看不到
+04:35 +0800 <sdnds-slackbot2>: <rascov>: Larry 說暫時還不公佈
+04:35 +0800 <sdnds-slackbot2>: <rascov>: 之後會公開
