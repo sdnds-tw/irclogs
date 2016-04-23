@@ -1,0 +1,4 @@
+20:50 +0800 <sdnds-slackbot>: <hoootony>: 最近在使用openvswitch的mpls功能，版本是採用2.5.0，請問有人有經驗在使用pop_mpls的功能有成功
+20:50 +0800 <sdnds-slackbot>: <hoootony>: 目前實驗的環境push_mpls有成功，在flow table有match到`,
+20:51 +0800 <sdnds-slackbot>: <hoootony>: nb_packet計數有增加   也有action=pop_mpls:0x0800,out_port:1
+20:51 +0800 <sdnds-slackbot>: <hoootony>: 但是在out_port底下 用wireshark抓卻抓不到封包
