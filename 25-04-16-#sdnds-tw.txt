@@ -1,0 +1,64 @@
+10:04 +0800 <sdnds-slackbot>: <hwchiu>: 你在out_port對面的機器去用wireshark抓抓看
+14:26 +0800 <sdnds-slackbot>: <diray617>: 近期在研究openwrt之相關設定
+14:26 +0800 <sdnds-slackbot>: <diray617>: 可是常常在設定或是 openwrt 內的 /etc/config/network時
+14:26 +0800 <sdnds-slackbot>: <diray617>: 就會出現斷網的情形<
+14:28 +0800 <sdnds-slackbot>: <diray617>: 近期在研究openwrt之相關設定(AP 為 TP-link wr1043ND)
+14:28 +0800 <sdnds-slackbot>: <diray617>: 可是常常在設定或是 openwrt 內的 /etc/config/network時
+14:28 +0800 <sdnds-slackbot>: <diray617>: 就會出現斷網的情形，重開AP也無法繼續使用網路
+14:28 +0800 <sdnds-slackbot>: <diray617>: 想請問是否有人有相同經驗?
+14:40 +0800 <sdnds-slackbot>: <diray617>: 近期在研究openwrt之相關設定(AP 為 TP-link wr1043ND)
+14:40 +0800 <sdnds-slackbot>: <diray617>: 可是常常在設定或是修改 openwrt 內的 /etc/config/network時 (openwrt 內部設定)
+14:40 +0800 <sdnds-slackbot>: <diray617>: 就會出現斷網的情形，重開AP也無法繼續使用網路
+14:40 +0800 <sdnds-slackbot>: <diray617>: (都要reset AP , 造成很多安裝步驟都還要從新set 一次,浪費很多時間)
+14:40 +0800 <sdnds-slackbot>: <diray617>: 想請問是否有人有相同經驗?
+14:41 +0800 <sdnds-slackbot>: <diray617>: 還有另一個問題....
+14:41 +0800 <sdnds-slackbot>: <diray617>: 在 openwrt  AP 上 安裝好OVS 也順利set-controller
+14:41 +0800 <sdnds-slackbot>: <diray617>: 但是要怎麼把 openwrt 的 port 與 OVS 相連呢
+14:41 +0800 <sdnds-slackbot>: <diray617>: 目前在AP上的增加bridge，controller 會有 packet in ，但是新的使用者連上AP就沒有 packet in ，請問這是/etc/config/network沒設定好嗎?　還是有其他的問題存在??
+15:32 +0800 <sdnds-slackbot>: <hwchiu>: 有辦法確認網路不通的原因嗎?
+15:32 +0800 <sdnds-slackbot>: <hwchiu>: ifconfig, arp, ip link,ethtool  等工具檢測一下
+15:33 +0800 <sdnds-slackbot>: <hwchiu>: @pichuang: 是 ovs-vsctl add-port $birdge $port 嗎
+16:36 +0800 <sdnds-slackbot>: <pichuang>: 嗯嗯
+16:36 +0800 <sdnds-slackbot>: <pichuang>: 你是不是斷網後 就完全連不進去 //就會出現斷網的情形，重開AP也無法繼續使用網路
+16:37 +0800 <sdnds-slackbot>: <pichuang>: <https://blog.night9.cc/openvswitch-lab-7-setting-openwrt>
+16:37 +0800 <sdnds-slackbot>: <pichuang>: 這篇看一下
+16:39 +0800 <sdnds-slackbot>: <diray617>: 好!謝謝～～
+16:39 +0800 <sdnds-slackbot>: <diray617>: 不過當我些改完/etc/config/network 後
+16:39 +0800 <sdnds-slackbot>: <diray617>: 連 ssh 都連不進 openwrt
+16:39 +0800 <sdnds-slackbot>: <diray617>: 所以我懷疑是 /etc/config/network 的修改會造成ＡＰ無法連線
+16:39 +0800 <sdnds-slackbot>: <diray617>: 但是沒有修改，好像就無法使得ＡＰ與ＯＶＳ連接  (目前我的想法)
+16:39 +0800 <sdnds-slackbot>: <diray617>: 不知道還有沒有其他不用修改/etc/config/network 就可直接用open flow 溝通？？
+16:40 +0800 <sdnds-slackbot>: <pichuang>: xd 這就是我碩一遇到的事情啊~~我一個晚上刷了20幾次
+16:40 +0800 <sdnds-slackbot>: <pichuang>: 一定要改 只是怎麼改的問題而已
+16:40 +0800 <sdnds-slackbot>: <hwchiu>: 連lan孔都進不去?
+16:40 +0800 <sdnds-slackbot>: <diray617>: 對....我已經刷了十幾次 ((天啊
+16:40 +0800 <sdnds-slackbot>: <pichuang>: xddd還有十次
+16:40 +0800 <sdnds-slackbot>: <pichuang>: +u
+16:41 +0800 <sdnds-slackbot>: <hwchiu>: 不考慮接個serial console出來嗎XD
+16:41 +0800 <sdnds-slackbot>: <pichuang>: 你先看完我的設定再說 但機器是 1043 可能要改一下
+16:41 +0800 <sdnds-slackbot>: <john-lin>: 買ttl轉usb進去吧
+16:41 +0800 <sdnds-slackbot>: <diray617>: 用TTL 轉usb嗎。
+16:41 +0800 <sdnds-slackbot>: <diray617>: 好
+16:42 +0800 <sdnds-slackbot>: <john-lin>: 晶片不要選太差 不然driver 很痛苦XD
+16:42 +0800 <sdnds-slackbot>: <hwchiu>: 你用openwrt的需求是wireless的功能嗎
+16:42 +0800 <sdnds-slackbot>: <pichuang>: xddddd 對~ 不要省小錢
+16:43 +0800 <sdnds-slackbot>: <diray617>: 最後是希望可以wireless 跟 eth 都可以用
+16:43 +0800 <sdnds-slackbot>: <diray617>: 有建議的晶片嗎？？
+16:43 +0800 <sdnds-slackbot>: <diray617>: 謝謝各位的建議><
+16:43 +0800 <sdnds-slackbot>: <hwchiu>: 好吧，不然想叫你買個PC插個外接網卡
+16:43 +0800 <sdnds-slackbot>: <diray617>: 等等要來拆ＡＰ了...
+16:45 +0800 <sdnds-slackbot>: <pichuang>: 找有 FTDI 的晶片
+16:45 +0800 <sdnds-slackbot>: <john-lin>: FTDI FT232RL
+16:45 +0800 <sdnds-slackbot>: <john-lin>: 嗯嗯
+16:46 +0800 <sdnds-slackbot>: <diray617>: 請問ttl轉usb  連接 到ＡＰ 有推薦的 文章嗎？
+16:46 +0800 <sdnds-slackbot>: <diray617>: 因為上一次自己看 openwrt 上的TTL 好像有點問題，無法進入到ＡＰ裡
+16:47 +0800 <sdnds-slackbot>: <pichuang>: 這我就沒研究了xd
+16:48 +0800 <sdnds-slackbot>: <john-lin>: <https://wiki.openwrt.org/toh/tp-link/tl-wr1043nd>
+16:48 +0800 <sdnds-tw_Bot>: ==> TP-Link TL-WR1043ND [OpenWrt Wiki]
+16:48 +0800 <sdnds-slackbot>: <john-lin>: 之前看這篇
+16:48 +0800 <sdnds-slackbot>: <john-lin>: 需要買針來焊接
+16:51 +0800 <sdnds-slackbot>: <diray617>: 我之前也焊接完成，可是電腦還是無法利用putty連到AP, 我覺得可能是晶片的問題
+16:52 +0800 <sdnds-slackbot>: <john-lin>: Driver 裝完接好線之後，需要看一下有沒有com port連上 Windows 在裝置管理員看
+16:53 +0800 <sdnds-slackbot>: <john-lin>: Mac 的話 ls /dev/tty.usbxxxx 看看
+16:54 +0800 <sdnds-slackbot>: <john-lin>: RX 跟 TX  要對接喔
+16:55 +0800 <sdnds-slackbot>: <diray617>: 好！！我等一下就來試試看～～謝謝各位！！！
