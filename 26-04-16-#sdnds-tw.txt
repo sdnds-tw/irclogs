@@ -1,0 +1,10 @@
+10:40 +0800 <sdnds-slackbot>: <nosignal>: 如果只是設定問題,應該可以進fail-safe-mode去修改設定就可以了吧
+10:41 +0800 <sdnds-slackbot>: <nosignal>: 通常只有把刷到不對的韌體或是刷韌體失敗才需要用console去連
+14:42 +0800 <sdnds-slackbot>: <hwchiu>: 個人是習慣用console拉XD 網路有問題的情況也比較好找原因
+14:53 +0800 <sdnds-slackbot>: <diray617>: 了解～～
+14:53 +0800 <sdnds-slackbot>: <diray617>: 剛剛在試利用TTL轉USB時，電路板 突然爆一聲....有點悲劇
+14:53 +0800 <sdnds-slackbot>: <diray617>: 看起來用fail-safe-mode好像比較沒有危險的顧慮XD
+16:09 +0800 <sdnds-slackbot>: <pichuang>: airconsole~
+16:17 +0800 <sdnds-slackbot>: <pichuang>: 5/19 晚上大家有沒有空 我要替 ocf 站台演講
+16:17 +0800 <sdnds-slackbot>: <pichuang>: 5/19 (禮拜四)
+17:24 +0800 <sdnds-slackbot>: <hoootony>: 會有直播嗎XD
