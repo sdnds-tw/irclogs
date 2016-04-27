@@ -1,0 +1,8 @@
+15:36 +0800 <sdnds-slackbot>: <bootscat>: 不好意思 我是個初學者
+15:36 +0800 <sdnds-slackbot>: <bootscat>: 請問一下 我想知道opendaylight的模組提供了哪些API
+15:36 +0800 <sdnds-slackbot>: <bootscat>: 我在官方網站上沒有找到說明文件
+15:36 +0800 <sdnds-slackbot>: <bootscat>: 有人能推薦相關文件給我嗎 謝謝
+17:06 +0800 <sdnds-slackbot>: <hwchiu>: 不熟ODL
+17:06 +0800 <sdnds-slackbot>: <hwchiu>: @ta-ching:
+17:06 +0800 <sdnds-slackbot>: <hwchiu>: @pichuang: ?
+17:26 +0800 <sdnds-slackbot>: <pichuang>: 我也不熟 odl xddd
