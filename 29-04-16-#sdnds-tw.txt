@@ -1,0 +1,26 @@
+15:26 +0800 <sdnds-slackbot>: <markzeng>: 想請問一下
+15:26 +0800 <sdnds-slackbot>: <markzeng>: 我照著這篇 <http://tutul.logdown.com/posts/2014/10/30/update-ovs-to-230-in-mininet>
+15:26 +0800 <sdnds-slackbot>: <markzeng>: 將mininet的ovs版本改到2.3.0
+15:26 +0800 <sdnds-slackbot>: <markzeng>: 之後可能會去著手進行一些ovs 2.3.0 程式碼的修改
+15:26 +0800 <sdnds-slackbot>: <markzeng>: 請問我改完後該怎麼re-compile ovs?
+15:26 +0800 <sdnds-slackbot>: <hwchiu>: //安裝新版的ovs套件
+15:26 +0800 <sdnds-slackbot>: <hwchiu>: $ wget <http://openvswitch.org/releases/openvswitch-2.3.0.tar.gz>
+15:26 +0800 <sdnds-slackbot>: <hwchiu>: $ tar zxvf openvswitch-2.3.0.tar.gz
+15:26 +0800 <sdnds-slackbot>: <hwchiu>: $ cd openvswitch-2.3.0
+15:26 +0800 <sdnds-slackbot>: <hwchiu>: $ ./configure --prefix=/usr --with-linux=/lib/modules/uname -r/build
+15:26 +0800 <sdnds-slackbot>: <hwchiu>: $ make
+15:26 +0800 <sdnds-slackbot>: <hwchiu>: $ sudo make install
+15:26 +0800 <sdnds-slackbot>: <hwchiu>: $ sudo make modules_install
+15:27 +0800 <sdnds-slackbot>: <hwchiu>: $ sudo rmmod openvswitch
+15:27 +0800 <sdnds-slackbot>: <hwchiu>: $ sudo depmod -a
+15:27 +0800 <sdnds-slackbot>: <hwchiu>: $ sudo /etc/init.d/openvswitch-controller stop
+15:27 +0800 <sdnds-slackbot>: <hwchiu>: $ sudo update-rc.d openvswitch-controller disable
+15:27 +0800 <sdnds-slackbot>: <hwchiu>: $ sudo /etc/init.d/openvswitch-switch start
+15:27 +0800 <sdnds-slackbot>: <hwchiu>: 這邊重新make
+15:27 +0800 <sdnds-slackbot>: <hwchiu>: 重新install
+15:27 +0800 <sdnds-slackbot>: <hwchiu>: 看你改的部分，有跟kernel module有關舊多跑 modules_install
+15:27 +0800 <sdnds-slackbot>: <hwchiu>: 然後有動到kernel modules的話， module要移除再插入
+19:27 +0800 <sdnds-slackbot>: <markzeng>: 謝謝! 我再試試看
+22:56 +0800 <sdnds-slackbot>: <takeshi>: 之後活動可以用這邊耶 XD
+22:56 +0800 <sdnds-slackbot>: <takeshi>: <https://hackmd.io/s/4yy_eGWsg#資工系學習共享空間啟用通知-introducing-the-new-learning-commons>
+22:56 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/Lq9wm  ==> HackMD - Collaborative notes
