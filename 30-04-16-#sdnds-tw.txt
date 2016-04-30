@@ -1,0 +1,4 @@
+13:08 +0800 <sdnds-slackbot>: <yeping>: 前輩們好，想問一些基本問題
+13:08 +0800 <sdnds-slackbot>: <yeping>:
+13:11 +0800 <sdnds-slackbot>: <yeping>: ovs完成開機會有找不到eth0.1~0.6設備的問題。目前我是在開機後讓設備重起ovs的服務，還是有更好的方法？
+13:21 +0800 <sdnds-slackbot>: <yeping>: ovs 與 controller 結束連線後，為什麼原本存在 ovs flow table 會被清空？
