@@ -1,0 +1,2 @@
+10:56 +0800 <sdnds-slackbot>: <diray617>: 想請問大家 再把openwrt燒入成符合openflow的swtich時
+10:56 +0800 <sdnds-slackbot>: <diray617>: 有遇到controller有封包的傳送，但是卻無法連上網的情形出現嗎？
