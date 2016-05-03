@@ -1,0 +1,38 @@
+09:54 +0800 <sdnds-slackbot>: <hwchiu>: ovs與controller連線後， ovs flow table 有沒有可能會被清空
+09:54 +0800 <sdnds-slackbot>: <hwchiu>: 這部分 specfication沒有定義
+09:54 +0800 <sdnds-slackbot>: <hwchiu>: 看controller怎麼實作
+09:55 +0800 <sdnds-slackbot>: <hwchiu>: 有些controller連上線後會發command去清空之前的table
+11:57 +0800 <sdnds-slackbot>: <jalen>: PicOS這幾版對於沒有match到的flow處理方式都不太一樣
+11:57 +0800 <sdnds-slackbot>: <jalen>: Pica8還沒有定下來最終會是哪種方法...
+11:58 +0800 <sdnds-slackbot>: <jalen>: 然後2.6.2以上開始多了一個新模式 "type=crossflow"
+11:58 +0800 <sdnds-slackbot>: <hwchiu>: 說中文好嗎
+11:58 +0800 <sdnds-slackbot>: <jalen>: 目前文件上....還沒有詳細記錄~有點有趣的東西
+11:58 +0800 <sdnds-slackbot>: <jalen>: @hwchiu: Protocol Error?
+11:59 +0800 <sdnds-slackbot>: <jalen>: 應該說Pica8目前還在實驗Crossflow這件事情怎樣是最好的，是Legacy network沒match才進openflow還是openflow沒有match才進入legacy network
+11:59 +0800 <sdnds-slackbot>: <jalen>: 2.6.4和2.6.5正好是上述兩種情形 ...
+12:00 +0800 <sdnds-slackbot>: <john-lin>: Crossflow 是什麼 我有在手冊上看到
+12:01 +0800 <sdnds-slackbot>: <jalen>: 混和傳統網路和openflow
+12:01 +0800 <sdnds-slackbot>: <hwchiu>: legacy包含l3?
+12:01 +0800 <sdnds-slackbot>: <jalen>: 在一個port上可以執行openflow rule且有legacy的模式
+12:01 +0800 <sdnds-slackbot>: <jalen>: 有L3
+12:01 +0800 <sdnds-slackbot>: <hwchiu>: 恩想說l2就多一個default normal action就解了XD
+12:02 +0800 <sdnds-slackbot>: <jalen>: 這包含routing處理
+12:02 +0800 <sdnds-slackbot>: <hwchiu>: 恩恩
+12:02 +0800 <sdnds-slackbot>: <hwchiu>: 不能直接default後打入local
+12:02 +0800 <sdnds-slackbot>: <hwchiu>: 讓linux kernel去弄了
+12:02 +0800 <sdnds-slackbot>: <john-lin>: 哦 現在已經支援了嗎2.6
+12:02 +0800 <sdnds-slackbot>: <hwchiu>: 吃飯去
+12:02 +0800 <sdnds-slackbot>: <jalen>: 有阿
+12:03 +0800 <sdnds-slackbot>: <jalen>: 最新版本是2.6.5
+12:03 +0800 <sdnds-slackbot>: <jalen>: stable
+12:04 +0800 <sdnds-slackbot>: <john-lin>: 哦 那可以透過controller加這筆flow嗎
+12:04 +0800 <sdnds-slackbot>: <jalen>: 跟controller比較無關
+12:05 +0800 <sdnds-slackbot>: <jalen>: 主要是switch在crossflow模式下，封包先走傳統網路還是openflow rule
+12:05 +0800 <sdnds-slackbot>: <john-lin>: 哦 瞭解那根action=action有什麼差異
+12:05 +0800 <sdnds-slackbot>: <john-lin>: Normal
+12:07 +0800 <sdnds-slackbot>: <jalen>: 如 hwchiu 說的.... actions=normal是轉由L2處理
+12:08 +0800 <sdnds-slackbot>: <jalen>: pica8傳統有包含L3 network
+12:09 +0800 <sdnds-slackbot>: <jalen>: 另外，2.6.5做法是，先去對傳統網路路由，當對不到才去看flow tablwe
+12:09 +0800 <sdnds-slackbot>: <jalen>: 看看這個對不到的封包要傳去哪
+12:10 +0800 <sdnds-slackbot>: <john-lin>: 哦哦 瞭解了
+12:10 +0800 <sdnds-slackbot>: <john-lin>: 謝啦XD
