@@ -1,0 +1,6 @@
+19:15 +0800 <test>: wow
+22:49 +0800 <sdnds-slackbot>: <ryanmusic>: 哈囉大家好，我是 Ryan. 我目前工作也是在網路系統方面的，因為剛發現這個社團就趕緊加入了。希望有機會參加相關活動還有跟大家討論技術和趨勢相關的東西。感謝!
+23:02 +0800 <sdnds-slackbot>: <rascov>: 說到這個參加活動，趕緊來推廣一下 XD
+23:02 +0800 <sdnds-slackbot>: <rascov>: <http://onosproject.org/2016/05/17/june-6th-onos-cord-workshop-taiwan/>
+23:24 +0800 <sdnds-slackbot>: <ryanmusic>: 感謝，已註冊
+23:30 +0800 <sdnds-slackbot>: <rascov>: :smile:

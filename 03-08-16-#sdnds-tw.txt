@@ -1,0 +1,1 @@
+14:14 +0800 <sdnds-slackbot>: <peterwong>: @takeshi: 好像是p4 v1.1才有，新的實作方式

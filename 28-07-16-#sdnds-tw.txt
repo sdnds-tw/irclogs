@@ -1,0 +1,8 @@
+09:31 +0800 <archy>: 嗨
+09:45 +0800 <sdnds-slackbot>: <pichuang>: hihi
+09:46 +0800 <sdnds-slackbot>: <pichuang>: @fishman 管理用ip互ping要
+09:46 +0800 <sdnds-slackbot>: <pichuang>: 但如果是 pure openflow-enabled switch 不用
+09:47 +0800 <sdnds-slackbot>: <pichuang>: 意思是說 data plane 的部分都丟給 controller 處理就好 不用管
+09:47 +0800 <sdnds-slackbot>: <pichuang>: 你只要專心研究如何讓你的switch ping 到 controller就好
+18:45 +0800 <sdnds-slackbot>: <peterwong>: 請問P4裡的register功能記錄的資訊是以Packet的方式記錄，還是以欄位(例如ethernet type欄位)的方式記錄?
+18:45 +0800 <sdnds-slackbot>: <peterwong>: 目前在看<https://github.com/p4lang/tutorials/tree/master/p4v1_1/simple_router> 中，simple_router的範例，但是在drops_register那邊看不太懂。

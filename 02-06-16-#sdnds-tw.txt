@@ -1,0 +1,33 @@
+11:11 +0800 <sdnds-slackbot>: <pichuang>: <http://www.sdnlab.com/16995.html>
+15:06 +0800 <sdnds-slackbot>: <takeshi>: 這名字好熟悉..... kiki 小姐？
+15:32 +0800 <sdnds-slackbot>: <powen_tsai>: com
+15:33 +0800 <sdnds-slackbot>: <powen_tsai>: <https://www.sdxcentral.com/articles/news/hpes-openswitch-network-os-new-home-linux-foundation/2016/06/?utm_content=buffer604c2&amp;utm_medium=social&amp;utm_source=facebook.com&amp;utm_campaign=buffer>
+15:33 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/4TRuX  ==> HPE's OpenSwitch Network OS Finds a New Home
+15:33 +0800 <sdnds-slackbot>: <john-lin>: SDN比賽那位…
+15:33 +0800 <sdnds-slackbot>: <takeshi>: 喔喔
+15:35 +0800 <sdnds-slackbot>: <john-lin>: 猜的XD 因為我也覺得很眼熟
+15:35 +0800 <sdnds-slackbot>: <takeshi>: @powen_tsai: 不知道 OpenSwitch 現在 bug 還多不多 XD
+15:36 +0800 <sdnds-slackbot>: <powen_tsai>: 多啊當然
+15:36 +0800 <sdnds-slackbot>: <takeshi>: @john-lin: 嗯，應該是在比賽時有看到
+15:36 +0800 <sdnds-slackbot>: <takeshi>: @powen_tsai: G_G
+15:36 +0800 <sdnds-slackbot>: <powen_tsai>: 社群眾人之力
+15:36 +0800 <sdnds-slackbot>: <powen_tsai>: 若弄得起來
+15:36 +0800 <sdnds-slackbot>: <powen_tsai>: 很不錯啊
+15:37 +0800 <sdnds-slackbot>: <powen_tsai>: 這文章裡面，提到LinkedIn是end user
+15:37 +0800 <sdnds-slackbot>: <powen_tsai>: 我人正在Computex Cavium booth
+15:37 +0800 <sdnds-slackbot>: <powen_tsai>: Cavium不錯積極
+15:37 +0800 <sdnds-slackbot>: <takeshi>: :+1:
+15:37 +0800 <sdnds-slackbot>: <hwchiu>: openSwitch
+15:37 +0800 <sdnds-slackbot>: <hwchiu>: 我記得hacknews上剛看到的時候
+15:38 +0800 <sdnds-slackbot>: <hwchiu>: 馬上就被人酸，code寫得超不安全
+15:38 +0800 <sdnds-slackbot>: <hwchiu>: buffer overflow完全沒檢查
+15:39 +0800 <sdnds-slackbot>: <takeshi>: @hwchiu: 也就是說，現在要成為 OpenSwitch 的 contributor 的話就趕快上 XDD
+15:41 +0800 <sdnds-slackbot>: <hwchiu>: XDD
+16:02 +0800 <sdnds-slackbot>: <powen_tsai>: Good point !
+16:33 +0800 <sdnds-slackbot>: <rascov>: @takeshi: 中肯，我昨天在演講裡也有提到這件事
+16:33 +0800 <sdnds-slackbot>: <rascov>: XDDD
+16:34 +0800 <sdnds-slackbot>: <john-lin>:  想看那篇HN 的文章XD
+16:44 +0800 <sdnds-slackbot>: <hwchiu>: <https://news.ycombinator.com/item?id=10334396>
+17:18 +0800 <sdnds-slackbot>: <takeshi>: @hwchiu:  阿不對，應該是先發一大堆 CVE，然後再丟 patch XD
+19:39 +0800 <sdnds-slackbot>: <hwchiu>: XDD
+21:52 +0800 <sdnds-slackbot>: <pichuang>: 對吼 六月到了 openswitch 能不能用啊~~ (敲碗)

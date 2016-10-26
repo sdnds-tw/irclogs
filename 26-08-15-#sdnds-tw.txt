@@ -1,0 +1,38 @@
+00:21 +0800 <sdnds-slackbot>: <takeshi>: 我前幾個禮拜有趣 OpenStack 開發者日
+00:22 +0800 <sdnds-slackbot>: <takeshi>: 好像有一篇是 Docker + OpenStack 的...
+00:23 +0800 <sdnds-slackbot>: <takeshi>: 喔對了，當天沖繩那邊的實驗室也有派人來 XD
+00:24 +0800 <sdnds-slackbot>: <powen_tsai>: 對
+00:24 +0800 <sdnds-slackbot>: <powen_tsai>: Okinawa LAB
+00:24 +0800 <sdnds-slackbot>: <powen_tsai>: Okinawa LAB後來有去我們公司 XD
+00:24 +0800 <sdnds-slackbot>: <powen_tsai>: Docker那個session我沒去 XD
+00:24 +0800 <sdnds-slackbot>: <takeshi>: Deploying OpenStack services using Docker containers.
+00:24 +0800 <sdnds-slackbot>: <takeshi>: —> 要不要用這個？ XDDD
+00:25 +0800 <sdnds-slackbot>: <takeshi>: 在 Docker 上面建置各種 OpenStack 的東東 XD
+14:33 +0800 <sdnds-slackbot>: <powen_tsai>: 拉拉
+14:33 +0800 <sdnds-slackbot>: <powen_tsai>: 我有新加坡客戶要用ONOS controller耶
+14:36 +0800 <sdnds-slackbot>: <rascov>: GOOD
+14:37 +0800 <sdnds-slackbot>: <powen_tsai>: 該是in-house develop ONOS capability的時候
+14:40 +0800 <sdnds-slackbot>: <rascov>: 不太懂？
+14:40 +0800 <sdnds-slackbot>: <powen_tsai>: 我在內部提過幾次ONOS controller, OVX, OpenCloud等等
+14:40 +0800 <sdnds-slackbot>: <powen_tsai>: 不過內部不重視
+14:41 +0800 <sdnds-slackbot>: <powen_tsai>: 我是建議內部，該派R&amp;D研究ONOS, 能的話去contribute最好
+14:43 +0800 <sdnds-slackbot>: <powen_tsai>: 現在有新加坡客戶要來找我們
+14:43 +0800 <sdnds-slackbot>: <powen_tsai>: 他已經打算用ONOS controller
+14:43 +0800 <sdnds-slackbot>: <powen_tsai>: 在找SDN switch
+14:43 +0800 <sdnds-slackbot>: <powen_tsai>: vCPE等hardware vendor
+14:44 +0800 <sdnds-slackbot>: <powen_tsai>: 拉拉
+14:44 +0800 <sdnds-slackbot>: <powen_tsai>: 你分享的兩個影片
+14:45 +0800 <sdnds-slackbot>: <powen_tsai>: 客戶下禮拜一就來了
+14:45 +0800 <sdnds-slackbot>: <powen_tsai>: ~___~
+15:30 +0800 <sdnds-slackbot>: <rascov>: :thumbsup:
+15:35 +0800 <sdnds-slackbot>: <rascov>: 結果 ONOS 6633 -> 6653 被 RD 頭跟 QA 擋下來了
+15:35 +0800 <sdnds-slackbot>: <rascov>: 說等 Emu 再進
+15:35 +0800 <sdnds-slackbot>: <rascov>: 不過會先進一部分讓 user 可以動態改變 OF port 的 code
+15:35 +0800 <sdnds-slackbot>: <rascov>: (不然現在除非改 code 重編否則無法改 port，超爛的)
+17:27 +0800 <sdnds-slackbot>: <takeshi>: XD
+19:12 +0800 <sdnds-slackbot>: <jalen>: 乾脆做成config想要哪個port就設哪個~
+21:06 +0800 <sdnds-slackbot>: <rascov>: yes 我晚點會送 patch
+23:50 +0800 <sdnds-slackbot1>: <pichuang>: http://openSUSE.Asia Summit 2015
+23:50 +0800 <sdnds-slackbot1>: <pichuang>: 邀請我們給個 talk 或 workshop
+23:56 +0800 <sdnds-slackbot1>: <hwchiu>: wow
+23:57 +0800 <sdnds-slackbot1>: <rascov>: 好牛喔

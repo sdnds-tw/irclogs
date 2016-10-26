@@ -1,0 +1,59 @@
+17:21 +0800 <sdnds-slackbot>: <jefflee>: Hi
+17:21 +0800 <sdnds-slackbot>: <jefflee>: 正在學習 openvswitch + libvirt (ubuntu apt-get install libvirt-bin 的版號為1.2.2) 的安裝遇到瓶頸了
+17:21 +0800 <sdnds-slackbot>: <jefflee>: 請問有人遇到這樣的狀況嗎？
+17:21 +0800 <sdnds-slackbot>: <jefflee>:
+17:21 +0800 <sdnds-slackbot>: <jefflee>: 我是照著這一篇做的
+17:21 +0800 <sdnds-slackbot>: <jefflee>: <http://sdnhub.cn/index.php/libvirt-openvswitch/>
+17:21 +0800 <sdnds-slackbot>: <jefflee>:
+17:21 +0800 <sdnds-slackbot>: <jefflee>: 我使用官網抓下來的 2.3.3 裝在 ubuntu 14.04 (./configure; make; sudo make install)
+17:21 +0800 <sdnds-slackbot>: <jefflee>: 照著上面的安裝步驟後，當我啟動 vm 時候都會是出現
+17:21 +0800 <sdnds-slackbot>: <jefflee>: Error starting domain: Unable to add port vnet0 to OVS bridge ovsbr0: Operation not permitted
+17:21 +0800 <sdnds-slackbot>: <jefflee>:
+17:21 +0800 <sdnds-slackbot>: <jefflee>: 最後我不用 2.3.3 直接用 ubuntu 的 sudo apt-get install openvswitch-switch （版本是 2.0.2) 就成功啟動 VM
+17:21 +0800 <sdnds-slackbot>: <jefflee>: （此時ovs-vsctl 可以看到 vnet0 被成功的加入 ovsbr0 裡面)
+17:22 +0800 <sdnds-slackbot>: <jefflee>:
+17:22 +0800 <sdnds-slackbot>: <jefflee>: 請問各位大大幫助我解惑一下？
+17:23 +0800 <sdnds-slackbot>: <hwchiu>: 你自己安裝的時候，你後來有把kernel module insert?
+17:23 +0800 <sdnds-slackbot>: <jefflee>: 請問您是指 modprob openvswitch, gre, libcrc32c 這個嗎？
+17:24 +0800 <sdnds-slackbot>: <jefflee>: 如果是這個的話 我有做
+17:26 +0800 <sdnds-slackbot>: <hwchiu>: 恩
+17:26 +0800 <sdnds-slackbot>: <hwchiu>: 你自己手動用ovs-vsctl隨便加入一些interface會失敗嗎?
+17:26 +0800 <sdnds-slackbot>: <hwchiu>: 先看看是不是OVS本身的權限問題
+17:29 +0800 <sdnds-slackbot>: <jefflee>: 我剛剛測試了一下下面的命令 看來是成功的
+17:29 +0800 <sdnds-slackbot>: <jefflee>: ubuntu:~/work# ovs-vsctl add-br test-br
+17:29 +0800 <sdnds-slackbot>: <jefflee>: ubuntu:~/work# ovs-vsctl add-port test-br test-port
+17:29 +0800 <sdnds-slackbot>: <jefflee>: ovs-vsctl: Error detected while setting up 'test-port'.  See ovs-vswitchd log for details.
+17:29 +0800 <sdnds-slackbot>: <jefflee>: ubuntu:~/work# ovs-vsctl show
+17:29 +0800 <sdnds-slackbot>: <jefflee>: b6749b62-5c65-4863-b7df-566ef9a460d9
+17:29 +0800 <sdnds-slackbot>: <jefflee>:     Bridge "ovsbr0"
+17:29 +0800 <sdnds-slackbot>: <jefflee>:         Port "ovsbr0"
+17:29 +0800 <sdnds-slackbot>: <jefflee>:             Interface "ovsbr0"
+17:29 +0800 <sdnds-slackbot>: <jefflee>:                 type: internal
+17:29 +0800 <sdnds-slackbot>: <jefflee>:     Bridge test-br
+17:29 +0800 <sdnds-slackbot>: <jefflee>:         Port test-br
+17:29 +0800 <sdnds-slackbot>: <jefflee>:             Interface test-br
+17:29 +0800 <sdnds-slackbot>: <jefflee>:                 type: internal
+17:29 +0800 <sdnds-slackbot>: <jefflee>:         Port test-port
+17:29 +0800 <sdnds-slackbot>: <jefflee>:             Interface test-port
+17:29 +0800 <sdnds-slackbot>: <hwchiu>: 那看來這邊可以
+17:30 +0800 <sdnds-slackbot>: <hwchiu>: 你有辦法找出他VM啟動中間跑的指令嗎
+17:32 +0800 <sdnds-slackbot>: <jefflee>: 指令的話不知道怎麼找 我查一下  我先貼他的 log 不知道友沒有幫助
+17:32 +0800 <sdnds-slackbot>: <jefflee>: 2016-06-09 08:50:02.039+0000: 3437: error : virNetDevOpenvswitchRemovePort:188 : Unable to delete port (null) from OVS: Operation not permitted
+17:32 +0800 <sdnds-slackbot>: <jefflee>: 2016-06-09 08:50:34.455+0000: 3437: error : virCommandWait:2399 : internal error: Child process (ovs-vsctl --timeout=5 -- --if-exists del-port vnet0 -- add-port ovsbr0 vnet0 -- set Interface vnet0 'external-ids:attached-mac="52:54:00:fb:fd:4e"' -- set Interface vnet0 'external-ids:iface-id="05acc116-435e-4da1-831f-5c27a5390e7a"' -- set Interface vnet0 'external-ids:vm-id="f3021f5a-624c-6ba8-6dad-0860a635922c"' -- set Interface vnet0
+17:32 +0800 <sdnds-slackbot>: external-ids:iface-status=active) unexpected exit status 1: libvirt:  error : cannot execute binary ovs-vsctl: Permission denied
+17:32 +0800 <sdnds-slackbot>: <jefflee>:
+17:32 +0800 <sdnds-slackbot>: <jefflee>: 2016-06-09 08:50:34.455+0000: 3437: error : virNetDevOpenvswitchAddPort:155 : Unable to add port vnet0 to OVS bridge ovsbr0: Operation not permitted
+17:32 +0800 <sdnds-slackbot>: <jefflee>: 2016-06-09 08:50:34.471+0000: 3437: error : virCommandWait:2399 : internal error: Child process (ovs-vsctl --timeout=5 -- --if-exists del-port) unexpected exit status 1: libvirt:  error : cannot execute binary ovs-vsctl: Permission denied
+17:32 +0800 <sdnds-slackbot>: <jefflee>:
+17:32 +0800 <sdnds-slackbot>: <jefflee>: 2016-06-09 08:50:34.471+0000: 3437: error : virNetDevOpenvswitchRemovePort:188 : Unable to delete port (null) from OVS: Operation not permitted
+17:32 +0800 <sdnds-slackbot>: <jefflee>: 2016-06-09 09:07:05.387+0000: 3438: error : virCommandWait:2399 : internal error: Child process (ovs-vsctl --timeout=5 -- --if-exists del-port vnet0 -- add-port ovsbr0 vnet0 -- set Interface vnet0 'external-ids:attached-mac="52:54:00:fb:fd:4e"' -- set Interface vnet0 'external-ids:iface-id="fa25cf1e-d178-41f0-9aa4-76dae20aa113"' -- set Interface vnet0 'external-ids:vm-id="f3021f5a-624c-6ba8-6dad-0860a635922c"' -- set Interface vnet0
+17:32 +0800 <sdnds-slackbot>: external-ids:iface-status=active) unexpected exit status 1: libvirt:  error : cannot execute binary ovs-vsctl: Permission denied
+17:32 +0800 <sdnds-slackbot>: <jefflee>:
+17:32 +0800 <sdnds-slackbot>: <jefflee>: 2016-06-09 09:07:05.387+0000: 3438: error : virNetDevOpenvswitchAddPort:155 : Unable to add port vnet0 to OVS bridge ovsbr0: Operation not permitted
+17:32 +0800 <sdnds-slackbot>: <jefflee>: 2016-06-09 09:07:05.403+0000: 3438: error : virCommandWait:2399 : internal error: Child process (ovs-vsctl --timeout=5 -- --if-exists del-port) unexpected exit
+17:32 +0800 <sdnds-slackbot>: <hwchiu>: virNetDevOpenvswitchAddPort 找看看這些檔案吧
+17:32 +0800 <sdnds-slackbot>: <hwchiu>: 他被該權限
+17:35 +0800 <sdnds-slackbot>: <jefflee>: 然後下面安裝完2.3.3 之後 ovs-vsctl執行檔
+17:35 +0800 <sdnds-slackbot>: <jefflee>: ubuntu:~/work# ls -al /usr/local/bin/ovs-vsctl
+17:35 +0800 <sdnds-slackbot>: <jefflee>: -rwxr-xr-x 1 root root 5675873  6月  9 14:24 /usr/local/bin/ovs-vsctl
+17:43 +0800 <sdnds-slackbot>: <jefflee>: Thanks @hwchiu  我試試看那個方向

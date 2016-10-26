@@ -1,0 +1,32 @@
+14:19 +0800 <sdnds-slackbot>: <takeshi>: <https://github.com/TakeshiTseng/SDN-Work/tree/master/AsciiTopo>
+15:09 +0800 <sdnds-slackbot>: <takeshi>: OK, 稍微更新了一下，加了 host
+16:49 +0800 <sdnds-slackbot>: <pichuang>: <https://github.com/nfvlabs/openmano>
+16:50 +0800 <sdnds-slackbot>: <pichuang>: <https://www.youtube.com/watch?t=38&amp;v=Kw0_j5u-yJQ>
+16:50 +0800 <sdnds-tw_Bot>: ==> OpenMANO installation configuration and tips in Ubuntu Server 14.04  and CentOS 7.1 - YouTube
+16:51 +0800 <sdnds-slackbot>: <rascov>: 用 opencloud 啦
+16:52 +0800 <sdnds-slackbot>: <takeshi>: 用 xos 啦（X
+16:52 +0800 <sdnds-slackbot>: <pichuang>: [ovs-discuss] Open vSwitch 2.4.0 Available
+16:52 +0800 <sdnds-slackbot>: <takeshi>: OAO!!!
+16:53 +0800 <sdnds-slackbot>: <rascov>: XOS不就是opencloud的嗎
+16:54 +0800 <sdnds-slackbot>: <takeshi>: 我們實驗室印度人再研究他 XD
+16:55 +0800 <sdnds-slackbot>: <rascov>: OVS 我都用 master XD
+16:55 +0800 <sdnds-slackbot>: <rascov>: 敝公司產品啊，雖然我根本沒用過 XD
+16:55 +0800 <sdnds-slackbot>: <pichuang>: 哪個opencloud阿 我查到一堆重複
+16:55 +0800 <sdnds-slackbot>: <takeshi>: <http://xosproject.org/>
+16:55 +0800 <sdnds-tw_Bot>: ==> XOS | Unleash the Power of OpenStack
+16:56 +0800 <sdnds-slackbot>: <rascov>: http://onlab.us -> opencloud
+16:56 +0800 <sdnds-tw_Bot>: ==> ON.Lab | What networking could be for the public good.
+16:58 +0800 <sdnds-slackbot>: <pichuang>: = = 同名
+17:00 +0800 <sdnds-slackbot>: <rascov>: @takeshi: 說的XOS就是Opencloud的XOS，點進去就看到CORD了
+17:02 +0800 <sdnds-slackbot>: <takeshi>: 只是要玩那一套的話，好像要把 OpenStack + XOS + ONOS 都裝起來才行
+17:02 +0800 <sdnds-slackbot>: <pichuang>: <http://xosproject.org/wp-content/uploads/2015/06/PoC_CORD.pdf>
+17:02 +0800 <sdnds-tw_Bot>: ==> XOS | Unleash the Power of OpenStack
+17:02 +0800 <sdnds-slackbot>: <pichuang>: 哦~
+17:06 +0800 <sdnds-slackbot>: <rascov>: 等我開始工作說不定就有 auto deploy 了
+17:15 +0800 <sdnds-slackbot>: <takeshi>: <— OpenStack 苦手
+17:16 +0800 <sdnds-slackbot>: <pichuang>: <-- openstack 裝過一次有著不好的回憶
+17:18 +0800 <sdnds-slackbot>: <rascov>: <-根本沒裝過的廢物
+22:01 +0800 <sdnds-slackbot>: <john-lin>: 剛剛發現 OVS 2.4 已經把 OpenFlow m4gk4 port從
+22:01 +0800 <sdnds-slackbot>: <john-lin>: 預設的port 6633改到6653
+22:02 +0800 <sdnds-slackbot>: <john-lin>: 也就是說如果轉ovs 2.4連不上controller的話 可能看看是不是port還沒跳到6653
+22:51 +0800 <sdnds-slackbot>: <rascov>: ONOS還是6633的樣子

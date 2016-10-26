@@ -1,0 +1,105 @@
+17:16 +0800 <sdnds-slackbot>: <danny_ho>: 請問mininet add-flow s1 能夠在創建的時候順便add嗎？
+17:22 +0800 <sdnds-slackbot>: <pichuang>: 可以啊
+17:23 +0800 <sdnds-slackbot>: <pichuang>: 你可以start後直接接 command 下flow
+17:23 +0800 <sdnds-slackbot>: <pichuang>: <https://gist.github.com/pichuang/b1fc5ebfab471ef896b3>
+17:24 +0800 <sdnds-slackbot>: <pichuang>: 可以看一下　<https://gist.github.com/pichuang/b1fc5ebfab471ef896b3#file-push_pop_vlan-py-L56-L77>
+17:24 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/48CXO  ==> push_pop_vlan.py · GitHub
+17:28 +0800 <sdnds-slackbot>: <danny_ho>: 好的~ 我看一下
+17:28 +0800 <sdnds-slackbot>: <danny_ho>: sudo mn --controller=remote --topo tree,depth=2
+17:29 +0800 <sdnds-slackbot>: <danny_ho>: 這樣建出來後 如何pingall會通呢？
+22:57 +0800 <sdnds-slackbot>: <powen_tsai>: .HI John
+22:57 +0800 <sdnds-slackbot>: <john-lin>: 恩
+22:57 +0800 <sdnds-slackbot>: <powen_tsai>: NFV和vCPE, 你打算怎麼弄啊
+22:57 +0800 <sdnds-slackbot>: <powen_tsai>: 跟CORD一樣？
+22:57 +0800 <sdnds-slackbot>: <powen_tsai>: ONOS demo的CORN
+22:58 +0800 <sdnds-slackbot>: <john-lin>: 說實話我不了解 CORD
+22:58 +0800 <sdnds-slackbot>: <john-lin>: 不過vcpe需要一套orchestration來支持
+22:58 +0800 <sdnds-slackbot>: <john-lin>: 我前期挑了openstack發現是個迴不了頭的黑洞
+22:59 +0800 <sdnds-slackbot>: <john-lin>: 目前調整一下方向換用docker
+22:59 +0800 <sdnds-slackbot>: <pichuang>: 有沒有人想過 nfv based on docker solution
+22:59 +0800 <sdnds-slackbot>: <john-lin>: 呃 我不知道做出來效果會如何
+22:59 +0800 <sdnds-slackbot>: <john-lin>: 可是我對performance沒信心XD
+22:59 +0800 <sdnds-slackbot>: <john-lin>: @pichuang: 我現在這樣搞
+23:01 +0800 <sdnds-slackbot>: <powen_tsai>: 為什麼啊？
+23:01 +0800 <sdnds-slackbot>: <pichuang>: !!
+23:01 +0800 <sdnds-slackbot>: <pichuang>: 你平台用什麼
+23:01 +0800 <sdnds-slackbot>: <powen_tsai>: 用openstack去佈NFV and vCPE
+23:01 +0800 <sdnds-slackbot>: <john-lin>: 說難聽一點 一個人做不出來啊XDD
+23:01 +0800 <sdnds-slackbot>: <john-lin>: 那個花的工不是碩二兩年一個人就搞得出來
+23:02 +0800 <sdnds-slackbot>: <john-lin>: @pichuang  shipyard
+23:02 +0800 <sdnds-slackbot>: <powen_tsai>: openstack是回不了頭的黑洞
+23:02 +0800 <sdnds-slackbot>: <pichuang>: 痾啊啊啊啊啊啊啊啊啊啊啊啊啊啊
+23:02 +0800 <sdnds-slackbot>: <pichuang>: 好
+23:03 +0800 <sdnds-slackbot>: <pichuang>: 我是打算想拿 google kubernetes
+23:03 +0800 <sdnds-slackbot>: <pichuang>: 雖然實際上我還沒有評估跟其他的差別及易用度
+23:03 +0800 <sdnds-slackbot>: <pichuang>: 但我會先從這個著手
+23:04 +0800 <sdnds-slackbot>: <powen_tsai>: 這倒是
+23:04 +0800 <sdnds-slackbot>: <powen_tsai>: 一個人弄不出來
+23:04 +0800 <sdnds-slackbot>: <powen_tsai>: 所以才會有ON.LAB願意做這種事情...
+23:04 +0800 <sdnds-slackbot>: <john-lin>: @pichuang: 怎麼這麼震驚
+23:04 +0800 <sdnds-slackbot>: <john-lin>: google kubernetes 我原本也考慮
+23:04 +0800 <sdnds-slackbot>: <pichuang>: 因為我很想弄這個
+23:04 +0800 <sdnds-slackbot>: <john-lin>: 可是沒有閒錢可以砸XD
+23:04 +0800 <sdnds-slackbot>: <pichuang>: 閒錢?
+23:04 +0800 <sdnds-slackbot>: <john-lin>: 因為會不斷的開docker 做開發用
+23:05 +0800 <sdnds-slackbot>: <john-lin>: 太浪費錢
+23:05 +0800 <sdnds-slackbot>: <john-lin>: 我就用 shipyard
+23:05 +0800 <sdnds-slackbot>: <pichuang>: 哦哦
+23:07 +0800 <sdnds-slackbot>: <powen_tsai>: 我找不到google kubernetes的pricing
+23:07 +0800 <sdnds-slackbot>: <powen_tsai>: 這很燒錢喔
+23:08 +0800 <sdnds-slackbot>: <pichuang>: cluster container management 可能都得要評估一下
+23:08 +0800 <sdnds-slackbot>: <john-lin>: 因為只是要開發 如果在那邊開開關關 都會要一些錢
+23:09 +0800 <sdnds-slackbot>: <pichuang>: G_G
+23:09 +0800 <sdnds-slackbot>: <pichuang>: 除了 shipyard 還有其他選擇嗎
+23:09 +0800 <sdnds-slackbot>: <john-lin>: shipyard 不好嗎
+23:10 +0800 <sdnds-slackbot>: <pichuang>: 沒 只是想知道還有什麼其他的選擇而已
+23:10 +0800 <sdnds-slackbot>: <john-lin>: docker好像還有其他套 可是我用起來覺得shipyard最易用
+23:10 +0800 <sdnds-slackbot>: <pichuang>: 詳細要個別深入研究
+23:23 +0800 <sdnds-slackbot>: <rascov>: 話說 over openstack 跟 over docker 的差別在哪
+23:23 +0800 <sdnds-slackbot>: <rascov>: 效能上會有差嗎
+23:24 +0800 <sdnds-slackbot>: <john-lin>: 差別在一個虛擬化技術用 KVM 一個用container
+23:25 +0800 <sdnds-slackbot>: <john-lin>: <http://stackoverflow.com/questions/21889053/what-is-the-runtime-performance-cost-of-a-docker-container>
+23:25 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/XbHjd  ==> What is the runtime performance cost of a Docker container - Stack Overflow
+23:25 +0800 <sdnds-slackbot>: <john-lin>: 之前找到的一篇
+23:25 +0800 <sdnds-slackbot>: <john-lin>: 比較各家虛擬化技術
+23:26 +0800 <sdnds-slackbot>: <rascov>: 結論 docker NAT 雷 XD
+23:27 +0800 <sdnds-slackbot>: <john-lin>: 對啊
+23:27 +0800 <sdnds-slackbot>: <john-lin>: 不過如果比較花費的effort 還是docker來做比較少
+23:28 +0800 <sdnds-slackbot>: <rascov>: 這跟我的認知一樣啊
+23:28 +0800 <sdnds-slackbot>: <rascov>: 所以我就開始好奇
+23:28 +0800 <sdnds-slackbot>: <john-lin>: openstack雖然建起來猛猛的 就好像有了一台法拉利不會操縱一樣（對一個研究生來說XD）
+23:28 +0800 <sdnds-slackbot>: <rascov>: 為什麼 CORD 要選 openstack 不選 docker
+23:28 +0800 <sdnds-slackbot>: <john-lin>: 當然大公司或大研究單位 他們不缺人力跟resource去造
+23:30 +0800 <sdnds-slackbot>: <john-lin>: 我認爲他選openstack主要還是考量商品化的時候
+23:30 +0800 <sdnds-slackbot>: <john-lin>: 原因是很多人還是認為docker現狀還不足夠做到商品化
+23:30 +0800 <sdnds-slackbot>: <rascov>: 會嗎 我用起來覺得挺好啊 XD
+23:31 +0800 <sdnds-slackbot>: <rascov>: 不足以商業化是啥原因
+23:31 +0800 <sdnds-slackbot>: <rascov>: reliability?
+23:32 +0800 <sdnds-slackbot>: <john-lin>: 可能吧 這部分其實我沒有很深入研究
+23:32 +0800 <sdnds-slackbot>: <john-lin>: docker算新技術
+23:32 +0800 <sdnds-slackbot>: <john-lin>: KVM已經好幾年了
+23:32 +0800 <sdnds-slackbot>: <john-lin>: 但其實linux container也存在蠻久了
+23:33 +0800 <sdnds-slackbot>: <rascov>: 我也覺得 openstack 真的很麻煩 XD
+23:34 +0800 <sdnds-slackbot>: <john-lin>: 恩 我架起來之後其實面臨ip不夠的窘境不知怎解
+23:34 +0800 <sdnds-slackbot>: <john-lin>: 一個vm一個獨立的IP
+23:34 +0800 <sdnds-slackbot>: <john-lin>: 如果都在public到底能開幾個
+23:35 +0800 <sdnds-slackbot>: <john-lin>: 一個lab分到的IP又不夠那麼多給你去玩vm
+23:35 +0800 <sdnds-slackbot>: <rascov>: 當然不是 public 啊
+23:35 +0800 <sdnds-slackbot>: <john-lin>: 那全部private？
+23:35 +0800 <sdnds-slackbot>: <john-lin>: 這樣要怎麼提供外面服務
+23:36 +0800 <sdnds-slackbot>: <rascov>: 我門現在在討論的是vCPE嗎
+23:36 +0800 <sdnds-slackbot>: <john-lin>: 不是我剛說的是openstack
+23:36 +0800 <sdnds-slackbot>: <john-lin>: 架起來之後的vm
+23:36 +0800 <sdnds-slackbot>: <rascov>: 不用啊，你 VM 不是要拿來裝 VNF，VNF 只提供內部啊
+23:36 +0800 <sdnds-slackbot>: <rascov>: data plane 最後要出去才會透過 BNG 轉成 global routable IP
+23:37 +0800 <sdnds-slackbot>: <john-lin>: 哦
+23:38 +0800 <sdnds-slackbot>: <john-lin>: 這樣BNG也需要架？
+23:38 +0800 <sdnds-slackbot>: <rascov>: 就 CORD 的設計也是有 vBNG 的
+23:39 +0800 <sdnds-slackbot>: <rascov>: 說穿了就是 NAT
+23:39 +0800 <sdnds-slackbot>: <john-lin>: 哦
+23:39 +0800 <sdnds-slackbot>: <rascov>: 名字比較屌還可以虛擬化的NAT
+23:39 +0800 <sdnds-slackbot>: <rascov>: XD
+23:58 +0800 <sdnds-slackbot>: <powen_tsai>: 我一直在想vvBNG是幹麼
+23:58 +0800 <sdnds-slackbot>: <powen_tsai>: 原來就是NAT
+23:58 +0800 <sdnds-slackbot>: <powen_tsai>: 還好有猛猛的拉拉可以問
+23:58 +0800 <sdnds-slackbot>: <powen_tsai>: XD

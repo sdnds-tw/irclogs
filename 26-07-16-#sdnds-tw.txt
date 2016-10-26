@@ -1,0 +1,3 @@
+18:20 +0800 <Fishman_>: 請問兩台不同網段的switch之間連接需要設置route table嗎
+18:21 +0800 <Fishman_>: 目前一台是HP 2920其中一個openflow port連接在PC openvswitch的openflow port上
+18:22 +0800 <Fishman_>: HP vlan ip 10.1.1.2   openvswitch 192.168.5.232

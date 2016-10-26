@@ -1,0 +1,5 @@
+22:16 +0800 <sdnds-slackbot>: <kane>: 有人試過ONOS所提供的docker image或是官方提供Tutorial VM裡面去使用過docker功能嗎 @@"?
+22:17 +0800 <sdnds-slackbot>: <kane>: 有問題想要請教QQ"
+22:19 +0800 <sdnds-slackbot>: <rascov>: @kane: 建議直接上 mailing list or ONOS slack 問比較快 XD
+22:20 +0800 <sdnds-slackbot>: <kane>: 哦哦  對齁    我去ONOS slack看看~~  感恩XD
+22:21 +0800 <sdnds-slackbot>: <rascov>: 有一些 Ciena 的人她們感覺很常用 docker

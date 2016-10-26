@@ -1,0 +1,2 @@
+03:05 +0800 <sdnds-slackbot>: <jalen>: OVS是不是沒辦法add tun interface阿，這幾天在測試東西搞不定
+03:05 +0800 <sdnds-slackbot>: <jalen>: 有人加過嗎XD?

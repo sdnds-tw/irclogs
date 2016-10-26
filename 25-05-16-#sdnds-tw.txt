@@ -1,0 +1,34 @@
+09:21 +0800 <Maryjane>: 請問ofdpa在 match flow之後 要apply actions的時候 有辦法去針對 ip address 做改變嗎?
+09:22 +0800 <Maryjane>: 目前只找到 l2rewritedstMac 和 l2rewritesrcMac，找不到跟 rewrite IP 有關聯的
+09:26 +0800 <Maryjane>: http://lumanetworks.github.io/of-dpa/doc/html/d0/d94/ofdpa__datatypes_8h_source.html
+09:26 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/sFsVU  ==> OpenFlow Data Plane Abstraction (OF-DPA) API Guide and Reference Manual: api/include/ofdpa_datatypes.h Source File
+09:26 +0800 <Maryjane>: Line 829
+09:28 +0800 <Maryjane>: 只有L2rewrite沒有L3rewrite
+09:54 +0800 <sdnds-slackbot>: <hwchiu>: 我看了一下文件還真的沒有
+09:54 +0800 <sdnds-slackbot>: <hwchiu>: 你要不要寄信去官方問
+09:55 +0800 <Maryjane>: >< 謝謝幫忙~  真的怪怪的, 我以為 rewrite IP 是基本的
+12:39 +0800 <sdnds-slackbot>: <jalen>: @kane: 你的交換器是實體機器?
+12:40 +0800 <sdnds-slackbot>: <kane>: @jalen: 對，用edge core交換機（裡面是ovs)
+12:41 +0800 <sdnds-slackbot>: <jalen>: 現在用ASIC做成的Openflow Switch對於原Port進出還是沒辦法處理的
+12:41 +0800 <sdnds-slackbot>: <jalen>: 可能是硬體限制
+12:42 +0800 <sdnds-slackbot>: <jalen>: flow能下，但是實際運作不正常
+12:43 +0800 <sdnds-slackbot>: <kane>: 恩⋯ 了解⋯:fearful: 我在試試別種辦法⋯
+12:44 +0800 <sdnds-slackbot>: <kane>: 我在buck裡面放了 bucket=action=IN_PORT,bucket=action=1(進來的port),bucket=action=2
+12:45 +0800 <sdnds-slackbot>: <kane>: 可是一樣只有一個封包跑過去  今天會直接拿機器從in port去test看看 如果真的不行我就得換方法了><
+16:24 +0800 <sdnds-slackbot>: <hwchiu>: 還是你直接跑看看mininet，用模擬的方式確認此語法正常
+16:24 +0800 <sdnds-slackbot>: <hwchiu>: 就可以比較是hardware限制
+16:40 +0800 <sdnds-slackbot>: <hwchiu>: @takeshi:
+16:40 +0800 <sdnds-slackbot>: <hwchiu>: <http://p4.org/p4/clarifying-the-differences-between-p4-and-openflow/> 看完這篇後
+16:40 +0800 <sdnds-slackbot>: <hwchiu>: 對於 openflow.p4 這個 project 還是有點不清楚
+16:41 +0800 <sdnds-slackbot>: <hwchiu>: 你瞭解這兩個在此case下，是如何work的嗎
+16:43 +0800 <sdnds-slackbot>: <takeshi>: 大概知道
+16:43 +0800 <sdnds-slackbot>: <takeshi>: 我看一下下
+16:46 +0800 <sdnds-slackbot>: <takeshi>: openflow.p4 是用來跟 OpenFlow Agent 溝通用的
+16:47 +0800 <sdnds-slackbot>: <takeshi>: 當 Controller 下一個新的 flow entry 時，由 openFlow Agent 接收，然後再由 Agent 送給 openflow.p4 所設定好了 table
+16:48 +0800 <sdnds-slackbot>: <takeshi>: 目前的作法，agent 跟 openflow.p4（或是p4 switch）溝通的方法是用 thrift RPC
+16:48 +0800 <sdnds-slackbot>: <takeshi>: 不過如果 controller 想要的話，也可以直接用 thrift rpc 去跟 P4 switch 直接溝通，不用經過 agent
+16:49 +0800 <sdnds-slackbot>: <hwchiu>: openFlow Agent 有範例嗎
+16:59 +0800 <sdnds-slackbot>: <takeshi>: <https://github.com/p4lang/p4ofagent>
+17:00 +0800 <sdnds-slackbot>: <hwchiu>: okok
+17:00 +0800 <sdnds-slackbot>: <hwchiu>: 這樣有瞭解一些了XD
+17:00 +0800 <sdnds-slackbot>: <takeshi>: :+1:

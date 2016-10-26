@@ -1,0 +1,6 @@
+00:05 +0800 <sdnds-slackbot>: <takeshi>: @pichuang 就一樣 CORD + P4 + ONL/OF-DPA 這樣，十月在找 COSCUP 那位 XD
+00:07 +0800 <sdnds-slackbot>: <takeshi>: 然後 10 月在看看 P4 + OPNFV + ???
+00:10 +0800 <sdnds-slackbot>: <pichuang>: 哪裡有 opnfv = = ?
+00:39 +0800 <sdnds-slackbot>: <takeshi>: 就 COSCUP 那位 O_O
+00:40 +0800 <sdnds-slackbot>: <takeshi>: <https://slideshare.net/ChiahanWu/opensource5g>
+00:40 +0800 <sdnds-slackbot>: <takeshi>: 第 28 頁開始

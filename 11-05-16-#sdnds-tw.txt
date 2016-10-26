@@ -1,0 +1,10 @@
+09:42 +0800 <sdnds-slackbot>: <hwchiu>: 我覺得一定還是會有out of order的問題，因為你無法保證送達的順序
+09:43 +0800 <sdnds-slackbot>: <hwchiu>: lldp無法運作，你用wireshark路看看封包
+09:43 +0800 <sdnds-slackbot>: <hwchiu>: 是否有lldp的封包在傳，先確認一下這個
+11:55 +0800 <sdnds-slackbot>: <hpt>: 是沒錯 但out of order的狀況不要嚴重到重傳應該不會造成太大的影響
+11:55 +0800 <sdnds-slackbot>: <hwchiu>: 可以試試看，覺得一定會重送XD
+11:56 +0800 <sdnds-slackbot>: <hwchiu>: 光linux bonding的 balance-rr，速度也頂多1.6左右
+11:57 +0800 <sdnds-slackbot>: <hpt>: 什麼意思不太懂
+12:00 +0800 <sdnds-slackbot>: <hpt>: 大概了解你的意思了 謝謝
+13:45 +0800 <sdnds-slackbot>: <waga>: tcpdump出來是有收到lldp封包，不知道為什麼flow entry沒有match到
+13:49 +0800 <sdnds-slackbot>: <hwchiu>: match資格放寬看看

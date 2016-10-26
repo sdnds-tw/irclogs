@@ -1,0 +1,82 @@
+01:02 +0800 <sdnds-slackbot>: <rascov>: <https://gerrit.onosproject.org/#/c/4926/>
+01:02 +0800 <sdnds-tw_Bot>: ==> Gerrit Code Review
+01:02 +0800 <sdnds-slackbot>: <rascov>: It’s time.
+10:59 +0800 <sdnds-slackbot>: <powen_tsai>: oh nice
+11:00 +0800 <sdnds-slackbot>: <powen_tsai>: 啊
+11:00 +0800 <sdnds-slackbot>: <powen_tsai>: 這是gitweb>
+11:01 +0800 <sdnds-slackbot>: <powen_tsai>: 還是slack channel藏在哪我沒注意到...
+11:03 +0800 <sdnds-slackbot>: <rascov>: 我昨天送了一個 code review 把 default port 從 6633 改成 6653
+16:37 +0800 <sdnds-slackbot>: <rascov>: @pichuang: OVS 2.4 都換 6653 了，剛在跟 @takeshi @john-lin 討論 mininet 預設也應該給他 6653，你怎麼看？
+16:44 +0800 <sdnds-slackbot>: <takeshi>: 看了一下，好像只有 7 個地方需要改 6653（包含文件
+16:46 +0800 <sdnds-slackbot>: <rascov>: so easy, ONOS 我改了快 150 行，包含 QA 的 test case (<- 史上最貼心RD)
+16:47 +0800 <sdnds-slackbot>: <takeshi>: :ox:
+16:50 +0800 <sdnds-slackbot>: <rascov>: 話說我有一個議題，有點不確定講過沒，大家可以想想
+16:50 +0800 <sdnds-slackbot>: <rascov>: in a production network，假設我今天需要 upgrade controller seamlessly，如何達成
+16:51 +0800 <sdnds-slackbot>: <rascov>: HA 要是 carrier grade，不能有中斷
+16:51 +0800 <sdnds-slackbot>: <rascov>: 這裏的 upgrade 只得像是 ONOS 1.2 -> 1.3 這樣
+16:52 +0800 <sdnds-slackbot>: <kigipaul>: 換6653的好處是?
+16:53 +0800 <sdnds-slackbot>: <john-lin>: 沒啥好處XD
+16:53 +0800 <sdnds-slackbot>: <john-lin>: 只是標準這樣定
+16:53 +0800 <sdnds-slackbot>: <takeshi>: kigipaul:  因為變成標準了 XD，該面對的還是要面對 XD
+16:53 +0800 <sdnds-slackbot>: <pichuang>: 我認為應該不會改
+16:54 +0800 <sdnds-slackbot>: <pichuang>: 他預設的 ovs 版本還是很舊的那種 除非你自己上新版本
+16:54 +0800 <sdnds-slackbot>: <john-lin>: 更新controller 還不中斷感覺好難
+16:54 +0800 <sdnds-slackbot>: <takeshi>: @rascov: 這有點像是 linux 更新 kernel 不需要重新開機一樣，目前 linux 有做到這一點，不過我不太確定要怎麼做就是了
+16:54 +0800 <sdnds-slackbot>: <pichuang>: mininet 改了 port 對整體功能來講並無任何影響
+16:55 +0800 <sdnds-slackbot>: <john-lin>: 更新controller如果可以有一台 controller 做handover應該可以做到
+16:55 +0800 <sdnds-slackbot>: <pichuang>: takeshi: 我前幾天才在看 xd  kpatch 但我不會用
+16:55 +0800 <sdnds-slackbot>: <kigipaul>: 買車牌原本要買6633的 這樣不就要換了?
+16:55 +0800 <sdnds-slackbot>: <takeshi>: pichuang: kigipaul 仔細想想其實還是有好處，就是新手一開始用的時候就會把 6653 這個標準 port 記住了
+16:56 +0800 <sdnds-slackbot>: <john-lin>: 流程
+16:56 +0800 <sdnds-slackbot>: <john-lin>: 1. 把controllerA關掉更新
+16:56 +0800 <sdnds-slackbot>: <john-lin>: 2. controllerB “知道” A要更新先做role request
+16:57 +0800 <sdnds-slackbot>: <john-lin>: 3. 最後A完成之後 B再把控制權轉回A
+16:59 +0800 <sdnds-slackbot>: <rascov>: @takeshi: 我肯定 kernel 絕對比 controller 難兩百倍 XD
+16:59 +0800 <sdnds-slackbot>: <rascov>: @john-lin: 大致上是沒錯，不過還是有滿多細節的，比如，controller B 不是只有要 role request 而已，還要把 A 上面關於 switch 的 state 全部 sync 過去。萬一新舊版本紀錄的 state 內容不同怎辦
+17:01 +0800 <sdnds-slackbot>: <pichuang>: 我先前看docker 的資料有看到 coreos 如何更新他的 boot partition
+17:01 +0800 <sdnds-slackbot>: <pichuang>: <https://coreos.com/using-coreos/updates/>
+17:01 +0800 <sdnds-slackbot>: <pichuang>: Technical Details
+17:01 +0800 <sdnds-slackbot>: <pichuang>: 可以看一下
+17:01 +0800 <sdnds-slackbot>: <pichuang>: 做法還蠻有趣的 還能rollback
+17:01 +0800 <sdnds-slackbot>: <john-lin>: > 還要把 A 上面關於 switch 的 state 全部 sync 過去。萬一新舊版本紀錄的 state 內容不同怎辦
+17:01 +0800 <sdnds-slackbot>: <john-lin>: 這絕對是個大工程，理想狀況那些關於封包轉發的state都應該都要變成flow寫進 of switch
+17:02 +0800 <sdnds-slackbot>: <pichuang>: 我不確定他的概念能不能套在 controller upgrade 上
+17:12 +0800 <sdnds-slackbot>: <takeshi>: 老實說，我目前的觀念就是 Controller  —> Operation System
+17:18 +0800 <sdnds-slackbot>: <rascov>: @pichuang
+17:18 +0800 <sdnds-slackbot>: <rascov>: 我快速看了，覺得問題依然沒有得到解決
+17:19 +0800 <sdnds-slackbot>: <rascov>: 簡單看圖就是下面某個東西抽掉，可是 data 保留
+17:19 +0800 <sdnds-slackbot>: <rascov>: 問題是，如果新舊版本資料格式根本不同呢
+17:19 +0800 <sdnds-slackbot>: <rascov>: 新的去 load  舊的資料會看不懂
+17:19 +0800 <sdnds-slackbot>: <rascov>: @john-lin: 在 ONOS 已經相對小了，因為原本都有 sync
+17:19 +0800 <sdnds-slackbot>: <john-lin>: 對齁XDD
+17:20 +0800 <sdnds-slackbot>: <john-lin>: 先天優勢
+17:20 +0800 <sdnds-slackbot>: <rascov>: master 切換這些都簡單
+17:20 +0800 <sdnds-slackbot>: <rascov>: 問題還是在，原 controller 升級之後，要保證能相容(看懂) 舊版 sync 回來的資料
+17:21 +0800 <sdnds-slackbot>: <rascov>: 這個問題我覺得非常有趣，我實習如果沒意外想要做這個題目
+17:22 +0800 <sdnds-slackbot>: <rascov>: 只是拋出跟問題，大家可以思考一下在自己慣用的 controller 上如何實現
+17:22 +0800 <sdnds-slackbot>: <rascov>: 我自己是沒答案的 XD
+17:24 +0800 <sdnds-slackbot>: <rascov>: 我覺得兩個層面
+17:24 +0800 <sdnds-slackbot>: <rascov>: 小改動，只要再 control layer 做 HA 就好
+17:24 +0800 <sdnds-slackbot>: <rascov>: 大改動，比如改 6633-6653 要重啟 control plane connection 的，要在 data plane 也做 HA，有些流量要先弄走，才能升級
+19:35 +0800 <sdnds-slackbot>: <powen_tsai>: 假設CORD都弄好了
+19:35 +0800 <sdnds-slackbot>: <powen_tsai>: 那大概是比照code development的概念吧
+19:35 +0800 <sdnds-slackbot>: <powen_tsai>: 切三區
+19:35 +0800 <sdnds-slackbot>: <powen_tsai>: 一區是develop
+19:35 +0800 <sdnds-slackbot>: <powen_tsai>: 一區是deploy &amp; test
+19:36 +0800 <sdnds-slackbot>: <powen_tsai>: 一區是production
+19:37 +0800 <sdnds-slackbot>: <rascov>: 跟CORD的關係是？
+19:37 +0800 <sdnds-slackbot>: <powen_tsai>: 因為CORD有ECMP可以利用
+19:37 +0800 <sdnds-slackbot>: <powen_tsai>: data plane的某些流量要先弄走
+19:37 +0800 <sdnds-slackbot>: <rascov>: 嗯，這只是其中一種方式
+19:37 +0800 <sdnds-slackbot>: <powen_tsai>: 對於ECMP來說，就只是一些ToR swich off, 一些ECMP path off
+19:38 +0800 <sdnds-slackbot>: <powen_tsai>: yeah, one of the way
+19:39 +0800 <sdnds-slackbot>: <powen_tsai>: 另外一提，這次OpenStack Taiwan我有去聽一下，Yahoo Japan和樂天都有來分享他們的case
+19:39 +0800 <sdnds-slackbot>: <powen_tsai>: 結果這兩家都不做VM migration
+19:39 +0800 <sdnds-slackbot>: <powen_tsai>: 是直接跟user announce服務要轉移，會斷線
+19:40 +0800 <sdnds-slackbot>: <powen_tsai>: 新做一個data center, 提供新服務，舊的data center與服務，直接shut down
+19:45 +0800 <sdnds-slackbot>: <rascov>: 好爛喔
+19:52 +0800 <sdnds-slackbot>: <powen_tsai>: 我也覺得很鳥
+19:52 +0800 <sdnds-slackbot>: <powen_tsai>: 不厲害
+19:52 +0800 <sdnds-slackbot>: <powen_tsai>: 不過，他們因此避開使用VxLAN等佈署...
+19:52 +0800 <sdnds-slackbot>: <powen_tsai>: 拉拉你這題目太有挑戰性了
+19:55 +0800 <sdnds-slackbot>: <rascov>: ON.Lab 沒有在做沒挑戰性的東西啊 XD

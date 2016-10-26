@@ -1,0 +1,8 @@
+16:06 +0800 <sdnds-slackbot>: <kane>: Hi
+17:17 +0800 <ryan_>: hello
+17:19 +0800 <sdnds-slackbot>: <pichuang>: 話說掛在irc的大家 知道有 slack這東西嗎xd 因為在 slack 上有不少channel 再分別討論
+17:21 +0800 <ryan_>: ...我才正在看這個東西
+17:21 +0800 <ryan_>: 請問是透過google申請帳號的嗎
+17:24 +0800 <sdnds-slackbot>: <pichuang>: 看你用什麼 email 都可以
+17:24 +0800 <sdnds-slackbot>: <pichuang>: <https://sdnds-tw.herokuapp.com/>
+17:45 +0800 <sdnds-slackbot>: <dannyaam>: 我都忘了有irc (?

@@ -1,0 +1,36 @@
+12:42 +0800 <sdnds-slackbot>: <rascov>: @john-lin: 為什麼我裝了 OVS 2.4.0 沒有指定 port 還是 6633 啊
+13:21 +0800 <sdnds-slackbot>: <takeshi>: 我也來玩玩看好了
+13:21 +0800 <sdnds-slackbot>: <takeshi>: 你們是直接再 mininet 裡面 install.sh -V 2.4.0 嗎？
+13:36 +0800 <sdnds-slackbot>: <rascov>: 我是用小飛機的 upgrade script 把裡面的 version 改掉
+13:36 +0800 <sdnds-slackbot>: <rascov>: 他裡面是抓 2.4.0 tar.gz 解開 compile
+13:36 +0800 <sdnds-slackbot>: <rascov>: 之前我用 master 抓 2.4.90 也是 6633 啊
+13:36 +0800 <sdnds-slackbot>: <rascov>: 沒有特別改
+13:37 +0800 <sdnds-slackbot>: <rascov>: 還是是 mininet 那一層會處理沒有指定 port 的時候要用什麼 port
+13:37 +0800 <sdnds-slackbot>: <takeshi>: 我這邊目前用 mininet 也是 6633，但我猜應該是 mininet 自己會調成 6633
+13:40 +0800 <sdnds-slackbot>: <rascov>: 恩恩
+13:40 +0800 <sdnds-slackbot>: <rascov>: 可是我暫時沒有 ovs 環境可以測 native OVS 的行為
+13:43 +0800 <sdnds-slackbot>: <rascov>: 欸  不對 只測連線的話應該還好
+13:43 +0800 <sdnds-slackbot>: <rascov>: 我試試
+13:54 +0800 <sdnds-slackbot>: <rascov>: 嗯 純OVS不設 port是6653
+14:47 +0800 <sdnds-slackbot>: <takeshi>: 來架自己的 Hackpad （？
+15:02 +0800 <sdnds-slackbot>: <rascov>: 容易架嗎
+15:12 +0800 <sdnds-slackbot>: <takeshi>: 容易
+15:13 +0800 <sdnds-slackbot>: <takeshi>: 我覺得比 ONOS 簡單
+15:13 +0800 <sdnds-slackbot>: <takeshi>: XD
+15:13 +0800 <sdnds-slackbot>: <rascov>: XD
+15:13 +0800 <sdnds-slackbot>: <takeshi>: 1. 安裝 scala
+15:13 +0800 <sdnds-slackbot>: <takeshi>: 2. 安裝 mysql
+15:13 +0800 <sdnds-slackbot>: <takeshi>: 3. 改 4 個環境變數（路徑）（export.sh）
+15:13 +0800 <sdnds-slackbot>: <takeshi>: 4. 執行 setupxxxx.sh
+15:13 +0800 <sdnds-slackbot>: <takeshi>: 5. 執行 run.sh
+15:14 +0800 <sdnds-slackbot>: <takeshi>: Done
+15:14 +0800 <sdnds-slackbot>: <takeshi>: 仔細想想，可以搞一個 Docker
+15:16 +0800 <sdnds-slackbot>: <rascov>: 或許可以喔
+16:05 +0800 <sdnds-slackbot>: <takeshi>: 趁現在還有一堆 bug 時趕快送 pr   XDDD
+16:05 +0800 <sdnds-slackbot>: <takeshi>: <https://github.com/dropbox/hackpad/pull/12>
+16:08 +0800 <sdnds-slackbot>: <rascov>: 好牛喔
+16:09 +0800 <sdnds-slackbot>: <takeshi>: 因為 terminal 有噴，就加了 XD
+16:09 +0800 <sdnds-slackbot>: <takeshi>: 他後端很神奇
+16:09 +0800 <sdnds-slackbot>: <takeshi>: 再 Java(Scala) 上面跑 NodeJS 的 module
+16:10 +0800 <sdnds-slackbot>: <takeshi>: 所以後端其實是 Java + JavaScript 混和的
+16:14 +0800 <sdnds-slackbot>: <rascov>: XDDD

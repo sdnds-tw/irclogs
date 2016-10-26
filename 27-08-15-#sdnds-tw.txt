@@ -1,0 +1,254 @@
+00:00 +0800 <sdnds-slackbot1>: <takeshi>: :ox:
+00:03 +0800 <sdnds-slackbot1>: <hwchiu>: 今天發現 OpenvSwitch 上面跑不瞭 802.1x 的 client 還在尋找中XD
+00:03 +0800 <sdnds-slackbot1>: <hwchiu>: 傳統 bridge 封包過得去
+00:03 +0800 <sdnds-slackbot1>: <hwchiu>: OpenvSwitch 過不去， EAPOL 此東東
+00:07 +0800 <sdnds-slackbot1>: <pichuang>: 專家 @maomao
+00:12 +0800 <sdnds-slackbot1>: <rascov>: <https://wiki.onosproject.org/display/ONOS/Residential+gateway+setup>
+00:13 +0800 <sdnds-slackbot1>: <hwchiu>: 3Q 我看看
+02:50 +0800 <sdnds-slackbot1>: <jalen>: @pichuang: 他直接寄給妳啊?
+02:50 +0800 <sdnds-slackbot1>: <jalen>: 你要去講嗎?
+08:36 +0800 <sdnds-slackbot1>: <powen_tsai>: 哇，邱渣好久不見
+08:36 +0800 <sdnds-slackbot1>: <powen_tsai>: 小飛機開個workshop !
+17:46 +0800 <sdnds-slackbot1>: <pichuang>: 有人要去嗎xd
+17:47 +0800 <sdnds-slackbot1>: <pichuang>: opensuse asia
+17:47 +0800 <sdnds-slackbot1>: <pichuang>: 我認識 http://study-area.org 的長輩在 opensuse 社群耕耘很久
+17:47 +0800 <sdnds-tw_Bot>: ==> Redirect Page
+17:47 +0800 <sdnds-slackbot1>: <pichuang>: 今年他就邀請我們社群去那邊演講之類的
+17:50 +0800 <sdnds-slackbot1>: <pichuang>: 有人如果對協助有興趣的可以私下找我 我可以幫忙轉介紹
+20:09 +0800 <sdnds-slackbot1>: <powen_tsai>: <http://www.ntt.co.jp/news2015/1502e/pdf/150219a_1.pdf>
+20:09 +0800 <sdnds-tw_Bot>: ==> NTT Home Page > File Not Found
+20:09 +0800 <sdnds-slackbot1>: <powen_tsai>: Overview of MAGONIA API Specifications (For Distributed Processing Base)
+20:10 +0800 <sdnds-slackbot1>: <powen_tsai>: by NTT
+20:14 +0800 <sdnds-slackbot1>: <powen_tsai>: 拉拉
+20:14 +0800 <sdnds-slackbot1>: <powen_tsai>: 請教一下
+20:15 +0800 <sdnds-slackbot1>: <powen_tsai>: 還有各位
+20:15 +0800 <sdnds-slackbot1>: <powen_tsai>: open source routing stack, 有適合來佈建在超大型carrier network的嗎
+20:16 +0800 <sdnds-slackbot1>: <powen_tsai>: 我提了Quagga, XORP, BIRD
+20:16 +0800 <sdnds-slackbot1>: <powen_tsai>: 都被打槍
+20:16 +0800 <sdnds-slackbot1>: <powen_tsai>: Q___Q
+20:17 +0800 <sdnds-slackbot1>: <rascov>: 打槍 Quagga 的點在哪
+20:17 +0800 <sdnds-slackbot1>: <powen_tsai>: performance不夠好
+20:18 +0800 <sdnds-slackbot1>: <powen_tsai>: 客戶只大略的說，給data center用還夠，給carrier用不夠好
+20:19 +0800 <sdnds-slackbot1>: <powen_tsai>: 真是搞死我了
+20:19 +0800 <sdnds-slackbot1>: <rascov>: 哦？
+20:19 +0800 <sdnds-slackbot1>: <powen_tsai>: 我們公司的角色只是硬體廠
+20:20 +0800 <sdnds-slackbot1>: <powen_tsai>: 哈
+20:20 +0800 <sdnds-slackbot1>: <powen_tsai>: 可是我還是想瞭解
+20:21 +0800 <sdnds-slackbot1>: <rascov>: 好問題
+20:22 +0800 <sdnds-slackbot1>: <rascov>: 就我看來問題應該不是在算路徑那一層
+20:23 +0800 <sdnds-slackbot1>: <powen_tsai>: Quagga is single thread, so Quagga can not handle I/O and keep alive message to peers in case of many peers.
+20:23 +0800 <sdnds-slackbot1>: <powen_tsai>: The opposite peer may detect the peer is dead. and routing recalculation will be performed.
+20:23 +0800 <sdnds-slackbot1>: <powen_tsai>: As a result, network will be unstable.
+20:23 +0800 <sdnds-slackbot1>: <powen_tsai>: 我問到的回應。
+20:27 +0800 <sdnds-slackbot1>: <rascov>: 我是覺得不用所有的都 peer 到一個 quagga 上吧
+20:28 +0800 <sdnds-slackbot1>: <rascov>: 1個不夠用，有開兩個嗎
+20:28 +0800 <sdnds-slackbot1>: <rascov>: XDDD
+20:29 +0800 <sdnds-slackbot1>: <powen_tsai>: XDDD
+20:29 +0800 <sdnds-slackbot1>: <rascov>: 根據我手上的數據
+20:29 +0800 <sdnds-slackbot1>: <rascov>: single quagga instance 可以處理 100 peers, 600,000 routes，效果不甚理想，可是還堪用
+20:29 +0800 <sdnds-slackbot1>: <powen_tsai>: 100 peers, 600K routes
+20:29 +0800 <sdnds-slackbot1>: <powen_tsai>: I see
+20:29 +0800 <sdnds-slackbot1>: <powen_tsai>: 是failure convergence time的關係嗎？
+20:30 +0800 <sdnds-slackbot1>: <rascov>: 啊啊啊看錯了，這是 BIRD 的數據 XD
+20:30 +0800 <sdnds-slackbot1>: <powen_tsai>: XD
+20:30 +0800 <sdnds-slackbot1>: <rascov>: 其實問題真的都不在 quagga/BIRD 啊
+20:31 +0800 <sdnds-slackbot1>: <rascov>: controller <-> switch 這段問題才打
+20:31 +0800 <sdnds-slackbot1>: <rascov>: 大
+20:32 +0800 <sdnds-slackbot1>: <powen_tsai>: 怎說？
+20:33 +0800 <sdnds-slackbot1>: <rascov>: flow synchronization 才是最大的問題 （好像很久以前有講過一次
+20:33 +0800 <sdnds-slackbot1>: <rascov>: 哦 還有 switch 上 table 不夠大這也是一個問題
+20:40 +0800 <sdnds-slackbot1>: <rascov>: @powen_tsai: 你們家 switch 有沒有測過可以多快速 install 一條 flow?
+20:40 +0800 <sdnds-slackbot1>: <rascov>: 有沒有測過 flow table 滿的時候一直下 flow query 看看會發生什麼事?
+20:41 +0800 <sdnds-slackbot1>: <powen_tsai>: PicOS有幫我們測過
+20:41 +0800 <sdnds-slackbot1>: <powen_tsai>: 5712-54X每秒可以install 1200條flow entry
+20:41 +0800 <sdnds-slackbot1>: <powen_tsai>: flow table如果滿了, 這倒是沒想過
+20:41 +0800 <sdnds-slackbot1>: <powen_tsai>: 我問問Pica8好了
+20:41 +0800 <sdnds-slackbot1>: <powen_tsai>: XD
+20:41 +0800 <sdnds-slackbot1>: <rascov>: 1200 條，那掰了
+20:43 +0800 <sdnds-slackbot1>: <powen_tsai>: 要多少才夠80分？
+20:45 +0800 <sdnds-slackbot1>: <rascov>: 至少要跟上 controller 的速度 (雖然我知道很難 XD
+20:45 +0800 <sdnds-slackbot1>: <powen_tsai>: controller萬一不小心每秒1M flow entry...像ONOS這麼猛
+20:45 +0800 <sdnds-slackbot1>: <powen_tsai>: ~___~
+20:46 +0800 <sdnds-slackbot1>: <john-lin>: @powen_tsai: 怎麼測的每秒1200條？
+20:46 +0800 <sdnds-slackbot1>: <john-lin>: 我這邊有一台你們家的 忘記型號了
+20:46 +0800 <sdnds-slackbot1>: <john-lin>: 想知道他效能
+20:46 +0800 <sdnds-slackbot1>: <powen_tsai>: Pica8說他們有自己寫tool
+20:46 +0800 <sdnds-slackbot1>: <powen_tsai>: 打timestamp
+20:46 +0800 <sdnds-slackbot1>: <powen_tsai>: 測出來的
+20:47 +0800 <sdnds-slackbot1>: <john-lin>: 他是針對pic os做測試ㄥ
+20:47 +0800 <sdnds-slackbot1>: <john-lin>: 嗎
+20:47 +0800 <sdnds-slackbot1>: <powen_tsai>: 是針對switch做測試
+20:47 +0800 <sdnds-slackbot1>: <john-lin>: 哦
+20:47 +0800 <sdnds-slackbot1>: <john-lin>: 所以你剛那台的型號可以給我參考一下嗎
+20:47 +0800 <sdnds-slackbot1>: <john-lin>: 感恩
+20:47 +0800 <sdnds-slackbot1>: <powen_tsai>: 因為我有問過Pica8, power PC的CPU, 跟Intel CPU，效能差多少
+20:47 +0800 <sdnds-slackbot1>: <powen_tsai>: 可以啊
+20:47 +0800 <sdnds-slackbot1>: <powen_tsai>: AS5712-54X, 是10G switch
+20:47 +0800 <sdnds-slackbot1>: <powen_tsai>: Pica8回我
+20:48 +0800 <sdnds-slackbot1>: <powen_tsai>: Freescale P2041，每秒約300條flow entry
+20:48 +0800 <sdnds-slackbot1>: <rascov>: @powen_tsai: 你剛貼那個型號的 flow table 多大啊
+20:48 +0800 <sdnds-slackbot1>: <john-lin>: AS5712-54X 10G SW 每秒1200哦？
+20:48 +0800 <sdnds-slackbot1>: <powen_tsai>: Intel Rangeley/Atom C2538, 每秒約1200條flow entry
+20:48 +0800 <sdnds-slackbot1>: <john-lin>: 對啊
+20:48 +0800 <sdnds-slackbot1>: <powen_tsai>: 差三倍
+20:48 +0800 <sdnds-slackbot1>: <john-lin>: 1200感覺不多
+20:48 +0800 <sdnds-slackbot1>: <john-lin>: table size?
+20:49 +0800 <sdnds-slackbot1>: <rascov>: 對啊
+20:49 +0800 <sdnds-slackbot1>: <powen_tsai>: <http://www.pica8.com/document/v2.6/html/hardware-guides/#6914398>
+20:49 +0800 <sdnds-tw_Bot>: ==> Hardware Guides
+20:49 +0800 <sdnds-slackbot1>: <powen_tsai>: Trident II晶片，flow table, 噹噹，2K under full matching
+20:50 +0800 <sdnds-slackbot1>: <powen_tsai>: 兩秒就塞滿table了
+20:50 +0800 <sdnds-slackbot1>: <john-lin>: AS5712-54X Trident II?
+20:50 +0800 <sdnds-slackbot1>: <powen_tsai>: yes
+20:50 +0800 <sdnds-slackbot1>: <powen_tsai>: Broadcom Trident II晶片
+20:50 +0800 <sdnds-slackbot1>: <john-lin>: 這台54個port都是光纖？
+20:50 +0800 <sdnds-slackbot1>: <powen_tsai>: 用TCAM做flow table都很小啊
+20:50 +0800 <sdnds-slackbot1>: <powen_tsai>: 對
+20:51 +0800 <sdnds-slackbot1>: <john-lin>: 那我們lab好像就這台
+20:51 +0800 <sdnds-slackbot1>: <powen_tsai>: 54port都光纖，48port 10G SFP+, 6 port 40G
+20:51 +0800 <sdnds-slackbot1>: <john-lin>: 你的數據對我幫助很大XD
+20:51 +0800 <sdnds-slackbot1>: <powen_tsai>: 不客氣 XD
+20:51 +0800 <sdnds-slackbot1>: <powen_tsai>: 我可以請Pica8想辦法improve XDDD
+20:51 +0800 <sdnds-slackbot1>: <rascov>: @powen_tsai:  所以我就說問題在 table 根本不夠放
+20:51 +0800 <sdnds-slackbot1>: <rascov>: 你 quagga/bird 效能超好也沒用 XD
+20:51 +0800 <sdnds-slackbot1>: <john-lin>: table 一直都是個問題＝＝
+20:51 +0800 <sdnds-slackbot1>: <john-lin>: size
+20:52 +0800 <sdnds-slackbot1>: <rascov>: 就算不討論 size 好了
+20:52 +0800 <sdnds-slackbot1>: <rascov>: flow synchonization 的問題依舊在
+20:52 +0800 <sdnds-slackbot1>: <rascov>: 不過2k flow entries 應該測不出來
+20:53 +0800 <sdnds-slackbot1>: <powen_tsai>: flow sync的問題，是指controller與switch之間的同步？
+20:53 +0800 <sdnds-slackbot1>: <john-lin>: > flow synchonization 的問題依舊在
+20:53 +0800 <sdnds-slackbot1>: <john-lin>:  是同步到哪
+20:53 +0800 <sdnds-slackbot1>: <rascov>: 是
+20:53 +0800 <sdnds-slackbot1>: <rascov>: controller - switch
+20:53 +0800 <sdnds-slackbot1>: <powen_tsai>: 用上MAC的FIB, 最多可以到12000條flow
+20:54 +0800 <sdnds-slackbot1>: <rascov>: 等你有100k flow entries，從 controller 下個 flow query 把所有 entry 都拉回來看看
+20:54 +0800 <sdnds-slackbot1>: <rascov>: 你的 controll plane 絕對先毀滅
+20:54 +0800 <sdnds-slackbot1>: <rascov>: switch 全斷線
+20:54 +0800 <sdnds-slackbot1>: <john-lin>: 他一個request 不是可以拿到整張table?
+20:55 +0800 <sdnds-slackbot1>: <rascov>: 兩個問題
+20:55 +0800 <sdnds-slackbot1>: <rascov>: 1. 你 switch CPU (or whatever its processor is) 能處理得來嗎
+20:55 +0800 <sdnds-slackbot1>: <rascov>: 2. 這麼大的 data 從 control plane 傳回來不會影響其他 control message 嗎
+20:56 +0800 <sdnds-slackbot1>: <rascov>: 好啦答案是不行／不行，不用試了，有人試過了
+20:56 +0800 <sdnds-slackbot1>: <rascov>: XDDD
+20:56 +0800 <sdnds-slackbot1>: <john-lin>: 恩恩
+20:58 +0800 <sdnds-slackbot1>: <john-lin>: 一台這麼猛的交換機 1200 entry/sec 有點讓我震驚 ＝＝
+20:58 +0800 <sdnds-slackbot1>: <john-lin>: 那controller 效能不就不用比了
+20:58 +0800 <sdnds-slackbot1>: <john-lin>: 瓶頸都在交換機
+20:59 +0800 <sdnds-slackbot1>: <john-lin>: 當然如果一次handle多台交換機就不一樣啦
+20:59 +0800 <sdnds-slackbot1>: <powen_tsai>: 我們有下一版的Intel CPU
+20:59 +0800 <sdnds-slackbot1>: <powen_tsai>: Broadwell-DE/Xeon-D
+20:59 +0800 <sdnds-slackbot1>: <john-lin>: 第幾季出啊
+20:59 +0800 <sdnds-slackbot1>: <powen_tsai>: 欸
+20:59 +0800 <sdnds-slackbot1>: <powen_tsai>: 這是100G switch用的CPU board
+20:59 +0800 <sdnds-slackbot1>: <rascov>: 國小數學
+20:59 +0800 <sdnds-slackbot1>: <rascov>: 100k flow entries 的話，一個 flow entry 1k bits 好了，controller NIC 要 100Mbps 才送的回來喔
+21:00 +0800 <sdnds-slackbot1>: <powen_tsai>: 不會做在10G上
+21:00 +0800 <sdnds-slackbot1>: <powen_tsai>: XD
+21:00 +0800 <sdnds-slackbot1>: <rascov>: 這是1台 switch 哦，如果 controller 管 50 台 switch
+21:00 +0800 <sdnds-slackbot1>: <rascov>: 是 5Gbps 哦
+21:00 +0800 <sdnds-slackbot1>: <powen_tsai>: orz...
+21:00 +0800 <sdnds-slackbot1>: <rascov>: 這樣有了解 flow synchronization 問題在哪了嗎
+21:00 +0800 <sdnds-slackbot1>: <powen_tsai>: Intel CPU的throughput應該沒這麼猛...
+21:01 +0800 <sdnds-slackbot1>: <powen_tsai>: 好像要E5以上才有
+21:01 +0800 <sdnds-slackbot1>: <powen_tsai>: Atom還不行
+21:01 +0800 <sdnds-slackbot1>: <rascov>: 不過我一個 entry 有算大了，1k 要幾乎所有欄位都有東西才有可能
+21:02 +0800 <sdnds-slackbot1>: <john-lin>: 這是同時間呀
+21:02 +0800 <sdnds-slackbot1>: <rascov>: controller 如果沒有同時掌握所有 flow entry 問題更大
+21:02 +0800 <sdnds-slackbot1>: <rascov>: @john-lin:  你想說的是可以分批 query 是嗎？
+21:03 +0800 <sdnds-slackbot1>: <john-lin>: 恩 或許吧 你剛算的應該已經是最大值了
+21:03 +0800 <sdnds-slackbot1>: <john-lin>: 因為query不一定會同時？
+21:03 +0800 <sdnds-slackbot1>: <john-lin>: 有時候只是想知道某幾台的table
+21:03 +0800 <sdnds-slackbot1>: <rascov>: 要分批當然可以，可是中間會有 race condition
+21:04 +0800 <sdnds-slackbot1>: <rascov>: 分批就可能會有 inconsistency 發生
+21:04 +0800 <sdnds-slackbot1>: <rascov>: 有幾台更新到了，有幾台還沒
+21:04 +0800 <sdnds-slackbot1>: <rascov>: 會不會有問題，我也不知道
+21:04 +0800 <sdnds-slackbot1>: <john-lin>: p
+21:04 +0800 <sdnds-slackbot1>: <john-lin>: 恩
+21:05 +0800 <sdnds-slackbot1>: <rascov>: 所以目前 ONOS 的做法
+21:05 +0800 <sdnds-slackbot1>: <rascov>: 不同步
+21:05 +0800 <sdnds-slackbot1>: <rascov>: 關掉 XD
+21:05 +0800 <sdnds-slackbot1>: <rascov>: 下了就當作他有下成功，不再去看
+21:05 +0800 <sdnds-slackbot1>: <rascov>: 不這麼做根本連跑都跑不起來
+21:05 +0800 <sdnds-slackbot1>: <john-lin>: 你意思是原本應該會下了在那等？
+21:06 +0800 <sdnds-slackbot1>: <rascov>: 不然正常來說 ONOS periodically 回去檢查 switch table 上有沒有和 controller 的 state 一致
+21:06 +0800 <sdnds-slackbot1>: <rascov>: 如果有不一樣controller會下flowmod 把 switch 上改成一樣
+21:07 +0800 <sdnds-slackbot1>: <john-lin>: 這樣說的話onos那邊等於是有一份所有switch完整的flow table?
+21:07 +0800 <sdnds-slackbot1>: <rascov>: 是
+21:07 +0800 <sdnds-slackbot1>: <john-lin>: 哦
+21:07 +0800 <sdnds-slackbot1>: <rascov>: 但是在 BGP 這個不關掉不行，會爆炸
+21:07 +0800 <sdnds-slackbot1>: <john-lin>: ryu那邊是沒看到有這樣的設計
+21:08 +0800 <sdnds-slackbot1>: <rascov>: 而且我剛 100K 低估了，我們在測 BGP 用 600K routing entries
+21:09 +0800 <sdnds-slackbot1>: <john-lin>: 恩 你們測試要怎麼有大量的sw跟host阿
+21:09 +0800 <sdnds-slackbot1>: <rascov>: Mininet
+21:09 +0800 <sdnds-slackbot1>: <john-lin>: 還是都用ovs+mininet
+21:09 +0800 <sdnds-slackbot1>: <john-lin>: 哦
+21:09 +0800 <sdnds-slackbot1>: <rascov>: super 強大的  Mininet
+21:10 +0800 <sdnds-slackbot1>: <rascov>: 光建這個環境，Mininet 要 41G RAM
+21:10 +0800 <sdnds-slackbot1>: <john-lin>: mininet我記得開接近十幾台host＋十幾台sw就很慢了
+21:10 +0800 <sdnds-slackbot1>: <rascov>: ONOS 要 10G
+21:10 +0800 <sdnds-slackbot1>: <rascov>: 16 Core CPU
+21:10 +0800 <sdnds-slackbot1>: <john-lin>: 結果mininet要跑在比controller好的機器上XD
+21:11 +0800 <sdnds-slackbot1>: <rascov>: 對 XD
+21:11 +0800 <sdnds-slackbot1>: <rascov>: 才 6 台 OVS 哦
+21:11 +0800 <sdnds-slackbot1>: <rascov>: 每台 600K entries 左右
+21:11 +0800 <sdnds-slackbot1>: <john-lin>: 你是指六個mininet串聯起來 還是開六個sw
+21:11 +0800 <sdnds-slackbot1>: <rascov>: 一台 mininet, 裡面有6個OVS
+21:11 +0800 <sdnds-slackbot1>: <john-lin>: 哦
+21:12 +0800 <sdnds-slackbot1>: <powen_tsai>: 16 core CPU
+21:12 +0800 <sdnds-slackbot1>: <powen_tsai>: wow
+21:14 +0800 <sdnds-slackbot1>: <rascov>: 專業 cisco router 可以吃下全世界 BGP 的，一台幾百還幾千萬吧
+21:14 +0800 <sdnds-slackbot1>: <rascov>: 還不見得 entry 夠用
+21:14 +0800 <sdnds-slackbot1>: <john-lin>: 恩 你是說600K嗎
+21:15 +0800 <sdnds-slackbot1>: <rascov>: 對
+21:15 +0800 <sdnds-slackbot1>: <rascov>: 600k 個 routing entry
+21:15 +0800 <sdnds-slackbot1>: <john-lin>: 恩
+21:15 +0800 <sdnds-slackbot1>: <rascov>: 當然有些事可以 aggregate 起來啦
+21:16 +0800 <sdnds-slackbot1>: <rascov>: 但我的意思是，這個用幾百幾千萬的 cisco router 都很困難
+21:16 +0800 <sdnds-slackbot1>: <rascov>: 用 SDN solution 很困難也是正常的 (?)
+21:16 +0800 <sdnds-slackbot1>: <rascov>: 可惜資訊業者鄭先生不在這個頻道，他這方面懂更多
+21:17 +0800 <sdnds-slackbot1>: <john-lin>: 恩 好奇問一下現在市面上leagcy switch大概都多少K
+21:17 +0800 <sdnds-slackbot1>: <john-lin>: 每次一講起sdn被戰的點都是table size不夠
+21:20 +0800 <sdnds-slackbot1>: <john-lin>: 然後明明有time out機制可以用 在OFP 1.4 還多了一種 flow eviction可以清
+21:24 +0800 <sdnds-slackbot1>: <rascov>: 問 @pichuang XD
+21:24 +0800 <sdnds-slackbot1>: <powen_tsai>: legacy switch?
+21:24 +0800 <sdnds-slackbot1>: <powen_tsai>: 要看啥等級啊，還有多legacy...
+21:25 +0800 <sdnds-slackbot1>: <powen_tsai>: 像我們的1GbE switch, L2+
+21:25 +0800 <sdnds-slackbot1>: <powen_tsai>: end user price, 我記得也要四五百美金
+21:25 +0800 <sdnds-slackbot1>: <powen_tsai>: 但這種switch沒辦法拿來做SDN用
+21:26 +0800 <sdnds-slackbot1>: <john-lin>: 多少I
+21:27 +0800 <sdnds-slackbot1>: <john-lin>: Table size
+21:31 +0800 <APTX4869>: HI
+21:32 +0800 <sdnds-slackbot1>: <rascov>: 我覺得不能拿 switch 跟 router 比
+21:32 +0800 <sdnds-slackbot1>: <rascov>: switch 本來就只要很少的 entry 就好
+21:33 +0800 <sdnds-slackbot1>: <rascov>: 我覺得應該要有一種超貴的SDN設備，table 超級多，可以用來當router，然後跑 OF
+21:33 +0800 <sdnds-slackbot1>: <rascov>: 之類的
+21:34 +0800 <sdnds-slackbot1>: <john-lin>: 嗯
+21:37 +0800 <APTX4869>: 我有點關於設定OpenvSwitch的問題想請教一下...
+21:37 +0800 <sdnds-slackbot1>: <powen_tsai>: Noviflow啊...table entry爆多
+21:38 +0800 <APTX4869>: 我在VMware ESXi 上...裝了1台Openvswitch...
+21:38 +0800 <APTX4869>: 安裝沒有什麼太大問題..
+21:39 +0800 <APTX4869>: 建立一個bridge 加入一個physical interface...可以連通...
+21:40 +0800 <APTX4869>: 但在這個bridge 中再加入其他physical interfaces時..
+21:40 +0800 <APTX4869>: 就不能ping 通了...
+21:41 +0800 <APTX4869>: 當我把其他的physical interface 都踢離那個bridge interface 時....
+21:41 +0800 <APTX4869>: 餘下的一個physical interface就灰復正常..
+21:42 +0800 <APTX4869>: 請問這是什麼問題?
+21:47 +0800 <sdnds-slackbot1>: <powen_tsai>: ㄟsorry恕我無能為力幫你troubleshooting XD
+22:07 +0800 <APTX4869>: 好吧...
+22:08 +0800 <APTX4869>: 那你知道那裡可以問這些問題嗎?
+22:43 +0800 <sdnds-slackbot1>: <powen_tsai>: 這裡啊
+22:44 +0800 <sdnds-slackbot1>: <powen_tsai>: 只是剛好我沒辦法而已
+22:44 +0800 <sdnds-slackbot1>: <powen_tsai>: @pichuang: 快來
+22:44 +0800 <sdnds-slackbot1>: <powen_tsai>: @john-lin: 來喔
+22:44 +0800 <sdnds-slackbot1>: <powen_tsai>: @takeshi: 來喔
+22:44 +0800 <sdnds-slackbot1>: <powen_tsai>: XD
+22:50 +0800 <sdnds-slackbot1>: <takeshi>: 沒用過 VMware + OVS 耶 >_<
+22:54 +0800 <sdnds-slackbot1>: <hwchiu>: 好長
+22:54 +0800 <sdnds-slackbot1>: <pichuang>: 有點看不太懂問題 有圖可以解釋嗎
+22:54 +0800 <sdnds-slackbot1>: <hwchiu>: 1) 誰ping誰?\
+22:55 +0800 <sdnds-slackbot1>: <hwchiu>: 2)有接controller? 還是都走normal action?
+22:55 +0800 <sdnds-slackbot1>: <hwchiu>: 3)如 pichuang，有圖可以介紹架構?
+22:56 +0800 <sdnds-slackbot1>: <pichuang>: hwchiu: 牛駕到
+22:57 +0800 <sdnds-slackbot1>: <hwchiu>: pichuang: 我只是個過客QQ
+23:34 +0800 <sdnds-slackbot1>: <hwchiu>: 我之前拿I7 + OVS 測，forward 一個封包 (# of flow =1000)， 大概要0.1ms

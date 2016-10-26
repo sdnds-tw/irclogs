@@ -1,0 +1,8 @@
+09:42 +0800 <sdnds-slackbot>: <hwchiu>: 改code
+09:43 +0800 <sdnds-slackbot>: <hwchiu>: 你的selection是指group action裡面?
+09:52 +0800 <sdnds-slackbot>: <hpt>: 對 意思是必須直接改OVS裡的code再重新編譯嗎？
+09:56 +0800 <sdnds-slackbot>: <hwchiu>: 恩
+09:56 +0800 <sdnds-slackbot>: <hwchiu>: 對
+10:20 +0800 <sdnds-slackbot>: <hpt>: 了解 謝謝
+16:06 +0800 <sdnds-slackbot>: <hwchiu>: 話說我在想，改成 round robin後，應該 tcp 都會遇到 out of order 的問題
+16:06 +0800 <sdnds-slackbot>: <hwchiu>: 這樣速度會好嗎

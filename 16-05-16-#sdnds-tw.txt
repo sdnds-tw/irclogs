@@ -1,0 +1,28 @@
+11:39 +0800 <sdnds-slackbot>: <hwchiu>: @aweimeow:
+11:39 +0800 <sdnds-slackbot>: <hwchiu>: Hi Willy,
+11:39 +0800 <sdnds-slackbot>: <hwchiu>:
+11:39 +0800 <sdnds-slackbot>: <hwchiu>: Please see comment below.
+11:39 +0800 <sdnds-slackbot>: <hwchiu>:
+11:39 +0800 <sdnds-slackbot>: <hwchiu>: On Wed, May 11, 2016 at 8:52 AM, Willy Chen <ccps960718456@gmail.com> wrote:
+11:39 +0800 <sdnds-slackbot>: <hwchiu>: Hello,
+11:39 +0800 <sdnds-slackbot>: <hwchiu>:
+11:39 +0800 <sdnds-slackbot>: <hwchiu>: I want to know about how OVS to deal with gre tunnel,
+11:39 +0800 <sdnds-slackbot>: <hwchiu>: What things OVS doing when packet send out through tunnel?
+11:39 +0800 <sdnds-slackbot>: <hwchiu>:
+11:39 +0800 <sdnds-slackbot>: <hwchiu>: OVS uses Linux GRE tunnel implementation. When packet sends out through tunnel port in ovs, the ovs datapath will encapsulates the packet with the IP header you configured, and forward to Linux network stack. Then depending on IP address at the outer header, Linux kernel will forward to the corresponding outgoing interface, in your case it should be eth0.
+11:39 +0800 <sdnds-slackbot>: <hwchiu>:
+11:39 +0800 <sdnds-slackbot>: <hwchiu>:
+11:39 +0800 <sdnds-slackbot>: <hwchiu>: And when VM2's eth0 receive the packet, what happened in the vm2 ?
+11:39 +0800 <sdnds-slackbot>: <hwchiu>:
+11:39 +0800 <sdnds-slackbot>: <hwchiu>: VM2's eth0 receives the tunnel packet, forwards to gre tunnel, does the packet encapsulation, then based on the flow entry in OVS, it forwards to h2.
+11:39 +0800 <sdnds-slackbot>: <hwchiu>:
+11:39 +0800 <sdnds-slackbot>: <hwchiu>:
+11:39 +0800 <sdnds-slackbot>: <hwchiu>: If I have 2 switch in vm2, and they tunnel to vm1 with different key,
+11:39 +0800 <sdnds-slackbot>: <hwchiu>: when h1 ping h2, why ovs can transfer packet to h2, how did it knows ?
+11:39 +0800 <sdnds-slackbot>: <hwchiu>:
+11:39 +0800 <sdnds-slackbot>: <hwchiu>: Then this depends on how you setup the flow entry.
+11:39 +0800 <sdnds-slackbot>: <hwchiu>:
+11:40 +0800 <sdnds-slackbot>: <hwchiu>: Regards,
+11:40 +0800 <sdnds-slackbot>: <hwchiu>: William
+11:40 +0800 <sdnds-slackbot>: <hwchiu>: 友人回你了
+11:40 +0800 <sdnds-slackbot>: <hwchiu>: 簡單來講GRE的部分走linux kernel原生的

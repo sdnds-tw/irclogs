@@ -1,0 +1,5 @@
+02:12 +0800 <sdnds-slackbot>: <takeshi>: register 不會受到封包的影響，要更動 register 只能夠透過 action 去讀寫，所以他可以儲存狀態
+02:18 +0800 <sdnds-slackbot>: <takeshi>: 而且他的範例用了還沒有釋出的寫法.......
+02:18 +0800 <sdnds-slackbot>: <takeshi>: 查閱了 Spec 都沒看過這樣用 XD
+02:18 +0800 <sdnds-slackbot>: <takeshi>: <http://p4.org/wp-content/uploads/2016/03/p4_v1.1.pdf>
+02:19 +0800 <sdnds-slackbot>: <takeshi>: 直接針對 metadata, register 做運算（=, +, -….） 還第一次看到

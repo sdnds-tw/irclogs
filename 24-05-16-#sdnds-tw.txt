@@ -1,0 +1,18 @@
+04:49 +0800 <sdnds-slackbot>: <kane>: 想請問一下,
+04:49 +0800 <sdnds-slackbot>: <kane>: 最近在使用group action上遇到了點疑問...
+04:49 +0800 <sdnds-slackbot>: <kane>: 我在ovs的交換機內下了一條entry
+04:49 +0800 <sdnds-slackbot>: <kane>: inport = 1,
+04:49 +0800 <sdnds-slackbot>: <kane>: action = group:1
+04:49 +0800 <sdnds-slackbot>: <kane>: 那我group action想要做到 output到 inport跟某個output port
+04:49 +0800 <sdnds-slackbot>: <kane>: 我group type是給all,
+04:49 +0800 <sdnds-slackbot>: <kane>: 那我該如何下bucket呢?
+04:49 +0800 <sdnds-slackbot>: <kane>: 一個給IN_PORT 一個給我要的output port? 還是有其他作法呢@@?
+15:50 +0800 <Maryjane>: =D
+15:51 +0800 <Maryjane>: 請問這裡有人對 ofdpa 熟嗎?
+17:02 +0800 <sdnds-slackbot>: <pichuang>: hi 可以先把問題丟出來看看 應該沒有人敢說很熟xd
+17:24 +0800 <sdnds-slackbot>: <hwchiu>: 你是要將封包複製一份? 然後一次送兩個出口?
+17:24 +0800 <sdnds-slackbot>: <hwchiu>: 一個出口是近來的，一個是其他的 這樣
+17:36 +0800 <sdnds-slackbot>: <hwchiu>: bucket=output:1,bucket=in_port,
+17:36 +0800 <sdnds-slackbot>: <hwchiu>: 這些都是ovs指令的問題，可以參閱
+17:36 +0800 <sdnds-slackbot>: <hwchiu>: <http://openvswitch.org/support/dist-docs/ovs-ofctl.8.txt>
+19:07 +0800 <sdnds-slackbot>: <kane>: 我是下你那樣子的沒錯⋯可是他就⋯沒往回丟:fearful:，還在找原因

@@ -1,0 +1,120 @@
+00:40 +0800 <sdnds-slackbot>: <powen_tsai>: 我看了拉拉分享的CORD demo影片
+00:40 +0800 <sdnds-slackbot>: <powen_tsai>: 在介紹rack裡面的設備時，我注意到，裡面是用Pica8 P-3922的ToR switch...
+01:44 +0800 <sdnds-slackbot>: <powen_tsai>: CORD Fabric是用Dell switch
+03:51 +0800 <sdnds-slackbot>: <rascov>: @powen_tsai: ON.Lab Pica8 用很兇 XD 一般測試是用 3290
+08:51 +0800 <sdnds-slackbot>: <rascov>: @takeshi: 你之前在這邊問說「各家 Controller 如果收到一個 message（如packet in）時，如果 handler 過了相當久都沒有處理的話，會發生什麼事情？」
+08:51 +0800 <sdnds-slackbot>: <rascov>: ONOS 會卡住，而且 block 後面所有的 processor (他是用 for 迴圈輪流叫的)
+08:59 +0800 <sdnds-slackbot>: <powen_tsai>: 我有看到takeshi在blog寫了Ryu event handeler的文章
+08:59 +0800 <sdnds-slackbot>: <powen_tsai>: interesting
+11:45 +0800 <sdnds-slackbot>: <takeshi>: rascov: 剛剛研究了一下 floodlight
+11:45 +0800 <sdnds-slackbot>: <takeshi>: ```
+11:45 +0800 <sdnds-slackbot>: <takeshi>: pktinProcTime.recordStartTimePktIn();
+11:45 +0800 <sdnds-slackbot>: <takeshi>: Command cmd;
+11:45 +0800 <sdnds-slackbot>: <takeshi>: for (IOFMessageListener listener : listeners) {
+11:45 +0800 <sdnds-slackbot>: <takeshi>:     pktinProcTime.recordStartTimeComp(listener);
+11:45 +0800 <sdnds-slackbot>: <takeshi>:     cmd = listener.receive(sw, m, bc);
+11:45 +0800 <sdnds-slackbot>: <takeshi>:     pktinProcTime.recordEndTimeComp(listener);
+11:45 +0800 <sdnds-slackbot>: <takeshi>:
+11:45 +0800 <sdnds-slackbot>: <takeshi>:     if (Command.STOP.equals(cmd)) {
+11:45 +0800 <sdnds-slackbot>: <takeshi>:         break;
+11:45 +0800 <sdnds-slackbot>: <takeshi>:     }
+11:45 +0800 <sdnds-slackbot>: <takeshi>: }
+11:45 +0800 <sdnds-slackbot>: <takeshi>: pktinProcTime.recordEndTimePktIn(sw, m, bc);
+11:45 +0800 <sdnds-slackbot>: <takeshi>: ```
+11:45 +0800 <sdnds-slackbot>: <takeshi>:
+11:46 +0800 <sdnds-slackbot>: <takeshi>: 因為有順序的關係，也是一樣所有的 Module 都會被卡住...
+11:46 +0800 <sdnds-slackbot>: <takeshi>: ryu 的話因為是送到 Queue 然後再用別的 Thread 呼叫，不是直接呼叫，所以不會把整個 Controller 卡死
+11:47 +0800 <sdnds-slackbot>: <takeshi>: 之前是在想說，為什麼不加上一個 Timeout 就好了？
+11:47 +0800 <sdnds-slackbot>: <takeshi>: 後來有想到如果把進行中的 Module/App 中斷掉的話，可能會有問題
+11:47 +0800 <sdnds-slackbot>: <john-lin>: Application event 來會block?
+11:48 +0800 <sdnds-slackbot>: <john-lin>: 那如果一個迴圈算很久的話 其他message 都掉了嗎
+11:48 +0800 <sdnds-slackbot>: <takeshi>: john-lin: ryu 裡面如果 handler 卡死的話好像就是只會卡死一個 App 而已
+11:49 +0800 <sdnds-slackbot>: <takeshi>: message/event 不會掉，只會放在 queue 中
+11:50 +0800 <sdnds-slackbot>: <john-lin>: 嗯 我印象是卡一個app 但有方法可以讓他不卡
+11:51 +0800 <sdnds-slackbot>: <john-lin>: 用hub.sleep他會在切去做別的事
+11:52 +0800 <sdnds-slackbot>: <takeshi>: 對，但是如果 handler 裡面寫(假設)
+11:52 +0800 <sdnds-slackbot>: <takeshi>: `
+11:52 +0800 <sdnds-slackbot>: <takeshi>: while True:
+11:52 +0800 <sdnds-slackbot>: <takeshi>:     hub.sleep(1000)
+11:52 +0800 <sdnds-slackbot>: <takeshi>: `
+11:52 +0800 <sdnds-slackbot>: <takeshi>: 的話，這一個 App 還是會無法繼續處理其他送過來的 Event
+11:55 +0800 <sdnds-slackbot>: <john-lin>: 我記得在hub.sleep 期間他可以handle其他events
+11:55 +0800 <sdnds-slackbot>: <john-lin>: 如果是time.sleep就無法了
+11:56 +0800 <sdnds-slackbot>: <takeshi>: 了解，我等等看一下
+11:57 +0800 <sdnds-slackbot>: <takeshi>: 等等切換到 #ryu 講好了？ XDD
+11:57 +0800 <sdnds-slackbot>: <john-lin>: 好
+11:57 +0800 <sdnds-slackbot>: <john-lin>: 原是想討論其他controller 如果block感覺怪怪的
+11:58 +0800 <sdnds-slackbot>: <takeshi>: 喔對，我原本是想問說其他 Controller 解決 Block 的方法 XD
+13:24 +0800 <sdnds-slackbot>: <rascov>: 這是一個好問題啊
+13:26 +0800 <sdnds-slackbot>: <rascov>: 根據 ON.Lab chief architect 前些日子的解釋，app 的設計應該要能快速處理完
+13:29 +0800 <sdnds-slackbot>: <takeshi>: 還有就是 dead lock 的問題
+13:29 +0800 <sdnds-slackbot>: <takeshi>: 例如 app 之間在相互等待....
+13:33 +0800 <sdnds-slackbot>: <takeshi>: 我是用猜的 XD
+13:33 +0800 <sdnds-slackbot>: <takeshi>: 因為在 ryu 裡面 app 可以送 event 給 app
+13:34 +0800 <sdnds-slackbot>: <takeshi>: 有一種 IPC 的感覺
+13:34 +0800 <sdnds-slackbot>: <rascov>: 我一直以為你在講 packet in
+13:35 +0800 <sdnds-slackbot>: <takeshi>: 喔不是 XD
+13:35 +0800 <sdnds-slackbot>: <takeshi>: ONOS 是有順序在把 packet In 送給各 App 嗎？
+13:35 +0800 <sdnds-slackbot>: <rascov>: 有，根據 priority
+13:35 +0800 <sdnds-slackbot>: <rascov>: for loop
+13:35 +0800 <sdnds-slackbot>: <rascov>: 一個一個來
+13:36 +0800 <sdnds-slackbot>: <takeshi>: 了解，Ryu 的話也是一個個送，但是送到之後都是同時進行的....
+13:37 +0800 <sdnds-slackbot>: <rascov>: 可是同時你就要考慮 race condition
+13:37 +0800 <sdnds-slackbot>: <rascov>: 有可能上一個 application 會做一件事，下一個 application 要 depend on 上一個 app 做的事情
+13:37 +0800 <sdnds-slackbot>: <rascov>: 這時候誰先誰後就有差了
+13:37 +0800 <sdnds-slackbot>: <takeshi>: 也是
+13:39 +0800 <sdnds-slackbot>: <takeshi>: 我目前正在想要如何把 OS 的概念導入 Controller 中......
+13:39 +0800 <sdnds-slackbot>: <takeshi>: 但可能會有許多差異就是了
+13:44 +0800 <sdnds-slackbot>: <rascov>: 然後今天有人在 ONOS 問 event 順序的問題
+13:44 +0800 <sdnds-slackbot>: <rascov>: 因為ONOS是 distributed
+13:46 +0800 <sdnds-slackbot>: <rascov>: 結論是這樣
+13:46 +0800 <sdnds-slackbot>: <rascov>: All events (DEVICE_ADDED, PORT_ADDED etc) should be delivered in the correct order on all nodes. On the node acting as master the ordering is trivial. But on remote nodes, semantically out of order events are discarded (ex: a port cannot exist without a device). Out of sync state is eventually detected and reconciled via the anti-entropy mechanism.
+13:47 +0800 <sdnds-slackbot>: <takeshi>: got it
+13:48 +0800 <sdnds-slackbot>: <powen_tsai>: anti-entropy mechanism
+13:48 +0800 <sdnds-slackbot>: <powen_tsai>: what is this?
+14:00 +0800 <sdnds-slackbot>: <rascov>: ONOS cluster 同步有兩種機制
+14:00 +0800 <sdnds-slackbot>: <rascov>: 1. Strong consistency - 用 RAFT
+14:00 +0800 <sdnds-slackbot>: <rascov>: 2. Weak consistency - gossip-based anti-entropy
+14:00 +0800 <sdnds-slackbot>: <rascov>: 1 對應到的資料結構是 ConsistentMap
+14:00 +0800 <sdnds-slackbot>: <rascov>: 2 EventuallyConsistentMap
+14:20 +0800 <sdnds-slackbot>: <powen_tsai>: yes I remember this from your slide
+14:21 +0800 <sdnds-slackbot>: <powen_tsai>: then, are they anti-entropy mechanism?
+14:34 +0800 <sdnds-slackbot>: <rascov>: 同個東西吧
+20:30 +0800 <sdnds-slackbot>: <takotsai>: 想請問一下 openflow switch裡面 要怎麼看TCAM的大小啊？
+20:30 +0800 <sdnds-slackbot>: <takotsai>: 我看Pica8的Data sheet好像看不出來
+20:31 +0800 <sdnds-slackbot>: <takotsai>: <http://www.xinguard.com/content.aspx?id=7>
+20:31 +0800 <sdnds-slackbot>: <powen_tsai>: Hi
+20:31 +0800 <sdnds-slackbot>: <powen_tsai>: 你想問哪台Pica8 switch
+20:31 +0800 <sdnds-slackbot>: <takotsai>: 3290
+20:31 +0800 <sdnds-slackbot>: <powen_tsai>: 你手邊有？
+20:31 +0800 <sdnds-slackbot>: <takotsai>: 有
+20:33 +0800 <sdnds-slackbot>: <powen_tsai>: 哪顆chipset
+20:34 +0800 <sdnds-slackbot>: <powen_tsai>: Pica8網站似乎已經找不到3290了...
+20:35 +0800 <sdnds-slackbot>: <powen_tsai>: 衛信也沒寫是哪顆晶片
+20:35 +0800 <sdnds-slackbot>: <powen_tsai>: 找到了
+20:35 +0800 <sdnds-slackbot>: <powen_tsai>: 1 / Fire
+20:36 +0800 <sdnds-slackbot>: <powen_tsai>: <http://www.pica8.com/document/v2.6/html/hardware-guides/#6914398>
+20:36 +0800 <sdnds-tw_Bot>: ==> Hardware Guides
+20:36 +0800 <sdnds-slackbot>: <powen_tsai>: 請參考此頁
+20:38 +0800 <sdnds-slackbot>: <takotsai>: 爬文中... 等一下Orz
+20:39 +0800 <sdnds-slackbot>: <powen_tsai>: ok
+20:39 +0800 <sdnds-slackbot>: <powen_tsai>: 請教你是？
+20:39 +0800 <sdnds-slackbot>: <powen_tsai>: 研究生嗎
+20:41 +0800 <sdnds-slackbot>: <takotsai>: 恩恩 沒錯
+20:42 +0800 <sdnds-slackbot>: <takotsai>: 我找到這張Table 我大概了解怎麼看TCAM了
+20:43 +0800 <sdnds-slackbot>: <powen_tsai>: yes the same table
+20:43 +0800 <sdnds-slackbot>: <takotsai>: 給大家參考
+20:43 +0800 <sdnds-slackbot>: <powen_tsai>: flow scalability
+22:01 +0800 <sdnds-slackbot>: <powen_tsai>: Hi 各位
+22:02 +0800 <sdnds-slackbot>: <powen_tsai>: 關於在Hackathon Taiwan開一個SDNDS.TW的project
+22:02 +0800 <sdnds-slackbot>: <powen_tsai>: 我來寫個提案好了
+22:03 +0800 <sdnds-slackbot>: <powen_tsai>: 我目前能提供的設備是Intel CPU-base appliance (裸機) + Switch (PicOS based) + Wi-Fi (OpenWRT)
+22:03 +0800 <sdnds-slackbot>: <powen_tsai>: 看這樣的設備，能讓大家玩出什麼不一樣的花樣
+22:03 +0800 <sdnds-slackbot>: <powen_tsai>: QoS
+22:03 +0800 <sdnds-slackbot>: <powen_tsai>: Security
+22:03 +0800 <sdnds-slackbot>: <powen_tsai>: Load Balancing
+22:03 +0800 <sdnds-slackbot>: <powen_tsai>: 都可以玩
+22:56 +0800 <sdnds-slackbot>: <pichuang>: <http://www.inside.com.tw/2015/08/19/google-announces-onhub-router>
+23:12 +0800 <sdnds-slackbot>: <davy>: Google 又重新定義了 AP
+23:50 +0800 <sdnds-slackbot>: <powen_tsai>: 哎呀壓
+23:51 +0800 <sdnds-slackbot>: <powen_tsai>: 很有意思

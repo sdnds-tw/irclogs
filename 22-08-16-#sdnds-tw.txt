@@ -1,0 +1,20 @@
+11:56 +0800 <sdnds-slackbot>: <pichuang>: 九月份
+11:56 +0800 <sdnds-slackbot>: <pichuang>: 會有一個 meetup
+11:56 +0800 <sdnds-slackbot>: <pichuang>: 會探討 CORD + P4 + ONL/OF-DPA
+11:56 +0800 <sdnds-slackbot>: <pichuang>: 共計四個講者
+11:56 +0800 <sdnds-slackbot>: <pichuang>: 有興趣的人可以不定期關注一下訊息 講者們還在訂題目xd
+11:57 +0800 <sdnds-slackbot>: <pichuang>: 如果有人也想要分享的話 歡迎找我聯絡
+11:58 +0800 <sdnds-slackbot>: <hwchiu>: XD 會不會G
+11:59 +0800 <sdnds-slackbot>: <pichuang>: @hwchiu 有你在我們不用怕xd
+12:01 +0800 <sdnds-slackbot>: <hwchiu>: 就是我會G
+12:01 +0800 <sdnds-slackbot>: <pichuang>: 你牛不用擔心
+18:46 +0800 <sdnds-slackbot>: <takeshi>: 要不要邀請 COSCUP 那一位在來講一次 5G + SDN/NFV XD
+18:46 +0800 <sdnds-slackbot>: <takeshi>: 他是 OPNFV 派的
+19:29 +0800 <sdnds-slackbot>: <powen_tsai>: This is good idea!
+22:24 +0800 <sdnds-slackbot>: <pichuang>: 五個人喔
+22:24 +0800 <sdnds-slackbot>: <pichuang>: 有點太多
+22:24 +0800 <sdnds-slackbot>: <pichuang>: 十月份再說好了
+22:25 +0800 <sdnds-slackbot>: <pichuang>: 我個人很想弄opnfv 但沒啥門道
+22:35 +0800 <sdnds-slackbot>: <powen_tsai>: 十月份，需要先邀請嗎？
+22:37 +0800 <sdnds-slackbot>: <hwchiu>: 不然我下次
+22:37 +0800 <sdnds-slackbot>: <hwchiu>: 我先研究epoll 的kernel 實作XDD

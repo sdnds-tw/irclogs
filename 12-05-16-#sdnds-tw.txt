@@ -1,0 +1,156 @@
+12:09 +0800 <sdnds-slackbot>: <aweimeow>: 嗨，各位好，
+12:09 +0800 <sdnds-slackbot>: <aweimeow>: 我正在開發的專案碰到一個事情，
+12:09 +0800 <sdnds-slackbot>: <aweimeow>: 我很好奇關於 ovs gre tunnel 是怎麼實作的，
+12:09 +0800 <sdnds-slackbot>: <aweimeow>: 他在我的 vm 裡面做了什麼？
+12:09 +0800 <sdnds-slackbot>: <aweimeow>:
+12:09 +0800 <sdnds-slackbot>: <aweimeow>: 我的環境如下，有兩個 vm 各自有著 mininet 環境，並用 tunnel 相連：
+12:09 +0800 <sdnds-slackbot>: <aweimeow>: vm1: 10.1.1.1
+12:09 +0800 <sdnds-slackbot>: <aweimeow>: vm2: 10.1.1.2
+12:09 +0800 <sdnds-slackbot>: <aweimeow>: 拓樸圖在最下方的圖片，
+12:09 +0800 <sdnds-slackbot>: <aweimeow>: 紅框為 vm1, 藍框為 vm2, 而粉紅線則是 gre tunnel,
+12:09 +0800 <sdnds-slackbot>: <aweimeow>:
+12:09 +0800 <sdnds-slackbot>: <aweimeow>: 在 Mininet 當中的 Switch 是 OVSKernelSwitch class，
+12:09 +0800 <sdnds-slackbot>: <aweimeow>: 根據我的理解，他是一個 OVS 虛擬出來並連接到 OVS Kernel Module 的 Switch，
+12:09 +0800 <sdnds-slackbot>: <aweimeow>: 所以在拓樸圖裡面，sw2 sw3 都是連在 OVS 上面的，
+12:09 +0800 <sdnds-slackbot>: <aweimeow>:
+12:20 +0800 <sdnds-slackbot>: <hwchiu>: sw1 &amp; sw2 有直接接線嗎
+13:34 +0800 <sdnds-slackbot>: <aweimeow>: 沒有，他們是位於不同 vm 的
+13:37 +0800 <sdnds-slackbot>: <hwchiu>: 那封包一定會經過s3應該很正常吧?
+13:38 +0800 <sdnds-slackbot>: <hwchiu>: 不管你header怎填，還是要先到s3在往下
+13:39 +0800 <sdnds-slackbot>: <aweimeow>: 摁摁，對的，可是這邊考慮的出發點是：
+13:39 +0800 <sdnds-slackbot>: <aweimeow>: sw2, sw3 都是會連在 OVS 上面，所以想知道為甚麼他知道要送給 sw3
+13:40 +0800 <sdnds-slackbot>: <aweimeow>: 因為雖然有 tunnel，但是也只有指對向的 IP
+13:41 +0800 <sdnds-slackbot>: <hwchiu>: 所以你想知道的是
+13:41 +0800 <sdnds-slackbot>: <hwchiu>: 為什麼在sw1上面的OVS
+13:41 +0800 <sdnds-slackbot>: <hwchiu>: 會知道要把送到sw2的封包送到sw3?
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: 我貼看看我畫的那個圖看能不能貼 XD
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: +------------------------------------+  +------------------------------------+
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: |                                    |  |                                    |
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: |   +-----------+                    |  |   +-----------+                    |
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: |   | docker@h1 +------+             |  |   | docker@h2 +------+             |
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: |   +-----------+      |             |  |   +-----------+      |             |
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: |                      |             |  |                      |             |
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: |              +---+---+---+---+     |  |              +---+---+---+---+     |
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: |              |   |  sw1  |   |     |  |              |   |  sw2  |   |     |
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: |              |   +-------+   |     |  |              |   +-------+   |     |
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: |              |      OVS      |     |  |              |      OVS      |     |
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: |              +-------X-------+     |  |              +-------X-------+     |
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: |                      X             |  |                      X             |
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: |        XXXXXXXXXXXXXXX             |  |        XXXXXXXXXXXXXXX             |
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: |   +----X---+                       |  |   +----X---+                       |
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: |   |  eth0  |             VM1       |  |   |  eth0  |             VM2       |
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: +---+----+---+-----------------------+  +---+---+----+-----------------------+
+13:42 +0800 <sdnds-slackbot>: <aweimeow>:          |                                      |
+13:42 +0800 <sdnds-slackbot>: <aweimeow>:          +--------------------------------------+
+13:42 +0800 <sdnds-slackbot>: <aweimeow>:                        GRE Tunnel
+13:42 +0800 <sdnds-slackbot>: <pichuang>: 這句怪怪的 //根據我的理解，他是一個 OVS 虛擬出來並連接到 OVS Kernel Module 的 Switch，
+13:42 +0800 <sdnds-slackbot>: <aweimeow>: 好像歪掉了 QQ
+13:42 +0800 <sdnds-slackbot>: <hwchiu>: 恩，歪掉了XD 還是你截圖?
+13:43 +0800 <sdnds-slackbot>: <hwchiu>: 其實是ovs kernel module創出來的東西
+13:43 +0800 <sdnds-slackbot>: <hwchiu>: 可以看datapath.c內，收到 addbr 做的事情
+13:44 +0800 <sdnds-slackbot>: <aweimeow>: 這個圖我不太確定畫的正不正確，
+13:44 +0800 <sdnds-slackbot>: <aweimeow>: 我想知道 "X" 這一段是做了什麼事情
+13:44 +0800 <sdnds-slackbot>: <hwchiu>: 所以其實VM1的OVS，他知道的是要從eth0出去
+13:44 +0800 <sdnds-slackbot>: <hwchiu>: 你的flow table長什麼樣子
+13:44 +0800 <sdnds-slackbot>: <hwchiu>: @pichuang: 有空幫忙一下，我要上班了XD
+13:45 +0800 <sdnds-slackbot>: <aweimeow>: VM1 的 OVS 是從 eth0 出去
+13:45 +0800 <sdnds-slackbot>: <hwchiu>: eth0外面實體是碰到sw3吧，你畫的tunnels那邊
+13:45 +0800 <sdnds-slackbot>: <hwchiu>: "實體"
+13:45 +0800 <sdnds-slackbot>: <pichuang>: 恩
+13:45 +0800 <sdnds-slackbot>: <pichuang>: 你這圖畫錯
+13:46 +0800 <sdnds-slackbot>: <aweimeow>: 我的 controller 是用 ryu 的 simple switch，所以不知道有沒有 flow table QQ
+13:46 +0800 <sdnds-slackbot>: <aweimeow>: 沒有下指令看過
+13:46 +0800 <sdnds-slackbot>: <pichuang>: 由 ovs add bridge 所產生的 ovs bridge 有各自的 unique id
+13:48 +0800 <sdnds-slackbot>: <pichuang>: 每一個 ovs bridge 可以視為獨立的一個 switch
+13:48 +0800 <sdnds-slackbot>: <pichuang>: 至於 ovs 他怎麼跟 多個 ovs bridge做溝通 就要看 source code他怎麼做對應的
+13:49 +0800 <sdnds-slackbot>: <pichuang>: 你可以用 ovs-dpctl 跟 ovs-ofctl 交叉觀察一下
+13:49 +0800 <sdnds-slackbot>: <pichuang>: 你應該可以看出
+13:49 +0800 <sdnds-slackbot>: <aweimeow>: 我之前有發現一件事情，
+13:49 +0800 <sdnds-slackbot>: <aweimeow>: 在兩台 vm 之間有兩條以上的 Tunnel，
+13:49 +0800 <sdnds-slackbot>: <aweimeow>: 不同的 key 可以把不同的 tunnel 區隔開，
+13:49 +0800 <sdnds-slackbot>: <aweimeow>: 所以我在猜會不會 key 是他判斷送給哪個 switch 的依據
+13:50 +0800 <sdnds-slackbot>: <pichuang>: 他那個 key 就是抽象化後 tunnel id
+13:51 +0800 <sdnds-slackbot>: <pichuang>: 如果你今天 tunneling 用 vxlan, key=99, 那你就會發現 vid = 99
+13:51 +0800 <sdnds-slackbot>: <pichuang>: 如果你今天 tunneling 用 gre, key =99, 那你就會發現 gre id =99
+13:51 +0800 <sdnds-slackbot>: <pichuang>: 這些可以透過 tcpdump 或 wireshark 觀察到
+13:51 +0800 <sdnds-slackbot>: <aweimeow>: 哦哦！原來如此，
+13:51 +0800 <sdnds-slackbot>: <aweimeow>: 想請問這個 key 是抽象化的 tunnel id 有沒有官方文件有說明，
+13:51 +0800 <sdnds-slackbot>: <aweimeow>: 還是只能用觀察而得呢？
+13:52 +0800 <sdnds-slackbot>: <pichuang>: 應該沒寫 因為我前陣子也在看這個
+13:52 +0800 <sdnds-slackbot>: <pichuang>: 問題跟你一樣 我是直接撈封包研究的
+13:52 +0800 <sdnds-slackbot>: <pichuang>: 你可以直接掛 tcpdump 觀測
+13:53 +0800 <sdnds-slackbot>: <pichuang>: <https://gist.github.com/pichuang/b6536bf8fecfbe32fa41#file-vxlan_mininet-py-L66>
+13:53 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/5rAvi  ==> vxlan_mininet.py · GitHub
+13:54 +0800 <sdnds-slackbot>: <pichuang>: <https://gist.github.com/pichuang/3078f109b7c00c4b9813#file-gre_mininet-py-L66>
+13:54 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/NHaNH  ==> gre_mininet.py · GitHub
+13:56 +0800 <sdnds-slackbot>: <aweimeow>: 好的，謝謝你！
+13:57 +0800 <sdnds-slackbot>: <aweimeow>: 那如果我想去翻 source code 看他是怎麼把 tunnel id 對應到 switch 的話，是要翻哪些檔案呢？
+13:57 +0800 <sdnds-slackbot>: <aweimeow>: 因為這個 project 好像有點大，所以想請你給我一個大略的方向，
+13:57 +0800 <sdnds-slackbot>: <aweimeow>: 是翻剛剛 hwchiu 所說的 datapath.c 嗎？
+13:57 +0800 <sdnds-slackbot>: <hwchiu>: kernel module在那邊而已
+13:57 +0800 <sdnds-slackbot>: <hwchiu>: 有一個方法
+13:57 +0800 <sdnds-slackbot>: <hwchiu>: 就是
+13:57 +0800 <sdnds-slackbot>: <hwchiu>: ovs-vsctl
+13:57 +0800 <sdnds-slackbot>: <hwchiu>: 這個
+13:57 +0800 <sdnds-slackbot>: <hwchiu>: 看他的指令怎處理的
+13:57 +0800 <sdnds-slackbot>: <hwchiu>: 一路往下追
+13:57 +0800 <sdnds-slackbot>: <hwchiu>: 可能會有點辛苦
+13:58 +0800 <sdnds-slackbot>: <aweimeow>: 直接從 ovs-vsctl 加 gre tunnel 那邊開始追嗎  XD
+13:58 +0800 <sdnds-slackbot>: <pichuang>: :smiling_imp:
+13:58 +0800 <sdnds-slackbot>: <hwchiu>: 可XD
+13:58 +0800 <sdnds-slackbot>: <aweimeow>: 感覺好辛苦 XD
+13:58 +0800 <sdnds-slackbot>: <hwchiu>: 我快兩年沒有看過他的CODE了，所以user space的我沒有辦法給方向
+13:58 +0800 <sdnds-slackbot>: <aweimeow>: 其實我有丟 ovs 的 discuss
+13:58 +0800 <sdnds-slackbot>: <aweimeow>: 可是因為圖像剛剛那樣跑掉了 orz 除非有人把他貼到編輯器不然看不懂圖
+13:59 +0800 <sdnds-slackbot>: <hwchiu>: 恩恩
+13:59 +0800 <sdnds-slackbot>: <hwchiu>: [ovs-discuss] interested in ovs gre tunneling implement
+13:59 +0800 <sdnds-slackbot>: <aweimeow>: 阿對了！
+13:59 +0800 <sdnds-slackbot>: <aweimeow>: @pichuang: 我想問剛剛那個圖哪裡畫錯了，應該要怎麼畫才是對的呢
+13:59 +0800 <sdnds-slackbot>: <hwchiu>: 不過你的第二封信，看起來還是有點破調
+13:59 +0800 <sdnds-slackbot>: <aweimeow>: 對的，是這個
+13:59 +0800 <sdnds-slackbot>: <aweimeow>: 因為發現我畫的圖太寬了，第二封信是窄版
+13:59 +0800 <sdnds-slackbot>: <pichuang>: sw3 不見了
+13:59 +0800 <sdnds-slackbot>: <aweimeow>: 要複製下來才能看
+14:00 +0800 <sdnds-slackbot>: <pichuang>: 沒人會複製的xd 你要先自己處理好
+14:00 +0800 <sdnds-slackbot>: <aweimeow>: 這個圖只是想問概念，所以是不一樣的拓樸圖
+14:00 +0800 <sdnds-slackbot>: <aweimeow>: 我當初是用這個畫
+14:00 +0800 <sdnds-slackbot>: <aweimeow>: <http://asciiflow.com/>
+14:00 +0800 <sdnds-slackbot>: <aweimeow>: 以為這個在信件會 OK 的 XD
+14:00 +0800 <sdnds-slackbot>: <aweimeow>: 畢竟 Mailing List 貼圖怪怪的，沒看過有人貼圖片
+16:03 +0800 <sdnds-slackbot>: <aweimeow>: 我剛剛去翻了一下 source code，
+16:03 +0800 <sdnds-slackbot>: <aweimeow>: 有看到一段是他會依據 Tunnel id 來選擇要轉到哪個 port，
+16:03 +0800 <sdnds-slackbot>: <aweimeow>: 不過平常都是在寫 Python，和 C 不熟 XD
+16:03 +0800 <sdnds-slackbot>: <aweimeow>: <https://github.com/openvswitch/ovs/blob/master/ofproto%2Ftunnel.c#L560>
+16:03 +0800 <sdnds-tw_Bot>: ==> ovs/tunnel.c at master · openvswitch/ovs · GitHub
+16:03 +0800 <sdnds-slackbot>: <aweimeow>: 應該是這一段做的
+16:03 +0800 <sdnds-slackbot>: <aweimeow>: 想順便問一下一個問題，
+16:03 +0800 <sdnds-slackbot>: <aweimeow>: 在 eth0 收到這個 gre 封裝的封包，
+16:03 +0800 <sdnds-slackbot>: <aweimeow>: 他是怎麼知道要送給 ovs 去處理的呢？
+16:03 +0800 <sdnds-slackbot>: <aweimeow>:
+16:03 +0800 <sdnds-slackbot>: <aweimeow>: 謝謝 (´・ω・`)
+16:07 +0800 <sdnds-slackbot>: <hwchiu>: 不負責任猜測
+16:08 +0800 <sdnds-slackbot>: <hwchiu>: 當 gre create 後
+16:08 +0800 <sdnds-slackbot>: <hwchiu>: kernel module 內會走 vport 的 gre_create
+16:08 +0800 <sdnds-slackbot>: <hwchiu>: 這時候會跑到
+16:09 +0800 <sdnds-slackbot>: <hwchiu>: gre_init()
+16:09 +0800 <sdnds-slackbot>: <hwchiu>: 這時候會去呼叫 gre_cisco_register，同時把一個 function ptr 註冊成 handler
+16:09 +0800 <sdnds-slackbot>: <hwchiu>: 最後該register會跑到 rpl_gre_cisco_register -->  gre_add_protocol
+16:10 +0800 <sdnds-slackbot>: <hwchiu>: 然後跑到kernel api ( inet_add_protocol)
+16:10 +0800 <sdnds-slackbot>: <hwchiu>: 這邊傳入的 protocol 就是 IPPROTO_GRE
+16:10 +0800 <sdnds-slackbot>: <hwchiu>: 所以我猜之後看到是GRE的，就會一路上來然後呼叫到 handler 去處理了
+16:11 +0800 <sdnds-slackbot>: <hwchiu>: 你要不要在我說的function都加個printk，然後把ovs重build，驗證看看是不是這樣走
+16:11 +0800 <sdnds-slackbot>: <hwchiu>: 收封包的地方應該都是
+16:11 +0800 <sdnds-slackbot>: <hwchiu>: ovs_vport_receive->ovs_dp_process_packet
+16:11 +0800 <sdnds-slackbot>: <hwchiu>: 至於呼叫ovs_vport_receive的地方，就會看你是什麼type
+16:12 +0800 <sdnds-slackbot>: <hwchiu>: gre,internal,lisp,netdev,stt,vxlan ... etc
+16:34 +0800 <sdnds-slackbot>: <jalen>: 問一下，remote IP應該是設定在br的interface
+16:34 +0800 <sdnds-slackbot>: <jalen>: 設定不屬於ovs br的ip 可以動作?
+16:34 +0800 <sdnds-slackbot>: <jalen>: 這點我沒測試過QQ
+16:37 +0800 <sdnds-slackbot>: <hwchiu>: 我沒用過別問我XD
+16:37 +0800 <sdnds-slackbot>: <hwchiu>: 我都是看CODE派，根本沒跑過
+16:38 +0800 <sdnds-slackbot>: <jalen>: 如果是現在ovs br ip...ovs是不是自己可以先知道是GRE封包?
+16:38 +0800 <sdnds-slackbot>: <jalen>: 好吧~我等等來做實驗
+16:38 +0800 <sdnds-slackbot>: <jalen>: 身邊switch現在都在忙碌中
+16:40 +0800 <sdnds-slackbot>: <hwchiu>: 什麼東西
+16:54 +0800 <sdnds-slackbot>: <jalen>: 甚麼甚麼XD?
+17:09 +0800 <sdnds-slackbot>: <aweimeow>: @hwchiu: 好的，很謝謝你！！我之後重新 build 一份看看

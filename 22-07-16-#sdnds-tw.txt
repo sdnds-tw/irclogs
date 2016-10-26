@@ -1,0 +1,7 @@
+08:21 +0800 <sdnds-slackbot>: <pichuang>: <https://github.com/onfsdn/atrium-docs/wiki/ONOS-Based-Atrium-Leaf-Spine-Fabric-16A>
+08:21 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/aNcA5  ==> Home · onfsdn/atrium-docs Wiki · GitHub
+08:21 +0800 <sdnds-slackbot>: <pichuang>: 這專案有被列名的台灣人就兩位了= =
+08:22 +0800 <sdnds-slackbot>: <pichuang>: Linux tuntap? 如果是的話 不行//OVS是不是沒辦法add tun interface阿，這幾天在測試東西搞不定
+08:23 +0800 <sdnds-slackbot>: <pichuang>: 如果要建 tunnel 但不要用 ovs 所提供的方式, 據我所知只有用 ssh tunnel 才有辦法辦到
+08:24 +0800 <sdnds-slackbot>: <pichuang>: <https://github.com/mininet/mininet/blob/master/examples/cluster.py#L414-L463> //參考一下 mininet cluster 所使用的奇淫技巧
+08:24 +0800 <sdnds-tw_Bot>: URL: http://phdta.info/Sv4Sn  ==> mininet/cluster.py at master · mininet/mininet · GitHub
